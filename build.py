@@ -22,6 +22,7 @@ MICHELIN = load("michelin.json")
 HOTELS = load("hotels.json")
 PRICING = load("pricing.json")
 TRANSIT = load("transit.json")
+EVENTS = load("events-2027.json")
 ACTIVITIES = load("activities.json")
 DETAILS = load("restaurant-details.json")
 SOCIAL = load("social.json")
@@ -326,6 +327,8 @@ can look better than it is. Expanding the matrix is the #1 open task on
 <a href="flagged.html">Flagged for Review</a>.</p>
 </div>
 
+{event_banner()}
+
 <h2>Live site status</h2>
 <div class="errbox">
 <strong>The repository's GitHub Pages site is live but its front page is broken.</strong>
@@ -373,6 +376,36 @@ def resort_fee_breakeven():
         gap = b["total_usd"] - a["total_usd"]
         out.append((a, b, gap, gap / 7))
     return out
+
+def event_banner():
+    """The single most decision-relevant finding: the preferred week is a convention week."""
+    ev = EVENTS["events"]
+    rows = ""
+    for x in ev:
+        direct = x["overlap_with_preferred_dates"].startswith("DIRECT")
+        cls = "no" if direct else "src"
+        links = " · ".join(
+            f'<a href="{e(u)}" target="_blank" rel="noopener">{i + 1}</a>'
+            for i, u in enumerate(x["sources"]))
+        rows += (f'<tr><td>{e(x["name"])}<div class="src">{links} · '
+                 f'{e(x["confidence"])}</div></td>'
+                 f'<td class="num">{e(x["dates"])}</td>'
+                 f'<td class="src">{e(x["venue"])}</td>'
+                 f'<td class="{cls}">{e(x["overlap_with_preferred_dates"])}</td></tr>')
+    return f"""<div class="errbox">
+<strong>Your preferred dates fall inside a major convention week.</strong>
+<p>Three separate trade shows run 15–18 February 2027, the exact window you named as preferred:
+<strong>MAGIC Las Vegas</strong> (16–18 Feb, Las Vegas Convention Center, ~17,000 attendees),
+the <strong>International Roofing Expo</strong> (16–18 Feb) and
+<strong>WWIN</strong> (15–17 Feb, downtown). Every hotel price in this plan was quoted for
+15–22 February, so those prices may already be event-inflated — and the ranking below could
+reorder entirely on a quiet week.</p>
+<p>This is not a reason to cancel. It is a reason to know that the date decision outranks the hotel
+decision, and to check the LVCVA calendar before booking.</p>
+</div>
+<div class="tblwrap"><table>
+<thead><tr><th>Event</th><th>2027 dates</th><th>Venue</th><th>Overlap with your window</th></tr></thead>
+<tbody>{rows}</tbody></table></div>"""
 
 def hotel_michelin_detail(hid):
     """Return (summary_html, venue_list, cost_lo, cost_hi, n_known) for one hotel."""
@@ -487,6 +520,8 @@ Weights are re-normalised when a component is missing. Hotels with <em>no</em> m
 route cannot score on reach and are labelled <span class="unv">not measured</span> — they are not
 penalised to zero silently, but they also cannot rank first on reach they never proved.
 </div>
+
+{event_banner()}
 
 <h2>Ranked hotels</h2>
 <div class="tblwrap"><table>
@@ -1027,10 +1062,14 @@ def build_questions():
          "Unresolved — highest risk",
          "An event week can double a hotel price and invalidate every number on the Hotels page."),
         ("What are the resort fees per hotel?",
-         "Not verified for any hotel.",
-         "Each hotel's own 'fees' page — that is the authoritative source.",
-         "Unresolved",
-         "Without this, the 7-night totals understate true cost by hundreds of dollars."),
+         "Still not verified — but now bounded. Four sources put Flamingo at $42, $45, $50 and "
+         "$56.63, and Caesars Palace at $49.95+tax, $55 and $62.30. The Hotels page converts this "
+         "into a break-even table instead of a guess.",
+         "The fee shown on the hotel's own checkout page at the moment of booking is the only "
+         "figure that binds. Screenshot it.",
+         "Unresolved, but quantified",
+         "Resort fees are the difference between the top four hotels, which sit within $143 of "
+         "each other over seven nights. They do NOT reorder the cheap and expensive ends."),
         ("Do the cheap rooms actually have a queen/king bed?",
          "No. Rio, Flamingo and Harrah's quote 'assigned on arrival'.",
          "Book a specific named room type and confirm the bed in writing.",
@@ -1042,22 +1081,31 @@ def build_questions():
          "Unresolved",
          "A shared-bathroom guesthouse can slip through on price alone."),
         ("Do all 24 restaurants fall inside 60 minutes of one hotel?",
-         "Unknown. Only 5 routes were measured.",
-         "Complete the 15 × 24 matrix, then count.",
-         "Unresolved",
-         "This is the core ranking input; today it rests on a small sample."),
+         "Partially measured — enough to rank, not enough to prove. Route times exist for a "
+         "subset of hotel/restaurant pairs; hotels with zero measured routes are excluded from "
+         "reach scoring rather than assumed to be good or bad.",
+         "Complete the full hotel × restaurant matrix for the three or four hotels you are "
+         "actually considering — not all 15. That is a few dozen queries, not hundreds.",
+         "Partially resolved",
+         "The ranking already down-weights thin evidence, so a hotel cannot win on one lucky "
+         "route. But a hotel ranked mid-table could still move once fully measured."),
         ("What does Robuchon / é / L'Atelier cost per person?",
          "Not published by the venues.",
          "Phone the reservation lines, or take the price OpenTable shows at booking.",
          "Unresolved",
          "The two-star dinner is likely the single largest line in the budget."),
         ("Are the restaurants open on the exact nights you would visit?",
-         "Verified for 7 venues; 9 still blank.",
-         "Each venue's own site in the week before travel.",
-         "Partially resolved",
-         "Robuchon and é are closed Sun–Mon; L'Atelier and Wing Lei closed Tue–Wed."),
+         "12 of 13 detailed venues now have hours from their own official pages. Two critical "
+         "findings: Michael Mina at Bellagio is TEMPORARILY CLOSED, and Robuchon is closed Sun–Mon "
+         "while L'Atelier and Wing Lei close Tue–Wed. Yen Viet publishes no hours anywhere official.",
+         "Re-check in the week before travel. Closures change; a guide listing is not proof a "
+         "restaurant is serving.",
+         "Largely resolved",
+         "A restaurant can hold a MICHELIN award and be shut. That single fact reorders any "
+         "itinerary built from a guide alone."),
         ("Which activities are worth the time?",
-         "Seven activities listed, no ticket prices or hours verified.",
+         "Seven listed. Hours, days and prices now verified from official pages for the Fountains, "
+         "High Roller and Mob Museum, with measured transit from the top hotel (7, 7, 55 min).",
          "Official box-office pages for dates and prices.",
          "Unresolved",
          "Currently the least evidenced page on the site."),

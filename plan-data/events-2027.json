@@ -1,0 +1,100 @@
+{
+  "_meta": {
+    "dataset": "Known 2027 events in and around the user's travel window",
+    "compiled_utc": "2026-11-25",
+    "window": "2027-02-15 to 2027-03-23",
+    "warning": "These dates come from trade-show aggregators and organiser-side material, NOT from the LVCVA's official events calendar, which could not be fetched. Two or more independent sources agree on each date, which is why they are recorded - but they are recorded as EVIDENCE OF RISK, not as confirmed bookings.",
+    "why_this_matters": "Hotel prices in this plan were quoted for 15-22 Feb 2027. That week overlaps a major convention. The quotes are real, but they may be event-inflated, which means the ranking could change completely on a quiet week."
+  },
+  "events": [
+    {
+      "name": "MAGIC Las Vegas (with PROJECT, SOURCING at MAGIC, OFFPRICE)",
+      "dates": "2027-02-16 to 2027-02-18",
+      "venue": "Las Vegas Convention Center",
+      "attendees": "16,900+ published",
+      "overlap_with_preferred_dates": "DIRECT - the user's preferred 15-18 Feb window sits inside this show, and so does the priced 15-22 Feb stay",
+      "sources": [
+        "https://boothfabricators.com/magic-las-vegas",
+        "https://www.aims360.com/guides/apparel-trade-shows-calendar",
+        "https://interiortoday.us/magic-fashion-trade-show/"
+      ],
+      "confidence": "high - four independent sources give 16-18 Feb 2027"
+    },
+    {
+      "name": "WWIN / Las Vegas Apparel / The Men's Edit",
+      "dates": "2027-02-15 to 2027-02-17",
+      "venue": "The Expo at World Market Center (downtown)",
+      "overlap_with_preferred_dates": "DIRECT - starts on the user's preferred arrival day",
+      "sources": [
+        "https://www.aims360.com/guides/apparel-trade-shows-calendar"
+      ],
+      "confidence": "medium - single detailed source"
+    },
+    {
+      "name": "International Roofing Expo",
+      "dates": "2027-02-16 to 2027-02-18",
+      "venue": "Las Vegas Convention Center, West Hall",
+      "overlap_with_preferred_dates": "DIRECT",
+      "sources": [
+        "https://nodiexpo.com/trade-shows/las-vegas/",
+        "https://www.luminik.io/blog/2026/las-vegas-convention-calendar-2027/"
+      ],
+      "confidence": "high - two independent sources"
+    },
+    {
+      "name": "WVC Annual Conference (Western Veterinary Conference)",
+      "dates": "2027-02-28 to 2027-03-03",
+      "venue": "Mandalay Bay Convention Center",
+      "overlap_with_preferred_dates": "Impacts late-February alternatives, not the preferred week",
+      "sources": [
+        "https://www.viticusgroup.org/wvc",
+        "https://10times.com/western-veterinary-conference"
+      ],
+      "confidence": "high - organiser site plus aggregator"
+    },
+    {
+      "name": "Total Product Expo (TPE)",
+      "dates": "2027-02-24 to 2027-02-26",
+      "venue": "Las Vegas Convention Center, West Hall",
+      "overlap_with_preferred_dates": "Impacts the 22 Feb-1 Mar window that was priced second",
+      "sources": [
+        "https://nodiexpo.com/trade-shows/las-vegas/"
+      ],
+      "confidence": "medium - single source"
+    },
+    {
+      "name": "ASD Market Week",
+      "dates": "2027-03-02 to 2027-03-04",
+      "venue": "Las Vegas Convention Center",
+      "overlap_with_preferred_dates": "Inside the user's overall window",
+      "sources": [
+        "https://nodiexpo.com/trade-shows/las-vegas/",
+        "https://www.thingsvegas.com/blog/las-vegas-conventions-2027/"
+      ],
+      "confidence": "high - two independent sources"
+    },
+    {
+      "name": "Shoptalk Spring / Bar & Restaurant Expo",
+      "dates": "2027-03-22 to 2027-03-24",
+      "venue": "Mandalay Bay / LVCC",
+      "overlap_with_preferred_dates": "Right at the end of the user's window",
+      "sources": [
+        "https://nodiexpo.com/trade-shows/las-vegas/",
+        "https://www.luminik.io/blog/2026/las-vegas-convention-calendar-2027/"
+      ],
+      "confidence": "high - two independent sources"
+    }
+  ],
+  "quiet_weeks_identified": [
+    {
+      "week": "2027-03-08 to 2027-03-15",
+      "why": "No major show found in the sources checked spans these dates; the mid-March cluster starts 15 March",
+      "caveat": "Absence of evidence from four aggregators is not proof; the LVCVA calendar still needs checking"
+    },
+    {
+      "week": "2027-02-08 to 2027-02-15",
+      "why": "Manifest ends 10 Feb and the MAGIC cluster starts 15-16 Feb",
+      "caveat": "Same caveat"
+    }
+  ]
+}
