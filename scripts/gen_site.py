@@ -437,7 +437,10 @@ a missing entry and it is not an average. Only three restaurants print a real pe
   <h2>What dinner for two actually costs</h2>
   <p>Only three venues publish a number, and two of them are outside the starred group:</p>
   <ul class="tight">
-    <li><strong>Michael Mina</strong> — $295++ per person, 10-course tasting → <strong>$590++</strong> for two.</li>
+    <li><strong>Michael Mina</strong> — $295++ per person, 10-course tasting → <strong>$590++</strong> for two,
+      <strong>but the venue is currently closed</strong>: its own Bellagio page reads &ldquo;Monday to Sunday: Closed&rdquo;
+      and labels it <em>Temporarily closed</em>, with no reopen date published. Treat this as a price for a service that
+      is not running, not as a bookable dinner (FLAGS.md <a href="sources.html#flags">F-22</a>).</li>
     <li><strong>KAME Omakase</strong> — $500 per person, signature omakase → <strong>$1,000++</strong> for two.</li>
     <li><strong>Anima by EDO</strong> — $85 per person tasting → <strong>$170++</strong> for two.</li>
   </ul>

@@ -5,7 +5,8 @@
       "answered": "Confirmed from an official or primary source, with the link recorded.",
       "open": "Not confirmed. The tables leave the cell blank and this page says so.",
       "interpreted": "The question as asked does not map onto Las Vegas, so a stated substitution was made and disclosed."
-    }
+    },
+    "last_pass": "2026-11-25 restaurant hours verification (added Q-11–Q-12)"
   },
   "questions": [
     {
@@ -16,7 +17,11 @@
       "problem": "Because the Strip is ~4 miles long and Chinatown ~3 miles west of it, all 24 Michelin listings sit inside 60 minutes of every hotel in the dataset. The literal metric gives a flat 24/24 to all of them and ranks nothing.",
       "substitution": "A second column — Michelin restaurants within a 20-minute one-way trip — is shown alongside the 60-minute figure and is used as the ranking tiebreaker.",
       "how_to_close": "Nothing to close. It is a property of the city. If a stricter or looser threshold is preferred, the zone matrix in data/transit.json allows recomputation in one step.",
-      "sources": ["https://www.lvmonorail.com/stations/", "https://www.rtcsnv.com/ways-to-travel/fares-passes/", "https://www.boringcompany.com/projects/las-vegas-loop"]
+      "sources": [
+        "https://www.lvmonorail.com/stations/",
+        "https://www.rtcsnv.com/ways-to-travel/fares-passes/",
+        "https://www.boringcompany.com/projects/las-vegas-loop"
+      ]
     },
     {
       "id": "Q-02",
@@ -118,6 +123,30 @@
         "https://f1experiences.com/2027-las-vegas-grand-prix",
         "https://dord.racing/events/2027/f1-las-vegas-gp"
       ]
+    },
+    {
+      "id": "Q-11",
+      "question": "Is every MICHELIN-listed restaurant in the dataset actually open for a February 2027 trip?",
+      "state": "answered",
+      "answer": "One is not. Michael Mina at Bellagio publishes \"Monday to Sunday: Closed\" in its Hours of operation block and carries a \"Temporarily closed\" label on its own Bellagio page. Its $590++ tasting-menu price is still printed on that page, so a reader could easily mistake a dormant venue for an available one.",
+      "problem": "A price on a closed restaurant is worse than a blank: it looks bookable. Grouping this row with live venues would put a phantom dinner into a 7-night plan.",
+      "sources": [
+        "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html"
+      ],
+      "how_to_close": "Restaurant row kept, but with the closure stated on the row and flagged F-22. No reopen date is published, so no date is assumed.",
+      "substitution": ""
+    },
+    {
+      "id": "Q-12",
+      "question": "Do the published opening hours in this dataset survive a second check against the venues' own sites?",
+      "state": "answered",
+      "answer": "Five rows needed correction: Joël Robuchon (hours blank → Tue–Sat 5:00–9:30 PM), Partage (blank → Tue–Sat 5–9 PM, published on the Contact page only), Sparrow + Wolf (no hours published at all), KAME Omakase (no weekly hours on its booking page) and Michael Mina (closed). Nineteen of 24 rows now carry a verified hours string.",
+      "problem": "Two of the five were blank because the hours live on a secondary page — Partage on /contact, Robuchon in an \"Hours of operation\" detail block rather than the header. A single-page check misses both.",
+      "sources": [
+        "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html"
+      ],
+      "how_to_close": "All five corrected or explicitly left blank with the reason recorded. See FLAGS.md F-21 to F-24.",
+      "substitution": ""
     }
   ]
 }

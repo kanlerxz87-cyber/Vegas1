@@ -6,7 +6,8 @@
     "room_requirement": "Private bathroom AND queen-or-larger (or equivalent). 'king or queen' is satisfied by suites with 1 king + 1 sofa bed.",
     "price_source_pattern": "https://www.booking.com/hotel/us/<slug>.html?checkin=YYYY-MM-DD&checkout=YYYY-MM-DD&group_adults=2&no_rooms=1&selected_currency=USD",
     "proximity_rule": "michelin_within_60 is the user's literal metric (count of the 24 Michelin restaurants reachable in ≤60 min by RTC bus / Monorail / Vegas Loop). On the Strip it saturates at 24 for every hotel, so michelin_within_20 is used as the ranking tiebreaker. See data/transit.json for the zone matrix — every minute figure is an ESTIMATE derived from official route maps, never an official running time.",
-    "cheapest_note": "Cheapest verified 7-night total in this dataset is LINQ at $564 for 2027-02-15→02-22, but that is a 'Room Type Assigned on Arrival' rate — the bed size is not guaranteed until check-in."
+    "cheapest_note": "Cheapest verified 7-night total in this dataset is LINQ at $564 for 2027-02-15→02-22, but that is a 'Room Type Assigned on Arrival' rate — the bed size is not guaranteed until check-in.",
+    "housekeeping_note": "Hotel rows are unchanged by the 2026-11-25 verification pass; the only structural addition is this note. See FLAGS.md F-21 to F-25 for restaurant-level corrections found in the same pass."
   },
   "hotels": [
     {
@@ -307,7 +308,7 @@
       "flags": [
         "F-13"
       ],
-      "notes": "Michael Mina is in-building. Rate varies by room class between windows, so the three totals are not like-for-like."
+      "notes": "Michael Mina is in-building but currently closed with no published reopen date (see FLAGS.md F-22), so a Bellagio booking should be sold on its own merits rather than on that restaurant. Rate varies by room class between windows, so the three totals are not like-for-like."
     },
     {
       "id": "fontainebleau",

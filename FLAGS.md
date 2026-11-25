@@ -25,6 +25,11 @@ labelled**, never that a plausible number was filled in.
 | **F-18** | Bellagio Fountains | Official page fetch failed twice. Show schedule unverified. | No hours listed on the activities page. |
 | **F-19** | Instagram / TikTok | Handles are not printed on most official pages. Only the Neon Museum publishes its own. | Blank rather than guessed — see Q-07. |
 | **F-20** | Transit minutes | Every minute value is an estimate from official station lists and route maps. No official door-to-door times exist. | Labelled "estimate" everywhere. |
+| **F-21** | Joël Robuchon | Hours were blank and the row was marked `partial`. The restaurant's own MGM page publishes Tue–Sat 5:00–9:30 PM, closed Sun and Mon, no under-6s, business formal. | Now verified; Tuesday–Saturday is the only possible booking window. |
+| **F-22** | Michael Mina | The Bellagio page's Hours of operation block reads **"Monday to Sunday: Closed"** and the venue is labelled **Temporarily closed**. The $590++ tasting-menu figure on the row is therefore a price for a service that is not running. | Row must not be offered as a bookable dinner. Reopen date is not published; do not assume Feb 2027. |
+| **F-23** | Partage | Hours were blank because they live on the Contact page, not the Restaurant page (which is only a booking widget): Tue–Sat 5–9 PM. | Now verified. Also confirms a strict no-vegan/no-coeliac/no-dairy kitchen. |
+| **F-24** | Sparrow + Wolf | The official site publishes no opening hours anywhere on its front or menu page; only an OpenTable widget. | Hours left blank rather than taken from a reseller. Card-hold and 4-guest table cap noted on the row. |
+| **F-25** | Sample-date banners | Several MGM pages carry a dated banner (e.g. "open 4:00–8:00 PM Thursday 19 – Saturday 21 November") that refers to a 2026 date. | Carrying such a banner into a 2027 plan would be a silent error. Ignored, and called out on the row. |
 
 ## Deliberate non-inclusions
 

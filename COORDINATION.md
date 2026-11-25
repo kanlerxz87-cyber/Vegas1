@@ -105,3 +105,25 @@ Recorded here rather than silently overwritten.
   therefore modelled on the RTC bus network (The Deuce / SDX) plus the Las Vegas Monorail and
   the Boring Company Vegas Loop, which are separate-fare systems. This is a material
   interpretation and is raised as question Q-01 on the Questions page.
+
+## Verification pass — 2026-11-25 (session arena/126d963c-vegas1)
+
+Scope claimed: **restaurant hours + closure status only.** Files touched: `data/restaurants.json`,
+`data/questions.json`, `data/hotels.json` (one notes string), `FLAGS.md`, `scripts/gen_site.py` (two hard-coded
+strings), and the regenerated `docs/` pages. No hotel prices, no transit matrix, no Michelin award assignments.
+
+What the pass found, all from the venues' own pages:
+
+| Row | Was | Now |
+| --- | --- | --- |
+| Joël Robuchon | hours blank, `partial` | **Tue–Sat 5:00–9:30 PM**, closed Sun/Mon, no under-6s, business formal — `yes` |
+| Partage | hours blank | **Tue–Sat 5–9 PM** — published on `/contact`, not the Restaurant page |
+| Michael Mina | listed as a live option with a $590++ price | **Temporarily closed** — its own page reads "Monday to Sunday: Closed". Price retained but marked as not-running |
+| Sparrow + Wolf | hours blank | still blank, deliberately: the official site publishes no hours |
+| KAME Omakase | hours blank | still blank: OpenTable shows no weekly service hours |
+
+Flags F-21 to F-25 added to `FLAGS.md`. Questions Q-11 and Q-12 added. Verified hours coverage went from 17/24 to 19/24;
+the five remaining blanks all have a stated reason.
+
+Build is clean: `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py`
+→ 8 pages, 0 failures, 0 warnings.
