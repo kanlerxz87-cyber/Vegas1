@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flagged for Review - Vegas1 Las Vegas Vacation Planner</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <a href="../index.html" class="logo">Vegas<span>1</span></a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">&#9776;</button>
+      <nav class="nav" id="mainNav">
+        <a href="../index.html">Home</a>
+        <a href="hotels.html">Hotels</a>
+        <a href="restaurants.html">Michelin Restaurants</a>
+        <a href="activities.html">Activities</a>
+        <a href="booking.html">Best Time to Book</a>
+        <a href="flagged.html" class="active">Flagged for Review</a>
+        <a href="suggestions.html">Suggestions</a>
+        <a href="questions.html">Questions & Answers</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Flagged for Review</h1>
+      <p>Irregularities, gaps, and corrections found during the line-by-line verification pass (session fd60d57e, 2026-11-25). Items here do not block publication; each one is resolved only after a human or the owning session reviews it. Full machine-readable list: <code>data/flags.json</code>.</p>
+    </div>
+  </section>
+
+  <main class="main-content container">
+
+    <section class="card">
+      <h2>How to read this page</h2>
+      <p><strong>Severity:</strong> high = affects a core requirement of the trip brief; medium = affects data quality; low = cosmetic or informational.</p>
+      <p><strong>Status:</strong></p>
+      <ul style="margin-left:1.5rem;">
+        <li><strong>needs review</strong> — no one has fixed it yet; the flagged value must not be trusted until resolved.</li>
+        <li><strong>corrected-in-data</strong> — a verified value already exists in a separate, owned dataset (<code>data/michelin.json</code>, <code>data/hotel-ranking.json</code>) and awaits integration into the site tables.</li>
+        <li><strong>verified-ok</strong> — the published value was re-checked against an official source and stands.</li>
+      </ul>
+    </section>
+
+    <section class="card mt-2">
+      <h2>High severity</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Where</th><th>Finding</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>F01</td>
+              <td>data/michelin-restaurants.json<br>pages/restaurants.html</td>
+              <td>10 of 24 MICHELIN Guide links use non-official URL slugs (e.g. <code>/restaurant/joel-robuchon</code>). Official slugs (e.g. <code>/restaurant/restaurant-de-joel-robuchon</code>, <code>/restaurant/guy-savoy-las-vegas</code>, <code>/restaurant/bouchon-1250929</code>, <code>/restaurant/wing-lei-1250924</code>) were read from the official list page on 2026-11-25. Corrected URLs are in <code>data/michelin.json</code>. <a class="source-link" href="https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurants" target="_blank" rel="noopener">official list</a></td>
+              <td><span class="badge badge-rec">corrected-in-data</span></td>
+            </tr>
+            <tr>
+              <td>F12</td>
+              <td>data/hotels.json</td>
+              <td>The brief requires hotels to be <strong>ranked by the number of Michelin restaurants within 1 hour of travel by subway or bus</strong> — no ranking existed anywhere in the repo. Also: Las Vegas has no subway; ranking uses RTC bus/monorail. A documented ranked table now exists in <code>data/hotel-ranking.json</code> (Venetian #1 with 4 in-hotel Michelin restaurants).</td>
+              <td><span class="badge badge-rec">corrected-in-data</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card mt-2">
+      <h2>Medium severity</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Where</th><th>Finding</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>F02</td>
+              <td>data/michelin-restaurants.json</td>
+              <td>Hours/days/exceptions blank for all 24 restaurants although official pages publish them (MGM Grand, Caesars, Cosmopolitan, Venetian, Wynn, partage.vegas, kabutolv.com, soulbellybbq.com…). Verified values in <code>data/michelin.json</code>.</td>
+              <td><span class="badge badge-rec">corrected-in-data</span></td>
+            </tr>
+            <tr>
+              <td>F03</td>
+              <td>data/michelin-restaurants.json</td>
+              <td>Social links blank; ≥7 verified restaurant Instagram accounts found (ebyjoseandres, joelrobuchon.lasvegas, cotekoreansteakhouse, mott32vegas, estherskitchenlv, lamaiilv, + Wynn property TikTok). In <code>data/michelin.json</code>.</td>
+              <td><span class="badge badge-rec">corrected-in-data</span></td>
+            </tr>
+            <tr>
+              <td>F07</td>
+              <td>data/hotels.json</td>
+              <td>Resort fees ($54.95/$50/$49.95/MGM $39–45) and "queen rooms available" per hotel are not yet confirmed on official hotel pages. The queen-bed rule is a hard trip constraint. One positive check: Bellagio officially lists a "Fountain View Queen" room. <a class="source-link" href="https://bellagio.mgmresorts.com/en/hotel/resort-queen-room-fountain-view.html" target="_blank" rel="noopener">official room page</a></td>
+              <td><span class="badge badge-rec">needs review</span></td>
+            </tr>
+            <tr>
+              <td>F08</td>
+              <td>data/booking-analysis.json<br>questions-answers.md</td>
+              <td>Monorail 24-hour pass listed as $13; official ticket page lists <strong>$13.95</strong> (single ride $5.75 is correct). <a class="source-link" href="https://tix.lvmonorail.com/" target="_blank" rel="noopener">official ticket page</a></td>
+              <td><span class="badge badge-rec">needs review</span></td>
+            </tr>
+            <tr>
+              <td>F10</td>
+              <td>data/activities.json</td>
+              <td>Bellagio Fountains schedule imprecise/uncited. Official schedule (fetched 2026-11-25): Mon–Fri every 30 min 3:00–7:30 PM + every 15 min 8 PM–midnight; Sat/Sun/holidays from 12 PM; free; weather cancellations possible; "schedule may vary". <a class="source-link" href="https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html" target="_blank" rel="noopener">official page</a></td>
+              <td><span class="badge badge-rec">corrected-in-data</span></td>
+            </tr>
+            <tr>
+              <td>F11</td>
+              <td>data/activities.json</td>
+              <td>All activity hours/prices/social links are still unverified (honestly blanked by the owning session). A dedicated verification pass on activity official sites is needed (logged as a follow-up task — not claimed here to avoid scope overlap).</td>
+              <td><span class="badge badge-rec">needs review</span></td>
+            </tr>
+            <tr>
+              <td>F15</td>
+              <td>data/michelin.json</td>
+              <td>Prices for two adults are verified only for Guy Savoy (official à la carte $100–$290/dish effective 2026-11-05; Krug Chef's Table $1,500/pp). é's 2026 price (~$295–$350/pp) is third-party. Robuchon/L'Atelier/most others publish no prices — left blank per policy. <a class="source-link" href="https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu" target="_blank" rel="noopener">official menu</a></td>
+              <td><span class="badge badge-rec">needs review</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card mt-2">
+      <h2>Low severity</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Where</th><th>Finding</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>F04</td>
+              <td>data/michelin-restaurants.json</td>
+              <td>"Bib Gourmand suggests ~$50 per person" — Michelin defines Bib Gourmand as "good quality, good value cooking" with no dollar figure in the U.S. Remove or label as editorial.</td>
+              <td><span class="badge badge-rec">needs review</span></td>
+            </tr>
+            <tr>
+              <td>F05</td>
+              <td>data/michelin-restaurants.json</td>
+              <td>Kame Omakase link kameomakase.com resolves to the official site <strong>sushikame.com</strong> (checked 2026-11-25) — works; canonical URL is sushikame.com.</td>
+              <td><span class="badge badge-bib">verified-ok</span></td>
+            </tr>
+            <tr>
+              <td>F06</td>
+              <td>data/michelin-restaurants.json</td>
+              <td>Venetian links: <code>/restaurants/estiatorio-milos.html</code> failed to load on 2026-11-25; canonical is <code>/dining/restaurants/estiatorio-milos.html</code> (verified). Bouchon link works via redirect; canonical <code>/dining/restaurants/bouchon.html</code>.</td>
+              <td><span class="badge badge-rec">needs review</span></td>
+            </tr>
+            <tr>
+              <td>F09</td>
+              <td>data/booking-analysis.json</td>
+              <td>RTC Deuce fares $6 (2-hour) / $8 (24-hour), 24/7 operation — matches RTC's official fare page. <a class="source-link" href="https://rtcws.rtcsnv.com/mobile/geoFares.html" target="_blank" rel="noopener">RTC official</a></td>
+              <td><span class="badge badge-bib">verified-ok</span></td>
+            </tr>
+            <tr>
+              <td>F13</td>
+              <td>data/booking-analysis.json</td>
+              <td>Booking-window advice (30–60 days, midweek cheapest) rests on third-party blogs; no official source can confirm it, and a date-specific "cheapest week" needs live quotes (Dec 2026–Jan 2027 per the advice). Presidents' Day (Mon Feb 15, 2027) + Valentine's Day weekend demand should be checked against official event calendars.</td>
+              <td><span class="badge badge-rec">needs review</span></td>
+            </tr>
+            <tr>
+              <td>F14</td>
+              <td>index.html</td>
+              <td>One mojibake character ("���� Activities") in the Quick Navigation grid. Cosmetic; file owned by the other session — logged as a cross-file request in COORDINATION.md.</td>
+              <td><span class="badge badge-rec">needs review</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card mt-2">
+      <h2>Verification sources (this page)</h2>
+      <ul style="margin-left:1.5rem;">
+        <li><a href="https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurants" target="_blank" rel="noopener">MICHELIN Guide — official Las Vegas list</a></li>
+        <li><a href="https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s" target="_blank" rel="noopener">Michelin press release — 2026 Southwest selection</a></li>
+        <li><a href="https://rtcws.rtcsnv.com/mobile/geoFares.html" target="_blank" rel="noopener">RTC of Southern Nevada — official fares</a></li>
+        <li><a href="https://tix.lvmonorail.com/" target="_blank" rel="noopener">Las Vegas Monorail — official ticket page</a></li>
+        <li><a href="https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html" target="_blank" rel="noopener">Fountains of Bellagio — official schedule</a></li>
+        <li><a href="https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu" target="_blank" rel="noopener">Restaurant Guy Savoy — official menu (prices)</a></li>
+      </ul>
+      <p class="text-muted">Checked on 2026-11-25 by session fd60d57e. Verified datasets: <code>data/michelin.json</code>, <code>data/hotel-ranking.json</code>, <code>data/flags.json</code>.</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Vegas1 - Las Vegas Vacation Planning. All data verified from official sources.</p>
+      <p><a href="../index.html">Home</a> | <a href="questions.html">Questions &amp; Missing Information</a> | <a href="suggestions.html">Site Improvement Suggestions</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobileMenuBtn')?.addEventListener('click', function() {
+      const nav = document.getElementById('mainNav');
+      nav.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
