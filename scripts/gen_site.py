@@ -184,9 +184,10 @@ def build_index():
 <section class="panel callout">
   <h2>If you read only one row</h2>
   <p><strong>Desert Rose Resort</strong> — {money(922)} for seven nights, 9.1 guest score, a 646 ft² one-bedroom
-  suite with a king bed and a private bathroom, <em>no resort fee</em>, and a 15-minute walk to the centre-Strip
-  restaurant cluster. It is the only property that is simultaneously cheap, well-rated and correctly bedded.
-  The catch is that it is a low-rise condo hotel with no casino — <a href="hotels.html">Hotels</a> explains the trade.</p>
+  suite with a full kitchen, a king bed and a private bathroom, <em>no resort fee</em>, and a 15–20 minute walk to
+  the Joël Robuchon and L'Atelier rooms at MGM Grand. It is the only property that is simultaneously cheap,
+  well-rated and correctly bedded. The catch is that it is a low-rise condo hotel with no casino, set one
+  block off the Strip — <a href="hotels.html">Hotels</a> explains the trade.</p>
 </section>
 """
     return page("index.html", "Las Vegas, seven nights, 2027",
@@ -295,6 +296,11 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
             f'<td class="tiny">{e(p["note"])}</td></tr>'
             for p in h["prices"]
         )
+        unverified = (
+            ""
+            if h.get("official_verified") == "yes"
+            else ' <span class="tinymuted">(not fetched — may have moved)</span>'
+        )
         flags = ""
         if h["flags"]:
             flags = f'<p class="flagline">⚑ {", ".join(e(f) for f in h["flags"])} — see <a href="sources.html#flags">flags</a></p>'
@@ -307,12 +313,13 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
     <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody>{plist}</tbody>
   </table>
-  <p class="tiny">Bed: {e(h['bed'])} · private bathroom: {'yes' if h['private_bath'] else 'not stated'}</p>
+  <p class="tiny">Bed: {e(h['bed'])} · private bathroom: {'yes' if h['private_bath'] else 'not stated'}
+   {('· ' + e(h['address'])) if h.get('address') else ''}</p>
   <p>{e(h['notes'])}</p>
   {flags}
   <p class="links">
-    <a href="{e(h['official_url'])}" target="_blank" rel="noopener">Official</a>
-    <a href="{e(h['booking_url'])}" target="_blank" rel="noopener">Price source</a>
+    <a href="{e(h['official_url'])}" target="_blank" rel="noopener">Official</a>{unverified}
+    <a href="{e(h['booking_url'])}" target="_blank" rel="noopener">Price source ✓</a>
   </p>
 </article>""")
 
@@ -354,6 +361,10 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <h2>Every hotel, with both price bases</h2>
   <p>Booking.com search totals generally exclude resort fee and local tax. Where a property publishes its own
   rate, both figures are shown rather than one.</p>
+  <p class="note"><strong>Link honesty:</strong> a "Price source ✓" link is a Booking.com URL this session
+  actually fetched. An "Official" link without a tick points at the property's own domain but was not fetched,
+  so it is marked <em>not fetched — may have moved</em> rather than presented as verified. Four of the 32 were
+  fetched and confirmed (Desert Rose, LINQ, Palms Place, The Venetian).</p>
   <div class="hotels">{''.join(cards)}</div>
 </section>
 
@@ -861,6 +872,7 @@ table.matrix td.near{background:rgba(122,162,255,.10);color:#cfdcff}
 table.matrix td.far{color:var(--muted)}
 
 .tiny{font-size:.79rem;color:var(--muted);line-height:1.45}
+.tinymuted{font-size:.74rem;color:#5f6c82}
 .note{font-size:.82rem;color:var(--muted);border-left:2px solid var(--line);padding-left:10px}
 .muted{color:#5f6c82}
 .warn{color:var(--warn)}

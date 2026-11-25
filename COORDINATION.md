@@ -108,6 +108,37 @@ had branched from `9b8bcfa` (the empty repo) and did not know it existed.
 files. Rule 6 (single integration session) was already broken before this session discovered it.
 Recorded here rather than silently overwritten.
 
+## Third-session merge — 2026-11-25 (later)
+
+A **third** Arena session (`arena/126d963c-vegas1`, plus commits from `arena/0c9983d6-vegas1`) merged to
+`main` while this branch was open. Rather than re-doing its work, this branch **merged `origin/main` and
+kept its verified findings**, resolving six conflicts by hand:
+
+**What the other sessions found that this branch had wrong or missing — now integrated:**
+
+| Finding | Effect |
+|---|---|
+| **Michael Mina is "Temporarily closed"** — its own Bellagio page reads *"Monday to Sunday: Closed"* with a *Temporarily closed* label and no reopen date | The $590++ row is now marked `Closed — see note`. The Bellagio hotel note no longer sells the property on a restaurant that is not serving. Executive summary warns against planning around it. |
+| **Route 203 correction** — Chinatown *is* reachable from the north Strip by bus; RTC 203 decants at Spring Mountain/Decatur in 14 min | north→chinatown corrected 20 → **34 min**. This **lowered** north-Strip hotels from 23 to **17** restaurants inside 20 min, and raised south-Strip. Rankings changed as a result — the model was wrong before and is less wrong now. |
+| **Joël Robuchon hours** — Tue–Sat 5:00–9:30 PM, closed Sun/Mon, business formal, no under-6s | Filled, `verified: yes`. Tue–Sat is the only booking window. |
+| **Partage hours** — Tue–Sat 5–9 PM (on `/contact`, not `/restaurant`) | Filled. Strict no-vegan/no-coeliac policy confirmed. |
+| **Sparrow + Wolf** — publishes no hours anywhere | Correctly left blank (F-25) rather than taken from a reseller. |
+| **Sample-date banners** — MGM pages show 2026-dated banners | Ignored and called out (F-26). Carrying one into a 2027 plan would be a silent error. |
+
+**What this branch contributed that the others did not have:** the four-week dated price matrix, the
+20-minute column that makes the ranking meaningful, the 32-hotel dataset, and the hotel-link verification
+(F-27/F-28, Q-13, S-13).
+
+**Numbering resolved:** the other session used F-21…F-26; this branch's two hotel-link flags were
+renumbered **F-27/F-28**, and its hotel-links question became **Q-13** (both sides had independently
+created a "Q-11"). The Bellagio note's `F-22` reference was corrected to `F-23`.
+
+**Consequence to flag for review:** after the Route 203 fix, **no hotel reaches all 24 restaurants inside
+20 minutes** — the best is now 24 → 21 (south Strip) / 24 (west-near). The transit table in
+`data/transit.json` is not symmetric (north→chinatown 34, chinatown→north 20), which is intentional: a bus
+that only runs one way on that stretch, plus a walk at the anchored end. The scoring script reads the
+matrix as written, so this asymmetry is safe, but anyone re-deriving it should know it is by design.
+
 ## Requests between sessions
 
 | Date | From | To (owner) | Request | Status |

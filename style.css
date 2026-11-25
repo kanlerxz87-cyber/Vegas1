@@ -81,6 +81,7 @@ table.matrix td.near{background:rgba(122,162,255,.10);color:#cfdcff}
 table.matrix td.far{color:var(--muted)}
 
 .tiny{font-size:.79rem;color:var(--muted);line-height:1.45}
+.tinymuted{font-size:.74rem;color:#5f6c82}
 .note{font-size:.82rem;color:var(--muted);border-left:2px solid var(--line);padding-left:10px}
 .muted{color:#5f6c82}
 .warn{color:var(--warn)}
