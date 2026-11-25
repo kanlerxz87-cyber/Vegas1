@@ -541,6 +541,23 @@ def build_transit():
 </section>
 
 <section class="panel">
+  <h2>Correction: Chinatown is reachable by bus</h2>
+  <p>An earlier version of this matrix recorded Chinatown / Spring Mountain Rd as reachable only by car or
+  rideshare. <strong>That was wrong.</strong> RTC <strong>Route 203</strong> runs the length of Spring Mountain Road,
+  and its published timetable carries a timed stop at <strong>Las Vegas Blvd</strong> — the north end of the Strip,
+  where Wynn, Encore, Resorts World and SAHARA are.</p>
+  <p>This matters more than any other single number on this site, because <strong>seven of the 24 MICHELIN listings
+  sit on that one road</strong>: Partage, Kabuto, KAME Omakase, Lamaii, Sparrow + Wolf, Pho Ga Bac Bac and YEN Viet
+  Kitchen. Nearly a third of the guide is on a road that turns out to have a bus.</p>
+  <p>The timetable's eastbound runs give <strong>Decatur to Las Vegas Blvd in 14 minutes</strong>. Adding a walk to the
+  stop, a platform wait and a walk at the far end puts the north Strip at about <strong>34 minutes</strong> from
+  Chinatown door to door — comfortably inside the brief's one-hour limit, from a hotel with no Monorail station.</p>
+  <p>This is the <strong>only published travel time in the whole model</strong>. Every other minute figure here is an
+  estimate built from station lists and route maps, and is labelled as one. Verify the timetable yourself:
+  <a href="https://rtcws.rtcsnv.com/routePDF/203.pdf" target="_blank" rel="noopener">RTC Route 203 timetable (PDF)</a>.</p>
+</section>
+
+<section class="panel">
   <h2>Estimated one-way minutes between zones</h2>
   <p><strong>These are estimates, not timetables.</strong> No official source publishes door-to-door times; these are
   built from the official station lists and route maps and rounded to five minutes.</p>

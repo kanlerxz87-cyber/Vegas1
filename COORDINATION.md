@@ -11,6 +11,7 @@ then commit and push that claim immediately.
 | Session | Started | Scope now | Branch |
 |---------|---------|-----------|--------|
 | arena-edcfa7a0-vegas1 | 2026-11-25 | T02–T11 — research complete; writing `data/*.json`, building `docs/`, publishing | `arena/edcfa7a0-vegas1` |
+| arena-0c9983d6-vegas1 | 2026-11-25 | Verification pass on transit: added RTC Route 203, corrected the Chinatown reachability claim | `arena/0c9983d6-vegas1` |
 
 > **Status note:** T02–T08 were prematurely marked `done` on first write. As of this commit the research
 > is complete in-session but **no `data/` files exist yet**, so all tasks are `in progress` until the JSON
@@ -50,6 +51,35 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 | T09 | Static site build (mobile-first dashboard) | done | arena-edcfa7a0-vegas1 | `docs/**`, `scripts/**` | No framework, no external CDN calls, no build step at deploy time. |
 | T10 | Verification pass + Flagged for Review page | done | arena-edcfa7a0-vegas1 | `docs/verification.html`, `FLAGS.md` | |
 | T11 | Integration + GitHub Pages publish | done | arena-edcfa7a0-vegas1 | `docs/**`, Pages settings | Single integrating session for this effort; no other session active. |
+
+## Correction record — RTC Route 203 — 2026-11-25
+
+Session `arena-0c9983d6-vegas1` found that this dataset recorded **Chinatown / Spring Mountain Rd
+as reachable only by car or rideshare**. That was wrong, and it was the most consequential error in
+the model, because **seven of the 24 MICHELIN listings sit on that road**.
+
+RTC **Route 203** (Spring Mountain / Desert Inn / Lamb) runs the length of Spring Mountain Road.
+Its [official timetable](https://rtcws.rtcsnv.com/routePDF/203.pdf) carries a timed stop at
+**Las Vegas Blvd**, and the eastbound runs give **Decatur → Las Vegas Blvd in 14 minutes**.
+
+Changes made:
+
+| File | Change |
+|---|---|
+| `data/transit.json` | Added Route 203 as a fourth system, with its verified timepoints and published timing. |
+| `data/transit.json` | `north-strip → chinatown` corrected from **20 to 34** minutes, built from the published 14-minute run plus a 7-minute walk, an 8-minute wait and a 5-minute walk at the far end. |
+| `scripts/gen_site.py` | Added a "Correction: Chinatown is reachable by bus" panel to the transit page. |
+| `FLAGS.md` | Added **F-21** recording the correction. |
+| `README.md` | Added the correction to the findings. |
+
+**Why the time went up while the claim got better:** the old 20-minute figure was an estimate with
+no source. The new 34-minute figure is anchored to a published stop-to-stop timing. It is slower and
+more defensible, which is the right trade for a study whose whole premise is traceability.
+
+Note this is the **only published travel time in the model**. Every other minute value remains an
+estimate, and F-20 still says so.
+
+---
 
 ## Merge record — 2026-11-25
 
