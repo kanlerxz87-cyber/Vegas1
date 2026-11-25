@@ -185,7 +185,7 @@
       "price_tier_michelin": "$$$$",
       "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/michael-mina-1250931",
       "official_site": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
-      "hours": {"text": "Tue–Sat: 5:00 PM–9:30 PM (closed Sun–Mon)", "source": "OpenTable (Bellagio's official reservation partner; Bellagio site links it)", "url": "https://www.opentable.com/r/michael-mina-bellagio-las-vegas", "verified": true, "checked_on": "2026-11-25"},
+      "hours": {"text": "TEMPORARILY CLOSED per official Bellagio page (checked 2026-11-25; seasonal closure blocks published: 22–30 Nov; 6–8, 13–15, 20–22 Dec 2026). Earlier OpenTable listing showed Tue–Sat 5:00 PM–9:30 PM — stale, do not use.", "source": "Bellagio official page (corroborates integration session's verification); OpenTable listing was stale", "url": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html", "verified": true, "checked_on": "2026-11-25"},
       "price_couple": {"exact": "", "estimate_range": "", "note": "No official price found — unverified", "verified": false},
       "phone": "(702) 693-8199",
       "social": {"instagram": "", "facebook": "", "youtube": "", "tiktok": ""}

@@ -1,148 +1,97 @@
 {
   "meta": {
-    "task": "T7 Line-by-line repo review — irregularities flagged for review",
+    "task": "S2 (fd60d57e): supplementary line-by-line review pass — v2, retargeted at current main",
     "owner_session": "fd60d57e",
     "last_updated": "2026-11-25",
-    "note": "Every item below was checked against an official or primary source on 2026-11-25. Statuses: needs review / corrected-in-data / verified-ok. This file feeds pages/flagged.html (the site's Flagged for Review page). Items do not block publication per the coordination protocol."
+    "note": "v1 of this file reviewed the first published site (commit 0d0b1d5, session arena-d6d3b8f5-vegas1). That site has since been superseded and archived intact to archive/2026-11-25-earlier-session/ by the integration session. v1 flags aimed at archived files are preserved below as a record. v2 flags target the live site (main @ acde2fc era). Statuses: needs review / resolved / superseded / verified-ok.",
+    "cross_reference": "Primary flags for the live site live in FLAGS.md (F-01..F-26, owned by the integration session). This file ADDS independently verified values and confirmations; nothing in an owned file was edited."
   },
-  "flags": [
+  "flags_v2_live_site": [
     {
-      "id": "F01",
-      "file": "data/michelin-restaurants.json + pages/restaurants.html",
-      "severity": "high",
-      "status": "corrected-in-data",
-      "finding": "10 of 24 `michelin_link` URLs use guide slugs that do not match the official MICHELIN Guide URL list (e.g. `/restaurant/joel-robuchon`, `/restaurant/guy-savoy`, `/restaurant/bouchon`, `/restaurant/wing-lei`). The official list page (fetched 2026-11-25) shows exact slugs with numeric suffixes or different naming.",
-      "evidence": "Official list page https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurants shows: restaurant-de-joel-robuchon, l-atelier-de-joel-robuchon-las-vegas, guy-savoy-las-vegas, esther-s-kitchen, bouchon-1250929, estiatorio-milos-1250934, michael-mina-1250931, mott-32-1250930, partage-1201408, wing-lei-1250924.",
-      "correction_available_at": "data/michelin.json (field `guide_url` per restaurant)",
-      "requested_action": "Integration session should replace the 10 slugs with the official ones when merging restaurants data."
-    },
-    {
-      "id": "F02",
-      "file": "data/michelin-restaurants.json",
+      "id": "S-01",
+      "file": "data/restaurants.json (owned by arena-edcfa7a0-vegas1)",
       "severity": "medium",
-      "status": "corrected-in-data",
-      "finding": "Hours, days-open, exceptions, and social links are blank for all 24 restaurants ('Blank - unverified'), although official hotel/restaurant sites publish them.",
-      "evidence": "Verified hours now in data/michelin.json from mgmgrand.mgmresorts.com (Robuchon Tue–Sat 5–9:30 PM; L'Atelier Mon+Thu–Sun 5–9:30 PM), caesars.com (Guy Savoy Tue–Sat from 5 PM), cosmopolitanlasvegas.mgmresorts.com (é Tue–Sat 5:30–8:30 PM; China Poblano Mon–Thu 11–10, Fri 11–10:30, Sat 10–10:30, Sun 10–10), venetianlasvegas.com (Bouchon, COTE, Milos, Mott 32 with Thanksgiving exceptions), wynnlasvegas.com (Wing Lei Thu/Sun/Mon 5:30–9:30, Fri–Sat to 10, closed Tue–Wed), partage.vegas, kabutolv.com, soulbellybbq.com, mott32.com.",
-      "requested_action": "Merge data/michelin.json hours/socials into pages/restaurants.html."
+      "status": "fill-available",
+      "finding": "Five restaurants have blank hours. fd60d57e verified 4 of them from public/official sources on 2026-11-25; values below await integration.",
+      "fills": [
+        {"name": "Sparrow + Wolf", "hours": "Daily 4:30 PM–10:00 PM (business 'hours updated' notice)", "source": "https://www.yelp.com/biz/sparrow-wolf-las-vegas (corroborated by wanderlog listing of official site sparrowandwolflv.com)", "confidence": "corroborated-official-adjacent"},
+        {"name": "Esther's Kitchen", "hours": "Lunch Mon–Fri 11 AM–3 PM; Sat–Sun brunch 10 AM–3 PM; dinner daily 5–11 PM", "source": "https://restaurantguru.com/Esthers-Kitchen-Las-Vegas + https://everyday.vegas/hidden-gems/esthers-kitchen/ (official site estherslv.com has no hours block — matches FLAGS.md F-07)", "confidence": "corroborated-official-adjacent"},
+        {"name": "Yen Viet Kitchen", "hours": "Mon + Wed–Sun 10 AM–9 PM; Tue closed. DISCREPANCY: TripAdvisor lists 7 PM close — call (702) 293-4949 to confirm", "source": "https://www.vegasnearme.com/restaurants/yen-viet-kitchen + official site yenvietkitchen.com referenced there", "confidence": "conflicting-close-time"},
+        {"name": "KAME Omakase", "hours": "Two seatings nightly 5:30 PM & 8:00 PM, reservations only; lunch omakase Fri–Sun 12:30–2:20 PM; Monday open/closed conflicts between Yelp snapshots — confirm by phone (702) 771-0122", "source": "https://www.yelp.com/biz/kame-omakase-las-vegas-4 (official site sushikame.com is a JS shell — matches FLAGS.md F-04)", "confidence": "partial"}
+      ]
     },
     {
-      "id": "F03",
-      "file": "data/michelin-restaurants.json",
+      "id": "S-02",
+      "file": "data/restaurants.json",
       "severity": "medium",
-      "status": "corrected-in-data",
-      "finding": "Social media links blank for all restaurants. Verified Instagram accounts exist for at least 7 venues.",
-      "evidence": "instagram.com/ebyjoseandres (é by José Andrés), instagram.com/joelrobuchon.lasvegas (Robuchon), instagram.com/cotekoreansteakhouse (COTE), instagram.com/mott32vegas (Mott 32), instagram.com/estherskitchenlv (Esther's), instagram.com/lamaiilv (Lamaii); Wynn property channels instagram.com/wynnlasvegas + tiktok.com/@wynnlasvegas (from wynnlasvegas.com schema).",
-      "correction_available_at": "data/michelin.json",
-      "requested_action": "Merge into restaurants page."
+      "status": "fill-available",
+      "finding": "All 24 restaurants have blank Instagram fields (FLAGS.md F-19). fd60d57e verified 7 handles on 2026-11-25:",
+      "fills": [
+        {"name": "é by José Andrés", "instagram": "https://www.instagram.com/ebyjoseandres/"},
+        {"name": "Joël Robuchon", "instagram": "https://www.instagram.com/joelrobuchon.lasvegas/"},
+        {"name": "COTE Korean Steakhouse", "instagram": "https://www.instagram.com/cotekoreansteakhouse/"},
+        {"name": "Mott 32", "instagram": "https://www.instagram.com/mott32vegas/"},
+        {"name": "Esther's Kitchen", "instagram": "https://www.instagram.com/estherskitchenlv"},
+        {"name": "Lamaii", "instagram": "https://www.instagram.com/lamaiilv"},
+        {"name": "Wing Lei / Wynn property (TikTok)", "instagram": "https://www.instagram.com/wynnlasvegas/ | tiktok: https://www.tiktok.com/@wynnlasvegas (published in wynnlasvegas.com page schema)"}
+      ]
     },
     {
-      "id": "F04",
-      "file": "data/michelin-restaurants.json",
-      "severity": "low",
-      "status": "needs review",
-      "finding": "Note text says 'Bib Gourmand suggests ~$50 per person'. Michelin does not define a fixed dollar amount for Bib Gourmand in the U.S.; the official definition is 'good quality, good value cooking' (see official guide page filter labels).",
-      "evidence": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurants (Bib Gourmand label: 'Good quality, good value cooking').",
-      "requested_action": "Remove the invented dollar figure or label it as editorial estimate."
-    },
-    {
-      "id": "F05",
-      "file": "data/michelin-restaurants.json",
-      "severity": "low",
-      "status": "verified-ok",
-      "finding": "Kame official_link kameomakase.com — checked 2026-11-25: it resolves/redirects to the official site sushikame.com. Canonical URL is https://sushikame.com/.",
-      "evidence": "fetch of https://www.kameomakase.com/ returns the sushikame.com site.",
-      "requested_action": "Optional: point link to sushikame.com directly."
-    },
-    {
-      "id": "F06",
-      "file": "data/michelin-restaurants.json",
-      "severity": "low",
-      "status": "needs review",
-      "finding": "Two Venetian official_link paths differ from the canonical page paths: /restaurants/estiatorio-milos.html (fetch failed 2026-11-25) vs canonical /dining/restaurants/estiatorio-milos.html (verified loads); /restaurants/bouchon.html resolved (redirect) but canonical is /dining/restaurants/bouchon.html.",
-      "evidence": "fetch_page results of both URL variants on 2026-11-25.",
-      "requested_action": "Use canonical /dining/restaurants/… paths."
-    },
-    {
-      "id": "F07",
-      "file": "data/hotels.json",
-      "severity": "medium",
-      "status": "needs review",
-      "finding": "Resort-fee figures (Caesars $54.95, Bellagio $50, LINQ $49.95, MGM $39–45) and the claim 'Queen rooms available' per hotel are not yet verified against the official hotel sites; pricing from Super.com/Priceline is third-party (labelled 'Partially'). The queen-bed requirement is a hard trip constraint and should be verified on official room pages.",
-      "evidence": "No official source URL was recorded for the fee/bed claims in the file. One positive check: Bellagio's official site confirms a 'Fountain View Queen' room (bellagio.mgmresorts.com/en/hotel/resort-queen-room-fountain-view.html, fetched 2026-11-25).",
-      "requested_action": "Verify each resort fee on official hotel fee pages and each room type on official room pages; leave blank where not published."
-    },
-    {
-      "id": "F08",
-      "file": "data/booking-analysis.json + questions-answers.md",
-      "severity": "medium",
-      "status": "corrected-in-data",
-      "finding": "Monorail 24-hour pass listed as $13; official ticket page lists $13.95 (single ride $5.75 matches).",
-      "evidence": "Official ticket selection page https://tix.lvmonorail.com/ (fetched 2026-11-25): Single Ride $5.75, 24-Hour Pass $13.95.",
-      "requested_action": "Update to $13.95 (or cite date-checked source)."
-    },
-    {
-      "id": "F09",
-      "file": "data/booking-analysis.json + questions-answers.md",
-      "severity": "low",
-      "status": "verified-ok",
-      "finding": "RTC Deuce fares $6 (2-hour) / $8 (24-hour) and 24/7 Deuce operation — matches RTC's official fare page.",
-      "evidence": "RTC official fare page https://rtcws.rtcsnv.com/mobile/geoFares.html: Strip/Downtown 2-Hour Pass $6, 24-Hour Pass $8 (fetched 2026-11-25); Deuce 24/7 corroborated by current guides.",
-      "requested_action": "None (verified)."
-    },
-    {
-      "id": "F10",
-      "file": "data/activities.json",
-      "severity": "medium",
-      "status": "corrected-in-data",
-      "finding": "Bellagio Fountains schedule is approximately right but imprecise and uncited; official page gives exact schedule and notes exceptions.",
-      "evidence": "Official page https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html (fetched 2026-11-25): Mon–Fri every 30 min 3:00 PM–7:30 PM and every 15 min 8:00 PM–midnight; Sat/Sun/holidays every 30 min 12:00 PM–7:30 PM and every 15 min 8:00 PM–midnight; free; 'Schedule may vary'; outdoor display subject to cancellation due to weather.",
-      "requested_action": "Replace activity hours with the official schedule; add exceptions (weather cancellation)."
-    },
-    {
-      "id": "F11",
-      "file": "data/activities.json",
-      "severity": "medium",
-      "status": "needs review",
-      "finding": "All activity hours, prices, and social links are blank/unverified (correctly flagged as such by the owning session). Users asked for YouTube/TikTok/Instagram links for activities — these require the same official-source verification pass used for restaurants.",
-      "evidence": "File itself states links blank; no official-source verification recorded.",
-      "requested_action": "Dedicated pass over activity official sites (this is a suggestion candidate for a follow-up session task; not owned by fd60d57e to avoid scope overlap)."
-    },
-    {
-      "id": "F12",
-      "file": "data/hotels.json (whole file)",
-      "severity": "high",
-      "status": "needs review",
-      "finding": "The user's core requirement — 'rank hotels by the number of Michelin restaurants within 1 hour of travel by subway or bus' — is not implemented anywhere: hotels.json lists nearby restaurants qualitatively but no ranking exists.",
-      "evidence": "No ranking field/table in data/hotels.json or pages/hotels.html; also note Las Vegas has NO subway (bus/monorail only) — already correctly noted by owning session.",
-      "correction_available_at": "data/hotel-ranking.json (created by fd60d57e: ranked table with in-hotel / ≤15-min walk / ≤1-hour transit counts, method documented, estimates flagged)",
-      "requested_action": "Integration session should surface the ranking on pages/hotels.html."
-    },
-    {
-      "id": "F13",
-      "file": "data/booking-analysis.json",
-      "severity": "low",
-      "status": "needs review",
-      "finding": "Booking-window advice (30–60 days, midweek cheapest) is sourced from third-party blogs (lasvegaswonders, klook, feelingvegas, hotelpricewatch) and cannot be confirmed from an official source; the specific 'cheapest upcoming date' the user asked for cannot be determined without live date-by-date pricing.",
-      "evidence": "Sources listed in file are not official; hotel booking engines require JS and were not scrapable.",
-      "requested_action": "Keep advice clearly labelled as third-party guidance; a follow-up session should attempt date-by-date quotes closer to booking (Dec 2026–Jan 2027) and verify Presidents' Day/Valentine's Day demand factors from official calendars."
-    },
-    {
-      "id": "F14",
-      "file": "index.html",
-      "severity": "low",
-      "status": "needs review",
-      "finding": "One Quick Navigation card label contains a mojibake character ('���� Activities') — a broken multi-byte emoji in the file.",
-      "evidence": "Byte inspection of index.html Quick Navigation block.",
-      "requested_action": "Replace with the intended emoji (or plain text) — file owned by arena-d6d3b8f5-vegas1; logged as cross-file request."
-    },
-    {
-      "id": "F15",
+      "id": "S-03",
       "file": "data/michelin.json (fd60d57e)",
       "severity": "medium",
-      "status": "needs review",
-      "finding": "Prices for two adults remain unverified for most venues (flagged in the file): only Guy Savoy has officially published per-item prices ($100–$290 à la carte, effective 2026-11-05) and the Krug Chef's Table ($1,500/pp). é's 2026 price (~$295–$350/pp) is third-party only. Robuchon and L'Atelier do not publish menu prices on their official pages.",
-      "evidence": "Official menu page https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu (fetched 2026-11-25); MGM official restaurant pages do not show prices.",
-      "requested_action": "Call restaurants directly or check reservation platforms at booking time; keep blanks where unverified."
+      "status": "resolved-here",
+      "finding": "DISCREPANCY found and resolved in fd60d57e's own dataset: Michael Mina hours were recorded from OpenTable (Tue–Sat 5–9:30 PM), but the official Bellagio page shows the restaurant 'Temporarily closed' with seasonal closure blocks (22–30 Nov; 6–8, 13–15, 20–22 Dec 2026). data/michelin.json corrected to match the official page; agreeing with the integration session's flag.",
+      "evidence": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html (per integration session's verification commit 6481050); OpenTable listing was stale."
+    },
+    {
+      "id": "S-04",
+      "file": "data/restaurants.json",
+      "severity": "medium",
+      "status": "fill-available",
+      "finding": "Guy Savoy price basis verified from the official menu page (à la carte dishes $100–$290, effective 2026-11-05; Krug Chef's Table 10-course $1,500/pp exact; cheese cart $60). Usable for the price_2adults column.",
+      "evidence": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu (fetched 2026-11-25)"
+    },
+    {
+      "id": "S-05",
+      "file": "data/activities.json",
+      "severity": "medium",
+      "status": "fill-available",
+      "finding": "Fills FLAGS.md F-18 (Fountains schedule could not be verified): official schedule fetched 2026-11-25 — Mon–Fri every 30 min 3:00 PM–7:30 PM and every 15 min 8:00 PM–midnight; Sat/Sun & holidays every 30 min from 12:00 PM and every 15 min 8:00 PM–midnight; free; 'schedule may vary'; outdoor display subject to cancellation due to weather.",
+      "evidence": "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html"
+    },
+    {
+      "id": "S-06",
+      "file": "data/transit.json",
+      "severity": "low",
+      "status": "verified-ok",
+      "finding": "Fare figures re-confirmed against official pages: RTC Strip $4 single / $6 2-hour / $8 24-hour (rtcws.rtcsnv.com/mobile/geoFares.html); Monorail e-ticket single $5.75 and 24-hour $13.95 (tix.lvmonorail.com). Consistent with the live site.",
+      "evidence": "official fare pages fetched 2026-11-25"
+    },
+    {
+      "id": "S-07",
+      "file": "data/hotel-ranking.json (fd60d57e)",
+      "severity": "low",
+      "status": "resolved-here",
+      "finding": "fd60d57e's hotel ranking summary duplicates a metric the integration session already computes per hotel (michelin_within_60 in data/hotels.json, built from data/transit.json). Kept as a readable ranking/method document; meta notes the primary source. No conflict.",
+      "evidence": "data/transit.json meta + scripts/build.py"
     }
+  ],
+  "flags_v1_record": [
+    {"id": "F01", "target": "archived: data/michelin-restaurants.json", "finding": "10 of 24 guide URLs used non-official slugs", "status": "superseded (file archived; live file uses official URLs)"},
+    {"id": "F02", "target": "archived: data/michelin-restaurants.json", "finding": "all hours blank despite official sources", "status": "superseded (live file has hours; 5 remaining blanks → S-01)"},
+    {"id": "F03", "target": "archived: data/michelin-restaurants.json", "finding": "social links blank", "status": "superseded (live file adds 45 YouTube links; IG gaps → S-02)"},
+    {"id": "F04", "target": "archived: data/michelin-restaurants.json", "finding": "'Bib Gourmand ≈$50/pp' editorialism", "status": "superseded (live FLAGS.md F-05 handles the $50 figure correctly as secondary-source context)"},
+    {"id": "F05", "target": "Kame Omakase domain", "finding": "kameomakase.com resolves to official sushikame.com", "status": "verified-ok (matches live FLAGS.md F-04)"},
+    {"id": "F06", "target": "archived: Venetian links", "finding": "canonical /dining/restaurants/… paths", "status": "superseded"},
+    {"id": "F07", "target": "live: data/hotels.json", "finding": "queen-bed-or-larger must be confirmed per official room page before booking; booking lowest-rate rooms can be 'room assigned on arrival' (live FLAGS.md F-11 already covers the booking.com side)", "status": "needs review"},
+    {"id": "F08", "target": "live: transit fares", "finding": "monorail 24-h pass $13.95 official", "status": "resolved (live site consistent)"},
+    {"id": "F09", "target": "live: RTC fares", "finding": "$6/$8 Deuce confirmed on RTC official fare page", "status": "verified-ok"},
+    {"id": "F10", "target": "live: Fountains schedule", "finding": "official schedule obtained (see S-05)", "status": "resolved (fill available for FLAGS.md F-18)"},
+    {"id": "F11", "target": "live: activity hours/socials", "finding": "activity verification pass still open", "status": "needs review (matches live site's own flags)"},
+    {"id": "F12", "target": "hotel ranking requirement", "finding": "ranking existed nowhere at review time", "status": "resolved (integration session now computes michelin_within_60 per hotel; fd60d57e ranking kept as summary — S-07)"},
+    {"id": "F13", "target": "booking-window advice", "finding": "third-party guidance; specific cheapest week now backed by dated captures in data/price-windows.json; Presidents' Day (Mon 2027-02-15) + Valentine's Day weekend demand still worth checking against official event calendars before booking", "status": "partially resolved"},
+    {"id": "F14", "target": "archived: index.html mojibake", "finding": "broken emoji byte", "status": "superseded (site regenerated)"},
+    {"id": "F15", "target": "prices for two adults", "finding": "verified price points: Guy Savoy à la carte $100–$290 + Krug $1,500/pp (official menu); Michael Mina $295++pp (official, per integration session); é ~$295–$350/pp third-party only", "status": "partially resolved (S-04)"}
   ]
 }
