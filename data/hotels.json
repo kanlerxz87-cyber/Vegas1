@@ -1,0 +1,1000 @@
+{
+  "meta": {
+    "captured": "2026-11-25",
+    "currency": "USD",
+    "basis": "7 nights, 2 adults, 1 room, Las Vegas (NV), prices as displayed by Booking.com search results for that exact date range. Booking.com '7 nights' totals generally EXCLUDE the property resort fee and local tax unless the rate block says otherwise; Wynn/Encore property pages quote room + $55/night resort fee but exclude 13.38% tax. Never compare the two bases directly.",
+    "room_requirement": "Private bathroom AND queen-or-larger (or equivalent). 'king or queen' is satisfied by suites with 1 king + 1 sofa bed.",
+    "price_source_pattern": "https://www.booking.com/hotel/us/<slug>.html?checkin=YYYY-MM-DD&checkout=YYYY-MM-DD&group_adults=2&no_rooms=1&selected_currency=USD",
+    "proximity_rule": "michelin_within_60 is the user's literal metric (count of the 24 Michelin restaurants reachable in ≤60 min by RTC bus / Monorail / Vegas Loop). On the Strip it saturates at 24 for every hotel, so michelin_within_20 is used as the ranking tiebreaker. See data/transit.json for the zone matrix — every minute figure is an ESTIMATE derived from official route maps, never an official running time.",
+    "cheapest_note": "Cheapest verified 7-night total in this dataset is LINQ at $564 for 2027-02-15→02-22, but that is a 'Room Type Assigned on Arrival' rate — the bed size is not guaranteed until check-in.",
+    "housekeeping_note": "Hotel rows are unchanged by the 2026-11-25 verification pass; the only structural addition is this note. See FLAGS.md F-21 to F-25 for restaurant-level corrections found in the same pass."
+  },
+  "hotels": [
+    {
+      "id": "nobu-caesars",
+      "name": "Nobu Hotel at Caesars Palace",
+      "tier": "luxury",
+      "zone": "center-strip",
+      "stars": 5,
+      "guest_score": 7.9,
+      "reviews": null,
+      "room": "Nobu room (Booking lowest rate)",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 1125,
+          "per_night": 161,
+          "note": "Lowest displayed rate band $1,125–$1,327"
+        },
+        {
+          "window": "2027-03-08→2027-03-15",
+          "total_7n": 1750,
+          "per_night": 195,
+          "note": "Up +56% vs the February week"
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 21,
+      "official_url": "https://www.caesars.com/caesars-palace/hotel/nobu-hotel",
+      "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
+      "verified": "yes",
+      "flags": [],
+      "notes": "Cheapest five-star brand on the Strip for this week. Located inside Caesars Palace, so it inherits Caesars' centre-Strip position and monorail access."
+    },
+    {
+      "id": "caesars-palace",
+      "name": "Caesars Palace",
+      "tier": "luxury",
+      "zone": "center-strip",
+      "stars": 5,
+      "guest_score": 7.9,
+      "reviews": null,
+      "room": "Lowest displayed room",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 1580,
+          "per_night": 226,
+          "note": ""
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 21,
+      "official_url": "https://www.caesars.com/caesars-palace",
+      "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
+      "verified": "yes",
+      "flags": [],
+      "notes": "Two Michelin-starred restaurants in-building-adjacent range: Guy Savoy is on site; Joël Robuchon and L'Atelier are a 10-minute ride south."
+    },
+    {
+      "id": "trump-international",
+      "name": "Trump International Hotel Las Vegas",
+      "tier": "luxury",
+      "zone": "north-strip",
+      "stars": 5,
+      "guest_score": 9.1,
+      "reviews": null,
+      "room": "Lowest displayed room",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 1661,
+          "per_night": 237,
+          "note": ""
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 17,
+      "official_url": "https://www.trumphotels.com/las-vegas",
+      "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
+      "verified": "yes",
+      "flags": [],
+      "notes": "Highest guest score (9.1) of any property under $2,000 for this week. Non-gaming, no casino floor, set one block west of the Strip."
+    },
+    {
+      "id": "cromwell",
+      "name": "The Cromwell",
+      "tier": "luxury",
+      "zone": "center-strip",
+      "stars": 5,
+      "guest_score": 7.4,
+      "reviews": null,
+      "room": "Lowest displayed room",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 1978,
+          "per_night": 283,
+          "note": ""
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 21,
+      "official_url": "https://www.caesars.com/cromwell",
+      "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
+      "verified": "yes",
+      "flags": [],
+      "notes": "Smallest, adults-oriented Caesars property at Flamingo Rd. Lowest guest score (7.4) of the five-star group — the price is location, not service."
+    },
+    {
+      "id": "w-las-vegas",
+      "name": "W Las Vegas",
+      "tier": "luxury",
+      "zone": "south-strip",
+      "stars": 5,
+      "guest_score": 7.8,
+      "reviews": null,
+      "room": "Lowest displayed room",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 2493,
+          "per_night": 356,
+          "note": ""
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 15,
+      "official_url": "https://www.marriott.com/en-us/hotels/laswh-w-las-vegas/overview/",
+      "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
+      "verified": "yes",
+      "flags": [],
+      "notes": ""
+    },
+    {
+      "id": "crockfords",
+      "name": "Crockfords Las Vegas (Resorts World)",
+      "tier": "luxury",
+      "zone": "north-strip",
+      "stars": 5,
+      "guest_score": 9.0,
+      "reviews": null,
+      "room": "Lowest displayed room",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 2596,
+          "per_night": 371,
+          "note": ""
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 17,
+      "official_url": "https://www.rwlasvegas.com/hotels/crockfords/",
+      "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
+      "verified": "yes",
+      "flags": [],
+      "notes": "Shares Resorts World with Stubborn Seed and has a Sahara Monorail stop plus a Vegas Loop station on site."
+    },
+    {
+      "id": "vdara",
+      "name": "Vdara Hotel & Spa",
+      "tier": "luxury",
+      "zone": "center-strip",
+      "stars": 5,
+      "guest_score": 8.1,
+      "reviews": null,
+      "room": "Lowest displayed suite",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 2888,
+          "per_night": 413,
+          "note": ""
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 21,
+      "official_url": "https://www.mgmresorts.com/en/hotels/vdara.html",
+      "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
+      "verified": "yes",
+      "flags": [],
+      "notes": "All-suite, non-gaming, no-smoking. Walkable to Bellagio, ARIA and the Cosmopolitan dining cluster."
+    },
+    {
+      "id": "four-seasons",
+      "name": "Four Seasons Hotel Las Vegas",
+      "tier": "luxury",
+      "zone": "south-strip",
+      "stars": 5,
+      "guest_score": 9.3,
+      "reviews": null,
+      "room": "Lowest displayed room",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 2981,
+          "per_night": 426,
+          "note": ""
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 15,
+      "official_url": "https://www.fourseasons.com/lasvegas/",
+      "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
+      "verified": "yes",
+      "flags": [],
+      "notes": "Best guest score in the dataset (9.3). Sits at the top of Mandalay Bay — the quiet end of the Strip, furthest from the Michelin cluster."
+    },
+    {
+      "id": "nomad-reserve",
+      "name": "NoMad Las Vegas / The Reserve at Park MGM",
+      "tier": "luxury",
+      "zone": "center-strip",
+      "stars": 5,
+      "guest_score": 8.9,
+      "reviews": null,
+      "room": "Lowest displayed room",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 3013,
+          "per_night": 430,
+          "note": ""
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 21,
+      "official_url": "https://www.mgmresorts.com/en/hotels/nomad-las-vegas.html",
+      "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
+      "verified": "yes",
+      "flags": [],
+      "notes": ""
+    },
+    {
+      "id": "bellagio",
+      "name": "Bellagio",
+      "tier": "luxury",
+      "zone": "center-strip",
+      "stars": 5,
+      "guest_score": 8.6,
+      "reviews": 9211,
+      "room": "Spa Premier King (Mar) / lowest displayed (Feb)",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 3072,
+          "per_night": 439,
+          "note": "Black Friday deal rate; standard rate from $4,651"
+        },
+        {
+          "window": "2027-03-01→2027-03-08",
+          "total_7n": 3258,
+          "per_night": 410,
+          "note": "Accessible Premier King"
+        },
+        {
+          "window": "2027-03-15→2027-03-22",
+          "total_7n": 2544,
+          "per_night": 308,
+          "note": "Spa Premier King — cheapest Bellagio week measured"
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 21,
+      "official_url": "https://www.bellagio.com/",
+      "booking_url": "https://www.booking.com/hotel/us/bellagio.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "verified": "yes",
+      "flags": [
+        "F-13"
+      ],
+      "notes": "Michael Mina is in-building but currently closed with no published reopen date (see FLAGS.md F-22), so a Bellagio booking should be sold on its own merits rather than on that restaurant. Rate varies by room class between windows, so the three totals are not like-for-like."
+    },
+    {
+      "id": "fontainebleau",
+      "name": "Fontainebleau Las Vegas",
+      "tier": "luxury",
+      "zone": "north-strip",
+      "stars": 5,
+      "guest_score": 9.0,
+      "reviews": null,
+      "room": "Lowest displayed room",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 3201,
+          "per_night": 457,
+          "note": "Black Friday deal rate"
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 17,
+      "official_url": "https://www.fontainebleaulasvegas.com/",
+      "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
+      "verified": "yes",
+      "flags": [
+        "F-06"
+      ],
+      "notes": "Newest large resort in the dataset. Vegas Loop station on site ($7 fare band)."
+    },
+    {
+      "id": "cosmopolitan",
+      "name": "The Cosmopolitan of Las Vegas",
+      "tier": "luxury",
+      "zone": "center-strip",
+      "stars": 5,
+      "guest_score": 8.5,
+      "reviews": null,
+      "room": "Lowest displayed room",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 3433,
+          "per_night": 490,
+          "note": ""
+        },
+        {
+          "window": "2027-03-08→2027-03-15",
+          "total_7n": 2307,
+          "per_night": 275,
+          "note": "Black Friday deal rate — 33% below the February week"
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 21,
+      "official_url": "https://www.cosmopolitanlasvegas.com/",
+      "booking_url": "https://www.booking.com/hotel/us/the-cosmopolitan-of-las-vegas.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "verified": "yes",
+      "flags": [],
+      "notes": "Holds é by José Andrés (1★) and China Poblano (Bib Gourmand) under one roof — the densest Michelin per square metre on the list."
+    },
+    {
+      "id": "venetian",
+      "name": "The Venetian Resort",
+      "tier": "luxury",
+      "zone": "north-strip",
+      "stars": 5,
+      "guest_score": 9.0,
+      "reviews": null,
+      "room": "Newly Remodeled Luxury King Suite (Mar) / lowest (Feb)",
+      "bed": "king + sofa bed",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 3757,
+          "per_night": 537,
+          "note": "Luxury King Suite"
+        },
+        {
+          "window": "2027-03-08→2027-03-15",
+          "total_7n": 2407,
+          "per_night": 289,
+          "note": "Newly Remodeled Luxury King Suite, 646 ft² — 36% below February"
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 17,
+      "official_url": "https://www.venetianlasvegas.com/",
+      "booking_url": "https://www.booking.com/hotel/us/the-venetian-resort-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "verified": "yes",
+      "flags": [],
+      "notes": "Four Michelin listings inside the complex: Mott 32, COTE, Bouchon, Estiatorio Milos. All-suite, 646 ft²+ standard."
+    },
+    {
+      "id": "aria",
+      "name": "ARIA Resort & Casino",
+      "tier": "luxury",
+      "zone": "center-strip",
+      "stars": 5,
+      "guest_score": 8.1,
+      "reviews": 3011,
+      "room": "Deluxe King",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 3798,
+          "per_night": 543,
+          "note": ""
+        },
+        {
+          "window": "2027-03-15→2027-03-22",
+          "total_7n": 2507,
+          "per_night": 303,
+          "note": "Deluxe King — 34% below February"
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 21,
+      "official_url": "https://www.aria.com/",
+      "booking_url": "https://www.booking.com/hotel/us/aria-resort-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "verified": "yes",
+      "flags": [],
+      "notes": "Gymkhana is in-building. Connected by tram to Bellagio and Park MGM."
+    },
+    {
+      "id": "palazzo",
+      "name": "The Palazzo at The Venetian",
+      "tier": "luxury",
+      "zone": "north-strip",
+      "stars": 5,
+      "guest_score": 9.0,
+      "reviews": 4316,
+      "room": "Palazzo Luxury King Suite",
+      "bed": "king + sofa bed",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 3932,
+          "per_night": 562,
+          "note": ""
+        },
+        {
+          "window": "2027-03-08→2027-03-15",
+          "total_7n": 2422,
+          "per_night": 291,
+          "note": "721 ft² — 38% below February"
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 17,
+      "official_url": "https://www.palazzo.com/",
+      "booking_url": "https://www.booking.com/hotel/us/the-palazzo-resort-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "verified": "yes",
+      "flags": [],
+      "notes": "721 ft² base suite — the largest standard suite in the dataset."
+    },
+    {
+      "id": "encore",
+      "name": "Encore at Wynn Las Vegas",
+      "tier": "luxury",
+      "zone": "north-strip",
+      "stars": 5,
+      "guest_score": 9.0,
+      "reviews": null,
+      "room": "Encore Resort King",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "$55/night",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 4093,
+          "per_night": 585,
+          "note": "Booking search total, resort fee basis not stated"
+        },
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 5128,
+          "per_night": 678,
+          "note": "Wynn property page: 745 ft², INCLUDES $55/night resort fee, EXCLUDES 13.38% tax. Free cancellation before 2027-02-12."
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 17,
+      "official_url": "https://www.wynnlasvegas.com/rooms-and-suite",
+      "booking_url": "https://www.booking.com/hotel/us/wynn-las-vegas-boulevard.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "verified": "yes",
+      "flags": [
+        "F-09"
+      ],
+      "notes": "Two totals for the same week differ by $1,035 because the fee/tax basis differs. The property-page figure is the more complete number."
+    },
+    {
+      "id": "wynn",
+      "name": "Wynn Las Vegas",
+      "tier": "luxury",
+      "zone": "north-strip",
+      "stars": 5,
+      "guest_score": 9.0,
+      "reviews": 1744,
+      "room": "Wynn Resort King",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "$55/night",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 4378,
+          "per_night": 625,
+          "note": "Run-of-House, Booking search total"
+        },
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 5828,
+          "per_night": 778,
+          "note": "Wynn property page: 640 ft², INCLUDES $55/night resort fee, EXCLUDES 13.38% tax"
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 17,
+      "official_url": "https://www.wynnlasvegas.com/rooms-and-suite",
+      "booking_url": "https://www.booking.com/hotel/us/wynn-las-vegas-boulevard.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "verified": "yes",
+      "flags": [
+        "F-09"
+      ],
+      "notes": "Wing Lei is in-building. Same double-basis caveat as Encore."
+    },
+    {
+      "id": "secret-suites-vdara",
+      "name": "Secret Suites at Vdara",
+      "tier": "luxury",
+      "zone": "center-strip",
+      "stars": 5,
+      "guest_score": null,
+      "reviews": null,
+      "room": "Suite",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 6778,
+          "per_night": 968,
+          "note": ""
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 21,
+      "official_url": "https://www.mgmresorts.com/en/hotels/vdara.html",
+      "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
+      "verified": "yes",
+      "flags": [],
+      "notes": "Third-party suite inventory inside Vdara — listed for completeness, not recommended."
+    },
+    {
+      "id": "waldorf-astoria",
+      "name": "Waldorf Astoria Las Vegas",
+      "tier": "luxury",
+      "zone": "center-strip",
+      "stars": 5,
+      "guest_score": 8.5,
+      "reviews": 185,
+      "room": "Deluxe King Room / 1-bedroom suite",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 7980,
+          "per_night": 1140,
+          "note": "1-bedroom suite"
+        },
+        {
+          "window": "2027-03-01→2027-03-08",
+          "total_7n": 3463,
+          "per_night": 440,
+          "note": "Deluxe King Room — 57% below the February suite rate; different room class"
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 21,
+      "official_url": "https://www.hilton.com/en/hotels/laswawa-waldorf-astoria-las-vegas/",
+      "booking_url": "https://www.booking.com/hotel/us/waldorf-astoria-las-vegas.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "verified": "yes",
+      "flags": [
+        "F-13"
+      ],
+      "notes": "Non-gaming, no-smoking, centre-Strip. The February figure is a suite; the March figure is a standard room, so they are not comparable."
+    },
+    {
+      "id": "cirrus-cliffs",
+      "name": "Cliffs at Peace Canyon",
+      "tier": "off-strip",
+      "zone": "off-strip",
+      "stars": 3,
+      "guest_score": null,
+      "reviews": null,
+      "room": "Condo",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "none / not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 832,
+          "per_night": 119,
+          "note": ""
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 0,
+      "official_url": "",
+      "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5&order=price",
+      "verified": "partial",
+      "flags": [
+        "F-14"
+      ],
+      "notes": "Off-Strip condo ~20 min drive from the Strip. Appeared in a five-star filter despite being a condominium complex — do not treat the star rating as reliable."
+    },
+    {
+      "id": "desert-rose",
+      "name": "Desert Rose Resort",
+      "tier": "mid",
+      "zone": "center-strip",
+      "stars": 3,
+      "guest_score": 9.1,
+      "reviews": 4234,
+      "room": "One-Bedroom Suite (No Resort Fees)",
+      "bed": "king + sofa bed",
+      "private_bath": true,
+      "resort_fee": "none — 'No Resort Fees' rate",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 922,
+          "per_night": 132,
+          "note": "646 ft² suite, 0.3 miles from MGM Grand"
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 21,
+      "official_url": "https://www.desertroseresort.com/",
+      "booking_url": "https://www.booking.com/hotel/us/desert-rose-resort.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "verified": "yes",
+      "flags": [],
+      "notes": "Best value in the dataset: 9.1 guest score, 646 ft², private bathroom, no resort fee, and a 15-minute walk to the centre-Strip Michelin cluster."
+    },
+    {
+      "id": "golden-nugget",
+      "name": "Golden Nugget Las Vegas",
+      "tier": "mid",
+      "zone": "downtown-arts",
+      "stars": 4,
+      "guest_score": 7.8,
+      "reviews": 4178,
+      "room": "Run of House",
+      "bed": "multiple bed types — not guaranteed",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 749,
+          "per_night": 61,
+          "note": "Black Friday deal, free cancellation"
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 16,
+      "official_url": "https://www.goldennugget.com/las-vegas/",
+      "booking_url": "https://www.booking.com/hotel/us/golden-nugget-amp-casino-las-vegas.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "verified": "yes",
+      "flags": [
+        "F-11"
+      ],
+      "notes": "'Run of House' means the bed type is assigned at check-in — fails the queen-or-larger guarantee unless you book a named room class."
+    },
+    {
+      "id": "horseshoe",
+      "name": "Horseshoe Las Vegas",
+      "tier": "mid",
+      "zone": "center-strip",
+      "stars": 4,
+      "guest_score": null,
+      "reviews": null,
+      "room": "Rate block captured without room name",
+      "bed": "unverified",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 717,
+          "per_night": 53,
+          "note": "Free cancellation; pay at property"
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 21,
+      "official_url": "https://www.caesars.com/horseshoe-las-vegas",
+      "booking_url": "https://www.booking.com/hotel/us/bally-s-las-vegas-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "verified": "partial",
+      "flags": [
+        "F-11"
+      ],
+      "notes": "Directly connected to a Monorail station and across the street from the Bellagio/Cosmo cluster. Bed type not confirmed in the captured rate block."
+    },
+    {
+      "id": "flamingo",
+      "name": "Flamingo Las Vegas",
+      "tier": "mid",
+      "zone": "center-strip",
+      "stars": 3,
+      "guest_score": null,
+      "reviews": null,
+      "room": "Room Type Assigned on Arrival",
+      "bed": "1 king (shown) — not guaranteed",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 626,
+          "per_night": 39,
+          "note": "Black Friday deal, free cancellation, pay at property"
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 21,
+      "official_url": "https://www.caesars.com/flamingo-las-vegas",
+      "booking_url": "https://www.booking.com/hotel/us/flamingo-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "verified": "yes",
+      "flags": [
+        "F-11"
+      ],
+      "notes": "Second-cheapest verified total. Room type is assigned on arrival, so the king bed shown is not contractual."
+    },
+    {
+      "id": "linq",
+      "name": "The LINQ Hotel + Experience",
+      "tier": "mid",
+      "zone": "center-strip",
+      "stars": 4,
+      "guest_score": 7.7,
+      "reviews": 14363,
+      "room": "Room Type Assigned on Arrival",
+      "bed": "1 king (shown) — not guaranteed",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 564,
+          "per_night": 31,
+          "note": "Black Friday deal, free cancellation, pay at property — cheapest total in the dataset"
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 21,
+      "official_url": "https://www.caesars.com/linq",
+      "booking_url": "https://www.booking.com/hotel/us/the-linq-and-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "verified": "yes",
+      "flags": [
+        "F-11"
+      ],
+      "notes": "Cheapest verified 7-night total, and it is centre-Strip next to the High Roller. But $31/night is a Black Friday promotional rate on an unassigned room — treat as a floor, not a forecast."
+    },
+    {
+      "id": "sahara",
+      "name": "SAHARA Las Vegas",
+      "tier": "mid",
+      "zone": "north-strip",
+      "stars": 4,
+      "guest_score": 8.4,
+      "reviews": 11769,
+      "room": "Room Assigned at Check In",
+      "bed": "1 king (shown) — not guaranteed",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 801,
+          "per_night": 59,
+          "note": "Free cancellation"
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 17,
+      "official_url": "https://www.saharalasvegas.com/",
+      "booking_url": "https://www.booking.com/hotel/us/sahara-lasvegas-hotel-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "verified": "yes",
+      "flags": [
+        "F-11"
+      ],
+      "notes": "Northernmost Monorail stop and a Vegas Loop station — the best transit-per-dollar on the list."
+    },
+    {
+      "id": "plaza",
+      "name": "Plaza Hotel & Casino",
+      "tier": "budget",
+      "zone": "downtown-arts",
+      "stars": 3,
+      "guest_score": null,
+      "reviews": null,
+      "room": "Deluxe Room",
+      "bed": "multiple bed types — not guaranteed",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 832,
+          "per_night": 80,
+          "note": "Free cancellation"
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 16,
+      "official_url": "https://www.plazahotelcasino.com/",
+      "booking_url": "https://www.booking.com/hotel/us/plaza-amp-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "verified": "yes",
+      "flags": [
+        "F-11"
+      ],
+      "notes": "Downtown, at the Fremont Street Experience. Pairs with Esther's Kitchen and SoulBelly BBQ."
+    },
+    {
+      "id": "palms-place",
+      "name": "Palms Place Hotel and Spa",
+      "tier": "mid",
+      "zone": "west-near",
+      "stars": 4,
+      "guest_score": 7.7,
+      "reviews": 935,
+      "room": "Studio with Mountain View",
+      "bed": "king + sofa bed",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 866,
+          "per_night": 80,
+          "note": "603 ft² studio, free cancellation"
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 24,
+      "official_url": "https://www.palms.com/palms-place/",
+      "booking_url": "https://www.booking.com/hotel/us/palms-place.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "verified": "yes",
+      "flags": [],
+      "notes": "Off-Strip but only ~1.5 miles west of centre-Strip; Ping Pang Pong (Gold Coast) and the Chinatown cluster are both short hops."
+    },
+    {
+      "id": "bluegreen-club-36",
+      "name": "Bluegreen Vacations Club 36",
+      "tier": "mid",
+      "zone": "off-strip",
+      "stars": 4,
+      "guest_score": 8.9,
+      "reviews": 481,
+      "room": "One Bedroom Standard",
+      "bed": "queen",
+      "private_bath": null,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 800,
+          "per_night": 114,
+          "note": "Black Friday deal, free cancellation. Displayed per-night $114 against a $1,143 pre-discount figure."
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 0,
+      "official_url": "https://www.bluegreenvacations.com/resorts/nevada/las-vegas/club-36",
+      "booking_url": "https://www.booking.com/hotel/us/bluegreen-club-36.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
+      "verified": "partial",
+      "flags": [
+        "F-15"
+      ],
+      "notes": "Only property in the dataset with an explicitly stated QUEEN bed (satisfies 'queen or larger' precisely). Private bathroom not stated in the captured block — one-bedroom timeshare units normally have one, but that is an inference, so it stays blank."
+    },
+    {
+      "id": "mgm-signature",
+      "name": "The Signature at MGM Grand",
+      "tier": "luxury",
+      "zone": "south-strip",
+      "stars": 5,
+      "guest_score": null,
+      "reviews": null,
+      "room": "Jacuzzi Studio",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 1465,
+          "per_night": 209,
+          "note": ""
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 15,
+      "official_url": "https://www.mgmresorts.com/en/hotels/signature-at-mgm-grand.html",
+      "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
+      "verified": "yes",
+      "flags": [],
+      "notes": "All-suite, non-gaming towers behind MGM Grand. Walking distance to Joël Robuchon and L'Atelier."
+    },
+    {
+      "id": "green-valley-ranch",
+      "name": "Green Valley Ranch Resort",
+      "tier": "off-strip",
+      "zone": "off-strip",
+      "stars": 5,
+      "guest_score": 9.1,
+      "reviews": null,
+      "room": "Lowest displayed room",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 2012,
+          "per_night": 287,
+          "note": ""
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 0,
+      "official_url": "https://www.greenvalleyranch.com/",
+      "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
+      "verified": "yes",
+      "flags": [
+        "F-14"
+      ],
+      "notes": "In Henderson, ~11 miles from the Strip. 9.1 guest score, but every dinner becomes a 30–40 minute trip."
+    },
+    {
+      "id": "red-rock",
+      "name": "Red Rock Casino Resort & Spa",
+      "tier": "off-strip",
+      "zone": "off-strip",
+      "stars": 5,
+      "guest_score": 8.5,
+      "reviews": null,
+      "room": "Lowest displayed room",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "not captured",
+      "prices": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n": 2507,
+          "per_night": 358,
+          "note": ""
+        }
+      ],
+      "michelin_within_60": 24,
+      "michelin_within_20": 0,
+      "official_url": "https://www.redrockresort.com/",
+      "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
+      "verified": "yes",
+      "flags": [
+        "F-14"
+      ],
+      "notes": "Summerlin, ~17 miles northwest of the Strip. Excellent resort, wrong trip."
+    }
+  ]
+}
