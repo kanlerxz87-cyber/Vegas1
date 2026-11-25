@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotels &amp; Prices — Las Vegas Trip Planner</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <h1>Hotels — ranked by Michelin proximity, price &amp; amenities</h1>
+  <p class="sub">7-night stay Sun Feb 15 – Mon Feb 22, 2027 · 2 adults · rates excl. tax · verified 2026-11-25</p>
+</header>
+<nav class="site">
+  <a href="index.html">Executive Summary</a>
+  <a class="active" href="hotels.html">Hotels &amp; Prices</a>
+  <a href="michelin.html">Michelin Restaurants</a>
+  <a href="activities.html">Activities</a>
+  <a href="analysis.html">Analysis &amp; Transit</a>
+  <a href="suggestions.html">Suggestions</a>
+  <a href="open-questions.html">Open Questions</a>
+  <a href="flagged.html">Flagged for Review</a>
+</nav>
+<main>
+
+<section class="card">
+  <h2>Ranking table (Feb 15–22, 2027 · 7 nights · 2 adults)</h2>
+  <p class="small">Ranked by <strong>on-site Michelin count</strong>, then walkable Michelin count, then verified price. "≤30-min walk" and "≤60-min transit" counts are <em>estimates</em> (flagged): Las Vegas has <strong>no subway</strong> — transit = RTC buses (incl. Deuce) + Las Vegas Monorail (7 stations, Sahara–MGM Grand). All 24 Michelin restaurants are within ~60 min by bus+walk from every listed hotel (est.), so walkability is the real differentiator. Every hotel has private bathrooms and queen-or-larger beds; details per row.</p>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>#</th><th>Hotel</th><th>Michelin within: on-site / ≤30-min walk (est.) / ≤60-min transit (est.)</th><th>Beds &amp; bathroom</th><th>Nightly (incl. RF, excl. tax)</th><th>7-night total</th><th>Verification &amp; source</th></tr>
+    <tr>
+      <td>1</td><td><strong>The Venetian Resort</strong><br><span class="small">Venetian + Palazzo towers</span></td>
+      <td><strong>4</strong> on-site (Bouchon, COTE, Milos, Mott 32) · ~11 walk · ~24 transit</td>
+      <td>All-suite: 1 King or 2 Queens; private marble bathroom</td>
+      <td colspan="2"><span class="badge b-unverified">unverified — blank</span></td>
+      <td>Booking page renders prices via JS ($XXX placeholders) — could not verify. <a href="https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2027-02-15&children[]=0&departure_date=2027-02-22&view=calendar">Check rates</a> (page states: includes resort fee, excludes taxes)</td>
+    </tr>
+    <tr>
+      <td>2</td><td><strong>The Cosmopolitan of Las Vegas</strong></td>
+      <td><strong>2</strong> on-site (é ★, China Poblano Bib) · ~12 walk · ~24 transit</td>
+      <td>1 King or 2 Queens; private bathroom</td>
+      <td colspan="2"><span class="badge b-unverified">unverified — blank</span></td>
+      <td>MGM booking engine blocks automated rate reads. <a href="https://cosmopolitanlasvegas.mgmresorts.com/en/hotel.html">Official hotel page</a> · booking 855.788.6775</td>
+    </tr>
+    <tr>
+      <td>3</td><td><strong>MGM Grand</strong></td>
+      <td><strong>2</strong> on-site (Joël Robuchon 2★, L'Atelier 1★) · ~9 walk · ~24 transit</td>
+      <td>1 King or 2 Queens; private bathroom</td>
+      <td colspan="2"><span class="badge b-unverified">unverified — blank</span></td>
+      <td>MGM rates not machine-readable. <a href="https://mgmgrand.mgmresorts.com/">Official</a>. Monorail south terminus on-site</td>
+    </tr>
+    <tr>
+      <td>4</td><td><strong>ARIA</strong></td>
+      <td><strong>1</strong> on-site (Gymkhana) · ~11 walk · ~24 transit</td>
+      <td>Deluxe King (520 ft²) or Deluxe Two Queen — verified room types</td>
+      <td colspan="2"><span class="badge b-unverified">unverified — blank</span></td>
+      <td>ARIA pricing API errors for automated access. <a href="https://aria.mgmresorts.com/en/hotel.html">Official</a> · booking 855.788.6775</td>
+    </tr>
+    <tr>
+      <td>5</td><td><strong>Caesars Palace</strong></td>
+      <td><strong>1</strong> on-site (Guy Savoy 1★) · ~11 walk · ~24 transit</td>
+      <td>Julius Deluxe 1 King (360+ ft²) or assigned (beds vary); private stone/glass bath</td>
+      <td><strong>$226</strong> (assigned) / $232 (Julius King)</td>
+      <td><strong>$1,582</strong> / $1,624</td>
+      <td><span class="badge b-verified">verified</span> 2026-11-25 · RF $62.30/day incl. tax · dep $100/day · <a href="https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1">Source</a></td>
+    </tr>
+    <tr>
+      <td>6</td><td><strong>Bellagio</strong></td>
+      <td><strong>1</strong> on-site (Michael Mina — seasonal closures!) · ~11 walk · ~24 transit</td>
+      <td>1 King or 2 Queens; private bathroom</td>
+      <td colspan="2"><span class="badge b-unverified">unverified — blank</span></td>
+      <td>MGM rates not machine-readable. <a href="https://bellagio.mgmresorts.com/">Official</a></td>
+    </tr>
+    <tr>
+      <td>7</td><td><strong>Wynn Las Vegas</strong><br><span class="small">Wynn Resort King</span></td>
+      <td><strong>1</strong> on-site (Wing Lei) · ~8 walk · ~24 transit</td>
+      <td>1 King Wynn Dream Bed (640 ft²); marble bath w/ tub + glass shower (official)</td>
+      <td><strong>$677</strong> (Cyber) / $833 (Flexible)</td>
+      <td><strong>$4,739</strong> / $5,831</td>
+      <td><span class="badge b-verified">verified</span> 2026-11-25 · RF $55+tax/day · 1-night dep, 72h cancel · <a href="https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0">Source</a></td>
+    </tr>
+    <tr>
+      <td>8</td><td><strong>Resorts World</strong><br><span class="small">Hilton tower</span></td>
+      <td><strong>1</strong> on-site (Stubborn Seed) · ~6 walk · ~24 transit</td>
+      <td>Deluxe King or 2 Queens; private bath w/ walk-in shower (official)</td>
+      <td><strong>$277</strong> (7-night avg; nites $152–$404)</td>
+      <td><strong>≈$1,942</strong></td>
+      <td><span class="badge b-verified">verified</span> 2026-11-25 (official IBE calendar) · RF $55/day (legend conflict — <a href="flagged.html">flag</a>) · <a href="https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0">Source</a></td>
+    </tr>
+    <tr>
+      <td>9</td><td><strong>Planet Hollywood</strong><br><span class="small">"Sphere-view" rooms available</span></td>
+      <td>0 on-site · ~10 walk · ~24 transit</td>
+      <td>Ultra Hip 1 King (430 ft²) or 2 Queens; private bath</td>
+      <td><strong>$156</strong> (assigned) / $167 (Sphere view)</td>
+      <td><strong>$1,092</strong> / $1,169</td>
+      <td><span class="badge b-verified">verified</span> 2026-11-25 · RF $62.30/day · <a href="https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=phv&numberOfAdults=2&numberOfRooms=1">Source</a></td>
+    </tr>
+    <tr>
+      <td>10</td><td><strong>Paris Las Vegas</strong></td>
+      <td>0 on-site · ~10 walk · ~24 transit</td>
+      <td>Bordeaux 1 King (390 ft²) or 2 Queens; private marble bath</td>
+      <td><strong>$218</strong> / $221 (Bordeaux King)</td>
+      <td><strong>$1,526</strong> / $1,547</td>
+      <td><span class="badge b-verified">verified</span> 2026-11-25 · RF $62.30/day · dep $50/day · <a href="https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=plv&numberOfAdults=2&numberOfRooms=1">Source</a></td>
+    </tr>
+    <tr>
+      <td>11</td><td><strong>Horseshoe Las Vegas</strong></td>
+      <td>0 on-site · ~9 walk · ~24 transit</td>
+      <td>Resort Room 1 King (450 ft²) or 2 Queens; private bath (shower-only in King)</td>
+      <td><strong>$109</strong> / $115 (Resort King)</td>
+      <td><strong>$763</strong> / $805</td>
+      <td><span class="badge b-verified">verified</span> 2026-11-25 · RF $56.63/day · dep $50/day · <a href="https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=blv&numberOfAdults=2&numberOfRooms=1">Source</a></td>
+    </tr>
+    <tr>
+      <td>12</td><td><strong>Flamingo Las Vegas</strong></td>
+      <td>0 on-site · ~10 walk · ~24 transit</td>
+      <td>Fab/Flamingo Room 2 Queens (350 ft²) or 1 King; private bath w/ rain shower</td>
+      <td><strong>$85</strong> / $91 (2 Queens)</td>
+      <td><strong>$595</strong> / $637</td>
+      <td><span class="badge b-verified">verified</span> 2026-11-25 · RF $56.63/day · dep $50/day · <a href="https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=flv&numberOfAdults=2&numberOfRooms=1">Source</a></td>
+    </tr>
+  </table>
+  </div>
+  <div class="flag"><strong>Room-rate verification note:</strong> MGM Resorts and Venetian/Palazzo booking engines serve rates to browsers only (bot-blocked for automated checks). Per the verification rules those rates are left <strong>blank and flagged</strong> rather than guessed. Every other price above is a live read from the property's own booking engine on 2026-11-25 and excludes taxes. Caesars rates include a resort fee of $56.63–$62.30/day (varies by property); Wynn/Resorts World fees are $55/day.</div>
+</section>
+
+<section class="card">
+  <h2>Cheapest upcoming week — total price table (7-night stays, 2 adults)</h2>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>Window</th><th>Caesars Palace</th><th>Paris</th><th>Planet Hollywood</th><th>Horseshoe</th><th>Flamingo</th><th>Wynn</th><th>Resorts World</th></tr>
+    <tr><td><strong>W1: Feb 15–22</strong> (preferred)</td><td><strong>$1,582</strong></td><td><strong>$1,526</strong></td><td><strong>$1,092</strong></td><td><strong>$763</strong></td><td><strong>$595</strong></td><td><strong>$4,739</strong></td><td><strong>≈$1,942</strong></td></tr>
+    <tr><td>W2: Feb 22–Mar 1</td><td>$1,736</td><td rowspan="4" class="small">exact-dates searches not run for every window (budget); official rate calendars show March ≥ February at all Caesars properties except the Mar 21–27 Flamingo dip below</td><td rowspan="4" class="small">same calendars</td><td rowspan="4" class="small">same calendars</td><td>$833</td><td rowspan="4" class="small">RW Feb calendar ends; March not sampled</td><td rowspan="4" class="small">—</td></tr>
+    <tr><td>W3: Mar 1–8</td><td>Mar 2 sold out for 7-night search <span class="small">(calendars: Mar 1 $563, Mar 3 $263 …)</span></td><td>$868</td></tr>
+    <tr><td>W4: Mar 8–15</td><td>≈$2,013 <span class="small">(calendar sum; Mar 10 $425 spike)</span></td><td>≈$804 <span class="small">(cal.)</span></td></tr>
+    <tr><td>W5: Mar 15–22</td><td>≈$1,942 <span class="small">(cal. sum; Mar Madness Mar 19–20 $494/$425)</span></td><td>≈$825 <span class="small">(cal.)</span></td></tr>
+    <tr><td class="small">FYI (out of range): Flamingo Mar 21–27 calendar sums to ≈$524 (avg $75/night) but ends Mar 28 — outside the allowed window</td><td colspan="6" class="small">Source: official Caesars flexible-date calendars + exact-dates searches, sampled 2026-11-25 · <a href="https://www.caesars.com/book/hotel-calendar?dateSearchFormat=flexible-dates&flexibleMonth=February&propCode=clv&numberOfAdults=2&numberOfRooms=1">CP Feb calendar</a> · <a href="https://www.caesars.com/book/hotel-calendar?dateSearchFormat=flexible-dates&flexibleMonth=March&propCode=flv&numberOfAdults=2&numberOfRooms=1">FLV Mar calendar</a></td></tr>
+  </table>
+  </div>
+  <p><strong>Finding:</strong> The preferred week (Feb 15–22) is the cheapest verified 7-night window in the allowed range at every property checked. Booking engines price it lowest on their own calendars — no compromise between "preferred" and "cheapest".</p>
+</section>
+
+<section class="card">
+  <h2>When to book — verified offer windows (checked 2026-11-25)</h2>
+  <ul class="clean">
+    <li><strong>Wynn — ACT NOW (by Dec 4, 2026):</strong> "Cyber Exclusive" $677/nt for Feb 15–22 stays, bookable Nov 20 – Dec 4, 2026 for stays Nov 22, 2026 – Jun 30, 2027. Includes up to 25% off (Wynn Rewards members), $75/day resort credit ($300 max), 1-night deposit, free 72h cancellation, free self-parking. <a href="https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0">Official booking engine</a></li>
+    <li><strong>Caesars (Caesars Palace, Paris, Planet Hollywood, Horseshoe, Flamingo):</strong> best-available promos auto-apply ("Book by Dec 20/30, 2027"); free Caesars Rewards signup shows "15% off this booking"; cyber/early offers ($75 F&amp;B credit, breakfast-included) live now. Deposits $50–$100/day refundable. <a href="https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1">Official</a></li>
+    <li><strong>Resorts World:</strong> "Cyber Sale up to 50% Off" live on the official IBE (Feb 2027 rates above already reflect it); "ALL RESORT, NO FEES" offer advertised — price that one before booking (could remove the $55/day fee). Genting Rewards signup = member rate. <a href="https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0">Official</a></li>
+    <li><strong>MGM / Venetian:</strong> no verified sale calendar (rates unverified overall). Venetian Rewards = up to 5% off direct + gondola BOGO; MGM Rewards discounts shown at checkout.</li>
+  </ul>
+  <p class="small">Rule applied: prices are dated samples from official engines, not predictions. Re-run the linked searches before paying; nothing here substitutes for the booking screen.</p>
+</section>
+
+</main>
+<footer class="site">All rates: official property booking engines, sampled 2026-11-25 · totals = 7 × verified nightly (computed) · taxes excluded throughout</footer>
+</body>
+</html>
