@@ -1,0 +1,286 @@
+{
+  "meta": {
+    "task": "T2 Michelin restaurant research (Las Vegas)",
+    "owner_session": "fd60d57e",
+    "last_updated": "2026-11-25",
+    "guide_edition": "2026 MICHELIN Guide Southwest (inaugural; revealed 2026-08-26 at Fontainebleau Las Vegas; guide had not evaluated Las Vegas since 2009)",
+    "official_sources": [
+      {"label": "MICHELIN Guide official Las Vegas restaurant list (24 restaurants)", "url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurants"},
+      {"label": "Michelin press release: first-ever Southwest selection (star + address lists)", "url": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s"},
+      {"label": "Michelin official Nevada restaurant index", "url": "https://guide.michelin.com/en/us/nevada/restaurants"}
+    ],
+    "notes": [
+      "Counts verified on official guide page: 24 Las Vegas restaurants = 2 Stars (1), 1 Star (3), Bib Gourmand (3), Recommended (17).",
+      "Historical note: first Las Vegas guide 2008, second 2009, then Michelin pulled out until the 2026 Southwest selection (per michelin.com press release and Eater Las Vegas).",
+      "All distinctions and addresses below verified against the two official sources above on 2026-11-25."
+    ]
+  },
+  "restaurants": [
+    {
+      "name": "Restaurant de Joël Robuchon", "distinction": "2 MICHELIN Stars (2026)", "cuisine": "French Contemporary",
+      "address": "MGM Grand, 3799 S. Las Vegas Blvd., Las Vegas, Nevada 89109", "cluster": "Strip South-Mid (MGM Grand)",
+      "price_tier_michelin": "$$$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/restaurant-de-joel-robuchon",
+      "official_site": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html",
+      "hours": {"text": "Mon: Closed; Tue–Sat: 5:00 PM–9:30 PM; Sun: Closed", "source": "MGM Grand official site", "url": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "", "note": "Menu price not published on official site as of 2026-11-25 — unverified; contact restaurant (702-891-7925)", "verified": false},
+      "dress_code": "Business Formal (per official MGM page)",
+      "social": {"instagram": "https://www.instagram.com/joelrobuchon.lasvegas/", "facebook": "https://www.facebook.com/joelrobuchonrestaurantlasvegas/", "youtube": "", "tiktok": ""},
+      "notes": ["Also won 2026 MICHELIN Service Award (Sean Christopher); Forbes 5-Star 2026"]
+    },
+    {
+      "name": "é by José Andrés", "distinction": "1 MICHELIN Star (2026)", "cuisine": "Spanish Contemporary",
+      "address": "The Cosmopolitan of Las Vegas, 3708 S. Las Vegas Blvd., Las Vegas, Nevada 89109", "cluster": "Strip Mid (Cosmopolitan, inside Jaleo, Level 3)",
+      "price_tier_michelin": "$$$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/e-by-jose-andres",
+      "official_site": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html",
+      "hours": {"text": "Mon: Closed; Tue–Sat: 5:30 PM–8:30 PM (two seatings nightly: 5:30 PM & 8:30 PM); Sun: Closed", "source": "Cosmopolitan/MGM official site", "url": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "$590–$700+ for two before drinks (≈$295–$350/pp, third-party 2026 reports)", "note": "Official page does not list a price; estimate flagged unverified. Ticket prepaid at booking; ~9 seats; books ~3 months out", "verified": false},
+      "dress_code": "Upscale (per official page)",
+      "social": {"instagram": "https://www.instagram.com/ebyjoseandres/", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "Guy Savoy Las Vegas", "distinction": "1 MICHELIN Star (2026)", "cuisine": "French Contemporary",
+      "address": "Caesars Palace, 3570 S. Las Vegas Blvd., Las Vegas, Nevada 89109", "cluster": "Strip Mid (Caesars Palace, 2nd floor Augustus Tower)",
+      "price_tier_michelin": "$$$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/guy-savoy-las-vegas",
+      "official_site": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy",
+      "hours": {"text": "Tue–Sat dinner; opens 5:00 PM (last seating ≈8:45 PM per OpenTable listing; closed Sun–Mon)", "source": "Caesars official page + OpenTable (Caesars' official reservation partner)", "url": "https://www.opentable.com/restaurant-guy-savoy-caesars-palace-reservations-las-vegas", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "$400–$700 for two à la carte (official à la carte dishes $100–$290 each, effective 2026-11-05); special Krug Chef's Table 10-course $1,500/pp exact (official)", "note": "Estimate derived from official menu prices; excludes wine/tax/tip unless noted", "verified": true},
+      "dress_code": "Formal attire (per OpenTable/Caesars)",
+      "social": {"instagram": "", "facebook": "", "youtube": "https://www.youtube.com/user/caesarspalace", "tiktok": ""},
+      "notes": ["No restaurant-specific Instagram found as of 2026-11-25 — flagged for review", "Krug Chef's Table is the only one in North America (official Caesars page)"]
+    },
+    {
+      "name": "L'Atelier de Joël Robuchon Las Vegas", "distinction": "1 MICHELIN Star (2026)", "cuisine": "French Contemporary",
+      "address": "MGM Grand, 3799 S. Las Vegas Blvd., Las Vegas, Nevada 89109", "cluster": "Strip South-Mid (MGM Grand)",
+      "price_tier_michelin": "$$$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/l-atelier-de-joel-robuchon-las-vegas",
+      "official_site": "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html",
+      "hours": {"text": "Mon: 5:00 PM–9:30 PM; Tue–Wed: Closed; Thu–Sun: 5:00 PM–9:30 PM", "source": "MGM Grand official site", "url": "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "", "note": "Menu price not published on official site as of 2026-11-25 — unverified; contact restaurant (702-891-7358)", "verified": false},
+      "dress_code": "Business Casual (per official MGM page)",
+      "social": {"instagram": "https://www.instagram.com/joelrobuchon.lasvegas/", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "China Poblano", "distinction": "Bib Gourmand (2026)", "cuisine": "Chinese + Mexican (José Andrés)",
+      "address": "The Cosmopolitan of Las Vegas, 3708 S. Las Vegas Blvd., Las Vegas, Nevada 89109", "cluster": "Strip Mid (Cosmopolitan)",
+      "price_tier_michelin": "$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/china-poblano",
+      "official_site": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html",
+      "hours": {"text": "Mon–Thu: 11:00 AM–10:00 PM; Fri: 11:00 AM–10:30 PM; Sat: 10:00 AM–10:30 PM; Sun: 10:00 AM–10:00 PM; Cocktail hour Mon–Thu 4–6 PM", "source": "Cosmopolitan/MGM official site", "url": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "$60–$110 for two (Bib Gourmand tier $$; no official price listed — unverified)", "note": "Bib Gourmand = 'good quality, good value' per Michelin definition", "verified": false},
+      "menu_link": "https://www.chinapoblano.com/menus/",
+      "social": {"instagram": "", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "Esther's Kitchen", "distinction": "Bib Gourmand (2026)", "cuisine": "Italian",
+      "address": "1131 S. Main St., Las Vegas, Nevada 89104", "cluster": "Arts District",
+      "price_tier_michelin": "$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/esther-s-kitchen",
+      "official_site": "https://www.estherslv.com/",
+      "hours": {"text": "Mon–Fri lunch 11:00 AM–3:00 PM; Sat–Sun brunch 10:00 AM–3:00 PM; dinner daily 5:00 PM–11:00 PM", "source": "Hours corroborated by multiple current listings (restaurantguru schema 2026-04, everyday.vegas, TripAdvisor); official site does not print hours inline", "url": "https://restaurantguru.com/Esthers-Kitchen-Las-Vegas", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "$60–$120 for two (Bib Gourmand tier $$; no official price listed — unverified)", "note": "", "verified": false},
+      "social": {"instagram": "https://www.instagram.com/estherskitchenlv", "facebook": "", "youtube": "", "tiktok": ""},
+      "notes": ["Chef James Trees; Arts District, ~2 miles/8 min drive north of Strip mid; RTC bus available"]
+    },
+    {
+      "name": "YEN Viet Kitchen", "distinction": "Bib Gourmand (2026)", "cuisine": "Vietnamese",
+      "address": "3575 S. Decatur Blvd., Ste. 101, Las Vegas, Nevada 89103", "cluster": "Chinatown-West",
+      "price_tier_michelin": "$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/yen-viet-kitchen",
+      "official_site": "https://www.yenvietkitchen.com/",
+      "hours": {"text": "Mon + Wed–Sun: 10:00 AM–9:00 PM; Tue: Closed. DISCREPANCY: TripAdvisor lists closing 7:00 PM — flagged; verify by phone (702) 293-4949", "source": "vegasnearme + wanderlog (list official site); closing-hour discrepancy flagged", "url": "https://www.vegasnearme.com/restaurants/yen-viet-kitchen", "verified": false, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "$30–$60 for two (Bib Gourmand tier $$; no official price listed — unverified)", "note": "", "verified": false},
+      "social": {"instagram": "", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "Anima by Edo", "distinction": "Recommended (2026)", "cuisine": "Mediterranean",
+      "address": "9205 W. Russell Rd., #185 (The Gramercy), Las Vegas, Nevada 89148", "cluster": "Far Southwest",
+      "price_tier_michelin": "$$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/anima-by-edo",
+      "official_site": "https://animabyedo.com/",
+      "hours": {"text": "Dinner daily 5:00 PM–9:00 PM; lunch Mon–Fri 11:00 AM–2:00 PM (Yelp recent update says weekday lunch 11:30 AM–2 PM — minor discrepancy flagged)", "source": "Yelp hours panel + vegasnearme", "url": "https://www.yelp.com/biz/anima-by-edo-las-vegas", "verified": false, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "", "note": "No price found from official source — unverified", "verified": false},
+      "social": {"instagram": "", "facebook": "", "youtube": "", "tiktok": ""},
+      "notes": ["~7 miles southwest of Strip core — ~20 min drive; transit limited; flag for hotel-ranking"]
+    },
+    {
+      "name": "Bouchon", "distinction": "Recommended (2026)", "cuisine": "Classic French (Thomas Keller)",
+      "address": "The Venetian Resort & Casino, 3355 S. Las Vegas Blvd., Las Vegas, Nevada 89109 (South Tower, Level 10)", "cluster": "Strip Mid (Venetian)",
+      "price_tier_michelin": "$$$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/bouchon-1250929",
+      "official_site": "https://www.venetianlasvegas.com/dining/restaurants/bouchon.html",
+      "hours": {"text": "Mon–Wed: dinner only 5:00 PM–10:00 PM; Thu: brunch 8:00 AM–1:00 PM + dinner 5:00 PM–10:00 PM; Fri–Sun: brunch 8:00 AM–2:00 PM + dinner 5:00 PM–10:00 PM. EXCEPTION: Thanksgiving Thu Nov 26, 2026 1:00 PM–8:00 PM, no brunch", "source": "Venetian official restaurant page", "url": "https://www.venetianlasvegas.com/dining/restaurants/bouchon.html", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "$100–$180 for two dinner (tier $$$$ per Michelin; no official price published — unverified)", "note": "", "verified": false},
+      "phone": "702.414.6200",
+      "social": {"instagram": "", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "COTE Las Vegas", "distinction": "Recommended (2026)", "cuisine": "Korean Steakhouse",
+      "address": "The Venetian Las Vegas, 3355 S. Las Vegas Blvd., Las Vegas, Nevada 89109 (Restaurant Row)", "cluster": "Strip Mid (Venetian)",
+      "price_tier_michelin": "$$$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/cote-las-vegas",
+      "official_site": "https://www.venetianlasvegas.com/dining/restaurants/cote.html",
+      "hours": {"text": "Mon–Thu: 5:00 PM–11:00 PM; Fri–Sat: 4:30 PM–12:00 AM; Sun: 5:00 PM–11:00 PM. EXCEPTION: Thanksgiving Thu Nov 26, 2026: 1:00 PM–9:00 PM. Magic Hour (happy hour) Sun–Thu 5–6 PM & 10–11 PM", "source": "Venetian official restaurant page", "url": "https://www.venetianlasvegas.com/dining/restaurants/cote.html", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "$150–$250+ for two (tier $$$$; no official price published — unverified)", "note": "Butcher's Feast is the signature tasting", "verified": false},
+      "phone": "702.607.2683",
+      "social": {"instagram": "https://www.instagram.com/cotekoreansteakhouse/", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "Estiatorio Milos", "distinction": "Recommended (2026)", "cuisine": "Greek seafood",
+      "address": "The Venetian Las Vegas, 3355 S. Las Vegas Blvd., Las Vegas, Nevada 89109 (Restaurant Row)", "cluster": "Strip Mid (Venetian)",
+      "price_tier_michelin": "$$$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/estiatorio-milos-1250934",
+      "official_site": "https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html",
+      "hours": {"text": "Daily 11:30 AM–10:30 PM (Fri–Sat until 11:00 PM); Lunch daily 11:30 AM–3:00 PM; Midday menu 3–5 PM; Dinner Sun–Thu 5:00–10:30 PM, Fri–Sat 5:00–11:00 PM", "source": "Venetian official restaurant page", "url": "https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "$120–$250 for two (tier $$$$; prix-fixe lunch historically a value play — price not published — unverified)", "note": "", "verified": false},
+      "phone": "702.414.1270",
+      "social": {"instagram": "", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "Gymkhana Las Vegas", "distinction": "Recommended (2026)", "cuisine": "Indian fine dining (first US location of London's Gymkhana)",
+      "address": "ARIA Resort & Casino, 3730 S. Las Vegas Blvd., Las Vegas, Nevada 89158", "cluster": "Strip Mid (ARIA)",
+      "price_tier_michelin": "$$$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/gymkhana-las-vegas",
+      "official_site": "https://www.stocktitan.net/news/MGM/aria-resort-casino-and-jks-restaurants-unveil-gymkhana-bringing-pus2edgb10tf.html (MGM press release summary; ARIA page: aria.mgmresorts.com)",
+      "hours": {"text": "Sun–Thu: 5:00 PM–10:00 PM; Fri–Sat: 5:00 PM–10:30 PM (dinner only)", "source": "MGM/ARIA opening press release (Dec 2025) via StockTitan; corroborated by travel press", "url": "https://www.stocktitan.net/news/MGM/aria-resort-casino-and-jks-restaurants-unveil-gymkhana-bringing-pus2edgb10tf.html", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "", "note": "No official price found — unverified", "verified": false},
+      "notes": ["Opened Dec 3, 2025 at ARIA; reservations ~45 days out via SevenRooms"]
+    },
+    {
+      "name": "Kabuto", "distinction": "Recommended (2026)", "cuisine": "Japanese Edomae sushi",
+      "address": "5040 W. Spring Mountain Rd., #4, Las Vegas, Nevada 89146", "cluster": "Chinatown",
+      "price_tier_michelin": "$$$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/kabuto",
+      "official_site": "https://www.kabutolv.com/",
+      "hours": {"text": "Daily 5:30 PM–9:00 PM", "source": "Kabuto official site", "url": "https://www.kabutolv.com/", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "", "note": "Omakase price not published on official site — unverified", "verified": false},
+      "phone": "(702) 676-1044",
+      "social": {"instagram": "", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "Kame Omakase", "distinction": "Recommended (2026)", "cuisine": "Japanese omakase",
+      "address": "3616 W. Spring Mountain Rd., Ste. 103, Las Vegas, Nevada 89102", "cluster": "Chinatown",
+      "price_tier_michelin": "$$$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/kame-omakase",
+      "official_site": "https://sushikame.com/",
+      "hours": {"text": "Two seatings nightly at 5:30 PM and 8:00 PM (reservations only); lunch omakase Fri–Sun 12:30–2:20 PM. DISCREPANCY: Yelp snapshots conflict on whether Monday is open or closed — flagged; verify by phone (702) 771-0122", "source": "Yelp business listing (official site sushikame.com linked there)", "url": "https://www.yelp.com/biz/kame-omakase-las-vegas-4", "verified": false, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "", "note": "Omakase price not published — unverified", "verified": false},
+      "social": {"instagram": "", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "Lamaii", "distinction": "Recommended (2026)", "cuisine": "Thai",
+      "address": "4480 Spring Mountain Rd., Ste. 700, Las Vegas, Nevada 89102", "cluster": "Chinatown",
+      "price_tier_michelin": "$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/lamaii",
+      "official_site": "https://lamaiilv.com/",
+      "hours": {"text": "Daily from 11:00 AM; Mon–Wed until 12:00 AM (midnight); Thu–Sun until 2:00 AM (minor source conflicts on exact close times — flagged)", "source": "restaurantguru + Yelp + vegasnearme", "url": "https://restaurantguru.com/Lamaii-Las-Vegas", "verified": false, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "$50–$90 for two (tier $$ — unverified)", "note": "", "verified": false},
+      "social": {"instagram": "https://www.instagram.com/lamaiilv", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "Michael Mina", "distinction": "Recommended (2026)", "cuisine": "Fish and Seafood",
+      "address": "Bellagio Hotel & Casino, 3600 S. Las Vegas Blvd., Las Vegas, Nevada 89109", "cluster": "Strip Mid (Bellagio)",
+      "price_tier_michelin": "$$$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/michael-mina-1250931",
+      "official_site": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
+      "hours": {"text": "TEMPORARILY CLOSED per official Bellagio page (checked 2026-11-25; seasonal closure blocks published: 22–30 Nov; 6–8, 13–15, 20–22 Dec 2026). Earlier OpenTable listing showed Tue–Sat 5:00 PM–9:30 PM — stale, do not use.", "source": "Bellagio official page (corroborates integration session's verification); OpenTable listing was stale", "url": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "", "note": "No official price found — unverified", "verified": false},
+      "phone": "(702) 693-8199",
+      "social": {"instagram": "", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "Mott 32", "distinction": "Recommended (2026)", "cuisine": "Chinese (Cantonese/Szechuan/Beijing)",
+      "address": "The Palazzo at The Venetian, 3325 S. Las Vegas Blvd., Las Vegas, Nevada 89109 (Palazzo casino floor)", "cluster": "Strip Mid (Palazzo)",
+      "price_tier_michelin": "$$$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/mott-32-1250930",
+      "official_site": "https://mott32.com/las-vegas",
+      "hours": {"text": "Lunch Mon–Fri 11:00 AM–2:30 PM; Brunch Sat–Sun from 10:30 AM–2:30 PM; Dinner daily 5:00 PM–10:00 PM", "source": "Venetian official restaurant page + brand site mott32.com", "url": "https://www.venetianlasvegas.com/dining/restaurants/mott-32.html", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "$120–$220 for two (tier $$$$ — unverified)", "note": "Brunch 32: Limitless on weekends", "verified": false},
+      "phone": "702.607.3232",
+      "social": {"instagram": "https://www.instagram.com/mott32vegas/", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "Partage", "distinction": "Recommended (2026)", "cuisine": "Contemporary French",
+      "address": "3839 Spring Mountain Rd., Las Vegas, Nevada 89102", "cluster": "Chinatown",
+      "price_tier_michelin": "$$$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/partage-1201408",
+      "official_site": "https://partage.vegas/",
+      "hours": {"text": "Tue–Sat: 5:00 PM–9:00 PM (last reservation 8:30 PM); Sun–Mon: Closed", "source": "Partage official site", "url": "https://partage.vegas/", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "$240–$400 for two (third-party 2026: tastings $120/$150/$198/pp + pairings $60–100 — official site does not print prices; unverified)", "note": "5/7/9-course tasting menus rotate monthly", "verified": false},
+      "phone": "702-582-5852",
+      "social": {"instagram": "", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "Pho Ga Bac Bac", "distinction": "Recommended (2026)", "cuisine": "Vietnamese (chicken pho)",
+      "address": "3775 Spring Mountain Rd., Ste. 306, Las Vegas, Nevada 89102", "cluster": "Chinatown",
+      "price_tier_michelin": "$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/pho-ga-bac-bac",
+      "official_site": "https://bestchickenpho.com/",
+      "hours": {"text": "Open 24 hours, daily (per Yelp hours update)", "source": "Yelp listing (official site bestchickenpho.com linked there)", "url": "https://www.yelp.com/biz/pho-ga-bac-bac-las-vegas", "verified": false, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "$20–$40 for two (tier $ — unverified)", "note": "", "verified": false},
+      "phone": "(702) 476-9623",
+      "social": {"instagram": "", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "Ping Pang Pong", "distinction": "Recommended (2026)", "cuisine": "Chinese dim sum",
+      "address": "Gold Coast Hotel and Casino, 4000 W. Flamingo Rd., Las Vegas, Nevada 89103", "cluster": "West Flamingo (off-Strip, across from Palms)",
+      "price_tier_michelin": "$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/ping-pang-pong",
+      "official_site": "https://www.goldcoastcasino.com (Boyd Gaming property page)",
+      "hours": {"text": "Daily 10:00 AM–3:00 AM; dim sum carts daily ~10:00 AM–3:00 PM", "source": "Yelp + pingpangpong.shop; official Boyd page should be re-verified", "url": "https://www.yelp.com/biz/ping-pang-pong-las-vegas", "verified": false, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "$40–$80 for two (tier $$ — unverified)", "note": "", "verified": false},
+      "phone": "(702) 247-8136",
+      "social": {"instagram": "", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "SoulBelly BBQ", "distinction": "Recommended (2026)", "cuisine": "Barbecue",
+      "address": "1327 S. Main St., Las Vegas, Nevada 89104", "cluster": "Arts District",
+      "price_tier_michelin": "$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/soulbelly-bbq",
+      "official_site": "https://soulbellybbq.com/las-vegas-arts-district-soulbelly-bbq-find-us",
+      "hours": {"text": "Tue–Thu: 11:00 AM–9:00 PM; Fri–Sat: 11:00 AM–10:00 PM; Sun: 11:00 AM–9:00 PM; Mon: Closed", "source": "SoulBelly official site (find-us page)", "url": "https://soulbellybbq.com/las-vegas-arts-district-soulbelly-bbq-find-us", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "$40–$80 for two (tier $$ — unverified)", "note": "Also Soulbelly Express at Miracle Mile food court and Burgersmith at Allegiant Stadium", "verified": false},
+      "phone": "(702) 483-4404",
+      "social": {"instagram": "", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "Sparrow + Wolf", "distinction": "Recommended (2026)", "cuisine": "Fusion (New American/Asian)",
+      "address": "4480 Spring Mountain Rd., #100, Las Vegas, Nevada 89102", "cluster": "Chinatown",
+      "price_tier_michelin": "$$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/sparrow-wolf",
+      "official_site": "https://sparrowandwolflv.com/",
+      "hours": {"text": "Daily 4:30 PM–10:00 PM (recently updated per business)", "source": "Yelp business update + wanderlog", "url": "https://www.yelp.com/biz/sparrow-wolf-las-vegas", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "$90–$150 for two (tier $$$ — unverified)", "note": "", "verified": false},
+      "phone": "(702) 790-2147",
+      "social": {"instagram": "", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "Stubborn Seed Las Vegas", "distinction": "Recommended (2026)", "cuisine": "Contemporary (Jeremy Ford)",
+      "address": "Resorts World Las Vegas, 3000 S. Las Vegas Blvd., Las Vegas, Nevada 89109", "cluster": "Strip North (Resorts World)",
+      "price_tier_michelin": "$$$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/stubborn-seed-las-vegas",
+      "official_site": "https://www.rwlasvegas.com/dining/stubborn-seed/",
+      "hours": {"text": "Dinner daily 5:00 PM–10:00 PM; bar daily 4:00 PM–10:00 PM", "source": "OpenTable (official booking partner) + restaurant's own site posts", "url": "https://www.opentable.com/restaurant/profile/1335541", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "", "note": "No official price found — unverified", "verified": false},
+      "phone": "(702) 676-8062",
+      "social": {"instagram": "", "facebook": "", "youtube": "", "tiktok": ""}
+    },
+    {
+      "name": "Wing Lei", "distinction": "Recommended (2026)", "cuisine": "Chinese (Cantonese, Forbes Five-Star)",
+      "address": "Wynn Las Vegas, 3131 S. Las Vegas Blvd., Las Vegas, Nevada 89109", "cluster": "Strip North-Mid (Wynn)",
+      "price_tier_michelin": "$$$$",
+      "guide_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/wing-lei-1250924",
+      "official_site": "https://www.wynnlasvegas.com/dining/fine-dining/wing-lei",
+      "hours": {"text": "Thu, Sun–Mon: 5:30 PM–9:30 PM; Fri–Sat: 5:30 PM–10:00 PM; Tue–Wed: Closed", "source": "Wynn official restaurant page", "url": "https://www.wynnlasvegas.com/dining/fine-dining/wing-lei", "verified": true, "checked_on": "2026-11-25"},
+      "price_couple": {"exact": "", "estimate_range": "$200–$300+ for two (third-party review: $260 for two incl. cocktails/dessert/tip 2024 — unverified estimate)", "note": "Chef Tam Kwok Fung creative direction", "verified": false},
+      "phone": "(702) 770-3388",
+      "social": {"instagram": "https://www.instagram.com/wynnlasvegas/", "facebook": "https://www.facebook.com/wynnlasvegas/", "youtube": "", "tiktok": "https://www.tiktok.com/@wynnlasvegas"}
+    }
+  ],
+  "michelin_guide_hotels_las_vegas": {
+    "source": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurants (MICHELIN Guide hotels section, fetched 2026-11-25)",
+    "hotels": ["Bellagio", "The Cosmopolitan of Las Vegas", "Wynn and Encore Las Vegas", "The Venetian", "Waldorf Astoria Las Vegas", "Four Seasons Hotel Las Vegas", "The Reserve at Park MGM", "W Las Vegas", "SAHARA Las Vegas", "The Palazzo at The Venetian", "Circa Resort & Casino", "Fontainebleau Las Vegas", "Virgin Hotels Las Vegas"]
+  }
+}
