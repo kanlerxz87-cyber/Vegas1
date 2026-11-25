@@ -1,4 +1,8 @@
-# build scratch
 __pycache__/
-*.pyc
+*.py[cod]
+.DS_Store
+.venv/
 node_modules/
+
+# build scratch
+site/

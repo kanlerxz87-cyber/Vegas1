@@ -23,11 +23,11 @@
   
 <section class="panel">
   <h2>What is known, what is not, and how to find out</h2>
-  <p>11 questions drove this plan. 3 are fully closed, 2 required a stated interpretation because
+  <p>13 questions drove this plan. 5 are fully closed, 2 required a stated interpretation because
   the brief does not map onto Las Vegas as written, and 6 are still open — those are the ones where a
   table on this site shows a blank rather than a guess.</p>
   <div class="grid4">
-    <div class="card"><div class="big">3</div><div class="lbl">answered</div><p>Confirmed against an official source, link attached.</p></div>
+    <div class="card"><div class="big">5</div><div class="lbl">answered</div><p>Confirmed against an official source, link attached.</p></div>
     <div class="card"><div class="big">2</div><div class="lbl">interpreted</div><p>The question does not fit the city; the substitution is disclosed.</p></div>
     <div class="card"><div class="big">6</div><div class="lbl">open</div><p>Not confirmable now. Blank in the data, with a route to close it.</p></div>
     <div class="card"><div class="big">0</div><div class="lbl">filled by guess</div><p>No value on this site was inferred.</p></div>
@@ -91,7 +91,7 @@
 <article class="qa">
   <h3><span class="qid">Q-07</span> What are each restaurant&#x27;s YouTube, TikTok and Instagram links?
     <span class="state bad">open</span></h3>
-  <p><strong>Answer:</strong> YouTube is complete: all 24 listings have at least one working video link, 69 in total. Instagram and TikTok are almost entirely blank.</p>
+  <p><strong>Answer:</strong> YouTube is complete: every one of the 21 restaurants has at least one working video link, 45 in total. Instagram and TikTok are almost entirely blank.</p>
   <p><strong>Why it is not closed:</strong> Handles were not printed on most official restaurant pages, and guessing a handle would create a dead or, worse, wrong link.</p>
   <p><strong>What was done instead:</strong> Blank rather than guessed. The Neon Museum is the only venue with confirmed Instagram and TikTok, taken from its own site footer.</p>
   <p class="tiny"><strong>How to close it:</strong> Open each restaurant&#x27;s official page footer or its OpenTable profile — most link their own socials there. That is 21 short page visits.</p>
@@ -125,7 +125,25 @@
   <details><summary>Sources</summary><ul class="srcs"><li><a href="https://f1experiences.com/2027-las-vegas-grand-prix" target="_blank" rel="noopener">https://f1experiences.com/2027-las-vegas-grand-prix</a></li><li><a href="https://dord.racing/events/2027/f1-las-vegas-gp" target="_blank" rel="noopener">https://dord.racing/events/2027/f1-las-vegas-gp</a></li></ul></details>
 </article>
 <article class="qa">
-  <h3><span class="qid">Q-11</span> Are the hotels&#x27; own websites still live at the URLs this site links to?
+  <h3><span class="qid">Q-11</span> Is every MICHELIN-listed restaurant in the dataset actually open for a February 2027 trip?
+    <span class="state ok">answered</span></h3>
+  <p><strong>Answer:</strong> One is not. Michael Mina at Bellagio publishes &quot;Monday to Sunday: Closed&quot; in its Hours of operation block and carries a &quot;Temporarily closed&quot; label on its own Bellagio page. Its $590++ tasting-menu price is still printed on that page, so a reader could easily mistake a dormant venue for an available one.</p>
+  <p><strong>Why it is not closed:</strong> A price on a closed restaurant is worse than a blank: it looks bookable. Grouping this row with live venues would put a phantom dinner into a 7-night plan.</p>
+  
+  <p class="tiny"><strong>How to close it:</strong> Restaurant row kept, but with the closure stated on the row and flagged F-22. No reopen date is published, so no date is assumed.</p>
+  <details><summary>Sources</summary><ul class="srcs"><li><a href="https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html" target="_blank" rel="noopener">https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html</a></li></ul></details>
+</article>
+<article class="qa">
+  <h3><span class="qid">Q-12</span> Do the published opening hours in this dataset survive a second check against the venues&#x27; own sites?
+    <span class="state ok">answered</span></h3>
+  <p><strong>Answer:</strong> Five rows needed correction: Joël Robuchon (hours blank → Tue–Sat 5:00–9:30 PM), Partage (blank → Tue–Sat 5–9 PM, published on the Contact page only), Sparrow + Wolf (no hours published at all), KAME Omakase (no weekly hours on its booking page) and Michael Mina (closed). Nineteen of 24 rows now carry a verified hours string.</p>
+  <p><strong>Why it is not closed:</strong> Two of the five were blank because the hours live on a secondary page — Partage on /contact, Robuchon in an &quot;Hours of operation&quot; detail block rather than the header. A single-page check misses both.</p>
+  
+  <p class="tiny"><strong>How to close it:</strong> All five corrected or explicitly left blank with the reason recorded. See FLAGS.md F-21 to F-24.</p>
+  <details><summary>Sources</summary><ul class="srcs"><li><a href="https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html" target="_blank" rel="noopener">https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html</a></li></ul></details>
+</article>
+<article class="qa">
+  <h3><span class="qid">Q-13</span> Are the hotels&#x27; own websites still live at the URLs this site links to?
     <span class="state bad">open</span></h3>
   <p><strong>Answer:</strong> Four of 32 were fetched and resolved: Desert Rose (Shell Vacations Hospitality), The LINQ, Palms Place and The Venetian. The other 28 point at the property&#x27;s own domain but were not fetched, so they are labelled &#x27;not fetched — may have moved&#x27; instead of being presented as checked.</p>
   <p><strong>Why it is not closed:</strong> Hotel brand sites move constantly — MGM, Caesars, Marriott and Hilton have all reorganised property URLs. Linking a moved page is a small failure, but claiming it was verified when it was not is the failure the brief actually cares about.</p>

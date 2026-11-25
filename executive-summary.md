@@ -43,7 +43,9 @@ not. Of 24 listings: **4 starred** (Joël Robuchon 2★; L'Atelier, Guy Savoy, �
 **3 Bib Gourmand**, **17 Recommended**. There is no three-star restaurant in Las Vegas.
 
 Only three venues print a real price for two: Michael Mina **$590++**, KAME Omakase **$1,000++**,
-Anima by EDO **$170++**. The four starred rooms are all "price on request" — book them first, before
+Anima by EDO **$170++** — but Michael Mina's own Bellagio page currently reads *"Monday to Sunday: Closed"*
+with a *Temporarily closed* label and no published reopen date, so that $590 is a price for a service that
+is not running. Do not plan around it. The four starred rooms are all "price on request" — book them first, before
 the hotel, because é has nine seats a night. Hours are confirmed for 17 of the 24 listings and all 24
 have at least one working video link (69 in total).
 

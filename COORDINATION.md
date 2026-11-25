@@ -11,6 +11,7 @@ then commit and push that claim immediately.
 | Session | Started | Scope now | Branch |
 |---------|---------|-----------|--------|
 | arena-edcfa7a0-vegas1 | 2026-11-25 | T02–T11 — research complete; writing `data/*.json`, building `docs/`, publishing | `arena/edcfa7a0-vegas1` |
+| arena-0c9983d6-vegas1 | 2026-11-25 | Verification pass on transit: added RTC Route 203, corrected the Chinatown reachability claim | `arena/0c9983d6-vegas1` |
 
 > **Status note:** T02–T08 were prematurely marked `done` on first write. As of this commit the research
 > is complete in-session but **no `data/` files exist yet**, so all tasks are `in progress` until the JSON
@@ -51,6 +52,35 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 | T10 | Verification pass + Flagged for Review page | done | arena-edcfa7a0-vegas1 | `docs/verification.html`, `FLAGS.md` | |
 | T11 | Integration + GitHub Pages publish | done | arena-edcfa7a0-vegas1 | `docs/**`, Pages settings | Single integrating session for this effort; no other session active. |
 
+## Correction record — RTC Route 203 — 2026-11-25
+
+Session `arena-0c9983d6-vegas1` found that this dataset recorded **Chinatown / Spring Mountain Rd
+as reachable only by car or rideshare**. That was wrong, and it was the most consequential error in
+the model, because **seven of the 24 MICHELIN listings sit on that road**.
+
+RTC **Route 203** (Spring Mountain / Desert Inn / Lamb) runs the length of Spring Mountain Road.
+Its [official timetable](https://rtcws.rtcsnv.com/routePDF/203.pdf) carries a timed stop at
+**Las Vegas Blvd**, and the eastbound runs give **Decatur → Las Vegas Blvd in 14 minutes**.
+
+Changes made:
+
+| File | Change |
+|---|---|
+| `data/transit.json` | Added Route 203 as a fourth system, with its verified timepoints and published timing. |
+| `data/transit.json` | `north-strip → chinatown` corrected from **20 to 34** minutes, built from the published 14-minute run plus a 7-minute walk, an 8-minute wait and a 5-minute walk at the far end. |
+| `scripts/gen_site.py` | Added a "Correction: Chinatown is reachable by bus" panel to the transit page. |
+| `FLAGS.md` | Added **F-21** recording the correction. |
+| `README.md` | Added the correction to the findings. |
+
+**Why the time went up while the claim got better:** the old 20-minute figure was an estimate with
+no source. The new 34-minute figure is anchored to a published stop-to-stop timing. It is slower and
+more defensible, which is the right trade for a study whose whole premise is traceability.
+
+Note this is the **only published travel time in the model**. Every other minute value remains an
+estimate, and F-20 still says so.
+
+---
+
 ## Merge record — 2026-11-25
 
 `origin/main` was found to contain commit `0d0b1d5`, a **complete first version of this same brief
@@ -77,6 +107,37 @@ had branched from `9b8bcfa` (the empty repo) and did not know it existed.
 **Irregularity for review:** two sessions were assigned the same brief and both wrote to the same
 files. Rule 6 (single integration session) was already broken before this session discovered it.
 Recorded here rather than silently overwritten.
+
+## Third-session merge — 2026-11-25 (later)
+
+A **third** Arena session (`arena/126d963c-vegas1`, plus commits from `arena/0c9983d6-vegas1`) merged to
+`main` while this branch was open. Rather than re-doing its work, this branch **merged `origin/main` and
+kept its verified findings**, resolving six conflicts by hand:
+
+**What the other sessions found that this branch had wrong or missing — now integrated:**
+
+| Finding | Effect |
+|---|---|
+| **Michael Mina is "Temporarily closed"** — its own Bellagio page reads *"Monday to Sunday: Closed"* with a *Temporarily closed* label and no reopen date | The $590++ row is now marked `Closed — see note`. The Bellagio hotel note no longer sells the property on a restaurant that is not serving. Executive summary warns against planning around it. |
+| **Route 203 correction** — Chinatown *is* reachable from the north Strip by bus; RTC 203 decants at Spring Mountain/Decatur in 14 min | north→chinatown corrected 20 → **34 min**. This **lowered** north-Strip hotels from 23 to **17** restaurants inside 20 min, and raised south-Strip. Rankings changed as a result — the model was wrong before and is less wrong now. |
+| **Joël Robuchon hours** — Tue–Sat 5:00–9:30 PM, closed Sun/Mon, business formal, no under-6s | Filled, `verified: yes`. Tue–Sat is the only booking window. |
+| **Partage hours** — Tue–Sat 5–9 PM (on `/contact`, not `/restaurant`) | Filled. Strict no-vegan/no-coeliac policy confirmed. |
+| **Sparrow + Wolf** — publishes no hours anywhere | Correctly left blank (F-25) rather than taken from a reseller. |
+| **Sample-date banners** — MGM pages show 2026-dated banners | Ignored and called out (F-26). Carrying one into a 2027 plan would be a silent error. |
+
+**What this branch contributed that the others did not have:** the four-week dated price matrix, the
+20-minute column that makes the ranking meaningful, the 32-hotel dataset, and the hotel-link verification
+(F-27/F-28, Q-13, S-13).
+
+**Numbering resolved:** the other session used F-21…F-26; this branch's two hotel-link flags were
+renumbered **F-27/F-28**, and its hotel-links question became **Q-13** (both sides had independently
+created a "Q-11"). The Bellagio note's `F-22` reference was corrected to `F-23`.
+
+**Consequence to flag for review:** after the Route 203 fix, **no hotel reaches all 24 restaurants inside
+20 minutes** — the best is now 24 → 21 (south Strip) / 24 (west-near). The transit table in
+`data/transit.json` is not symmetric (north→chinatown 34, chinatown→north 20), which is intentional: a bus
+that only runs one way on that stretch, plus a walk at the anchored end. The scoring script reads the
+matrix as written, so this asymmetry is safe, but anyone re-deriving it should know it is by design.
 
 ## Requests between sessions
 
@@ -105,3 +166,25 @@ Recorded here rather than silently overwritten.
   therefore modelled on the RTC bus network (The Deuce / SDX) plus the Las Vegas Monorail and
   the Boring Company Vegas Loop, which are separate-fare systems. This is a material
   interpretation and is raised as question Q-01 on the Questions page.
+
+## Verification pass — 2026-11-25 (session arena/126d963c-vegas1)
+
+Scope claimed: **restaurant hours + closure status only.** Files touched: `data/restaurants.json`,
+`data/questions.json`, `data/hotels.json` (one notes string), `FLAGS.md`, `scripts/gen_site.py` (two hard-coded
+strings), and the regenerated `docs/` pages. No hotel prices, no transit matrix, no Michelin award assignments.
+
+What the pass found, all from the venues' own pages:
+
+| Row | Was | Now |
+| --- | --- | --- |
+| Joël Robuchon | hours blank, `partial` | **Tue–Sat 5:00–9:30 PM**, closed Sun/Mon, no under-6s, business formal — `yes` |
+| Partage | hours blank | **Tue–Sat 5–9 PM** — published on `/contact`, not the Restaurant page |
+| Michael Mina | listed as a live option with a $590++ price | **Temporarily closed** — its own page reads "Monday to Sunday: Closed". Price retained but marked as not-running |
+| Sparrow + Wolf | hours blank | still blank, deliberately: the official site publishes no hours |
+| KAME Omakase | hours blank | still blank: OpenTable shows no weekly service hours |
+
+Flags F-21 to F-25 added to `FLAGS.md`. Questions Q-11 and Q-12 added. Verified hours coverage went from 17/24 to 19/24;
+the five remaining blanks all have a stated reason.
+
+Build is clean: `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py`
+→ 8 pages, 0 failures, 0 warnings.

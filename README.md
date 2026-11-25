@@ -46,6 +46,18 @@ No dependencies beyond the Python 3 standard library. `gen_site.py` writes the s
 3. **The three cheapest hotels fail the brief's bed requirement.** LINQ, Flamingo and Horseshoe are
    all "room type assigned on arrival" — the bed is not guaranteed until check-in.
 
+## A correction worth knowing about
+
+The first transit model in this repository recorded **Chinatown / Spring Mountain Rd as reachable
+only by car or rideshare**. That was wrong. RTC **Route 203** runs the length of Spring Mountain
+Road and its [published timetable](https://rtcws.rtcsnv.com/routePDF/203.pdf) carries a timed stop
+at **Las Vegas Blvd**, giving Decatur to Las Vegas Blvd in **14 minutes**.
+
+It matters because **seven of the 24 MICHELIN listings sit on that one road** — nearly a third of
+the guide. The north Strip therefore reaches Chinatown in about **34 minutes**, not never. This is
+the only *published* travel time in the model; every other minute figure remains an estimate built
+from station lists and route maps, and is labelled as one. Recorded as F-21 in `FLAGS.md`.
+
 ## Ground rules this project followed
 
 - **No inferred values.** Blank means unverified. Every blank is listed in `FLAGS.md` and on the

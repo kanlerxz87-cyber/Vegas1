@@ -7,7 +7,8 @@
     "price_source_pattern": "https://www.booking.com/hotel/us/<slug>.html?checkin=YYYY-MM-DD&checkout=YYYY-MM-DD&group_adults=2&no_rooms=1&selected_currency=USD",
     "proximity_rule": "michelin_within_60 is the user's literal metric (count of the 24 Michelin restaurants reachable in ≤60 min by RTC bus / Monorail / Vegas Loop). On the Strip it saturates at 24 for every hotel, so michelin_within_20 is used as the ranking tiebreaker. See data/transit.json for the zone matrix — every minute figure is an ESTIMATE derived from official route maps, never an official running time.",
     "cheapest_note": "Cheapest verified 7-night total in this dataset is LINQ at $564 for 2027-02-15→02-22, but that is a 'Room Type Assigned on Arrival' rate — the bed size is not guaranteed until check-in.",
-    "official_link_note": "official_verified='yes' means this session fetched the URL and it resolved to the property. 'no' means the URL is the property's own domain but was not fetched, so it may have moved — the Booking.com 'Price source' link on every card is always a working, fetched source."
+    "housekeeping_note": "Hotel rows are unchanged by the 2026-11-25 verification pass; the only structural addition is this note. See FLAGS.md F-21 to F-25 for restaurant-level corrections found in the same pass.",
+    "official_link_note": "official_verified='yes' means this session fetched the URL and it resolved to the property. 'no' means the URL is the property's own domain but was not fetched, so it may have moved — the Booking.com 'Price source' link on every card is always a fetched, working source."
   },
   "hotels": [
     {
@@ -95,7 +96,7 @@
         }
       ],
       "michelin_within_60": 24,
-      "michelin_within_20": 23,
+      "michelin_within_20": 17,
       "official_url": "https://www.trumphotels.com/las-vegas",
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
@@ -182,7 +183,7 @@
         }
       ],
       "michelin_within_60": 24,
-      "michelin_within_20": 23,
+      "michelin_within_20": 17,
       "official_url": "https://www.rwlasvegas.com/hotels/crockfords/",
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
@@ -317,7 +318,7 @@
       "flags": [
         "F-13"
       ],
-      "notes": "Michael Mina is in-building. Rate varies by room class between windows, so the three totals are not like-for-like.",
+      "notes": "Michael Mina is in-building but currently closed with no published reopen date (see FLAGS.md F-23), so a Bellagio booking should be sold on its own merits rather than on that restaurant. Rate varies by room class between windows, so the three totals are not like-for-like.",
       "official_verified": "no"
     },
     {
@@ -341,7 +342,7 @@
         }
       ],
       "michelin_within_60": 24,
-      "michelin_within_20": 23,
+      "michelin_within_20": 17,
       "official_url": "https://www.fontainebleaulasvegas.com/",
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
@@ -413,7 +414,7 @@
         }
       ],
       "michelin_within_60": 24,
-      "michelin_within_20": 23,
+      "michelin_within_20": 17,
       "official_url": "https://www.venetianlasvegas.com/",
       "booking_url": "https://www.booking.com/hotel/us/the-venetian-resort-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
@@ -483,7 +484,7 @@
         }
       ],
       "michelin_within_60": 24,
-      "michelin_within_20": 23,
+      "michelin_within_20": 17,
       "official_url": "https://www.palazzo.com/",
       "booking_url": "https://www.booking.com/hotel/us/the-palazzo-resort-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
@@ -518,7 +519,7 @@
         }
       ],
       "michelin_within_60": 24,
-      "michelin_within_20": 23,
+      "michelin_within_20": 17,
       "official_url": "https://www.wynnlasvegas.com/rooms-and-suite",
       "booking_url": "https://www.booking.com/hotel/us/wynn-las-vegas-boulevard.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
@@ -555,7 +556,7 @@
         }
       ],
       "michelin_within_60": 24,
-      "michelin_within_20": 23,
+      "michelin_within_20": 17,
       "official_url": "https://www.wynnlasvegas.com/rooms-and-suite",
       "booking_url": "https://www.booking.com/hotel/us/wynn-las-vegas-boulevard.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
@@ -688,7 +689,7 @@
       "booking_url": "https://www.booking.com/hotel/us/desert-rose-resort.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
       "flags": [],
-      "notes": "Best value in the dataset: 9.1 guest score, 646 ft² one-bedroom suite with a full kitchen, private bathroom and no resort fee. It sits on Duke Ellington Way, one block east of the Strip behind the Tropicana/MGM Grand corner — a 15–20 minute walk to the Joël Robuchon and L'Atelier rooms at MGM Grand, not to the centre-Strip cluster. Official page: Shell Vacations Hospitality (Wyndham Extra Holidays). The marketing domain desertroseresort.com returned HTTP 500 on 25 Nov 2026, so it is not linked.",
+      "notes": "Best value in the dataset: 9.1 guest score, 646 ft² one-bedroom suite with a full kitchen, private bathroom and no resort fee. One block east of the Strip behind the Tropicana/MGM Grand corner — a 15–20 minute walk to the Joël Robuchon and L'Atelier rooms at MGM Grand, not to the centre-Strip cluster. Official page: Shell Vacations Hospitality (Wyndham Extra Holidays). The marketing domain desertroseresort.com returned HTTP 500 on 25 Nov 2026, so it is not linked.",
       "address": "5051 Duke Ellington Way, Las Vegas, NV 89119",
       "official_verified": "yes"
     },
@@ -837,7 +838,7 @@
         }
       ],
       "michelin_within_60": 24,
-      "michelin_within_20": 23,
+      "michelin_within_20": 17,
       "official_url": "https://www.saharalasvegas.com/",
       "booking_url": "https://www.booking.com/hotel/us/sahara-lasvegas-hotel-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",

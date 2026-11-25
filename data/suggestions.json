@@ -132,7 +132,7 @@
       "status": "open",
       "body": "Four hotel official links were fetched and confirmed. The other 28 were written from the property's own domain but never opened, so the site labels them 'not fetched — may have moved'. That label is honest but it is also unfinished work. Opening 28 pages and fixing the dead ones would remove the caveat entirely.",
       "trade_off": "Ten minutes of clicking for no change to the plan's cost or ranking. The Booking.com price-source link on every card already works, so nothing is currently unreachable.",
-      "evidence": "FLAGS.md F-21, data/questions.json Q-11"
+      "evidence": "FLAGS.md F-27, data/questions.json Q-13"
     }
   ]
 }

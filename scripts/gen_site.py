@@ -448,7 +448,10 @@ a missing entry and it is not an average. Only three restaurants print a real pe
   <h2>What dinner for two actually costs</h2>
   <p>Only three venues publish a number, and two of them are outside the starred group:</p>
   <ul class="tight">
-    <li><strong>Michael Mina</strong> — $295++ per person, 10-course tasting → <strong>$590++</strong> for two.</li>
+    <li><strong>Michael Mina</strong> — $295++ per person, 10-course tasting → <strong>$590++</strong> for two,
+      <strong>but the venue is currently closed</strong>: its own Bellagio page reads &ldquo;Monday to Sunday: Closed&rdquo;
+      and labels it <em>Temporarily closed</em>, with no reopen date published. Treat this as a price for a service that
+      is not running, not as a bookable dinner (FLAGS.md <a href="sources.html#flags">F-23</a>).</li>
     <li><strong>KAME Omakase</strong> — $500 per person, signature omakase → <strong>$1,000++</strong> for two.</li>
     <li><strong>Anima by EDO</strong> — $85 per person tasting → <strong>$170++</strong> for two.</li>
   </ul>
@@ -549,6 +552,23 @@ def build_transit():
   </div>
   <p class="note">Fares are the operators' own published prices. The Monorail 7-day pass ($59.95 electronic) pays for
   itself at ten single rides and covers the exact Strip stretch the starred restaurants sit on.</p>
+</section>
+
+<section class="panel">
+  <h2>Correction: Chinatown is reachable by bus</h2>
+  <p>An earlier version of this matrix recorded Chinatown / Spring Mountain Rd as reachable only by car or
+  rideshare. <strong>That was wrong.</strong> RTC <strong>Route 203</strong> runs the length of Spring Mountain Road,
+  and its published timetable carries a timed stop at <strong>Las Vegas Blvd</strong> — the north end of the Strip,
+  where Wynn, Encore, Resorts World and SAHARA are.</p>
+  <p>This matters more than any other single number on this site, because <strong>seven of the 24 MICHELIN listings
+  sit on that one road</strong>: Partage, Kabuto, KAME Omakase, Lamaii, Sparrow + Wolf, Pho Ga Bac Bac and YEN Viet
+  Kitchen. Nearly a third of the guide is on a road that turns out to have a bus.</p>
+  <p>The timetable's eastbound runs give <strong>Decatur to Las Vegas Blvd in 14 minutes</strong>. Adding a walk to the
+  stop, a platform wait and a walk at the far end puts the north Strip at about <strong>34 minutes</strong> from
+  Chinatown door to door — comfortably inside the brief's one-hour limit, from a hotel with no Monorail station.</p>
+  <p>This is the <strong>only published travel time in the whole model</strong>. Every other minute figure here is an
+  estimate built from station lists and route maps, and is labelled as one. Verify the timetable yourself:
+  <a href="https://rtcws.rtcsnv.com/routePDF/203.pdf" target="_blank" rel="noopener">RTC Route 203 timetable (PDF)</a>.</p>
 </section>
 
 <section class="panel">
