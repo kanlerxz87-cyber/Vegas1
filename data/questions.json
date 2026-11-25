@@ -16,7 +16,11 @@
       "problem": "Because the Strip is ~4 miles long and Chinatown ~3 miles west of it, all 24 Michelin listings sit inside 60 minutes of every hotel in the dataset. The literal metric gives a flat 24/24 to all of them and ranks nothing.",
       "substitution": "A second column — Michelin restaurants within a 20-minute one-way trip — is shown alongside the 60-minute figure and is used as the ranking tiebreaker.",
       "how_to_close": "Nothing to close. It is a property of the city. If a stricter or looser threshold is preferred, the zone matrix in data/transit.json allows recomputation in one step.",
-      "sources": ["https://www.lvmonorail.com/stations/", "https://www.rtcsnv.com/ways-to-travel/fares-passes/", "https://www.boringcompany.com/projects/las-vegas-loop"]
+      "sources": [
+        "https://www.lvmonorail.com/stations/",
+        "https://www.rtcsnv.com/ways-to-travel/fares-passes/",
+        "https://www.boringcompany.com/projects/las-vegas-loop"
+      ]
     },
     {
       "id": "Q-02",
@@ -80,7 +84,7 @@
       "id": "Q-07",
       "question": "What are each restaurant's YouTube, TikTok and Instagram links?",
       "state": "open",
-      "answer": "YouTube is complete: every one of the 21 restaurants has at least one working video link, 45 in total. Instagram and TikTok are almost entirely blank.",
+      "answer": "YouTube is complete: all 24 listings have at least one working video link, 69 in total. Instagram and TikTok are almost entirely blank.",
       "problem": "Handles were not printed on most official restaurant pages, and guessing a handle would create a dead or, worse, wrong link.",
       "substitution": "Blank rather than guessed. The Neon Museum is the only venue with confirmed Instagram and TikTok, taken from its own site footer.",
       "how_to_close": "Open each restaurant's official page footer or its OpenTable profile — most link their own socials there. That is 21 short page visits.",

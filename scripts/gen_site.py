@@ -163,7 +163,7 @@ def build_index():
   <h2>The four starred restaurants</h2>
   <p>These are the only starred rooms in the city, and all four are on the Strip:</p>
   <ul class="tight">{star_lis}</ul>
-  <p>The other <strong>{rest_count}</strong> listings — three Bib Gourmand and fourteen Recommended — are all in the
+  <p>The other <strong>{rest_count}</strong> listings — {N_BIB} Bib Gourmand and {N_REC} Recommended — are all in the
   <a href="restaurants.html">MICHELIN page</a>, each labelled with which of the three tiers it sits in.</p>
 </section>
 
@@ -598,6 +598,7 @@ def build_questions():
   {src_block}
 </article>""")
 
+    n_q = len(QS["questions"])
     n_open = sum(1 for q in QS["questions"] if q["state"] == "open")
     n_int = sum(1 for q in QS["questions"] if q["state"] == "interpreted")
     n_done = sum(1 for q in QS["questions"] if q["state"] == "answered")
@@ -605,7 +606,7 @@ def build_questions():
     body = f"""
 <section class="panel">
   <h2>What is known, what is not, and how to find out</h2>
-  <p>Ten questions drove this plan. {n_done} are fully closed, {n_int} required a stated interpretation because
+  <p>{n_q} questions drove this plan. {n_done} are fully closed, {n_int} required a stated interpretation because
   the brief does not map onto Las Vegas as written, and {n_open} are still open — those are the ones where a
   table on this site shows a blank rather than a guess.</p>
   <div class="grid4">
@@ -639,10 +640,11 @@ def build_suggestions():
 </article>""")
 
     needs = [s for s in SUG["suggestions"] if s["needs_decision"]]
+    n_sug = len(SUG["suggestions"])
     body = f"""
 <section class="panel">
   <h2>{len(SUGGESTIONS_HEAD)}</h2>
-  <p>Twelve proposals, ranked by how much they change the outcome. <strong>{len(needs)} of them need a decision
+  <p>{n_sug} proposals, ranked by how much they change the outcome. <strong>{len(needs)} of them need a decision
   from you</strong> before the plan can be finalised — they are marked in the list. Nothing here was silently
   applied to the data.</p>
   <p>The three that matter most: move the trip to <strong>8–15 March</strong> (saves about $1,400 on the same suite),
@@ -656,13 +658,14 @@ def build_suggestions():
                 body)
 
 
-SUGGESTIONS_HEAD = ["Twelve ways to improve this plan"]
+SUGGESTIONS_HEAD = [f"{len(SUG['suggestions'])} ways to improve this plan"]
 
 
 # ---------------------------------------------------------------- sources
 def build_sources():
     flag_rows = []
     # flags are listed in FLAGS.md; render the highlighted ones here
+    N_FLAGS = 20
     flags = [
         ("F-01", "Joël Robuchon", "Videos say 3 stars; the 2026 Guide says 2."),
         ("F-02", "Michael Mina", "Publishes seasonal block closures; no 2027 dates."),
@@ -744,7 +747,7 @@ def build_sources():
   <tbody>{''.join(flag_rows)}</tbody>
   </table>
   </div>
-  <p class="note">The full list, including twenty flags and the deliberate non-inclusions, is in
+  <p class="note">The full list (all {N_FLAGS} flags) and the deliberate non-inclusions are in
   <code>FLAGS.md</code> at the repository root.</p>
 </section>
 {''.join(blocks)}
