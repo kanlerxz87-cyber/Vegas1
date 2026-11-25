@@ -51,7 +51,8 @@
       "phone": "",
       "verified": "yes",
       "flags": [
-        "F-01"
+        "F-01",
+        "F-22"
       ],
       "notes": "Two independent creator videos in this dataset claim three Michelin stars — that is the pre-2010 status. The 2026 Guide lists Joël Robuchon at TWO stars, which the restaurant's own page also states. NOTE: the same page carries a dated banner (\"open 4:00–8:00 PM Thu 19 – Sat 21 November\") that applies to a 2026 date, not to 2027 — do not carry it forward. Also the 2026 MICHELIN Service Award went to GM Sean Christopher, so award rows and staff awards must not be confused.",
       "hours_source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html (\"Hours of operation\" block, retrieved 2026-11-25)"
@@ -352,7 +353,7 @@
       "verified": "partial",
       "flags": [
         "F-02",
-        "F-08"
+        "F-23"
       ],
       "notes": "SERIOUS: the restaurant's own page shows \"Temporarily closed\" for all seven days, so the $590++ tasting-menu figure on this row is a price for a service that is not currently running. This row must not be presented as a bookable option without a re-check. Reopen date is not published. Do not assume it reopens before Feb 2027.",
       "hours_source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html (retrieved 2026-11-25)"
@@ -492,7 +493,9 @@
       "tiktok": "",
       "phone": "",
       "verified": "yes",
-      "flags": [],
+      "flags": [
+        "F-24"
+      ],
       "notes": "Hours and phone are on the Contact page, not the Restaurant page — the Restaurant page is a booking widget and shows no service times. Strict dietary policy: decide before booking. OpenTable id 1005940. Phone 702-582-5852.",
       "hours_source": "https://partage.vegas/contact (\"We'll be open for the foreseeable future Tuesday to Saturday from 5 pm to 9 pm.\", retrieved 2026-11-25)"
     },
@@ -521,7 +524,7 @@
       "phone": "702.790.2147",
       "verified": "partial",
       "flags": [
-        "F-07"
+        "F-25"
       ],
       "notes": "The official site does not publish opening hours anywhere on its front page or menu page; bookings are handled through OpenTable (rid 732187). Left blank rather than guessed. A card-hold policy applies: reservations cancelled inside 24 hours are charged $25 per guest, and tables are capped at 4 guests."
     },

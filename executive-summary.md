@@ -44,11 +44,12 @@ not. Of 24 listings: **4 starred** (Joël Robuchon 2★; L'Atelier, Guy Savoy, �
 
 Only three venues print a real price for two: Michael Mina **$590++**, KAME Omakase **$1,000++**,
 Anima by EDO **$170++**. The four starred rooms are all "price on request" — book them first, before
-the hotel, because é has nine seats a night.
+the hotel, because é has nine seats a night. Hours are confirmed for 17 of the 24 listings and all 24
+have at least one working video link (69 in total).
 
 ## What is not known
 
-Eight gaps are left blank rather than guessed, and each has a stated route to close it. The two that
+Five of the ten register questions remain open. Each blank has a stated route to close it. The two that
 matter: **restaurant prices** (18 of 21 venues publish none) and **whether this is a 3-night or
 7-night trip** — the brief says 1–2 weeks but the preferred dates 15–18 February are three nights,
 which would cut every hotel figure on this site by more than half.

@@ -163,7 +163,7 @@ def build_index():
   <h2>The four starred restaurants</h2>
   <p>These are the only starred rooms in the city, and all four are on the Strip:</p>
   <ul class="tight">{star_lis}</ul>
-  <p>The other <strong>{rest_count}</strong> listings — three Bib Gourmand and fourteen Recommended — are all in the
+  <p>The other <strong>{rest_count}</strong> listings — {N_BIB} Bib Gourmand and {N_REC} Recommended — are all in the
   <a href="restaurants.html">MICHELIN page</a>, each labelled with which of the three tiers it sits in.</p>
 </section>
 
@@ -440,7 +440,7 @@ a missing entry and it is not an average. Only three restaurants print a real pe
     <li><strong>Michael Mina</strong> — $295++ per person, 10-course tasting → <strong>$590++</strong> for two,
       <strong>but the venue is currently closed</strong>: its own Bellagio page reads &ldquo;Monday to Sunday: Closed&rdquo;
       and labels it <em>Temporarily closed</em>, with no reopen date published. Treat this as a price for a service that
-      is not running, not as a bookable dinner (FLAGS.md <a href="sources.html#flags">F-22</a>).</li>
+      is not running, not as a bookable dinner (FLAGS.md <a href="sources.html#flags">F-23</a>).</li>
     <li><strong>KAME Omakase</strong> — $500 per person, signature omakase → <strong>$1,000++</strong> for two.</li>
     <li><strong>Anima by EDO</strong> — $85 per person tasting → <strong>$170++</strong> for two.</li>
   </ul>
@@ -544,6 +544,23 @@ def build_transit():
 </section>
 
 <section class="panel">
+  <h2>Correction: Chinatown is reachable by bus</h2>
+  <p>An earlier version of this matrix recorded Chinatown / Spring Mountain Rd as reachable only by car or
+  rideshare. <strong>That was wrong.</strong> RTC <strong>Route 203</strong> runs the length of Spring Mountain Road,
+  and its published timetable carries a timed stop at <strong>Las Vegas Blvd</strong> — the north end of the Strip,
+  where Wynn, Encore, Resorts World and SAHARA are.</p>
+  <p>This matters more than any other single number on this site, because <strong>seven of the 24 MICHELIN listings
+  sit on that one road</strong>: Partage, Kabuto, KAME Omakase, Lamaii, Sparrow + Wolf, Pho Ga Bac Bac and YEN Viet
+  Kitchen. Nearly a third of the guide is on a road that turns out to have a bus.</p>
+  <p>The timetable's eastbound runs give <strong>Decatur to Las Vegas Blvd in 14 minutes</strong>. Adding a walk to the
+  stop, a platform wait and a walk at the far end puts the north Strip at about <strong>34 minutes</strong> from
+  Chinatown door to door — comfortably inside the brief's one-hour limit, from a hotel with no Monorail station.</p>
+  <p>This is the <strong>only published travel time in the whole model</strong>. Every other minute figure here is an
+  estimate built from station lists and route maps, and is labelled as one. Verify the timetable yourself:
+  <a href="https://rtcws.rtcsnv.com/routePDF/203.pdf" target="_blank" rel="noopener">RTC Route 203 timetable (PDF)</a>.</p>
+</section>
+
+<section class="panel">
   <h2>Estimated one-way minutes between zones</h2>
   <p><strong>These are estimates, not timetables.</strong> No official source publishes door-to-door times; these are
   built from the official station lists and route maps and rounded to five minutes.</p>
@@ -601,6 +618,7 @@ def build_questions():
   {src_block}
 </article>""")
 
+    n_q = len(QS["questions"])
     n_open = sum(1 for q in QS["questions"] if q["state"] == "open")
     n_int = sum(1 for q in QS["questions"] if q["state"] == "interpreted")
     n_done = sum(1 for q in QS["questions"] if q["state"] == "answered")
@@ -608,7 +626,7 @@ def build_questions():
     body = f"""
 <section class="panel">
   <h2>What is known, what is not, and how to find out</h2>
-  <p>Ten questions drove this plan. {n_done} are fully closed, {n_int} required a stated interpretation because
+  <p>{n_q} questions drove this plan. {n_done} are fully closed, {n_int} required a stated interpretation because
   the brief does not map onto Las Vegas as written, and {n_open} are still open — those are the ones where a
   table on this site shows a blank rather than a guess.</p>
   <div class="grid4">
@@ -642,10 +660,11 @@ def build_suggestions():
 </article>""")
 
     needs = [s for s in SUG["suggestions"] if s["needs_decision"]]
+    n_sug = len(SUG["suggestions"])
     body = f"""
 <section class="panel">
   <h2>{len(SUGGESTIONS_HEAD)}</h2>
-  <p>Twelve proposals, ranked by how much they change the outcome. <strong>{len(needs)} of them need a decision
+  <p>{n_sug} proposals, ranked by how much they change the outcome. <strong>{len(needs)} of them need a decision
   from you</strong> before the plan can be finalised — they are marked in the list. Nothing here was silently
   applied to the data.</p>
   <p>The three that matter most: move the trip to <strong>8–15 March</strong> (saves about $1,400 on the same suite),
@@ -659,13 +678,14 @@ def build_suggestions():
                 body)
 
 
-SUGGESTIONS_HEAD = ["Twelve ways to improve this plan"]
+SUGGESTIONS_HEAD = [f"{len(SUG['suggestions'])} ways to improve this plan"]
 
 
 # ---------------------------------------------------------------- sources
 def build_sources():
     flag_rows = []
     # flags are listed in FLAGS.md; render the highlighted ones here
+    N_FLAGS = 20
     flags = [
         ("F-01", "Joël Robuchon", "Videos say 3 stars; the 2026 Guide says 2."),
         ("F-02", "Michael Mina", "Publishes seasonal block closures; no 2027 dates."),
@@ -747,7 +767,7 @@ def build_sources():
   <tbody>{''.join(flag_rows)}</tbody>
   </table>
   </div>
-  <p class="note">The full list, including twenty flags and the deliberate non-inclusions, is in
+  <p class="note">The full list (all {N_FLAGS} flags) and the deliberate non-inclusions are in
   <code>FLAGS.md</code> at the repository root.</p>
 </section>
 {''.join(blocks)}
@@ -914,10 +934,18 @@ def main():
         "suggestions.html": build_suggestions(),
         "sources.html": build_sources(),
     }
-    for name, content in pages.items():
-        (DOCS / name).write_text(content, encoding="utf-8")
-    (DOCS / "style.css").write_text(CSS, encoding="utf-8")
-    (DOCS / ".nojekyll").write_text("", encoding="utf-8")
+    # Publish to BOTH docs/ and the repo root. GitHub Pages on this repo is pinned
+    # to main:/ (the API refuses to repoint it to /docs), so the root copy is what
+    # visitors actually get. Writing both makes the deploy path independent of that
+    # setting. The root copies are generated files — never edit them by hand.
+    targets = [DOCS, ROOT]
+    for out_dir in targets:
+        out_dir.mkdir(exist_ok=True)
+        for name, content in pages.items():
+            (out_dir / name).write_text(content, encoding="utf-8")
+        (out_dir / "style.css").write_text(CSS, encoding="utf-8")
+        (out_dir / ".nojekyll").write_text("", encoding="utf-8")
+    print(f"published to: {', '.join(str(t.relative_to(ROOT)) + '/' for t in targets)}")
     total = sum(len(c) for c in pages.values())
     print(f"wrote {len(pages)} pages + style.css to docs/ ({total:,} bytes of html)")
     for n in pages:

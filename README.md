@@ -8,7 +8,8 @@ A sourced trip plan for **two adults**, seven nights, between **15 February and 
 
 | Path | What it is |
 |------|-----------|
-| `docs/` | The published site (8 pages, plain HTML + one stylesheet, no framework, no CDN) |
+| `docs/` | The site source (8 pages, plain HTML + one stylesheet, no framework, no CDN) |
+| `index.html`, `*.html`, `style.css` (repo root) | The **same generated site**, written to the root as well. GitHub Pages on this repo is pinned to `main:/` and the API refuses to repoint it to `/docs`, so the root copy is what visitors actually get. Both are produced by `scripts/gen_site.py` — never edit either by hand. |
 | `data/restaurants.json` | 24 MICHELIN listings with award tier, hours, exceptions, prices, official + YouTube links |
 | `data/hotels.json` | 32 hotels with dated 7-night totals, bed/bathroom fit, Michelin proximity counts |
 | `data/price-windows.json` | The week-by-week price comparison that answers "cheapest time to book" |
@@ -32,8 +33,8 @@ python3 scripts/gen_site.py   # render docs/
 python3 scripts/validate.py   # link + structure checks
 ```
 
-No dependencies beyond the Python 3 standard library. GitHub Pages serves `docs/` from `main`
-directly; `.nojekyll` is present so no Jekyll step runs.
+No dependencies beyond the Python 3 standard library. `gen_site.py` writes the site to **both**
+`docs/` and the repo root; `.nojekyll` is present in both so no Jekyll step runs.
 
 ## The three findings
 
@@ -44,6 +45,18 @@ directly; `.nojekyll` is present so no Jekyll step runs.
    ranking instead; disclosed as Q-01.
 3. **The three cheapest hotels fail the brief's bed requirement.** LINQ, Flamingo and Horseshoe are
    all "room type assigned on arrival" — the bed is not guaranteed until check-in.
+
+## A correction worth knowing about
+
+The first transit model in this repository recorded **Chinatown / Spring Mountain Rd as reachable
+only by car or rideshare**. That was wrong. RTC **Route 203** runs the length of Spring Mountain
+Road and its [published timetable](https://rtcws.rtcsnv.com/routePDF/203.pdf) carries a timed stop
+at **Las Vegas Blvd**, giving Decatur to Las Vegas Blvd in **14 minutes**.
+
+It matters because **seven of the 24 MICHELIN listings sit on that one road** — nearly a third of
+the guide. The north Strip therefore reaches Chinatown in about **34 minutes**, not never. This is
+the only *published* travel time in the model; every other minute figure remains an estimate built
+from station lists and route maps, and is labelled as one. Recorded as F-21 in `FLAGS.md`.
 
 ## Ground rules this project followed
 
