@@ -1,0 +1,97 @@
+/* Vegas1 trip planner — mobile-first stylesheet */
+:root {
+  --bg: #0f1220;
+  --panel: #171b2e;
+  --panel2: #1e2340;
+  --text: #e8eaf6;
+  --muted: #9aa3c7;
+  --accent: #ffb400;
+  --accent2: #4dd0e1;
+  --star: #ffd54f;
+  --bib: #ff8a65;
+  --rec: #81c784;
+  --flag: #ef5350;
+  --border: #2a3052;
+  --link: #82b1ff;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  font-size: 16px;
+}
+a { color: var(--link); }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 14px 60px; }
+header.site {
+  background: linear-gradient(135deg, #1a1f3a, #252b52);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 14px 10px;
+}
+header.site h1 { margin: 0 0 4px; font-size: 1.5rem; }
+header.site h1 a { color: var(--accent); text-decoration: none; }
+header.site p.sub { margin: 0; color: var(--muted); font-size: .9rem; }
+nav.main {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  padding: 10px 14px; background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 50;
+}
+nav.main a {
+  color: var(--text); text-decoration: none; font-size: .85rem;
+  padding: 6px 10px; border-radius: 6px; background: var(--panel2);
+  border: 1px solid var(--border); white-space: nowrap;
+}
+nav.main a:hover, nav.main a.active { background: var(--accent); color: #1a1a1a; font-weight: 600; border-color: var(--accent); }
+h2 { font-size: 1.25rem; margin: 28px 0 8px; border-left: 4px solid var(--accent); padding-left: 10px; }
+h3 { font-size: 1.05rem; margin: 20px 0 6px; color: var(--accent2); }
+p, li { color: var(--text); }
+.muted, .small { color: var(--muted); font-size: .85rem; }
+.card {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px; margin: 12px 0;
+}
+.grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.stat { background: var(--panel2); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+.stat .num { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.stat .lbl { color: var(--muted); font-size: .8rem; }
+/* Tables: horizontal scroll on small screens */
+.tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px 0; border: 1px solid var(--border); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: .85rem; background: var(--panel); }
+th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: var(--panel2); color: var(--accent); position: sticky; top: 0; font-size: .78rem; text-transform: uppercase; letter-spacing: .03em; }
+tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+td.num, th.num { text-align: right; white-space: nowrap; }
+/* Badges */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: .72rem; font-weight: 700; white-space: nowrap; }
+.b-star2 { background: var(--star); color: #3e2c00; }
+.b-star { background: var(--star); color: #3e2c00; }
+.b-bib { background: var(--bib); color: #3b1400; }
+.b-rec { background: var(--rec); color: #0d3013; }
+.b-flag { background: var(--flag); color: #fff; }
+.b-free { background: var(--accent2); color: #00323a; }
+.b-cheap { background: #66bb6a; color: #0d2a10; }
+.b-mid { background: #ffa726; color: #3a1f00; }
+.b-high { background: #ef5350; color: #fff; }
+/* Key-value rows for mobile */
+.kv { display: flex; justify-content: space-between; gap: 10px; padding: 4px 0; border-bottom: 1px dashed var(--border); font-size: .9rem; }
+.kv .k { color: var(--muted); }
+.kv .v { text-align: right; }
+/* Callouts */
+.callout { border-left: 4px solid var(--accent2); background: var(--panel2); padding: 10px 14px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: .9rem; }
+.callout.warn { border-left-color: var(--flag); }
+.callout.ok { border-left-color: var(--rec); }
+.qlist li { margin: 8px 0; }
+footer.site { margin-top: 40px; padding: 16px 14px; border-top: 1px solid var(--border); color: var(--muted); font-size: .8rem; }
+.rank { font-weight: 700; color: var(--accent); }
+.nowrap { white-space: nowrap; }
+.icon-link { text-decoration: none; }
+@media (max-width: 640px) {
+  header.site h1 { font-size: 1.25rem; }
+  nav.main a { font-size: .78rem; padding: 5px 8px; }
+  table { font-size: .8rem; }
+  .stat .num { font-size: 1.25rem; }
+}
