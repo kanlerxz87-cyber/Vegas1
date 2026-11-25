@@ -200,6 +200,8 @@ def distinction_tag(d):
     return f'<span class="tag {cls}">{e(d)}</span>'
 
 DET = {r["id"]: r for r in DETAILS["restaurants"]}
+MID = {r["id"]: r for r in MICHELIN["restaurants"]}
+TAGCLS = {"two_star": "t2", "one_star": "t1", "bib_gourmand": "tb", "recommended": "tr"}
 SOC = {r["venue_id"]: r for r in SOCIAL["links"]}
 
 def hours_cell(rid):
@@ -348,6 +350,32 @@ so the content is deployed and only the root document is wrong. Full diagnosis a
     return page("index.html", "Overview", body)
 
 # ---------------------------------------------------------------- hotels
+def hotel_michelin_detail(hid):
+    """Return (summary_html, venue_list, cost_lo, cost_hi, n_known) for one hotel."""
+    rows = [r for r in TRANSIT["rows"] if r["hotel_id"] == hid]
+    venues, lo, hi, known, unknown = [], 0, 0, 0, []
+    for r in sorted(rows, key=lambda x: x.get("minutes") or 999):
+        rid, mins = r["restaurant_id"], r.get("minutes")
+        if mins is None or mins > 60:
+            continue
+        rest = MID.get(rid)
+        if not rest:
+            continue
+        d = DET.get(rid, {})
+        c = couple(d.get("per_person_estimate_usd"))
+        if c:
+            lo += c[0]; hi += c[1]; known += 1
+            price = f"${c[0]:,}" if c[0] == c[1] else f"${c[0]:,}–${c[1]:,}"
+        else:
+            price = "unverified"; unknown.append(rest["name"])
+        venues.append(f'<a href="michelin.html">{e(rest["name"])}</a> '
+                      f'<span class="tag {TAGCLS[rest["distinction_class"]]}">{e(rest["distinction"])}</span> '
+                      f'<span class="src">{mins} min</span> — {price} for 2')
+    if not venues:
+        return ('<span class="unv">not measured</span>', [], None, None, 0)
+    summary = f"{len(venues)} venue(s) ≤60 min by bus"
+    return summary, venues, lo, hi, known
+
 def build_hotels():
     rows = ""
     for i, s in enumerate(SCORES, 1):
@@ -378,6 +406,34 @@ def build_hotels():
 <td class="src"><a href="{e(h['booking_url'])}" target="_blank" rel="noopener">price</a></td>
 </tr>"""
 
+    # --- combined hotel + MICHELIN dining cost table (the user's core ask) ---
+    combo_rows = ""
+    for i, s_ in enumerate(SCORES, 1):
+        h = s_["hotel"]
+        summ, venues, lo, hi, known = hotel_michelin_detail(h["id"])
+        detail = "<br>".join(venues) if venues else summ
+        if known:
+            # cost of dining once at EVERY reachable MICHELIN venue - a defined quantity,
+            # not a guess at how many nights the couple will actually dine out.
+            cost = (f"${lo:,}" if lo == hi else f"${lo:,}–${hi:,}")
+            cost += f'<div class="src">one visit to each of {known} priced venue(s)</div>'
+            t_lo, t_hi = h["total_usd"] + lo, h["total_usd"] + hi
+            grand = (f"${t_lo:,}" if t_lo == t_hi else f"${t_lo:,}–${t_hi:,}")
+            grand += '<div class="src">room only + those dinners; excl. resort fees</div>'
+        else:
+            cost = '<span class="unv">no verified price</span>'
+            grand = (f"${h['total_usd']:,}"
+                     '<div class="src">hotel only — dining unpriced</div>')
+        combo_rows += f"""<tr>
+<td class="num"><span class="rank">{i}</span></td>
+<td><a href="{e(h['official_site'])}" target="_blank" rel="noopener">{e(h['name'])}</a>
+  <div class="src">{e(h['area'])}</div></td>
+<td class="num">${h['total_usd']:,}<div class="src">7 nights, 2 adults</div></td>
+<td class="num">{cost}</td>
+<td class="num">{grand}</td>
+<td class="src">{detail}</td>
+</tr>"""
+
     unav = ""
     for u in HOTELS["unavailable_for_preferred_window"]:
         unav += f"""<tr><td><a href="{e(u['official_site'])}" target="_blank" rel="noopener">{e(u['name'])}</a></td>
@@ -406,6 +462,29 @@ penalised to zero silently, but they also cannot rank first on reach they never 
 <p class="src">Bed & bathroom columns come from the room description on the booking listing.
 “Confirmed” means the listing text explicitly stated a bathroom inside a private apartment —
 nothing weaker was accepted as proof of a <em>private</em> bathroom in a shared-property setting.</p>
+
+<h2>Hotels and MICHELIN dining cost — one table</h2>
+<p class="lead">Your brief asked for the hotel total and the 2-adult restaurant cost side by side, so here
+they are in one table.</p>
+<p><strong>Exactly what the dining column measures:</strong> the cost for two people to eat dinner once at
+<em>each</em> MICHELIN-listed restaurant that is within 60 minutes by bus of that hotel <em>and</em> publishes
+its price. That is a quantity that can be checked. It is deliberately <strong>not</strong> a 7-night dining
+budget — inventing one would mean guessing how often you eat out, and no source can tell me that.</p>
+<p>So read it this way: if you plan to try two MICHELIN dinners, your dining spend is roughly this column
+divided by the number of priced venues, times two. Venues with no published price are excluded and listed
+separately rather than estimated.</p>
+<div class="tblwrap"><table>
+<thead><tr><th>#</th><th>Hotel</th><th>7-night hotel total</th>
+<th>MICHELIN dinner for 2<span class="src">one visit to each reachable priced venue</span></th>
+<th>Hotel + those dinners</th><th>Restaurants within 60 min by bus, with price for 2</th></tr></thead>
+<tbody>{combo_rows}</tbody></table></div>
+<div class="warnbox">
+<strong>Why some hotels show “no verified price”.</strong> A hotel only earns a dining figure if at least
+one MICHELIN venue within 60 minutes of it publishes a 2-person price. Where none does, the cell stays
+unverified — it is not filled with an average, because an average would be a fabricated number. The
+per-venue evidence is on <a href="michelin.html">MICHELIN</a>, each traceable to the restaurant's own page.
+Note also how few venues publish a price at all: that scarcity is the single biggest gap in this whole plan.
+</div>
 
 <h2>Unavailable for your preferred window</h2>
 <div class="tblwrap"><table>
