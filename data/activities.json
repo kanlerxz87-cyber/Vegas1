@@ -5,8 +5,8 @@
     "transit_baseline": {
       "deuce": "24 hours; every 15 min 7:00am–2:00am, every 20 min 2:00–7:00am (RTC official FAQ)",
       "sdx": "9:00am–midnight, every 15 min (RTC official FAQ)",
-      "passes": "All-Access 2-hour $6; 24-hour $8; 3-day $20; 7-day $35 (RTC official FAQ)",
-      "downtown_trip": "South Strip → downtown 30–60 minutes by bus (RTC official FAQ)",
+      "passes": "Strip & All Access (official rtcws fares page): single $4; 2-hour $6; 24-hour $8; 3-day $20. A fare change is proposed from 2027-01-31 (pending board approval) — verify before Feb 2027 travel.",
+      "downtown_trip": "South Strip → downtown: under 30 min (SDX mornings) to nearly 1 hour (Deuce Fri/Sat evenings) — RTC official FAQ wording",
       "chinatown": "Route 203 (Spring Mountain Rd corridor) verified on RTC route PDF; downtown→Chinatown ~30 min (Rome2Rio, non-official — cited as secondary)"
     },
     "price_basis": "'Cost for 2' = two adult tickets, before tax/fees where ticket pages separate them."
@@ -105,7 +105,7 @@
       "official": "https://neonmuseum.org/tickets-and-experiences/",
       "source": "https://neonmuseum.org/tickets-and-experiences/",
       "social": "https://www.instagram.com/theneonmuseumlasvegas/",
-      "social_platform": "Instagram (@theneonmuseumlasvegas) + TikTok (linked on official About page)",
+      "social_platform": "Instagram (@theneonmuseumlasvegas) + TikTok (@neonmuseumlasvegas, linked on official ticket page)",
       "notes": "From 2027-01-01 the museum simplifies to a single daily admission ticket (official notice)."
     },
     {

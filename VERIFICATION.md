@@ -61,7 +61,7 @@ Source conflicts are displayed as conflicts (`flagged.html` §B), not silently r
 ### activities.html
 | Row | Source URL | What was read |
 |---|---|---|
-| Transit baseline | rtcsnv.com FAQ + routepdf/203.pdf + transitguide.pdf | Deuce 24h 15/20-min headways; SDX 9–midnight; fares $6/$8/$20/$35; south Strip→downtown 30–60 min; Route 203 Spring Mountain; RED LINE note |
+| Transit baseline | rtcsnv.com/touristms/faq.html (official FAQ) + rtcws.rtcsnv.com/mobile/geoFares.html (official fares) + routepdf/203.pdf + transitguide.pdf | Deuce 24h 15/20-min headways; SDX 9–midnight; Strip & All Access fares single $4 / 2-hr $6 / 24-hr $8 / 3-day $20 (a $35 7-day figure previously written here was WRONG — no such Strip pass exists, corrected 2026-11-25); south Strip→downtown under 30 min (SDX AM) to ~60 min (Deuce Fri/Sat eve); Route 203 Spring Mountain; fare change proposed from 2027-01-31 → flagged |
 | Fountains of Bellagio | bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html (official) | Full weekly show schedule; free |
 | Conservatory | lasvegascompass (3rd party) | 24h claim → flagged (unverified hours) |
 | High Roller | caesars.com/linq/things-to-do/attractions + 2026 reseller guides | Hours/prices 2026 only → flagged for 2027 (D4) |
