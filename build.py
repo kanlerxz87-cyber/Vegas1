@@ -244,6 +244,11 @@ def couple(x):
 # ---------------------------------------------------------------- index
 def build_index():
     n_ver = sum(1 for h in HOTELS["hotels"] if h["price_status"] == "verified")
+    n_routes = len(TRANSIT["rows"])
+    n_priced = sum(1 for r in DETAILS["restaurants"] if r.get("per_person_estimate_usd"))
+    n_soc = len(SOCIAL["links"]) + sum(
+        1 for r in DETAILS["restaurants"] if r.get("instagram_official"))
+    n_act_vid = sum(1 for a in ACTIVITIES["activities"] if a.get("videos"))
     n_unavail = len(HOTELS["unavailable_for_preferred_window"])
     priced = sorted([h for h in HOTELS["hotels"] if h.get("total_usd")], key=lambda h: h["total_usd"])
     cheapest = priced[0]
@@ -269,14 +274,18 @@ with every gap left visibly blank instead of filled in. <strong>Snapshot 2026-11
 </div>
 
 <div class="errbox">
-<strong>Read this first — three findings that change the plan</strong>
+<strong>Read this first — four findings that change the plan</strong>
 <ol>
+<li><strong>Your preferred week is a convention week.</strong> MAGIC Las Vegas (16–18 Feb,
+~17,000 attendees), the International Roofing Expo (16–18 Feb) and WWIN (15–17 Feb) all land
+inside your preferred 15–18 Feb window. Every hotel price here was quoted for 15–22 Feb, so the
+ranking may be event-inflated. Detail with per-event sources on <a href="hotels.html">Hotels</a>.</li>
 <li><strong>Las Vegas has no subway.</strong> Your “subway or bus” requirement resolves to
 <em>bus + monorail only</em>. Every transit time on this site is a real Google Maps
 bus/monorail route, not a metro estimate. See <a href="transit.html">Transit</a>.</li>
 <li><strong>One hotel will not cover all 24 restaurants inside 60 minutes.</strong>
 The venues split into three clusters — Strip core (12), Chinatown/Spring Mountain Rd (7) and
-Downtown/Arts District (2) — and only a few routes have actually been measured. Chinatown is
+Downtown/Arts District (2) — and only {n_routes} hotel→restaurant routes have actually been measured. Chinatown is
 29–49 minutes by bus from the hotels tested, which is inside the rule; the far-south and far-west
 venues are <span class="unv">unmeasured</span>, not assumed to be close. See <a href="transit.html">Transit</a>.</li>
 <li><strong>Your preferred dates are only 3 nights.</strong> 15–18 Feb 2027 conflicts with the
@@ -296,7 +305,7 @@ your preferred date. See <a href="questions.html">Open Questions</a>.</li>
 <tr><td>Michelin stars vs. just listed in the guide</td><td class="ok">Answered</td>
 <td><a href="michelin.html">24 venues, distinction-labelled</a> from the official Michelin press release</td></tr>
 <tr><td>Michelin clusters near each hotel</td><td>Partially answered</td>
-<td><a href="transit.html">Measured matrix</a> — 5 hotel→restaurant pairs routed, rest blank</td></tr>
+<td><a href="transit.html">Measured matrix</a> — {n_routes} hotel→restaurant pairs routed, rest blank</td></tr>
 <tr><td>Rank hotels by Michelin reach within 1 hour</td><td>Partially answered</td>
 <td><a href="hotels.html">Ranking table</a>, with reach shown only where measured</td></tr>
 <tr><td>7-night total price per hotel</td><td class="ok">Answered</td>
@@ -304,9 +313,9 @@ your preferred date. See <a href="questions.html">Open Questions</a>.</li>
 <tr><td>Cheapest time to book</td><td class="bad">Not verifiable</td>
 <td>Two windows compared; no official “best time to book” exists. <a href="questions.html">Open Questions</a> explains</td></tr>
 <tr><td>Restaurant cost for 2 adults</td><td>Partially answered</td>
-<td>Guy Savoy and Kabuto have exact official prices; the other starred venues publish none → <span class="unv">unverified</span></td></tr>
+<td>{n_priced} venues publish an exact price (Guy Savoy, Kabuto, Michael Mina, Anima by EDO); the rest stay <span class="unv">unverified</span>. A combined hotel + dining-cost table is on <a href="hotels.html">Hotels</a></td></tr>
 <tr><td>YouTube / TikTok / Instagram per venue</td><td>Partially answered</td>
-<td>6 venues have verified creator links; TikTok/Instagram could not be crawled, so they are blank, not guessed</td></tr>
+<td>{n_soc} venues have creator or official links, plus {n_act_vid} activities with 3 videos each; TikTok/Instagram could not be crawled, so they are blank, not guessed</td></tr>
 <tr><td>Official site link per row</td><td class="ok">Answered</td>
 <td>Every restaurant and hotel row links its own site</td></tr>
 <tr><td>Open days / hours / exceptions</td><td>Partially answered</td>
