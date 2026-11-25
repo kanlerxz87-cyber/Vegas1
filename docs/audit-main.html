@@ -91,13 +91,13 @@ branch base was an 8-byte README, so there was nothing local to audit. The real 
 </div>
 
 <div class="grid">
-<div class="kpi"><small>Claims audited</small><b>11</b></div>
+<div class="kpi"><small>Claims audited</small><b>12</b></div>
 <div class="kpi"><small>Agree</small><b>2</b></div>
-<div class="kpi"><small>High-severity conflicts</small><b>2</b></div>
+<div class="kpi"><small>High-severity conflicts</small><b>3</b></div>
 <div class="kpi"><small>Unresolvable</small><b>1</b></div>
 </div>
 
-<div class="okbox"><strong>Verdict in one line.</strong> The MICHELIN layer is solid in both sessions - 24 venues and 24 award levels agree exactly. The real weakness is the pricing layer: estimated rates were carried onto a page labelled verified, and one resort fee figure matches no current source. Everything else is a wording, sourcing or process issue.</div>
+<div class="okbox"><strong>Verdict in one line.</strong> The MICHELIN layer is solid in both sessions - 24 venues and 24 award levels agree exactly. Two real problems: the deployed site&#x27;s front page shows a blank README instead of the dashboard, and estimated hotel rates were carried onto a page labelled verified. Both are fixable; neither is a data-integrity failure in the guide data.</div>
 
 <h2>Where the two sessions agree (this is the good news)</h2>
 <div class="tblwrap"><table>
@@ -170,7 +170,13 @@ reassuring result on this site.</p>
  <div class="src">GitHub Pages is configured to serve the root of main. main&#x27;s site does deploy from there. This branch&#x27;s site lives in docs/.</div>
  <div style="margin-top:6px"><span class="pill">official / current value</span> Pages API: branch main, path &#x27;/&#x27;.</div>
  <div class="src" style="margin-top:6px"><strong>Action taken:</strong> Publishing decision left to a human. Documented on the Repo Audit page.</div></td>
-<td class="src"><a href="https://api.github.com/repos/kanlerxz87-cyber/Vegas1/pages" target="_blank" rel="noopener">source</a></td></tr></tbody></table></div>
+<td class="src"><a href="https://api.github.com/repos/kanlerxz87-cyber/Vegas1/pages" target="_blank" rel="noopener">source</a></td></tr><tr><td class="src">X10</td>
+<td><span class="no">High</span></td>
+<td><strong>The deployed GitHub Pages root serves the wrong document</strong>
+ <div class="src">Per the runtime check below, https://kanlerxz87-cyber.github.io/Vegas1/ and /index.html both return a page whose body is &#x27;# Vegas1&#x27; and whose title is &#x27;Vegas1&#x27; - that is README.md, not the index.html committed on main (title &#x27;Vegas1 - Las Vegas Vacation Planning&#x27;). Every subpage renders correctly.</div>
+ <div style="margin-top:6px"><span class="pill">official / current value</span> Expected: the landing page. Actual: a one-line README render.</div>
+ <div class="src" style="margin-top:6px"><strong>Action taken:</strong> Documented with a fix procedure. Cannot be fixed from this branch; requires a push to main or a Pages re-run.</div></td>
+<td class="src"><a href="https://kanlerxz87-cyber.github.io/Vegas1/" target="_blank" rel="noopener">source</a></td></tr></tbody></table></div>
 
 <h2>The two that would actually cost you money</h2>
 <div class="errbox">
@@ -194,6 +200,25 @@ MICHELIN distinctions. All 24 venues and all 24 award levels are correct.</p>
 <p style="margin:4px 0"><strong>Why it was wrong:</strong> The star counts were correct for the 2026 guide. The conclusion was drawn from the presence of a numeric field rather than from reading all 24 values.</p>
 <p style="margin:4px 0"><strong>Corrected to:</strong> X1 downgraded to Low: labels are right, only the wording differs.</p>
 <p class="src"><a href="https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s" target="_blank" rel="noopener">source</a></p></div>
+</div>
+
+<h2>Live site check — the deployed URL is broken at the root</h2>
+<div class="errbox">
+<strong>Finding X10 (High): the published site's landing page serves the wrong document.</strong>
+<p>Fetched the deployed site after Pages build <code>0d0b1d5</code> reported success:</p>
+</div>
+<div class="tblwrap"><table>
+<thead><tr><th>URL</th><th>Expected</th><th>What is actually served</th><th>Verdict</th></tr></thead>
+<tbody><tr><td class="src">https://kanlerxz87-cyber.github.io/Vegas1/</td><td class="src">The planner landing page (title &#x27;Vegas1 - Las Vegas Vacation Planning&#x27;)</td>
+<td class="src">Body is &#x27;# Vegas1&#x27;; page title is &#x27;Vegas1&#x27;</td><td><span class="no">WRONG CONTENT</span></td></tr><tr><td class="src">https://kanlerxz87-cyber.github.io/Vegas1/index.html</td><td class="src">Same landing page</td>
+<td class="src">Same &#x27;# Vegas1&#x27; content, title &#x27;Vegas1&#x27;</td><td><span class="no">WRONG CONTENT</span></td></tr><tr><td class="src">https://kanlerxz87-cyber.github.io/Vegas1/pages/hotels.html</td><td class="src">Hotel comparison table</td>
+<td class="src">Full hotel table renders, title &#x27;Hotels - Vegas1 Las Vegas Vacation Planner&#x27;</td><td><span class="ok">OK</span></td></tr><tr><td class="src">https://kanlerxz87-cyber.github.io/Vegas1/executive-summary.html</td><td class="src">Executive summary</td>
+<td class="src">Full summary renders</td><td><span class="ok">OK (converted from .md to .html)</span></td></tr><tr><td class="src">https://kanlerxz87-cyber.github.io/Vegas1/questions-answers.html</td><td class="src">Questions page</td>
+<td class="src">Full page renders</td><td><span class="ok">OK (converted from .md to .html)</span></td></tr></tbody></table></div>
+<div class="warnbox">
+<p><strong>Diagnosis.</strong> Subpages and converted markdown render correctly, so the deployment of commit 0d0b1d5 is live. Only the root document is wrong: it serves the content and title of README.md (&#x27;# Vegas1&#x27;), not the index.html committed on main (whose title is &#x27;Vegas1 - Las Vegas Vacation Planning&#x27;). The 13:32 Pages build ran at commit 9b8bcfa, when the repo held only an 8-byte README and no index.html, so Pages generated a README-based index. The later build does not appear to have replaced it at the root.</p>
+<p><strong>Impact.</strong> Anyone opening the URL from the repo&#x27;s About link, a search result or a shared link lands on a page that says &#x27;# Vegas1&#x27; and nothing else. Every subpage works but is effectively unreachable by browsing. This is the single most user-visible defect in the project.</p>
+<p><strong>Fix.</strong> Trigger a fresh Pages deployment for main (push any commit to main, or use Settings &gt; Pages &gt; &#x27;Re-run&#x27; / the Actions &#x27;pages-build-deployment&#x27; re-run button) and then reload the root URL. Verify the root title reads &#x27;Vegas1 - Las Vegas Vacation Planning&#x27;. If it persists, delete and recreate the Pages site.</p>
 </div>
 
 <h2>How the conflict was handled</h2>

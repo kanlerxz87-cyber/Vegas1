@@ -105,16 +105,25 @@
       "official_value": "Pages API: branch main, path '/'.",
       "source": "https://api.github.com/repos/kanlerxz87-cyber/Vegas1/pages",
       "action_taken": "Publishing decision left to a human. Documented on the Repo Audit page."
+    },
+    {
+      "id": "X10",
+      "severity": "High",
+      "finding": "The deployed GitHub Pages root serves the wrong document",
+      "detail": "Per the runtime check below, https://kanlerxz87-cyber.github.io/Vegas1/ and /index.html both return a page whose body is '# Vegas1' and whose title is 'Vegas1' - that is README.md, not the index.html committed on main (title 'Vegas1 - Las Vegas Vacation Planning'). Every subpage renders correctly.",
+      "official_value": "Expected: the landing page. Actual: a one-line README render.",
+      "source": "https://kanlerxz87-cyber.github.io/Vegas1/",
+      "action_taken": "Documented with a fix procedure. Cannot be fixed from this branch; requires a push to main or a Pages re-run."
     }
   ],
   "scorecard": {
-    "claims_audited": 11,
+    "claims_audited": 12,
     "agree": 2,
-    "conflict_high": 2,
+    "conflict_high": 3,
     "conflict_medium": 4,
     "conflict_low": 3,
     "cannot_be_resolved": 1,
-    "comment": "The MICHELIN layer is solid in both sessions - 24 venues and 24 award levels agree exactly. The real weakness is the pricing layer: estimated rates were carried onto a page labelled verified, and one resort fee figure matches no current source. Everything else is a wording, sourcing or process issue."
+    "comment": "The MICHELIN layer is solid in both sessions - 24 venues and 24 award levels agree exactly. Two real problems: the deployed site's front page shows a blank README instead of the dashboard, and estimated hotel rates were carried onto a page labelled verified. Both are fixable; neither is a data-integrity failure in the guide data."
   },
   "auditor_self_corrections": [
     {
@@ -124,5 +133,45 @@
       "corrected_to": "X1 downgraded to Low: labels are right, only the wording differs.",
       "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s"
     }
-  ]
+  ],
+  "runtime_checks": {
+    "_meta": "Live fetch of the deployed GitHub Pages site on 2026-11-25, after Pages build 0d0b1d5 completed at 14:00:28Z.",
+    "pages_url": "https://kanlerxz87-cyber.github.io/Vegas1/",
+    "results": [
+      {
+        "url": "https://kanlerxz87-cyber.github.io/Vegas1/",
+        "expected": "The planner landing page (title 'Vegas1 - Las Vegas Vacation Planning')",
+        "actual": "Body is '# Vegas1'; page title is 'Vegas1'",
+        "verdict": "WRONG CONTENT"
+      },
+      {
+        "url": "https://kanlerxz87-cyber.github.io/Vegas1/index.html",
+        "expected": "Same landing page",
+        "actual": "Same '# Vegas1' content, title 'Vegas1'",
+        "verdict": "WRONG CONTENT"
+      },
+      {
+        "url": "https://kanlerxz87-cyber.github.io/Vegas1/pages/hotels.html",
+        "expected": "Hotel comparison table",
+        "actual": "Full hotel table renders, title 'Hotels - Vegas1 Las Vegas Vacation Planner'",
+        "verdict": "OK"
+      },
+      {
+        "url": "https://kanlerxz87-cyber.github.io/Vegas1/executive-summary.html",
+        "expected": "Executive summary",
+        "actual": "Full summary renders",
+        "verdict": "OK (converted from .md to .html)"
+      },
+      {
+        "url": "https://kanlerxz87-cyber.github.io/Vegas1/questions-answers.html",
+        "expected": "Questions page",
+        "actual": "Full page renders",
+        "verdict": "OK (converted from .md to .html)"
+      }
+    ],
+    "diagnosis": "Subpages and converted markdown render correctly, so the deployment of commit 0d0b1d5 is live. Only the root document is wrong: it serves the content and title of README.md ('# Vegas1'), not the index.html committed on main (whose title is 'Vegas1 - Las Vegas Vacation Planning'). The 13:32 Pages build ran at commit 9b8bcfa, when the repo held only an 8-byte README and no index.html, so Pages generated a README-based index. The later build does not appear to have replaced it at the root.",
+    "impact": "Anyone opening the URL from the repo's About link, a search result or a shared link lands on a page that says '# Vegas1' and nothing else. Every subpage works but is effectively unreachable by browsing. This is the single most user-visible defect in the project.",
+    "suggested_fix": "Trigger a fresh Pages deployment for main (push any commit to main, or use Settings > Pages > 'Re-run' / the Actions 'pages-build-deployment' re-run button) and then reload the root URL. Verify the root title reads 'Vegas1 - Las Vegas Vacation Planning'. If it persists, delete and recreate the Pages site.",
+    "note": "This session cannot fix it directly: it must not push to main, and this token gets HTTP 403 on the Pages configuration API."
+  }
 }

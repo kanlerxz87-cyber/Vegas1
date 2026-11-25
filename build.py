@@ -324,6 +324,17 @@ can look better than it is. Expanding the matrix is the #1 open task on
 <a href="flagged.html">Flagged for Review</a>.</p>
 </div>
 
+<h2>Live site status</h2>
+<div class="errbox">
+<strong>The repository's GitHub Pages site is live but its front page is broken.</strong>
+<a href="https://kanlerxz87-cyber.github.io/Vegas1/" target="_blank" rel="noopener">kanlerxz87-cyber.github.io/Vegas1</a>
+currently returns a page that says only “# Vegas1” — the README, not the dashboard that was committed.
+Sub-pages render correctly (<a href="https://kanlerxz87-cyber.github.io/Vegas1/pages/hotels.html" target="_blank" rel="noopener">hotels</a>,
+<a href="https://kanlerxz87-cyber.github.io/Vegas1/executive-summary.html" target="_blank" rel="noopener">executive summary</a>),
+so the content is deployed and only the root document is wrong. Full diagnosis and a fix procedure:
+<a href="audit-main.html">Audit of main → X10</a>.
+</div>
+
 <h2>How to use this site</h2>
 <div class="grid">
 <div class="card"><h3><a href="hotels.html">Hotels</a></h3><p class="src">Verified 7-night totals, bed type, bathroom evidence, ranked Michelin reach.</p></div>
@@ -1268,6 +1279,16 @@ def build_cross():
 <p style="margin:4px 0"><strong>Corrected to:</strong> {e(sc_['corrected_to'])}</p>
 <p class="src"><a href="{e(sc_['source'])}" target="_blank" rel="noopener">source</a></p></div>'''
 
+    rt = c.get("runtime_checks", {})
+    runtime = ""
+    for r_ in rt.get("results", []):
+        cls = "no" if r_["verdict"].startswith("WRONG") else "ok"
+        runtime += f"""<tr><td class="src">{e(r_['url'])}</td><td class="src">{e(r_['expected'])}</td>
+<td class="src">{e(r_['actual'])}</td><td><span class="{cls}">{e(r_['verdict'])}</span></td></tr>"""
+    diag = e(rt.get("diagnosis", ""))
+    impact = e(rt.get("impact", ""))
+    fix = e(rt.get("suggested_fix", ""))
+
     body = f"""
 <h1>Audit of the site already published on <code>main</code></h1>
 <p class="lead">Another agent session published a Las Vegas site to <code>main</code> at commit
@@ -1321,6 +1342,20 @@ MICHELIN distinctions. All 24 venues and all 24 award levels are correct.</p>
 <div class="warnbox">
 <p>Publishing a correction is more useful than quietly deleting it.</p>
 {selfcorr}
+</div>
+
+<h2>Live site check — the deployed URL is broken at the root</h2>
+<div class="errbox">
+<strong>Finding X10 (High): the published site's landing page serves the wrong document.</strong>
+<p>Fetched the deployed site after Pages build <code>0d0b1d5</code> reported success:</p>
+</div>
+<div class="tblwrap"><table>
+<thead><tr><th>URL</th><th>Expected</th><th>What is actually served</th><th>Verdict</th></tr></thead>
+<tbody>{runtime}</tbody></table></div>
+<div class="warnbox">
+<p><strong>Diagnosis.</strong> {diag}</p>
+<p><strong>Impact.</strong> {impact}</p>
+<p><strong>Fix.</strong> {fix}</p>
 </div>
 
 <h2>How the conflict was handled</h2>
