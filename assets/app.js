@@ -75,7 +75,8 @@
       { label: "Hours / Days", key: "hours", render: hoursCell },
       { label: "Cost (2 adults, total)", key: "priceForTwo" },
       { label: "Media", key: "media", render: mediaCell },
-      { label: "Source", key: "source", render: function (v) { return srcCell(v, "Michelin Guide"); } },
+      { label: "Source", key: "source", render: function (v, r) {
+          return srcCell(r.michelin, "Michelin Guide") + '<br>' + srcCell(r.source, "Official site"); } },
       { label: "Check", key: "verified", render: verifiedBadge }
     ], DATA.restaurants || []);
   }
