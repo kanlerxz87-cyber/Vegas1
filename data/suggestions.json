@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "purpose": "Decision improvements for the couple. Each item states the trade-off honestly, says whether it needs a choice before the site/data changes, and estimates the effort.",
+    "rule": "These are proposals. Nothing here was implemented in the data unless the row says 'implemented'."
+  },
+  "suggestions": [
+    {
+      "id": "S-01",
+      "title": "Move the trip to 8–15 March 2027",
+      "impact": "high",
+      "needs_decision": true,
+      "status": "open",
+      "body": "This is the biggest lever in the whole plan. The same suite at The Venetian is $2,407 instead of $3,757; at the Palazzo $2,422 instead of $3,932; at the Cosmopolitan $2,307 instead of $3,433. That is roughly $1,300–$1,500 saved on seven nights for the same rooms, because the February week contains Presidents' Day (15 Feb 2027).",
+      "trade_off": "The couple's stated preferred arrival is 15 Feb. Moving loses that date but keeps the trip inside the 15 Feb – 23 Mar envelope and buys an extra dinner at a starred restaurant for the same money.",
+      "evidence": "data/price-windows.json"
+    },
+    {
+      "id": "S-02",
+      "title": "Decide whether this is a 3-night or a 7-night trip",
+      "impact": "high",
+      "needs_decision": true,
+      "status": "open",
+      "body": "The brief says 1–2 weeks but the preferred dates 2027-02-15 → 2027-02-18 are three nights. Every hotel total on this site is for seven nights. If the real plan is three nights, the hotel line is roughly 43% of what is shown.",
+      "trade_off": "Three nights cannot cover 21 Michelin restaurants plus the museums — realistically it covers four or five restaurants. Seven nights is the shortest trip where the list is plausible.",
+      "evidence": "data/questions.json Q-02"
+    },
+    {
+      "id": "S-03",
+      "title": "Refuse 'Room Type Assigned on Arrival' rates",
+      "impact": "medium",
+      "needs_decision": false,
+      "status": "recommended",
+      "body": "The three cheapest hotel totals in the dataset (LINQ $564, Flamingo $626, Horseshoe $717) are all unassigned-room promotions. They undercut the field by so much that they distort the ranking, and none of them guarantees the queen-or-larger bed the couple asked for.",
+      "trade_off": "Booking a named king room at the same properties costs more but actually meets the requirement. Expect roughly $100–$200/week more.",
+      "evidence": "data/hotels.json flags F-11"
+    },
+    {
+      "id": "S-04",
+      "title": "Book the four starred restaurants first, then build the trip around them",
+      "impact": "high",
+      "needs_decision": false,
+      "status": "recommended",
+      "body": "é by José Andrés has nine seats and opens bookings about three months out; Joël Robuchon, L'Atelier and Guy Savoy are dinner-only and dark on specific weekdays. Reservation order should be é → Robuchon → Guy Savoy → L'Atelier, then fill the unstarred list around whatever dates remain.",
+      "trade_off": "Locking the starred nights first means the hotels must be chosen afterwards — the reverse of how people normally book.",
+      "evidence": "data/restaurants.json"
+    },
+    {
+      "id": "S-05",
+      "title": "Use the Monorail 7-day pass, not single rides",
+      "impact": "medium",
+      "needs_decision": false,
+      "status": "recommended",
+      "body": "A single Monorail ride is $6.25 paper or $5.75 with an e-ticket; the 7-day pass is $64 paper or $59.95 electronic. Ten rides break even at paper prices. Over seven nights the pass is the cheaper and simpler option, and it covers MGM Grand ↔ SAHARA, which is exactly the Michelin corridor.",
+      "trade_off": "The Monorail does not reach Chinatown or downtown, so RTC buses are still needed for roughly half the restaurant list. The pass is not a substitute for bus fares.",
+      "evidence": "data/transit.json"
+    },
+    {
+      "id": "S-06",
+      "title": "Base the trip centre-Strip, not at the Venetian or the Wynn",
+      "impact": "medium",
+      "needs_decision": true,
+      "status": "open",
+      "body": "The Venetian complex holds four Michelin listings and the Wynn holds one, which makes the north Strip look like the obvious base. But the centre Strip is within 20 minutes of 15 Michelin restaurants — more than any other zone — and is reachable from both ends of the Monorail.",
+      "trade_off": "Choosing centre Strip (Cosmopolitan, ARIA, Bellagio, Vdara, Caesars) costs more per night than the Venetian in the March window, and gives up the in-building convenience of four restaurants under one roof.",
+      "evidence": "data/transit.json, data/hotels.json"
+    },
+    {
+      "id": "S-07",
+      "title": "Pair the museums with the downtown restaurants on one day",
+      "impact": "medium",
+      "needs_decision": false,
+      "status": "recommended",
+      "body": "The Mob Museum, the Neon Museum, Fremont Street, Esther's Kitchen and SoulBelly BBQ are all inside the downtown/Arts District zone — which is the only zone that is far from everything else. Doing them on a single day turns a 30-minute trip each way into one trip.",
+      "trade_off": "It consumes a whole evening, so a starred dinner cannot happen that night. Slot it on arrival day.",
+      "evidence": "data/transit.json, data/activities.json"
+    },
+    {
+      "id": "S-08",
+      "title": "Budget resort fees and 13.38% tax explicitly",
+      "impact": "medium",
+      "needs_decision": false,
+      "status": "recommended",
+      "body": "The Booking.com totals this site quotes exclude the resort fee and the local room tax. On the Strip that is typically $35–$55 per night plus 13.38% — roughly $250–$390 extra on a seven-night stay, which is a whole tasting menu at Anima by EDO.",
+      "trade_off": "No downside; it is purely an accounting correction. The Wynn rows already show both bases side by side as a worked example.",
+      "evidence": "data/questions.json Q-09"
+    },
+    {
+      "id": "S-09",
+      "title": "Treat Black Friday rates as a floor, not a forecast",
+      "impact": "low",
+      "needs_decision": false,
+      "status": "recommended",
+      "body": "Several of the cheapest totals captured on 2026-11-25 carry a 'Black Friday Deal' label — LINQ, Flamingo, Golden Nugget, Bluegreen, Cosmopolitan, Bellagio and Fontainebleau all show one. They expire long before 2027 and will not be reissued at the same depth.",
+      "trade_off": "Planning against the promotional number risks a 30–50% shock when the real 2027 rate appears. Use the non-promotional 'original price' figure as the conservative planning number where one is printed.",
+      "evidence": "data/hotels.json"
+    },
+    {
+      "id": "S-10",
+      "title": "Add a 14-night column if the couple really means two weeks",
+      "impact": "low",
+      "needs_decision": true,
+      "status": "not implemented",
+      "body": "The brief allows 1–2 weeks. Only 7-night blocks were priced. A 14-night stay across the same date range was not measured and is flagged F-17 rather than estimated, because doubling a 7-night total would ignore weekly rate breaks.",
+      "trade_off": "Costs two more search captures per property. Worth doing only if two weeks is a real option.",
+      "evidence": "FLAGS.md F-17"
+    },
+    {
+      "id": "S-11",
+      "title": "Keep one cheap night for a jet-lagged arrival",
+      "impact": "low",
+      "needs_decision": false,
+      "status": "recommended",
+      "body": "Pho Ga Bac Bac is Michelin-listed, open 24 hours, and Ping Pang Pong is open 10am–3am. Both mean the first night does not need a reservation and does not need the couple to be sharp.",
+      "trade_off": "Neither is a special-occasion room. Treat them as logistics, not as the holiday.",
+      "evidence": "data/restaurants.json"
+    },
+    {
+      "id": "S-12",
+      "title": "Re-verify only what can actually change",
+      "impact": "medium",
+      "needs_decision": false,
+      "status": "recommended",
+      "body": "17 of the 24 restaurants have fully verified hours and days. The four starred rooms, Michael Mina (currently marked Temporarily closed) and Wing Lei are the ones whose closure would waste an evening, so re-check those six the week before travel rather than re-checking all 24.",
+      "trade_off": "Accepts that a minor venue may be dark on the night. Saves about an hour of checking.",
+      "evidence": "data/questions.json Q-08"
+    },
+    {
+      "id": "S-13",
+      "title": "Spend ten minutes closing the 28 unverified hotel links",
+      "impact": "low",
+      "needs_decision": false,
+      "status": "open",
+      "body": "Four hotel official links were fetched and confirmed. The other 28 were written from the property's own domain but never opened, so the site labels them 'not fetched — may have moved'. That label is honest but it is also unfinished work. Opening 28 pages and fixing the dead ones would remove the caveat entirely.",
+      "trade_off": "Ten minutes of clicking for no change to the plan's cost or ranking. The Booking.com price-source link on every card already works, so nothing is currently unreachable.",
+      "evidence": "FLAGS.md F-27, data/questions.json Q-13"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vegas1 - Las Vegas Vacation Planning</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo">Vegas<span>1</span></a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">&#9776;</button>
+      <nav class="nav" id="mainNav">
+        <a href="#" class="active">Home</a>
+        <a href="pages/hotels.html">Hotels</a>
+        <a href="pages/restaurants.html">Michelin Restaurants</a>
+        <a href="pages/activities.html">Activities</a>
+        <a href="pages/booking.html">Best Time to Book</a>
+        <a href="pages/suggestions.html">Suggestions</a>
+        <a href="pages/questions.html">Questions & Answers</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Las Vegas Vacation Planner</h1>
+      <p>A complete guide to planning your Las Vegas trip for 2 adults, February 15 - March 23, 2027. Find the best hotels, Michelin-starred restaurants, and activities — all verified from official sources.</p>
+      <div class="hero-buttons">
+        <a href="pages/hotels.html" class="btn btn-primary">Compare Hotels</a>
+        <a href="pages/restaurants.html" class="btn btn-outline">Michelin Restaurants</a>
+        <a href="pages/activities.html" class="btn btn-outline">Activities</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content container">
+    <section class="card">
+      <h2>Executive Summary</h2>
+      <div class="grid-3">
+        <div class="summary-box">
+          <h3>Trip Details</h3>
+          <p><strong>Destination:</strong> Las Vegas, Nevada</p>
+          <p><strong>Travelers:</strong> 2 adults (couple)</p>
+          <p><strong>Preferred Dates:</strong> Feb 15-18, 2027</p>
+          <p><strong>Date Range:</strong> Feb 15 - Mar 23, 2027</p>
+          <p><strong>Recommended Stay:</strong> 7 nights</p>
+        </div>
+        <div class="summary-box">
+          <h3>Michelin Restaurants</h3>
+          <p><strong>24 total</strong> MICHELIN Guide distinctions</p>
+          <p><strong>2 Stars:</strong> 1 (Joël Robuchon)</p>
+          <p><strong>1 Star:</strong> 3 (Guy Savoy, L'Atelier, É by José Andrés)</p>
+          <p><strong>Bib Gourmand:</strong> 3</p>
+          <p><strong>Recommended:</strong> 17</p>
+        </div>
+        <div class="summary-box">
+          <h3>Best Time to Book</h3>
+          <p><strong>Window:</strong> 30-60 days in advance</p>
+          <p><strong>Cheapest days:</strong> Sun-Thu</p>
+          <p><strong>Cheapest month:</strong> February</p>
+          <p><strong>Transport:</strong> RTC Bus, Monorail, rideshare</p>
+        </div>
+      </div>
+
+      <div class="source-note">
+        <p><strong>Sources:</strong> MICHELIN Guide Southwest 2026 (official), Visit Las Vegas (LVCVA), Priceline, KAYAK, Booking.com, Super.com, lasvegaswonders.com, klook.com, RTC of Southern Nevada, US News Travel.</p>
+        <p>All data verified from official sources where available. Unverified fields are intentionally left blank.</p>
+      </div>
+    </section>
+
+    <section class="card mt-2">
+      <h2>Quick Navigation</h2>
+      <div class="grid-3">
+        <a href="pages/hotels.html" class="btn btn-primary" style="display:block; text-align:center; width:100%;">🏨 Compare Hotels</a>
+        <a href="pages/restaurants.html" class="btn btn-outline" style="display:block; text-align:center; width:100%;">🍽️ Michelin Restaurants</a>
+        <a href="pages/activities.html" class="btn btn-outline" style="display:block; text-align:center; width:100%;">���� Activities</a>
+        <a href="pages/booking.html" class="btn btn-primary" style="display:block; text-align:center; width:100%;">📅 Best Time to Book</a>
+        <a href="pages/suggestions.html" class="btn btn-outline" style="display:block; text-align:center; width:100%;">💡 Site Suggestions</a>
+        <a href="pages/questions.html" class="btn btn-outline" style="display:block; text-align:center; width:100%;">❓ Questions & Answers</a>
+      </div>
+    </section>
+
+    <section class="card mt-2">
+      <h2>Important Notes</h2>
+      <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+        <li><strong>No hallucinations:</strong> Every data point is sourced from official or verified third-party sources. Blank fields mean the value could not be confirmed.</li>
+        <li><strong>Hotel pricing:</strong> February 2027 prices are estimates. Actual prices must be verified at time of booking (30-60 days in advance recommended).</li>
+        <li><strong>Restaurant costs:</strong> MICHELIN Guide does not publish specific pricing. Price levels ($-$$$$) are shown where available.</li>
+        <li><strong>Social media:</strong> YouTube, TikTok, and Instagram links are blank where not found on official sources — requires manual verification.</li>
+        <li><strong>Transportation:</strong> Las Vegas has no subway system. Public transit is bus-based (RTC Deuce) with a Monorail on the east Strip.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Vegas1 - Las Vegas Vacation Planning. All data verified from official sources.</p>
+      <p><a href="pages/questions.html">View Questions & Missing Information</a> | <a href="pages/suggestions.html">View Site Improvement Suggestions</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobileMenuBtn')?.addEventListener('click', function() {
+      const nav = document.getElementById('mainNav');
+      nav.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
