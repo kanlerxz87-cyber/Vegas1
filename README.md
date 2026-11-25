@@ -66,3 +66,9 @@ from station lists and route maps, and is labelled as one. Recorded as F-21 in `
 - **Estimates are labelled.** Only the transit minutes are estimates, and they say so everywhere.
 - **No prior work was discarded.** A parallel session merged a first version to `main` mid-project;
   it is preserved in `archive/` with a written comparison of why each dataset was superseded.
+
+## Session supplement — session-af795000 (verified rates + standalone site)
+
+An independent session built a second complete site with **official-property booking-engine rates** (Caesars/Wynn/Resorts World direct, sampled 2026-11-25) — preserved and readable at **[docs/session-af795000/](docs/session-af795000/)** (exec summary, hotels, Michelin 24, activities, analysis, suggestions, open questions, flagged register). Machine-readable: `data/session-af795000-*.json`; research backup: `notes/research-log.md`.
+
+Headline verified numbers (7 nights, Feb 15–22, 2027, 2 adults, incl. resort fee, excl. tax): **Flamingo $595 · Horseshoe $763 · Planet Hollywood $1,092 · Paris $1,526 · Caesars Palace $1,582 · Resorts World ≈$1,942 · Wynn $4,739 (Cyber $677/nt — book by Dec 4, 2026)**. The preferred week is the cheapest verified 7-night window in the Feb 15 – Mar 23 range. See the subsite's hotels page for source links per row.
