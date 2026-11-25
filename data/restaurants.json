@@ -32,9 +32,9 @@
       "location": "MGM Grand",
       "zone": "south-strip",
       "address": "3799 S Las Vegas Blvd, Las Vegas, NV 89109",
-      "days": "See official page / OpenTable",
-      "hours": "",
-      "exceptions": "",
+      "days": "Tue–Sat",
+      "hours": "Tue–Sat 5:00 PM – 9:30 PM",
+      "exceptions": "Closed Sunday and Monday. No children under 6 in the reservation. Business formal dress code.",
       "price_2adults": "",
       "price_note": "Menu prices are not published on the official page. Reserve and confirm.",
       "official_url": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html",
@@ -49,11 +49,13 @@
       "instagram": "",
       "tiktok": "",
       "phone": "",
-      "verified": "partial",
+      "verified": "yes",
       "flags": [
-        "F-01"
+        "F-01",
+        "F-22"
       ],
-      "notes": "Two independent creator videos claim three Michelin stars (an older, pre-2010 status). The 2026 Guide lists Joël Robuchon at TWO stars. Treat video claims about star count as out of date."
+      "notes": "Two independent creator videos in this dataset claim three Michelin stars — that is the pre-2010 status. The 2026 Guide lists Joël Robuchon at TWO stars, which the restaurant's own page also states. NOTE: the same page carries a dated banner (\"open 4:00–8:00 PM Thu 19 – Sat 21 November\") that applies to a 2026 date, not to 2027 — do not carry it forward. Also the 2026 MICHELIN Service Award went to GM Sean Christopher, so award rows and staff awards must not be confused.",
+      "hours_source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html (\"Hours of operation\" block, retrieved 2026-11-25)"
     },
     {
       "id": "latelier-robuchon",
@@ -334,9 +336,9 @@
       "location": "Bellagio",
       "zone": "center-strip",
       "address": "3600 S Las Vegas Blvd, Las Vegas, NV 89109",
-      "days": "See official page",
+      "days": "Closed — see note",
       "hours": "",
-      "exceptions": "Seasonal closures published on the official page (e.g. 22–30 Nov, 6–8 Dec, 13–15 Dec, 20–22 Dec 2026).",
+      "exceptions": "The Bellagio page's Hours of operation block reads \"Monday to Sunday: Closed\" and the restaurant is labelled Temporarily closed. Published seasonal closures on the same page: 22–30 Nov; 6–8, 13–15 and 20–22 Dec 2026.",
       "price_2adults": "$590++",
       "price_note": "10-course tasting menu at $295++ per person, from the official page. Two adults = $590 before tax and gratuity.",
       "official_url": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
@@ -350,9 +352,11 @@
       "phone": "702.693.7223",
       "verified": "partial",
       "flags": [
-        "F-02"
+        "F-02",
+        "F-23"
       ],
-      "notes": "Only restaurant on this list with an official per-person price AND a published seasonal-closure calendar — check closures before locking a date."
+      "notes": "SERIOUS: the restaurant's own page shows \"Temporarily closed\" for all seven days, so the $590++ tasting-menu figure on this row is a price for a service that is not currently running. This row must not be presented as a bookable option without a re-check. Reopen date is not published. Do not assume it reopens before Feb 2027.",
+      "hours_source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html (retrieved 2026-11-25)"
     },
     {
       "id": "anima-by-edo",
@@ -418,7 +422,7 @@
       "location": "Chinatown (Spring Mountain Rd)",
       "zone": "chinatown",
       "address": "3616 Spring Mountain Rd, Ste 103, Las Vegas, NV 89102",
-      "days": "See OpenTable",
+      "days": "See official page / OpenTable",
       "hours": "",
       "exceptions": "",
       "price_2adults": "$1,000++",
@@ -436,7 +440,7 @@
       "flags": [
         "F-04"
       ],
-      "notes": "Most expensive per-person item on the list. Chef Eric Kim."
+      "notes": "OpenTable lists no availability for a sample date and no weekly service hours; bookings go through OpenTable only. $500 per person signature omakase. The MICHELIN Guide's own listing gives the days — the restaurant's booking page does not."
     },
     {
       "id": "lamaii",
@@ -474,9 +478,9 @@
       "location": "Chinatown (Spring Mountain Rd)",
       "zone": "chinatown",
       "address": "3839 Spring Mountain Rd, Las Vegas, NV 89102",
-      "days": "See official page",
-      "hours": "",
-      "exceptions": "No dairy-free, vegan, vegetarian, coeliac, or onion/garlic-free menus. Prix fixe only (5, 7 or 9 courses).",
+      "days": "Tue–Sat",
+      "hours": "Tue–Sat 5:00 PM – 9:00 PM",
+      "exceptions": "Closed Sunday and Monday. Prix fixe only (5, 7 or 9 courses). No dairy-free, vegan, vegetarian, coeliac, or onion/garlic-free menus — a real constraint, not a preference.",
       "price_2adults": "",
       "price_note": "Official page confirms 5/7/9-course tasting menus but does not print prices.",
       "official_url": "https://partage.vegas/restaurant",
@@ -488,9 +492,12 @@
       "instagram": "",
       "tiktok": "",
       "phone": "",
-      "verified": "partial",
-      "flags": [],
-      "notes": "Strict dietary policy — decide before booking. OpenTable id 1005940."
+      "verified": "yes",
+      "flags": [
+        "F-24"
+      ],
+      "notes": "Hours and phone are on the Contact page, not the Restaurant page — the Restaurant page is a booking widget and shows no service times. Strict dietary policy: decide before booking. OpenTable id 1005940. Phone 702-582-5852.",
+      "hours_source": "https://partage.vegas/contact (\"We'll be open for the foreseeable future Tuesday to Saturday from 5 pm to 9 pm.\", retrieved 2026-11-25)"
     },
     {
       "id": "sparrow-and-wolf",
@@ -501,7 +508,7 @@
       "location": "Chinatown (Spring Mountain Rd)",
       "zone": "chinatown",
       "address": "4480 Spring Mountain Rd, Las Vegas, NV 89102",
-      "days": "See official page",
+      "days": "See official page / OpenTable",
       "hours": "",
       "exceptions": "Cancellations inside 24 hours are charged $25 per guest.",
       "price_2adults": "",
@@ -516,8 +523,10 @@
       "tiktok": "",
       "phone": "702.790.2147",
       "verified": "partial",
-      "flags": [],
-      "notes": "2024 James Beard semifinalist (chef Brian Howard). OpenTable id 732187."
+      "flags": [
+        "F-25"
+      ],
+      "notes": "The official site does not publish opening hours anywhere on its front page or menu page; bookings are handled through OpenTable (rid 732187). Left blank rather than guessed. A card-hold policy applies: reservations cancelled inside 24 hours are charged $25 per guest, and tables are capped at 4 guests."
     },
     {
       "id": "esthers-kitchen",
