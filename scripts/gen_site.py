@@ -398,12 +398,20 @@ def build_restaurants():
         ig = f'<a href="{r["instagram"]}" target="_blank" rel="noopener">IG</a>' if r["instagram"] else '<span class="muted">—</span>'
         tt = f'<a href="{r["tiktok"]}" target="_blank" rel="noopener">TT</a>' if r["tiktok"] else '<span class="muted">—</span>'
         hours = e(r["hours"]) if r["hours"] else '<span class="warn">not verified</span>'
+        days = r["days"] or ""
+        # the source sometimes repeats the day span inside the hours string
+        # (e.g. days="Tue-Sat", hours="Tue-Sat 5:00 PM - 9:30 PM") - print it once
+        if days and r["hours"] and r["hours"].lower().replace("\u2013", "-").startswith(
+            days.lower().replace("\u2013", "-")
+        ):
+            hours = e(r["hours"][len(days):].strip())
+        days_html = e(days) if days else '<span class="warn">not verified</span>'
         price = e(r["price_2adults"]) if r["price_2adults"] else '<span class="muted">on request</span>'
         rows.append(f"""<tr>
 <td><a href="{e(r['official_url'])}" target="_blank" rel="noopener">{e(r['name'])}</a>
   <div class="tiny">{e(r['cuisine'])} · {e(r['location'])}</div></td>
 <td><span class="badge {cls(r)}">{e(r['award'])}</span></td>
-<td>{e(r['days'])}<div class="tiny">{hours}</div></td>
+<td>{days_html}<div class="tiny">{hours}</div></td>
 <td class="tiny">{e(r['exceptions']) or '—'}</td>
 <td class="num">{price}</td>
 <td class="tiny">{yt}<br>{ig} {tt}</td>
