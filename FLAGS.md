@@ -25,6 +25,7 @@ labelled**, never that a plausible number was filled in.
 | **F-18** | Bellagio Fountains | Official page fetch failed twice. Show schedule unverified. | No hours listed on the activities page. |
 | **F-19** | Instagram / TikTok | Handles are not printed on most official pages. Only the Neon Museum publishes its own. | Blank rather than guessed — see Q-07. |
 | **F-20** | Transit minutes | Every minute value is an estimate from official station lists and route maps. No official door-to-door times exist. | Labelled "estimate" everywhere. |
+| **F-21** | Chinatown / Route 203 | **Correction.** An earlier version of this dataset recorded Chinatown / Spring Mountain Rd as reachable only by car or rideshare. RTC Route 203 runs the length of that road with a timed stop at Las Vegas Blvd, and its published timetable gives Decatur → Las Vegas Blvd in 14 minutes. | North Strip to Chinatown is ~34 min, not unreachable. Raises the north-Strip short-trip counts. Seven listings are affected. |
 
 ## Deliberate non-inclusions
 
