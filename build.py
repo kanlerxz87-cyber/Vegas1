@@ -11,7 +11,7 @@ Design rules enforced here:
 import json, os, html, re, datetime
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-DATA = os.path.join(ROOT, "data")
+DATA = os.path.join(ROOT, "plan-data")
 DOCS = os.path.join(ROOT, "docs")
 
 def load(name):
@@ -25,6 +25,7 @@ TRANSIT = load("transit.json")
 ACTIVITIES = load("activities.json")
 DETAILS = load("restaurant-details.json")
 SOCIAL = load("social.json")
+CROSS = load("cross-session-audit.json")
 
 e = lambda s: html.escape(str(s)) if s is not None else ""
 
@@ -165,6 +166,7 @@ PAGES = [
     ("verification.html", "Verification"),
     ("flagged.html", "Flagged for Review"),
     ("audit.html", "Repo Audit"),
+    ("audit-main.html", "Audit of main"),
 ]
 
 def nav(cur):
@@ -1231,6 +1233,126 @@ number later — the only way to add one is to add a field, and every field is v
 """
     return page("audit.html", "Repo Audit", body)
 
+
+# ---------------------------------------------------------------- main-branch audit
+def build_cross():
+    c = CROSS
+    meta = c["_meta"]
+    sc = c["scorecard"]
+
+    agree = ""
+    for a in c["agreements"]:
+        src = f'<a href="{e(a["source"])}" target="_blank" rel="noopener">source</a>' if a["source"] else "—"
+        agree += f"""<tr><td><span class="ok">{e(a['verdict'])}</span></td>
+<td><strong>{e(a['claim'])}</strong><div class="src">{e(a['detail'])}</div>
+<div class="src"><em>{e(a['significance'])}</em></div></td>
+<td class="src">{src}</td></tr>"""
+
+    conf = ""
+    for x in c["conflicts"]:
+        cls = {"High": "no", "Medium": "warn", "Low": "src"}.get(x["severity"], "src")
+        src = f'<a href="{e(x["source"])}" target="_blank" rel="noopener">source</a>' if x["source"] else "no source exists"
+        conf += f"""<tr><td class="src">{e(x['id'])}</td>
+<td><span class="{cls}">{e(x['severity'])}</span></td>
+<td><strong>{e(x['finding'])}</strong>
+ <div class="src">{e(x['detail'])}</div>
+ <div style="margin-top:6px"><span class="pill">official / current value</span> {e(x['official_value'])}</div>
+ <div class="src" style="margin-top:6px"><strong>Action taken:</strong> {e(x['action_taken'])}</div></td>
+<td class="src">{src}</td></tr>"""
+
+    selfcorr = ""
+    for sc_ in c.get("auditor_self_corrections", []):
+        selfcorr += f'''<div class="card"><span class="pill">self-correction {e(sc_['id'])}</span>
+<p style="margin:8px 0 4px"><strong>What I claimed:</strong> {e(sc_['what'])}</p>
+<p style="margin:4px 0"><strong>Why it was wrong:</strong> {e(sc_['why_wrong'])}</p>
+<p style="margin:4px 0"><strong>Corrected to:</strong> {e(sc_['corrected_to'])}</p>
+<p class="src"><a href="{e(sc_['source'])}" target="_blank" rel="noopener">source</a></p></div>'''
+
+    body = f"""
+<h1>Audit of the site already published on <code>main</code></h1>
+<p class="lead">Another agent session published a Las Vegas site to <code>main</code> at commit
+<code>{e(meta['audited_commit'].split(' - ')[0])}</code>. This page is the line-by-line review of it,
+done against official sources. <strong>Nothing in that work was edited or deleted.</strong></p>
+
+<div class="warnbox">
+<strong>Why this page exists.</strong> Your brief asked for a repo review “line by line, verifying
+from official verified trusted sources, flagging irregularities”. At the start of this session the
+branch base was an 8-byte README, so there was nothing local to audit. The real prior work was on
+<code>main</code>, so that is what got audited.
+</div>
+
+<div class="grid">
+<div class="kpi"><small>Claims audited</small><b>{sc['claims_audited']}</b></div>
+<div class="kpi"><small>Agree</small><b>{sc['agree']}</b></div>
+<div class="kpi"><small>High-severity conflicts</small><b>{sc['conflict_high']}</b></div>
+<div class="kpi"><small>Unresolvable</small><b>{sc['cannot_be_resolved']}</b></div>
+</div>
+
+<div class="okbox"><strong>Verdict in one line.</strong> {e(sc['comment'])}</div>
+
+<h2>Where the two sessions agree (this is the good news)</h2>
+<div class="tblwrap"><table>
+<thead><tr><th>Verdict</th><th>Claim</th><th>Source</th></tr></thead>
+<tbody>{agree}</tbody></table></div>
+<p class="src">Two sessions, working independently and reading different source paths, produced
+the identical 24-venue MICHELIN list with the identical award split. That is the single most
+reassuring result on this site.</p>
+
+<h2>Irregularities found</h2>
+<div class="tblwrap"><table>
+<thead><tr><th>ID</th><th>Severity</th><th>Finding, current official value, and what was done</th><th>Source</th></tr></thead>
+<tbody>{conf}</tbody></table></div>
+
+<h2>The two that would actually cost you money</h2>
+<div class="errbox">
+<ol>
+<li><strong>X3 / X4 — estimated pricing labelled verified.</strong> The landing page says “verified
+from official sources”; the project's own data file says the February 2027 prices are estimated.
+A budget built on those numbers needs rebuilding on dated quotes. This is the one that affects
+a real decision.</li>
+<li><strong>X2 — the Caesars Palace resort fee.</strong> $54.95 appears in two files; no current
+source matches it. The fee is real and mandatory, so the number matters more than it looks.</li>
+</ol>
+<p style="margin-top:10px"><strong>And one thing that is <em>not</em> a problem:</strong> the
+MICHELIN distinctions. All 24 venues and all 24 award levels are correct.</p>
+</div>
+
+<h2>Where I was wrong first, and caught it</h2>
+<div class="warnbox">
+<p>Publishing a correction is more useful than quietly deleting it.</p>
+{selfcorr}
+</div>
+
+<h2>How the conflict was handled</h2>
+<p>No file written by the other session was modified. The decision was to preserve both builds:</p>
+<div class="tblwrap"><table>
+<thead><tr><th>Location</th><th>What it holds</th><th>State</th></tr></thead>
+<tbody>
+<tr><td><code>main</code> branch root</td><td>The other session's site, data and documents</td>
+<td class="ok">untouched</td></tr>
+<tr><td>this branch, <code>/docs</code></td><td>This session's generated site (12 pages)</td>
+<td class="ok">new</td></tr>
+<tr><td>this branch, <code>/plan-data</code></td><td>This session's verified JSON</td>
+<td class="ok">new, non-colliding names</td></tr>
+<tr><td><code>COORDINATION.md</code></td><td>Both sessions recorded, plus the reconciliation</td>
+<td class="ok">merged by hand</td></tr>
+</tbody></table></div>
+<p class="src">One naming collision had to be resolved: this session had created
+<code>data/hotels.json</code> and <code>data/michelin.json</code> while the other session had
+<code>data/hotels.json</code> and <code>data/michelin-restaurants.json</code>. Merging would have
+overwritten eight real hotel files, so this session's data moved to <code>/plan-data</code> instead.</p>
+
+<h2>What a human should decide</h2>
+<ol>
+<li>Which build becomes the published site — or whether the two should be merged.</li>
+<li>Whether to correct the star counts and the “verified” labelling on <code>main</code>.</li>
+<li>Whether the pages deployment should serve <code>main</code>/root (current) or
+<code>docs/</code> on this branch.</li>
+</ol>
+"""
+    return page("audit-main.html", "Audit of main", body)
+
+
 # ---------------------------------------------------------------- run
 def main():
     os.makedirs(DOCS, exist_ok=True)
@@ -1247,6 +1369,7 @@ def main():
     built.append(build_verification())
     built.append(build_flagged())
     built.append(build_audit())
+    built.append(build_cross())
     print(f"built {len(built)} pages -> {DOCS}")
     for p in built:
         print(" ", p, os.path.getsize(os.path.join(DOCS, p)), "bytes")

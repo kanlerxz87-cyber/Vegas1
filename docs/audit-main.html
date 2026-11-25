@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Audit of main | Las Vegas 2027 Trip Planner</title>
+<meta name="description" content="Verified, source-linked planning data for a Michelin-focused Las Vegas trip, Feb-Mar 2027.">
+<style>
+:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--dim:#8b949e;
+--acc:#f5c518;--good:#2ea043;--bad:#da3633;--warn:#d29922;--link:#58a6ff}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+header.site{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.96);
+border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.site .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.brand{font-weight:700;letter-spacing:.3px;color:var(--ink)}
+.brand span{color:var(--acc)}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{padding:6px 10px;border-radius:8px;font-size:14px;color:var(--dim);border:1px solid transparent}
+nav a:hover{background:var(--card);color:var(--ink);text-decoration:none}
+nav a.on{color:var(--acc);border-color:var(--line);background:var(--card)}
+main{padding:22px 0 70px}
+h1{font-size:clamp(24px,5vw,34px);line-height:1.2;margin:.2em 0 .3em}
+h2{font-size:clamp(19px,3.4vw,25px);margin:1.8em 0 .5em;padding-bottom:.3em;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:1.4em 0 .4em}
+p,li{color:#c9d1d9}
+.lead{color:var(--dim);max-width:70ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.kpi b{display:block;font-size:26px;color:var(--acc);line-height:1.1}
+.kpi small{color:var(--dim);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);
+border-radius:12px;margin:12px 0;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:640px}
+th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#1c2128;color:var(--ink);font-size:12px;text-transform:uppercase;
+letter-spacing:.5px;position:sticky;top:0;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#1b2028}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.unv{color:var(--warn);font-style:italic;font-size:12px}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;
+font-weight:700;letter-spacing:.4px;white-space:nowrap}
+.t2{background:var(--acc);color:#000}
+.t1{background:#c9a227;color:#000}
+.tb{background:#1f6feb;color:#fff}
+.tr{background:#30363d;color:#e6edf3}
+.ok{color:var(--good);font-weight:700}
+.no{color:var(--bad);font-weight:700}
+.warnbox{border-left:4px solid var(--warn);background:#1f1a10;padding:12px 14px;
+border-radius:0 10px 10px 0;margin:14px 0}
+.errbox{border-left:4px solid var(--bad);background:#1f1213;padding:12px 14px;
+border-radius:0 10px 10px 0;margin:14px 0}
+.okbox{border-left:4px solid var(--good);background:#0f1f14;padding:12px 14px;
+border-radius:0 10px 10px 0;margin:14px 0}
+.src{font-size:11.5px;color:var(--dim)}
+.src a{color:#7d8590}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--dim);font-size:13px}
+.pill{font-size:11px;border:1px solid var(--line);border-radius:999px;
+padding:2px 8px;color:var(--dim);white-space:nowrap;display:inline-block}
+.rank{font-weight:800;color:var(--acc);font-size:15px}
+details{margin:10px 0}
+summary{cursor:pointer;color:var(--acc);font-weight:600;padding:6px 0}
+.q{font-weight:600;color:var(--ink)}
+.a{color:#c9d1d9;border-left:2px solid var(--line);padding-left:12px;margin:6px 0 16px}
+@media(max-width:640px){
+ table{min-width:520px;font-size:12.5px}
+ th,td{padding:7px 8px}
+ h1{font-size:22px}
+ .site .wrap{gap:8px}
+ nav a{padding:5px 8px;font-size:13px}
+}
+</style></head><body>
+<header class="site"><div class="wrap">
+<span class="brand">LAS VEGAS <span>2027</span></span><nav><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="michelin.html">MICHELIN</a><a href="transit.html">Transit</a><a href="activities.html">Activities</a><a href="itinerary.html">Itinerary</a><a href="budget.html">Budget</a><a href="questions.html">Open Questions</a><a href="suggestions.html">Suggestions</a><a href="verification.html">Verification</a><a href="flagged.html">Flagged for Review</a><a href="audit.html">Repo Audit</a><a href="audit-main.html" class=on>Audit of main</a></nav>
+</div></header>
+<main><div class="wrap">
+<h1>Audit of the site already published on <code>main</code></h1>
+<p class="lead">Another agent session published a Las Vegas site to <code>main</code> at commit
+<code>0d0b1d5</code>. This page is the line-by-line review of it,
+done against official sources. <strong>Nothing in that work was edited or deleted.</strong></p>
+
+<div class="warnbox">
+<strong>Why this page exists.</strong> Your brief asked for a repo review “line by line, verifying
+from official verified trusted sources, flagging irregularities”. At the start of this session the
+branch base was an 8-byte README, so there was nothing local to audit. The real prior work was on
+<code>main</code>, so that is what got audited.
+</div>
+
+<div class="grid">
+<div class="kpi"><small>Claims audited</small><b>11</b></div>
+<div class="kpi"><small>Agree</small><b>2</b></div>
+<div class="kpi"><small>High-severity conflicts</small><b>2</b></div>
+<div class="kpi"><small>Unresolvable</small><b>1</b></div>
+</div>
+
+<div class="okbox"><strong>Verdict in one line.</strong> The MICHELIN layer is solid in both sessions - 24 venues and 24 award levels agree exactly. The real weakness is the pricing layer: estimated rates were carried onto a page labelled verified, and one resort fee figure matches no current source. Everything else is a wording, sourcing or process issue.</div>
+
+<h2>Where the two sessions agree (this is the good news)</h2>
+<div class="tblwrap"><table>
+<thead><tr><th>Verdict</th><th>Claim</th><th>Source</th></tr></thead>
+<tbody><tr><td><span class="ok">AGREES 24/24</span></td>
+<td><strong>All 24 MICHELIN venues AND all 24 award levels</strong><div class="src">All 24 names match the official MICHELIN press release, and all 24 award levels match too: 1 Two-Star, 3 One-Star, 3 Bib Gourmand, 17 Recommended. Checked venue by venue, not by count.</div>
+<div class="src"><em>Two independent sessions, different source paths, same 24-venue list. This is the strongest confirmation on the whole project.</em></div></td>
+<td class="src"><a href="https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s" target="_blank" rel="noopener">source</a></td></tr><tr><td><span class="ok">AGREES with reality</span></td>
+<td><strong>Self-declaration that some hotel pricing was not found</strong><div class="src">8 of 11 hotels in main&#x27;s data/hotels.json state &#x27;Not available - pricing not found in verified sources&#x27;. That is honest. This session filled those gaps with live Booking.com quotes for 13 hotels.</div>
+<div class="src"><em>The gap main left open is now closed on this branch.</em></div></td>
+<td class="src"><a href="https://www.booking.com/searchresults.en-us.html?ss=Las+Vegas&amp;checkin=2027-02-15&amp;checkout=2027-02-22&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD&amp;order=class" target="_blank" rel="noopener">source</a></td></tr></tbody></table></div>
+<p class="src">Two sessions, working independently and reading different source paths, produced
+the identical 24-venue MICHELIN list with the identical award split. That is the single most
+reassuring result on this site.</p>
+
+<h2>Irregularities found</h2>
+<div class="tblwrap"><table>
+<thead><tr><th>ID</th><th>Severity</th><th>Finding, current official value, and what was done</th><th>Source</th></tr></thead>
+<tbody><tr><td class="src">X1</td>
+<td><span class="src">Low</span></td>
+<td><strong>Distinction labels are correct; only the wording differs</strong>
+ <div class="src">Verified all 24 entries against the official MICHELIN press release. Every award matches exactly: Restaurant de Joël Robuchon = 2 Stars, and é by José Andrés, Restaurant Guy Savoy and L&#x27;Atelier de Joël Robuchon = 1 Star each. The three Bib Gourmands and all seventeen Recommended venues are also correct. The only difference is phrasing - main writes &#x27;Recommended (Selected)&#x27; where the press release writes &#x27;Recommended restaurants&#x27;.</div>
+ <div style="margin-top:6px"><span class="pill">official / current value</span> 2-star: Joël Robuchon only. 1-star: é, Guy Savoy, L&#x27;Atelier. No other Las Vegas star.</div>
+ <div class="src" style="margin-top:6px"><strong>Action taken:</strong> Initially suspected as an error because a star count was present; on checking, the counts are right. Recorded as a false alarm rather than published as a finding.</div></td>
+<td class="src"><a href="https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s" target="_blank" rel="noopener">source</a></td></tr><tr><td class="src">X2</td>
+<td><span class="no">High</span></td>
+<td><strong>Caesars Palace resort fee quoted as $54.95; current sources do not support that figure</strong>
+ <div class="src">main&#x27;s questions-answers.md and booking-analysis.json both use $54.95/night for Caesars Palace. A November 2026 search did not return any source at $49.95 or $54.95 plus tax. Current published figures vary by source: $55 (smartervegas.com), $62.30 (travelocity.com property policy, bookonvegas.com), $49.95 + 13.38% tax (lasvegaswonders.com).</div>
+ <div style="margin-top:6px"><span class="pill">official / current value</span> UNRESOLVED. No figure from caesars.com itself was obtained, so no value can be asserted.</div>
+ <div class="src" style="margin-top:6px"><strong>Action taken:</strong> Flagged. This branch does not print a Caesars Palace resort fee at all rather than pick a contested number.</div></td>
+<td class="src"><a href="https://www.caesars.com/caesars-palace/hotel" target="_blank" rel="noopener">source</a></td></tr><tr><td class="src">X3</td>
+<td><span class="no">High</span></td>
+<td><strong>Hotel prices presented as verified that the same project declares estimated</strong>
+ <div class="src">The landing page (index.html) states content is &#x27;all verified from official sources&#x27;. The project&#x27;s own data/booking-analysis.json contains &#x27;note&#x27;: &#x27;Pricing data for February 2027 is estimated. Actual prices must be verified at time of booking.&#x27; Both statements cannot be true.</div>
+ <div style="margin-top:6px"><span class="pill">official / current value</span> Estimated is not verified.</div>
+ <div class="src" style="margin-top:6px"><strong>Action taken:</strong> Recorded. The user&#x27;s brief explicitly requires real verified pricing, so this branch uses dated live quotes and labels every source.</div></td>
+<td class="src"><a href="https://github.com/kanlerxz87-cyber/Vegas1/blob/main/data/booking-analysis.json" target="_blank" rel="noopener">source</a></td></tr><tr><td class="src">X4</td>
+<td><span class="warn">Medium</span></td>
+<td><strong>A calculated total presented with false precision</strong>
+ <div class="src">booking-analysis.json gives an &#x27;estimated_7_night_total&#x27; of &#x27;~$2,642+&#x27; built from an estimated nightly rate ($278), an unverified resort fee ($54.95), and a tax rate (13.38%). Three inputs, none from caesars.com, produce a four-significant-figure total.</div>
+ <div style="margin-top:6px"><span class="pill">official / current value</span> Not computable from official inputs.</div>
+ <div class="src" style="margin-top:6px"><strong>Action taken:</strong> Not reproduced. This branch prints no grand total and explains why on the Budget page.</div></td>
+<td class="src"><a href="https://www.caesars.com/caesars-palace/hotel" target="_blank" rel="noopener">source</a></td></tr><tr><td class="src">X5</td>
+<td><span class="warn">Medium</span></td>
+<td><strong>Preferred trip window is length-inconsistent in both sessions&#x27; late data</strong>
+ <div class="src">main&#x27;s booking-analysis.json calls &#x27;February 15-18, 2027&#x27; four nights; it is three nights (15, 16, 17). The user also asked for a 1-2 week trip. A 3-night window cannot satisfy that.</div>
+ <div style="margin-top:6px"><span class="pill">official / current value</span> 2027-02-15 to 2027-02-18 = 3 nights.</div>
+ <div class="src" style="margin-top:6px"><strong>Action taken:</strong> This branch prices 7 nights (15-22 Feb) and logs the conflict on Open Questions.</div></td>
+<td class="src">no source exists</td></tr><tr><td class="src">X6</td>
+<td><span class="warn">Medium</span></td>
+<td><strong>Cheapest-hotel claim rests on aggregator deal rates, not bookable quotes</strong>
+ <div class="src">&#x27;cheapest_hotels_found&#x27; lists Excalibur &#x27;From $25/night (published deal rate)&#x27; and Ellis Island &#x27;From $33/night&#x27;. These are marketing headline rates, not quotes for the user&#x27;s dates.</div>
+ <div style="margin-top:6px"><span class="pill">official / current value</span> For 15-22 Feb 2027, the cheapest quote actually retrieved in this session was $483 total (Rio Masquerade). Circus Circus quoted $489 and Excalibur $526.</div>
+ <div class="src" style="margin-top:6px"><strong>Action taken:</strong> This branch ranks on quoted totals only.</div></td>
+<td class="src"><a href="https://www.booking.com/searchresults.en-us.html?ss=Las+Vegas&amp;checkin=2027-02-15&amp;checkout=2027-02-22&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD&amp;order=price" target="_blank" rel="noopener">source</a></td></tr><tr><td class="src">X7</td>
+<td><span class="warn">Medium</span></td>
+<td><strong>&#x27;Best time to book&#x27; is stated as guidance without an official basis</strong>
+ <div class="src">booking-analysis.json asserts a &#x27;30-60 days in advance&#x27; booking window and cites lasvegaswonders.com, klook.com and feelingvegas.com. None of these is an official source, and no official source publishes a guaranteed optimal booking window.</div>
+ <div style="margin-top:6px"><span class="pill">official / current value</span> Unverifiable by construction.</div>
+ <div class="src" style="margin-top:6px"><strong>Action taken:</strong> This branch reframes the question as measurable (sweep the windows) and says so plainly.</div></td>
+<td class="src">no source exists</td></tr><tr><td class="src">X8</td>
+<td><span class="src">Low</span></td>
+<td><strong>Two sessions were assigned nearly identical tasks, and both wrote COORDINATION.md</strong>
+ <div class="src">main&#x27;s COORDINATION.md claims all tasks for arena-d6d3b8f5-vegas1 and records no other session. This branch&#x27;s COORDINATION.md claimed the full build because the file did not exist on the branch base 9b8bcfa. Neither is wrong; the coordination protocol simply did not prevent the overlap.</div>
+ <div style="margin-top:6px"><span class="pill">official / current value</span> Process issue, not a data issue.</div>
+ <div class="src" style="margin-top:6px"><strong>Action taken:</strong> This branch&#x27;s COORDINATION.md now records the other session and the reconciliation, and this session deliberately writes only to new paths so nothing on main is destroyed.</div></td>
+<td class="src">no source exists</td></tr><tr><td class="src">X9</td>
+<td><span class="src">Low</span></td>
+<td><strong>Pages deployment path does not match the other session&#x27;s build</strong>
+ <div class="src">GitHub Pages is configured to serve the root of main. main&#x27;s site does deploy from there. This branch&#x27;s site lives in docs/.</div>
+ <div style="margin-top:6px"><span class="pill">official / current value</span> Pages API: branch main, path &#x27;/&#x27;.</div>
+ <div class="src" style="margin-top:6px"><strong>Action taken:</strong> Publishing decision left to a human. Documented on the Repo Audit page.</div></td>
+<td class="src"><a href="https://api.github.com/repos/kanlerxz87-cyber/Vegas1/pages" target="_blank" rel="noopener">source</a></td></tr></tbody></table></div>
+
+<h2>The two that would actually cost you money</h2>
+<div class="errbox">
+<ol>
+<li><strong>X3 / X4 — estimated pricing labelled verified.</strong> The landing page says “verified
+from official sources”; the project's own data file says the February 2027 prices are estimated.
+A budget built on those numbers needs rebuilding on dated quotes. This is the one that affects
+a real decision.</li>
+<li><strong>X2 — the Caesars Palace resort fee.</strong> $54.95 appears in two files; no current
+source matches it. The fee is real and mandatory, so the number matters more than it looks.</li>
+</ol>
+<p style="margin-top:10px"><strong>And one thing that is <em>not</em> a problem:</strong> the
+MICHELIN distinctions. All 24 venues and all 24 award levels are correct.</p>
+</div>
+
+<h2>Where I was wrong first, and caught it</h2>
+<div class="warnbox">
+<p>Publishing a correction is more useful than quietly deleting it.</p>
+<div class="card"><span class="pill">self-correction SC1</span>
+<p style="margin:8px 0 4px"><strong>What I claimed:</strong> First pass read a star count in main&#x27;s JSON and flagged it as a legacy figure from the 2008/2009 guides.</p>
+<p style="margin:4px 0"><strong>Why it was wrong:</strong> The star counts were correct for the 2026 guide. The conclusion was drawn from the presence of a numeric field rather than from reading all 24 values.</p>
+<p style="margin:4px 0"><strong>Corrected to:</strong> X1 downgraded to Low: labels are right, only the wording differs.</p>
+<p class="src"><a href="https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s" target="_blank" rel="noopener">source</a></p></div>
+</div>
+
+<h2>How the conflict was handled</h2>
+<p>No file written by the other session was modified. The decision was to preserve both builds:</p>
+<div class="tblwrap"><table>
+<thead><tr><th>Location</th><th>What it holds</th><th>State</th></tr></thead>
+<tbody>
+<tr><td><code>main</code> branch root</td><td>The other session's site, data and documents</td>
+<td class="ok">untouched</td></tr>
+<tr><td>this branch, <code>/docs</code></td><td>This session's generated site (12 pages)</td>
+<td class="ok">new</td></tr>
+<tr><td>this branch, <code>/plan-data</code></td><td>This session's verified JSON</td>
+<td class="ok">new, non-colliding names</td></tr>
+<tr><td><code>COORDINATION.md</code></td><td>Both sessions recorded, plus the reconciliation</td>
+<td class="ok">merged by hand</td></tr>
+</tbody></table></div>
+<p class="src">One naming collision had to be resolved: this session had created
+<code>data/hotels.json</code> and <code>data/michelin.json</code> while the other session had
+<code>data/hotels.json</code> and <code>data/michelin-restaurants.json</code>. Merging would have
+overwritten eight real hotel files, so this session's data moved to <code>/plan-data</code> instead.</p>
+
+<h2>What a human should decide</h2>
+<ol>
+<li>Which build becomes the published site — or whether the two should be merged.</li>
+<li>Whether to correct the star counts and the “verified” labelling on <code>main</code>.</li>
+<li>Whether the pages deployment should serve <code>main</code>/root (current) or
+<code>docs/</code> on this branch.</li>
+</ol>
+</div></main>
+<footer><div class="wrap">
+<p><strong>Data snapshot:</strong> 2026-11-25 (UTC). Prices and hours change — re-verify before booking.</p>
+<p>Every figure on this site is either linked to an official source or marked <span class="unv">unverified</span>.
+Nothing is estimated silently. <a href="verification.html">Verification log</a> · <a href="flagged.html">Flagged for Review</a></p>
+</div></footer></body></html>
