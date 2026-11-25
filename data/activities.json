@@ -1,0 +1,9 @@
+{"as_of":"2026-11-25","note":"cost_for_2 null = UNVERIFIED. Travel time = Deuce bus/Monorail from Center-Strip hotel unless noted car.","activities":[
+{"name":"Bellagio Conservatory & Fountains","url":"https://bellagio.mgmresorts.com/en/attractions/bellagio-conservatory.html","travel":"0-15 min","hours":"daily (showtimes verify)","cost_for_2":0},
+{"name":"Fremont Street Experience","url":"https://www.fremontstreets.com/","travel":"30-45 min Deuce","hours":"24h street, shows dusk-midnight","cost_for_2":0},
+{"name":"The Mob Museum","url":"https://www.themobmuseum.org/","travel":"30-45 min Deuce","hours":"daily 9am-9pm","cost_for_2":null},
+{"name":"The Neon Museum","url":"https://www.neonmuseum.org/","travel":"30-45 min Deuce","hours":"Sep-May 3-11pm, Jun-Aug 8pm-midnight","cost_for_2":null},
+{"name":"Red Rock Canyon","url":"https://www.blm.gov/programs/national-conservation-lands/nv/red-rock-canyon","travel":"~30 min car, bus UNVERIFIED","hours":"Nov-Feb 6am-5pm, Visitor Center 8am-4:30pm","cost_for_2":null},
+{"name":"Hoover Dam","url":"https://www.usbr.gov/lc/hooverdam/","travel":"~45 min car, bus UNVERIFIED","hours":"site 5am-9pm, tours 9am-5pm","cost_for_2":null},
+{"name":"High Roller","url":"https://www.highroller.com/","travel":"15-20 min","hours":null,"cost_for_2":null}
+]}
