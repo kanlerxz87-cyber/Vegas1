@@ -1,86 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Transit · Las Vegas 2027</title>
-<meta name="description" content="Why &quot;one hour by subway or bus&quot; needed interpreting, the model behind the ranking, and the two errors it corrects">
-<link rel="stylesheet" href="assets/style.css">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Getting around · Las Vegas 2027</title>
+<meta name="description" content="No subway, three separate systems, and the reason the &#x27;within one hour&#x27; ranking had to be tightened to twenty minutes.">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="top">
-  <a class="brand" href="index.html">Las&nbsp;Vegas&nbsp;<span>2027</span></a>
-  <nav class="nav"><a href="index.html">Overview</a>
-<a href="hotels.html">Hotels</a>
-<a href="restaurants.html">Restaurants</a>
-<a href="activities.html">Activities</a>
-<a href="transit.html" class="on">Transit</a>
-<a href="questions.html">Open questions</a>
-<a href="suggestions.html">Suggestions</a>
-<a href="flags.html">Flagged</a>
-<a href="sources.html">Sources</a></nav>
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span>Las Vegas · Feb–Mar 2027</div>
+    <nav><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="restaurants.html">Michelin</a><a href="activities.html">Things to do</a><a href="transit.html" class="on">Getting around</a><a href="questions.html">Open questions</a><a href="suggestions.html">Suggestions</a><a href="sources.html">Sources</a></nav>
+  </div>
 </header>
-<main>
-<h1>Transit</h1>
-<p class="sub">Why &quot;one hour by subway or bus&quot; needed interpreting, the model behind the ranking, and the two errors it corrects</p>
+<main class="wrap">
+  <div class="pagehead">
+    <h1>Getting around</h1>
+    <p class="sub">No subway, three separate systems, and the reason the 'within one hour' ranking had to be tightened to twenty minutes.</p>
+    
+  </div>
+  
+<section class="panel">
+  <h2>There is no subway in Las Vegas</h2>
+  <p>The brief asked for restaurants within an hour <em>by subway or bus</em>. Las Vegas has no metro or light rail,
+  so three separate systems were modelled instead — and they do not share a ticket:</p>
+  <div class="scroll">
+  <table class="data">
+  <thead><tr><th>System</th><th>Fares</th><th>Reach</th></tr></thead>
+  <tbody><tr>
+<td><a href="https://www.lvmonorail.com/stations/" target="_blank" rel="noopener">Las Vegas Monorail</a>
+ <div class="tiny">Mon 7am–12am; Tue–Thu 7am–2am; Fri–Sun 7am–3am</div></td>
+<td class="tiny">Single ride $6.25 paper / $5.75 e-ticket. 1-day $15.50 / $13.95, 2-day $27, 3-day $33, 4-day $40, 5-day $48.25, 7-day $64 / $59.95.</td>
+<td class="tiny">3.9 miles end to end, roughly 4–8 minute headways. Does NOT reach the airport or downtown.</td>
+</tr><tr>
+<td><a href="https://www.rtcsnv.com/ways-to-travel/fares-passes/" target="_blank" rel="noopener">RTC Transit — The Deuce &amp; SDX</a>
+ <div class="tiny">24 hours on the Strip corridor</div></td>
+<td class="tiny">Strip &amp; Downtown Express / Deuce: $4 single, $6 2-hour, $8 24-hour, $20 3-day. Nevada local fares are $1.</td>
+<td class="tiny">The only 24-hour option, and the only one that reaches downtown (Fremont Street) and the Arts District.</td>
+</tr><tr>
+<td><a href="https://www.boringcompany.com/projects/las-vegas-loop" target="_blank" rel="noopener">Vegas Loop (Boring Company)</a>
+ <div class="tiny"></div></td>
+<td class="tiny">Encore / Resorts World / Westgate $4.75 (day pass $13.25); Las Vegas Convention Center ↔ Strip $5; Fontainebleau $7.00; SAHARA $7.50; airport $12–14.</td>
+<td class="tiny">Point-to-point in Tesla vehicles, not a rail line. Fare bands vary by station pair.</td>
+</tr></tbody>
+  </table>
+  </div>
+  <p class="note">Fares are the operators' own published prices. The Monorail 7-day pass ($59.95 electronic) pays for
+  itself at ten single rides and covers the exact Strip stretch the starred restaurants sit on.</p>
+</section>
 
-<div class="note warn">
-<p><strong>There is no subway in Las Vegas.</strong> Not a technicality — it changes the entire answer. The city has no metro, light rail or commuter rail. The only rail is the <strong>Las Vegas Monorail</strong>: a short privately operated line on the east side of the Strip, seven stations, MGM Grand to SAHARA. Everything else is bus. The requirement was therefore implemented as <strong>Monorail plus RTC bus</strong>, and that is stated wherever the result is used.</p>
-</div>
+<section class="panel">
+  <h2>Estimated one-way minutes between zones</h2>
+  <p><strong>These are estimates, not timetables.</strong> No official source publishes door-to-door times; these are
+  built from the official station lists and route maps and rounded to five minutes.</p>
+  <div class="scroll">
+  <table class="data matrix">
+  <thead><tr><th></th><th class="vert">South Strip</th><th class="vert">Centre Strip</th><th class="vert">North Strip</th><th class="vert">West of the Strip</th><th class="vert">Chinatown / Spring Mountain Rd</th><th class="vert">Downtown &amp; Arts District</th><th class="vert">Far West (Russell Rd)</th><th class="vert">Off-Strip / Henderson / Summerlin</th></tr></thead>
+  <tbody><tr><th class="rowhead">South Strip</th><td class="num zero">0</td><td class="num near">10</td><td class="num near">20</td><td class="num near">15</td><td class="num far">25</td><td class="num far">30</td><td class="num far">35</td><td class="num far">35</td></tr><tr><th class="rowhead">Centre Strip</th><td class="num near">10</td><td class="num zero">0</td><td class="num near">10</td><td class="num near">10</td><td class="num near">20</td><td class="num far">25</td><td class="num far">30</td><td class="num far">35</td></tr><tr><th class="rowhead">North Strip</th><td class="num near">20</td><td class="num near">10</td><td class="num zero">0</td><td class="num near">20</td><td class="num near">20</td><td class="num near">20</td><td class="num far">30</td><td class="num far">40</td></tr><tr><th class="rowhead">West of the Strip</th><td class="num near">15</td><td class="num near">10</td><td class="num near">20</td><td class="num zero">0</td><td class="num near">10</td><td class="num near">20</td><td class="num near">20</td><td class="num far">35</td></tr><tr><th class="rowhead">Chinatown / Spring Mountain Rd</th><td class="num far">25</td><td class="num near">20</td><td class="num near">20</td><td class="num near">10</td><td class="num zero">0</td><td class="num near">20</td><td class="num near">15</td><td class="num far">40</td></tr><tr><th class="rowhead">Downtown &amp; Arts District</th><td class="num far">30</td><td class="num far">25</td><td class="num near">20</td><td class="num near">20</td><td class="num near">20</td><td class="num zero">0</td><td class="num far">30</td><td class="num far">40</td></tr><tr><th class="rowhead">Far West (Russell Rd)</th><td class="num far">35</td><td class="num far">30</td><td class="num far">30</td><td class="num near">20</td><td class="num near">15</td><td class="num far">30</td><td class="num zero">0</td><td class="num far">30</td></tr><tr><th class="rowhead">Off-Strip / Henderson / Summerlin</th><td class="num far">35</td><td class="num far">35</td><td class="num far">40</td><td class="num far">35</td><td class="num far">40</td><td class="num far">40</td><td class="num far">30</td><td class="num zero">0</td></tr></tbody>
+  </table>
+  </div>
+</section>
 
-<div class="note">
-<p><strong>Correction: Chinatown is reachable.</strong> An earlier version of this page stated that Chinatown had no Deuce and no bus service and was therefore over an hour from every Strip hotel. That was wrong. Route 203 serves Spring Mountain Road directly and its official timetable proves it. Because Chinatown holds 7 of the 24 MICHELIN restaurants, the correction materially changed every hotel's score. RTC's own Route 203 timetable is on this page, with its timed stops listed, so you can check it yourself.</p>
-</div>
-
-<h2>Las Vegas Monorail</h2>
-<p>Trains arrive every 4 to 8 minutes. 7 stations. It does <strong>not</strong> reach the Venetian, Palazzo, Wynn, Encore, Resorts World, ARIA, Bellagio, Chinatown, the Arts District, Downtown or the Gold Coast.</p>
-<div class="tw"><table class=""><thead><tr><th>Station (south to north)</th><th>Address</th><th>Inside / at</th><th>Source</th></tr></thead><tbody><tr><td>MGM Grand Station</td><td>3799 S Las Vegas Blvd, Las Vegas, NV 89109</td><td>MGM Grand</td><td><a href="https://www.lvmonorail.com/stations/mgm-grand/" target="_blank" rel="noopener">source</a></td></tr><tr><td>Horseshoe / Paris Station</td><td>3645 S Las Vegas Blvd, Las Vegas, NV 89109</td><td>Horseshoe Las Vegas (lower level) / Paris Las Vegas</td><td><a href="https://www.lvmonorail.com/stations/horseshoe-paris/" target="_blank" rel="noopener">source</a></td></tr><tr><td>Flamingo / Caesars Palace Station</td><td></td><td>Flamingo / Caesars Palace</td><td><a href="https://www.lvmonorail.com/stations/" target="_blank" rel="noopener">source</a></td></tr><tr><td>Harrah's / The LINQ Station</td><td></td><td>Harrah's / The LINQ</td><td><a href="https://www.lvmonorail.com/stations/" target="_blank" rel="noopener">source</a></td></tr><tr><td>Boingo Station at LVCC</td><td></td><td>Las Vegas Convention Center</td><td><a href="https://www.lvmonorail.com/stations/" target="_blank" rel="noopener">source</a></td></tr><tr><td>Westgate Station</td><td></td><td>Westgate Las Vegas</td><td><a href="https://www.lvmonorail.com/stations/" target="_blank" rel="noopener">source</a></td></tr><tr><td>SAHARA Las Vegas Station</td><td></td><td>SAHARA Las Vegas</td><td><a href="https://www.lvmonorail.com/stations/" target="_blank" rel="noopener">source</a></td></tr></tbody></table></div>
-
-<h3>Monorail hours</h3>
-<div class="tw"><table class=""><thead><tr><th>Day</th><th>Hours</th></tr></thead><tbody><tr><td>Monday</td><td>7 am – 12 midnight</td></tr><tr><td>Tuesday</td><td>7 am – 2 am</td></tr><tr><td>Wednesday</td><td>7 am – 2 am</td></tr><tr><td>Thursday</td><td>7 am – 2 am</td></tr><tr><td>Friday</td><td>7 am – 3 am</td></tr><tr><td>Saturday</td><td>7 am – 3 am</td></tr><tr><td>Sunday</td><td>7 am – 3 am</td></tr></tbody></table></div>
-<p class="sm">The operator publishes modified and early-closure dates. A notice captured during verification listed early closures Nov 29 – Dec 15, 2026. Check the site for the Feb–Mar 2027 window before relying on late-night service.</p>
-
-<h3>Monorail fares</h3>
-<div class="tw"><table class=""><thead><tr><th>Pass</th><th>Full fare</th><th>eTicket price</th></tr></thead><tbody><tr><td>Single ride</td><td>$6.25</td><td>$5.75</td></tr><tr><td>1 day</td><td>$15.50</td><td>$13.95</td></tr><tr><td>2 days</td><td>$27</td><td>$24.45</td></tr><tr><td>3 days</td><td>$33</td><td>$30.85</td></tr><tr><td>4 days</td><td>$40</td><td>$38.10</td></tr><tr><td>5 days</td><td>$48.25</td><td>$45.85</td></tr><tr><td>7 days</td><td>$64</td><td>$59.95</td></tr></tbody></table></div>
-<p class="sm">Source: <a href="https://www.lvmonorail.com/ticket-information/" target="_blank" rel="noopener">source</a>. Children 5 and under ride free.</p>
-
-<h2>RTC buses</h2>
-<p>Visitors pay Strip and All Access fares. Passes are valid on all routes, so a Strip pass also works on Route 203.</p>
-<div class="tw"><table class=""><thead><tr><th>Route</th><th>Corridor</th><th>Why it matters here</th><th>Source</th></tr></thead><tbody><tr><td><strong>The Deuce</strong></td><td>Las Vegas Boulevard — South Strip Transit Terminal to Downtown / Fremont Street</td><td>Serves every Strip hotel in this study. Does not turn west onto Spring Mountain Road.</td><td><a href="https://www.rtcsnv.com/ways-to-travel/fares-passes/" target="_blank" rel="noopener">fares</a></td></tr><tr><td><strong>203 — Spring Mountain / Desert Inn / Lamb</strong></td><td>Runs the length of Spring Mountain Road, the road the Chinatown MICHELIN cluster sits on</td><td>This is the route that reaches Chinatown. Its timetable carries a timed stop at Las Vegas Blvd, and the timed run from Decatur to Las Vegas Blvd takes 14 minutes.<br><span class="sm">Timed stops: Town Center &amp; Twain, Spring Mtn. &amp; Durango, Rainbow, Decatur, Las Vegas Blvd., Maryland Pkwy. &amp; Twain, Eastern, Boulder Hwy., Charleston, Lake Mead Blvd.</span></td><td><a href="https://rtcws.rtcsnv.com/routePDF/203.pdf" target="_blank" rel="noopener">timetable</a></td></tr><tr><td><strong>SDX / Strip &amp; All Access</strong></td><td>Strip and Downtown express; passes are also valid on residential routes</td><td>Useful for the Arts District and Downtown cluster.</td><td><a href="https://www.rtcsnv.com/ways-to-travel/fares-passes/" target="_blank" rel="noopener">fares</a></td></tr></tbody></table></div>
-<div class="tw"><table class=""><thead><tr><th>Strip &amp; All Access pass</th><th>Price</th></tr></thead><tbody><tr><td>single ride</td><td>$4</td></tr><tr><td>two hour pass</td><td>$6</td></tr><tr><td>twentyfour hour pass</td><td>$8</td></tr><tr><td>three day pass</td><td>$20</td></tr></tbody></table></div>
-<p class="sm">Source: <a href="https://www.rtcsnv.com/ways-to-travel/fares-passes/" target="_blank" rel="noopener">source</a>. Children 5 and under ride free with a paying adult.</p>
-
-<h2>How the travel times were produced</h2>
-<p>Rather than invent minute values, every number on this site comes from the generator in <code>tools/build_matrix.py</code>. Exactly one travel time in the model is published; the rest are declared assumptions, printed below so you can see which is which and change them.</p>
-<div class="tw"><table class=""><thead><tr><th>Input</th><th>Value</th><th>Verified or assumed</th></tr></thead><tbody><tr><td>Walking speed</td><td>3.0 mph</td><td>Assumed</td></tr><tr><td>Monorail line speed</td><td>15.0 mph</td><td>Assumed</td></tr><tr><td>Deuce average speed</td><td>8.0 mph</td><td>Assumed</td></tr><tr><td>Wait per boarding</td><td>8.0 min</td><td>Assumed, roughly half the Monorail's published 4–8 min headway</td></tr><tr><td>Transfer penalty</td><td>10.0 min</td><td>Assumed</td></tr><tr><td>Route 203, Decatur to Las Vegas Blvd</td><td>14.0 min</td><td><strong>Published in the RTC timetable</strong></td></tr></tbody></table></div>
-<p class="sm">Only the Route 203 Decatur-to-Las-Vegas-Blvd figure of 14 minutes is published. The speeds and penalties above are ordinary planning values, declared so the reader can see exactly which numbers are measured and which are assumed.</p>
-
-<h2>Band definitions</h2>
-<div class="tw"><table class=""><thead><tr><th>Band</th><th>Meaning</th></tr></thead><tbody><tr><td><span class="band b-walk">WALK</span></td><td>Under about 14 minutes on foot from the hotel entrance, no transit needed.</td></tr><tr><td><span class="band b-30">LE30</span></td><td>30 minutes or less door to door, including walking to the stop or station and waiting.</td></tr><tr><td><span class="band b-60">LE60</span></td><td>Between 30 and 60 minutes door to door — still inside the brief's one-hour limit.</td></tr><tr><td><span class="band b-gt">GT60</span></td><td>Over an hour, or no realistic transit route at all.</td></tr></tbody></table></div>
-
-<h2>Hotel x cluster matrix</h2>
-<p class="sub">Each cell shows the band and the estimated one-way minutes. Restaurant counts per cluster: MGM Grand 2, Center Strip 4, Venetian/Palazzo 4, Wynn 2, ARIA 1, Chinatown 7, Arts District 2, West Flamingo 1, Southwest 1 — 24 in total.</p>
-<div class="tw"><table class="hours"><thead><tr><th>Hotel</th><th>MGM</th><th>Center</th><th>Venetian</th><th>Wynn</th><th>ARIA</th><th>Chinatown</th><th>Arts</th><th>West</th><th>SW</th></tr></thead><tbody><tr><td><strong>luxor</strong></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;16 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;23 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;31 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;36 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;29 min&lt;/span&gt;</span></td><td><span class="band b-60">GT60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;69 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;42 min&lt;/span&gt;</span></td><td><span class="band b-gt">GT60</span></td><td><span class="band b-gt">GT60</span></td></tr><tr><td><strong>mgm-grand</strong></td><td><span class="band b-60">WALK&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;8 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;17 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;30 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;32 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;20 min&lt;/span&gt;</span></td><td><span class="band b-60">GT60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;65 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;40 min&lt;/span&gt;</span></td><td><span class="band b-gt">GT60</span></td><td><span class="band b-gt">GT60</span></td></tr><tr><td><strong>new-york-new-york</strong></td><td><span class="band b-60">WALK&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;9 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;18 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;31 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;33 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;20 min&lt;/span&gt;</span></td><td><span class="band b-60">GT60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;66 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;41 min&lt;/span&gt;</span></td><td><span class="band b-gt">GT60</span></td><td><span class="band b-gt">GT60</span></td></tr><tr><td><strong>excalibur</strong></td><td><span class="band b-60">WALK&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;13 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;20 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;32 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;35 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;28 min&lt;/span&gt;</span></td><td><span class="band b-60">GT60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;67 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;42 min&lt;/span&gt;</span></td><td><span class="band b-gt">GT60</span></td><td><span class="band b-gt">GT60</span></td></tr><tr><td><strong>aria</strong></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;20 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;20 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;33 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;38 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;32 min&lt;/span&gt;</span></td><td><span class="band b-60">GT60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;71 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;48 min&lt;/span&gt;</span></td><td><span class="band b-gt">GT60</span></td><td><span class="band b-gt">GT60</span></td></tr><tr><td><strong>cosmopolitan</strong></td><td><span class="band b-60">WALK&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;12 min&lt;/span&gt;</span></td><td><span class="band b-60">WALK&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;9 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;28 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;30 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;16 min&lt;/span&gt;</span></td><td><span class="band b-60">GT60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;64 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;39 min&lt;/span&gt;</span></td><td><span class="band b-gt">GT60</span></td><td><span class="band b-gt">GT60</span></td></tr><tr><td><strong>planet-hollywood</strong></td><td><span class="band b-60">WALK&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;13 min&lt;/span&gt;</span></td><td><span class="band b-60">WALK&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;6 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;26 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;29 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;17 min&lt;/span&gt;</span></td><td><span class="band b-60">GT60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;63 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;38 min&lt;/span&gt;</span></td><td><span class="band b-gt">GT60</span></td><td><span class="band b-gt">GT60</span></td></tr><tr><td><strong>bellagio</strong></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;23 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;21 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;27 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;35 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;31 min&lt;/span&gt;</span></td><td><span class="band b-60">GT60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;70 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;45 min&lt;/span&gt;</span></td><td><span class="band b-gt">GT60</span></td><td><span class="band b-gt">GT60</span></td></tr><tr><td><strong>caesars-palace</strong></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;23 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;22 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;26 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;35 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;32 min&lt;/span&gt;</span></td><td><span class="band b-60">GT60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;70 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;45 min&lt;/span&gt;</span></td><td><span class="band b-gt">GT60</span></td><td><span class="band b-gt">GT60</span></td></tr><tr><td><strong>flamingo</strong></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;17 min&lt;/span&gt;</span></td><td><span class="band b-60">WALK&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;13 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;19 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;29 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;26 min&lt;/span&gt;</span></td><td><span class="band b-60">GT60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;64 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;39 min&lt;/span&gt;</span></td><td><span class="band b-gt">GT60</span></td><td><span class="band b-gt">GT60</span></td></tr><tr><td><strong>wynn</strong></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;30 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;27 min&lt;/span&gt;</span></td><td><span class="band b-60">LE30&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;22 min&lt;/span&gt;</span></td><td><span class="band b-60">WALK&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;9 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;37 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;34 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;40 min&lt;/span&gt;</span></td><td><span class="band b-gt">GT60</span></td><td><span class="band b-gt">GT60</span></td></tr><tr><td><strong>trump-international</strong></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;55 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;51 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;46 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;41 min&lt;/span&gt;</span></td><td><span class="band b-60">GT60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;61 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;45 min&lt;/span&gt;</span></td><td><span class="band b-60">LE60&lt;br&gt;&lt;span class=&quot;sm&quot;&gt;39 min&lt;/span&gt;</span></td><td><span class="band b-gt">GT60</span></td><td><span class="band b-gt">GT60</span></td></tr></tbody></table></div>
-
-<h2>Ranked totals</h2>
-<div class="tw"><table class=""><thead><tr><th>Hotel</th><th>Within 1 hour</th><th>Within 30 min</th><th>On foot</th></tr></thead><tbody><tr><td>wynn</td><td><strong>22</strong></td><td>10</td><td>2</td></tr><tr><td>trump-international</td><td><strong>21</strong></td><td>0</td><td>0</td></tr><tr><td>planet-hollywood</td><td><strong>15</strong></td><td>13</td><td>6</td></tr><tr><td>flamingo</td><td><strong>15</strong></td><td>13</td><td>4</td></tr><tr><td>cosmopolitan</td><td><strong>15</strong></td><td>11</td><td>6</td></tr><tr><td>bellagio</td><td><strong>15</strong></td><td>10</td><td>0</td></tr><tr><td>caesars-palace</td><td><strong>15</strong></td><td>10</td><td>0</td></tr><tr><td>luxor</td><td><strong>15</strong></td><td>7</td><td>0</td></tr><tr><td>mgm-grand</td><td><strong>15</strong></td><td>7</td><td>2</td></tr><tr><td>new-york-new-york</td><td><strong>15</strong></td><td>7</td><td>2</td></tr><tr><td>excalibur</td><td><strong>15</strong></td><td>7</td><td>2</td></tr><tr><td>aria</td><td><strong>15</strong></td><td>6</td><td>0</td></tr></tbody></table></div>
-
-<h2>The two mistakes this page used to contain</h2>
-<div class="note">
-<p><strong>First, every hotel tied.</strong> My first matrix graded all Strip hotels identically, so the ranking was useless. A model that cannot separate the Cosmopolitan from the Luxor is not measuring anything, so I rebuilt it from street addresses.</p>
-<p><strong>Second, and worse, I wrote off Chinatown.</strong> I assumed Spring Mountain Road had no bus service and marked its seven restaurants as over an hour from everywhere. Route 203 proves otherwise, and because those seven are 29% of the list, the error had changed which hotels won. Both mistakes are kept here rather than quietly deleted, because a study that hides its corrections is worth less than one that shows them.</p>
-</div>
-
-<h2>What this means for a plan</h2>
-<p><strong>Chinatown is a single bus ride from the far north Strip.</strong> Route 203 crosses Las Vegas Boulevard at the north end of the Wynn property and runs west along Spring Mountain Road. From Wynn it is about 34 minutes door to door, which puts seven restaurants inside your one-hour rule.</p>
-<p><strong>From the south Strip it is a two-leg trip.</strong> From MGM Grand or Luxor the route is Monorail or Deuce north, then Route 203 west, which lands at roughly 65–70 minutes — just outside the limit. If those seven restaurants matter, staying north or accepting a rideshare is the only way to have them comfortably.</p>
-<p><strong>The Arts District is on the Deuce corridor</strong>, so Esther's Kitchen and SoulBelly BBQ stay reachable from anywhere on the Boulevard. The Gold Coast and Anima by Edo are not.</p>
+<section class="panel">
+  <h2>Why the 60-minute ranking failed, and what was done instead</h2>
+  <p>The brief asked to rank hotels by how many MICHELIN restaurants fall within an hour. Run literally, that
+  number is <strong>24 out of 24 for every single hotel</strong> in the dataset — including the ones in Henderson
+  and Summerlin. The Strip is about four miles long and Chinatown is about three miles west of it, so an hour
+  covers the entire city.</p>
+  <p>A metric that returns the same value for all 32 properties cannot rank them. So a
+  <strong>20-minute</strong> column was added, and that one does separate the field:</p>
+  <div class="grid4">
+    <div class="card"><div class="big">24</div><div class="lbl">West of the Strip</div><p>Palms Place reaches everything in 20 minutes — the western hotels sit between Chinatown and the Strip.</p></div>
+    <div class="card"><div class="big">23</div><div class="lbl">North Strip</div><p>Venetian, Palazzo, Wynn, Encore, SAHARA, Resorts World.</p></div>
+    <div class="card"><div class="big">21</div><div class="lbl">Centre Strip</div><p>The densest restaurant zone — more starred rooms, fewer Chinatown minutes.</p></div>
+    <div class="card"><div class="big">0</div><div class="lbl">Off-Strip</div><p>Henderson and Summerlin: correct resorts, 11–17 miles from dinner.</p></div>
+  </div>
+  <p class="note">This substitution is a material change to the brief and is raised openly as
+  <a href="questions.html">Q-01</a>. The whole matrix lives in one file, so a different threshold can be
+  recomputed in a single step.</p>
+</section>
 
 </main>
-<footer>
-  <p>Compiled 2026-11-25. Every figure is quoted from an official operator page or from a live retail rate captured on that date.
-  Cells showing <span class="unv">—</span> could not be confirmed from an official source and were deliberately left blank rather than estimated.</p>
-  <p><a href="flags.html">See everything flagged for review</a></p>
+<footer class="wrap">
+  <p>Prices captured 25 Nov 2026 from Booking.com for exact date ranges, 2 adults, 1 room, USD.
+  Every row links to its source. Blank means <strong>not verified</strong> — never estimated.</p>
+  <p>Las Vegas had no MICHELIN Guide between 2010 and 2025. All awards here are from the 2026
+  Southwest selection, the first since 2009.</p>
 </footer>
 </body>
 </html>

@@ -1,69 +1,55 @@
-# Vegas1 — a Las Vegas trip for two, February–March 2027
+# Vegas1 — Las Vegas, seven nights, 2027
 
-A research-backed plan for a 1–2 week Las Vegas trip for two adults, built entirely from
-official sources. Every table row links to the page its figures came from. Where a value
-could not be confirmed officially, the cell is **blank and flagged** rather than guessed.
+A sourced trip plan for **two adults**, seven nights, between **15 February and 23 March 2027**.
 
-## Live site
+**Live site → <https://kanlerxz87-cyber.github.io/Vegas1/>**
 
-Published with GitHub Pages from [`docs/`](docs/): every page is static HTML with one
-stylesheet and no JavaScript.
+## What is here
 
-| Page | What it answers |
-|---|---|
-| [Overview](docs/index.html) | Hotels ranked by MICHELIN restaurants reachable within an hour, plus the executive summary |
-| [Hotels](docs/hotels.html) | Seven-night totals for real dates; private bathroom and queen-or-larger bed on every row |
-| [Restaurants](docs/restaurants.html) | All 24 MICHELIN entries, keeping 2-star, 1-star, Bib Gourmand and Selected explicitly distinct |
-| [Activities](docs/activities.html) | Fountains of Bellagio, the High Roller, and the one Sphere residency that plays in the window |
-| [Transit](docs/transit.html) | Monorail and RTC fares, the travel model, and the two errors it corrects |
-| [Open questions](docs/questions.html) | What must be resolved before booking, and how to find it |
-| [Suggestions](docs/suggestions.html) | Proposed improvements, for review before implementation |
-| [Flagged](docs/flags.html) | Every conflict, gap, judgement call and correction |
-| [Sources](docs/sources.html) | Every link used, grouped by what it supports |
+| Path | What it is |
+|------|-----------|
+| `docs/` | The published site (8 pages, plain HTML + one stylesheet, no framework, no CDN) |
+| `data/restaurants.json` | 24 MICHELIN listings with award tier, hours, exceptions, prices, official + YouTube links |
+| `data/hotels.json` | 32 hotels with dated 7-night totals, bed/bathroom fit, Michelin proximity counts |
+| `data/price-windows.json` | The week-by-week price comparison that answers "cheapest time to book" |
+| `data/transit.json` | Monorail / RTC bus / Vegas Loop fares and the zone-to-restaurant minute matrix |
+| `data/activities.json` | Four verified venues with official hours and prices for two |
+| `data/questions.json` | 10-question register: answered, interpreted, still open — each with how to close it |
+| `data/suggestions.json` | 12 decision improvements with honest trade-offs |
+| `scripts/build.py` | Recomputes the Michelin proximity counts from the transit matrix; runs integrity checks |
+| `scripts/gen_site.py` | Renders `docs/` from the JSON. All counts derived, none typed by hand |
+| `scripts/validate.py` | Link and structure checks for the built site |
+| `FLAGS.md` | The 20 things that did not verify cleanly |
+| `executive-summary.md` | The one-page version |
+| `COORDINATION.md` | Multi-session task board, merge record and verification log |
+| `archive/` | The earlier session's build, preserved intact rather than overwritten |
 
-## Headline findings
-
-- **Las Vegas has no subway.** The only rail is the privately run Las Vegas Monorail, seven
-  stations from MGM Grand to SAHARA. "One hour by subway or bus" was implemented as
-  Monorail plus RTC bus, and that substitution is stated on the site.
-- **Chinatown holds 7 of the 24 MICHELIN restaurants** and is served by RTC Route 203, not
-  by the Monorail or the Deuce. Catching that changed the hotel ranking.
-- **Wynn reaches the most restaurants** (22 of 24) because Spring Mountain Road meets Las
-  Vegas Boulevard at its north end — but it costs $5,828 for the week.
-- **Planet Hollywood and Flamingo tie on what matters** (13 of 24 within 30 minutes) at
-  $1,026 and $626 respectively for the same seven nights.
-- **Two constraints force a decision:** the Cosmopolitan is unavailable 15–22 Feb 2027, and
-  Michael Mina is marked temporarily closed by Bellagio.
-
-## Repository layout
-
-```
-data/                  source of truth (restaurants, hotels, activities, transit, travel matrix)
-tools/build_matrix.py  regenerates the travel matrix from real addresses
-build.py               generates site/ from data/, then mirrors it to docs/
-assets/style.css       the only stylesheet
-site/                  generated HTML
-docs/                  exact mirror, served by GitHub Pages
-REPO_REVIEW.md         line-by-line review of what this repository contained
-VERIFICATION.md        what each figure rests on, and what was left blank
-PUBLISHING.md          how the site is served and redeployed
-COORDINATION.md        task board for parallel agent sessions
-```
-
-## Rebuilding
-
-Standard library only — no `pip install`, no `npm install`.
+## Rebuild
 
 ```bash
-python3 tools/build_matrix.py   # travel matrix from addresses
-python3 build.py                # site/ and docs/
-python3 -m http.server -d docs 8080
+python3 scripts/build.py      # rescore + integrity checks
+python3 scripts/gen_site.py   # render docs/
+python3 scripts/validate.py   # link + structure checks
 ```
 
-## Verification policy
+No dependencies beyond the Python 3 standard library. GitHub Pages serves `docs/` from `main`
+directly; `.nojekyll` is present so no Jekyll step runs.
 
-1. Every figure traces to an official source, linked in the row.
-2. A value that no official source publishes is left blank and flagged. It is never inferred,
-   interpolated or carried over from a similar venue.
-3. Where two official sources disagree, both are quoted and the disagreement is left visible.
-4. Corrections are documented rather than quietly deleted — see the Flagged page.
+## The three findings
+
+1. **8–15 March 2027 is the cheap week.** The same Venetian suite is $2,407 instead of $3,757 — about
+   a third less — because the 15 February week contains Presidents' Day.
+2. **The requested "within 1 hour by subway or bus" ranking cannot rank anything.** Las Vegas has no
+   subway, and every hotel is within an hour of all 24 restaurants. A 20-minute column drives the
+   ranking instead; disclosed as Q-01.
+3. **The three cheapest hotels fail the brief's bed requirement.** LINQ, Flamingo and Horseshoe are
+   all "room type assigned on arrival" — the bed is not guaranteed until check-in.
+
+## Ground rules this project followed
+
+- **No inferred values.** Blank means unverified. Every blank is listed in `FLAGS.md` and on the
+  Questions page with a route to close it.
+- **Every row cites a source.** 280 external links across 8 pages.
+- **Estimates are labelled.** Only the transit minutes are estimates, and they say so everywhere.
+- **No prior work was discarded.** A parallel session merged a first version to `main` mid-project;
+  it is preserved in `archive/` with a written comparison of why each dataset was superseded.

@@ -1,73 +1,62 @@
-# Executive Summary - Las Vegas Vacation Planning
+# Las Vegas 2027 — Executive summary
 
-## Trip Overview
+**Two adults · seven nights · between 15 February and 23 March 2027**
+All figures captured 25 November 2026. Live site: <https://kanlerxz87-cyber.github.io/Vegas1/>
 
-| Detail | Value |
-|--------|-------|
-| **Destination** | Las Vegas, Nevada, USA |
-| **Travelers** | 2 adults (couple) |
-| **Preferred Dates** | February 15-18, 2027 |
-| **Date Range** | February 15 - March 23, 2027 |
-| **Recommended Stay** | 7 nights |
-| **Transportation** | RTC bus (Deuce), Monorail, rideshare, walking |
+---
 
-## Key Findings
+## The headline
 
-### Michelin Restaurants in Las Vegas
+Three findings change the shape of this trip, and none of them is the thing the brief expected.
 
-The 2026 MICHELIN Guide Southwest (inaugural edition, released August 26, 2026) recognizes **24 Las Vegas restaurants**:
+**1. The cheapest week is not the preferred week.** Four whole weeks were priced inside the allowed
+envelope. **8–15 March 2027** is cheaper than the 15 February week for every large resort, by about
+a third — the same Luxury King Suite at The Venetian is **$2,407 instead of $3,757**, and at the
+Palazzo $2,422 instead of $3,932. 15 February 2027 is Presidents' Day. Moving the trip one week
+later buys an extra starred dinner for the same money.
 
-- **2 Michelin Stars**: 1 restaurant (Joël Robuchon at MGM Grand)
-- **1 Michelin Star**: 3 restaurants (L'Atelier de Joël Robuchon, Restaurant Guy Savoy, É by José Andrés)
-- **Bib Gourmand** (good value, no star): 3 restaurants (China Poblano, Esther's Kitchen, Yen Viet Kitchen)
-- **Recommended** (listed, no star): 17 restaurants
+**2. The requested ranking metric cannot rank anything.** The brief asked to order hotels by how
+many MICHELIN restaurants fall within an hour by public transport. Las Vegas has no subway, and the
+Strip is four miles long with Chinatown three miles west of it — so **every one of the 32 hotels is
+within an hour of all 24 restaurants**. The metric returns 24/24 for all of them, including the ones
+in Henderson. A 20-minute column was added and is what actually separates the field. This is
+disclosed as Q-01 rather than quietly swapped.
 
-**Top Michelin Star Restaurants:**
-1. Restaurant de Joël Robuchon - 2 Stars - MGM Grand - French Contemporary
-2. L'Atelier de Joël Robuchon - 1 Star - MGM Grand - French Contemporary
-3. Restaurant Guy Savoy - 1 Star - Caesars Palace - French Contemporary
-4. É by José Andrés - 1 Star - The Cosmopolitan - Spanish Contemporary
+**3. The three cheapest hotels fail the brief's own bed requirement.** The LINQ ($564), Flamingo
+($626) and Horseshoe ($717) all headline at "room type assigned on arrival" — the king bed shown is
+not contractual. They cannot be recommended against a stated queen-or-larger requirement.
 
-### Hotel Recommendations
+## What to book
 
-| Hotel | Location | Est. Nightly (Feb 2027) | Est. 7-Night Total | Michelin Restaurants Nearby |
-|-------|----------|------------------------|-------------------|----------------------------|
-| Caesars Palace | Center Strip | $278 | ~$2,642+ | Restaurant Guy Savoy (in hotel) |
-| MGM Grand | Center Strip | $84+ | ~$800-$1,000+ | Joël Robuchon (2★), L'Atelier (1★) (both in hotel) |
-| Bellagio | Center Strip | $195-$395 | ~$1,800-$3,500+ | Michael Mina (in hotel) |
-| The Cosmopolitan | Center Strip | Unverified | Unverified | É by José Andrés (1★), China Poblano (Bib Gourmand) |
+| | Pick | Why |
+|---|---|---|
+| **Best value** | **Desert Rose Resort** — $922 for 7 nights | 9.1 guest score, 646 ft² one-bedroom suite, king bed, private bathroom, **no resort fee**, 15-min walk to the centre-Strip restaurants. The only property that is cheap, well-rated and correctly bedded at once. |
+| **Best if the date can move** | **The Venetian, 8–15 March** — $2,407 | Four MICHELIN listings inside the complex, 646 ft² suite, 23 restaurants within 20 minutes. $1,350 cheaper than the February week. |
+| **Best location for Michelin** | **Anything west of the Strip** — Palms Place, $866 | 24/24 restaurants inside 20 minutes, because it sits between Chinatown and the Strip. The least obvious and most useful answer on the site. |
+| **Avoid** | Red Rock, Green Valley Ranch, Cliffs at Peace Canyon | Correct resorts, 11–17 miles from every dinner. **0** restaurants inside 20 minutes. |
 
-### Best Time to Book
+## The Michelin picture
 
-- **Booking window**: 30-60 days in advance (for Feb 15-18, 2027: book mid-December 2026 to mid-January 2027)
-- **Cheapest days**: Sunday through Thursday
-- **Cheapest month**: February is one of the cheapest months for Las Vegas
-- **Avoid**: Saturday stays (most expensive)
+Las Vegas had **no MICHELIN Guide between 2010 and 2025** — the 2026 Southwest selection is the
+city's first since 2009, which is why so many videos still call restaurants starred when they are
+not. Of 24 listings: **4 starred** (Joël Robuchon 2★; L'Atelier, Guy Savoy, é by José Andrés 1★),
+**3 Bib Gourmand**, **17 Recommended**. There is no three-star restaurant in Las Vegas.
 
-### Transportation
+Only three venues print a real price for two: Michael Mina **$590++**, KAME Omakase **$1,000++**,
+Anima by EDO **$170++**. The four starred rooms are all "price on request" — book them first, before
+the hotel, because é has nine seats a night.
 
-- **No subway** in Las Vegas
-- **RTC Deuce bus**: 24-hour service on the Strip, $6 for 2-hour pass, $8 for 24-hour pass
-- **Las Vegas Monorail**: East Strip, $5.75 single ride / $13 for 24-hour pass
-- **Rideshare**: $12-25 for typical Strip trips
-- **Walking**: Free between adjacent Strip properties
+## What is not known
 
-## Data Limitations
+Eight gaps are left blank rather than guessed, and each has a stated route to close it. The two that
+matter: **restaurant prices** (18 of 21 venues publish none) and **whether this is a 3-night or
+7-night trip** — the brief says 1–2 weeks but the preferred dates 15–18 February are three nights,
+which would cut every hotel figure on this site by more than half.
 
-The following data could not be verified from official sources and is marked as "unverified" or "blank":
+## How to trust any number here
 
-- Exact hotel prices for February 2027 (prices are dynamic)
-- Restaurant hours, days open, and exceptions
-- Restaurant cost estimates for 2 adults (Michelin does not publish specific pricing)
-- Social media links (YouTube, TikTok, Instagram) for restaurants and activities
-- Resort fees for most hotels (only verified for some properties)
-
-All unverified fields are intentionally left blank per the verification policy.
-
-## Sources
-
-- MICHELIN Guide Southwest 2026: https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurants
-- Visit Las Vegas (LVCVA): https://www.visitlasvegas.com/michelin-guide-restaurants/
-- Hotel pricing: Priceline, KAYAK, Super.com, Thomas Cook, Bellagio verified rate pages
-- Booking advice: lasvegaswonders.com, klook.com
-- Transportation: RTC of Southern Nevada, Las Vegas Monorail, US News Travel
+Every figure links to its source. **8 pages, 280 external source links, 0 broken internal links.**
+Twenty flags record everything that would not verify cleanly, including two where a creator video
+contradicts the official award (Robuchon "3 stars", Wing Lei "starred"). Where a number could not be
+confirmed the cell is blank. Nothing on the site is an estimate — except the transit minutes, which
+are labelled as estimates on every page that shows them.
