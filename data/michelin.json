@@ -67,16 +67,16 @@
       "distinction_key": "star",
       "address": "3708 S Las Vegas Blvd, Level 3, Boulevard Tower (Cosmopolitan)",
       "zone": "Center Strip",
-      "hours": "Tue–Sat seatings 5:30pm & 8:30pm (~2h). Sunday: CONFLICT — Tripadvisor/VegasNearMe list Sunday seatings; joinpearl/lasvegascompass say closed Sun & Mon. Closed Monday either way. Verify on ebyjoseandres.com.",
-      "hours_verified": false,
+      "hours": "OFFICIAL (ebyjoseandres.com, fetched 2026-11-25): open Tuesday through Sunday, two shows per night at 5:30 PM and 8:30 PM; closed Monday. Resolves earlier Sun-conflict (B2).",
+      "hours_verified": true,
       "cost_2_adults_usd": "600–800 food only (~$300s pp tasting, 2026); ~$1,000–1,300 total for 2 with pairing, 20% gratuity, tax",
       "cost_verified": true,
       "official": "https://www.ebyjoseandres.com/",
       "official_verified": true,
-      "source": "https://www.lasvegascompass.com/dining/restaurants/e-by-jose-andres",
+      "source": "https://www.ebyjoseandres.com/",
       "social": null,
       "social_platform": null,
-      "notes": "8-seat prepaid ticketed counter inside Jaleo; hardest reservation in town — book the moment the release window opens (up to 3 months ahead)."
+      "notes": "Nine-seat prepaid ticketed counter inside Jaleo (official site); tickets released 3 months in advance, waitlist if sold out; official booking link on site. Hardest reservation in town."
     },
     {
       "name": "China Poblano",
@@ -307,14 +307,14 @@
       "zone": "Chinatown / Spring Mountain",
       "hours": "Tue–Sat 5:30–9:30pm; closed Mon & Sun (OpenTable + Yelp agree).",
       "hours_verified": true,
-      "cost_2_adults_usd": "240–396 (5-course $120 pp / 7-course $150 pp / Signature $198 pp per Apr 2026 review of official menu; an older Summer menu source shows $80/$100/$130 — price conflict, flagged)",
-      "cost_verified": false,
-      "official": "https://partage.vegas/",
+      "cost_2_adults_usd": "260–420 — OFFICIAL menu fetched 2026-11-25: 5-course $130 pp, 7-course $160 pp, Signature $210 pp; wine pairings $60/$84/$108 pp; foie add-on +$33",
+      "cost_verified": true,
+      "official": "https://partage.vegas/menu",
       "official_verified": true,
-      "source": "https://www.opentable.com/restaurant/profile/1005940",
+      "source": "https://partage.vegas/menu",
       "social": null,
       "social_platform": null,
-      "notes": "Tasting-menu-only modern French; menus change monthly. 3-course early (5–7pm) $70 pp per older menu source."
+      "notes": "Tasting-menu-only modern French; menus change monthly (surprise courses). Earlier sources showing $80/$100/$130 and $120/$150/$198 were outdated — official menu now $130/$160/$210 (conflict B9 resolved 2026-11-25)."
     },
     {
       "name": "Pho Ga Bac Bac",
