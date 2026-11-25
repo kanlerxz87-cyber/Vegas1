@@ -33,7 +33,7 @@ re-verifies the combined data line by line, and publishes to GitHub Pages.
 | 8 | Site build: landing + category subpages, mobile-friendly | done | arena/6263258d-vegas1 | `index.html`, `*.html`, `assets/*` | Static site, no build step. |
 | 9 | Executive summary, suggestions, open questions | done | arena/6263258d-vegas1 | `summary.html`, `suggestions.html`, `questions.html` | |
 | 10 | Line-by-line verification & Flagged for Review page | done | arena/6263258d-vegas1 | `verified.html`, `flagged.html`, `data/verification.json` | Every row links an official source. |
-| 11 | GitHub Pages publication + build check | done | arena/6263258d-vegas1 | `.github/workflows/pages.yml`, gh Pages | Published via GitHub Actions. |
+| 11 | GitHub Pages publication + build check | needs review | arena/6263258d-vegas1 | `.github/workflows/pages.yml`, gh Pages | Workflow ready & site verified; final Pages-source toggle blocked by App-token permission (see log). |
 
 ## Task log (sources, verification, irregularities)
 
@@ -80,6 +80,25 @@ re-verifies the combined data line by line, and publishes to GitHub Pages.
 - **Verification:** Line-by-line. Every table row has a source link. Unverified fields left blank
   and flagged on the Flagged for Review page. Combined data re-checked after build.
 - **Publication:** GitHub Actions workflow deploys the repo root to GitHub Pages.
+
+### Task 11 — GitHub Pages publication (needs review — environmental blocker)
+- **Workflow created:** `.github/workflows/pages.yml` (checkout → configure-pages → upload-pages-artifact
+  `path: .` → deploy-pages). Triggered on push to `arena/6263258d-vegas1` and `workflow_dispatch`.
+- **Site verified:** all 11 HTML pages present, all internal links resolve, all 6 data JSON files
+  parse, all 153 external links are well-formed. No build step (static site).
+- **Blocker:** The sandbox authenticates as a GitHub **App installation token** (`GH_TOKEN`/
+  `GITHUB_TOKEN`; `X-Oauth-Client-Id` set, empty scopes). Changing the Pages source returns
+  `403 Resource not accessible by integration` for **both** branch-source and GitHub-Actions-source
+  (confirmed via `PUT /repos/{owner}/{repo}/pages`). The Actions `deploy-pages` step therefore fails
+  because the Pages source is still pinned to `branch: main, path: /` (and `main` holds only the
+  original README). The App token also cannot read Actions job logs.
+- **Session-rule interaction:** The session is pinned to branch `arena/6263258d-vegas1`; pushing the
+  site to `main` to satisfy the existing branch-source is **not permitted** by the session rules.
+- **One-step fix to go live (no code change needed):** In repo **Settings → Pages → Source**, set
+  "Deploy from a branch" → branch `arena/6263258d-vegas1`, folder `/ (root)` — **or** select
+  "GitHub Actions". The site then deploys immediately. This single toggle is the only manual step;
+  it is required solely because the App token lacks Pages-administration permission.
+- **Status:** `needs review` (published on the Flagged for Review page); does not block the site build.
 
 ### Standing coordination notes
 - Shared outputs (table data, site index/nav) were produced by this single integration session.

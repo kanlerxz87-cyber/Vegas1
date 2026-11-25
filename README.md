@@ -17,8 +17,14 @@ between **February 15 and March 23, 2027** (preferred window **Feb 15–18, 2027
 - **Executive summary, suggestions, open questions, verification, flagged-for-review** pages.
 
 ## Site
-A static, mobile-friendly multi-page site (no build step). Deployed to **GitHub Pages** via
-`.github/workflows/pages.yml`.
+A static, mobile-friendly multi-page site (no build step). A GitHub Actions workflow
+(`.github/workflows/pages.yml`) is ready to deploy it to **GitHub Pages** on every push to this branch.
+
+> **To go live (one toggle, no code change):** open **Settings → Pages → Source** and choose either
+> **branch `arena/6263258d-vegas1`, folder `/ (root)`** or **GitHub Actions**. The sandbox's GitHub
+> App token cannot change this setting automatically (HTTP 403), so this single repo-settings toggle
+> is the only manual step required; the site deploys immediately after. See
+> [Flagged for Review](flagged.html) item 10.
 
 ## Verification
 Every table row links to an official source. Values that could not be confirmed from an official
