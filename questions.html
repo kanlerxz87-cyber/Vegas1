@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Open questions · Las Vegas 2027</title>
+<meta name="description" content="A register of what is verified, what needed an interpretation, and what is still unknown — with the exact steps to close each gap.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span>Las Vegas · Feb–Mar 2027</div>
+    <nav><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="restaurants.html">Michelin</a><a href="activities.html">Things to do</a><a href="transit.html">Getting around</a><a href="questions.html" class="on">Open questions</a><a href="suggestions.html">Suggestions</a><a href="sources.html">Sources</a></nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="pagehead">
+    <h1>Open questions</h1>
+    <p class="sub">A register of what is verified, what needed an interpretation, and what is still unknown — with the exact steps to close each gap.</p>
+    
+  </div>
+  
+<section class="panel">
+  <h2>What is known, what is not, and how to find out</h2>
+  <p>Ten questions drove this plan. 3 are fully closed, 2 required a stated interpretation because
+  the brief does not map onto Las Vegas as written, and 5 are still open — those are the ones where a
+  table on this site shows a blank rather than a guess.</p>
+  <div class="grid4">
+    <div class="card"><div class="big">3</div><div class="lbl">answered</div><p>Confirmed against an official source, link attached.</p></div>
+    <div class="card"><div class="big">2</div><div class="lbl">interpreted</div><p>The question does not fit the city; the substitution is disclosed.</p></div>
+    <div class="card"><div class="big">5</div><div class="lbl">open</div><p>Not confirmable now. Blank in the data, with a route to close it.</p></div>
+    <div class="card"><div class="big">0</div><div class="lbl">filled by guess</div><p>No value on this site was inferred.</p></div>
+  </div>
+</section>
+<div class="qalist">
+<article class="qa">
+  <h3><span class="qid">Q-01</span> Rank hotels by how many Michelin restaurants are within 1 hour by subway or bus.
+    <span class="state warn">interpreted</span></h3>
+  <p><strong>Answer:</strong> Las Vegas has no subway or metro. Buses (RTC Deuce/SDX), the Monorail and the Vegas Loop were substituted, and separate fares were checked for each.</p>
+  <p><strong>Why it is not closed:</strong> Because the Strip is ~4 miles long and Chinatown ~3 miles west of it, all 24 Michelin listings sit inside 60 minutes of every hotel in the dataset. The literal metric gives a flat 24/24 to all of them and ranks nothing.</p>
+  <p><strong>What was done instead:</strong> A second column — Michelin restaurants within a 20-minute one-way trip — is shown alongside the 60-minute figure and is used as the ranking tiebreaker.</p>
+  <p class="tiny"><strong>How to close it:</strong> Nothing to close. It is a property of the city. If a stricter or looser threshold is preferred, the zone matrix in data/transit.json allows recomputation in one step.</p>
+  <details><summary>Sources</summary><ul class="srcs"><li><a href="https://www.lvmonorail.com/stations/" target="_blank" rel="noopener">https://www.lvmonorail.com/stations/</a></li><li><a href="https://www.rtcsnv.com/ways-to-travel/fares-passes/" target="_blank" rel="noopener">https://www.rtcsnv.com/ways-to-travel/fares-passes/</a></li><li><a href="https://www.boringcompany.com/projects/las-vegas-loop" target="_blank" rel="noopener">https://www.boringcompany.com/projects/las-vegas-loop</a></li></ul></details>
+</article>
+<article class="qa">
+  <h3><span class="qid">Q-02</span> Trip length is 1–2 weeks, but the preferred window is 2027-02-15 → 2027-02-18.
+    <span class="state warn">interpreted</span></h3>
+  <p><strong>Answer:</strong> 2027-02-15 → 2027-02-18 is three nights. Pricing therefore uses the 7-night block starting on the preferred arrival date (2027-02-15 → 2027-02-22), which satisfies the stated 7-night basis and still starts on the requested date.</p>
+  <p><strong>Why it is not closed:</strong> If the couple literally wants a 3-night trip, the 7-night totals on this site are about 2.3× too large, and the extra nights are pure cost.</p>
+  <p><strong>What was done instead:</strong> 7-night totals are presented because that is the stated basis. A 14-night variant is NOT priced — see F-17.</p>
+  <p class="tiny"><strong>How to close it:</strong> Ask the couple which they meant. If 3 nights, re-run the price capture with checkout 2027-02-18; every slug and window in data/hotels.json is ready for it.</p>
+  
+</article>
+<article class="qa">
+  <h3><span class="qid">Q-03</span> Which of the 21 Michelin restaurants are starred, and which are only listed?
+    <span class="state ok">answered</span></h3>
+  <p><strong>Answer:</strong> Four are starred: Joël Robuchon (2★), L&#x27;Atelier Robuchon (1★), Guy Savoy (1★), é by José Andrés (1★). Seventeen are unstarred listings: three Bib Gourmand (China Poblano, Esther&#x27;s Kitchen, Yen Viet Kitchen) and fourteen Recommended.</p>
+  <p><strong>Why it is not closed:</strong> There are no three-star restaurants in Las Vegas, and no guide existed at all between 2010 and 2025 — so most online &#x27;Michelin star&#x27; claims for Vegas are stale.</p>
+  <p><strong>What was done instead:</strong> Each restaurant row on the site shows the award class separately from the name, so nothing reads as &#x27;starred&#x27; by accident.</p>
+  <p class="tiny"><strong>How to close it:</strong> Closed. Cross-checked against the Michelin press release, LVCVA and Las Vegas Weekly.</p>
+  <details><summary>Sources</summary><ul class="srcs"><li><a href="https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s" target="_blank" rel="noopener">https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s</a></li><li><a href="https://www.visitlasvegas.com/michelin-guide-restaurants/" target="_blank" rel="noopener">https://www.visitlasvegas.com/michelin-guide-restaurants/</a></li><li><a href="https://lasvegasweekly.com/dining/2026/aug/27/michelin-guide-southwest-las-vegas-restaurants/" target="_blank" rel="noopener">https://lasvegasweekly.com/dining/2026/aug/27/michelin-guide-southwest-las-vegas-restaurants/</a></li></ul></details>
+</article>
+<article class="qa">
+  <h3><span class="qid">Q-04</span> What does dinner for two cost at each Michelin restaurant?
+    <span class="state bad">open</span></h3>
+  <p><strong>Answer:</strong> Only three venues print a real number: Michael Mina ($295++ per person), Anima by EDO ($85 per person), KAME Omakase ($500 per person, from its own OpenTable description). Everything else leaves the cell blank.</p>
+  <p><strong>Why it is not closed:</strong> Las Vegas fine-dining rooms publish menus without prices, and the ones that do publish (tasting menus) change them seasonally. Inventing a range would violate the no-inference rule.</p>
+  <p><strong>What was done instead:</strong> Blank cells plus a &#x27;price on request&#x27; marker rather than an estimate.</p>
+  <p class="tiny"><strong>How to close it:</strong> Book a table on OpenTable for a dummy date and read the deposit or prepay amount, or phone the numbers listed in data/restaurants.json. Twelve of the 21 venues have a published phone number and can be called in one sitting.</p>
+  <details><summary>Sources</summary><ul class="srcs"><li><a href="https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html" target="_blank" rel="noopener">https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html</a></li><li><a href="https://animabyedo.com" target="_blank" rel="noopener">https://animabyedo.com</a></li><li><a href="https://www.opentable.com/r/kame-omakase-las-vegas" target="_blank" rel="noopener">https://www.opentable.com/r/kame-omakase-las-vegas</a></li></ul></details>
+</article>
+<article class="qa">
+  <h3><span class="qid">Q-05</span> Does each hotel room actually have a private bathroom and a queen-or-larger bed?
+    <span class="state bad">open</span></h3>
+  <p><strong>Answer:</strong> Most do — every four- and five-star property in the dataset states a private bathroom and a king or queen bed in its rate block. Three exceptions are flagged: rooms sold as &#x27;assigned on arrival&#x27; (LINQ, Flamingo, SAHARA, Golden Nugget) do not guarantee the bed type, and Bluegreen Club 36&#x27;s private bathroom is not stated.</p>
+  <p><strong>Why it is not closed:</strong> A promotional rate on an unassigned room is the cheapest thing on the site but does not meet the couple&#x27;s bed requirement until check-in.</p>
+  <p><strong>What was done instead:</strong> Assigned-on-arrival rates are shown but flagged, never ranked as the default pick.</p>
+  <p class="tiny"><strong>How to close it:</strong> Book a NAMED room class, not &#x27;Run of House&#x27; / &#x27;Room Type Assigned on Arrival&#x27;. On Booking.com that means opening the room-type list and picking a specific king or queen category.</p>
+  
+</article>
+<article class="qa">
+  <h3><span class="qid">Q-06</span> Which week inside 2027-02-15 → 2027-03-23 is actually cheapest?
+    <span class="state ok">answered</span></h3>
+  <p><strong>Answer:</strong> Of the four whole weeks measured, 8–15 March 2027 is the cheapest for the large resorts: Venetian $2,407 vs $3,757 in February (−36%), Palazzo $2,422 vs $3,932 (−38%), Cosmopolitan $2,307 vs $3,433 (−33%).</p>
+  <p><strong>Why it is not closed:</strong> Only four windows were measured, and one property (Nobu) moved the other way — cheaper in February. Rates captured on 2026-11-25 are promotional &#x27;Black Friday&#x27; prices that will not survive into 2027.</p>
+  <p><strong>What was done instead:</strong> Four windows are shown as evidence rather than a claim that a specific date is the global minimum.</p>
+  <p class="tiny"><strong>How to close it:</strong> Re-run the same Booking.com searches (URL pattern is in data/hotels.json) about six months out, and again 60 days out. That also catches the 2027 show calendar, which is not yet published.</p>
+  
+</article>
+<article class="qa">
+  <h3><span class="qid">Q-07</span> What are each restaurant&#x27;s YouTube, TikTok and Instagram links?
+    <span class="state bad">open</span></h3>
+  <p><strong>Answer:</strong> YouTube is complete: every one of the 21 restaurants has at least one working video link, 45 in total. Instagram and TikTok are almost entirely blank.</p>
+  <p><strong>Why it is not closed:</strong> Handles were not printed on most official restaurant pages, and guessing a handle would create a dead or, worse, wrong link.</p>
+  <p><strong>What was done instead:</strong> Blank rather than guessed. The Neon Museum is the only venue with confirmed Instagram and TikTok, taken from its own site footer.</p>
+  <p class="tiny"><strong>How to close it:</strong> Open each restaurant&#x27;s official page footer or its OpenTable profile — most link their own socials there. That is 21 short page visits.</p>
+  
+</article>
+<article class="qa">
+  <h3><span class="qid">Q-08</span> Are the opening hours current for the trip dates (February–March 2027)?
+    <span class="state bad">open</span></h3>
+  <p><strong>Answer:</strong> Hours were captured on 2026-11-25 and are the venues&#x27; current published hours. Several are seasonal or reduced: Wing Lei and L&#x27;Atelier are closed two weekdays, SoulBelly closes Mondays, Michael Mina publishes block closures.</p>
+  <p><strong>Why it is not closed:</strong> A February 2027 trip is 15 months from the capture date, and Las Vegas restaurants change days and hours constantly.</p>
+  <p><strong>What was done instead:</strong> The &#x27;exceptions&#x27; column records every closure noticed, and every row links to the official page so hours can be re-checked in one click.</p>
+  <p class="tiny"><strong>How to close it:</strong> Re-check the four starred restaurants and Michael Mina two weeks before travel — these are the ones that will ruin an evening if they are dark.</p>
+  
+</article>
+<article class="qa">
+  <h3><span class="qid">Q-09</span> Do the hotel prices include resort fees and tax?
+    <span class="state bad">open</span></h3>
+  <p><strong>Answer:</strong> Not consistently. Booking.com search totals generally exclude the resort fee and local tax; the Wynn property pages quote room plus $55/night resort fee but exclude 13.38% tax.</p>
+  <p><strong>Why it is not closed:</strong> This is why Wynn shows $4,378 in one place and $5,828 in another for the same week. Comparing the two bases directly understates the Wynn group by roughly a third.</p>
+  <p><strong>What was done instead:</strong> Both figures are published side by side with the basis stated in the row, rather than picking one and hiding the other.</p>
+  <p class="tiny"><strong>How to close it:</strong> Add the resort fee (typically $35–$55/night on the Strip) and 13.38% tax to every Booking.com total before comparing. That is roughly +$250 to +$390 per week on a mid-Strip room.</p>
+  
+</article>
+<article class="qa">
+  <h3><span class="qid">Q-10</span> Is there a convention, race or holiday in the chosen week that changes the price?
+    <span class="state ok">answered</span></h3>
+  <p><strong>Answer:</strong> The Formula 1 Las Vegas Grand Prix is NOT in this window — the 2027 race is 18–20 November 2027, well outside 15 Feb–23 Mar. US Presidents&#x27; Day falls on 15 Feb 2027, the first day of the preferred window.</p>
+  <p><strong>Why it is not closed:</strong> Presidents&#x27; Day is a long weekend and the February week is the most expensive of the four measured. The calendar fact is verified; the causal link to the price is not, so it is labelled a likely driver, not a proven one.</p>
+  <p><strong>What was done instead:</strong> Nothing changed — both facts are stated with that distinction.</p>
+  <p class="tiny"><strong>How to close it:</strong> Check the Las Vegas Convention and Visitors Authority events calendar and the Las Vegas Motor Speedway schedule for the chosen week. NASCAR&#x27;s spring race weekend is traditionally in early March.</p>
+  <details><summary>Sources</summary><ul class="srcs"><li><a href="https://f1experiences.com/2027-las-vegas-grand-prix" target="_blank" rel="noopener">https://f1experiences.com/2027-las-vegas-grand-prix</a></li><li><a href="https://dord.racing/events/2027/f1-las-vegas-gp" target="_blank" rel="noopener">https://dord.racing/events/2027/f1-las-vegas-gp</a></li></ul></details>
+</article></div>
+
+</main>
+<footer class="wrap">
+  <p>Prices captured 25 Nov 2026 from Booking.com for exact date ranges, 2 adults, 1 room, USD.
+  Every row links to its source. Blank means <strong>not verified</strong> — never estimated.</p>
+  <p>Las Vegas had no MICHELIN Guide between 2010 and 2025. All awards here are from the 2026
+  Southwest selection, the first since 2009.</p>
+</footer>
+</body>
+</html>

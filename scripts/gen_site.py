@@ -928,10 +928,18 @@ def main():
         "suggestions.html": build_suggestions(),
         "sources.html": build_sources(),
     }
-    for name, content in pages.items():
-        (DOCS / name).write_text(content, encoding="utf-8")
-    (DOCS / "style.css").write_text(CSS, encoding="utf-8")
-    (DOCS / ".nojekyll").write_text("", encoding="utf-8")
+    # Publish to BOTH docs/ and the repo root. GitHub Pages on this repo is pinned
+    # to main:/ (the API refuses to repoint it to /docs), so the root copy is what
+    # visitors actually get. Writing both makes the deploy path independent of that
+    # setting. The root copies are generated files — never edit them by hand.
+    targets = [DOCS, ROOT]
+    for out_dir in targets:
+        out_dir.mkdir(exist_ok=True)
+        for name, content in pages.items():
+            (out_dir / name).write_text(content, encoding="utf-8")
+        (out_dir / "style.css").write_text(CSS, encoding="utf-8")
+        (out_dir / ".nojekyll").write_text("", encoding="utf-8")
+    print(f"published to: {', '.join(str(t.relative_to(ROOT)) + '/' for t in targets)}")
     total = sum(len(c) for c in pages.values())
     print(f"wrote {len(pages)} pages + style.css to docs/ ({total:,} bytes of html)")
     for n in pages:
