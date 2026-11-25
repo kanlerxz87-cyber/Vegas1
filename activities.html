@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Activities · Las Vegas Trip Planner</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">Las Vegas <span>Trip Planner</span></div>
+    <nav class="tabs">
+      <a href="index.html">Home</a>
+      <a href="restaurants.html">Michelin Dining</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="activities.html">Activities</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="verification.html">Verification</a>
+      <a href="summary.html">Executive Summary</a>
+      <a href="suggestions.html">Suggestions</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Activities</h1>
+    <p>Things to do within roughly <b>1 hour of travel</b> from the recommended hotel cluster, by bus or monorail.
+    Each row has days/hours, exceptions, media links, and an official source.</p>
+  </section>
+
+  <section class="block">
+    <div class="callout">
+      <h3>Travel-time note</h3>
+      <p>Las Vegas public transit = RTC bus + Las Vegas Monorail. There is no subway in Las Vegas.
+      "Travel from hotel" is the estimated one-way transit time for the referenced stay area.</p>
+    </div>
+    <div id="tbl-activities"></div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec">Notes &amp; caveats</h2>
+    <div class="callout warn">
+      <p><b>Caveat:</b> Show schedules, opening hours, and any seasonal closures change. Re-verify on each
+      activity's official site before visiting. Some shows have dark days; exceptions are noted per row.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap"><p>Source: each activity/venue's official site.</p></footer>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

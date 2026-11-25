@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michelin Dining · Las Vegas Trip Planner</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">Las Vegas <span>Trip Planner</span></div>
+    <nav class="tabs">
+      <a href="index.html">Home</a>
+      <a href="restaurants.html">Michelin Dining</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="activities.html">Activities</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="verification.html">Verification</a>
+      <a href="summary.html">Executive Summary</a>
+      <a href="suggestions.html">Suggestions</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Michelin Dining</h1>
+    <p>Michelin-recognized restaurants in Las Vegas. Each row states whether it
+    <b>currently holds a Michelin Star</b> or is <b>listed in the Michelin Guide</b>, its hours/days,
+    an estimated total cost for two adults, and media links. Travel time is shown where relevant.</p>
+  </section>
+
+  <section class="block">
+    <div class="callout">
+      <h3>Status key</h3>
+      <p><span class="badge b-star">★ Michelin Star</span> currently holds one or more stars.
+      <span class="badge b-listed">Guide listed</span> appears in the Michelin Guide without a star.
+      <span class="badge b-unverified">unverified</span> could not be confirmed from an official source.</p>
+    </div>
+    <div id="tbl-restaurants"></div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec">Notes &amp; caveats</h2>
+    <p class="sub">Hours and star status change; re-verify on the official Michelin Guide before booking.</p>
+    <div class="callout warn">
+      <p><b>Caveat:</b> Michelin star assignments are announced annually and can change between inspection cycles.
+      The star status shown reflects the most recent verifiable official listing. Prices for two are estimates
+      unless an exact figure is published by the restaurant; see the Pricing page.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap"><p>Source: Michelin Guide (guide.michelin.com) and each restaurant's official site.</p></footer>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

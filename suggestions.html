@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suggestions &amp; Open Questions · Las Vegas Trip Planner</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">Las Vegas <span>Trip Planner</span></div>
+    <nav class="tabs">
+      <a href="index.html">Home</a>
+      <a href="restaurants.html">Michelin Dining</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="activities.html">Activities</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="verification.html">Verification</a>
+      <a href="summary.html">Executive Summary</a>
+      <a href="suggestions.html">Suggestions</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Suggestions &amp; Open Questions</h1>
+    <p>A decision-support section: the questions that must be answered before committing, what we know vs.
+    don't know, and concrete suggestions to improve the site and to discover missing information. Review and
+    pick a path here <b>before</b> any change is implemented.</p>
+  </section>
+
+  <section class="block">
+    <h2 class="sec">Open questions to resolve before deciding</h2>
+    <p class="sub">Each question states why it matters and what would answer it.</p>
+    <div id="q-list"></div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec">What we have vs. what we don't</h2>
+    <div class="grid" id="have-dont"></div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec">Suggestions — improve the site for decision-making</h2>
+    <p class="sub">Ranked suggestions. Review and choose a path before implementing.</p>
+    <div id="sug-list"></div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec">Suggestions — discover missing information</h2>
+    <p class="sub">How to fill the gaps above using official sources (no manual input required).</p>
+    <div id="discover-list"></div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec">Review &amp; choose a path</h2>
+    <div class="callout">
+      <p>This section is intentionally static so a reviewer can read each option and pick one before any
+      change is made. Decisions recorded here should be reflected back into the relevant data file
+      (<code>assets/data.js</code>) by the integration step.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap"><p>Suggestions are proposals only — nothing here is implemented until chosen.</p></footer>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/suggestions.js"></script>
+</body>
+</html>
