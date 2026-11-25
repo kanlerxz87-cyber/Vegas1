@@ -30,6 +30,15 @@ for p in PAGES:
     ext = len(re.findall(r'href="https?://', src))
     print(f"{p.name:20} {len(src):>7} bytes  {ext:>4} external links")
 
+# 4b. every cross-page anchor must exist in its target page
+texts = {p.name: p.read_text(encoding="utf-8") for p in PAGES}
+for p in PAGES:
+    for tgt, anchor in re.findall(r'href="([^":#]+\.html)#([^"]+)"', texts[p.name]):
+        if tgt not in texts:
+            fails.append(f"{p.name}: anchor link to missing page {tgt}#{anchor}")
+        elif f'id="{anchor}"' not in texts[tgt]:
+            fails.append(f"{p.name}: {tgt} has no id={anchor!r}")
+
 # 5. total external links, and every restaurant/hotel must carry one
 total_ext = sum(len(re.findall(r'href="https?://', p.read_text(encoding='utf-8'))) for p in PAGES)
 print(f"\ntotal external links: {total_ext}")
