@@ -120,13 +120,13 @@
     var el = document.getElementById("tbl-pricing");
     if (!el) return;
     renderTable(el, [
-      { label: "Item", key: "item" },
-      { label: "Category", key: "category" },
-      { label: "Details", key: "details" },
-      { label: "Price (total)", key: "price" },
-      { label: "Dates / window", key: "window" },
+      { label: "Item", key: "category" },
+      { label: "Cost basis", key: "cost" },
+      { label: "Basis / window", key: "basis" },
+      { label: "Total (2 adults)", key: "total" },
       { label: "Source", key: "source", render: function (v) { return srcCell(v); } },
-      { label: "Check", key: "verified", render: verifiedBadge }
+      { label: "Check", key: "verified", render: verifiedBadge },
+      { label: "Notes", key: "note" }
     ], DATA.pricing || []);
   }
 
@@ -134,7 +134,7 @@
     var el = document.getElementById("tbl-verification");
     if (!el) return;
     renderTable(el, [
-      { label: "Claim / Value", key: "claim" },
+      { label: "Claim / Value", key: "item" },
       { label: "Status", key: "status", render: function (v) {
           var map = { verified: '<span class="badge b-ok">verified</span>', unverified: '<span class="badge b-unverified">unverified</span>', flagged: '<span class="badge b-warn">flagged</span>' };
           return map[v] || esc(v); } },
