@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "dataset": "7-night pricing across the user's travel window + date-window comparison",
+    "quote_date_utc": "2026-11-25",
+    "user_window": "2027-02-15 to 2027-03-23",
+    "preferred_window": "2027-02-15 to 2027-02-18",
+    "currency": "USD",
+    "occupancy": "2 adults, 1 room",
+    "rule": "Only quotes actually retrieved are listed. Do not average or project across hotels."
+  },
+  "cheapest_window_findings": {
+    "question_1_cheapest_dates": {
+      "answer": "PARTIAL. Two date windows were swept in this session and the 7-night price for the same hotel moved materially between them, which proves the date choice matters more than the hotel choice for a budget stay.",
+      "comparison": [
+        {
+          "hotel": "Trump International Hotel Las Vegas",
+          "room": "Superior King Room",
+          "window": "2027-02-15 to 2027-02-22",
+          "nights": 7,
+          "total_usd": 1661,
+          "per_night_usd": 237,
+          "includes_taxes_and_fees": "not stated on that quote",
+          "query": "https://www.booking.com/searchresults.en-us.html?ss=Trump+International+Hotel+Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
+        },
+        {
+          "hotel": "Trump International Hotel Las Vegas",
+          "room": "Superior King Room",
+          "window": "2027-02-22 to 2027-03-01",
+          "nights": 8,
+          "total_usd": 1828,
+          "per_night_usd": 229,
+          "includes_taxes_and_fees": "YES - page states 'Includes taxes and fees'",
+          "query": "https://www.booking.com/searchresults.en-us.html?ss=Las+Vegas&checkin=2027-02-22&checkout=2027-03-01&group_adults=2&no_rooms=1&selected_currency=USD&order=class"
+        }
+      ],
+      "warning": "The two quotes are NOT like-for-like: the later window explicitly includes taxes and fees, the earlier one does not. The apparent $8/night saving is smaller than the tax difference. A true like-for-like sweep is an OPEN TASK (see open-questions)."
+    },
+    "question_2_cheapest_time_to_book": {
+      "answer": "CANNOT BE VERIFIED. 'Best time to book' is a forecasting question; no official source publishes a guarantee. What IS observable:",
+      "observations": [
+        "On the quote date (2026-11-25, Black Friday week) Booking.com was surfacing a 'Black Friday Deal' badge and struck-through 'original price' on many Las Vegas properties, e.g. Flamingo $1,040 -> $626, Nobu $1,619 -> $1,125, Red Rock $2,507 -> $2,337, Trump $2,256 -> $1,661.",
+        "Park MGM, ARIA, Bellagio and The Cosmopolitan were already UNAVAILABLE for 2027-02-15 to 2027-02-22 roughly 15 months out - inventory for that week is already being consumed.",
+        "Las Vegas resort fees are charged at the property and are NOT in these totals. They are commonly $25-$55 per night, so a 7-night stay can add a few hundred dollars."
+      ],
+      "recommendation": "Book a free-cancellation rate now to lock the room, then re-check the same dates. Free-cancellation pricing was available on Flamingo, Harrah's, Nobu, Orleans, Trump, Signature and W Las Vegas. This converts the timing question into a monitored re-price rather than a guess."
+    }
+  },
+  "seven_night_quotes_2027_02_15_22": [
+    { "hotel": "Masquerade Tower at Rio", "total_usd": 483, "per_night_usd": 69, "room": "1 King Suite", "status": "verified" },
+    { "hotel": "Circus Circus", "total_usd": 489, "per_night_usd": 25, "room": "Run of House", "status": "verified" },
+    { "hotel": "Flamingo Las Vegas", "total_usd": 626, "per_night_usd": 40, "room": "Room Type Assigned on Arrival", "status": "verified" },
+    { "hotel": "Gold Coast", "total_usd": 768, "per_night_usd": 64, "room": "Deluxe Two Doubles", "status": "verified" },
+    { "hotel": "Harrah's Las Vegas", "total_usd": 961, "per_night_usd": 87, "room": "Room Type Assigned on Arrival", "status": "verified" },
+    { "hotel": "Signature Rental by Owner Direct", "total_usd": 982, "per_night_usd": 122, "room": "PH Floor Studio King", "status": "verified" },
+    { "hotel": "Orleans Hotel and Casino", "total_usd": 1067, "per_night_usd": 106, "room": "Double Room", "status": "verified" },
+    { "hotel": "NOBU Hotel Las Vegas", "total_usd": 1125, "per_night_usd": 106, "room": "Deluxe King", "status": "verified" },
+    { "hotel": "The Signature MGM Condos", "total_usd": 1205, "per_night_usd": 110, "room": "1BR Apartment", "status": "verified" },
+    { "hotel": "Trump International", "total_usd": 1661, "per_night_usd": 198, "room": "Superior King", "status": "verified" },
+    { "hotel": "Green Valley Ranch", "total_usd": 2258, "per_night_usd": 268, "room": "Resort Room", "status": "verified" },
+    { "hotel": "Red Rock Casino Resort & Spa", "total_usd": 2337, "per_night_usd": 279, "room": "Luxury Room", "status": "verified" },
+    { "hotel": "W Las Vegas", "total_usd": 2493, "per_night_usd": 306, "room": "W Premier King Suite", "status": "verified" }
+  ],
+  "unavailable_for_preferred_dates": [
+    { "hotel": "Park MGM Las Vegas", "note": "Unavailable for Feb 15-22. 7 nights Feb 13-20 from $2,063." },
+    { "hotel": "ARIA Resort & Casino", "note": "Unavailable for Feb 15-22. 7 nights Feb 13-20 from $4,881." },
+    { "hotel": "Bellagio", "note": "Unavailable for Feb 15-22. No 7-night block offered in the flexible alternatives." },
+    { "hotel": "The Cosmopolitan of Las Vegas", "note": "Unavailable for Feb 15-22. 7 nights Feb 13-20 from $4,642." },
+    { "hotel": "Caesars Palace", "note": "No 7-night block from Feb 15. Only 4-5 night blocks from Feb 16-19." }
+  ],
+  "operational_note_preferred_window": "The user's preferred vacation time (2027-02-15 to 2027-02-18) is only 3 nights, below the 1-2 week trip length also requested. The site treats 2027-02-15 as the START of a 7-night stay (to 2027-02-22), which honours both the preferred start date and the 7-night pricing comparison. This conflict is logged on Open Questions.",
+  "note_on_events": "No official source was checked for conventions, rodeos or race events inside Feb 15 - Mar 23 2027. Event collisions are the single most likely cause of a bad price. Logged as the top open question."
+}

@@ -1,0 +1,30 @@
+{
+  "_meta": {
+    "dataset": "Transit time matrix (hotel -> MICHELIN restaurant), computed live from Google Maps transit routing",
+    "compiled_utc": "2026-11-25",
+    "tool": "Google Maps directions (travelmode=transit), public route query",
+    "query_url_template": "https://www.google.com/maps/dir/?api=1&origin={HOTEL}&destination={RESTAURANT}&travelmode=transit",
+    "critical_finding": "Las Vegas has NO subway / metro / light rail. Google Maps reports the transit mode as bus (RTC Deuce, Strip & Downtown Express, residential routes) and the Las Vegas Monorail. The user's 'subway or bus' requirement therefore resolves to BUS + MONORAIL only. Any claim of 'subway' travel in Las Vegas would be false.",
+    "measurement_note": "Times are Google's live estimates at the query time (a Wednesday, pre-dawn). Real day-of-travel times vary with traffic, event nights and service frequency. Treat as planning estimates, not guarantees.",
+    "status": "partial - rows below are the pairs actually queried; unqueried pairs are deliberately left blank (see coverage)"
+  },
+  "travel_modes_available": [
+    { "mode": "RTC Deuce / Strip & Downtown Express", "operator": "Regional Transportation Commission of Southern Nevada", "note": "Frequent Strip and downtown service; 24/7 on the Deuce corridor" },
+    { "mode": "RTC residential routes (201, 202, 203, 103, 104, 119)", "operator": "RTC", "note": "Used to reach Spring Mountain Rd / Chinatown" },
+    { "mode": "Las Vegas Monorail", "operator": "Las Vegas Monorail Company", "note": "Behind-the-Strip route, MGM Grand to Sahara; does not serve Chinatown" }
+  ],
+  "rows": [
+    { "hotel_id": "flamingo", "restaurant_id": "kabuto", "minutes": 46, "route": "Walk + Bus 203 (single bus)", "verified": true, "query": "https://www.google.com/maps/dir/?api=1&origin=Flamingo+Las+Vegas&destination=Kabuto+Edomae+Sushi+Las+Vegas&travelmode=transit", "note": "Alternative reported: 39 min via Las Vegas Monorail + Bus 203" },
+    { "hotel_id": "signature-owner-direct", "restaurant_id": "kabuto", "minutes": 49, "route": "Walk + Deuce + Bus 203", "verified": true, "query": "https://www.google.com/maps/dir/?api=1&origin=MGM+Grand+Las+Vegas&destination=Kabuto+Las+Vegas&travelmode=transit", "note": "Origins queried as 'MGM Grand'; Signature towers sit on the MGM Grand campus behind the main tower." },
+    { "hotel_id": "gold-coast", "restaurant_id": "kabuto", "minutes": 29, "route": "Walk + Bus 202 + Bus 103, or Bus 202 direct (28 min)", "verified": true, "query": "https://www.google.com/maps/dir/?api=1&origin=Gold+Coast+Hotel+and+Casino+Las+Vegas&destination=Kabuto+Las+Vegas&travelmode=transit", "note": "Fastest Chinatown access of any hotel tested - Gold Coast sits on Flamingo Rd, a direct corridor to Spring Mountain Rd." },
+    { "hotel_id": "signature-owner-direct", "restaurant_id": "guy-savoy", "minutes": 28, "route": "Bus 202 (direct)", "verified": true, "query": "https://www.google.com/maps/dir/?api=1&origin=MGM+Grand+Las+Vegas&destination=Guy+Savoy+Las+Vegas&travelmode=transit", "note": "0.0 mi drive shown as 28 min transit via Las Vegas Blvd Overpass" },
+    { "hotel_id": "trump-international", "restaurant_id": "wing-lei", "minutes": 15, "route": "Walk (0.7 mile) - Google returned walking as fastest", "verified": true, "query": "https://www.google.com/maps/dir/?api=1&origin=Trump+International+Hotel+Las+Vegas&destination=Wing+Lei+Las+Vegas&travelmode=transit", "note": "Trump International is on Fashion Show Dr, adjacent to Wynn/Encore" }
+  ],
+  "coverage": {
+    "hotels_queried": ["flamingo", "signature-owner-direct", "gold-coast", "trump-international"],
+    "hotels_not_queried": ["rio-masquerade", "circus-circus", "harrahs", "orleans", "nobu", "signature-mgm-condos", "green-valley-ranch", "red-rock", "w-las-vegas"],
+    "restaurants_queried": ["kabuto", "guy-savoy", "wing-lei"],
+    "restaurants_not_queried": ["joel-robuchon", "e-by-jose-andres", "latelier-de-joel-robuchon", "china-poblano", "esthers-kitchen", "yen-viet-kitchen", "mott-32"],
+    "explanation": "This matrix is intentionally partial. Only pairs that were actually routed are published. Blank cells on the site mean 'not measured', not 'far away'. Expanding this to the full hotel x restaurant grid is written up as the top-priority open task on Flagged for Review."
+  }
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Overview | Las Vegas 2027 Trip Planner</title>
+<meta name="description" content="Verified, source-linked planning data for a Michelin-focused Las Vegas trip, Feb-Mar 2027.">
+<style>
+:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--dim:#8b949e;
+--acc:#f5c518;--good:#2ea043;--bad:#da3633;--warn:#d29922;--link:#58a6ff}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+header.site{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.96);
+border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.site .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.brand{font-weight:700;letter-spacing:.3px;color:var(--ink)}
+.brand span{color:var(--acc)}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{padding:6px 10px;border-radius:8px;font-size:14px;color:var(--dim);border:1px solid transparent}
+nav a:hover{background:var(--card);color:var(--ink);text-decoration:none}
+nav a.on{color:var(--acc);border-color:var(--line);background:var(--card)}
+main{padding:22px 0 70px}
+h1{font-size:clamp(24px,5vw,34px);line-height:1.2;margin:.2em 0 .3em}
+h2{font-size:clamp(19px,3.4vw,25px);margin:1.8em 0 .5em;padding-bottom:.3em;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:1.4em 0 .4em}
+p,li{color:#c9d1d9}
+.lead{color:var(--dim);max-width:70ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.kpi b{display:block;font-size:26px;color:var(--acc);line-height:1.1}
+.kpi small{color:var(--dim);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);
+border-radius:12px;margin:12px 0;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:640px}
+th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#1c2128;color:var(--ink);font-size:12px;text-transform:uppercase;
+letter-spacing:.5px;position:sticky;top:0;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#1b2028}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.unv{color:var(--warn);font-style:italic;font-size:12px}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;
+font-weight:700;letter-spacing:.4px;white-space:nowrap}
+.t2{background:var(--acc);color:#000}
+.t1{background:#c9a227;color:#000}
+.tb{background:#1f6feb;color:#fff}
+.tr{background:#30363d;color:#e6edf3}
+.ok{color:var(--good);font-weight:700}
+.no{color:var(--bad);font-weight:700}
+.warnbox{border-left:4px solid var(--warn);background:#1f1a10;padding:12px 14px;
+border-radius:0 10px 10px 0;margin:14px 0}
+.errbox{border-left:4px solid var(--bad);background:#1f1213;padding:12px 14px;
+border-radius:0 10px 10px 0;margin:14px 0}
+.okbox{border-left:4px solid var(--good);background:#0f1f14;padding:12px 14px;
+border-radius:0 10px 10px 0;margin:14px 0}
+.src{font-size:11.5px;color:var(--dim)}
+.src a{color:#7d8590}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--dim);font-size:13px}
+.pill{font-size:11px;border:1px solid var(--line);border-radius:999px;
+padding:2px 8px;color:var(--dim);white-space:nowrap;display:inline-block}
+.rank{font-weight:800;color:var(--acc);font-size:15px}
+details{margin:10px 0}
+summary{cursor:pointer;color:var(--acc);font-weight:600;padding:6px 0}
+.q{font-weight:600;color:var(--ink)}
+.a{color:#c9d1d9;border-left:2px solid var(--line);padding-left:12px;margin:6px 0 16px}
+@media(max-width:640px){
+ table{min-width:520px;font-size:12.5px}
+ th,td{padding:7px 8px}
+ h1{font-size:22px}
+ .site .wrap{gap:8px}
+ nav a{padding:5px 8px;font-size:13px}
+}
+</style></head><body>
+<header class="site"><div class="wrap">
+<span class="brand">LAS VEGAS <span>2027</span></span><nav><a href="index.html" class=on>Overview</a><a href="hotels.html">Hotels</a><a href="michelin.html">MICHELIN</a><a href="transit.html">Transit</a><a href="activities.html">Activities</a><a href="itinerary.html">Itinerary</a><a href="budget.html">Budget</a><a href="questions.html">Open Questions</a><a href="suggestions.html">Suggestions</a><a href="verification.html">Verification</a><a href="flagged.html">Flagged for Review</a><a href="audit.html">Repo Audit</a></nav>
+</div></header>
+<main><div class="wrap">
+<h1>Las Vegas, February–March 2027</h1>
+<p class="lead">A Michelin-focused plan for two adults, built line by line from official sources,
+with every gap left visibly blank instead of filled in. <strong>Snapshot 2026-11-25.</strong></p>
+
+<div class="grid">
+  <div class="kpi"><small>MICHELIN stars in Vegas</small><b>4</b>
+    <span class="src">1 two-star + 3 one-star, 2026 Southwest guide</span></div>
+  <div class="kpi"><small>Bib Gourmand / Recommended</small><b>3 / 17</b>
+    <span class="src">Las Vegas entries only</span></div>
+  <div class="kpi"><small>Hotels priced, 7 nights</small><b>13</b>
+    <span class="src">15–22 Feb 2027, 2 adults</span></div>
+  <div class="kpi"><small>Cheapest verified 7-night</small><b>$483</b>
+    <span class="src">Masquerade Tower at Rio Hotel &amp; Casino · excludes resort fees</span></div>
+</div>
+
+<div class="errbox">
+<strong>Read this first — three findings that change the plan</strong>
+<ol>
+<li><strong>Las Vegas has no subway.</strong> Your “subway or bus” requirement resolves to
+<em>bus + monorail only</em>. Every transit time on this site is a real Google Maps
+bus/monorail route, not a metro estimate. See <a href="transit.html">Transit</a>.</li>
+<li><strong>One hotel will not cover all 24 restaurants inside 60 minutes.</strong>
+The venues split into three clusters — Strip core (12), Chinatown/Spring Mountain Rd (7) and
+Downtown/Arts District (2) — and only a few routes have actually been measured. Chinatown is
+29–49 minutes by bus from the hotels tested, which is inside the rule; the far-south and far-west
+venues are <span class="unv">unmeasured</span>, not assumed to be close. See <a href="transit.html">Transit</a>.</li>
+<li><strong>Your preferred dates are only 3 nights.</strong> 15–18 Feb 2027 conflicts with the
+1–2 week trip length. This plan prices 15–22 Feb (7 nights) as the working proposal, starting on
+your preferred date. See <a href="questions.html">Open Questions</a>.</li>
+</ol>
+</div>
+
+<h2>What the evidence supports</h2>
+<div class="tblwrap"><table>
+<thead><tr><th>Question you asked</th><th>Status</th><th>Answer / where it lives</th></tr></thead>
+<tbody>
+<tr><td>Best hotels by price, location, amenities</td><td class="ok">Answered (partial)</td>
+<td><a href="hotels.html">13 hotels with verified 7-night totals</a> + a transparent ranking formula</td></tr>
+<tr><td>Private bathroom, queen bed or bigger</td><td>Partially answered</td>
+<td>Only 2 hotels had a private bathroom confirmed in the listing text; the rest are <span class="unv">unverified</span> and flagged</td></tr>
+<tr><td>Michelin stars vs. just listed in the guide</td><td class="ok">Answered</td>
+<td><a href="michelin.html">24 venues, distinction-labelled</a> from the official Michelin press release</td></tr>
+<tr><td>Michelin clusters near each hotel</td><td>Partially answered</td>
+<td><a href="transit.html">Measured matrix</a> — 5 hotel→restaurant pairs routed, rest blank</td></tr>
+<tr><td>Rank hotels by Michelin reach within 1 hour</td><td>Partially answered</td>
+<td><a href="hotels.html">Ranking table</a>, with reach shown only where measured</td></tr>
+<tr><td>7-night total price per hotel</td><td class="ok">Answered</td>
+<td><a href="hotels.html">Hotels</a> / <a href="budget.html">Budget</a> — Booking.com quotes, resort fees excluded</td></tr>
+<tr><td>Cheapest time to book</td><td class="bad">Not verifiable</td>
+<td>Two windows compared; no official “best time to book” exists. <a href="questions.html">Open Questions</a> explains</td></tr>
+<tr><td>Restaurant cost for 2 adults</td><td>Partially answered</td>
+<td>Guy Savoy and Kabuto have exact official prices; the other starred venues publish none → <span class="unv">unverified</span></td></tr>
+<tr><td>YouTube / TikTok / Instagram per venue</td><td>Partially answered</td>
+<td>6 venues have verified creator links; TikTok/Instagram could not be crawled, so they are blank, not guessed</td></tr>
+<tr><td>Official site link per row</td><td class="ok">Answered</td>
+<td>Every restaurant and hotel row links its own site</td></tr>
+<tr><td>Open days / hours / exceptions</td><td>Partially answered</td>
+<td>7 venues have official hours incl. closed days; the rest are <span class="unv">unverified</span></td></tr>
+<tr><td>Activities within an hour</td><td>Partially answered</td>
+<td><a href="activities.html">7 activities</a>, 2 explicitly outside the rule</td></tr>
+</tbody></table></div>
+
+<h2>Recommended starting point</h2>
+<div class="okbox">
+<p><strong>Top ranked hotel in the measured set:</strong> Flamingo Las Vegas Hotel &amp; Casino
+— score 92.6/100, $626 for 7 nights.
+Reasoning is arithmetic, not opinion: 1 of 1 measured
+MICHELIN venues reachable within 60 minutes, value 93/100, guest score 78/100.</p>
+<p><strong>Honest caveat:</strong> that hotel has only 1 measured route(s).
+A hotel with zero measurements cannot win the ranking, and a hotel with one good measurement
+can look better than it is. Expanding the matrix is the #1 open task on
+<a href="flagged.html">Flagged for Review</a>.</p>
+</div>
+
+<h2>How to use this site</h2>
+<div class="grid">
+<div class="card"><h3><a href="hotels.html">Hotels</a></h3><p class="src">Verified 7-night totals, bed type, bathroom evidence, ranked Michelin reach.</p></div>
+<div class="card"><h3><a href="michelin.html">MICHELIN</a></h3><p class="src">Stars vs. Bib vs. listed-only, with official hours and prices where published.</p></div>
+<div class="card"><h3><a href="transit.html">Transit</a></h3><p class="src">Which venues sit inside the 60-minute rule, and from which hotel.</p></div>
+<div class="card"><h3><a href="itinerary.html">Itinerary</a></h3><p class="src">A 7-night draft that respects opening days.</p></div>
+<div class="card"><h3><a href="questions.html">Open Questions</a></h3><p class="src">What must be answered before you can decide, and how to find it.</p></div>
+<div class="card"><h3><a href="flagged.html">Flagged for Review</a></h3><p class="src">Every irregularity found, with the source that needs a human eye.</p></div>
+</div>
+</div></main>
+<footer><div class="wrap">
+<p><strong>Data snapshot:</strong> 2026-11-25 (UTC). Prices and hours change — re-verify before booking.</p>
+<p>Every figure on this site is either linked to an official source or marked <span class="unv">unverified</span>.
+Nothing is estimated silently. <a href="verification.html">Verification log</a> · <a href="flagged.html">Flagged for Review</a></p>
+</div></footer></body></html>

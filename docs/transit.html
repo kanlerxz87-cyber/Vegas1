@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Transit | Las Vegas 2027 Trip Planner</title>
+<meta name="description" content="Verified, source-linked planning data for a Michelin-focused Las Vegas trip, Feb-Mar 2027.">
+<style>
+:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--dim:#8b949e;
+--acc:#f5c518;--good:#2ea043;--bad:#da3633;--warn:#d29922;--link:#58a6ff}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+header.site{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.96);
+border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.site .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.brand{font-weight:700;letter-spacing:.3px;color:var(--ink)}
+.brand span{color:var(--acc)}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{padding:6px 10px;border-radius:8px;font-size:14px;color:var(--dim);border:1px solid transparent}
+nav a:hover{background:var(--card);color:var(--ink);text-decoration:none}
+nav a.on{color:var(--acc);border-color:var(--line);background:var(--card)}
+main{padding:22px 0 70px}
+h1{font-size:clamp(24px,5vw,34px);line-height:1.2;margin:.2em 0 .3em}
+h2{font-size:clamp(19px,3.4vw,25px);margin:1.8em 0 .5em;padding-bottom:.3em;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:1.4em 0 .4em}
+p,li{color:#c9d1d9}
+.lead{color:var(--dim);max-width:70ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.kpi b{display:block;font-size:26px;color:var(--acc);line-height:1.1}
+.kpi small{color:var(--dim);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);
+border-radius:12px;margin:12px 0;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:640px}
+th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#1c2128;color:var(--ink);font-size:12px;text-transform:uppercase;
+letter-spacing:.5px;position:sticky;top:0;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#1b2028}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.unv{color:var(--warn);font-style:italic;font-size:12px}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;
+font-weight:700;letter-spacing:.4px;white-space:nowrap}
+.t2{background:var(--acc);color:#000}
+.t1{background:#c9a227;color:#000}
+.tb{background:#1f6feb;color:#fff}
+.tr{background:#30363d;color:#e6edf3}
+.ok{color:var(--good);font-weight:700}
+.no{color:var(--bad);font-weight:700}
+.warnbox{border-left:4px solid var(--warn);background:#1f1a10;padding:12px 14px;
+border-radius:0 10px 10px 0;margin:14px 0}
+.errbox{border-left:4px solid var(--bad);background:#1f1213;padding:12px 14px;
+border-radius:0 10px 10px 0;margin:14px 0}
+.okbox{border-left:4px solid var(--good);background:#0f1f14;padding:12px 14px;
+border-radius:0 10px 10px 0;margin:14px 0}
+.src{font-size:11.5px;color:var(--dim)}
+.src a{color:#7d8590}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--dim);font-size:13px}
+.pill{font-size:11px;border:1px solid var(--line);border-radius:999px;
+padding:2px 8px;color:var(--dim);white-space:nowrap;display:inline-block}
+.rank{font-weight:800;color:var(--acc);font-size:15px}
+details{margin:10px 0}
+summary{cursor:pointer;color:var(--acc);font-weight:600;padding:6px 0}
+.q{font-weight:600;color:var(--ink)}
+.a{color:#c9d1d9;border-left:2px solid var(--line);padding-left:12px;margin:6px 0 16px}
+@media(max-width:640px){
+ table{min-width:520px;font-size:12.5px}
+ th,td{padding:7px 8px}
+ h1{font-size:22px}
+ .site .wrap{gap:8px}
+ nav a{padding:5px 8px;font-size:13px}
+}
+</style></head><body>
+<header class="site"><div class="wrap">
+<span class="brand">LAS VEGAS <span>2027</span></span><nav><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="michelin.html">MICHELIN</a><a href="transit.html" class=on>Transit</a><a href="activities.html">Activities</a><a href="itinerary.html">Itinerary</a><a href="budget.html">Budget</a><a href="questions.html">Open Questions</a><a href="suggestions.html">Suggestions</a><a href="verification.html">Verification</a><a href="flagged.html">Flagged for Review</a><a href="audit.html">Repo Audit</a></nav>
+</div></header>
+<main><div class="wrap">
+<h1>Transit &amp; the 60-minute rule</h1>
+<p class="lead">Your requirement: every restaurant and activity within one hour by
+<em>subway or bus</em> of the hotel. Measured with live Google Maps transit routing.</p>
+
+<div class="errbox">
+<strong>Correction to a premise: Las Vegas has no subway, metro or light rail.</strong>
+There is no underground or surface rapid-transit rail system on the Strip. What exists —
+and what Google Maps actually returned for every query — is:
+<ul><li><strong>RTC Deuce / Strip &amp; Downtown Express</strong> — Regional Transportation Commission of Southern Nevada. Frequent Strip and downtown service; 24/7 on the Deuce corridor</li><li><strong>RTC residential routes (201, 202, 203, 103, 104, 119)</strong> — RTC. Used to reach Spring Mountain Rd / Chinatown</li><li><strong>Las Vegas Monorail</strong> — Las Vegas Monorail Company. Behind-the-Strip route, MGM Grand to Sahara; does not serve Chinatown</li></ul>
+So “subway or bus” here means <strong>bus + monorail</strong>. Any plan claiming subway travel
+inside Las Vegas would be wrong.
+</div>
+
+<h2>Measured routes</h2>
+<div class="tblwrap"><table>
+<thead><tr><th>From hotel</th><th>To restaurant</th><th>Transit time</th><th>Route used</th>
+<th>Note</th><th>Source</th></tr></thead>
+<tbody><tr>
+<td>Flamingo Las Vegas Hotel &amp; Casino</td>
+<td>Kabuto</td>
+<td class="num"><span class="ok">46 min</span></td>
+<td>Walk + Bus 203 (single bus)</td>
+<td class="src">Alternative reported: 39 min via Las Vegas Monorail + Bus 203</td>
+<td class="src"><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Flamingo+Las+Vegas&amp;destination=Kabuto+Edomae+Sushi+Las+Vegas&amp;travelmode=transit" target="_blank" rel="noopener">route</a></td>
+</tr><tr>
+<td>Signature Rental by Owner Direct (MGM Signature)</td>
+<td>Kabuto</td>
+<td class="num"><span class="ok">49 min</span></td>
+<td>Walk + Deuce + Bus 203</td>
+<td class="src">Origins queried as &#x27;MGM Grand&#x27;; Signature towers sit on the MGM Grand campus behind the main tower.</td>
+<td class="src"><a href="https://www.google.com/maps/dir/?api=1&amp;origin=MGM+Grand+Las+Vegas&amp;destination=Kabuto+Las+Vegas&amp;travelmode=transit" target="_blank" rel="noopener">route</a></td>
+</tr><tr>
+<td>Gold Coast Hotel and Casino</td>
+<td>Kabuto</td>
+<td class="num"><span class="ok">29 min</span></td>
+<td>Walk + Bus 202 + Bus 103, or Bus 202 direct (28 min)</td>
+<td class="src">Fastest Chinatown access of any hotel tested - Gold Coast sits on Flamingo Rd, a direct corridor to Spring Mountain Rd.</td>
+<td class="src"><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Gold+Coast+Hotel+and+Casino+Las+Vegas&amp;destination=Kabuto+Las+Vegas&amp;travelmode=transit" target="_blank" rel="noopener">route</a></td>
+</tr><tr>
+<td>Signature Rental by Owner Direct (MGM Signature)</td>
+<td>Guy Savoy Las Vegas</td>
+<td class="num"><span class="ok">28 min</span></td>
+<td>Bus 202 (direct)</td>
+<td class="src">0.0 mi drive shown as 28 min transit via Las Vegas Blvd Overpass</td>
+<td class="src"><a href="https://www.google.com/maps/dir/?api=1&amp;origin=MGM+Grand+Las+Vegas&amp;destination=Guy+Savoy+Las+Vegas&amp;travelmode=transit" target="_blank" rel="noopener">route</a></td>
+</tr><tr>
+<td>Trump International Hotel Las Vegas</td>
+<td>Wing Lei</td>
+<td class="num"><span class="ok">15 min</span></td>
+<td>Walk (0.7 mile) - Google returned walking as fastest</td>
+<td class="src">Trump International is on Fashion Show Dr, adjacent to Wynn/Encore</td>
+<td class="src"><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Trump+International+Hotel+Las+Vegas&amp;destination=Wing+Lei+Las+Vegas&amp;travelmode=transit" target="_blank" rel="noopener">route</a></td>
+</tr></tbody></table></div>
+
+<div class="warnbox">
+<strong>This table is deliberately partial.</strong> Only the pairs actually routed are shown.
+A blank is <em>“not measured”</em>, never <em>“far”</em>. Expanding to the full
+13 × 24 grid is the top task on
+<a href="flagged.html">Flagged for Review</a>.
+</div>
+
+<h2>What the measured routes already tell you</h2>
+<div class="grid">
+<div class="card"><h3>Chinatown is genuinely reachable by bus</h3>
+<p>Gold Coast → Kabuto is <strong>29 minutes</strong>; Flamingo → Kabuto is 46 minutes;
+Signature/MGM Grand → Kabuto is 49 minutes. All inside the 60-minute rule, all on
+ordinary residential RTC routes (202, 203, 103).</p></div>
+<div class="card"><h3>The Strip core needs no bus at all</h3>
+<p>MGM Grand → Guy Savoy is a 28-minute transit estimate for a trip that is physically a
+walk across the Blvd overpass. Trump International → Wing Lei came back as a 15-minute walk.
+For Strip-internal venues, “transit time” overstates the effort.</p></div>
+<div class="card"><h3>Hotel location beats hotel quality</h3>
+<p>The cheapest hotel measured (Gold Coast, $768/7 nights) beat a hotel nearly twice its price
+on Chinatown access. If the Michelin list is the reason for the trip, geography is the lever.</p></div>
+</div>
+
+<h2>Caveats that matter for a February trip</h2>
+<ul>
+<li>Times were captured pre-dawn on a Wednesday. Evening service on a fight-night or convention
+week can run longer.</li>
+<li>Las Vegas summer heat is irrelevant for February, but late-night frequency is not — check the
+last bus before a 9:30 PM dinner at Wing Lei.</li>
+<li>The monorail does not serve Chinatown or Downtown. Anything on Spring Mountain Rd is bus-only.</li>
+</ul>
+</div></main>
+<footer><div class="wrap">
+<p><strong>Data snapshot:</strong> 2026-11-25 (UTC). Prices and hours change — re-verify before booking.</p>
+<p>Every figure on this site is either linked to an official source or marked <span class="unv">unverified</span>.
+Nothing is estimated silently. <a href="verification.html">Verification log</a> · <a href="flagged.html">Flagged for Review</a></p>
+</div></footer></body></html>

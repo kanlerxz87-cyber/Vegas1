@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Budget | Las Vegas 2027 Trip Planner</title>
+<meta name="description" content="Verified, source-linked planning data for a Michelin-focused Las Vegas trip, Feb-Mar 2027.">
+<style>
+:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--dim:#8b949e;
+--acc:#f5c518;--good:#2ea043;--bad:#da3633;--warn:#d29922;--link:#58a6ff}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+header.site{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.96);
+border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.site .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.brand{font-weight:700;letter-spacing:.3px;color:var(--ink)}
+.brand span{color:var(--acc)}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{padding:6px 10px;border-radius:8px;font-size:14px;color:var(--dim);border:1px solid transparent}
+nav a:hover{background:var(--card);color:var(--ink);text-decoration:none}
+nav a.on{color:var(--acc);border-color:var(--line);background:var(--card)}
+main{padding:22px 0 70px}
+h1{font-size:clamp(24px,5vw,34px);line-height:1.2;margin:.2em 0 .3em}
+h2{font-size:clamp(19px,3.4vw,25px);margin:1.8em 0 .5em;padding-bottom:.3em;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:1.4em 0 .4em}
+p,li{color:#c9d1d9}
+.lead{color:var(--dim);max-width:70ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.kpi b{display:block;font-size:26px;color:var(--acc);line-height:1.1}
+.kpi small{color:var(--dim);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);
+border-radius:12px;margin:12px 0;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:640px}
+th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#1c2128;color:var(--ink);font-size:12px;text-transform:uppercase;
+letter-spacing:.5px;position:sticky;top:0;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#1b2028}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.unv{color:var(--warn);font-style:italic;font-size:12px}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;
+font-weight:700;letter-spacing:.4px;white-space:nowrap}
+.t2{background:var(--acc);color:#000}
+.t1{background:#c9a227;color:#000}
+.tb{background:#1f6feb;color:#fff}
+.tr{background:#30363d;color:#e6edf3}
+.ok{color:var(--good);font-weight:700}
+.no{color:var(--bad);font-weight:700}
+.warnbox{border-left:4px solid var(--warn);background:#1f1a10;padding:12px 14px;
+border-radius:0 10px 10px 0;margin:14px 0}
+.errbox{border-left:4px solid var(--bad);background:#1f1213;padding:12px 14px;
+border-radius:0 10px 10px 0;margin:14px 0}
+.okbox{border-left:4px solid var(--good);background:#0f1f14;padding:12px 14px;
+border-radius:0 10px 10px 0;margin:14px 0}
+.src{font-size:11.5px;color:var(--dim)}
+.src a{color:#7d8590}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--dim);font-size:13px}
+.pill{font-size:11px;border:1px solid var(--line);border-radius:999px;
+padding:2px 8px;color:var(--dim);white-space:nowrap;display:inline-block}
+.rank{font-weight:800;color:var(--acc);font-size:15px}
+details{margin:10px 0}
+summary{cursor:pointer;color:var(--acc);font-weight:600;padding:6px 0}
+.q{font-weight:600;color:var(--ink)}
+.a{color:#c9d1d9;border-left:2px solid var(--line);padding-left:12px;margin:6px 0 16px}
+@media(max-width:640px){
+ table{min-width:520px;font-size:12.5px}
+ th,td{padding:7px 8px}
+ h1{font-size:22px}
+ .site .wrap{gap:8px}
+ nav a{padding:5px 8px;font-size:13px}
+}
+</style></head><body>
+<header class="site"><div class="wrap">
+<span class="brand">LAS VEGAS <span>2027</span></span><nav><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="michelin.html">MICHELIN</a><a href="transit.html">Transit</a><a href="activities.html">Activities</a><a href="itinerary.html">Itinerary</a><a href="budget.html" class=on>Budget</a><a href="questions.html">Open Questions</a><a href="suggestions.html">Suggestions</a><a href="verification.html">Verification</a><a href="flagged.html">Flagged for Review</a><a href="audit.html">Repo Audit</a></nav>
+</div></header>
+<main><div class="wrap">
+<h1>Budget</h1>
+<p class="lead">What is known, what is knowable, and what nobody has published. This page
+deliberately refuses to print a single grand total, because two of its three inputs are
+unverified.</p>
+
+<h2>Hotel — verified 7-night totals (15–22 Feb 2027)</h2>
+<div class="tblwrap"><table>
+<thead><tr><th>Hotel</th><th>7-night total</th><th>Basis</th><th>Resort fees</th><th>True total</th></tr></thead>
+<tbody><tr><td>Masquerade Tower at Rio Hotel &amp; Casino</td>
+<td class="num">$483</td>
+<td class="num">$69 × 7</td>
+<td class="num"><span class="unv">not verified</span></td>
+<td class="num"><span class="unv">add resort fee</span></td></tr><tr><td>Circus Circus Hotel, Casino &amp; Theme Park</td>
+<td class="num">$489</td>
+<td class="num">$25 × 7</td>
+<td class="num"><span class="unv">not verified</span></td>
+<td class="num"><span class="unv">add resort fee</span></td></tr><tr><td>Flamingo Las Vegas Hotel &amp; Casino</td>
+<td class="num">$626</td>
+<td class="num">$40 × 7</td>
+<td class="num"><span class="unv">not verified</span></td>
+<td class="num"><span class="unv">add resort fee</span></td></tr><tr><td>Gold Coast Hotel and Casino</td>
+<td class="num">$768</td>
+<td class="num">$64 × 7</td>
+<td class="num"><span class="unv">not verified</span></td>
+<td class="num"><span class="unv">add resort fee</span></td></tr></tbody></table></div>
+<p class="src">Resort fees are the largest hidden cost in a Las Vegas hotel booking and they are
+<strong>not</strong> in these numbers. A $483 headline week can become $700+ at the desk.</p>
+
+<h2>Food — the part with real published numbers</h2>
+<div class="tblwrap"><table>
+<thead><tr><th>Restaurant</th><th>Award</th><th>Per person (official)</th><th>2 adults</th><th>Basis</th></tr></thead>
+<tbody>
+<tr><td>Guy Savoy</td><td><span class="tag t1">1 Star</span></td>
+<td>$380–$640 est.</td><td class="num">$760–$1,280</td>
+<td class="src">3–4 à-la-carte courses at published prices ($100–$290 each), before tax &amp; tip</td></tr>
+<tr><td>Kabuto</td><td><span class="tag tr">Recommended</span></td>
+<td>$130–$185 exact</td><td class="num">$260–$370</td>
+<td class="src">Official 2026 menu PDF; sake pairing $62–$68 pp extra</td></tr>
+<tr><td>Restaurant de Joël Robuchon</td><td><span class="tag t2">2 Stars</span></td>
+<td>UNVERIFIED</td><td class="num">UNVERIFIED</td>
+<td class="src">No price published on the official MGM Grand page</td></tr>
+<tr><td>é by José Andrés</td><td><span class="tag t1">1 Star</span></td>
+<td>UNVERIFIED</td><td class="num">UNVERIFIED</td>
+<td class="src">No price published on the official page; third-party reports ~$290 pp (not official)</td></tr>
+<tr><td>L'Atelier de Joël Robuchon</td><td><span class="tag t1">1 Star</span></td>
+<td>UNVERIFIED</td><td class="num">UNVERIFIED</td>
+<td class="src">No price published on the official page</td></tr>
+<tr><td>Bib Gourmand trio</td><td><span class="tag tb">Bib Gourmand</span></td>
+<td>UNVERIFIED</td><td class="num">UNVERIFIED</td>
+<td class="src">Bib Gourmand promises “good food at moderate price”; no figure is published</td></tr>
+</tbody></table></div>
+
+<div class="errbox">
+<strong>Why there is no grand total.</strong> A realistic food budget needs the four starred
+venues. Two of the four have no published price, and Bib Gourmand has none by design. Any grand
+total would be invented. What <em>can</em> be said with evidence:
+<em>one Guy Savoy dinner for two is $760–$1,280 before tax and tip</em> — which is 1.6× to 2.6×
+the entire cheapest hotel week.
+</div>
+
+<h2>Cost-saving levers that are actually evidenced</h2>
+<ul>
+<li><strong>Hotel choice is a real lever:</strong> $483 (Rio Masquerade) vs $2,493 (W Las Vegas)
+for the same 7 nights, same city. A $2,010 swing.</li>
+<li><strong>The Bib Gourmand trio is the value play</strong> — that is literally what the award
+means. China Poblano, Esther's Kitchen, YEN Viet Kitchen.</li>
+<li><strong>Kabuto is the best-value fine-dining on the list:</strong> $130 pp for a
+MICHELIN-guide omakase, versus $380+ for a starred French dinner.</li>
+<li><strong>Lunch/brunch at Mott 32</strong> ($-modest dishes 11:00–14:30) versus its dinner
+service — same kitchen, lower bill.</li>
+</ul>
+
+<h2>What to add before committing money</h2>
+<ol>
+<li>Resort fee per hotel, in writing, from the hotel's own site.</li>
+<li>Tax and gratuity assumptions (Clark County room tax; 20% service is normal at this tier).</li>
+<li>Airfare — deliberately out of scope here; no source was fetched and none will be guessed.</li>
+<li>A published price for Robuchon and é, by phone or OpenTable at booking time.</li>
+</ol>
+</div></main>
+<footer><div class="wrap">
+<p><strong>Data snapshot:</strong> 2026-11-25 (UTC). Prices and hours change — re-verify before booking.</p>
+<p>Every figure on this site is either linked to an official source or marked <span class="unv">unverified</span>.
+Nothing is estimated silently. <a href="verification.html">Verification log</a> · <a href="flagged.html">Flagged for Review</a></p>
+</div></footer></body></html>

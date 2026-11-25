@@ -1,0 +1,66 @@
+{
+  "_meta": {
+    "dataset": "Social / video links per restaurant and activity",
+    "compiled_utc": "2026-11-25",
+    "method": "Every link below was returned by a web search performed in this session and the linked title is quoted from that search result. Links are creator content, NOT official venue pages, and are labelled as such.",
+    "limits": "TikTok and Instagram content could not be crawled (not reachable from this environment). Where a venue's official site links its own Instagram, that link is given. Otherwise the field stays null rather than guessing a handle."
+  },
+  "links": [
+    {
+      "venue_id": "joel-robuchon",
+      "youtube": [
+        { "title": "Joel Robuchon Restaurant Las Vegas - Menu Degustation", "url": "https://www.youtube.com/watch?v=IPfyzVq0Hjk", "note": "16-course Menu Degustation plus kitchen tour (Feb 2022)" },
+        { "title": "World Famous Butter Tower & Bread Trolley: Two Michelin Star Joel Robuchon in Las Vegas", "url": "https://www.youtube.com/shorts/ENgUP4gaZMo", "note": "Short" },
+        { "title": "2 Michelin Star Restaurant Las Vegas Review", "url": "https://www.youtube.com/watch?v=F-Iia2bWtro", "note": "2015 review - older" }
+      ]
+    },
+    {
+      "venue_id": "e-by-jose-andres",
+      "youtube": [
+        { "title": "Most Unique Las Vegas Restaurant! e by Jose Andres 25-Course Tasting Menu $290!", "url": "https://www.youtube.com/watch?v=7T4zU0XeBfA", "note": "Travelling Foodie, 2023" }
+      ]
+    },
+    {
+      "venue_id": "guy-savoy",
+      "youtube": [
+        { "title": "$1600 DINNER! Worth it? Restaurant Guy Savoy at Caesars Palace Las Vegas", "url": "https://www.youtube.com/watch?v=XbZI6IXdM0E", "note": "Forbes 5 Star Celebration Tasting Menu" },
+        { "title": "$680 5 Hour Tasting Menu at MICHELIN Star Guy Savoy in Las Vegas", "url": "https://www.youtube.com/shorts/Kk7l0tV2yrs", "note": "Short" }
+      ]
+    },
+    {
+      "venue_id": "esthers-kitchen",
+      "youtube": [
+        { "title": "You Me Food Review: Esther's Kitchen Las Vegas", "url": "https://www.youtube.com/watch?v=xjEJm4r1Hi8", "note": "" },
+        { "title": "One of the Best Las Vegas Brunches", "url": "https://www.youtube.com/watch?v=kCOFqLw47TI", "note": "" },
+        { "title": "Esther's Kitchen: One of Las Vegas' Best Italian Restaurants", "url": "https://www.youtube.com/shorts/qftiNLUXJA4", "note": "Short" }
+      ]
+    },
+    {
+      "venue_id": "kabuto",
+      "instagram_posts": [
+        "https://www.instagram.com/p/DgF3xboF22x/",
+        "https://www.instagram.com/p/Df-JWjXlyvt/",
+        "https://www.instagram.com/p/Df2a-vOF5uF/",
+        "https://www.instagram.com/p/DfusYfhjNNh/",
+        "https://www.instagram.com/p/Dfm-KmoDYZB/",
+        "https://www.instagram.com/p/DfXhaN5DJw-/",
+        "https://www.instagram.com/p/DfKiencFxeb/"
+      ],
+      "note": "These Instagram post URLs are embedded in Kabuto's own official website homepage; each carries the caption 'DAILY: 5:30 PM - 9:00 PM'. Sourced from the venue's own site."
+    },
+    {
+      "venue_id": "wing-lei",
+      "youtube": [
+        { "title": "Wing Lei | Wynn Las Vegas | 1st North American Chinese Restaurant with a MICHELIN STAR | Peking Duck", "url": "https://www.youtube.com/watch?v=E1LKhHFqqbI", "note": "" },
+        { "title": "Wing Lei 'Imperial Peking Duck Tasting' and Live Santa Barbara Spot Prawns", "url": "https://www.youtube.com/watch?v=3PYRgwB2E28", "note": "" }
+      ]
+    }
+  ],
+  "not_found": [
+    "latelier-de-joel-robuchon - no specific video located in this session; null rather than guessed",
+    "china-poblano", "yen-viet-kitchen", "anima-by-edo", "bouchon", "cote-las-vegas",
+    "estiatorio-milos", "gymkhana", "kame-omakase", "lamaii", "michael-mina", "mott-32",
+    "partage", "pho-ga-bac-bac", "ping-pang-pong", "soulbelly-bbq", "sparrow-and-wolf",
+    "stubborn-seed"
+  ]
+}

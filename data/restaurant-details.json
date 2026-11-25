@@ -1,0 +1,151 @@
+{
+  "_meta": {
+    "dataset": "Official hours + published menu pricing evidence per MICHELIN restaurant",
+    "compiled_utc": "2026-11-25",
+    "rules": [
+      "Only values printed on the venue's own website are filled in.",
+      "Anything not published officially is left null and classed 'unverified'.",
+      "Per-person cost ranges are labelled: exact = printed on official site; unverified = not published."
+    ]
+  },
+  "restaurants": [
+    {
+      "id": "joel-robuchon",
+      "hours_source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html",
+      "hours": {
+        "mon": "Closed",
+        "tue_sat": "5:00 PM - 9:30 PM",
+        "sun": "Closed"
+      },
+      "hours_exceptions": "Official site posts temporary adjusted hours around holidays (e.g. '4:00 PM to 8:00 PM, Nov 19-21'); re-check the week of travel. Dress code: Business Formal. Children under 6 not permitted.",
+      "price_evidence_source": null,
+      "per_person_usd_note": "unverified - the MGM Grand page shows menu dishes but no published tasting-menu price. Third-party reporting puts the degustation from ~$525/person (Matador Network) - NOT an official source, flagged.",
+      "price_status": "unverified",
+      "reservation_url": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html",
+      "reservations_note": "Reservations 702.891.7925"
+    },
+    {
+      "id": "e-by-jose-andres",
+      "hours_source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html",
+      "hours": {
+        "mon": "Closed",
+        "tue_sat": "5:30 PM - 8:30 PM",
+        "sun": "Closed"
+      },
+      "hours_exceptions": "Official site: only two seatings nightly. Reservations up to three months in advance. Dress code: Upscale.",
+      "price_evidence_source": null,
+      "per_person_usd_note": "unverified - no tasting-menu price published on the MGM/Cosmopolitan page. A 2023 YouTube review reports $290/person for the tasting menu - third-party, flagged.",
+      "price_status": "unverified",
+      "reservation_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html",
+      "reservations_note": "877.893.2003"
+    },
+    {
+      "id": "guy-savoy",
+      "hours_source": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy",
+      "hours": {
+        "published": "Official page displays an openings status widget ('Opens 5:00 PM'); a full 7-day table is not published on the page as retrieved."
+      },
+      "hours_exceptions": "Dress code: Formal. Full week-by-week hours not published - UNVERIFIED, confirm by phone 702.731-7286.",
+      "price_evidence_source": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu",
+      "price_evidence_effective": "11.5.2026",
+      "a_la_carte_usd": {
+        "Mosaic of Poularde, Artichoke, Foie Gras and Black Truffle Vinaigrette": 110,
+        "Colors of Caviar": 120,
+        "Artichoke and Black Truffle Soup": 100,
+        "Seared Sea Bass": 160,
+        "Marmite of Squab, Pheasant, Duck, Foie Gras and Cabbage": 200,
+        "Japanese A5 Wagyu": 290,
+        "Cheese Cart": 60
+      },
+      "per_person_estimate_usd": "380 - 640",
+      "per_person_estimate_basis": "3-4 a-la-carte courses at the published prices above, before tax/tip. Tasting menu prices are on separate 'Prelude'/'Symphony' tabs that were not published as prices in the retrieved page.",
+      "price_status": "partial - a la carte exact; tasting menu unverified",
+      "reservation_url": "https://www.opentable.com/r/restaurant-guy-savoy-caesars-palace-reservations-las-vegas?restref=96775"
+    },
+    {
+      "id": "latelier-de-joel-robuchon",
+      "hours_source": "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html",
+      "hours": {
+        "mon": "5:00 PM - 9:30 PM",
+        "tue_wed": "Closed",
+        "thu_sun": "5:00 PM - 9:30 PM"
+      },
+      "hours_exceptions": "Official site posts temporary adjusted hours (e.g. 2:00 PM-8:00 PM, Nov 19-21). Dress code: Business Casual. Children 6 and under not permitted.",
+      "price_evidence_source": null,
+      "per_person_usd_note": "unverified - no published menu price on the official MGM Grand page.",
+      "price_status": "unverified",
+      "reservation_url": "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html"
+    },
+    {
+      "id": "china-poblano",
+      "hours_source": null,
+      "hours": {},
+      "hours_exceptions": "not yet verified - open item",
+      "price_status": "unverified",
+      "per_person_usd_note": "Bib Gourmand means good food at moderate price; MICHELIN does not publish a price. unverified.",
+      "reservation_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html"
+    },
+    {
+      "id": "esthers-kitchen",
+      "hours_source": null,
+      "hours": {},
+      "hours_exceptions": "Original site did not render a service-hours block; hours UNVERIFIED - flagged. Confirm via the site's reservations widget.",
+      "price_status": "unverified",
+      "per_person_usd_note": "unverified",
+      "reservation_url": "https://www.estherslv.com/"
+    },
+    {
+      "id": "yen-viet-kitchen",
+      "hours_source": null,
+      "hours": {},
+      "hours_exceptions": "Official site (Google Sites) does not publish hours in text form; hours UNVERIFIED - flagged.",
+      "price_status": "unverified",
+      "per_person_usd_note": "unverified",
+      "reservation_url": "https://www.yenvietkitchen.com/"
+    },
+    {
+      "id": "kabuto",
+      "hours_source": "https://www.kabutolv.com/",
+      "hours": {
+        "daily": "5:30 PM - 9:00 PM"
+      },
+      "hours_exceptions": "Official site/social captions state DAILY 5:30 PM - 9:00 PM. Reservation-only; no walk-ins. Address 5040 Spring Mountain Rd.",
+      "price_evidence_source": "https://www.kabutolv.com/s/kabuto-menu2026.pdf",
+      "price_evidence_effective": "2026 menu PDF",
+      "per_person_usd": {
+        "Yoroi Course (Chef Omakase)": 130,
+        "Kabuto Course (Premium Chef Omakase)": 185,
+        "Sake pairing": "62 - 68"
+      },
+      "per_person_estimate_usd": "130 - 185",
+      "price_status": "verified - exact prices on official menu PDF",
+      "reservation_url": "https://www.kabutolv.com/reserve"
+    },
+    {
+      "id": "mott-32",
+      "hours_source": "https://www.venetianlasvegas.com/dining/restaurants/mott-32.html",
+      "hours": {
+        "mon_fri": "11:00 AM - 2:30 PM; 5:00 PM - 10:00 PM",
+        "sat_sun": "10:30 AM - 2:30 PM; 5:00 PM - 10:00 PM"
+      },
+      "hours_exceptions": "Brunch Sat & Sun 10:30 AM - 2:30 PM. Group dining 12+ call 702.607.3232.",
+      "price_status": "unverified",
+      "per_person_usd_note": "Large menu with Peking Duck priced per bird; no single published per-person menu price. unverified.",
+      "reservation_url": "https://fp.sevenrooms.com/explore/mott32/reservations/create/search"
+    },
+    {
+      "id": "wing-lei",
+      "hours_source": "https://www.wynnlasvegas.com/dining/fine-dining/wing-lei",
+      "hours": {
+        "thu_sun_mon": "5:30 PM - 9:30 PM",
+        "fri_sat": "5:30 PM - 10:00 PM",
+        "tue_wed": "Closed"
+      },
+      "hours_exceptions": "Dress code business casual. Children under 5 not permitted. Located in Wynn Tower Suites.",
+      "price_evidence_source": "https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf",
+      "per_person_usd_note": "Official main menu is a PDF; per-person price not summarised on the page. unverified pending PDF read.",
+      "price_status": "unverified",
+      "reservation_url": "https://www.sevenrooms.com/reservations/wingleiwlv"
+    }
+  ]
+}
