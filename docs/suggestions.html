@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggestions for review · Las Vegas Trip Planner</title>
+<style>
+:root{--ink:#1d2430;--mut:#5b6573;--line:#e3e7ee;--bg:#f6f8fb;--card:#fff;--acc:#0b6e4f;--warn:#b26a00;--warnbg:#fff4e0;--bad:#9b1c1c;--badbg:#fdecec;--ok:#0b6e4f;--okbg:#e6f5ef}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:#14321f;color:#fff;padding:14px 16px}
+header .t{font-weight:700;font-size:18px}
+header .s{opacity:.8;font-size:12px}
+nav{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+nav a{padding:6px 10px;border-radius:999px;background:var(--bg);color:var(--ink);text-decoration:none;font-size:13px;border:1px solid var(--line)}
+nav a.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+main{max-width:1200px;margin:0 auto;padding:16px}
+h1{font-size:24px;margin:8px 0 4px}
+h2{font-size:18px;margin:22px 0 8px}
+p.lead{color:var(--mut);margin:0 0 12px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.card .n{font-size:26px;font-weight:700}
+.card .l{color:var(--mut);font-size:13px}
+.card a{color:var(--acc);font-weight:600;text-decoration:none}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0}
+ul.sum li{margin:6px 0}
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:13.5px}
+th{background:#eef3f0;text-align:left;padding:9px;border-bottom:1px solid var(--line);position:sticky;top:0;font-weight:600}
+td{padding:9px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+a{color:#0a5bb5}
+.unv{display:inline-block;background:var(--warnbg);color:var(--warn);border:1px solid #f1d29b;border-radius:6px;padding:0 6px;font-size:12px;white-space:nowrap}
+.flag{display:block;color:var(--warn);font-size:12px;margin-top:3px}
+.badge{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:600}
+.b-star{background:#fff3c4;color:#6b4e00}
+.b-bib{background:#e4f0ff;color:#14467a}
+.b-rec{background:#eef1f4;color:#33414f}
+.b-ok{background:var(--okbg);color:var(--ok)}
+.b-bad{background:var(--badbg);color:var(--bad)}
+.b-warn{background:var(--warnbg);color:var(--warn)}
+.small{font-size:12px;color:var(--mut)}
+footer{color:var(--mut);font-size:12px;padding:18px 16px;text-align:center}
+/* mobile: stack table rows into cards */
+@media (max-width:700px){
+  main{padding:10px}
+  .tw{overflow:visible;background:none;border:0}
+  table{min-width:0}
+  thead{display:none}
+  tr{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:6px 0}
+  td{display:block;border:0;padding:5px 12px}
+  td::before{content:attr(data-label);display:block;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
+  th{position:static}
+}
+</style></head>
+<body>
+<header><div class="t">Las Vegas Trip Planner</div>
+<div class="s">Verified data as of 2026-11-25 · Branch arena/3860068e-vegas1</div></header>
+<nav><a href="index.html" class="">Home</a><a href="hotels.html" class="">Hotels</a><a href="michelin.html" class="">Michelin</a><a href="activities.html" class="">Activities</a><a href="booking.html" class="">Booking</a><a href="questions.html" class="">Questions</a><a href="suggestions.html" class="on">Suggestions</a><a href="flagged.html" class="">Flagged</a><a href="repo-review.html" class="">Repo review</a><a href="sources.html" class="">Sources</a></nav>
+<main>
+<h1>Suggestions for review</h1>
+<p class="lead">Choose a path before anything is changed. Every suggestion is Pending.</p>
+<div class="box"><strong>Review before any change.</strong> None of these suggestions has been implemented. Each stays "Pending" until you choose a path.</div><div class="tw"><table><thead><tr><th>ID</th><th>Suggestion</th><th>Benefit</th><th>Needs</th><th>Decision</th></tr></thead><tbody><tr><td data-label="ID"><strong>S1</strong></td><td data-label="Suggestion">Set up a fixed-schedule capture of official &#x27;Check Rates&#x27; prices for each shortlisted hotel (weekly, same dates), recording date and time of each capture.</td><td data-label="Benefit">Builds the verified price history needed for the cheapest-booking-time question.</td><td data-label="Needs">Your approval of the schedule and the date set</td><td data-label="Decision"><span class="badge b-warn">Pending</span></td></tr><tr><td data-label="ID"><strong>S2</strong></td><td data-label="Suggestion">Check guide.michelin.com manually for star status and hours of each of the 24 listings.</td><td data-label="Benefit">Upgrades Michelin rows from LVCVA-only to Michelin-primary sources.</td><td data-label="Needs">Manual check (sandbox cannot reach the site)</td><td data-label="Decision"><span class="badge b-warn">Pending</span></td></tr><tr><td data-label="ID"><strong>S3</strong></td><td data-label="Suggestion">Use the RTC Trip Planner (official) to record bus times from each hotel to each Michelin cluster and activity.</td><td data-label="Benefit">Verifies the 1-hour-by-transit requirement.</td><td data-label="Needs">Your activity list and hotel shortlist</td><td data-label="Decision"><span class="badge b-warn">Pending</span></td></tr><tr><td data-label="ID"><strong>S4</strong></td><td data-label="Suggestion">Use a non-official mapping tool for drive times, clearly marked as third-party.</td><td data-label="Benefit">Covers Valley of Fire and Hoover Dam drives, which official pages don&#x27;t state.</td><td data-label="Needs">Your approval to use a non-official source</td><td data-label="Decision"><span class="badge b-warn">Pending</span></td></tr><tr><td data-label="ID"><strong>S5</strong></td><td data-label="Suggestion">Sweep each venue&#x27;s official site footer for YouTube, TikTok and Instagram links; record only links found on official pages.</td><td data-label="Benefit">Fills the social-link column without guessing handles.</td><td data-label="Needs">None beyond approval</td><td data-label="Decision"><span class="badge b-warn">Pending</span></td></tr><tr><td data-label="ID"><strong>S6</strong></td><td data-label="Suggestion">Split the hotel table into a 3-night scenario (Feb 15–18) and a 7-night scenario (Feb 15–22).</td><td data-label="Benefit">Matches both pricing requests.</td><td data-label="Needs">Your decision on trip length</td><td data-label="Decision"><span class="badge b-warn">Pending</span></td></tr><tr><td data-label="ID"><strong>S7</strong></td><td data-label="Suggestion">Narrow to 3–5 finalist hotels after questions are answered, then verify rooms, fees and rates for those only.</td><td data-label="Benefit">Concentrates verification effort.</td><td data-label="Needs">Your budget and room preferences</td><td data-label="Decision"><span class="badge b-warn">Pending</span></td></tr><tr><td data-label="ID"><strong>S8</strong></td><td data-label="Suggestion">Add a build-time link checker that fails the site if any official URL in the data no longer resolves.</td><td data-label="Benefit">Keeps every row&#x27;s source link working.</td><td data-label="Needs">Approval to add a script to the build</td><td data-label="Decision"><span class="badge b-warn">Pending</span></td></tr><tr><td data-label="ID"><strong>S9</strong></td><td data-label="Suggestion">Add a weighted decision page (price, Michelin count, room fit, activities, transit time) after answers are in.</td><td data-label="Benefit">Makes the final choice transparent.</td><td data-label="Needs">Answers to the questions and weights from you</td><td data-label="Decision"><span class="badge b-warn">Pending</span></td></tr><tr><td data-label="ID"><strong>S10</strong></td><td data-label="Suggestion">Stamp each row with its capture date so stale values are visible.</td><td data-label="Benefit">Shows how fresh each official value is.</td><td data-label="Needs">None</td><td data-label="Decision"><span class="badge b-warn">Pending</span></td></tr></tbody></table></div>
+</main>
+<footer>Blank cells are unverified and flagged. Live site built from data/site-data.json by scripts/build_site.py. Coordination board: COORDINATION.md.</footer>
+</body></html>

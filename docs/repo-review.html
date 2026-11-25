@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repo review · Las Vegas Trip Planner</title>
+<style>
+:root{--ink:#1d2430;--mut:#5b6573;--line:#e3e7ee;--bg:#f6f8fb;--card:#fff;--acc:#0b6e4f;--warn:#b26a00;--warnbg:#fff4e0;--bad:#9b1c1c;--badbg:#fdecec;--ok:#0b6e4f;--okbg:#e6f5ef}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:#14321f;color:#fff;padding:14px 16px}
+header .t{font-weight:700;font-size:18px}
+header .s{opacity:.8;font-size:12px}
+nav{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+nav a{padding:6px 10px;border-radius:999px;background:var(--bg);color:var(--ink);text-decoration:none;font-size:13px;border:1px solid var(--line)}
+nav a.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+main{max-width:1200px;margin:0 auto;padding:16px}
+h1{font-size:24px;margin:8px 0 4px}
+h2{font-size:18px;margin:22px 0 8px}
+p.lead{color:var(--mut);margin:0 0 12px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.card .n{font-size:26px;font-weight:700}
+.card .l{color:var(--mut);font-size:13px}
+.card a{color:var(--acc);font-weight:600;text-decoration:none}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0}
+ul.sum li{margin:6px 0}
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:13.5px}
+th{background:#eef3f0;text-align:left;padding:9px;border-bottom:1px solid var(--line);position:sticky;top:0;font-weight:600}
+td{padding:9px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+a{color:#0a5bb5}
+.unv{display:inline-block;background:var(--warnbg);color:var(--warn);border:1px solid #f1d29b;border-radius:6px;padding:0 6px;font-size:12px;white-space:nowrap}
+.flag{display:block;color:var(--warn);font-size:12px;margin-top:3px}
+.badge{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:600}
+.b-star{background:#fff3c4;color:#6b4e00}
+.b-bib{background:#e4f0ff;color:#14467a}
+.b-rec{background:#eef1f4;color:#33414f}
+.b-ok{background:var(--okbg);color:var(--ok)}
+.b-bad{background:var(--badbg);color:var(--bad)}
+.b-warn{background:var(--warnbg);color:var(--warn)}
+.small{font-size:12px;color:var(--mut)}
+footer{color:var(--mut);font-size:12px;padding:18px 16px;text-align:center}
+/* mobile: stack table rows into cards */
+@media (max-width:700px){
+  main{padding:10px}
+  .tw{overflow:visible;background:none;border:0}
+  table{min-width:0}
+  thead{display:none}
+  tr{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:6px 0}
+  td{display:block;border:0;padding:5px 12px}
+  td::before{content:attr(data-label);display:block;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
+  th{position:static}
+}
+</style></head>
+<body>
+<header><div class="t">Las Vegas Trip Planner</div>
+<div class="s">Verified data as of 2026-11-25 · Branch arena/3860068e-vegas1</div></header>
+<nav><a href="index.html" class="">Home</a><a href="hotels.html" class="">Hotels</a><a href="michelin.html" class="">Michelin</a><a href="activities.html" class="">Activities</a><a href="booking.html" class="">Booking</a><a href="questions.html" class="">Questions</a><a href="suggestions.html" class="">Suggestions</a><a href="flagged.html" class="">Flagged</a><a href="repo-review.html" class="on">Repo review</a><a href="sources.html" class="">Sources</a></nav>
+<main>
+<h1>Repo review</h1>
+<p class="lead">Line-by-line review of the repository and brief, with irregularities flagged.</p>
+<div class="box">Line-by-line review of the repository and the trip brief. Items marked Irregular are listed for manual review. Source links point to GitHub or the official pages used.</div><div class="tw"><table><thead><tr><th>Item</th><th>Finding</th><th>Status</th><th>Source</th></tr></thead><tbody><tr><td data-label="Item"><strong>Repository visibility</strong></td><td data-label="Finding">Public repository kanlerxz87-cyber/Vegas1; default branch main.</td><td data-label="Status"><span class="badge b-ok">Verified</span></td><td data-label="Source">https://api.github.com/repos/kanlerxz87-cyber/Vegas1 (GitHub API)</td></tr><tr><td data-label="Item"><strong>Files on main</strong></td><td data-label="Finding">Only README.md. No index page, no data, no license, no .gitignore.</td><td data-label="Status"><span class="badge b-bad">Irregular — review</span></td><td data-label="Source">https://github.com/kanlerxz87-cyber/Vegas1</td></tr><tr><td data-label="Item"><strong>README.md content</strong></td><td data-label="Finding">A single line: &#x27;# Vegas1&#x27;. No description or setup text.</td><td data-label="Status"><span class="badge b-bad">Irregular — review</span></td><td data-label="Source">https://github.com/kanlerxz87-cyber/Vegas1/blob/main/README.md</td></tr><tr><td data-label="Item"><strong>Git history</strong></td><td data-label="Finding">One commit, &#x27;Initial commit&#x27; (9b8bcfa).</td><td data-label="Status"><span class="badge b-ok">Verified</span></td><td data-label="Source">https://github.com/kanlerxz87-cyber/Vegas1/commits/main</td></tr><tr><td data-label="Item"><strong>GitHub Pages config (before this session)</strong></td><td data-label="Finding">Pages was enabled, built from branch main, path /. Live URL: https://kanlerxz87-cyber.github.io/Vegas1/</td><td data-label="Status"><span class="badge b-bad">Irregular — review (live URL had no site content)</span></td><td data-label="Source">https://api.github.com/repos/kanlerxz87-cyber/Vegas1/pages</td></tr><tr><td data-label="Item"><strong>Branch naming in the brief</strong></td><td data-label="Finding">The brief asks for session-&lt;id&gt;/&lt;task&gt; branches. Session rules fix the branch to arena/3860068e-vegas1. Brief text also has escaped placeholders (&amp;amp;lt;id&amp;amp;gt;).</td><td data-label="Status"><span class="badge b-bad">Irregular — logged in COORDINATION.md</span></td><td data-label="Source">COORDINATION.md (this repo)</td></tr><tr><td data-label="Item"><strong>Subway requirement</strong></td><td data-label="Finding">The brief asks for travel &#x27;by subway or bus&#x27;. Sources reviewed show RTC bus service; no subway was found in them. Needs confirmation.</td><td data-label="Status"><span class="badge b-bad">Irregular — review</span></td><td data-label="Source">https://www.rtcsnv.com/</td></tr><tr><td data-label="Item"><strong>Michelin Guide official site</strong></td><td data-label="Finding">guide.michelin.com could not be fetched from the sandbox. Michelin status here comes from the LVCVA page and restaurant-owned pages.</td><td data-label="Status"><span class="badge b-warn">Unverified — manual check needed</span></td><td data-label="Source">https://guide.michelin.com/us/en/nevada/las-vegas/restaurants</td></tr><tr><td data-label="Item"><strong>Kame Omakase link</strong></td><td data-label="Finding">LVCVA links kameomakase.com; that address redirects to sushikame.com.</td><td data-label="Status"><span class="badge b-bad">Irregular — review</span></td><td data-label="Source">https://www.visitlasvegas.com/michelin-guide-restaurants/</td></tr><tr><td data-label="Item"><strong>Mott 32 location</strong></td><td data-label="Finding">LVCVA text says Mott 32 is at The Palazzo; its link goes to the Venetian site. Official page says Palazzo casino floor.</td><td data-label="Status"><span class="badge b-bad">Irregular — review</span></td><td data-label="Source">https://www.venetianlasvegas.com/dining/restaurants/mott-32.html</td></tr><tr><td data-label="Item"><strong>Lamaii area</strong></td><td data-label="Finding">LVCVA lists Lamaii as Off-Strip; official site gives a Chinatown address.</td><td data-label="Status"><span class="badge b-bad">Irregular — review</span></td><td data-label="Source">https://www.lamaiilv.com/</td></tr><tr><td data-label="Item"><strong>Wing Lei Michelin status</strong></td><td data-label="Finding">LVCVA lists it as Recommended; the restaurant&#x27;s own page does not mention Michelin.</td><td data-label="Status"><span class="badge b-bad">Irregular — review</span></td><td data-label="Source">https://www.wynnlasvegas.com/dining/fine-dining/wing-lei</td></tr><tr><td data-label="Item"><strong>Michael Mina hours</strong></td><td data-label="Finding">Official page shows &#x27;Monday to Sunday: Closed&#x27; plus seasonal closures and &#x27;Temporarily closed&#x27;.</td><td data-label="Status"><span class="badge b-bad">Irregular — review</span></td><td data-label="Source">https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html</td></tr><tr><td data-label="Item"><strong>Guy Savoy hours</strong></td><td data-label="Finding">Official page shows only &#x27;Closed&#x27; and &#x27;Opens 5:00 PM&#x27; with no day-by-day hours.</td><td data-label="Status"><span class="badge b-bad">Irregular — review</span></td><td data-label="Source">https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy</td></tr><tr><td data-label="Item"><strong>Sparrow + Wolf site content</strong></td><td data-label="Finding">Event pages are dated 2024–2025 (Valentine&#x27;s 2025, NYE 2024).</td><td data-label="Status"><span class="badge b-bad">Stale content — review</span></td><td data-label="Source">https://sparrowandwolflv.com/</td></tr><tr><td data-label="Item"><strong>Gymkhana Instagram</strong></td><td data-label="Finding">Official page link to Instagram is present; the &#x27;Stay Informed&#x27; link carries date=2025-12-03.</td><td data-label="Status"><span class="badge b-bad">Stale link — review</span></td><td data-label="Source">https://aria.mgmresorts.com/en/restaurants/gymkhana.html</td></tr><tr><td data-label="Item"><strong>Michelin count consistency</strong></td><td data-label="Finding">LVCVA states 24 distinctions. Counted 4 starred + 3 Bib + 17 Recommended/Selected = 24. Consistent.</td><td data-label="Status"><span class="badge b-ok">Verified</span></td><td data-label="Source">https://www.visitlasvegas.com/michelin-guide-restaurants/</td></tr><tr><td data-label="Item"><strong>Feb 15 2027 holiday</strong></td><td data-label="Finding">OPM lists Monday Feb 15, 2027 as Washington&#x27;s Birthday.</td><td data-label="Status"><span class="badge b-ok">Verified</span></td><td data-label="Source">https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/</td></tr><tr><td data-label="Item"><strong>Trip length conflict</strong></td><td data-label="Finding">Brief asks for 1–2 weeks but the preferred dates are 3 nights (Feb 15–18).</td><td data-label="Status"><span class="badge b-bad">Irregular — decision needed</span></td><td data-label="Source">User brief</td></tr></tbody></table></div>
+</main>
+<footer>Blank cells are unverified and flagged. Live site built from data/site-data.json by scripts/build_site.py. Coordination board: COORDINATION.md.</footer>
+</body></html>

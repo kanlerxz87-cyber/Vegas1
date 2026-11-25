@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Booking timing · Las Vegas Trip Planner</title>
+<style>
+:root{--ink:#1d2430;--mut:#5b6573;--line:#e3e7ee;--bg:#f6f8fb;--card:#fff;--acc:#0b6e4f;--warn:#b26a00;--warnbg:#fff4e0;--bad:#9b1c1c;--badbg:#fdecec;--ok:#0b6e4f;--okbg:#e6f5ef}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:#14321f;color:#fff;padding:14px 16px}
+header .t{font-weight:700;font-size:18px}
+header .s{opacity:.8;font-size:12px}
+nav{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+nav a{padding:6px 10px;border-radius:999px;background:var(--bg);color:var(--ink);text-decoration:none;font-size:13px;border:1px solid var(--line)}
+nav a.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+main{max-width:1200px;margin:0 auto;padding:16px}
+h1{font-size:24px;margin:8px 0 4px}
+h2{font-size:18px;margin:22px 0 8px}
+p.lead{color:var(--mut);margin:0 0 12px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.card .n{font-size:26px;font-weight:700}
+.card .l{color:var(--mut);font-size:13px}
+.card a{color:var(--acc);font-weight:600;text-decoration:none}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0}
+ul.sum li{margin:6px 0}
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:13.5px}
+th{background:#eef3f0;text-align:left;padding:9px;border-bottom:1px solid var(--line);position:sticky;top:0;font-weight:600}
+td{padding:9px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+a{color:#0a5bb5}
+.unv{display:inline-block;background:var(--warnbg);color:var(--warn);border:1px solid #f1d29b;border-radius:6px;padding:0 6px;font-size:12px;white-space:nowrap}
+.flag{display:block;color:var(--warn);font-size:12px;margin-top:3px}
+.badge{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:600}
+.b-star{background:#fff3c4;color:#6b4e00}
+.b-bib{background:#e4f0ff;color:#14467a}
+.b-rec{background:#eef1f4;color:#33414f}
+.b-ok{background:var(--okbg);color:var(--ok)}
+.b-bad{background:var(--badbg);color:var(--bad)}
+.b-warn{background:var(--warnbg);color:var(--warn)}
+.small{font-size:12px;color:var(--mut)}
+footer{color:var(--mut);font-size:12px;padding:18px 16px;text-align:center}
+/* mobile: stack table rows into cards */
+@media (max-width:700px){
+  main{padding:10px}
+  .tw{overflow:visible;background:none;border:0}
+  table{min-width:0}
+  thead{display:none}
+  tr{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:6px 0}
+  td{display:block;border:0;padding:5px 12px}
+  td::before{content:attr(data-label);display:block;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
+  th{position:static}
+}
+</style></head>
+<body>
+<header><div class="t">Las Vegas Trip Planner</div>
+<div class="s">Verified data as of 2026-11-25 · Branch arena/3860068e-vegas1</div></header>
+<nav><a href="index.html" class="">Home</a><a href="hotels.html" class="">Hotels</a><a href="michelin.html" class="">Michelin</a><a href="activities.html" class="">Activities</a><a href="booking.html" class="on">Booking</a><a href="questions.html" class="">Questions</a><a href="suggestions.html" class="">Suggestions</a><a href="flagged.html" class="">Flagged</a><a href="repo-review.html" class="">Repo review</a><a href="sources.html" class="">Sources</a></nav>
+<main>
+<h1>Booking timing</h1>
+<p class="lead">Key dates and official booking rules. Price timing is not yet verified.</p>
+<h2>Key dates</h2><div class="tw"><table><thead><tr><th>Date</th><th>What</th><th>Source</th></tr></thead><tbody><tr><td data-label="Date"><strong>Mon Feb 15, 2027</strong></td><td data-label="What">Washington&#x27;s Birthday (Presidents&#x27; Day) — federal holiday</td><td data-label="Source"><a href="https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/" target="_blank" rel="noopener">source</a></td></tr><tr><td data-label="Date"><strong>Thu Feb 18, 2027</strong></td><td data-label="What">Preferred check-out (3 nights)</td><td data-label="Source">User brief</td></tr><tr><td data-label="Date"><strong>Mon Feb 22, 2027</strong></td><td data-label="What">Check-out for a 7-night stay starting Feb 15</td><td data-label="Source">Calendar arithmetic</td></tr><tr><td data-label="Date"><strong>Tue Mar 23, 2027</strong></td><td data-label="What">End of allowed trip window</td><td data-label="Source">User brief</td></tr></tbody></table></div><h2>Booking windows and rules</h2><div class="tw"><table><thead><tr><th>Item</th><th>Rule (official)</th><th>For Feb 15, 2027</th><th>Source</th></tr></thead><tbody><tr><td data-label="Item"><strong>é by José Andrés reservations</strong></td><td data-label="Rule">Reservations can be made online up to three months in advance</td><td data-label="For Feb 15, 2027">Open now (Nov 25, 2026 is within 3 months of Feb 15, 2027)</td><td data-label="Source"><a href="https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html" target="_blank" rel="noopener">source</a></td></tr><tr><td data-label="Item"><strong>Michelin-starred restaurants in general</strong></td><td data-label="Rule">Most release tables 30 to 60 days ahead (LVCVA FAQ)</td><td data-label="For Feb 15, 2027">Approx. Dec 17, 2026 – Jan 16, 2027 (derived from the 30–60 day rule, not a verified release calendar)</td><td data-label="Source"><a href="https://www.visitlasvegas.com/michelin-guide-restaurants/" target="_blank" rel="noopener">source</a></td></tr><tr><td data-label="Item"><strong>Hoover Dam guided tour tickets</strong></td><td data-label="Rule">Sold on-site only, not online; tours routinely sell out (Reclamation)</td><td data-label="For Feb 15, 2027">Buy on the day; arrive early</td><td data-label="Source"><a href="https://www.usbr.gov/lc/hooverdam/service/index.html" target="_blank" rel="noopener">source</a></td></tr><tr><td data-label="Item"><strong>Red Rock Canyon scenic drive</strong></td><td data-label="Rule">Timed-entry reservation required Oct 1–May 31 (BLM)</td><td data-label="For Feb 15, 2027">Reserve on recreation.gov before the trip</td><td data-label="Source"><a href="https://www.blm.gov/programs/national-conservation-lands/nevada/red-rock-canyon" target="_blank" rel="noopener">source</a></td></tr><tr><td data-label="Item"><strong>Sparrow + Wolf cancellation policy</strong></td><td data-label="Rule">Credit card to hold; $25/guest for cancellations within 24 hours (official)</td><td data-label="For Feb 15, 2027">Applies if booked</td><td data-label="Source"><a href="https://sparrowandwolflv.com/" target="_blank" rel="noopener">source</a></td></tr></tbody></table></div><h2>Cheapest hotel booking time</h2><div class="box">NOT DETERMINED. No official 2027 rate history was retrieved for any hotel. Cannot honestly name a cheapest booking date.</div><h2>Still unverified</h2><div class="box"><ul class="sum"><li>Hotel nightly rates for Feb 15–18 and Feb 15–22, 2027</li><li>Resort fees and taxes</li><li>Price history / cheapest booking window</li><li>Restaurant per-person prices (except the two official per-person tasting menus)</li></ul></div>
+</main>
+<footer>Blank cells are unverified and flagged. Live site built from data/site-data.json by scripts/build_site.py. Coordination board: COORDINATION.md.</footer>
+</body></html>
