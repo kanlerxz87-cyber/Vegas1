@@ -90,7 +90,8 @@
       { label: "Area", key: "area" },
       { label: "Bed / Bath", key: "bedBath", render: function (v, r) {
           return (r.queenBed ? "Queen+" : "—") + " bed<br>" + (r.privateBath ? "Private bath" : "—"); } },
-      { label: "Michelin rest. ≤1h", key: "michelinCount", cls: "num", render: function (v) { return esc(v == null ? "—" : v); } },
+      { label: "Michelin rest. (on-site / ≤1h)", key: "michelinCount", cls: "num", render: function (v, r) {
+          return esc(r.onSiteCount == null ? "—" : r.onSiteCount) + ' on-site<br><span class="note">' + esc(r.within1h == null ? "—" : r.within1h) + " ≤ 1h</span>"; } },
       { label: "Nightly (actual dates)", key: "nightly" },
       { label: "Total 7-night", key: "total7" },
       { label: "Best booking window", key: "bookWindow" },
