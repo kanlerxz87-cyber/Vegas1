@@ -2,7 +2,7 @@
 
 Session: arena/d6d3b8f5-vegas1
 Session ID: arena-d6d3b8f5-vegas1
-Branch: arena/d6d3b8f5-vegas1
+Branch: arena/d6d3b8f5-vegas1 (merged to main)
 
 ## Tasks
 
@@ -17,7 +17,7 @@ Branch: arena/d6d3b8f5-vegas1
 | Create suggestions section | done | arena-d6d3b8f5-vegas1 | suggestions.md | 10 improvement suggestions |
 | Create questions/info/answers section | done | arena-d6d3b8f5-vegas1 | questions-answers.md | 12 questions, missing info listed |
 | Verify all data line by line against official sources | done | arena-d6d3b8f5-vegas1 | All data files | Blank fields left where unverified |
-| Integrate and publish to GitHub Pages | in progress | arena-d6d3b8f5-vegas1 | All files | Ready for GitHub Pages setup |
+| Integrate and publish to GitHub Pages | done | arena-d6d3b8f5-vegas1 | All files | Site live at https://kanlerxz87-cyber.github.io/Vegas1/ |
 
 ## Claims
 
@@ -35,3 +35,16 @@ None yet.
 - Booking advice: lasvegaswonders.com, klook.com
 - Transportation: RTC of Southern Nevada, Las Vegas Monorail, US News Travel
 - Activities: GetYourGuide, Creative Travel Guide, Westgate Resorts, Vegas411, GoCity
+
+## Live Site
+
+https://kanlerxz87-cyber.github.io/Vegas1/
+
+Pages:
+- / (landing page with executive summary)
+- /pages/hotels.html (hotel comparison)
+- /pages/restaurants.html (Michelin restaurants)
+- /pages/activities.html (activities)
+- /pages/booking.html (best time to book)
+- /pages/suggestions.html (site improvement suggestions)
+- /pages/questions.html (questions & answers)
