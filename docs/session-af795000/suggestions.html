@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suggestions — Las Vegas Trip Planner</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <h1>Suggestions — for your review before implementation</h1>
+  <p class="sub">Each item lists the recommended path and the alternative. Nothing here is applied automatically.</p>
+</header>
+<nav class="site">
+  <a href="index.html">Executive Summary</a>
+  <a href="hotels.html">Hotels &amp; Prices</a>
+  <a href="michelin.html">Michelin Restaurants</a>
+  <a href="activities.html">Activities</a>
+  <a href="analysis.html">Analysis &amp; Transit</a>
+  <a class="active" href="suggestions.html">Suggestions</a>
+  <a href="open-questions.html">Open Questions</a>
+  <a href="flagged.html">Flagged for Review</a>
+</nav>
+<main>
+
+<section class="card">
+  <h2>Decisions that need your call</h2>
+  <div class="qa">
+    <p><strong>S1 · Trip length:</strong> The brief allows 1–2 weeks with preferred dates Feb 15–18. <em>Recommended path:</em> extend the preferred window to the full cheapest week, <strong>Feb 15–22 (7 nights)</strong> — verified cheapest in range at every property. <em>Alternative:</em> stick to Feb 15–18 (3 nights) — 3-night rates were not verified (searches run at 7 nights); they may not be cheaper per night.</p>
+    <p><strong>S2 · One hotel vs. split stay:</strong> <em>Recommended:</em> single hotel for simplicity (see ranking). <em>Alternative:</em> split stay — e.g., 4 nights Venetian (walk to 11 Michelin incl. 4 on-site) + 3 nights Flamingo ($85/nt) to cut cost. Splitting adds checkout friction but can save $300–$600 vs. Venetian-only <em>if</em> Venetian rates run high (currently unverified).</p>
+    <p><strong>S3 · Michelin dinner plan (time-sensitive):</strong> <em>Recommended booking order:</em> (a) <strong>é by José Andrés</strong> — reservations open ~3 months ahead and sell out in hours; for Feb 15–22 seats release <strong>mid-to-late Nov 2026 = now</strong> (via the official SevenRooms/Ticket platform on the <a href="https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html">official page</a>); (b) <strong>Restaurant de Joël Robuchon</strong> — call 702.891.7925 this month (Tue–Sat only); (c) <strong>Guy Savoy</strong> — OpenTable via <a href="https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy">official page</a>; (d) <strong>Kabuto</strong> — Resy opens 30 days out → set reminder for ~Jan 16, 2027; (e) Wing Lei/Stubborn Seed/Partage — book via SevenRooms 2–4 weeks out. <em>Alternative:</em> swap é for Jaleo's chef tasting (same building, far easier) if seats are gone.</p>
+    <p><strong>S4 · Wynn Cyber sale (deadline!):</strong> <em>Recommended:</em> if Wynn is even a maybe, book before <strong>Dec 4, 2026</strong> — the Cyber rate ($677/nt vs $833) is refundable-style (1-night deposit, free cancellation 72h prior), so booking locks the price while deciding. <em>Alternative:</em> skip and use the $4,739 toward dining.</p>
+    <p><strong>S5 · Unverified room rates (MGM Grand/ARIA/Bellagio/Cosmopolitan/Venetian):</strong> <em>Recommended:</em> before committing to Caesars Palace or Flamingo, spend 10 minutes checking the four MGM pages + Venetian booking page in a normal browser (links on the <a href="flagged.html">Flagged page</a>) — the Michelin-best hotels (Venetian, Cosmo, MGM Grand) are exactly the ones whose rates this audit could not read. <em>Alternative:</em> accept verified-only pricing and choose from Caesars/Flamingo/PH/Paris/Horseshoe/Wynn/Resorts World.</p>
+    <p><strong>S6 · Michael Mina risk:</strong> Bellagio's Michelin-listed restaurant is mid-seasonal-closure pattern in late 2026. <em>Recommended:</em> confirm Feb 2027 service before making it an anchor dinner (call 702.693.7223). <em>Alternative:</em> anchor with Wing Lei + Stubborn Seed instead (both verified open, exact tasting prices).</p>
+    <p><strong>S7 · Transit passes:</strong> <em>Recommended:</em> Deuce/SDX multi-day passes for the Strip↔Downtown↔Chinatown hops + occasional rideshare for Anima/YEN Viet; monorail only if staying Caesars/Flamingo/Paris corridor (station-adjacent). <em>Alternative:</em> rideshare-only (~$10–15/ride center-Strip) — simpler, similar cost for a couple.</p>
+    <p><strong>S8 · Red Rock / Hoover Dam:</strong> both fail the ≤60-min transit constraint. <em>Recommended:</em> keep them as optional half-day add-ons by car/tour (typical tourist pick), or drop them and keep the trip transit-based. Your call — the brief's constraint is flagged either way.</p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Improvements to this dashboard &amp; decision-making (propose → you review → implement)</h2>
+  <ul class="clean">
+    <li><strong>D1 · Interactive Michelin map:</strong> plot the 24 restaurants + hotels on an embedded map (Leaflet + OpenStreetMap tiles) with cluster colors as in Analysis. Moderate effort; needs no new data.</li>
+    <li><strong>D2 · Cost calculator:</strong> pick hotel + N dinners + activities → live total (JS over the data files). The data/*.json files already hold every price + source.</li>
+    <li><strong>D3 · Price-watch automation:</strong> a small script (Python + Playwright, run manually) that re-checks the Caesars/Wynn/RW booking URLs and diffs vs. this baseline, alerting on changes — especially useful before the Dec 4 Wynn deadline and to capture MGM/Venetian rates from a real browser session.</li>
+    <li><strong>D4 · Calendar export:</strong> .ics generator for booked dinners/shows with hours + addresses once dates are chosen.</li>
+    <li><strong>D5 · Social-links pass:</strong> a dedicated manual/automated sweep of official site footers to fill the remaining IG/YouTube/TikTok blanks (see Open Questions Q10).</li>
+    <li><strong>D6 · Data provenance page:</strong> auto-generated table of every source URL with fetch timestamps (the data/*.json files already carry this per row).</li>
+  </ul>
+  <p class="small">State your choices (e.g., "do D2 + D3") and they can be implemented in a follow-up pass; none of these change the verified findings above.</p>
+</section>
+
+</main>
+<footer class="site">Suggestions are proposals only · nothing implemented without review</footer>
+</body>
+</html>
