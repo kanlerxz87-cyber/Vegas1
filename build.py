@@ -447,7 +447,14 @@ even though the MICHELIN Guide still lists them. A guide listing is not proof th
     for r in rs:
         d = DET.get(r["id"], {})
         h = hours_text(d) if d else None
-        hcell = h if h else UNV
+        if h:
+            hcell = h
+        elif d and d.get("hours_unverified_reason"):
+            hcell = ('<span class="unv">unverified</span>'
+                     f'<div class="src">{e(d["external_consensus_hours"])}'
+                     '<br><em>Third-party only — not accepted as verified.</em></div>')
+        else:
+            hcell = UNV
         if d and d.get("hours_exceptions"):
             exc = e(d["hours_exceptions"])
         else:

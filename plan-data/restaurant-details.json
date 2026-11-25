@@ -78,21 +78,31 @@
     },
     {
       "id": "china-poblano",
-      "hours_source": null,
-      "hours": {},
-      "hours_exceptions": "not yet verified - open item",
+      "hours_source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html",
+      "hours": {
+        "mon_thu": "11:00 AM - 10:00 PM",
+        "fri": "11:00 AM - 10:30 PM",
+        "sat": "10:00 AM - 10:30 PM",
+        "sun": "10:00 AM - 10:00 PM"
+      },
+      "hours_exceptions": "Cocktail hour Mon-Thu 4:00-6:00 PM. Dress code casual. Reservations 877-893-2003. Rare for fine dining: open for lunch every day, from 10/11 AM.",
       "price_status": "unverified",
-      "per_person_usd_note": "Bib Gourmand means good food at moderate price; MICHELIN does not publish a price. unverified.",
+      "per_person_usd_note": "Bib Gourmand = good-value award; no per-person price published. Menu at chinapoblano.com/menus/.",
       "reservation_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html"
     },
     {
       "id": "esthers-kitchen",
-      "hours_source": null,
-      "hours": {},
-      "hours_exceptions": "Original site did not render a service-hours block; hours UNVERIFIED - flagged. Confirm via the site's reservations widget.",
+      "hours_source": "https://www.estherslv.com/location/esthers-kitchen/",
+      "hours": {
+        "lunch_mon_fri": "11:00 AM - 3:00 PM",
+        "brunch_sat_sun": "10:00 AM - 3:00 PM",
+        "dinner_daily": "5:00 PM - 11:00 PM"
+      },
+      "hours_exceptions": "Lunch and brunch end at 3 PM, dinner restarts at 5 PM - the kitchen is closed 3-5 PM daily. Parties of 6+: $15 per person credit-card hold. 1131 S Main St (Arts District), 702-570-7864.",
       "price_status": "unverified",
-      "per_person_usd_note": "unverified",
-      "reservation_url": "https://www.estherslv.com/"
+      "per_person_usd_note": "Two seatings a day means lunch is materially cheaper than dinner, but no published per-person total.",
+      "reservation_url": "https://www.estherslv.com/",
+      "official_hours_page": "https://www.estherslv.com/location/esthers-kitchen/"
     },
     {
       "id": "yen-viet-kitchen",
@@ -100,8 +110,10 @@
       "hours": {},
       "hours_exceptions": "Official site (Google Sites) does not publish hours in text form; hours UNVERIFIED - flagged.",
       "price_status": "unverified",
-      "per_person_usd_note": "unverified",
-      "reservation_url": "https://www.yenvietkitchen.com/"
+      "per_person_usd_note": "No published pricing; menu is hosted on a third-party ordering platform.",
+      "reservation_url": "https://www.yenvietkitchen.com/",
+      "hours_unverified_reason": "The restaurant's own site (yenvietkitchen.com, a Google Sites page) publishes NO hours. Directories agree on Mon & Wed-Sun 10AM-9PM, closed Tuesday, but the user's rule forbids using a third-party directory as a verified value, so hours stay blank.",
+      "external_consensus_hours": "Mon, Wed-Sun 10:00 AM - 9:00 PM; closed Tuesday (4 independent directories agree; not verifiable on an official page)"
     },
     {
       "id": "kabuto",
