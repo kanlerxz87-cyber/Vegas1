@@ -1,0 +1,72 @@
+{
+  "source": "Multiple travel sources (lasvegaswonders.com, klook.com, feelingvegas.com, hotelpricewatch.com) - see individual notes.",
+  "last_verified": "2026-11-25",
+  "note": "Pricing data for February 2027 is estimated. Actual prices must be verified at time of booking.",
+  "trip_dates": {
+    "preferred": "February 15-18, 2027 (4 nights)",
+    "range": "February 15 - March 23, 2027",
+    "recommended_stay": "7 nights",
+    "travelers": "2 adults"
+  },
+  "best_time_to_book": {
+    "booking_window": "30-60 days in advance of travel dates",
+    "cheapest_days_to_stay": "Sunday through Thursday (midweek)",
+    "most_expensive_night": "Saturday",
+    "cheapest_months": "January, February, June, July, August",
+    "recommendation": "For February 15-18, 2027: book approximately December 15, 2026 - January 14, 2027 (30-60 days out)"
+  },
+  "monthly_price_comparison": {
+    "February": "$180-$190 per night average (moderate occupancy ~81%)",
+    "March": "$180-$190 per night average (busiest ~83%, spring break)",
+    "note": "February and March have similar average rates, but February is preferred for lower crowds and better weather"
+  },
+  "hotel_cost_breakdown_example": {
+    "example_hotel": "Caesars Palace",
+    "nightly_rate_feb_2027": "$278",
+    "resort_fee_per_night": "$54.95 + tax",
+    "lodging_tax": "13.38% (Clark County)",
+    "estimated_7_night_room_only": "$1,946",
+    "estimated_7_night_resort_fees": "$384.65",
+    "estimated_7_night_taxes": "~$312",
+    "estimated_7_night_total": "~$2,642+"
+  },
+  "cheapest_hotels_found": [
+    {
+      "name": "Excalibur Hotel & Casino",
+      "rate": "From $25/night (published deal rate)",
+      "location": "The Strip",
+      "queen_bed": "Yes",
+      "private_bath": "Yes"
+    },
+    {
+      "name": "Ellis Island Hotel Casino & Brewery",
+      "rate": "From $33/night",
+      "location": "Near Strip",
+      "queen_bed": "Yes",
+      "private_bath": "Yes"
+    },
+    {
+      "name": "Mardi Gras Hotel & Casino",
+      "rate": "From $61.23/night",
+      "location": "East of Strip",
+      "queen_bed": "Yes",
+      "private_bath": "Yes"
+    },
+    {
+      "name": "Four Queens Hotel & Casino",
+      "rate": "From $59/night",
+      "location": "Downtown (Fremont Street)",
+      "queen_bed": "Yes",
+      "private_bath": "Yes"
+    }
+  ],
+  "transportation_costs": {
+    "rtc_deuce_2_hour_pass": "$6",
+    "rtc_deuce_24_hour_pass": "$8",
+    "monorail_single_ride": "$5.75 online / $6.25 at station",
+    "monorail_24_hour_pass": "$13",
+    "rideshare_strip_typical": "$12-25",
+    "taxi_strip_typical": "$15-35",
+    "note": "Las Vegas has no subway system. Public transportation is bus-based (RTC) with monorail on east Strip."
+  }
+}
