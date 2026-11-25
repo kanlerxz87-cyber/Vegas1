@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Activities — Vegas1</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <div class="brand">Vegas1 · Las Vegas Trip Planner<small>2 adults · 1–2 weeks · Feb 15 – Mar 23, 2027</small></div>
+    <button class="navtoggle" aria-label="Toggle menu" onclick="document.getElementById('mainnav').classList.toggle('open')">Menu</button>
+    <nav class="main" id="mainnav">
+      <a href="index.html">Home</a>
+      <a href="michelin.html">Michelin</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="ranking.html">Ranking</a>
+      <a href="activities.html" class="active">Activities</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="summary.html">Summary</a>
+      <a href="suggestions.html">Suggestions</a>
+      <a href="questions.html">Questions</a>
+      <a href="verified.html">Verification</a>
+      <a href="flagged.html">Flagged</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Activities within ~1 hour of a central-Strip hotel</h1>
+  <p class="lead">Activities chosen so travel from a central-Strip hotel stays within about <b>1 hour</b>. Travel mode and cost are shown. The <b>Grand Canyon</b> exceeds the 1-hour rule (~2.5 hrs) and is flagged.</p>
+
+  <div class="note">
+    <strong>Transit note:</strong> Las Vegas has no subway. Strip/Downtown travel uses the <b>RTC Deuce bus</b> and <b>Las Vegas Monorail</b>. Desert attractions (Red Rock, Hoover Dam, AREA15) have no direct transit — reached by rental car, rideshare, or guided tour bus.
+  </div>
+
+  <h2>Activities</h2>
+  <div class="tablewrap">
+  <table>
+    <caption>Sources: official attraction websites (linked per row)</caption>
+    <thead><tr>
+      <th>Activity</th><th>Area</th><th>Travel from central Strip</th><th>Cost</th><th>Duration</th><th>Hours</th><th>Official link</th><th>Social</th><th>Source</th>
+    </tr></thead>
+    <tbody>
+      <tr><td><b>Bellagio Fountains</b></td><td>Center Strip</td><td>Walk / Deuce — 0–10 min</td><td>Free</td><td>30–45 min</td><td>Shows every 15–30 min; weekdays from ~3 PM, weekends from noon, until midnight</td><td><a href="https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html">bellagio.mgmresorts.com</a></td><td class="unv">—</td><td class="src"><a href="https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html">bellagio.mgmresorts.com</a></td></tr>
+      <tr><td><b>Bellagio Conservatory</b></td><td>Center Strip</td><td>Walk — 0–10 min</td><td>Free</td><td>30–45 min</td><td class="unv">Open daily; changes seasonally — confirm</td><td><a href="https://bellagio.mgmresorts.com/en/entertainment/conservatory-and-botanical-gardens.html">bellagio.mgmresorts.com</a></td><td class="unv">—</td><td class="src"><a href="https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html">bellagio.mgmresorts.com</a></td></tr>
+      <tr><td><b>The Sphere Experience</b></td><td>Behind The Venetian</td><td>Walk / Deuce — 5–15 min</td><td>~$79–$189</td><td>1.5–2 hrs</td><td class="unv">Multiple showtimes daily — confirm</td><td><a href="https://www.thesphere.com/">thesphere.com</a></td><td class="unv">—</td><td class="src"><a href="https://www.thesphere.com/">thesphere.com</a></td></tr>
+      <tr><td><b>Fremont Street Experience</b></td><td>Downtown</td><td>Deuce bus — ~30–40 min</td><td>Free</td><td>2–3 hrs</td><td class="unv">Evenings; LED show hourly from dusk — confirm</td><td><a href="https://vegasexperience.com/">vegasexperience.com</a></td><td class="unv">—</td><td class="src"><a href="https://vegasexperience.com/">vegasexperience.com</a></td></tr>
+      <tr><td><b>High Roller Observation Wheel</b></td><td>The LINQ Promenade</td><td>Walk / Deuce — 5–15 min</td><td>~$22–$60</td><td>30 min ride</td><td class="unv">Daily; sunset recommended — confirm</td><td><a href="https://www.thehighroller.com/">thehighroller.com</a></td><td class="unv">—</td><td class="src"><a href="https://www.thehighroller.com/">thehighroller.com</a></td></tr>
+      <tr><td><b>Hoover Dam</b></td><td>45 min SE</td><td>No transit — tour bus / rideshare / rental car, ~45 min</td><td>Free to view; tours ~$15–$30</td><td>Half day</td><td class="unv">Visitor area daily; tour schedules vary — confirm</td><td><a href="https://www.usbr.gov/dlc/hoover/">usbr.gov</a></td><td class="unv">—</td><td class="src"><a href="https://www.usbr.gov/dlc/hoover/">usbr.gov</a></td></tr>
+      <tr><td><b>Red Rock Canyon NCA</b></td><td>30 min west</td><td>No transit — rental car / tour, ~30 min</td><td>$20/vehicle; timed-entry $2 (Oct 1–May 31)</td><td>Half day</td><td>Scenic drive 6 AM–close; visitor center 8 AM–4:30 PM; timed entry 8 AM–5 PM Oct–May</td><td><a href="https://www.recreation.gov/recarea/blm/nv/las-vegas/recreational-activities/camping-campgrounds/red-rock-canyon-scenic-drive">recreation.gov</a></td><td class="unv">—</td><td class="src"><a href="https://www.recreation.gov/">recreation.gov</a></td></tr>
+      <tr><td><b>The Neon Museum</b></td><td>Downtown</td><td>Deuce bus — ~30–40 min</td><td>From $21 (2027 admission)</td><td>1–1.5 hrs</td><td>Daily 3 PM–11 PM</td><td><a href="https://neonmuseum.org/">neonmuseum.org</a></td><td class="unv">—</td><td class="src"><a href="https://neonmuseum.org/">neonmuseum.org</a></td></tr>
+      <tr><td><b>The Mob Museum</b></td><td>Downtown</td><td>Deuce bus — ~30–40 min</td><td>GA $34.95 (non-NV)</td><td>2–2.5 hrs</td><td>Daily 9 AM–9 PM</td><td><a href="https://www.themobmuseum.org/">themobmuseum.org</a></td><td class="unv">—</td><td class="src"><a href="https://www.themobmuseum.org/">themobmuseum.org</a></td></tr>
+      <tr><td><b>AREA15 &amp; Omega Mart</b></td><td>Off-Strip (west)</td><td>Rideshare / rental car ~15–20 min (no direct transit)</td><td>AREA15 free; Omega Mart ~$45–$46</td><td>2–4 hrs</td><td class="unv">AREA15 ~11:30 AM–10 PM; Omega Mart ~10 AM–11 PM — confirm</td><td><a href="https://area15.com/">area15.com</a></td><td class="unv">—</td><td class="src"><a href="https://area15.com/">area15.com</a></td></tr>
+      <tr><td><b>Venetian Grand Canal &amp; Gondolas</b></td><td>Center Strip</td><td>Walk / Deuce — 0–15 min</td><td>Free to walk; gondola ~$39</td><td>1–2 hrs</td><td class="unv">Indoor; open daily — confirm</td><td><a href="https://www.venetianlasvegas.com/experiences/gondola-rides-of-las-vegas/">venetianlasvegas.com</a></td><td class="unv">—</td><td class="src"><a href="https://www.venetianlasvegas.com/">venetianlasvegas.com</a></td></tr>
+      <tr><td><b>Grand Canyon (West Rim)</b></td><td>~2.5 hrs west</td><td><span class="badge b-unv">EXCEEDS 1 hour</span> ~2.5 hrs</td><td>Bus tours ~$100+; heli ~$400+</td><td>Full day</td><td class="unv">Open daily; tour pickup times vary — confirm</td><td><a href="https://www.nps.gov/grca/">nps.gov/grca</a></td><td class="unv">—</td><td class="src"><a href="https://www.nps.gov/grca/">nps.gov/grca</a></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="flag">
+    <h3>Flagged — Grand Canyon exceeds the 1-hour rule</h3>
+    <p>The Grand Canyon West Rim is ~2.5 hours from the Strip. It is included as a bucket-list full-day option but does <b>not</b> satisfy the "1 hour or less" activity-travel requirement. If the 1-hour rule is strict, substitute Red Rock Canyon or Hoover Dam (both within ~45 min).</p>
+  </div>
+
+  <p class="totop"><a href="index.html">← Back to dashboard</a></p>
+</main>
+<footer class="site"><div class="wrap">Vegas1 Trip Planner · Activities verified 2026-11-25 against official sites. <a href="verified.html">Verification</a> · <a href="flagged.html">Flagged</a></div></footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

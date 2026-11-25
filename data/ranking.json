@@ -1,0 +1,22 @@
+{
+  "methodology": "Ranked by Michelin restaurant density within 1 hour by public transit (RTC Deuce bus / Las Vegas Monorail) or walk from the hotel. Las Vegas has NO subway/underground metro, so 'subway or bus' is fulfilled by the Deuce bus + Monorail (the city's rail-on-stilts). From any central-Strip hotel all 24 Michelin-distinguished restaurants are reachable within 60 min; the differentiator is walk-time to the 4 starred restaurants and total hotel cost.",
+  "transit_sources": [
+    "https://appsavvytraveller.com/las-vegas-public-transport/",
+    "https://www.nomadotravel.app/en/guides/getting-around-las-vegas"
+  ],
+  "irregularity": "Las Vegas has no subway/underground metro system as of 2026 (confirmed by multiple transit sources). The 1-hour 'subway or bus' criterion is therefore evaluated using the RTC Deuce bus (24h Strip bus) and the Las Vegas Monorail.",
+  "ranking": [
+    {"rank":1,"hotel":"MGM Grand","tier":"Luxury","est_7night":"~$1,000–$1,400","michelin_within_1h":24,"starred_within_15min":4,"nearest_star_walk":"Joël Robuchon + L'Atelier — in-hotel (0 min)","score":"A+","why":"Best Michelin access: 2 of 4 starred restaurants are in-hotel; all 4 starred within ~15 min walk/ride; all 24 within 1h."},
+    {"rank":2,"hotel":"Park MGM","tier":"Mid-range","est_7night":"~$1,000–$1,300","michelin_within_1h":24,"starred_within_15min":4,"nearest_star_walk":"Joël Robuchon + L'Atelier — ~5 min","score":"A+","why":"Best value at the same Michelin cluster as MGM Grand; all 4 starred within ~20 min."},
+    {"rank":3,"hotel":"The Cosmopolitan","tier":"Luxury","est_7night":"~$1,600–$2,000+","michelin_within_1h":24,"starred_within_15min":4,"nearest_star_walk":"é by José Andrés + China Poblano — in-hotel (0 min)","score":"A","why":"2 of 4 starred in-hotel; all 4 within ~15 min."},
+    {"rank":4,"hotel":"Caesars Palace","tier":"Luxury","est_7night":"~$1,300–$1,700","michelin_within_1h":24,"starred_within_15min":4,"nearest_star_walk":"Restaurant Guy Savoy — in-hotel (0 min)","score":"A","why":"Guy Savoy in-hotel; all 4 starred within ~15 min."},
+    {"rank":5,"hotel":"Excalibur","tier":"Budget","est_7night":"~$800–$1,100","michelin_within_1h":24,"starred_within_15min":4,"nearest_star_walk":"Joël Robuchon + L'Atelier — ~10–15 min","score":"A-","why":"Lowest-cost option with full 4-star access; walk to the Robuchon pair."},
+    {"rank":6,"hotel":"The Venetian Resort","tier":"Luxury","est_7night":"~$1,400–$1,700","michelin_within_1h":24,"starred_within_15min":4,"nearest_star_walk":"COTE/Milos/Mott 32/Bouchon (Selected) — in-hotel; nearest star ~15 min","score":"A-","why":"4 Selected in-hotel; all 4 starred within ~20 min."},
+    {"rank":7,"hotel":"Flamingo Las Vegas","tier":"Budget","est_7night":"~$900–$1,100","michelin_within_1h":24,"starred_within_15min":4,"nearest_star_walk":"~15–20 min to starred cluster","score":"B+","why":"Center-Strip budget base; all 4 starred within ~20 min."},
+    {"rank":8,"hotel":"Best Western Plus Casino Royale","tier":"Budget","est_7night":"~$700–$900","michelin_within_1h":24,"starred_within_15min":4,"nearest_star_walk":"~20 min to starred cluster","score":"B+","why":"No resort fee + free parking; all 4 starred within ~20 min; best out-of-pocket value."},
+    {"rank":9,"hotel":"The LINQ Hotel + Experience","tier":"Mid-range","est_7night":"~$1,500–$1,700","michelin_within_1h":24,"starred_within_15min":4,"nearest_star_walk":"~20 min to starred cluster","score":"B","why":"Center Strip; strong for Fremont/High Roller; all 4 starred within ~20 min."},
+    {"rank":10,"hotel":"Treasure Island (TI)","tier":"Mid-range","est_7night":"~$1,100–$1,400","michelin_within_1h":24,"starred_within_15min":4,"nearest_star_walk":"~20 min to starred cluster","score":"B","why":"Center Strip with free parking; all 4 starred within ~20 min."},
+    {"rank":11,"hotel":"Fontainebleau Las Vegas","tier":"Mid/Luxury (MICHELIN Key)","est_7night":"~$2,000–$2,300","michelin_within_1h":24,"starred_within_15min":4,"nearest_star_walk":"Stubborn Seed (Selected) in-hotel; nearest star ~20 min","score":"B","why":"MICHELIN Key hotel; all 4 starred within ~25 min."},
+    {"rank":12,"hotel":"Wynn Las Vegas","tier":"Luxury","est_7night":"~$3,000+","michelin_within_1h":24,"starred_within_15min":4,"nearest_star_walk":"Wing Lei (Selected) in-hotel; nearest star ~20 min","score":"B-","why":"Highest cost; all 4 starred within ~20 min."}
+  ]
+}

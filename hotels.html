@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotels — Vegas1</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <div class="brand">Vegas1 · Las Vegas Trip Planner<small>2 adults · 1–2 weeks · Feb 15 – Mar 23, 2027</small></div>
+    <button class="navtoggle" aria-label="Toggle menu" onclick="document.getElementById('mainnav').classList.toggle('open')">Menu</button>
+    <nav class="main" id="mainnav">
+      <a href="index.html">Home</a>
+      <a href="michelin.html">Michelin</a>
+      <a href="hotels.html" class="active">Hotels</a>
+      <a href="ranking.html">Ranking</a>
+      <a href="activities.html">Activities</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="summary.html">Summary</a>
+      <a href="suggestions.html">Suggestions</a>
+      <a href="questions.html">Questions</a>
+      <a href="verified.html">Verification</a>
+      <a href="flagged.html">Flagged</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Hotels — price, location, amenities</h1>
+  <p class="lead">All options meet the brief: <b>private bathroom</b> and a <b>queen-size bed or larger</b> for <b>2 adults</b>. Total prices are estimated for a <b>7-night stay</b> (room + resort fee + Clark County tax ≈ 13.38%). Rates are dynamic snapshots captured 2026-11-25 — confirm live at booking.</p>
+
+  <div class="note">
+    <strong>Total-price formula:</strong> 7-night total ≈ (nightly rate + resort fee) × 7 × 1.1338. Source: <a href="https://www.lasvegascompass.com/hotels-and-resorts/resort-fees-explained">lasvegascompass.com (resort fees &amp; tax)</a>.
+  </div>
+
+  <h2>Candidate hotels</h2>
+  <div class="tablewrap">
+  <table>
+    <caption>Sources: booking.com, luminafrontier.ai, hoteltiplasvegas.com, official hotel sites</caption>
+    <thead><tr>
+      <th>Hotel</th><th>Tier</th><th>Area</th><th>Nightly "from"</th><th>Resort fee</th><th>7-night total (est.)</th><th>Bed / amenity fit</th><th>Michelin access</th><th>Source</th>
+    </tr></thead>
+    <tbody>
+      <tr><td><b>MGM Grand</b></td><td>Luxury</td><td>South/Center Strip</td><td>~$71–$120</td><td>$50/night</td><td>~$1,000–$1,400</td><td>King/Queen · private bath</td><td>Walk to Joël Robuchon + L'Atelier (in-hotel)</td><td class="src"><a href="https://www.luminafrontier.ai/en/hotels/the-venetian-las-vegas/the-venetian-prices/">luminafrontier.ai</a></td></tr>
+      <tr><td><b>Caesars Palace</b></td><td>Luxury</td><td>Center Strip</td><td>~$113</td><td>$54.95/night</td><td>~$1,300–$1,700</td><td>King/Queen · private bath</td><td>Walk to Guy Savoy (in-hotel)</td><td class="src"><a href="https://www.luminafrontier.ai/en/hotels/the-venetian-las-vegas/the-venetian-prices/">luminafrontier.ai</a></td></tr>
+      <tr><td><b>The Cosmopolitan</b></td><td>Luxury</td><td>Center Strip</td><td>~$200+</td><td>resort fee applies</td><td>~$1,600–$2,000+</td><td>King/Queen · private bath</td><td>Walk to é by José Andrés + China Poblano (in-hotel)</td><td class="src"><a href="https://www.booking.com/district/us/las-vegas/strip-las-vegas.html">booking.com</a></td></tr>
+      <tr><td><b>The Venetian Resort</b></td><td>Luxury</td><td>Center Strip</td><td>$139 (suite)</td><td>$55/night</td><td>~$1,400–$1,700</td><td>Suite · King/Queen · private bath</td><td>Walk to COTE, Milos, Mott 32, Bouchon</td><td class="src"><a href="https://www.luminafrontier.ai/en/hotels/the-venetian-las-vegas/the-venetian-prices/">luminafrontier.ai</a></td></tr>
+      <tr><td><b>Wynn Las Vegas</b></td><td>Luxury</td><td>North Strip</td><td>$398.70</td><td>resort fee applies</td><td>~$3,000+</td><td>King/Queen · private bath</td><td>Walk to Wing Lei (in-hotel)</td><td class="src"><a href="https://www.booking.com/district/us/las-vegas/strip-las-vegas.html">booking.com</a></td></tr>
+      <tr><td><b>Park MGM</b></td><td>Mid-range</td><td>South Strip</td><td>~$71–$113</td><td>$50/night</td><td>~$1,000–$1,300</td><td>King/Queen · private bath</td><td>Adjacent to MGM Grand; walk to both Robuchon restaurants</td><td class="src"><a href="https://www.luminafrontier.ai/en/hotels/the-venetian-las-vegas/the-venetian-prices/">luminafrontier.ai</a></td></tr>
+      <tr><td><b>Fontainebleau Las Vegas</b></td><td>Mid/Luxury (MICHELIN Key)</td><td>Mid-Strip</td><td>$257.30</td><td>resort fee applies</td><td>~$2,000–$2,300</td><td>King/Queen · private bath</td><td>Walk to Stubborn Seed (Resorts World)</td><td class="src"><a href="https://www.booking.com/district/us/las-vegas/strip-las-vegas.html">booking.com</a></td></tr>
+      <tr><td><b>The LINQ Hotel + Experience</b></td><td>Mid-range</td><td>Center Strip</td><td>~$189 (suite)</td><td>$49.95/night</td><td>~$1,500–$1,700</td><td>King/Queen · private bath</td><td>Center Strip; walk to High Roller / Fremont</td><td class="src"><a href="https://www.biplasvegas.com/how-to-book-a-suite-on-the-strip-under--200-in-las-vegas">biplasvegas.com</a></td></tr>
+      <tr><td><b>Treasure Island (TI)</b></td><td>Mid-range</td><td>Center Strip</td><td>mid-range</td><td>$49.95/night</td><td>~$1,100–$1,400</td><td>King/Queen · private bath</td><td>Center Strip; free self-parking + valet</td><td class="src"><a href="https://hoteltiplasvegas.com/cheap-hotels-las-vegas/">hoteltiplasvegas.com</a></td></tr>
+      <tr><td><b>Excalibur Hotel &amp; Casino</b></td><td>Budget</td><td>South Strip</td><td>budget</td><td>$45/night</td><td>~$800–$1,100</td><td>King/Queen · private bath</td><td>Near MGM Grand; walk to both Robuchon restaurants</td><td class="src"><a href="https://hoteltiplasvegas.com/cheap-hotels-las-vegas/">hoteltiplasvegas.com</a></td></tr>
+      <tr><td><b>Flamingo Las Vegas</b></td><td>Budget</td><td>Center Strip</td><td>$69.59</td><td>$49.95/night</td><td>~$900–$1,100</td><td>King/Queen · private bath</td><td>Center Strip</td><td class="src"><a href="https://www.booking.com/budget/city/us/las-vegas.html">booking.com</a></td></tr>
+      <tr><td><b>Best Western Plus Casino Royale</b></td><td>Budget</td><td>Center Strip</td><td>budget</td><td><b>NONE</b></td><td>~$700–$900</td><td>King/Queen · private bath</td><td>Center Strip; no resort fee + free parking</td><td class="src"><a href="https://hoteltiplasvegas.com/cheap-hotels-las-vegas/">hoteltiplasvegas.com</a></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="warn">
+    <h3>Reading the totals</h3>
+    <ul>
+      <li>Nightly "from" rates are dynamic and were captured 2026-11-25; they may differ from live rates for Feb–Mar 2027.</li>
+      <li><b>Resort fees</b> are mandatory, separate from the room rate, and taxed. <b>Parking</b> is an additional $18–$30/night at most Strip resorts (free at Casino Royale, Treasure Island, SAHARA, Circus Circus, The STRAT for NV IDs).</li>
+      <li>The <b>cheapest out-of-pocket</b> base is <b>Best Western Plus Casino Royale</b> (no resort fee, free parking); the <b>best Michelin access</b> is <b>MGM Grand / Park MGM / The Cosmopolitan / Caesars Palace</b>.</li>
+    </ul>
+  </div>
+
+  <p class="totop"><a href="index.html">← Back to dashboard</a> · <a href="ranking.html">See the Michelin-density ranking →</a></p>
+</main>
+<footer class="site"><div class="wrap">Vegas1 Trip Planner · Hotel rates verified 2026-11-25 (dynamic). <a href="verified.html">Verification</a> · <a href="flagged.html">Flagged</a></div></footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

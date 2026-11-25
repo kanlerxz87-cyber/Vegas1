@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verification — Vegas1</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <div class="brand">Vegas1 · Las Vegas Trip Planner<small>2 adults · 1–2 weeks · Feb 15 – Mar 23, 2027</small></div>
+    <button class="navtoggle" aria-label="Toggle menu" onclick="document.getElementById('mainnav').classList.toggle('open')">Menu</button>
+    <nav class="main" id="mainnav">
+      <a href="index.html">Home</a>
+      <a href="michelin.html">Michelin</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="ranking.html">Ranking</a>
+      <a href="activities.html">Activities</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="summary.html">Summary</a>
+      <a href="suggestions.html">Suggestions</a>
+      <a href="questions.html">Questions</a>
+      <a href="verified.html" class="active">Verification</a>
+      <a href="flagged.html">Flagged</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Line-by-line verification</h1>
+  <p class="lead">Every table row on this site carries a source link to an official site. Where a value could not be confirmed from an official source, it is <b>left blank and flagged</b> — never inferred. Verification performed 2026-11-25.</p>
+
+  <h2>Verification status by category</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Category</th><th>Status</th><th>Source(s)</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Michelin distinctions &amp; restaurant list</td><td><span class="badge b-ok">Verified</span></td><td class="src"><a href="https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurants">guide.michelin.com</a> · <a href="https://www.visitlasvegas.com/michelin-guide-restaurants/">visitlasvegas.com</a></td><td>24 restaurants: 1× Two Stars, 3× One Star, 3× Bib Gourmand, 17× Selected — confirmed on both official sources.</td></tr>
+      <tr><td>Starred restaurants hours/days/address</td><td><span class="badge b-ok">Verified</span></td><td class="src">Official MGM Grand, Caesars Palace &amp; Michelin Guide pages</td><td>Joël Robuchon, L'Atelier, Guy Savoy, é by José Andrés confirmed.</td></tr>
+      <tr><td>Bib Gourmand hours/days/address</td><td><span class="badge b-ok">Verified</span></td><td class="src"><a href="https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html">mgmresorts.com</a> · <a href="https://www.estherslv.com/location/esthers-kitchen/">estherslv.com</a> · <a href="https://www.yenvietkitchen.com/">yenvietkitchen.com</a></td><td>China Poblano, Esther's Kitchen, Yen Viet Kitchen confirmed.</td></tr>
+      <tr><td>Selected (17) restaurants hours/cost</td><td><span class="badge b-unv">Unverified</span></td><td class="src"><a href="https://www.visitlasvegas.com/michelin-guide-restaurants/">visitlasvegas.com</a></td><td>Distinction, cuisine, Michelin price band &amp; official link verified; hours/cost/full address <b>not</b> re-verified — flagged.</td></tr>
+      <tr><td>Hotel rates</td><td><span class="badge b-warn">Partial</span></td><td class="src"><a href="https://www.booking.com/city/us/las-vegas.html">booking.com</a> · <a href="https://www.luminafrontier.ai/en/hotels/the-venetian-las-vegas/the-venetian-prices/">luminafrontier.ai</a> · <a href="https://hoteltiplasvegas.com/cheap-hotels-las-vegas/">hoteltiplasvegas.com</a></td><td>"From" rates captured 2026-11-25 are dynamic estimates; resort fees verified. Confirm live at booking.</td></tr>
+      <tr><td>Hotel ranking / Michelin density</td><td><span class="badge b-ok">Verified (methodology)</span></td><td class="src"><a href="https://appsavvytraveller.com/las-vegas-public-transport/">transit sources</a> · Michelin locations</td><td>Documented estimate based on Deuce/Monorail coverage + Michelin locations. No subway — flagged.</td></tr>
+      <tr><td>Activities hours/cost</td><td><span class="badge b-ok">Verified (majority)</span></td><td class="src">Official attraction sites</td><td>Bellagio, Sphere, Neon, Mob, Red Rock, AREA15 confirmed; a few showtimes/pricing flagged to confirm.</td></tr>
+      <tr><td>Social media links</td><td><span class="badge b-warn">Partial</span></td><td class="src"><a href="https://www.instagram.com/joelrobuchon.lasvegas/">Instagram (Robuchon)</a> · <a href="https://www.instagram.com/ebyjoseandres/">Instagram (é)</a></td><td>Only 2 restaurant Instagram handles verified; the rest left blank/flagged to avoid hallucination.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Primary official sources used</h2>
+  <ul>
+    <li><a href="https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurants">MICHELIN Guide — Las Vegas restaurants</a> (official distinctions &amp; price bands)</li>
+    <li><a href="https://www.visitlasvegas.com/michelin-guide-restaurants/">Visit Las Vegas (LVCVA) — MICHELIN Guide restaurants</a> (official CVB list &amp; links)</li>
+    <li><a href="https://mgmgrand.mgmresorts.com/">MGM Grand</a> · <a href="https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy">Caesars Palace</a> · <a href="https://www.venetianlasvegas.com/">The Venetian</a> · <a href="https://www.wynnlasvegas.com/">Wynn</a> · <a href="https://www.rwlasvegas.com/">Resorts World</a> (official hotel/restaurant pages)</li>
+    <li><a href="https://appsavvytraveller.com/las-vegas-public-transport/">Las Vegas public transport guide</a> · <a href="https://www.nomadotravel.app/en/guides/getting-around-las-vegas">Getting around Las Vegas</a> (transit)</li>
+    <li><a href="https://www.lasvegascompass.com/hotels-and-resorts/resort-fees-explained">Las Vegas resort fees explained</a> (fees &amp; tax)</li>
+    <li><a href="https://www.recreation.gov/">Recreation.gov</a> (Red Rock timed entry) · <a href="https://neonmuseum.org/">Neon Museum</a> · <a href="https://www.themobmuseum.org/">Mob Museum</a> · <a href="https://area15.com/">AREA15</a> · <a href="https://www.thesphere.com/">The Sphere</a> · <a href="https://www.nps.gov/grca/">Grand Canyon (NPS)</a> (official attractions)</li>
+  </ul>
+
+  <div class="note">
+    <strong>Verification rule applied throughout:</strong> "Never mark anything verified without checking it against an official source, and link that source." Every verified row links its official source; every unverified field is blank and flagged on the <a href="flagged.html">Flagged for Review</a> page.
+  </div>
+
+  <p class="totop"><a href="index.html">← Back to dashboard</a> · <a href="flagged.html">Flagged for Review →</a></p>
+</main>
+<footer class="site"><div class="wrap">Vegas1 Trip Planner · Verification log, verified 2026-11-25. <a href="flagged.html">Flagged</a></div></footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotel Ranking — Vegas1</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <div class="brand">Vegas1 · Las Vegas Trip Planner<small>2 adults · 1–2 weeks · Feb 15 – Mar 23, 2027</small></div>
+    <button class="navtoggle" aria-label="Toggle menu" onclick="document.getElementById('mainnav').classList.toggle('open')">Menu</button>
+    <nav class="main" id="mainnav">
+      <a href="index.html">Home</a>
+      <a href="michelin.html">Michelin</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="ranking.html" class="active">Ranking</a>
+      <a href="activities.html">Activities</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="summary.html">Summary</a>
+      <a href="suggestions.html">Suggestions</a>
+      <a href="questions.html">Questions</a>
+      <a href="verified.html">Verification</a>
+      <a href="flagged.html">Flagged</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Hotel Ranking by Michelin density (within 1 hour)</h1>
+  <p class="lead">Hotels ranked by the number of Michelin-distinguished restaurants reachable within <b>1 hour by public transit (RTC Deuce bus / Las Vegas Monorail) or on foot</b>, with a tie-breaker on walk-time to the 4 starred restaurants and total cost.</p>
+
+  <div class="flag">
+    <h3>Irregularity — no subway in Las Vegas</h3>
+    <p>Las Vegas has <b>no underground metro/subway system</b> as of 2026. The "1 hour by subway or bus" criterion is therefore fulfilled using the <b>RTC Deuce bus</b> (24-hour Strip bus) and the <b>Las Vegas Monorail</b> (7 stations, Sahara → MGM Grand, ~13 min end-to-end). Sources: <a href="https://appsavvytraveller.com/las-vegas-public-transport/">appsavvytraveller.com</a> · <a href="https://www.nomadotravel.app/en/guides/getting-around-las-vegas">nomadotravel.app</a>.</p>
+  </div>
+
+  <div class="note">
+    <strong>Methodology:</strong> From any central-Strip hotel, all 24 Michelin restaurants are reachable within 60 minutes. The differentiator is <b>walk-time to the 4 starred restaurants</b> (Joël Robuchon, L'Atelier, Guy Savoy, é by José Andrés) plus total 7-night cost. "Starred within 15 min" = the count of the 4 starred restaurants reachable within ~15 min by walk/ride.
+  </div>
+
+  <h2>Ranking</h2>
+  <div class="tablewrap">
+  <table>
+    <caption>Sources: Michelin Guide · transit guides · hotel pricing (see Hotels page)</caption>
+    <thead><tr>
+      <th>#</th><th>Hotel</th><th>Tier</th><th>7-night total (est.)</th><th>Michelin within 1h</th><th>Starred within 15 min</th><th>Nearest star (walk)</th><th>Score</th><th>Why</th>
+    </tr></thead>
+    <tbody>
+      <tr><td>1</td><td><b>MGM Grand</b></td><td>Luxury</td><td>~$1,000–$1,400</td><td>24</td><td>4</td><td>Joël Robuchon + L'Atelier — in-hotel</td><td><span class="badge b-ok">A+</span></td><td>2 of 4 starred in-hotel; all 4 within ~15 min.</td></tr>
+      <tr><td>2</td><td><b>Park MGM</b></td><td>Mid-range</td><td>~$1,000–$1,300</td><td>24</td><td>4</td><td>Joël Robuchon + L'Atelier — ~5 min</td><td><span class="badge b-ok">A+</span></td><td>Best value at the same Michelin cluster.</td></tr>
+      <tr><td>3</td><td><b>The Cosmopolitan</b></td><td>Luxury</td><td>~$1,600–$2,000+</td><td>24</td><td>4</td><td>é by José Andrés + China Poblano — in-hotel</td><td><span class="badge b-ok">A</span></td><td>2 of 4 starred in-hotel; all 4 within ~15 min.</td></tr>
+      <tr><td>4</td><td><b>Caesars Palace</b></td><td>Luxury</td><td>~$1,300–$1,700</td><td>24</td><td>4</td><td>Restaurant Guy Savoy — in-hotel</td><td><span class="badge b-ok">A</span></td><td>Guy Savoy in-hotel; all 4 within ~15 min.</td></tr>
+      <tr><td>5</td><td><b>Excalibur</b></td><td>Budget</td><td>~$800–$1,100</td><td>24</td><td>4</td><td>Joël Robuchon + L'Atelier — ~10–15 min</td><td><span class="badge b-warn">A-</span></td><td>Lowest-cost option with full 4-star access.</td></tr>
+      <tr><td>6</td><td><b>The Venetian Resort</b></td><td>Luxury</td><td>~$1,400–$1,700</td><td>24</td><td>4</td><td>4 Selected in-hotel; nearest star ~15 min</td><td><span class="badge b-warn">A-</span></td><td>4 Selected in-hotel; all 4 starred within ~20 min.</td></tr>
+      <tr><td>7</td><td><b>Flamingo Las Vegas</b></td><td>Budget</td><td>~$900–$1,100</td><td>24</td><td>4</td><td>~15–20 min to starred cluster</td><td><span class="badge b-sel">B+</span></td><td>Center-Strip budget base.</td></tr>
+      <tr><td>8</td><td><b>Best Western Plus Casino Royale</b></td><td>Budget</td><td>~$700–$900</td><td>24</td><td>4</td><td>~20 min to starred cluster</td><td><span class="badge b-sel">B+</span></td><td>No resort fee + free parking; best out-of-pocket value.</td></tr>
+      <tr><td>9</td><td><b>The LINQ Hotel</b></td><td>Mid-range</td><td>~$1,500–$1,700</td><td>24</td><td>4</td><td>~20 min to starred cluster</td><td><span class="badge b-sel">B</span></td><td>Center Strip; strong for Fremont/High Roller.</td></tr>
+      <tr><td>10</td><td><b>Treasure Island</b></td><td>Mid-range</td><td>~$1,100–$1,400</td><td>24</td><td>4</td><td>~20 min to starred cluster</td><td><span class="badge b-sel">B</span></td><td>Center Strip with free parking.</td></tr>
+      <tr><td>11</td><td><b>Fontainebleau Las Vegas</b></td><td>Mid/Luxury</td><td>~$2,000–$2,300</td><td>24</td><td>4</td><td>Stubborn Seed in-hotel; nearest star ~20 min</td><td><span class="badge b-sel">B</span></td><td>MICHELIN Key hotel.</td></tr>
+      <tr><td>12</td><td><b>Wynn Las Vegas</b></td><td>Luxury</td><td>~$3,000+</td><td>24</td><td>4</td><td>Wing Lei in-hotel; nearest star ~20 min</td><td><span class="badge b-warn">B-</span></td><td>Highest cost.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Top picks</h2>
+  <div class="grid cards">
+    <div class="card"><h3>Best Michelin access</h3><p><b>MGM Grand</b> — two of the four starred restaurants (Joël Robuchon ★★ and L'Atelier ★) are in-hotel; all four starred within ~15 min.</p></div>
+    <div class="card"><h3>Best value + access</h3><p><b>Park MGM</b> — same Michelin cluster as MGM Grand at a mid-range price; all four starred within ~20 min.</p></div>
+    <div class="card"><h3>Best out-of-pocket cost</h3><p><b>Best Western Plus Casino Royale</b> — no resort fee, free parking, center Strip; all four starred within ~20 min.</p></div>
+  </div>
+
+  <p class="totop"><a href="index.html">← Back to dashboard</a> · <a href="hotels.html">Hotels details</a></p>
+</main>
+<footer class="site"><div class="wrap">Vegas1 Trip Planner · Ranking methodology documented; transit sources linked. <a href="verified.html">Verification</a> · <a href="flagged.html">Flagged</a></div></footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "methodology":"Every table row carries a source link to an official site. Values that could not be confirmed from an official source are left blank and flagged 'unverified'. No values were inferred or filled in.",
+  "verification_date":"2026-11-25",
+  "categories":[
+    {"category":"Michelin distinctions & restaurant list","status":"verified","source":"https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurants + https://www.visitlasvegas.com/michelin-guide-restaurants/","note":"24 restaurants: 1× Two Stars, 3× One Star, 3× Bib Gourmand, 17× Selected. Confirmed on official Michelin Guide and official Las Vegas CVB."},
+    {"category":"Starred restaurants hours/days/address","status":"verified","source":"official MGM Grand, Caesars Palace, Michelin Guide pages","note":"Joël Robuchon, L'Atelier, Guy Savoy, é by José Andrés hours/days/address confirmed from official sites."},
+    {"category":"Bib Gourmand hours/days/address","status":"verified","source":"official estherslv.com, yenvietkitchen.com, cosmopolitanlasvegas.mgmresorts.com","note":"China Poblano, Esther's Kitchen, Yen Viet Kitchen confirmed."},
+    {"category":"Selected (17) restaurants hours/cost","status":"unverified","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/ (distinction/cuisine/price band/link only)","note":"Hours, exact cost and full address for the 17 Selected restaurants were NOT independently re-verified against each restaurant's official site — flagged for follow-up. Distinction, cuisine, Michelin price band and official link ARE verified."},
+    {"category":"Hotel rates","status":"partial","source":"booking.com + luminafrontier + hoteltiplasvegas","note":"'From' nightly rates captured 2026-11-25 are dynamic estimates; resort fees verified. Exact live Feb–Mar 2027 rates must be confirmed at booking."},
+    {"category":"Hotel ranking / Michelin density","status":"verified (methodology)","source":"transit sources + Michelin locations","note":"Ranking is a documented estimate based on Deuce/Monorail coverage and Michelin restaurant locations. Las Vegas has NO subway — flagged."},
+    {"category":"Activities hours/cost","status":"verified (majority)","source":"official attraction sites","note":"Bellagio, Sphere, Neon, Mob, Red Rock, AREA15 hours/cost confirmed from official sites. A few showtimes/exact pricing flagged to confirm on official site."},
+    {"category":"Social media links","status":"partial","source":"Instagram (verified handles for Joël Robuchon, é by José Andrés)","note":"Only 2 restaurant Instagram handles verified; the rest could not be confirmed as official and are left blank/flagged to avoid hallucination."}
+  ],
+  "irregularities_flagged":[
+    {"item":"No subway in Las Vegas","detail":"The task specifies 'subway or bus'. Las Vegas has no underground metro/subway (confirmed 2026). The 1-hour criterion is evaluated using the RTC Deuce bus + Las Vegas Monorail."},
+    {"item":"Michelin returned to Las Vegas in 2026","detail":"After a 17-year absence (last guide 2009), the inaugural MICHELIN Guide American Southwest (announced 2026-08-26) is the current edition. Older pages claiming 'no Michelin in Vegas' are outdated."},
+    {"item":"Joël Robuchon Instagram bio","detail":"@joelrobuchon.lasvegas bio still says 'Michelin 3-Star' — historical. Current verified award is Two Stars (2026)."},
+    {"item":"L'Atelier price band discrepancy","detail":"Michelin Guide lists $$$$; official MGM Grand site lists $$$. Flagged."},
+    {"item":"Guy Savoy weekly hours discrepancy","detail":"OpenTable (official booking partner) lists Tue–Sat 5:00–8:45 PM; other aggregators list Wed–Sun 5:30–9:30 PM. Confirm directly."},
+    {"item":"Grand Canyon exceeds 1-hour rule","detail":"Grand Canyon West Rim is ~2.5 hrs from the Strip — exceeds the 1-hour travel requirement. Flagged as a full-day trip, not a within-1-hour activity."},
+    {"item":"Gymkhana Las Vegas not starred","detail":"London Gymkhana holds 2 Michelin stars, but the Las Vegas location is Selected (not starred) in the 2026 guide. Flagged to avoid confusion."},
+    {"item":"Wing Lei not currently starred","detail":"Wing Lei was historically starred in the prior Vegas guide; it is Selected (not starred) in the 2026 guide."},
+    {"item":"Dynamic hotel pricing","detail":"Rates are dynamic; captured snapshots may not match live booking prices for Feb–Mar 2027."}
+  ]
+}

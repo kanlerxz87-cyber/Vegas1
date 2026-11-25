@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for Review — Vegas1</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <div class="brand">Vegas1 · Las Vegas Trip Planner<small>2 adults · 1–2 weeks · Feb 15 – Mar 23, 2027</small></div>
+    <button class="navtoggle" aria-label="Toggle menu" onclick="document.getElementById('mainnav').classList.toggle('open')">Menu</button>
+    <nav class="main" id="mainnav">
+      <a href="index.html">Home</a>
+      <a href="michelin.html">Michelin</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="ranking.html">Ranking</a>
+      <a href="activities.html">Activities</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="summary.html">Summary</a>
+      <a href="suggestions.html">Suggestions</a>
+      <a href="questions.html">Questions</a>
+      <a href="verified.html">Verification</a>
+      <a href="flagged.html" class="active">Flagged</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Flagged for Review</h1>
+  <p class="lead">Irregularities, discrepancies and unverified items discovered during line-by-line verification. None of these block the site, but each should be reviewed and resolved before a final decision is made.</p>
+
+  <h2>Irregularities &amp; discrepancies</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>#</th><th>Item</th><th>Detail</th><th>Recommended action</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><b>No subway in Las Vegas</b></td><td>The brief specifies "subway or bus." Las Vegas has no underground metro/subway (confirmed 2026). The 1-hour criterion is evaluated using the RTC Deuce bus + Las Vegas Monorail.</td><td>Accept the adaptation; documented on the <a href="ranking.html">Ranking</a> page.</td><td><span class="badge b-warn">Adapted</span></td></tr>
+      <tr><td>2</td><td><b>Michelin returned to Vegas in 2026</b></td><td>After a 17-year absence (last guide 2009), the inaugural 2026 MICHELIN Guide American Southwest (announced 2026-08-26) is the current edition. Older pages claiming "no Michelin in Vegas" are outdated.</td><td>Use the 2026 edition as the source of truth (done).</td><td><span class="badge b-ok">Resolved</span></td></tr>
+      <tr><td>3</td><td><b>Joël Robuchon Instagram bio</b></td><td>@joelrobuchon.lasvegas bio still reads "Michelin 3-Star" — historical. The current verified award is <b>Two Stars (2026)</b>.</td><td>Treat the 2026 Two-Star award as current; ignore the bio.</td><td><span class="badge b-warn">Discrepancy</span></td></tr>
+      <tr><td>4</td><td><b>L'Atelier price band discrepancy</b></td><td>Michelin Guide lists $$$$; the official MGM Grand site lists $$$.</td><td>Confirm current menu pricing on the official site at booking.</td><td><span class="badge b-warn">Discrepancy</span></td></tr>
+      <tr><td>5</td><td><b>Guy Savoy weekly hours discrepancy</b></td><td>OpenTable (official booking partner) lists Tue–Sat 5:00–8:45 PM; other aggregators list Wed–Sun 5:30–9:30 PM.</td><td>Confirm directly with the restaurant before booking.</td><td><span class="badge b-warn">Discrepancy</span></td></tr>
+      <tr><td>6</td><td><b>Grand Canyon exceeds 1-hour rule</b></td><td>Grand Canyon West Rim is ~2.5 hrs from the Strip — exceeds the 1-hour travel requirement.</td><td>If the rule is strict, drop it and substitute Red Rock/Hoover Dam (both within ~45 min).</td><td><span class="badge b-unv">Needs decision</span></td></tr>
+      <tr><td>7</td><td><b>Gymkhana Las Vegas not starred</b></td><td>London Gymkhana holds 2 Michelin stars, but the Las Vegas location is <b>Selected</b> (not starred) in the 2026 guide.</td><td>Do not assume stars transfer; it is Selected.</td><td><span class="badge b-ok">Resolved</span></td></tr>
+      <tr><td>8</td><td><b>Wing Lei not currently starred</b></td><td>Wing Lei was historically starred in the prior Vegas guide; it is <b>Selected</b> (not starred) in the 2026 guide.</td><td>Treat as Selected, not starred.</td><td><span class="badge b-ok">Resolved</span></td></tr>
+      <tr><td>9</td><td><b>Dynamic hotel pricing</b></td><td>Rates are dynamic; captured snapshots (2026-11-25) may not match live booking prices for Feb–Mar 2027.</td><td>Re-confirm live rates for the exact dates at booking.</td><td><span class="badge b-unv">Needs review</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Unverified fields (left blank, not inferred)</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Scope</th><th>Unverified field</th><th>Reason</th><th>How to verify</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>17 Selected restaurants</td><td>Days open, hours, exact cost, full address</td><td>Not independently re-verified against each restaurant's official site in this session.</td><td>Open each restaurant's official site / OpenTable/Resy page; record hours, price, address.</td><td><span class="badge b-unv">Needs review</span></td></tr>
+      <tr><td>All restaurants &amp; activities</td><td>Social media links (YouTube/TikTok/Instagram)</td><td>Only 2 restaurant Instagram handles verified; the rest could not be confirmed as official.</td><td>Verify each handle from the official site / linked social; leave blank where unconfirmed.</td><td><span class="badge b-unv">Needs review</span></td></tr>
+      <tr><td>Hotel nightly rates</td><td>Exact live rate for specific Feb–Mar 2027 dates</td><td>Rates are dynamic; snapshots are estimates.</td><td>Query the hotel booking engine for the exact dates.</td><td><span class="badge b-unv">Needs review</span></td></tr>
+      <tr><td>Hotel bed type</td><td>Queen vs king for the booked room rate</td><td>Bed config depends on the specific room/rate.</td><td>Check the room's bed configuration on the booking page.</td><td><span class="badge b-unv">Needs review</span></td></tr>
+      <tr><td>A few activities</td><td>Exact showtimes / pricing (Sphere, High Roller, AREA15, Venetian gondola, Bellagio Conservatory, Fremont)</td><td>Showtimes/pricing vary; not captured in full from official sites.</td><td>Confirm on each official attraction site before visiting.</td><td><span class="badge b-unv">Needs review</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="flag">
+    <h3>Review process</h3>
+    <p>Items marked <span class="badge b-unv">Needs review</span> are published here and do not block the rest of the site. A reviewer should resolve each, update the relevant table, and record the resolution in <a href="COORDINATION.md">COORDINATION.md</a>. Nothing unverified was inferred or filled in.</p>
+  </div>
+
+  <p class="totop"><a href="index.html">← Back to dashboard</a> · <a href="questions.html">Open questions →</a></p>
+</main>
+<footer class="site"><div class="wrap">Vegas1 Trip Planner · Flagged for Review. <a href="COORDINATION.md">COORDINATION.md</a></div></footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

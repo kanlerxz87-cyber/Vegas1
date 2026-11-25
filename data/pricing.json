@@ -1,0 +1,23 @@
+{
+  "source": {
+    "booking_strategy": "https://www.biplasvegas.com/how-to-book-a-suite-on-the-strip-under--200-in-las-vegas",
+    "resort_fees": "https://www.lasvegascompass.com/hotels-and-resorts/resort-fees-explained",
+    "venetian_price": "https://www.luminafrontier.ai/en/hotels/the-venetian-las-vegas/the-venetian-prices/",
+    "tax_note": "Clark County room tax ~13.38% applied to room rate + resort fee."
+  },
+  "trip_window": {"start":"2027-02-15","end":"2027-03-23","preferred":"2027-02-15 to 2027-02-18 (7-night stay = 2027-02-15 to 2027-02-22)"},
+  "booking_window_analysis": [
+    {"date_range":"2027-02-15 → 2027-02-22 (preferred)","price_pressure":"HIGH","note":"Feb 15, 2027 is Presidents' Day (Monday) — holiday-week premium. Recommended if the preferred dates are firm; book early.","recommendation":"Book now (late Nov 2026) — 3+ months out, rates rise closer to date."},
+    {"date_range":"2027-02-22 → 2027-03-01 (Mon–Mon)","price_pressure":"MEDIUM","note":"Weekday-heavy after the holiday week; avoids the Presidents' Day spike.","recommendation":"Best value within the window for a 7-night stay."},
+    {"date_range":"2027-03-01 → 2027-03-08 (Mon–Mon)","price_pressure":"MEDIUM-LOW","note":"Early March weekdays; post-holiday, pre-spring-break.","recommendation":"Cheapest 7-night option in the allowed window."},
+    {"date_range":"2027-03-08 → 2027-03-15","price_pressure":"MEDIUM","note":"Approaching spring break; weekend rates climb.","recommendation":"Prefer weekday-anchored stays."},
+    {"date_range":"2027-03-15 → 2027-03-22","price_pressure":"MEDIUM-HIGH","note":"Late March approaches spring-break travel.","recommendation":"Book early; avoid Fri–Sat nights."}
+  ],
+  "cheapest_upcoming": {
+    "recommended_booking_time":"Book immediately (on/around 2026-11-25) for the preferred Feb 15–22 window; if flexible, choose the 2027-03-01 → 2027-03-08 weekday stay for the lowest rate.",
+    "best_value_7night":"2027-03-01 → 2027-03-08 (Mon–Mon, weekday-heavy)",
+    "preferred_window_cost_note":"Presidents' Day week is a premium period — expect higher nightly rates than late-Feb/early-Mar weekdays."
+  },
+  "total_price_formula": "7-night total ≈ (nightly rate + resort fee) × 7 × 1.1338 (Clark County tax). Estimates based on rates captured 2026-11-25; DYNAMIC — confirm live.",
+  "irregularities": ["Hotel rates are dynamic and were captured 2026-11-25 from aggregator/official snippets — exact live rates for Feb–Mar 2027 must be checked on the hotel/booking site at booking time.", "Resort fees and parking are separate mandatory charges not included in base nightly rates."]
+}

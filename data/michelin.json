@@ -1,0 +1,247 @@
+{
+  "source": {
+    "michelin_guide": "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurants",
+    "lvcva": "https://www.visitlasvegas.com/michelin-guide-restaurants/",
+    "edition": "2026 MICHELIN Guide American Southwest (inaugural; announced 2026-08-26)",
+    "counts": {"two_stars":1,"one_star":3,"bib_gourmand":3,"selected":17,"total":24}
+  },
+  "restaurants": [
+    {
+      "name":"Joël Robuchon","distinction":"Two Stars","star_status":"Currently Michelin-starred",
+      "cuisine":"French Contemporary","area":"MGM Grand · The Strip",
+      "address":"3799 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "days":"Tue–Sat (closed Mon & Sun)","hours":"Tue–Sat 5:00 PM–9:30 PM",
+      "price_band":"$$$$","est_couple_total":"~$890–$1,100 (food); ~$1,000–$1,800 with wine/tax/tip",
+      "official_link":"https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html",
+      "social":{"instagram":"https://www.instagram.com/joelrobuchon.lasvegas/","youtube":"","tiktok":""},
+      "exceptions":"Seasonal hours 4:00–8:00 PM for Nov 19–21 (per official site).",
+      "source":"https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html",
+      "verified":"distinction, cuisine, address, hours, price band","flags":["Instagram bio still reads 'Michelin 3-Star' — historical; current award is 2 Stars (2026)"]
+    },
+    {
+      "name":"L'Atelier de Joël Robuchon","distinction":"One Star","star_status":"Currently Michelin-starred",
+      "cuisine":"Modern French","area":"MGM Grand · The Strip",
+      "address":"3799 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "days":"Mon, Thu–Sun (closed Tue & Wed)","hours":"Mon & Thu–Sun 5:00 PM–9:30 PM",
+      "price_band":"$$$$ (Michelin) / $$$ (official site)","est_couple_total":"~$450–$850 (tasting + wine/tax/tip)",
+      "official_link":"https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"Seasonal hours 2:00–8:00 PM for Nov 19–21 (per official site).",
+      "source":"https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html",
+      "verified":"distinction, cuisine, address, hours","flags":["Price band differs: Michelin shows $$$$, official MGM site shows $$$"]
+    },
+    {
+      "name":"Restaurant Guy Savoy","distinction":"One Star","star_status":"Currently Michelin-starred",
+      "cuisine":"French","area":"Caesars Palace (Augustus Tower) · The Strip",
+      "address":"3570 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "days":"Tue–Sat (closed Sun & Mon)","hours":"Tue–Sat 5:00 PM–8:45 PM (OpenTable, official booking partner)",
+      "price_band":"$$$$","est_couple_total":"~$580–$910 (tasting menu food); à la carte $100–$290/dish; Symphony menu $680–$1,000 pp",
+      "official_link":"https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"Holiday menu only Dec 24–25 and Dec 31–Jan 1 ($725). Symphony menu special dates.",
+      "source":"https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy",
+      "verified":"distinction, cuisine, address, price band","flags":["Weekly hours differ across aggregators (Tue–Sat 5:00–8:45 on OpenTable vs Wed–Sun 5:30–9:30 elsewhere) — confirm directly"]
+    },
+    {
+      "name":"é by José Andrés","distinction":"One Star","star_status":"Currently Michelin-starred",
+      "cuisine":"Spanish Contemporary","area":"The Cosmopolitan · The Strip",
+      "address":"3708 Las Vegas Blvd S, Las Vegas, NV 89109",
+      "days":"Tue–Sun (closed Mon)","hours":"Tue–Sun two seatings: 5:30–7:30 PM & 8:30–10:30 PM",
+      "price_band":"$$$$","est_couple_total":"~$736–$980 (flex tasting $325–$490 pp incl. tax/service)",
+      "official_link":"https://www.ebyjoseandres.com/",
+      "social":{"instagram":"https://www.instagram.com/ebyjoseandres/","youtube":"","tiktok":""},
+      "exceptions":"Prepaid tasting menu; limited counter seating.",
+      "source":"https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/e-by-jose-andres",
+      "verified":"distinction, cuisine, address, hours, price band","flags":[]
+    },
+    {
+      "name":"China Poblano","distinction":"Bib Gourmand","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Chinese / Mexican","area":"The Cosmopolitan · The Strip",
+      "address":"3708 Las Vegas Blvd S, Las Vegas, NV 89109",
+      "days":"Daily","hours":"Mon–Thu 11 AM–10 PM; Fri 11 AM–10:30 PM; Sat 10 AM–10:30 PM; Sun 10 AM–10 PM (cocktail hour Mon–Thu 4–6 PM)",
+      "price_band":"$$","est_couple_total":"~$60–$100 ($30–50 pp)",
+      "official_link":"https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"Happy hour daily 4–6 PM; take-out specials Tue–Wed 2–5 PM.",
+      "source":"https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html",
+      "verified":"distinction, cuisine, address, hours, price band","flags":[]
+    },
+    {
+      "name":"Esther's Kitchen","distinction":"Bib Gourmand","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Italian","area":"Arts District · Downtown",
+      "address":"1131 S Main St, Las Vegas, NV 89104",
+      "days":"Daily","hours":"Lunch Mon–Fri 11 AM–3 PM; Brunch Sat–Sun 10 AM–3 PM; Dinner daily 5 PM–11 PM",
+      "price_band":"$$","est_couple_total":"~$70–$120 (pasta $18–$36, entrées $26–$34)",
+      "official_link":"https://www.estherslv.com/",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"Weekend brunch replaces lunch.",
+      "source":"https://www.estherslv.com/location/esthers-kitchen/",
+      "verified":"distinction, cuisine, address, hours, price band","flags":[]
+    },
+    {
+      "name":"Yen Viet Kitchen","distinction":"Bib Gourmand","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Vietnamese","area":"Chinatown · Off-Strip",
+      "address":"3575 S Decatur Blvd, Ste 101, Las Vegas, NV 89103",
+      "days":"Mon, Wed–Sun (closed Tue)","hours":"10 AM–9 PM",
+      "price_band":"$$","est_couple_total":"~$50–$90 (dishes ~$16)",
+      "official_link":"https://www.yenvietkitchen.com/",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"Closed Tuesdays.",
+      "source":"https://www.yenvietkitchen.com/",
+      "verified":"distinction, cuisine, address, hours, price band","flags":[]
+    },
+    {
+      "name":"Anima by Edo","distinction":"Selected","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Mediterranean / Spanish","area":"Off-Strip (SW valley)",
+      "address":"9205 W Russell Rd #185, Las Vegas, NV 89148","days":"","hours":"","price_band":"$$$$",
+      "est_couple_total":"","official_link":"https://animabyedo.com/",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "verified":"distinction, cuisine, price band, official link","flags":["hours & cost unverified — confirm on official site"]
+    },
+    {
+      "name":"Bouchon","distinction":"Selected","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Classic French","area":"The Venetian · The Strip",
+      "address":"3355 S Las Vegas Blvd, Las Vegas, NV 89109","days":"","hours":"","price_band":"$$$$",
+      "est_couple_total":"","official_link":"https://www.venetianlasvegas.com/restaurants/bouchon.html",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "verified":"distinction, cuisine, price band, official link","flags":["hours & cost unverified — confirm on official site"]
+    },
+    {
+      "name":"COTE Las Vegas","distinction":"Selected","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Korean Steakhouse","area":"The Venetian · The Strip",
+      "address":"3355 S Las Vegas Blvd, Las Vegas, NV 89109","days":"","hours":"","price_band":"$$$$",
+      "est_couple_total":"","official_link":"https://www.venetianlasvegas.com/dining/restaurants/cote.html",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "verified":"distinction, cuisine, price band, official link","flags":["hours & cost unverified — confirm on official site"]
+    },
+    {
+      "name":"Estiatorio Milos","distinction":"Selected","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Greek / Seafood","area":"The Venetian · The Strip",
+      "address":"3355 S Las Vegas Blvd, Las Vegas, NV 89109","days":"","hours":"","price_band":"$$$$",
+      "est_couple_total":"","official_link":"https://www.venetianlasvegas.com/restaurants/estiatorio-milos.html",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "verified":"distinction, cuisine, price band, official link","flags":["hours & cost unverified — confirm on official site"]
+    },
+    {
+      "name":"Gymkhana Las Vegas","distinction":"Selected","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Indian","area":"ARIA · The Strip",
+      "address":"3730 S Las Vegas Blvd, Las Vegas, NV 89158","days":"","hours":"","price_band":"$$$$",
+      "est_couple_total":"","official_link":"https://aria.mgmresorts.com/en/restaurants/gymkhana.html",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "verified":"distinction, cuisine, price band, official link","flags":["hours & cost unverified — confirm on official site","London Gymkhana holds 2 Michelin stars but the LV location is NOT starred"]
+    },
+    {
+      "name":"Kabuto","distinction":"Selected","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Sushi / Japanese","area":"Chinatown",
+      "address":"5040 Spring Mountain Rd #4, Las Vegas, NV 89146","days":"","hours":"","price_band":"$$$$",
+      "est_couple_total":"","official_link":"https://kabutolv.com/",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "verified":"distinction, cuisine, price band, official link","flags":["hours & cost unverified — confirm on official site"]
+    },
+    {
+      "name":"Kame Omakase","distinction":"Selected","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Omakase / Japanese","area":"Chinatown",
+      "address":"3616 W Spring Mountain Rd, Ste 103, Las Vegas, NV 89102","days":"","hours":"","price_band":"$$$$",
+      "est_couple_total":"","official_link":"https://www.kameomakase.com/",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "verified":"distinction, cuisine, price band, official link","flags":["hours & cost unverified — confirm on official site"]
+    },
+    {
+      "name":"Lamaii","distinction":"Selected","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Thai","area":"Off-Strip (Spring Mountain)",
+      "address":"4480 Spring Mountain Rd, Ste 700, Las Vegas, NV 89102","days":"","hours":"","price_band":"$$",
+      "est_couple_total":"","official_link":"https://www.lamaiilv.com/",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "verified":"distinction, cuisine, price band, official link","flags":["hours & cost unverified — confirm on official site"]
+    },
+    {
+      "name":"Michael Mina","distinction":"Selected","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Fish / Seafood","area":"Bellagio · The Strip",
+      "address":"3600 S Las Vegas Blvd, Las Vegas, NV 89109","days":"","hours":"","price_band":"$$$$",
+      "est_couple_total":"","official_link":"https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "verified":"distinction, cuisine, price band, official link","flags":["hours & cost unverified — confirm on official site"]
+    },
+    {
+      "name":"Mott 32","distinction":"Selected","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Cantonese / Chinese","area":"The Palazzo (Venetian) · The Strip",
+      "address":"3325 S Las Vegas Blvd, Las Vegas, NV 89109","days":"","hours":"","price_band":"$$$$",
+      "est_couple_total":"","official_link":"https://www.venetianlasvegas.com/dining/restaurants/mott-32.html",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "verified":"distinction, cuisine, price band, official link","flags":["hours & cost unverified — confirm on official site"]
+    },
+    {
+      "name":"Partage","distinction":"Selected","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"French","area":"Chinatown",
+      "address":"3839 Spring Mountain Rd, Las Vegas, NV 89102","days":"","hours":"","price_band":"$$$$",
+      "est_couple_total":"","official_link":"https://partage.vegas/",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "verified":"distinction, cuisine, price band, official link","flags":["hours & cost unverified — confirm on official site"]
+    },
+    {
+      "name":"Pho Ga Bac Bac","distinction":"Selected","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Vietnamese","area":"Chinatown",
+      "address":"3775 Spring Mountain Rd, Las Vegas, NV 89102","days":"","hours":"","price_band":"$",
+      "est_couple_total":"","official_link":"https://bestchickenpho.com/",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "verified":"distinction, cuisine, price band, official link","flags":["hours & cost unverified — confirm on official site"]
+    },
+    {
+      "name":"Ping Pang Pong","distinction":"Selected","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Chinese","area":"Gold Coast · Off-Strip",
+      "address":"4000 W Flamingo Rd, Las Vegas, NV 89103","days":"","hours":"","price_band":"$$",
+      "est_couple_total":"","official_link":"https://goldcoast.boydgaming.com/dine/gc-ping-pang-pong",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "verified":"distinction, cuisine, price band, official link","flags":["hours & cost unverified — confirm on official site"]
+    },
+    {
+      "name":"SoulBelly BBQ","distinction":"Selected","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Barbecue","area":"Downtown",
+      "address":"1327 S Main St, Las Vegas, NV 89104","days":"","hours":"","price_band":"$$",
+      "est_couple_total":"","official_link":"https://www.soulbellybbq.com/",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "verified":"distinction, cuisine, price band, official link","flags":["hours & cost unverified — confirm on official site"]
+    },
+    {
+      "name":"Sparrow + Wolf","distinction":"Selected","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"New American / Fusion","area":"Chinatown",
+      "address":"4480 Spring Mountain Rd #100, Las Vegas, NV 89102","days":"","hours":"","price_band":"$$$",
+      "est_couple_total":"","official_link":"https://www.sparrowandwolflv.com/",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "verified":"distinction, cuisine, price band, official link","flags":["hours & cost unverified — confirm on official site"]
+    },
+    {
+      "name":"Stubborn Seed","distinction":"Selected","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Contemporary","area":"Resorts World · The Strip",
+      "address":"3000 S Las Vegas Blvd, Las Vegas, NV 89109","days":"","hours":"","price_band":"$$$$",
+      "est_couple_total":"","official_link":"https://www.rwlasvegas.com/restaurant/stubborn-seed/",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "verified":"distinction, cuisine, price band, official link","flags":["hours & cost unverified — confirm on official site"]
+    },
+    {
+      "name":"Wing Lei","distinction":"Selected","star_status":"Listed in Michelin Guide (no current star)",
+      "cuisine":"Cantonese","area":"Wynn Las Vegas · The Strip",
+      "address":"3131 S Las Vegas Blvd, Las Vegas, NV 89109","days":"","hours":"","price_band":"$$$$",
+      "est_couple_total":"","official_link":"https://www.wynnlasvegas.com/dining/fine-dining/wing-lei",
+      "social":{"instagram":"","youtube":"","tiktok":""},
+      "exceptions":"","source":"https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "verified":"distinction, cuisine, price band, official link","flags":["hours & cost unverified — confirm on official site","Historically the first Chinese restaurant in N. America to earn a Michelin star (prior Vegas guide); currently Selected, not starred"]
+    }
+  ]
+}

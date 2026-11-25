@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suggestions — Vegas1</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <div class="brand">Vegas1 · Las Vegas Trip Planner<small>2 adults · 1–2 weeks · Feb 15 – Mar 23, 2027</small></div>
+    <button class="navtoggle" aria-label="Toggle menu" onclick="document.getElementById('mainnav').classList.toggle('open')">Menu</button>
+    <nav class="main" id="mainnav">
+      <a href="index.html">Home</a>
+      <a href="michelin.html">Michelin</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="ranking.html">Ranking</a>
+      <a href="activities.html">Activities</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="summary.html">Summary</a>
+      <a href="suggestions.html" class="active">Suggestions</a>
+      <a href="questions.html">Questions</a>
+      <a href="verified.html">Verification</a>
+      <a href="flagged.html">Flagged</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Suggestions for improving decision-making</h1>
+  <p class="lead">Suggestions to improve the site and the planning process. Each is listed so a reviewer can <b>read, choose the best path, and approve before implementing</b> — nothing here is implemented automatically. Priorities are marked.</p>
+
+  <div class="note">
+    <strong>How to use this page:</strong> Review each suggestion, mark it <span class="badge b-ok">Adopt</span>, <span class="badge b-sel">Consider</span>, or <span class="badge b-unv">Reject</span>, then implement only the adopted items. Log the decision in <a href="COORDINATION.md">COORDINATION.md</a>.
+  </div>
+
+  <h2>Priority 1 — close the verification gaps</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>#</th><th>Suggestion</th><th>Why it helps</th><th>Suggested path</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Verify the <b>17 Selected restaurants</b> (hours, exact cost, full address) directly on each restaurant's official site/booking page.</td><td>These fields are currently blank/flagged; closing them completes the "hours for every restaurant" requirement.</td><td>Adopt — one follow-up research pass, one row per restaurant.</td><td><span class="badge b-unv">Pending review</span></td></tr>
+      <tr><td>2</td><td>Capture <b>live, date-specific hotel rates</b> for the exact Feb–Mar 2027 dates and refresh the total-price column.</td><td>Removes the dynamic-pricing caveat and gives exact 7-night totals.</td><td>Adopt — re-query booking/hotel sites for the chosen dates at booking time.</td><td><span class="badge b-unv">Pending review</span></td></tr>
+      <tr><td>3</td><td>Confirm <b>social media links</b> (YouTube/TikTok/Instagram) for each restaurant and activity from official accounts only.</td><td>Only 2 restaurant Instagram handles are verified; the rest are left blank to avoid hallucination.</td><td>Adopt — verify handles on official sites/linked accounts, leave blank where unconfirmed.</td><td><span class="badge b-unv">Pending review</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Priority 2 — improve the decision experience</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>#</th><th>Suggestion</th><th>Why it helps</th><th>Suggested path</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>4</td><td>Add an <b>interactive filter/sort</b> to the Michelin and hotel tables (filter by starred/Bib/Selected, by price band, by area).</td><td>Lets reviewers narrow the field quickly on mobile.</td><td>Consider — small JS enhancement, no data change.</td><td><span class="badge b-unv">Pending review</span></td></tr>
+      <tr><td>5</td><td>Add a <b>date-picker / budget calculator</b> that computes 7-night total (room + resort fee + tax) from a chosen nightly rate.</td><td>Makes the booking-window comparison tangible and self-serve.</td><td>Consider — calculator in the Pricing page.</td><td><span class="badge b-unv">Pending review</span></td></tr>
+      <tr><td>6</td><td>Add a <b>"decision checklist"</b> widget (hotel pick, date pick, reservation window countdown, activity bookings).</td><td>Turns the summary into an actionable plan with reminders.</td><td>Consider.</td><td><span class="badge b-unv">Pending review</span></td></tr>
+      <tr><td>7</td><td>Add <b>map links</b> (Google Maps) for each restaurant/activity/hotel so "1-hour travel" is visually checkable.</td><td>Verifies the travel-time claims at a glance.</td><td>Consider — add a maps link column.</td><td><span class="badge b-unv">Pending review</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Priority 3 — content &amp; completeness</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>#</th><th>Suggestion</th><th>Why it helps</th><th>Suggested path</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>8</td><td>Add a <b>sample day-by-day itinerary</b> (7 days) combining Michelin meals and activities within the 1-hour rule.</td><td>Shows how the pieces fit together for a real itinerary.</td><td>Consider.</td><td><span class="badge b-unv">Pending review</span></td></tr>
+      <tr><td>9</td><td>Add a <b>transportation cost column</b> (Deuce/Monorail passes, rideshare estimates) to activities.</td><td>Completes the "1-hour travel" cost picture.</td><td>Consider.</td><td><span class="badge b-unv">Pending review</span></td></tr>
+      <tr><td>10</td><td>Track the <b>next Michelin edition</b> — if a new Southwest guide is published before/during the trip, update star status.</td><td>Star status can change year-to-year; the site should flag the edition date.</td><td>Adopt as a standing check; note the edition (2026) on every Michelin page.</td><td><span class="badge b-unv">Pending review</span></td></tr>
+      <tr><td>11</td><td>Add a <b>disclaimer page</b> stating pricing is dynamic and that all values are verified as of a dated snapshot.</td><td>Sets clear expectations and supports the no-hallucination stance.</td><td>Adopt.</td><td><span class="badge b-unv">Pending review</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="flag">
+    <h3>Decision rule</h3>
+    <p>No suggestion is implemented until a reviewer marks it <span class="badge b-ok">Adopt</span> here and records the decision in <a href="COORDINATION.md">COORDINATION.md</a>. Priority-1 items should be resolved before any redesign so the underlying data is complete and verified.</p>
+  </div>
+
+  <p class="totop"><a href="index.html">← Back to dashboard</a> · <a href="questions.html">Open questions →</a></p>
+</main>
+<footer class="site"><div class="wrap">Vegas1 Trip Planner · Suggestions for review — not yet implemented. <a href="COORDINATION.md">COORDINATION.md</a></div></footer>
+<script src="assets/app.js"></script>
+</body>
+</html>
