@@ -49,7 +49,7 @@ have at least one working video link (69 in total).
 
 ## What is not known
 
-Five of the ten register questions remain open. Each blank has a stated route to close it. The two that
+6 of the 11 register questions remain open. Each blank has a stated route to close it. The two that
 matter: **restaurant prices** (18 of 21 venues publish none) and **whether this is a 3-night or
 7-night trip** — the brief says 1–2 weeks but the preferred dates 15–18 February are three nights,
 which would cut every hotel figure on this site by more than half.
@@ -57,7 +57,7 @@ which would cut every hotel figure on this site by more than half.
 ## How to trust any number here
 
 Every figure links to its source. **8 pages, 280 external source links, 0 broken internal links.**
-Twenty flags record everything that would not verify cleanly, including two where a creator video
+Twenty-two flags record everything that would not verify cleanly, including two where a creator video
 contradicts the official award (Robuchon "3 stars", Wing Lei "starred"). Where a number could not be
 confirmed the cell is blank. Nothing on the site is an estimate — except the transit minutes, which
 are labelled as estimates on every page that shows them.

@@ -6,7 +6,8 @@
     "room_requirement": "Private bathroom AND queen-or-larger (or equivalent). 'king or queen' is satisfied by suites with 1 king + 1 sofa bed.",
     "price_source_pattern": "https://www.booking.com/hotel/us/<slug>.html?checkin=YYYY-MM-DD&checkout=YYYY-MM-DD&group_adults=2&no_rooms=1&selected_currency=USD",
     "proximity_rule": "michelin_within_60 is the user's literal metric (count of the 24 Michelin restaurants reachable in ≤60 min by RTC bus / Monorail / Vegas Loop). On the Strip it saturates at 24 for every hotel, so michelin_within_20 is used as the ranking tiebreaker. See data/transit.json for the zone matrix — every minute figure is an ESTIMATE derived from official route maps, never an official running time.",
-    "cheapest_note": "Cheapest verified 7-night total in this dataset is LINQ at $564 for 2027-02-15→02-22, but that is a 'Room Type Assigned on Arrival' rate — the bed size is not guaranteed until check-in."
+    "cheapest_note": "Cheapest verified 7-night total in this dataset is LINQ at $564 for 2027-02-15→02-22, but that is a 'Room Type Assigned on Arrival' rate — the bed size is not guaranteed until check-in.",
+    "official_link_note": "official_verified='yes' means this session fetched the URL and it resolved to the property. 'no' means the URL is the property's own domain but was not fetched, so it may have moved — the Booking.com 'Price source' link on every card is always a working, fetched source."
   },
   "hotels": [
     {
@@ -41,7 +42,8 @@
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
       "flags": [],
-      "notes": "Cheapest five-star brand on the Strip for this week. Located inside Caesars Palace, so it inherits Caesars' centre-Strip position and monorail access."
+      "notes": "Cheapest five-star brand on the Strip for this week. Located inside Caesars Palace, so it inherits Caesars' centre-Strip position and monorail access.",
+      "official_verified": "no"
     },
     {
       "id": "caesars-palace",
@@ -69,7 +71,8 @@
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
       "flags": [],
-      "notes": "Two Michelin-starred restaurants in-building-adjacent range: Guy Savoy is on site; Joël Robuchon and L'Atelier are a 10-minute ride south."
+      "notes": "Two Michelin-starred restaurants in-building-adjacent range: Guy Savoy is on site; Joël Robuchon and L'Atelier are a 10-minute ride south.",
+      "official_verified": "no"
     },
     {
       "id": "trump-international",
@@ -97,7 +100,8 @@
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
       "flags": [],
-      "notes": "Highest guest score (9.1) of any property under $2,000 for this week. Non-gaming, no casino floor, set one block west of the Strip."
+      "notes": "Highest guest score (9.1) of any property under $2,000 for this week. Non-gaming, no casino floor, set one block west of the Strip.",
+      "official_verified": "no"
     },
     {
       "id": "cromwell",
@@ -125,7 +129,8 @@
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
       "flags": [],
-      "notes": "Smallest, adults-oriented Caesars property at Flamingo Rd. Lowest guest score (7.4) of the five-star group — the price is location, not service."
+      "notes": "Smallest, adults-oriented Caesars property at Flamingo Rd. Lowest guest score (7.4) of the five-star group — the price is location, not service.",
+      "official_verified": "no"
     },
     {
       "id": "w-las-vegas",
@@ -153,7 +158,8 @@
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
       "flags": [],
-      "notes": ""
+      "notes": "",
+      "official_verified": "no"
     },
     {
       "id": "crockfords",
@@ -181,7 +187,8 @@
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
       "flags": [],
-      "notes": "Shares Resorts World with Stubborn Seed and has a Sahara Monorail stop plus a Vegas Loop station on site."
+      "notes": "Shares Resorts World with Stubborn Seed and has a Sahara Monorail stop plus a Vegas Loop station on site.",
+      "official_verified": "no"
     },
     {
       "id": "vdara",
@@ -209,7 +216,8 @@
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
       "flags": [],
-      "notes": "All-suite, non-gaming, no-smoking. Walkable to Bellagio, ARIA and the Cosmopolitan dining cluster."
+      "notes": "All-suite, non-gaming, no-smoking. Walkable to Bellagio, ARIA and the Cosmopolitan dining cluster.",
+      "official_verified": "no"
     },
     {
       "id": "four-seasons",
@@ -237,7 +245,8 @@
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
       "flags": [],
-      "notes": "Best guest score in the dataset (9.3). Sits at the top of Mandalay Bay — the quiet end of the Strip, furthest from the Michelin cluster."
+      "notes": "Best guest score in the dataset (9.3). Sits at the top of Mandalay Bay — the quiet end of the Strip, furthest from the Michelin cluster.",
+      "official_verified": "no"
     },
     {
       "id": "nomad-reserve",
@@ -265,7 +274,8 @@
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
       "flags": [],
-      "notes": ""
+      "notes": "",
+      "official_verified": "no"
     },
     {
       "id": "bellagio",
@@ -307,7 +317,8 @@
       "flags": [
         "F-13"
       ],
-      "notes": "Michael Mina is in-building. Rate varies by room class between windows, so the three totals are not like-for-like."
+      "notes": "Michael Mina is in-building. Rate varies by room class between windows, so the three totals are not like-for-like.",
+      "official_verified": "no"
     },
     {
       "id": "fontainebleau",
@@ -337,7 +348,8 @@
       "flags": [
         "F-06"
       ],
-      "notes": "Newest large resort in the dataset. Vegas Loop station on site ($7 fare band)."
+      "notes": "Newest large resort in the dataset. Vegas Loop station on site ($7 fare band).",
+      "official_verified": "no"
     },
     {
       "id": "cosmopolitan",
@@ -371,7 +383,8 @@
       "booking_url": "https://www.booking.com/hotel/us/the-cosmopolitan-of-las-vegas.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
       "flags": [],
-      "notes": "Holds é by José Andrés (1★) and China Poblano (Bib Gourmand) under one roof — the densest Michelin per square metre on the list."
+      "notes": "Holds é by José Andrés (1★) and China Poblano (Bib Gourmand) under one roof — the densest Michelin per square metre on the list.",
+      "official_verified": "no"
     },
     {
       "id": "venetian",
@@ -405,7 +418,8 @@
       "booking_url": "https://www.booking.com/hotel/us/the-venetian-resort-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
       "flags": [],
-      "notes": "Four Michelin listings inside the complex: Mott 32, COTE, Bouchon, Estiatorio Milos. All-suite, 646 ft²+ standard."
+      "notes": "Four Michelin listings inside the complex: Mott 32, COTE, Bouchon, Estiatorio Milos. All-suite, 646 ft²+ standard.",
+      "official_verified": "yes"
     },
     {
       "id": "aria",
@@ -439,7 +453,8 @@
       "booking_url": "https://www.booking.com/hotel/us/aria-resort-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
       "flags": [],
-      "notes": "Gymkhana is in-building. Connected by tram to Bellagio and Park MGM."
+      "notes": "Gymkhana is in-building. Connected by tram to Bellagio and Park MGM.",
+      "official_verified": "no"
     },
     {
       "id": "palazzo",
@@ -473,7 +488,8 @@
       "booking_url": "https://www.booking.com/hotel/us/the-palazzo-resort-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
       "flags": [],
-      "notes": "721 ft² base suite — the largest standard suite in the dataset."
+      "notes": "721 ft² base suite — the largest standard suite in the dataset.",
+      "official_verified": "no"
     },
     {
       "id": "encore",
@@ -509,7 +525,8 @@
       "flags": [
         "F-09"
       ],
-      "notes": "Two totals for the same week differ by $1,035 because the fee/tax basis differs. The property-page figure is the more complete number."
+      "notes": "Two totals for the same week differ by $1,035 because the fee/tax basis differs. The property-page figure is the more complete number.",
+      "official_verified": "no"
     },
     {
       "id": "wynn",
@@ -545,7 +562,8 @@
       "flags": [
         "F-09"
       ],
-      "notes": "Wing Lei is in-building. Same double-basis caveat as Encore."
+      "notes": "Wing Lei is in-building. Same double-basis caveat as Encore.",
+      "official_verified": "no"
     },
     {
       "id": "secret-suites-vdara",
@@ -573,7 +591,8 @@
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
       "flags": [],
-      "notes": "Third-party suite inventory inside Vdara — listed for completeness, not recommended."
+      "notes": "Third-party suite inventory inside Vdara — listed for completeness, not recommended.",
+      "official_verified": "no"
     },
     {
       "id": "waldorf-astoria",
@@ -609,7 +628,8 @@
       "flags": [
         "F-13"
       ],
-      "notes": "Non-gaming, no-smoking, centre-Strip. The February figure is a suite; the March figure is a standard room, so they are not comparable."
+      "notes": "Non-gaming, no-smoking, centre-Strip. The February figure is a suite; the March figure is a standard room, so they are not comparable.",
+      "official_verified": "no"
     },
     {
       "id": "cirrus-cliffs",
@@ -639,13 +659,14 @@
       "flags": [
         "F-14"
       ],
-      "notes": "Off-Strip condo ~20 min drive from the Strip. Appeared in a five-star filter despite being a condominium complex — do not treat the star rating as reliable."
+      "notes": "Off-Strip condo ~20 min drive from the Strip. Appeared in a five-star filter despite being a condominium complex — do not treat the star rating as reliable.",
+      "official_verified": "no"
     },
     {
       "id": "desert-rose",
       "name": "Desert Rose Resort",
       "tier": "mid",
-      "zone": "center-strip",
+      "zone": "south-strip",
       "stars": 3,
       "guest_score": 9.1,
       "reviews": 4234,
@@ -662,12 +683,14 @@
         }
       ],
       "michelin_within_60": 24,
-      "michelin_within_20": 21,
-      "official_url": "https://www.desertroseresort.com/",
+      "michelin_within_20": 15,
+      "official_url": "https://www.shellvacationsclubrentals.com/resorts/nevada/las-vegas/desert-rose-resort",
       "booking_url": "https://www.booking.com/hotel/us/desert-rose-resort.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
       "flags": [],
-      "notes": "Best value in the dataset: 9.1 guest score, 646 ft², private bathroom, no resort fee, and a 15-minute walk to the centre-Strip Michelin cluster."
+      "notes": "Best value in the dataset: 9.1 guest score, 646 ft² one-bedroom suite with a full kitchen, private bathroom and no resort fee. It sits on Duke Ellington Way, one block east of the Strip behind the Tropicana/MGM Grand corner — a 15–20 minute walk to the Joël Robuchon and L'Atelier rooms at MGM Grand, not to the centre-Strip cluster. Official page: Shell Vacations Hospitality (Wyndham Extra Holidays). The marketing domain desertroseresort.com returned HTTP 500 on 25 Nov 2026, so it is not linked.",
+      "address": "5051 Duke Ellington Way, Las Vegas, NV 89119",
+      "official_verified": "yes"
     },
     {
       "id": "golden-nugget",
@@ -697,7 +720,8 @@
       "flags": [
         "F-11"
       ],
-      "notes": "'Run of House' means the bed type is assigned at check-in — fails the queen-or-larger guarantee unless you book a named room class."
+      "notes": "'Run of House' means the bed type is assigned at check-in — fails the queen-or-larger guarantee unless you book a named room class.",
+      "official_verified": "no"
     },
     {
       "id": "horseshoe",
@@ -727,7 +751,8 @@
       "flags": [
         "F-11"
       ],
-      "notes": "Directly connected to a Monorail station and across the street from the Bellagio/Cosmo cluster. Bed type not confirmed in the captured rate block."
+      "notes": "Directly connected to a Monorail station and across the street from the Bellagio/Cosmo cluster. Bed type not confirmed in the captured rate block.",
+      "official_verified": "no"
     },
     {
       "id": "flamingo",
@@ -757,7 +782,8 @@
       "flags": [
         "F-11"
       ],
-      "notes": "Second-cheapest verified total. Room type is assigned on arrival, so the king bed shown is not contractual."
+      "notes": "Second-cheapest verified total. Room type is assigned on arrival, so the king bed shown is not contractual.",
+      "official_verified": "no"
     },
     {
       "id": "linq",
@@ -787,7 +813,8 @@
       "flags": [
         "F-11"
       ],
-      "notes": "Cheapest verified 7-night total, and it is centre-Strip next to the High Roller. But $31/night is a Black Friday promotional rate on an unassigned room — treat as a floor, not a forecast."
+      "notes": "Cheapest verified 7-night total, and it is centre-Strip next to the High Roller. But $31/night is a Black Friday promotional rate on an unassigned room — treat as a floor, not a forecast.",
+      "official_verified": "yes"
     },
     {
       "id": "sahara",
@@ -817,7 +844,8 @@
       "flags": [
         "F-11"
       ],
-      "notes": "Northernmost Monorail stop and a Vegas Loop station — the best transit-per-dollar on the list."
+      "notes": "Northernmost Monorail stop and a Vegas Loop station — the best transit-per-dollar on the list.",
+      "official_verified": "no"
     },
     {
       "id": "plaza",
@@ -847,7 +875,8 @@
       "flags": [
         "F-11"
       ],
-      "notes": "Downtown, at the Fremont Street Experience. Pairs with Esther's Kitchen and SoulBelly BBQ."
+      "notes": "Downtown, at the Fremont Street Experience. Pairs with Esther's Kitchen and SoulBelly BBQ.",
+      "official_verified": "no"
     },
     {
       "id": "palms-place",
@@ -875,7 +904,8 @@
       "booking_url": "https://www.booking.com/hotel/us/palms-place.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
       "flags": [],
-      "notes": "Off-Strip but only ~1.5 miles west of centre-Strip; Ping Pang Pong (Gold Coast) and the Chinatown cluster are both short hops."
+      "notes": "Off-Strip but only ~1.5 miles west of centre-Strip; Ping Pang Pong (Gold Coast) and the Chinatown cluster are both short hops.",
+      "official_verified": "yes"
     },
     {
       "id": "bluegreen-club-36",
@@ -905,7 +935,8 @@
       "flags": [
         "F-15"
       ],
-      "notes": "Only property in the dataset with an explicitly stated QUEEN bed (satisfies 'queen or larger' precisely). Private bathroom not stated in the captured block — one-bedroom timeshare units normally have one, but that is an inference, so it stays blank."
+      "notes": "Only property in the dataset with an explicitly stated QUEEN bed (satisfies 'queen or larger' precisely). Private bathroom not stated in the captured block — one-bedroom timeshare units normally have one, but that is an inference, so it stays blank.",
+      "official_verified": "no"
     },
     {
       "id": "mgm-signature",
@@ -933,7 +964,8 @@
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
       "flags": [],
-      "notes": "All-suite, non-gaming towers behind MGM Grand. Walking distance to Joël Robuchon and L'Atelier."
+      "notes": "All-suite, non-gaming towers behind MGM Grand. Walking distance to Joël Robuchon and L'Atelier.",
+      "official_verified": "no"
     },
     {
       "id": "green-valley-ranch",
@@ -963,7 +995,8 @@
       "flags": [
         "F-14"
       ],
-      "notes": "In Henderson, ~11 miles from the Strip. 9.1 guest score, but every dinner becomes a 30–40 minute trip."
+      "notes": "In Henderson, ~11 miles from the Strip. 9.1 guest score, but every dinner becomes a 30–40 minute trip.",
+      "official_verified": "no"
     },
     {
       "id": "red-rock",
@@ -993,7 +1026,8 @@
       "flags": [
         "F-14"
       ],
-      "notes": "Summerlin, ~17 miles northwest of the Strip. Excellent resort, wrong trip."
+      "notes": "Summerlin, ~17 miles northwest of the Strip. Excellent resort, wrong trip.",
+      "official_verified": "no"
     }
   ]
 }

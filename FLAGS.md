@@ -24,6 +24,8 @@ labelled**, never that a plausible number was filled in.
 | **F-17** | 14-night variant | The brief allows 1–2 weeks; only 7-night blocks were priced. Doubling a 7-night total would ignore weekly rate breaks. | Not priced. Flagged rather than estimated. |
 | **F-18** | Bellagio Fountains | Official page fetch failed twice. Show schedule unverified. | No hours listed on the activities page. |
 | **F-19** | Instagram / TikTok | Handles are not printed on most official pages. Only the Neon Museum publishes its own. | Blank rather than guessed — see Q-07. |
+| **F-21** | Hotel `Official` links | 28 of 32 hotel official URLs point at the property's own domain but were **not fetched** this session, so they may have moved. Only Desert Rose, LINQ, Palms Place and The Venetian were confirmed. The Booking.com price-source link on every card was fetched. | Site marks each unverified link "not fetched — may have moved" rather than implying it was checked. |
+| **F-22** | Desert Rose Resort | Its marketing domain `desertroseresort.com` returned **HTTP 500**. Real operator page is Shell Vacations Hospitality; address is 5051 Duke Ellington Way (south Strip, not centre Strip). | Zone corrected; link repointed; recommendation restated as a 15–20 min walk to MGM Grand, not to the centre-Strip cluster. |
 | **F-20** | Transit minutes | Every minute value is an estimate from official station lists and route maps. No official door-to-door times exist. | Labelled "estimate" everywhere. |
 
 ## Deliberate non-inclusions
