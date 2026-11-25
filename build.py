@@ -428,6 +428,19 @@ Arrival”, which does <em>not</em> guarantee the bed you asked for.</li>
 
 # ---------------------------------------------------------------- michelin
 def build_michelin():
+    closed = [r for r in MICHELIN["restaurants"]
+              if "closed" in (DET.get(r["id"], {}).get("hours_exceptions", "") or "").lower()]
+    ops = ""
+    if closed:
+        items = "".join(
+            f'<li><strong>{e(r["name"])}</strong> — {e(r["distinction"])}, {e(r["address_official"])}. '
+            f'<a href="{e(DET[r["id"]]["hours_source"])}" target="_blank" rel="noopener">official page</a></li>'
+            for r in closed)
+        ops = f"""<div class="errbox"><strong>Operational status — read before booking.</strong>
+<p>{len(closed)} MICHELIN restaurant(s) in this list are <strong>not currently serving</strong> per their own official pages,
+even though the MICHELIN Guide still lists them. A guide listing is not proof that a restaurant is open.</p>
+<ul>{items}</ul></div>"""
+
     order = {"2 Stars": 0, "1 Star": 1, "Bib Gourmand": 2, "Recommended": 3}
     rs = sorted(MICHELIN["restaurants"], key=lambda r: (order[r["distinction"]], r["name"]))
     rows = ""
@@ -441,13 +454,22 @@ def build_michelin():
             exc = UNV
         p, _ = price_cell(r["id"])
         c = couple(d.get("per_person_estimate_usd")) if d else None
-        tot = (f"${c[0]:,}–${c[1]:,} for 2" if c else UNV)
-        s = SOC.get(r["id"], {})
+        if c and c[0] == c[1]:
+            tot = f"${c[0]:,} for 2"
+        elif c:
+            tot = f"${c[0]:,}–${c[1]:,} for 2"
+        else:
+            tot = UNV
+        s = dict(SOC.get(r["id"], {}))
+        if not s.get("instagram_official") and d.get("instagram_official"):
+            s["instagram_official"] = d["instagram_official"]
         links = []
         for y in s.get("youtube", []):
             links.append(f'<a href="{e(y["url"])}" target="_blank" rel="noopener">YT</a>')
+        if s.get("instagram_official"):
+            links.append(f'<a href="{e(s["instagram_official"])}" target="_blank" rel="noopener">IG&nbsp;(official)</a>')
         if s.get("instagram_posts"):
-            links.append(f'<a href="{e(s["instagram_posts"][0])}" target="_blank" rel="noopener">IG</a>')
+            links.append(f'<a href="{e(s["instagram_posts"][0])}" target="_blank" rel="noopener">IG&nbsp;(posts)</a>')
         linkcell = " · ".join(links) if links else UNV
         rows += f"""<tr>
 <td>{distinction_tag(r['distinction'])}</td>
@@ -481,6 +503,8 @@ at all</em>. Conflating these three is the most common error in Vegas “Micheli
 <div class="kpi"><small>Bib Gourmand</small><b>3</b><span class="src">no star</span></div>
 <div class="kpi"><small>Recommended only</small><b>17</b><span class="src">no star, no Bib</span></div>
 </div>
+
+{ops}
 
 <h2>All 24 Las Vegas selections</h2>
 <div class="tblwrap"><table>
