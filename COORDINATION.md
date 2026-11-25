@@ -6,61 +6,93 @@ Shared task board. One row per task. Statuses: `unclaimed`, `in progress`, `done
 - **Coordinating session ID:** `2d99ac1f`
 - **Branch:** `arena/2d99ac1f-vegas1` (fixed by the Arena harness — sessions must not switch or create branches).
   - Coordination convention asks for `session-<id>/<task>` branches. That conflicts with the harness
-    requirement to work only on the current branch, so **all tasks were claimed and worked on
-    `arena/2d99ac1f-vegas1`**. This session was the sole worker and also performed final integration.
-- **Commits:** frequent, on the current branch. Push with `git pull --rebase` before each push.
+    requirement to work only on the current branch, so all tasks were claimed and worked on
+    `arena/2d99ac1f-vegas1`.
+- **Commits:** frequent, on the current branch.
+
+## ⚠ RECONCILIATION / FINAL STATUS (read first)
+This session (`2d99ac1f`) independently built a complete site on `arena/2d99ac1f-vegas1` and pushed it.
+While finalising integration it discovered that **parallel sessions had already produced a more
+complete, verified, integrated site that is LIVE on `main`**:
+
+- **Live site:** https://kanlerxz87.github.io/Vegas1/ → https://kanlerxz87-cyber.github.io/Vegas1/
+- **Parallel sessions:** `arena-edcfa7a0-vegas1` (T02–T11 research + `data/*.json` + `docs/` + publish),
+  `arena-0c9983d6-vegas1` (transit verification / Route 203 correction),
+  `arena/126d963c-vegas1` (restaurant-hours verification pass), and others.
+- **Their integrated site** covers: 24 MICHELIN listings (4 starred / 3 Bib / 17 Recommended), 32 hotels
+  ranked with both a ≤20-min and a ≤60-min Michelin-reach column, a multi-week price comparison
+  (finding **8–15 March 2027 is the cheap week**, ~36–57% below the Presidents'-Day week), a
+  verification pass correcting hours (Joël Robuchon Tue–Sat; Michael Mina **temporarily closed**),
+  `FLAGS.md` with F-01…F-25, and a clean build pipeline (`scripts/build.py`, `gen_site.py`, `validate.py` →
+  8 pages, 0 failures, 0 warnings).
+
+**File overlap:** this session's files (`index.html`, `hotels.html`, `activities.html`,
+`suggestions.html`, `data/`) share names with the integrated `main` versions. Per coordination rules
+(#5 resolve without discarding other sessions' work; #8 shared outputs changed only by the integration
+session), **this session did NOT force-push to `main`**, because doing so would clobber the coordinated,
+verified, live deliverable. The live site on `main` **satisfies the task**; this branch is retained as
+an independent, superseded build for reference.
+
+## Deployment note
+The sandbox proxy blocks the GitHub Pages configuration APIs (`PUT /repos/.../pages/source` and
+`PUT /repos/.../actions-enabled` both return 404) and the Actions log host, and custom Actions
+workflows cannot acquire a runner (jobs fail with 0 steps). The live site is therefore published by the
+**built-in "Deploy from a branch" Pages builder on `main`** (the parallel integration session's path),
+which builds and serves successfully. This session's `.github/workflows/deploy.yml` is retained on its
+branch only and was not used for the live publish.
 
 ## Trip parameters (fixed requirements)
 - Destination: **Las Vegas, NV, USA**. Duration **1–2 weeks**; window **2027-02-15 → 2027-03-23**.
-- **Preferred window: 2027-02-15 → 2027-02-18**. Hotel pricing verified for a **7-night stay 2027-02-15 → 2027-02-22**.
-- Travelers: **2 adults (a couple)**. Hotel must have **private bathroom** + **queen bed or larger**.
-- Activities **≤ 1 hour travel** from the hotel. Hotels ranked by **# Michelin restaurants within 1 hour (subway/bus)**.
-- Hotel cost = **total for 7 nights**; Michelin cost = **total for 2 adults**.
+- **Preferred window: 2027-02-15 → 2027-02-18** (3 nights; hotel pricing verified for a **7-night stay
+  2027-02-15 → 2027-02-22**).
+- Travelers: **2 adults (a couple)**. Hotel: **private bathroom** + **queen bed or larger**.
+- Activities **≤ 1 hour travel**; hotels ranked by **# Michelin restaurants within 1 hour (subway/bus)**.
 
-## Task board
+## Task board (this session's independent build)
 | Task | Status | Owner | File scope |
 |------|--------|-------|-----------|
 | T1 — Requirements capture + executive summary | done | 2d99ac1f | `data/requirements.md`, `index.html` |
-| T2 — Hotel research (amenities, price/7-night, booking window) | done | 2d99ac1f | `hotels.html` |
-| T3 — Michelin restaurants (starred vs listed, cost, hours, location) | done | 2d99ac1f | `michelin.html` |
-| T4 — Activities (≤1h travel, hours, links, social) | done | 2d99ac1f | `activities.html` |
-| T5 — Social media links (YouTube/TikTok/Instagram) per entry | done | 2d99ac1f | within `michelin.html`, `activities.html` |
-| T6 — Site build (landing + subpages, mobile-friendly dashboard UI) | done | 2d99ac1f | `src/styles.css`, `src/app.js`, all HTML |
+| T2 — Hotel research | done | 2d99ac1f | `hotels.html` |
+| T3 — Michelin restaurants (starred vs listed, cost, hours) | done | 2d99ac1f | `michelin.html` |
+| T4 — Activities | done | 2d99ac1f | `activities.html` |
+| T5 — Social media links | done | 2d99ac1f | within `michelin.html`, `activities.html` |
+| T6 — Site build (landing + subpages, mobile UI) | done | 2d99ac1f | `src/styles.css`, `src/app.js`, HTML |
 | T7 — Verification: sources + flagged-for-review page | done | 2d99ac1f | `data/sources.md`, `review.html` |
-| T8 — Suggestions + open-questions section | done | 2d99ac1f | `suggestions.html` |
-| T9 — Final integration: merge, re-verify, build check, publish GitHub Pages | done | 2d99ac1f (integrator) | all files |
+| T8 — Suggestions + open questions | done | 2d99ac1f | `suggestions.html` |
+| T9 — Integration / publish | **superseded** | 2d99ac1f | live publish handled by parallel session on `main` |
 
-## Sources (official / verified)
-- **Michelin:** official 2026 MICHELIN Guide Southwest — starred list
-  (`https://guide.michelin.com/us/en/article/michelin-guide-ceremony/guide-michelin-southwest`) and full
-  press release with addresses (`https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s`).
-  Restaurant hours: `guide.michelin.com` (Joël Robuchon), `ebyjoseandres.com` (é), `mgmgrand.mgmresorts.com` (L'Atelier), `opentable.com` (China Poblano).
-- **Hotels:** Booking.com, Las Vegas, **check-in 2027-02-15 / check-out 2027-02-22, 2 adults, 1 room, USD**,
-  taxes & fees included (captured 2026-11-25): `https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD`
+## Sources verified by this session
+- **Michelin (official):** 2026 MICHELIN Guide Southwest starred list
+  (`guide.michelin.com/.../guide-michelin-southwest`) + full press release with addresses
+  (`michelin.com/.../michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s`).
+  Hours: `guide.michelin.com` (Joël Robuchon), `ebyjoseandres.com` (é), `mgmgrand.mgmresorts.com` (L'Atelier),
+  `opentable.com` (China Poblano).
+- **Hotels (official, date-specific):** Booking.com Las Vegas, **2027-02-15 → 2027-02-22, 2 adults, USD**,
+  taxes & fees included (captured 2026-11-25).
 - **Transit:** `unleashvegas.com`, `lasvegascompass.com`, `lvmonorail.com` (Deuce + Monorail fares/hours).
 - **Activities:** `lasvegaswonders.com`, `my-travelmonkey.com`, `viator.com`, `tripadvisor.com`.
 - **Restaurant costs:** `stubbornseed.com`, `newsroom.mgmresorts.com`, `lasvegaswonders.com`, `lasvegascompass.com`.
 - **Social:** Instagram `@joelrobuchon.lasvegas`, `@guysavoylasvegas`, `@bellagio`, `@spherevegaslv`.
 
-## Verification performed
-- **Michelin:** 24 Las Vegas distinctions (1 Two-Star, 3 One-Star, 3 Bib Gourmand, 17 Selected) + addresses
-  cross-checked against the two official Michelin sources above. Distinction labels applied from those sources.
-- **Hotels:** 5 properties with bed type, amenities, rating and 7-night USD total verified on Booking.com for the exact dates.
-- **Transit:** Deuce/Monorail fares and hours verified against operator sources.
-- **Build check:** all internal links resolve; all referenced assets exist (`index.html`, `hotels.html`,
-  `michelin.html`, `activities.html`, `suggestions.html`, `review.html`, `src/styles.css`, `src/app.js`). No broken internal links.
-- **Discipline:** no value inferred. Anything without an official source is blank + flagged `UNVERIFIED` on the tables and on `review.html`.
+## Verification performed by this session
+- Michelin: 24 Las Vegas distinctions + addresses cross-checked against the two official Michelin sources.
+- Hotels: 5 properties with bed type, amenities, rating, 7-night USD total verified on Booking.com for the exact dates.
+- Transit: Deuce/Monorail fares and hours verified against operator sources.
+- Build check: all internal links resolve; all referenced assets exist; HTML tag-balance validation PASS.
+- Discipline: no value inferred; unconfirmed values left blank + flagged `UNVERIFIED` on `review.html`.
 
-## Irregularities / flags (also on review.html)
-1. **Bed not guaranteed** at Flamingo, Horseshoe, Planet Hollywood ("Room Type Assigned on Arrival"). Only MGM Grand (Studio King) and Luxor (Pyramid King) confirm a king.
-2. **Resort fees** may be charged separately at check-in and are not confirmed in the Booking.com totals — `UNVERIFIED`.
-3. **Promotional pricing** — all five hotel rates are "Black Friday Deal" rates for 2027-02-15 → 02-22; dynamic, re-check live.
-4. **17 "Michelin Selected"** restaurants hold no star (listed, not starred) — labeled to avoid confusion.
-5. **No subway in Las Vegas** — "subway or bus" maps to the Deuce bus + Monorail + RTC buses; 1-hour reach measured against this network.
-6. **Single-window hotel pricing** — only the preferred 7-night window was priced, not the full 2027-02-15 → 03-23 range (cheapest-across-window comparison is a remaining task on the Suggestions page).
-7. **Estimated transit times** — hotel↔restaurant one-way times are estimates; confirm via RTC trip planner / Google Maps.
-8. **Unverified restaurant cost/hours** for the 17 Selected + Esther's Kitchen + YEN Viet Kitchen + Guy Savoy hours — left blank/flagged, to confirm on official sites.
+## Irregularities / flags (this session's build)
+1. Bed not guaranteed at Flamingo, Horseshoe, Planet Hollywood ("assigned on arrival").
+2. Resort fees may be extra (not confirmed in Booking.com totals) — UNVERIFIED.
+3. Promotional "Black Friday Deal" rates, dynamic, for 2027-02-15 → 02-22 only.
+4. 17 "Michelin Selected" restaurants hold no star (listed, not starred).
+5. Las Vegas has no subway — "subway or bus" maps to Deuce + Monorail + RTC buses.
+6. The ≤1-hour Michelin-reach metric is effectively tied (≈23/24) for Strip hotels — the parallel session's
+   site resolves this with a ≤20-minute ranking column.
+7. Estimated transit times — confirm via RTC trip planner / Google Maps.
 
 ## Handoff / irregularity log
-- Single session performed all tasks + integration. No other sessions, no merge conflicts.
-- Branch constraint reconciled: worked on the fixed `arena/2d99ac1f-vegas1` branch rather than `session-<id>/<task>` branches.
+- Single-session independent build; then discovered parallel sessions' integrated live site on `main`.
+- **No merge conflict encountered** because this session deliberately did **not** push to `main`.
+- Branch constraint reconciled: worked on the fixed `arena/2d99ac1f-vegas1` branch.
+- Live deliverable = the integrated site on `main` (published by the parallel integration session).
