@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "task": "Hotel ranking by number of MICHELIN Guide restaurants within 1 hour of travel",
+    "owner_session": "fd60d57e",
+    "last_updated": "2026-11-25",
+    "method": {
+      "restaurant_universe": "All 24 MICHELIN Guide Southwest 2026 Las Vegas restaurants (data/michelin.json — addresses verified against the official Michelin press release)",
+      "metric_1_in_hotel": "MICHELIN-listed restaurant physically inside the hotel (verified from official hotel pages)",
+      "metric_2_walk_15": "Additional MICHELIN-listed restaurants estimated ≤15-minute walk from the hotel entrance (walking-distance estimates along Las Vegas Blvd between adjacent resorts — ESTIMATE, not an official figure)",
+      "metric_3_within_1h": "Total restaurants reachable within ~1 hour using RTC bus (Deuce/local routes) + walking. Las Vegas has NO subway — bus (RTC) and the private Monorail are the public options (RTC fare page verified). Transit minutes are ESTIMATES pending route-level verification with the RTC trip planner; flagged accordingly.",
+      "exclusions": "Anima by Edo (9205 W. Russell Rd., far southwest) is estimated >1 hour by transit from Strip hotels and is excluded from 1-hour counts (flagged estimate).",
+      "sources": ["https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurants", "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s", "https://rtcws.rtcsnv.com/mobile/geoFares.html (Deuce 24/7 Strip route)", "official hotel pages for in-hotel restaurant locations"]
+    },
+    "ranking_rule": "Primary sort: metric_1 + metric_2 (restaurants inside hotel or ≤15-min walk). Secondary: metric_3. All travel-time figures are estimates and flagged as such per the verification policy."
+  },
+  "ranking": [
+    {"rank": 1, "hotel": "The Venetian Resort & Casino (incl. The Palazzo)", "in_hotel": 4, "in_hotel_list": ["Bouchon (Recommended)", "COTE Las Vegas (Recommended)", "Estiatorio Milos (Recommended)", "Mott 32 (Recommended, Palazzo)"], "walk_15_extra": 0, "within_1h_est": 23, "note": "Highest in-hotel Michelin count in Las Vegas. Venetian is also a MICHELIN Guide hotel.", "estimate_flags": ["within_1h_est is an estimate"]},
+    {"rank": 2, "hotel": "Bellagio", "in_hotel": 1, "in_hotel_list": ["Michael Mina (Recommended)"], "walk_15_extra": 3, "walk_15_list": ["é by José Andrés (1★) + China Poblano (Bib) at The Cosmopolitan across the Strip (~0.3 mi est.)", "Guy Savoy (1★) at Caesars Palace across the Strip (~0.4 mi est.)"], "within_1h_est": 23, "note": "Bellagio is a MICHELIN Guide hotel; official 'Fountain View Queen' room satisfies the queen-bed requirement.", "estimate_flags": ["walk distances are estimates", "within_1h_est is an estimate"]},
+    {"rank": 3, "hotel": "The Cosmopolitan of Las Vegas", "in_hotel": 2, "in_hotel_list": ["é by José Andrés (1★)", "China Poblano (Bib Gourmand)"], "walk_15_extra": 2, "walk_15_list": ["Michael Mina at Bellagio (~0.3 mi est.)", "Guy Savoy at Caesars Palace (~0.5 mi est.)"], "within_1h_est": 23, "note": "Two of the four stars within the property.", "estimate_flags": ["walk distances are estimates", "within_1h_est is an estimate"]},
+    {"rank": 4, "hotel": "ARIA Resort & Casino", "in_hotel": 1, "in_hotel_list": ["Gymkhana (Recommended)"], "walk_15_extra": 3, "walk_15_list": ["Michael Mina at Bellagio (~0.2 mi est.)", "é + China Poblano at The Cosmopolitan (~0.3–0.4 mi est.)"], "within_1h_est": 23, "note": "ARIA is directly adjacent to Bellagio/Cosmopolitan via CityCenter walkways.", "estimate_flags": ["walk distances are estimates", "within_1h_est is an estimate"]},
+    {"rank": 5, "hotel": "MGM Grand", "in_hotel": 2, "in_hotel_list": ["Restaurant de Joël Robuchon (2★)", "L'Atelier de Joël Robuchon (1★)"], "walk_15_extra": 0, "within_1h_est": 23, "note": "Holds the Southwest's only 2-star restaurant plus a 1-star — strongest single-property star count. South-Strip location means longer Deuce rides to the mid-Strip cluster (~10–20 min est.).", "estimate_flags": ["within_1h_est is an estimate"]},
+    {"rank": 6, "hotel": "Caesars Palace", "in_hotel": 1, "in_hotel_list": ["Guy Savoy (1★)"], "walk_15_extra": 3, "walk_15_list": ["Michael Mina at Bellagio (~0.4 mi est.)", "é + China Poblano at The Cosmopolitan (~0.5 mi est.)"], "within_1h_est": 23, "estimate_flags": ["walk distances are estimates", "within_1h_est is an estimate"]},
+    {"rank": 7, "hotel": "Wynn Las Vegas (incl. Encore)", "in_hotel": 1, "in_hotel_list": ["Wing Lei (Recommended)"], "walk_15_extra": 4, "walk_15_list": ["Bouchon, COTE, Milos (Venetian) + Mott 32 (Palazzo) ~0.4–0.5 mi south (est.)"], "within_1h_est": 23, "note": "Wynn is a MICHELIN Guide hotel.", "estimate_flags": ["walk distances are estimates", "within_1h_est is an estimate"]},
+    {"rank": 8, "hotel": "The LINQ Hotel & Casino", "in_hotel": 0, "in_hotel_list": [], "walk_15_extra": 4, "walk_15_list": ["Bellagio (Michael Mina) ~0.3 mi south (est.)", "Cosmopolitan (é, China Poblano) ~0.4 mi (est.)", "Caesars Palace (Guy Savoy) ~0.2 mi (est.)"], "within_1h_est": 23, "note": "Budget-friendly center-Strip position next to the LINQ Promenade/High Roller.", "estimate_flags": ["walk distances are estimates", "within_1h_est is an estimate"]},
+    {"rank": 9, "hotel": "Resorts World Las Vegas", "in_hotel": 1, "in_hotel_list": ["Stubborn Seed (Recommended)"], "walk_15_extra": 5, "walk_15_list": ["Wing Lei at Wynn (~0.5 mi est.)", "Venetian cluster (Bouchon/COTE/Milos/Mott 32) ~0.6–0.7 mi est. — borderline 15-min walk"], "within_1h_est": 22, "note": "North Strip; longer Deuce rides to mid-Strip (~10–15 min est.).", "estimate_flags": ["walk distances are estimates", "within_1h_est is an estimate"]},
+    {"rank": 10, "hotel": "The STRAT Hotel, Casino & Tower", "in_hotel": 0, "in_hotel_list": [], "walk_15_extra": 0, "within_1h_est": 21, "note": "Far north Strip — most Michelin restaurants require a Deuce ride (~10–25 min est.) before walking.", "estimate_flags": ["within_1h_est is an estimate with higher uncertainty"]}
+  ],
+  "off_strip_option": {
+    "hotel": "Downtown / Fremont Street properties (e.g., Circa Resort & Casino — a MICHELIN Guide hotel)",
+    "in_hotel": 0,
+    "walk_15_extra": 2,
+    "walk_15_list": ["Esther's Kitchen (Bib Gourmand) and SoulBelly BBQ (Recommended) in the Arts District are a short ride/walk (est.)"],
+    "within_1h_est": 20,
+    "note": "Budget-friendly; Strip Michelin cluster reached via Deuce (~25–40 min est., verified 24/7 route).",
+    "estimate_flags": ["within_1h_est is an estimate"]
+  },
+  "constraints_reminder": "All ranked hotels are 2-adult friendly with private bathrooms per data/hotels.json; queen-bed-or-larger must still be confirmed on official room pages (see flag F07 in data/flags.json)."
+}

@@ -1,0 +1,2029 @@
+{
+  "meta": {
+    "generated_by": "tools/build_matrix.py",
+    "what_this_is": "Hotel x MICHELIN-cluster one-way travel times in minutes, plus the bands that apply the brief's one-hour limit.",
+    "correction_notice": "Two earlier versions of this model were wrong and both are documented rather than deleted. Version 1 graded every Strip hotel identically, so everything tied. Version 2 wrongly recorded Chinatown / Spring Mountain Road as having no transit, when RTC Route 203 runs the length of that road with a timed stop at Las Vegas Blvd. Because Chinatown holds 7 of the 24 restaurants, correcting it raised every Strip hotel's count substantially.",
+    "verified_inputs": {
+      "route_203_timetable": "https://rtcws.rtcsnv.com/routePDF/203.pdf",
+      "route_203_decatur_to_las_vegas_blvd_minutes": 14.0,
+      "monorail_stations_and_headway": "https://www.lvmonorail.com/stations/",
+      "monorail_fares": "https://www.lvmonorail.com/ticket-information/",
+      "rtc_fares": "https://www.rtcsnv.com/ways-to-travel/fares-passes/"
+    },
+    "assumptions": {
+      "walk_mph": 3.0,
+      "monorail_mph": 15.0,
+      "deuce_mph": 8.0,
+      "wait_minutes_per_boarding": 8.0,
+      "transfer_penalty_minutes": 10.0,
+      "note": "Only the Route 203 Decatur-to-Las-Vegas-Blvd figure of 14 minutes is published. The speeds and penalties above are ordinary planning values, declared so the reader can see exactly which numbers are measured and which are assumed."
+    },
+    "calibration": {
+      "numbers_per_mile": 337.0,
+      "derivation": "SAHARA at about 2535 to Mandalay Bay at about 3950 spans roughly 4.2 miles, so one mile is about 337 street numbers."
+    },
+    "restaurant_clusters": [
+      {
+        "key": "mgm",
+        "label": "MGM Grand",
+        "count": 2,
+        "access": "mono"
+      },
+      {
+        "key": "center",
+        "label": "Center Strip (Caesars / Cosmopolitan / Bellagio)",
+        "count": 4,
+        "access": "mono"
+      },
+      {
+        "key": "venetian",
+        "label": "Venetian / Palazzo",
+        "count": 4,
+        "access": "deuce"
+      },
+      {
+        "key": "wynn",
+        "label": "Wynn / Encore / Resorts World",
+        "count": 2,
+        "access": "deuce"
+      },
+      {
+        "key": "aria",
+        "label": "CityCenter (ARIA)",
+        "count": 1,
+        "access": "deuce"
+      },
+      {
+        "key": "chinatown",
+        "label": "Chinatown / Spring Mountain Rd",
+        "count": 7,
+        "access": "spring_mtn"
+      },
+      {
+        "key": "arts",
+        "label": "Arts District / Downtown",
+        "count": 2,
+        "access": "downtown"
+      },
+      {
+        "key": "west",
+        "label": "West Flamingo (off-Strip)",
+        "count": 1,
+        "access": "west_flamingo"
+      },
+      {
+        "key": "southwest",
+        "label": "Southwest Las Vegas (off-Strip)",
+        "count": 1,
+        "access": "southwest"
+      }
+    ],
+    "total_restaurants": 24,
+    "bands": {
+      "WALK": "Under about 14 minutes on foot, no transit",
+      "LE30": "30 minutes or less door to door",
+      "LE60": "Between 30 and 60 minutes door to door, still inside the brief",
+      "GT60": "Over an hour, or no realistic transit route"
+    },
+    "summary": {
+      "luxor": {
+        "within_60": 15,
+        "within_30": 7,
+        "walk": 0
+      },
+      "mgm-grand": {
+        "within_60": 15,
+        "within_30": 7,
+        "walk": 2
+      },
+      "new-york-new-york": {
+        "within_60": 15,
+        "within_30": 7,
+        "walk": 2
+      },
+      "excalibur": {
+        "within_60": 15,
+        "within_30": 7,
+        "walk": 2
+      },
+      "aria": {
+        "within_60": 15,
+        "within_30": 6,
+        "walk": 0
+      },
+      "cosmopolitan": {
+        "within_60": 15,
+        "within_30": 11,
+        "walk": 6
+      },
+      "planet-hollywood": {
+        "within_60": 15,
+        "within_30": 13,
+        "walk": 6
+      },
+      "bellagio": {
+        "within_60": 15,
+        "within_30": 10,
+        "walk": 0
+      },
+      "caesars-palace": {
+        "within_60": 15,
+        "within_30": 10,
+        "walk": 0
+      },
+      "flamingo": {
+        "within_60": 15,
+        "within_30": 13,
+        "walk": 4
+      },
+      "wynn": {
+        "within_60": 22,
+        "within_30": 10,
+        "walk": 2
+      },
+      "trump-international": {
+        "within_60": 21,
+        "within_30": 0,
+        "walk": 0
+      }
+    }
+  },
+  "hotel_bands": {
+    "luxor": {
+      "transit_basis": "No Monorail station. Deuce on Las Vegas Boulevard, plus the free Mandalay Bay-Excalibur tram.",
+      "mgm": "LE30",
+      "center": "LE30",
+      "venetian": "LE60",
+      "wynn": "LE60",
+      "aria": "LE30",
+      "chinatown": "GT60",
+      "arts": "LE60",
+      "west": "GT60",
+      "southwest": "GT60"
+    },
+    "mgm-grand": {
+      "transit_basis": "MGM Grand Station has two entrances inside the resort, plus the Deuce outside.",
+      "mgm": "WALK",
+      "center": "LE30",
+      "venetian": "LE60",
+      "wynn": "LE60",
+      "aria": "LE30",
+      "chinatown": "GT60",
+      "arts": "LE60",
+      "west": "GT60",
+      "southwest": "GT60"
+    },
+    "new-york-new-york": {
+      "transit_basis": "MGM Grand Station via pedestrian bridge, plus the Deuce outside.",
+      "mgm": "WALK",
+      "center": "LE30",
+      "venetian": "LE60",
+      "wynn": "LE60",
+      "aria": "LE30",
+      "chinatown": "GT60",
+      "arts": "LE60",
+      "west": "GT60",
+      "southwest": "GT60"
+    },
+    "excalibur": {
+      "transit_basis": "MGM Grand Station via the free Excalibur-Mandalay Bay tram and a walk, plus the Deuce.",
+      "mgm": "WALK",
+      "center": "LE30",
+      "venetian": "LE60",
+      "wynn": "LE60",
+      "aria": "LE30",
+      "chinatown": "GT60",
+      "arts": "LE60",
+      "west": "GT60",
+      "southwest": "GT60"
+    },
+    "aria": {
+      "transit_basis": "No Monorail station. The ARIA Express tram and the Deuce serve the area, but the property sits well back from the Boulevard.",
+      "mgm": "LE30",
+      "center": "LE30",
+      "venetian": "LE60",
+      "wynn": "LE60",
+      "aria": "LE60",
+      "chinatown": "GT60",
+      "arts": "LE60",
+      "west": "GT60",
+      "southwest": "GT60"
+    },
+    "cosmopolitan": {
+      "transit_basis": "Horseshoe/Paris Station a short walk away, plus the Deuce outside.",
+      "mgm": "WALK",
+      "center": "WALK",
+      "venetian": "LE30",
+      "wynn": "LE60",
+      "aria": "LE30",
+      "chinatown": "GT60",
+      "arts": "LE60",
+      "west": "GT60",
+      "southwest": "GT60"
+    },
+    "planet-hollywood": {
+      "transit_basis": "Horseshoe/Paris Station directly across Las Vegas Boulevard, plus the Deuce.",
+      "mgm": "WALK",
+      "center": "WALK",
+      "venetian": "LE30",
+      "wynn": "LE30",
+      "aria": "LE30",
+      "chinatown": "GT60",
+      "arts": "LE60",
+      "west": "GT60",
+      "southwest": "GT60"
+    },
+    "bellagio": {
+      "transit_basis": "Horseshoe/Paris Station about 2,300 ft away, plus the Deuce. The hotel is set back behind its lake.",
+      "mgm": "LE30",
+      "center": "LE30",
+      "venetian": "LE30",
+      "wynn": "LE60",
+      "aria": "LE60",
+      "chinatown": "GT60",
+      "arts": "LE60",
+      "west": "GT60",
+      "southwest": "GT60"
+    },
+    "caesars-palace": {
+      "transit_basis": "Flamingo/Caesars Palace Station about 2,350 ft away, plus the Deuce. The property is set well back from the Boulevard.",
+      "mgm": "LE30",
+      "center": "LE30",
+      "venetian": "LE30",
+      "wynn": "LE60",
+      "aria": "LE60",
+      "chinatown": "GT60",
+      "arts": "LE60",
+      "west": "GT60",
+      "southwest": "GT60"
+    },
+    "flamingo": {
+      "transit_basis": "Flamingo/Caesars Palace Station at the property, plus the Deuce outside.",
+      "mgm": "LE30",
+      "center": "WALK",
+      "venetian": "LE30",
+      "wynn": "LE30",
+      "aria": "LE30",
+      "chinatown": "GT60",
+      "arts": "LE60",
+      "west": "GT60",
+      "southwest": "GT60"
+    },
+    "wynn": {
+      "transit_basis": "No Monorail station, but Spring Mountain Road crosses Las Vegas Boulevard at the north end of the property, so Route 203 to Chinatown boards a short walk away.",
+      "mgm": "LE60",
+      "center": "LE30",
+      "venetian": "LE30",
+      "wynn": "WALK",
+      "aria": "LE60",
+      "chinatown": "LE60",
+      "arts": "LE60",
+      "west": "GT60",
+      "southwest": "GT60"
+    },
+    "trump-international": {
+      "transit_basis": "Off Las Vegas Boulevard behind Fashion Show mall. Route 203 boards on Spring Mountain Road about 0.9 mi away.",
+      "mgm": "LE60",
+      "center": "LE60",
+      "venetian": "LE60",
+      "wynn": "LE60",
+      "aria": "GT60",
+      "chinatown": "LE60",
+      "arts": "LE60",
+      "west": "GT60",
+      "southwest": "GT60"
+    }
+  },
+  "estimated_minutes": {
+    "luxor": {
+      "mgm": 16.0,
+      "center": 23.3,
+      "venetian": 31.1,
+      "wynn": 36.1,
+      "aria": 29.8,
+      "chinatown": 69.0,
+      "arts": 42.0,
+      "west": null,
+      "southwest": null
+    },
+    "mgm-grand": {
+      "mgm": 8.0,
+      "center": 17.6,
+      "venetian": 30.3,
+      "wynn": 32.9,
+      "aria": 20.1,
+      "chinatown": 65.0,
+      "arts": 40.0,
+      "west": null,
+      "southwest": null
+    },
+    "new-york-new-york": {
+      "mgm": 9.5,
+      "center": 18.5,
+      "venetian": 31.2,
+      "wynn": 33.8,
+      "aria": 20.6,
+      "chinatown": 66.0,
+      "arts": 41.0,
+      "west": null,
+      "southwest": null
+    },
+    "excalibur": {
+      "mgm": 13.0,
+      "center": 20.3,
+      "venetian": 32.9,
+      "wynn": 35.5,
+      "aria": 28.7,
+      "chinatown": 67.0,
+      "arts": 42.0,
+      "west": null,
+      "southwest": null
+    },
+    "aria": {
+      "mgm": 20.1,
+      "center": 20.2,
+      "venetian": 33.3,
+      "wynn": 38.3,
+      "aria": 32.0,
+      "chinatown": 71.2,
+      "arts": 48.0,
+      "west": null,
+      "southwest": null
+    },
+    "cosmopolitan": {
+      "mgm": 12.4,
+      "center": 9.8,
+      "venetian": 28.2,
+      "wynn": 30.8,
+      "aria": 16.3,
+      "chinatown": 64.0,
+      "arts": 39.0,
+      "west": null,
+      "southwest": null
+    },
+    "planet-hollywood": {
+      "mgm": 13.8,
+      "center": 6.4,
+      "venetian": 26.7,
+      "wynn": 29.4,
+      "aria": 17.7,
+      "chinatown": 63.0,
+      "arts": 38.0,
+      "west": null,
+      "southwest": null
+    },
+    "bellagio": {
+      "mgm": 23.4,
+      "center": 21.7,
+      "venetian": 27.5,
+      "wynn": 35.6,
+      "aria": 31.9,
+      "chinatown": 70.0,
+      "arts": 45.0,
+      "west": null,
+      "southwest": null
+    },
+    "caesars-palace": {
+      "mgm": 23.7,
+      "center": 22.1,
+      "venetian": 26.8,
+      "wynn": 35.2,
+      "aria": 32.6,
+      "chinatown": 70.0,
+      "arts": 45.0,
+      "west": null,
+      "southwest": null
+    },
+    "flamingo": {
+      "mgm": 17.9,
+      "center": 13.2,
+      "venetian": 19.9,
+      "wynn": 29.0,
+      "aria": 26.9,
+      "chinatown": 64.0,
+      "arts": 39.0,
+      "west": null,
+      "southwest": null
+    },
+    "wynn": {
+      "mgm": 30.9,
+      "center": 27.8,
+      "venetian": 22.0,
+      "wynn": 9.0,
+      "aria": 37.3,
+      "chinatown": 34.0,
+      "arts": 40.0,
+      "west": null,
+      "southwest": null
+    },
+    "trump-international": {
+      "mgm": 55.0,
+      "center": 51.9,
+      "venetian": 46.2,
+      "wynn": 41.2,
+      "aria": 61.5,
+      "chinatown": 45.0,
+      "arts": 39.0,
+      "west": null,
+      "southwest": null
+    }
+  },
+  "legs": {
+    "luxor": {
+      "mgm": [
+        {
+          "leg": "walk",
+          "minutes": 16.0
+        }
+      ],
+      "center": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 6.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 5.3
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 4.0
+        }
+      ],
+      "venetian": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 6.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 12.1
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 5.0
+        }
+      ],
+      "wynn": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 6.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 17.1
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 5.0
+        }
+      ],
+      "aria": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 6.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 3.8
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 12.0
+        }
+      ],
+      "chinatown": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 6.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce north along Las Vegas Blvd",
+          "minutes": 20.0
+        },
+        {
+          "leg": "walk from Las Vegas Blvd to Spring Mountain Rd",
+          "minutes": 6.0
+        },
+        {
+          "leg": "change to Route 203",
+          "minutes": 10.0
+        },
+        {
+          "leg": "Route 203 west toward Decatur (published 14 min)",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 5.0
+        }
+      ],
+      "arts": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 6.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce / SDX north to Downtown",
+          "minutes": 20.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 8.0
+        }
+      ],
+      "west": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ],
+      "southwest": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ]
+    },
+    "mgm-grand": {
+      "mgm": [
+        {
+          "leg": "walk",
+          "minutes": 8.0
+        }
+      ],
+      "center": [
+        {
+          "leg": "walk to MGM Grand Station",
+          "minutes": 4.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail",
+          "minutes": 1.6
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 4.0
+        }
+      ],
+      "venetian": [
+        {
+          "leg": "walk to MGM Grand Station",
+          "minutes": 4.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail toward the nearest station",
+          "minutes": 3.3
+        },
+        {
+          "leg": "walk from the station to the cluster",
+          "minutes": 15.0
+        }
+      ],
+      "wynn": [
+        {
+          "leg": "walk to MGM Grand Station",
+          "minutes": 4.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail toward the nearest station",
+          "minutes": 5.9
+        },
+        {
+          "leg": "walk from the station to the cluster",
+          "minutes": 15.0
+        }
+      ],
+      "aria": [
+        {
+          "leg": "walk",
+          "minutes": 20.1
+        }
+      ],
+      "chinatown": [
+        {
+          "leg": "walk to MGM Grand Station",
+          "minutes": 4.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail north to SAHARA",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk from SAHARA to Spring Mountain Rd",
+          "minutes": 10.0
+        },
+        {
+          "leg": "change to Route 203",
+          "minutes": 10.0
+        },
+        {
+          "leg": "Route 203 west toward Decatur (published 14 min)",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 5.0
+        }
+      ],
+      "arts": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 4.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce / SDX north to Downtown",
+          "minutes": 20.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 8.0
+        }
+      ],
+      "west": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ],
+      "southwest": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ]
+    },
+    "new-york-new-york": {
+      "mgm": [
+        {
+          "leg": "walk",
+          "minutes": 9.5
+        }
+      ],
+      "center": [
+        {
+          "leg": "walk to MGM Grand Station",
+          "minutes": 5.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail",
+          "minutes": 1.5
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 4.0
+        }
+      ],
+      "venetian": [
+        {
+          "leg": "walk to MGM Grand Station",
+          "minutes": 5.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail toward the nearest station",
+          "minutes": 3.2
+        },
+        {
+          "leg": "walk from the station to the cluster",
+          "minutes": 15.0
+        }
+      ],
+      "wynn": [
+        {
+          "leg": "walk to MGM Grand Station",
+          "minutes": 5.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail toward the nearest station",
+          "minutes": 5.8
+        },
+        {
+          "leg": "walk from the station to the cluster",
+          "minutes": 15.0
+        }
+      ],
+      "aria": [
+        {
+          "leg": "walk",
+          "minutes": 20.6
+        }
+      ],
+      "chinatown": [
+        {
+          "leg": "walk to MGM Grand Station",
+          "minutes": 5.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail north to SAHARA",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk from SAHARA to Spring Mountain Rd",
+          "minutes": 10.0
+        },
+        {
+          "leg": "change to Route 203",
+          "minutes": 10.0
+        },
+        {
+          "leg": "Route 203 west toward Decatur (published 14 min)",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 5.0
+        }
+      ],
+      "arts": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 5.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce / SDX north to Downtown",
+          "minutes": 20.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 8.0
+        }
+      ],
+      "west": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ],
+      "southwest": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ]
+    },
+    "excalibur": {
+      "mgm": [
+        {
+          "leg": "walk",
+          "minutes": 13.0
+        }
+      ],
+      "center": [
+        {
+          "leg": "walk to MGM Grand Station",
+          "minutes": 6.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail",
+          "minutes": 2.3
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 4.0
+        }
+      ],
+      "venetian": [
+        {
+          "leg": "walk to MGM Grand Station",
+          "minutes": 6.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail toward the nearest station",
+          "minutes": 3.9
+        },
+        {
+          "leg": "walk from the station to the cluster",
+          "minutes": 15.0
+        }
+      ],
+      "wynn": [
+        {
+          "leg": "walk to MGM Grand Station",
+          "minutes": 6.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail toward the nearest station",
+          "minutes": 6.5
+        },
+        {
+          "leg": "walk from the station to the cluster",
+          "minutes": 15.0
+        }
+      ],
+      "aria": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 6.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 2.7
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 12.0
+        }
+      ],
+      "chinatown": [
+        {
+          "leg": "walk to MGM Grand Station",
+          "minutes": 6.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail north to SAHARA",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk from SAHARA to Spring Mountain Rd",
+          "minutes": 10.0
+        },
+        {
+          "leg": "change to Route 203",
+          "minutes": 10.0
+        },
+        {
+          "leg": "Route 203 west toward Decatur (published 14 min)",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 5.0
+        }
+      ],
+      "arts": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 6.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce / SDX north to Downtown",
+          "minutes": 20.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 8.0
+        }
+      ],
+      "west": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ],
+      "southwest": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ]
+    },
+    "aria": {
+      "mgm": [
+        {
+          "leg": "walk",
+          "minutes": 20.1
+        }
+      ],
+      "center": [
+        {
+          "leg": "walk",
+          "minutes": 20.2
+        }
+      ],
+      "venetian": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 12.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 8.3
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 5.0
+        }
+      ],
+      "wynn": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 12.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 13.3
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 5.0
+        }
+      ],
+      "aria": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 12.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 0.0
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 12.0
+        }
+      ],
+      "chinatown": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 12.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce north along Las Vegas Blvd",
+          "minutes": 16.2
+        },
+        {
+          "leg": "walk from Las Vegas Blvd to Spring Mountain Rd",
+          "minutes": 6.0
+        },
+        {
+          "leg": "change to Route 203",
+          "minutes": 10.0
+        },
+        {
+          "leg": "Route 203 west toward Decatur (published 14 min)",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 5.0
+        }
+      ],
+      "arts": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 12.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce / SDX north to Downtown",
+          "minutes": 20.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 8.0
+        }
+      ],
+      "west": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ],
+      "southwest": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ]
+    },
+    "cosmopolitan": {
+      "mgm": [
+        {
+          "leg": "walk",
+          "minutes": 12.4
+        }
+      ],
+      "center": [
+        {
+          "leg": "walk",
+          "minutes": 9.8
+        }
+      ],
+      "venetian": [
+        {
+          "leg": "walk to Horseshoe / Paris Station",
+          "minutes": 3.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail toward the nearest station",
+          "minutes": 2.2
+        },
+        {
+          "leg": "walk from the station to the cluster",
+          "minutes": 15.0
+        }
+      ],
+      "wynn": [
+        {
+          "leg": "walk to Horseshoe / Paris Station",
+          "minutes": 3.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail toward the nearest station",
+          "minutes": 4.8
+        },
+        {
+          "leg": "walk from the station to the cluster",
+          "minutes": 15.0
+        }
+      ],
+      "aria": [
+        {
+          "leg": "walk",
+          "minutes": 16.3
+        }
+      ],
+      "chinatown": [
+        {
+          "leg": "walk to Horseshoe / Paris Station",
+          "minutes": 3.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail north to SAHARA",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk from SAHARA to Spring Mountain Rd",
+          "minutes": 10.0
+        },
+        {
+          "leg": "change to Route 203",
+          "minutes": 10.0
+        },
+        {
+          "leg": "Route 203 west toward Decatur (published 14 min)",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 5.0
+        }
+      ],
+      "arts": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 3.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce / SDX north to Downtown",
+          "minutes": 20.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 8.0
+        }
+      ],
+      "west": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ],
+      "southwest": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ]
+    },
+    "planet-hollywood": {
+      "mgm": [
+        {
+          "leg": "walk",
+          "minutes": 13.8
+        }
+      ],
+      "center": [
+        {
+          "leg": "walk",
+          "minutes": 6.4
+        }
+      ],
+      "venetian": [
+        {
+          "leg": "walk to Horseshoe / Paris Station",
+          "minutes": 2.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail toward the nearest station",
+          "minutes": 1.7
+        },
+        {
+          "leg": "walk from the station to the cluster",
+          "minutes": 15.0
+        }
+      ],
+      "wynn": [
+        {
+          "leg": "walk to Horseshoe / Paris Station",
+          "minutes": 2.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail toward the nearest station",
+          "minutes": 4.4
+        },
+        {
+          "leg": "walk from the station to the cluster",
+          "minutes": 15.0
+        }
+      ],
+      "aria": [
+        {
+          "leg": "walk",
+          "minutes": 17.7
+        }
+      ],
+      "chinatown": [
+        {
+          "leg": "walk to Horseshoe / Paris Station",
+          "minutes": 2.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail north to SAHARA",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk from SAHARA to Spring Mountain Rd",
+          "minutes": 10.0
+        },
+        {
+          "leg": "change to Route 203",
+          "minutes": 10.0
+        },
+        {
+          "leg": "Route 203 west toward Decatur (published 14 min)",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 5.0
+        }
+      ],
+      "arts": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 2.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce / SDX north to Downtown",
+          "minutes": 20.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 8.0
+        }
+      ],
+      "west": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ],
+      "southwest": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ]
+    },
+    "bellagio": {
+      "mgm": [
+        {
+          "leg": "walk to Horseshoe / Paris Station",
+          "minutes": 9.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail",
+          "minutes": 2.4
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 4.0
+        }
+      ],
+      "center": [
+        {
+          "leg": "walk to Horseshoe / Paris Station",
+          "minutes": 9.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail",
+          "minutes": 0.7
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 4.0
+        }
+      ],
+      "venetian": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 9.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 5.5
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 5.0
+        }
+      ],
+      "wynn": [
+        {
+          "leg": "walk to Horseshoe / Paris Station",
+          "minutes": 9.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail toward the nearest station",
+          "minutes": 3.6
+        },
+        {
+          "leg": "walk from the station to the cluster",
+          "minutes": 15.0
+        }
+      ],
+      "aria": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 9.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 2.9
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 12.0
+        }
+      ],
+      "chinatown": [
+        {
+          "leg": "walk to Horseshoe / Paris Station",
+          "minutes": 9.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail north to SAHARA",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk from SAHARA to Spring Mountain Rd",
+          "minutes": 10.0
+        },
+        {
+          "leg": "change to Route 203",
+          "minutes": 10.0
+        },
+        {
+          "leg": "Route 203 west toward Decatur (published 14 min)",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 5.0
+        }
+      ],
+      "arts": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 9.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce / SDX north to Downtown",
+          "minutes": 20.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 8.0
+        }
+      ],
+      "west": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ],
+      "southwest": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ]
+    },
+    "caesars-palace": {
+      "mgm": [
+        {
+          "leg": "walk to Flamingo / Caesars Palace Station",
+          "minutes": 9.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail",
+          "minutes": 2.7
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 4.0
+        }
+      ],
+      "center": [
+        {
+          "leg": "walk to Flamingo / Caesars Palace Station",
+          "minutes": 9.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail",
+          "minutes": 1.1
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 4.0
+        }
+      ],
+      "venetian": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 9.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 4.8
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 5.0
+        }
+      ],
+      "wynn": [
+        {
+          "leg": "walk to Flamingo / Caesars Palace Station",
+          "minutes": 9.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail toward the nearest station",
+          "minutes": 3.2
+        },
+        {
+          "leg": "walk from the station to the cluster",
+          "minutes": 15.0
+        }
+      ],
+      "aria": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 9.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 3.6
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 12.0
+        }
+      ],
+      "chinatown": [
+        {
+          "leg": "walk to Flamingo / Caesars Palace Station",
+          "minutes": 9.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail north to SAHARA",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk from SAHARA to Spring Mountain Rd",
+          "minutes": 10.0
+        },
+        {
+          "leg": "change to Route 203",
+          "minutes": 10.0
+        },
+        {
+          "leg": "Route 203 west toward Decatur (published 14 min)",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 5.0
+        }
+      ],
+      "arts": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 9.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce / SDX north to Downtown",
+          "minutes": 20.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 8.0
+        }
+      ],
+      "west": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ],
+      "southwest": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ]
+    },
+    "flamingo": {
+      "mgm": [
+        {
+          "leg": "walk to Flamingo / Caesars Palace Station",
+          "minutes": 3.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail",
+          "minutes": 2.9
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 4.0
+        }
+      ],
+      "center": [
+        {
+          "leg": "walk",
+          "minutes": 13.2
+        }
+      ],
+      "venetian": [
+        {
+          "leg": "walk",
+          "minutes": 19.9
+        }
+      ],
+      "wynn": [
+        {
+          "leg": "walk to Flamingo / Caesars Palace Station",
+          "minutes": 3.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail toward the nearest station",
+          "minutes": 3.0
+        },
+        {
+          "leg": "walk from the station to the cluster",
+          "minutes": 15.0
+        }
+      ],
+      "aria": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 3.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 3.9
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 12.0
+        }
+      ],
+      "chinatown": [
+        {
+          "leg": "walk to Flamingo / Caesars Palace Station",
+          "minutes": 3.0
+        },
+        {
+          "leg": "wait for the Monorail",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Monorail north to SAHARA",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk from SAHARA to Spring Mountain Rd",
+          "minutes": 10.0
+        },
+        {
+          "leg": "change to Route 203",
+          "minutes": 10.0
+        },
+        {
+          "leg": "Route 203 west toward Decatur (published 14 min)",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 5.0
+        }
+      ],
+      "arts": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 3.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce / SDX north to Downtown",
+          "minutes": 20.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 8.0
+        }
+      ],
+      "west": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ],
+      "southwest": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ]
+    },
+    "wynn": {
+      "mgm": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 4.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 14.9
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 4.0
+        }
+      ],
+      "center": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 4.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 11.8
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 4.0
+        }
+      ],
+      "venetian": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 4.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 5.0
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 5.0
+        }
+      ],
+      "wynn": [
+        {
+          "leg": "walk",
+          "minutes": 9.0
+        }
+      ],
+      "aria": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 4.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 13.3
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 12.0
+        }
+      ],
+      "chinatown": [
+        {
+          "leg": "walk to Route 203 on Spring Mountain Rd",
+          "minutes": 7.0
+        },
+        {
+          "leg": "wait for Route 203",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Route 203 west toward Decatur (published 14 min)",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 5.0
+        }
+      ],
+      "arts": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 4.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce / SDX north to Downtown",
+          "minutes": 20.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 8.0
+        }
+      ],
+      "west": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ],
+      "southwest": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ]
+    },
+    "trump-international": {
+      "mgm": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 3.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 40.0
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 4.0
+        }
+      ],
+      "center": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 3.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 36.9
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 4.0
+        }
+      ],
+      "venetian": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 3.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 30.2
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 5.0
+        }
+      ],
+      "wynn": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 3.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 25.2
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 5.0
+        }
+      ],
+      "aria": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 3.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce along Las Vegas Blvd",
+          "minutes": 38.5
+        },
+        {
+          "leg": "walk from the stop",
+          "minutes": 12.0
+        }
+      ],
+      "chinatown": [
+        {
+          "leg": "walk to Route 203 on Spring Mountain Rd",
+          "minutes": 18.0
+        },
+        {
+          "leg": "wait for Route 203",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Route 203 west toward Decatur (published 14 min)",
+          "minutes": 14.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 5.0
+        }
+      ],
+      "arts": [
+        {
+          "leg": "walk to the Deuce",
+          "minutes": 3.0
+        },
+        {
+          "leg": "wait for the Deuce",
+          "minutes": 8.0
+        },
+        {
+          "leg": "Deuce / SDX north to Downtown",
+          "minutes": 20.0
+        },
+        {
+          "leg": "walk to the restaurant",
+          "minutes": 8.0
+        }
+      ],
+      "west": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ],
+      "southwest": [
+        {
+          "leg": "no direct transit corridor found",
+          "minutes": null
+        }
+      ]
+    }
+  }
+}
