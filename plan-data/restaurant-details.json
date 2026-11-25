@@ -200,6 +200,120 @@
       "price_status": "partial - official menu PDFs published, price not extracted",
       "per_person_usd_note": "Official tasting and a-la-carte PDFs are published but per-person totals were not extracted in this session.",
       "reservation_url": "https://www.sevenrooms.com/explore/stubbornseedlv/reservations/create/search/"
+    },
+    {
+      "id": "bouchon",
+      "hours_source": "https://www.venetianlasvegas.com/dining/restaurants/bouchon.html",
+      "hours": {
+        "mon_wed": "5:00 PM - 10:00 PM",
+        "thu": "8:00 AM - 1:00 PM, 5:00 PM - 10:00 PM",
+        "fri_sun": "8:00 AM - 2:00 PM, 5:00 PM - 10:00 PM"
+      },
+      "hours_exceptions": "Brunch Thu 8 AM-1 PM, Fri-Sun 8 AM-2 PM. Note the official URL path is /dining/restaurants/bouchon.html - the /restaurants/bouchon.html path redirects. Thomas Keller bistro on the 10th floor, Venetian South Tower.",
+      "price_status": "unverified",
+      "per_person_usd_note": "French bistro; no published per-person total on the official page."
+    },
+    {
+      "id": "soulbelly-bbq",
+      "hours_source": "https://soulbellybbq.com/",
+      "hours": {
+        "tue_thu": "11:00 AM - 9:00 PM",
+        "fri_sat": "11:00 AM - 10:00 PM",
+        "sun": "11:00 AM - 9:00 PM"
+      },
+      "hours_exceptions": "CLOSED MONDAYS. Live music Fri & Sat 6-9 PM; reverse happy hour Fri-Sat 9-10 PM. The MICHELIN recognition applies to the Main Street location only - the 'SoulBelly Express' outlet at Miracle Mile Eats is a different counter.",
+      "price_status": "unverified",
+      "per_person_usd_note": "Texas BBQ; menu published but no per-person total quoted.",
+      "instagram_official": "https://www.instagram.com/soulbellybbqlv",
+      "instagram_source": "Linked from the restaurant's own website footer"
+    },
+    {
+      "id": "anima-by-edo",
+      "hours_source": "https://animabyedo.com/",
+      "hours": {
+        "all_days": "Dinner from 5:00 PM, served nightly"
+      },
+      "hours_exceptions": "Monday Pasta & Wine Night: two handmade pasta dishes plus a bottle of wine for $65 (not per person). Entire table must take the tasting menu if one person does. Cannot accommodate dairy-free, vegan, vegetarian, celiac, onion- or garlic-free diets. Off-Strip at 9205 W Russell Rd, Summerlin/Gramercy.",
+      "per_person_estimate_usd": "85",
+      "per_person_estimate_basis": "Official site prices the tasting menu at $85 per person. Tasting runs ~2-2.5 hours.",
+      "price_status": "verified - exact tasting price on official site",
+      "reservation_url": "https://www.sevenrooms.com/explore/animabyedo/reservations/create/search/"
+    },
+    {
+      "id": "pho-ga-bac-bac",
+      "hours_source": "https://bestchickenpho.com/",
+      "hours": {
+        "all_days": "Open 24 hours, every day"
+      },
+      "hours_exceptions": "Full bar (21+). Reservations are request-only and not confirmed until the restaurant replies. Casually priced - the cheapest MICHELIN-listed meal in this entire plan.",
+      "price_status": "unverified",
+      "per_person_usd_note": "Menu published with prices on a third-party ordering platform (fetail.com), not on the official site in text form.",
+      "note": "24-hour service makes this the only MICHELIN venue in Las Vegas that can feed you after a late show."
+    },
+    {
+      "id": "cote-las-vegas",
+      "hours_source": "https://www.venetianlasvegas.com/dining/restaurants/cote.html",
+      "hours_unverified_reason": "The official Venetian page renders a live 'Hours' widget that returned no schedule text to this fetch. The daily 'Butcher's Feast' set menu is confirmed to run daily, but exact opening and closing times were not captured.",
+      "hours_exceptions": "Butcher's Feast set menu daily - four cuts, banchan, guided grilling. Official page also lists 'One MICHELIN Star'.",
+      "price_status": "unverified",
+      "per_person_usd_note": "Set-menu price not published as text on the page fetched."
+    },
+    {
+      "id": "lamaii",
+      "hours_source": "https://www.lamaiilv.com/chinatown/",
+      "hours": {
+        "mon_wed": "11:00 AM - 12:00 AM",
+        "thu_sun": "11:00 AM - 2:00 AM"
+      },
+      "hours_exceptions": "Runs past midnight every night - one of the few MICHELIN-listed kitchens open after a late show. Use the Chinatown location: the Henderson branch is a separate room with its own wine list and was NOT the one recognised in the guide.",
+      "price_status": "unverified",
+      "per_person_usd_note": "Modern Thai; menu published, no per-person total quoted."
+    },
+    {
+      "id": "partage",
+      "hours_unverified_reason": "The official site publishes its reservation widget but no plain-text hours section; the widget defaults to a date far from the travel window, so reading times off it would be a guess.",
+      "hours_source": "https://partage.vegas/restaurant",
+      "hours_exceptions": "Tasting menu only - 5, 7 or 9 courses. Cannot accommodate dairy-free, vegan, vegetarian, celiac, onion- or garlic-free diets (stated on the official site). Chef's Table is a 9-course menu with 9 wine pairings; a 12-seat private room exists.",
+      "price_status": "unverified",
+      "per_person_usd_note": "Menu structure confirmed (5/7/9 courses) but prices are not published on the site in text form."
+    },
+    {
+      "id": "estiatorio-milos",
+      "hours_source": "https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html",
+      "hours": {
+        "mon_thu": "11:30 AM - 10:30 PM",
+        "fri_sat": "11:30 AM - 11:00 PM",
+        "sun": "11:30 AM - 10:30 PM"
+      },
+      "hours_exceptions": "Unusually for a MICHELIN-listed room it serves lunch daily 11:30 AM-3 PM, with a cheaper 'Midday Menu' 3-5 PM before dinner starts at 5. That midday window is the best value on the Strip for this list.",
+      "price_status": "unverified",
+      "per_person_usd_note": "Market-price Greek seafood; no per-person total published. Midday menu pricing not captured."
+    },
+    {
+      "id": "ping-pang-pong",
+      "hours_source": "https://goldcoast.boydgaming.com/dine/gc-ping-pang-pong",
+      "hours": {
+        "all_days": "10:00 AM - 3:00 AM"
+      },
+      "hours_exceptions": "Open 17 hours a day, every day - dim sum at lunch, full Chinese menu late. Reservations suggested: 702-247-8136. Inside Gold Coast, which is also one of the cheaper hotels in this plan.",
+      "price_status": "unverified",
+      "per_person_usd_note": "Interactive menu with prices exists but no per-person total was extracted."
+    },
+    {
+      "id": "sparrow-and-wolf",
+      "hours_source": "https://sparrowandwolflv.com/",
+      "hours_unverified_reason": "The official site publishes opening hours only inside a dynamic widget that did not render in text form. Confirmed from the site itself: CLOSED Sunday and Monday, and happy hour runs Monday-Friday 5:00-6:30 PM. Exact closing time per night was not captured, so the full schedule is left unverified rather than assumed.",
+      "hours_exceptions": "Closed Sunday and Monday. Happy hour Mon-Fri 5:00-6:30 PM. Reservations require a credit card; cancellations inside 24 hours are charged $25 per guest. Maximum 4 guests per table without calling. Co-owner Chef Brian Howard trained under Thomas Keller.",
+      "price_status": "unverified",
+      "per_person_usd_note": "No per-person total published on the official site."
+    },
+    {
+      "id": "kame-omakase",
+      "hours_source": "https://sushikame.com/",
+      "hours_unverified_reason": "The restaurant's official domain (kameomakase.com) redirects to sushikame.com, which renders a video-only homepage with no hours, days or price in text form. Nothing could be verified beyond the domain redirect, so all schedule and price fields are left blank.",
+      "hours_exceptions": "Unknown. Omakase-only format; typical for this style is a fixed-price chef's menu with two seatings, but that was NOT verified here and is deliberately not stated as fact.",
+      "price_status": "unverified",
+      "per_person_usd_note": "Not published in text on any official page reachable from this environment."
     }
   ]
 }

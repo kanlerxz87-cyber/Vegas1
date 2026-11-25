@@ -624,9 +624,13 @@ even though the MICHELIN Guide still lists them. A guide listing is not proof th
         if h:
             hcell = h
         elif d and d.get("hours_unverified_reason"):
-            hcell = ('<span class="unv">unverified</span>'
-                     f'<div class="src">{e(d["external_consensus_hours"])}'
-                     '<br><em>Third-party only — not accepted as verified.</em></div>')
+            hcell = ('<span class="unv">unverified</span><div class="src">'
+                     + e(d.get("external_consensus_hours") or
+                         d["hours_unverified_reason"])
+                     + '</div>')
+            if d.get("external_consensus_hours"):
+                hcell += ('<div class="src"><em>Third-party only — not accepted '
+                          'as verified.</em></div>')
         else:
             hcell = UNV
         if d and d.get("hours_exceptions"):
