@@ -1057,9 +1057,12 @@ def build_questions():
          "Partially resolved",
          "Top open item. Needs ~5 Booking.com sweeps and one normalisation rule."),
         ("Is there a convention, rodeo, race or fight in that window?",
-         "No official source was checked in this session.",
-         "Las Vegas Convention and Visitors Authority calendar + major venue calendars.",
-         "Unresolved — highest risk",
+         "ANSWERED, and it is bad news: MAGIC Las Vegas (16–18 Feb, ~17,000 attendees), "
+         "International Roofing Expo (16–18 Feb) and WWIN (15–17 Feb) all overlap the preferred "
+         "week. WVC runs 28 Feb–3 Mar and ASD 2–4 Mar inside your wider window.",
+         "Two candidate quiet weeks found (8–15 Mar and 8–15 Feb). Still confirm against the "
+         "LVCVA official calendar, which could not be fetched.",
+         "Resolved — preferred week is a convention week",
          "An event week can double a hotel price and invalidate every number on the Hotels page."),
         ("What are the resort fees per hotel?",
          "Still not verified — but now bounded. Four sources put Flamingo at $42, $45, $50 and "
