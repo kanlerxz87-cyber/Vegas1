@@ -1,0 +1,273 @@
+{
+  "summary": {
+    "headline": "Las Vegas trip, 15–22 Feb 2027: the research is mostly done, but no prices are verified yet",
+    "bullets": [
+      "Trip window: 15 Feb–23 Mar 2027. Preferred: Mon 15 Feb to Thu 18 Feb 2027 (3 nights). 15 Feb 2027 is Presidents' Day (3rd Monday of February).",
+      "Michelin Las Vegas, 2026 (official MICHELIN Guide release): 4 starred restaurants (Restaurant de Joël Robuchon 2 stars; L'Atelier de Joël Robuchon, Guy Savoy Las Vegas, é by José Andrés 1 star each), 3 Bib Gourmand, 17 Recommended (not starred). 24 total.",
+      "Michelin density by hotel (on the same resort property, official addresses): The Venetian campus 4, MGM Grand 2, The Cosmopolitan 2, then 1 each at Caesars Palace, Bellagio, Wynn, ARIA and Resorts World.",
+      "Hotels: 9 rows (8 properties; The Venetian and Palazzo share one resort) checked for queen beds and private bathroom on official or booking pages. Every price field is blank and flagged as unverified. No 7-night total or cheapest booking date can be stated yet.",
+      "Activities: 3 verified attractions with official hours or fees: Red Rock Canyon NCA, Valley of Fire State Park, and Hoover Dam.",
+      "Booking timing confirmed so far: é by José Andrés releases tickets 3 months ahead (official site). For a 15 Feb visit that is about mid-November 2026, so check now.",
+      "Social links (YouTube, TikTok, Instagram): none verified yet. The table columns are in place but empty.",
+      "Transit: Las Vegas has no subway. The brief's 1-hour subway/bus radius needs an RTC bus or monorail check, which is not done yet."
+    ]
+  },
+  "questions": [
+    {
+      "q": "Is the trip 3 nights (Presidents' Day weekend, 15–18 Feb) or 7 nights (15–22 Feb)?",
+      "known": "The brief asks for both: preferred 15–18 Feb, and a 7-night cost comparison.",
+      "answer_needed": "Yes — user to choose.",
+      "how_to_resolve": "Ask the user. Both options are priced on the same basis once the choice is made."
+    },
+    {
+      "q": "What is the 7-night total price for each candidate hotel?",
+      "known": "No official published rate for these dates was found.",
+      "answer_needed": "Verified nightly and total rates.",
+      "how_to_resolve": "Check each hotel's official booking site for 15–22 Feb 2027 once bookable. Record the rate, date, and taxes/resort fees as shown."
+    },
+    {
+      "q": "When is the cheapest time to book?",
+      "known": "Not verified. Most starred-restaurant tables release 30–60 days ahead (Visit Las Vegas, a tourism site); é releases tickets 3 months ahead (official site).",
+      "answer_needed": "Booking-window data for each hotel and restaurant.",
+      "how_to_resolve": "Track rates on official sites weekly from now to February. Record the date each rate is first shown."
+    },
+    {
+      "q": "Which hotel rooms have a private bathroom and a queen bed or larger for two adults?",
+      "known": "Confirmed for 8 of 9 hotel rows from official or booking pages. Several sizes and the MGM Grand bathroom are not confirmed.",
+      "answer_needed": "Room number, bed type, bathroom, and size confirmed on the official room page.",
+      "how_to_resolve": "Open each official room page and screenshot the bed and bath line. Replace any third-party value."
+    },
+    {
+      "q": "Which restaurants are open on which days in February 2027, and at what hours?",
+      "known": "Only é by José Andrés has official hours. Other restaurants are blank.",
+      "answer_needed": "Official hours and exceptions for each restaurant.",
+      "how_to_resolve": "Check each restaurant's official site or the Michelin Guide listing (guide.michelin.com was not reachable in this session)."
+    },
+    {
+      "q": "What does a couple of 2 adults pay per restaurant?",
+      "known": "No verified price for any restaurant.",
+      "answer_needed": "Price range or exact menu price for 2 adults.",
+      "how_to_resolve": "Use each restaurant's official menu page. Record the menu name, per-person price, and the total for 2 adults."
+    },
+    {
+      "q": "How long is the travel time from each hotel to each restaurant and activity by bus or monorail?",
+      "known": "Addresses are verified. Travel times are not.",
+      "answer_needed": "Verified transit times for each hotel-to-restaurant pair.",
+      "how_to_resolve": "Use the RTC (Regional Transportation Commission) trip planner and the Las Vegas Monorail site. Record time and route."
+    },
+    {
+      "q": "Are the Feb 15 2027 Presidents' Day fee waivers in effect at Red Rock Canyon?",
+      "known": "The BLM waived amenity fees on Presidents' Day in 2021. A 2027 waiver is not confirmed.",
+      "answer_needed": "Official BLM announcement for 2027.",
+      "how_to_resolve": "Check blm.gov and recreation.gov closer to the date."
+    },
+    {
+      "q": "Which activities does the couple want to do?",
+      "known": "Not stated in the brief.",
+      "answer_needed": "A shortlist of activities.",
+      "how_to_resolve": "Ask the user. Add verified options to the activities table once the list is set."
+    },
+    {
+      "q": "What is the current verified social media link for each restaurant and attraction?",
+      "known": "None verified yet.",
+      "answer_needed": "Official-site or official-account links for YouTube, TikTok, or Instagram.",
+      "how_to_resolve": "Check each official site footer for linked social accounts. Mark any account not linked from an official site as unverified."
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "S1",
+      "title": "Choose the trip length first",
+      "detail": "Pick 3 nights (15–18 Feb) or 7 nights (15–22 Feb). This decides which hotel totals to collect.",
+      "impact": "High — every cost row depends on it.",
+      "effort": "Low",
+      "choice": "Pending user decision"
+    },
+    {
+      "id": "S2",
+      "title": "Collect hotel rates by a fixed schedule",
+      "detail": "Record official-site rates for the 9 hotel rows once booking opens. Log the date, the total, and taxes/fees for each. Re-check weekly.",
+      "impact": "High — fills all blank price cells and shows the cheapest booking date.",
+      "effort": "Medium",
+      "choice": "Pending user decision"
+    },
+    {
+      "id": "S3",
+      "title": "Verify restaurant hours and menu prices from official sites",
+      "detail": "Add the restaurant's official site to each Michelin row. Record hours, closed days, and a menu price for 2 adults.",
+      "impact": "High — the brief asks for this for every restaurant.",
+      "effort": "Medium–High (24 restaurants)",
+      "choice": "Pending user decision"
+    },
+    {
+      "id": "S4",
+      "title": "Shortlist activities with the couple",
+      "detail": "Ask which activities they want. Verify official hours and fees for each shortlisted attraction (3 are done).",
+      "impact": "Medium",
+      "effort": "Low",
+      "choice": "Pending user decision"
+    },
+    {
+      "id": "S5",
+      "title": "Add a transit-time check",
+      "detail": "Use the RTC trip planner for each hotel-to-restaurant pair within the 1-hour limit. Record the time shown and the route. Replace the 'subway' wording with bus and monorail.",
+      "impact": "Medium — the 1-hour rule depends on it.",
+      "effort": "Medium",
+      "choice": "Pending user decision"
+    },
+    {
+      "id": "S6",
+      "title": "Add a last-verified date to every row",
+      "detail": "Show the date each value was last checked against its official source. This makes stale values easy to spot.",
+      "impact": "Medium — trust and maintenance.",
+      "effort": "Low",
+      "choice": "Pending user decision"
+    },
+    {
+      "id": "S7",
+      "title": "Add a comparison score for each hotel",
+      "detail": "Score hotels on Michelin count, room fit, price, and transit time, using weights the user sets. Show the score on the hotels page.",
+      "impact": "Medium — makes the ranking explicit.",
+      "effort": "Medium (needs weights from the user)",
+      "choice": "Pending user decision"
+    }
+  ],
+  "flagged": [
+    {
+      "id": "F1",
+      "area": "Michelin source conflict",
+      "item": "Eater Las Vegas article (vegas.eater.com) says Nobu and Wing Lei hold one star and that Joël Robuchon holds three stars. The official Michelin release says Wing Lei is Recommended only and Joël Robuchon holds 2 stars.",
+      "action": "Official Michelin release used. Eater article not used for any value.",
+      "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s"
+    },
+    {
+      "id": "F2",
+      "area": "Michelin date conflict",
+      "item": "Ceremony date: Michelin Media page says the ceremony was 26 Aug 2026; the official release is dated 31 Aug 2026; Eater and KSNV say 26–27 Aug 2026.",
+      "action": "Dates recorded as stated on the official release. Ceremony date not used in any calculation.",
+      "source": "https://michelinmedia.com/pages/blog/detail/article/c0/a1480/"
+    },
+    {
+      "id": "F3",
+      "area": "Michelin naming",
+      "item": "The official release names the restaurant 'Restaurant de Joël Robuchon'. Other sources say 'Joël Robuchon'.",
+      "action": "Official name used.",
+      "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s"
+    },
+    {
+      "id": "F4",
+      "area": "Michelin site not reachable",
+      "item": "guide.michelin.com (the Michelin Guide listing) could not be fetched in this session. Hours and prices from Michelin's own restaurant pages are not verified.",
+      "action": "Blank cells; fetch the Michelin page manually.",
+      "source": "https://guide.michelin.com/us/en/nevada/las-vegas/restaurants"
+    },
+    {
+      "id": "F5",
+      "area": "Restaurant é hours conflict",
+      "item": "The Cosmopolitan hotel page says Tue–Sat 5:30–8:30 pm and Sunday closed. The restaurant's own site says Tuesday through Sunday with two shows nightly.",
+      "action": "Restaurant's own site used. Confirm before booking.",
+      "source": "https://www.ebyjoseandres.com/"
+    },
+    {
+      "id": "F6",
+      "area": "Hotel bathroom not confirmed",
+      "item": "MGM Grand's official room listing does not state bathroom type for the MGM Two Queen. A third-party booking page says private bathroom.",
+      "action": "Left blank as unverified.",
+      "source": "https://mgmgrand.mgmresorts.com/en/hotel.html"
+    },
+    {
+      "id": "F7",
+      "area": "Hotel room sources not all official",
+      "item": "ARIA room facts come from a booking engine and a third-party page. Conrad rooms at Resorts World are used as the example for that property.",
+      "action": "Marked in the table. Official aria.com and Resorts World main-tower pages still to check.",
+      "source": "https://aria-resort-las-vegas.h-rez.com/rooms.htm"
+    },
+    {
+      "id": "F8",
+      "area": "Hotel prices not published",
+      "item": "No published nightly or 7-night rate for 15–22 Feb 2027 was found. Some pages show a 'Avg/Night' figure for a different room type and a different date.",
+      "action": "All price fields blank. Those figures are not used.",
+      "source": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&access=&corp=&voucher=&rcID=324634&currID=0"
+    },
+    {
+      "id": "F9",
+      "area": "Hoover Dam hours conflict",
+      "item": "Official usbr.gov page: last tour 4:10 pm. An archived 2010 usbr.gov page and an unofficial site list 4:15 pm and 4:10 pm variations.",
+      "action": "Current official page used (last tour 4:10 pm).",
+      "source": "https://www.usbr.gov/lc/hooverdam/service/index.html"
+    },
+    {
+      "id": "F10",
+      "area": "Valley of Fire hours and fees may be stale",
+      "item": "parks.nv.gov page is dated 2017 by the crawler. A third-party 2026 page lists visitor center 8:30–4:30.",
+      "action": "Official page used; confirm before the trip.",
+      "source": "https://parks.nv.gov/parks/valley-of-fire"
+    },
+    {
+      "id": "F11",
+      "area": "Red Rock fee and season data are old",
+      "item": "The BLM timed-entry release is from 2020 and the fee-free release is from 2021. A 2026 third-party guide gives the fee ($20 per car) and visitor-center hours; those are not official.",
+      "action": "Fee and visitor-center hours left blank. Confirm at blm.gov.",
+      "source": "https://www.blm.gov/press-release/blm-offers-online-passes-timed-entry-reservations-red-rock-canyon-nca-recreationgov"
+    },
+    {
+      "id": "F12",
+      "area": "Transit assumption",
+      "item": "The brief says 'subway'. Las Vegas has no subway. Transit is RTC buses and the Las Vegas Monorail.",
+      "action": "Table uses 'bus or monorail' wording. Transit times not verified.",
+      "source": ""
+    },
+    {
+      "id": "F13",
+      "area": "Social media links",
+      "item": "No YouTube, TikTok, or Instagram link has been verified for any restaurant or activity.",
+      "action": "Columns are present but blank.",
+      "source": ""
+    },
+    {
+      "id": "F14",
+      "area": "Dates in the brief",
+      "item": "The brief asks for 'Feb 15–18' (3 nights) and also for 7-night costs. 15 Feb 2027 is Presidents' Day.",
+      "action": "Both are shown. Trip length to be chosen by the user.",
+      "source": ""
+    }
+  ],
+  "repo_review": [
+    {
+      "id": "R1",
+      "item": "Repo contents at base commit 9b8bcfa: README.md only (8 bytes: '# Vegas1'). No site, no license, no .gitignore, no data.",
+      "status": "Irregularity — flagged",
+      "source": "Local git: `git ls-files` at base commit"
+    },
+    {
+      "id": "R2",
+      "item": "COORDINATION.md did not exist. It was created as the shared task board.",
+      "status": "Done (created)",
+      "source": "Local repo"
+    },
+    {
+      "id": "R3",
+      "item": "The brief's branch rule (session-<id>/<task>) conflicts with the Arena branch rule (one branch per session). This session stayed on arena/c515279e-vegas1.",
+      "status": "Irregularity — flagged for review",
+      "source": "Arena session branch note"
+    },
+    {
+      "id": "R4",
+      "item": "The brief's coordination text contains HTML-escaped strings ('&amp;lt;id&amp;gt;') and a broken link ('[COORDINATION.md](http://COORDINATION.md)'). Read as session-<id>/<task>.",
+      "status": "Irregularity — flagged for review",
+      "source": "Brief text"
+    },
+    {
+      "id": "R5",
+      "item": "The brief says 'Michelin rated and micheln star restaurants'. Only official stars and Bib Gourmand are shown as such. Recommended restaurants are labeled not starred.",
+      "status": "Clarified",
+      "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s"
+    },
+    {
+      "id": "R6",
+      "item": "Michelin Guide restaurant and hotel pages (guide.michelin.com) were not reachable from this session. Official Michelin press release used instead.",
+      "status": "Irregularity — flagged for review",
+      "source": "https://guide.michelin.com/us/en/nevada/las-vegas/restaurants"
+    }
+  ]
+}

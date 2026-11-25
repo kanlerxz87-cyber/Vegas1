@@ -1,0 +1,50 @@
+{
+  "source_note": "Only attractions with an official-source hours or fee line are included. Blank cells are unverified. Social links (YouTube, TikTok, Instagram) are not yet verified for any activity and are left blank.",
+  "rows": [
+    {
+      "name": "Red Rock Canyon National Conservation Area (Scenic Drive)",
+      "type": "Outdoor / scenic drive / hiking",
+      "location": "About 17 miles west of the Las Vegas Strip, on Charleston Blvd / SR 159 (BLM)",
+      "hours": "Timed-entry reservation required 8 a.m.–5 p.m., Oct 1–May 31 (BLM, 2020 release; confirm current season). Not required June 1–Sept 30.",
+      "hours_source": "https://www.blm.gov/press-release/blm-offers-online-passes-timed-entry-reservations-red-rock-canyon-nca-recreationgov",
+      "fee": "",
+      "fee_source": "",
+      "booking": "Recreation.gov timed entry: https://www.recreation.gov/timed-entry/10075177 (linked from BLM release; not fetched)",
+      "source_url": "https://www.blm.gov/press-release/red-rock-canyon-national-conservation-area-fee-free-february-15",
+      "day_exceptions": "BLM says it waived amenity fees for Presidents Day in 2021 (Feb 15). A 2027 waiver is not confirmed. Presidents' Day 2027 falls on Feb 15.",
+      "social": "",
+      "social_source": "",
+      "flag": "Fee and visitor-center hours not confirmed on an official page. Hours in the 2026 third-party guide ($20/car, visitor center 8–4:30) are not used."
+    },
+    {
+      "name": "Valley of Fire State Park",
+      "type": "Desert park / scenic drive / hiking",
+      "location": "Nevada state park; Overton, NV (per park site)",
+      "hours": "Park open daily, sunrise to sunset. Visitor Center daily 9 a.m.–4 p.m. (park office Mon–Fri 9–4).",
+      "hours_source": "https://parks.nv.gov/parks/valley-of-fire",
+      "fee": "$10 per vehicle (Nevada plates); $15 per vehicle (non-Nevada plates). Camping: $20 per vehicle per night.",
+      "fee_source": "https://parks.nv.gov/parks/valley-of-fire",
+      "booking": "",
+      "source_url": "https://parks.nv.gov/parks/valley-of-fire",
+      "day_exceptions": "Visitor-center hours vary by source (a third-party 2026 page says 8:30–4:30). The official page is used.",
+      "social": "",
+      "social_source": "",
+      "flag": "Official page snippet is dated 2017 by the crawler. Confirm current hours and fees on parks.nv.gov before the trip. Distance from the Strip is not verified on an official page."
+    },
+    {
+      "name": "Hoover Dam Visitor Center and Dam Tours",
+      "type": "Historic site / tours",
+      "location": "About 30 miles southeast of Las Vegas on US 93 at the Nevada–Arizona border (usbr.gov, archived page)",
+      "hours": "Visitor Center open daily 9 a.m.–5 p.m., closed Thanksgiving and Christmas Day. Last tour departs 4:10 p.m. Dam area open daily 5 a.m.–9 p.m. PST.",
+      "hours_source": "https://www.usbr.gov/lc/hooverdam/service/index.html",
+      "fee": "Guided Dam Tour: $40 per person (children 3 and under free), on-site purchase only.",
+      "fee_source": "https://www.usbr.gov/lc/hooverdam/service/index.html",
+      "booking": "Tours are sold on-site per the official page. Unofficial resellers exist; the official page warns against unofficial sites.",
+      "source_url": "https://www.usbr.gov/lc/hooverdam/service/index.html",
+      "day_exceptions": "Closed Thanksgiving Day and Christmas Day (official). Not open on those days.",
+      "social": "",
+      "social_source": "",
+      "flag": "Tour booking-window claim (2–3 months) comes from an unofficial site and is not used. The 30-mile distance comes from an archived usbr.gov page; re-check on the current site."
+    }
+  ]
+}
