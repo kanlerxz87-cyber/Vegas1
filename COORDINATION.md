@@ -10,13 +10,13 @@
 
 | ID | Task | Status | Owner (session) | File scope | Claimed (UTC) |
 |----|------|--------|-----------------|------------|---------------|
-| T1 | Repo review (line-by-line, irregularities, official links) | in progress | arena-3860068e | `docs/repo-review.html` (generated), `data/site-data.json#repo_review` | 2026-11-25 |
-| T2 | Michelin restaurants in Las Vegas (status, hours, cost, links) | in progress | arena-3860068e | `data/site-data.json#michelin` | 2026-11-25 |
-| T3 | Hotels: queen+/private bath, Michelin proximity ranking, 7-night cost | in progress | arena-3860068e | `data/site-data.json#hotels` | 2026-11-25 |
-| T4 | Activities within ~1 hour of Strip hotels | in progress | arena-3860068e | `data/site-data.json#activities` | 2026-11-25 |
-| T5 | Booking timing + key dates (Feb 15–18 2027 and 7-night window) | in progress | arena-3860068e | `data/site-data.json#booking` | 2026-11-25 |
-| T6 | Questions, missing information, suggestions for review, flagged items | in progress | arena-3860068e | `data/site-data.json#questions`, `#suggestions`, `#flagged` | 2026-11-25 |
-| T7 | Site build (GitHub Pages landing + category subpages) | in progress | arena-3860068e | `docs/**`, `scripts/build_site.py`, `README.md` | 2026-11-25 |
+| T1 | Repo review (line-by-line, irregularities, official links) | done (see Flagged) | arena-3860068e | `docs/repo-review.html` (generated), `data/site-data.json#repo_review` | 2026-11-25 |
+| T2 | Michelin restaurants in Las Vegas (status, hours, cost, links) | needs review (per-person prices and off-property distances unverified) | arena-3860068e | `data/site-data.json#michelin` | 2026-11-25 |
+| T3 | Hotels: queen+/private bath, Michelin proximity ranking, 7-night cost | needs review (no official rates; bathrooms unverified; ranking is same-resort, not 1-hour rule) | arena-3860068e | `data/site-data.json#hotels` | 2026-11-25 |
+| T4 | Activities within ~1 hour of Strip hotels | needs review (drive/transit times unverified) | arena-3860068e | `data/site-data.json#activities` | 2026-11-25 |
+| T5 | Booking timing + key dates (Feb 15–18 2027 and 7-night window) | needs review (booking windows derived, not verified) | arena-3860068e | `data/site-data.json#booking` | 2026-11-25 |
+| T6 | Questions, missing information, suggestions for review, flagged items | done | arena-3860068e | `data/site-data.json#questions`, `#suggestions`, `#flagged` | 2026-11-25 |
+| T7 | Site build (GitHub Pages landing + category subpages) | done (built to docs/ on this branch; not yet live) | arena-3860068e | `docs/**`, `scripts/build_site.py`, `README.md` | 2026-11-25 |
 | T8 | Integration: combined re-verification, link check, publish | unclaimed | — | all shared outputs (final step) | — |
 
 No other session has claimed any task. `COORDINATION.md` did not exist before this session and was created here.
@@ -46,4 +46,10 @@ No other session has claimed any task. `COORDINATION.md` did not exist before th
 ## Log
 - 2026-11-25 · arena-3860068e · Created `COORDINATION.md`; claimed T1–T7. T8 reserved for final integration.
 - 2026-11-25 · Irregularity: brief asks for `session-<id>/<task>` branches; session rules fix the branch to `arena/3860068e-vegas1`. Followed session rules; no other branches created.
+- 2026-11-25 · Remote branch `arena/3860068e-vegas1` confirmed at `44ceb50` via `git ls-remote`.
+- 2026-11-25 · Built `scripts/build_site.py` → `docs/` (10 pages) from `data/site-data.json`. Blank values render as "Unverified". Re-run after any data change.
+- 2026-11-25 · Self-review fixes: MGM Grand corrected to 3 stars (Robuchon 2★ + L'Atelier 1★); removed unverified area counts from the summary; re-checked Cosmopolitan "City Room Queen" and ARIA "Deluxe Two Queen Room" on official pages (2 queen beds, max 4 guests each; neither page states a private bathroom).
+- 2026-11-25 · Irregularity: Pages is configured to serve `main /`, so `docs/` on this branch is not live until merged to `main` or the Pages source is changed. Settings were not changed (needs user decision).
+- 2026-11-25 · Irregularity: the sandbox cannot reach most official hosts (allowlist), so the link check on the site is not complete. Links are listed for manual review. Michelin's own site (guide.michelin.com) is still unreachable.
+- 2026-11-25 · Irregularity: the brief asks for ranking by restaurants within 1 hour by subway or bus. Route-level RTC data was not retrieved, so the ranking uses same-resort counts (labelled on the site).
 - 2026-11-25 · Irregularity: brief text contains HTML-escaped placeholders (`&amp;amp;lt;id&amp;amp;gt;`). Interpreted as `session-<id>/<task>`.
