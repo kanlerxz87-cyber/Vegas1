@@ -168,7 +168,7 @@ def build_index():
 </section>
 
 <section class="panel">
-  <h2>Three things that change the answer</h2>
+  <h2 id="three-things">Three things that change the answer</h2>
   <ol class="tight">
     <li><strong>The 7-night basis collides with the requested dates.</strong> The preferred window
     2027-02-15 → 2027-02-18 is three nights, not seven. Seven-night totals starting on 15 Feb are used
@@ -325,7 +325,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 
     body = f"""
 <section class="panel">
-  <h2>Which week is cheapest — like for like</h2>
+  <h2 id="cheapest-week">Which week is cheapest — like for like</h2>
   <p>Only properties measured in more than one week are shown, so every percentage compares the same
   hotel (usually the same room class) against itself:</p>
   <div class="scroll">
@@ -358,7 +358,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 </section>
 
 <section class="panel">
-  <h2>Every hotel, with both price bases</h2>
+  <h2 id="every-hotel">Every hotel, with both price bases</h2>
   <p>Booking.com search totals generally exclude resort fee and local tax. Where a property publishes its own
   rate, both figures are shown rather than one.</p>
   <p class="note"><strong>Link honesty:</strong> a "Price source ✓" link is a Booking.com URL this session
@@ -453,7 +453,7 @@ a missing entry and it is not an average. Only three restaurants print a real pe
 </section>
 
 <section class="panel">
-  <h2>What dinner for two actually costs</h2>
+  <h2 id="costs">What dinner for two actually costs</h2>
   <p>Only three venues publish a number, and two of them are outside the starred group:</p>
   <ul class="tight">
     <li><strong>Michael Mina</strong> — $295++ per person, 10-course tasting → <strong>$590++</strong> for two,
@@ -580,7 +580,7 @@ def build_transit():
 </section>
 
 <section class="panel">
-  <h2>Estimated one-way minutes between zones</h2>
+  <h2 id="matrix">Estimated one-way minutes between zones</h2>
   <p><strong>These are estimates, not timetables.</strong> No official source publishes door-to-door times; these are
   built from the official station lists and route maps and rounded to five minutes.</p>
   <div class="scroll">
@@ -670,7 +670,7 @@ def build_suggestions():
         need = ('<span class="pill need">needs your decision</span>'
                 if s["needs_decision"] else f'<span class="pill">{e(s["status"])}</span>')
         cards.append(f"""
-<article class="sug">
+<article class="sug" id="{e(s['id'])}">
   <h3><span class="sid">{e(s['id'])}</span> {e(s['title'])}
    <span class="impact {imp[s['impact']]}">{e(s['impact'])} impact</span>{need}</h3>
   <p>{e(s['body'])}</p>
@@ -942,6 +942,63 @@ footer p{margin:0 0 8px;max-width:80ch}
 """
 
 
+# ------------------------------------------------- supplementary routes
+ROUTES = [
+    (
+        "pricing.html",
+        "Pricing",
+        "Every price this plan uses, gathered in one place: hotels across all four measured weeks, restaurant totals for two, and the costs that sit outside the room rate.",
+        [
+            ("Which week is cheapest — like for like", "hotels.html#cheapest-week"),
+            ("Every hotel, with both price bases", "hotels.html#every-hotel"),
+            ("What dinner for two actually costs", "restaurants.html#costs"),
+            ("Budget resort fees and 13.38% tax", "suggestions.html#S-08"),
+            ("How the prices were captured (method)", "sources.html"),
+        ],
+    ),
+    (
+        "verification.html",
+        "Verification",
+        "A line-by-line audit trail: what was confirmed against which source, and every value that could not be confirmed and was therefore left blank.",
+        [
+            ("Flags — the 28 things that did not verify cleanly", "sources.html#flags"),
+            ("Every source used, grouped by what it proves", "sources.html"),
+            ("Open questions, and how to close each one", "questions.html"),
+            ("Transit minutes and their stated limits", "transit.html#matrix"),
+            ("Restaurant award tiers (starred vs listed)", "restaurants.html"),
+        ],
+    ),
+    (
+        "summary.html",
+        "Executive summary",
+        "The one-page version: what to book, what to avoid, and the three findings that change the shape of the trip.",
+        [
+            ("Overview and the three findings", "index.html"),
+            ("Hotels ranked, and the three cheapest traps", "hotels.html"),
+            ("The four starred restaurants", "restaurants.html"),
+            ("Suggestions ranked by impact", "suggestions.html"),
+        ],
+    ),
+]
+
+
+def build_route(name, title, subtitle, links):
+    lis = "".join(
+        f'<li><a href="{e(u)}">{e(l)}</a></li>' for l, u in links
+    )
+    body = f"""
+<section class="panel">
+  <h2>Where the {e(title.lower())} detail lives</h2>
+  <p>{e(subtitle)}</p>
+  <p>This route previously served an empty placeholder with zero table rows and zero source links.
+  Instead of keeping a page with no data on it, it now routes to the pages that carry the actual figures —
+  all generated from the same JSON in <code>data/</code>.</p>
+  <ul class="tight">{lis}</ul>
+</section>
+"""
+    return page(name, title, subtitle, body)
+
+
 def main():
     DOCS.mkdir(exist_ok=True)
     pages = {
@@ -954,6 +1011,8 @@ def main():
         "suggestions.html": build_suggestions(),
         "sources.html": build_sources(),
     }
+    for name, title, subtitle, links in ROUTES:
+        pages[name] = build_route(name, title, subtitle, links)
     # Publish to BOTH docs/ and the repo root. GitHub Pages on this repo is pinned
     # to main:/ (the API refuses to repoint it to /docs), so the root copy is what
     # visitors actually get. Writing both makes the deploy path independent of that
