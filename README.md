@@ -15,12 +15,12 @@ A sourced trip plan for **two adults**, seven nights, between **15 February and 
 | `data/price-windows.json` | The week-by-week price comparison that answers "cheapest time to book" |
 | `data/transit.json` | Monorail / RTC bus / Vegas Loop fares and the zone-to-restaurant minute matrix |
 | `data/activities.json` | Four verified venues with official hours and prices for two |
-| `data/questions.json` | 10-question register: answered, interpreted, still open — each with how to close it |
-| `data/suggestions.json` | 12 decision improvements with honest trade-offs |
+| `data/questions.json` | 11-question register: answered, interpreted, still open — each with how to close it |
+| `data/suggestions.json` | 13 decision improvements with honest trade-offs |
 | `scripts/build.py` | Recomputes the Michelin proximity counts from the transit matrix; runs integrity checks |
 | `scripts/gen_site.py` | Renders `docs/` from the JSON. All counts derived, none typed by hand |
 | `scripts/validate.py` | Link and structure checks for the built site |
-| `FLAGS.md` | The 20 things that did not verify cleanly |
+| `FLAGS.md` | The 22 things that did not verify cleanly |
 | `executive-summary.md` | The one-page version |
 | `COORDINATION.md` | Multi-session task board, merge record and verification log |
 | `archive/` | The earlier session's build, preserved intact rather than overwritten |

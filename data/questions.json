@@ -133,7 +133,7 @@
       "sources": [
         "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html"
       ],
-      "how_to_close": "Restaurant row kept, but with the closure stated on the row and flagged F-22. No reopen date is published, so no date is assumed.",
+      "how_to_close": "Restaurant row kept, but with the closure stated on the row and flagged **F-23**. No reopen date is published, so no date is assumed.",
       "substitution": ""
     },
     {
@@ -145,8 +145,23 @@
       "sources": [
         "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html"
       ],
-      "how_to_close": "All five corrected or explicitly left blank with the reason recorded. See FLAGS.md F-21 to F-24.",
+      "how_to_close": "All five corrected or explicitly left blank with the reason recorded. See FLAGS.md **F-22 to F-25**.",
       "substitution": ""
+    },
+    {
+      "id": "Q-13",
+      "question": "Are the hotels' own websites still live at the URLs this site links to?",
+      "state": "open",
+      "answer": "Four of 32 were fetched and resolved: Desert Rose (Shell Vacations Hospitality), The LINQ, Palms Place and The Venetian. The other 28 point at the property's own domain but were not fetched, so they are labelled 'not fetched — may have moved' instead of being presented as checked.",
+      "problem": "Hotel brand sites move constantly — MGM, Caesars, Marriott and Hilton have all reorganised property URLs. Linking a moved page is a small failure, but claiming it was verified when it was not is the failure the brief actually cares about.",
+      "substitution": "Every hotel card carries a Booking.com 'Price source ✓' link that WAS fetched, so there is always one working route to the property. Unfetched official links are visually marked.",
+      "how_to_close": "Open the 28 marked links and repoint the failures. Roughly ten minutes. Alternatively delete unverified official links and keep only the Booking.com source.",
+      "sources": [
+        "https://www.shellvacationsclubrentals.com/resorts/nevada/las-vegas/desert-rose-resort",
+        "https://www.caesars.com/linq",
+        "https://www.palms.com/palms-place",
+        "https://www.venetianlasvegas.com/"
+      ]
     }
   ]
 }

@@ -32,6 +32,9 @@ labelled**, never that a plausible number was filled in.
 | **F-25** | Sparrow + Wolf | The official site publishes **no opening hours** anywhere on its front or menu page — only an OpenTable widget. | Hours left blank rather than taken from a reseller. Card-hold ($25/guest inside 24h) and 4-guest table cap recorded on the row. |
 | **F-26** | Sample-date banners | Several MGM pages carry a dated banner (e.g. *"open 4:00–8:00 PM Thursday 19 – Saturday 21 November"*) that refers to a **2026** date. | Carrying such a banner into a 2027 plan would be a silent error. Ignored, and called out on the affected rows. |
 
+| **F-27** | Hotel `Official` links | 28 of 32 hotel official URLs point at the property's own domain but were **not fetched** this session, so they may have moved. Only Desert Rose, LINQ, Palms Place and The Venetian were confirmed. The Booking.com price-source link on every card was fetched. | Site marks each unverified link "not fetched — may have moved" rather than implying it was checked. |
+| **F-28** | Desert Rose Resort | Its marketing domain `desertroseresort.com` returned **HTTP 500**, and the row had it in the wrong zone (`center-strip` although it sits one block east of the Strip at the Tropicana corner). | Zone corrected to `south-strip`; link repointed to the Shell Vacations operator page; recommendation restated as a 15–20 min walk to MGM Grand, not to the centre-Strip cluster. |
+
 ## Deliberate non-inclusions
 
 - **No 3-star restaurant exists in Las Vegas.** The guide only returned in 2026 after a 17-year gap, so any source claiming otherwise is out of date.

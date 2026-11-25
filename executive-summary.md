@@ -43,13 +43,15 @@ not. Of 24 listings: **4 starred** (Joël Robuchon 2★; L'Atelier, Guy Savoy, �
 **3 Bib Gourmand**, **17 Recommended**. There is no three-star restaurant in Las Vegas.
 
 Only three venues print a real price for two: Michael Mina **$590++**, KAME Omakase **$1,000++**,
-Anima by EDO **$170++**. The four starred rooms are all "price on request" — book them first, before
+Anima by EDO **$170++** — but Michael Mina's own Bellagio page currently reads *"Monday to Sunday: Closed"*
+with a *Temporarily closed* label and no published reopen date, so that $590 is a price for a service that
+is not running. Do not plan around it. The four starred rooms are all "price on request" — book them first, before
 the hotel, because é has nine seats a night. Hours are confirmed for 17 of the 24 listings and all 24
 have at least one working video link (69 in total).
 
 ## What is not known
 
-Five of the ten register questions remain open. Each blank has a stated route to close it. The two that
+6 of the 11 register questions remain open. Each blank has a stated route to close it. The two that
 matter: **restaurant prices** (18 of 21 venues publish none) and **whether this is a 3-night or
 7-night trip** — the brief says 1–2 weeks but the preferred dates 15–18 February are three nights,
 which would cut every hotel figure on this site by more than half.
@@ -57,7 +59,7 @@ which would cut every hotel figure on this site by more than half.
 ## How to trust any number here
 
 Every figure links to its source. **8 pages, 280 external source links, 0 broken internal links.**
-Twenty flags record everything that would not verify cleanly, including two where a creator video
+Twenty-two flags record everything that would not verify cleanly, including two where a creator video
 contradicts the official award (Robuchon "3 stars", Wing Lei "starred"). Where a number could not be
 confirmed the cell is blank. Nothing on the site is an estimate — except the transit minutes, which
 are labelled as estimates on every page that shows them.
