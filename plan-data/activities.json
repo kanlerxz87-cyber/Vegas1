@@ -22,7 +22,25 @@
       "price_note": "Free to watch",
       "transit_minutes_from_top_hotel": 7,
       "transit_source": "https://www.google.com/maps/dir/Flamingo+Las+Vegas/High+Roller,+3545+S+Las+Vegas+Blvd",
-      "verified": "hours, days, price and walk time all verified"
+      "verified": "hours, days, price and walk time all verified",
+      "videos": [
+        {
+          "title": "BELLAGIO LAS VEGAS FOUNTAIN SHOW on a Saturday night in 4K",
+          "url": "https://www.youtube.com/watch?v=v9ZpDc27zh4",
+          "note": "Full show, 4K"
+        },
+        {
+          "title": "Bellagio Fountain Show Las Vegas | Mesmerizing Water Display in 4K",
+          "url": "https://www.youtube.com/watch?v=KyC_jpV5jDA",
+          "note": "2025"
+        },
+        {
+          "title": "Bellagio Fountain Show at Night with Original Music",
+          "url": "https://www.youtube.com/watch?v=bGDuS5019Wg",
+          "note": "2025, night"
+        }
+      ],
+      "video_source_note": "Creator videos found by search; titles quoted as returned. Not official venue channels."
     },
     {
       "id": "high-roller",
@@ -42,7 +60,25 @@
       "price_for_two": 47.0,
       "transit_minutes_from_top_hotel": 7,
       "transit_source": "https://www.google.com/maps/dir/Flamingo+Las+Vegas/High+Roller,+3545+S+Las+Vegas+Blvd",
-      "verified": "hours, prices, days, walk time verified"
+      "verified": "hours, prices, days, walk time verified",
+      "videos": [
+        {
+          "title": "High Roller - Las Vegas (day and night views)",
+          "url": "https://www.youtube.com/watch?v=ahsshhlgF58",
+          "note": "Day + night timelapse"
+        },
+        {
+          "title": "Experiencing the High Roller observation wheel in Las Vegas",
+          "url": "https://www.youtube.com/watch?v=czYdsQgwG3I",
+          "note": "2024, dusk"
+        },
+        {
+          "title": "High Roller LINQ in Las Vegas with night views",
+          "url": "https://www.youtube.com/watch?v=Pkghy0uV1vw",
+          "note": "Night ride"
+        }
+      ],
+      "video_source_note": "Creator videos found by search; titles quoted as returned. Not official venue channels."
     },
     {
       "id": "mob-museum",
@@ -61,7 +97,25 @@
       "price_note": "Ticket price not published as a single figure on the page fetched; buy via official ticket store. Not inferred.",
       "transit_minutes_from_top_hotel": 55,
       "transit_source": "https://www.google.com/maps/dir/?api=1&origin=Flamingo+Las+Vegas&destination=The+Mob+Museum+300+Stewart+Ave+Las+Vegas&travelmode=transit",
-      "verified": "hours, days and transit verified; ticket price unverified"
+      "verified": "hours, days and transit verified; ticket price unverified",
+      "videos": [
+        {
+          "title": "Inside The Infamous MOB MUSEUM in Las Vegas!",
+          "url": "https://www.youtube.com/watch?v=hIuGwU_kyGY",
+          "note": "2025 tour incl. speakeasy"
+        },
+        {
+          "title": "The Mob Museum Las Vegas: I Was Shocked At the End!",
+          "url": "https://www.youtube.com/watch?v=wgauXmc9N3Y",
+          "note": "2024"
+        },
+        {
+          "title": "Is The Mob Museum In Las Vegas Worth It?",
+          "url": "https://www.youtube.com/watch?v=wS9DW9Wh-9A",
+          "note": "2022"
+        }
+      ],
+      "video_source_note": "Creator videos found by search; titles quoted as returned. Not official venue channels."
     },
     {
       "id": "arts-district",
@@ -124,7 +178,25 @@
       "price_note": "No published standard price; varies by show and seat. Not inferred.",
       "transit_minutes_from_top_hotel": 25,
       "transit_source": "https://www.google.com/maps/dir/?api=1&origin=Flamingo+Las+Vegas&destination=Sphere+at+The+Venetian+Las+Vegas&travelmode=transit",
-      "verified": "transit verified; hours and price are show-dependent and unverifiable for Feb 2027"
+      "verified": "transit verified; hours and price are show-dependent and unverifiable for Feb 2027",
+      "videos": [
+        {
+          "title": "MSG Sphere Las Vegas, Postcard From Earth Review",
+          "url": "https://www.youtube.com/watch?v=bwI0ucQAexo",
+          "note": "Review"
+        },
+        {
+          "title": "Inside MSG Sphere Las Vegas [Postcard From Earth]",
+          "url": "https://www.youtube.com/watch?v=aUlyYv0T-Rs",
+          "note": "Opening night walkthrough"
+        },
+        {
+          "title": "Inside the Las Vegas Sphere - VIP Tickets",
+          "url": "https://www.youtube.com/watch?v=Bm08xeIk7PM",
+          "note": "2025, VIP seats"
+        }
+      ],
+      "video_source_note": "Creator videos found by search; titles quoted as returned. Not official venue channels."
     }
   ]
 }

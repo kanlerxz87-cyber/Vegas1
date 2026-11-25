@@ -834,6 +834,13 @@ def build_activities():
         if a.get("transit_source"):
             tcell += (f'<div class="src"><a href="{e(a["transit_source"])}" '
                       'target="_blank" rel="noopener">route</a></div>')
+        vids = a.get("videos") or []
+        vcell = " · ".join(
+            f'<a href="{e(v["url"])}" target="_blank" rel="noopener">{i+1}</a>'
+            for i, v in enumerate(vids)) if vids else UNV
+        if vids:
+            vcell += '<div class="src">' + " · ".join(
+                e(v["title"]) for v in vids[:1]) + '</div>'
         src = ""
         if a.get("hours_source"):
             src = (f'<div class="src"><a href="{e(a["hours_source"])}" '
@@ -848,6 +855,7 @@ def build_activities():
 <td class="num">{price}</td>
 <td class="num">{two}</td>
 <td>{tcell}</td>
+<td class="src">{vcell}</td>
 </tr>"""
     body = f"""
 <h1>Activities</h1>
@@ -857,7 +865,7 @@ with the actual route time from the top-ranked hotel, not a guess. Two are expli
 
 <div class="tblwrap"><table>
 <thead><tr><th>Activity</th><th>Location</th><th>Hours</th><th>Open days</th>
-<th>Exceptions</th><th>Price pp</th><th>2 adults</th><th>Transit from #1 hotel</th></tr></thead>
+<th>Exceptions</th><th>Price pp</th><th>2 adults</th><th>Transit from #1 hotel</th><th>Watch</th></tr></thead>
 <tbody>{rows}</tbody></table></div>
 
 <div class="warnbox">
