@@ -1,7 +1,7 @@
 # Vegas1 — Las Vegas trip planner
 
 Static site for planning a Las Vegas trip (2 adults, 15–22 Feb 2027; preferred 15–18 Feb).
-Live site (GitHub Pages): https://kanlerxz87-cyber.github.io/Vegas1/
+Site (GitHub Pages): https://kanlerxz87-cyber.github.io/Vegas1/ — not yet live from this branch. Pages currently serves `main` at the root. Publishing the `docs/` folder needs the integration step (see COORDINATION.md, T6) and a Pages source of `/docs`.
 
 ## Layout
 
