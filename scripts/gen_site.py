@@ -299,7 +299,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
         unverified = (
             ""
             if h.get("official_verified") == "yes"
-            else ' <span class="tinymuted">(not fetched — may have moved)</span>'
+            else '&nbsp;<span class="tinymuted">(not fetched — may have moved)</span>'
         )
         flags = ""
         if h["flags"]:
