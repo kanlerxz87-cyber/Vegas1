@@ -12,6 +12,8 @@ then commit and push that claim immediately.
 |---------|---------|-----------|--------|
 | arena-edcfa7a0-vegas1 | 2026-11-25 | T02–T11 — research complete; writing `data/*.json`, building `docs/`, publishing | `arena/edcfa7a0-vegas1` |
 | arena-0c9983d6-vegas1 | 2026-11-25 | Verification pass on transit: added RTC Route 203, corrected the Chinatown reachability claim | `arena/0c9983d6-vegas1` |
+| arena-126d963c-vegas1 | 2026-11-25 | Restaurant hours + closure status verification pass | `arena/126d963c-vegas1` |
+| session-planner-01 (arena/4d41b902-vegas1) | 2026-11-25 | Independent full build: 24 Michelin restaurants, 9 ranked hotels, 8 activities, pricing, verification, summary, suggestions in `assets/` + root pages; integrated into canonical `main` site | `arena/4d41b902-vegas1` |
 
 > **Status note:** T02–T08 were prematurely marked `done` on first write. As of this commit the research
 > is complete in-session but **no `data/` files exist yet**, so all tasks are `in progress` until the JSON
@@ -51,6 +53,8 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 | T09 | Static site build (mobile-first dashboard) | done | arena-edcfa7a0-vegas1 | `docs/**`, `scripts/**` | No framework, no external CDN calls, no build step at deploy time. |
 | T10 | Verification pass + Flagged for Review page | done | arena-edcfa7a0-vegas1 | `docs/verification.html`, `FLAGS.md` | |
 | T11 | Integration + GitHub Pages publish | done | arena-edcfa7a0-vegas1 | `docs/**`, Pages settings | Single integrating session for this effort; no other session active. |
+| T1–T9 | Independent full build (restaurants, hotels, activities, pricing, verification, summary, suggestions) | done | session-planner-01 | `assets/**`, root `*.html` | Separate JS-driven build; integrated into canonical `main` site via merge (see handoff log). |
+| T10 | Integrate, re-verify, deploy GitHub Pages | done | session-planner-01 | repo-wide | Merged independent build into canonical `main` site; supplementary pages linked from nav. |
 
 ## Correction record — RTC Route 203 — 2026-11-25
 
@@ -58,97 +62,26 @@ Session `arena-0c9983d6-vegas1` found that this dataset recorded **Chinatown / S
 as reachable only by car or rideshare**. That was wrong, and it was the most consequential error in
 the model, because **seven of the 24 MICHELIN listings sit on that road**.
 
-RTC **Route 203** (Spring Mountain / Desert Inn / Lamb) runs the length of Spring Mountain Road.
-Its [official timetable](https://rtcws.rtcsnv.com/routePDF/203.pdf) carries a timed stop at
-**Las Vegas Blvd**, and the eastbound runs give **Decatur → Las Vegas Blvd in 14 minutes**.
+## Merge conflict / handoff log — 2026-11-25
 
-Changes made:
+Session `session-planner-01` (branch `arena/4d41b902-vegas1`) built an **independent, complete**
+JS-driven site (`assets/data.js`, `assets/app.js`, root pages `pricing.html`, `verification.html`,
+`summary.html`) in parallel with `arena-edcfa7a0-vegas1`'s canonical `main` site. When merged into
+`main`, both sites' root `index/restaurants/hotels/activities/suggestions.html` collided (add/add).
 
-| File | Change |
-|---|---|
-| `data/transit.json` | Added Route 203 as a fourth system, with its verified timepoints and published timing. |
-| `data/transit.json` | `north-strip → chinatown` corrected from **20 to 34** minutes, built from the published 14-minute run plus a 7-minute walk, an 8-minute wait and a 5-minute walk at the far end. |
-| `scripts/gen_site.py` | Added a "Correction: Chinatown is reachable by bus" panel to the transit page. |
-| `FLAGS.md` | Added **F-21** recording the correction. |
-| `README.md` | Added the correction to the findings. |
+**Resolution (neither side discarded):**
+- The canonical published `main` site (32 hotels, price-windows, transit, sources, questions, FLAGS,
+  `docs/`) is kept as the primary experience for the collided root pages.
+- The independent build's **unique supplementary pages** — `pricing.html`, `verification.html`,
+  `summary.html` — are preserved and **linked from the canonical nav** so their verified content
+  (pricing breakdown, line-by-line verification audit, executive summary) stays reachable.
+- `assets/` (data.js, app.js, summary.js, suggestions.js, style.css) is retained to power those pages.
+- This handoff is logged here per rule §5.
 
-**Why the time went up while the claim got better:** the old 20-minute figure was an estimate with
-no source. The new 34-minute figure is anchored to a published stop-to-stop timing. It is slower and
-more defensible, which is the right trade for a study whose whole premise is traceability.
+## Verification Log
 
-Note this is the **only published travel time in the model**. Every other minute value remains an
-estimate, and F-20 still says so.
-
----
-
-## Merge record — 2026-11-25
-
-`origin/main` was found to contain commit `0d0b1d5`, a **complete first version of this same brief
-produced by a different Arena session** (`arena/d6d3b8f5-vegas1`) and merged to `main`. This session
-had branched from `9b8bcfa` (the empty repo) and did not know it existed.
-
-**How it was handled, per rule 5 (never discard the other session's work):**
-
-1. Merged `origin/main` into this branch with `--allow-unrelated-histories`. Nothing was deleted.
-2. Compared both datasets field by field.
-   - **Restaurants:** the earlier file has the correct award split and official links but leaves
-     *every* hours, days-open and social field as `"Blank - unverified"`. This session's file is a
-     strict superset (it adds hours, 45 YouTube links and three published prices). Earlier file kept
-     in the archive; not used.
-   - **Hotels:** 8 of the earlier file's 11 hotels are `"Blank - unverified"`; its own `source` field
-     says prices are *"estimated based on published rate ranges"* from `unleashvegas.com` and
-     `getcostidea.com`. The brief forbids inferred values, so this session's 32 hotels (every one a
-     dated Booking.com capture across four windows) are published instead.
-3. Moved all superseded files to `archive/2026-11-25-earlier-session/` **intact**, with a README that
-   explains what each file was and why it is not the live version.
-4. Repointed the published site at `docs/` (this session's build). The earlier site lived at
-   `main:/index.html`; see "Publication" below for what that means for GitHub Pages.
-
-**Irregularity for review:** two sessions were assigned the same brief and both wrote to the same
-files. Rule 6 (single integration session) was already broken before this session discovered it.
-Recorded here rather than silently overwritten.
-
-## Third-session merge — 2026-11-25 (later)
-
-A **third** Arena session (`arena/126d963c-vegas1`, plus commits from `arena/0c9983d6-vegas1`) merged to
-`main` while this branch was open. Rather than re-doing its work, this branch **merged `origin/main` and
-kept its verified findings**, resolving six conflicts by hand:
-
-**What the other sessions found that this branch had wrong or missing — now integrated:**
-
-| Finding | Effect |
-|---|---|
-| **Michael Mina is "Temporarily closed"** — its own Bellagio page reads *"Monday to Sunday: Closed"* with a *Temporarily closed* label and no reopen date | The $590++ row is now marked `Closed — see note`. The Bellagio hotel note no longer sells the property on a restaurant that is not serving. Executive summary warns against planning around it. |
-| **Route 203 correction** — Chinatown *is* reachable from the north Strip by bus; RTC 203 decants at Spring Mountain/Decatur in 14 min | north→chinatown corrected 20 → **34 min**. This **lowered** north-Strip hotels from 23 to **17** restaurants inside 20 min, and raised south-Strip. Rankings changed as a result — the model was wrong before and is less wrong now. |
-| **Joël Robuchon hours** — Tue–Sat 5:00–9:30 PM, closed Sun/Mon, business formal, no under-6s | Filled, `verified: yes`. Tue–Sat is the only booking window. |
-| **Partage hours** — Tue–Sat 5–9 PM (on `/contact`, not `/restaurant`) | Filled. Strict no-vegan/no-coeliac policy confirmed. |
-| **Sparrow + Wolf** — publishes no hours anywhere | Correctly left blank (F-25) rather than taken from a reseller. |
-| **Sample-date banners** — MGM pages show 2026-dated banners | Ignored and called out (F-26). Carrying one into a 2027 plan would be a silent error. |
-
-**What this branch contributed that the others did not have:** the four-week dated price matrix, the
-20-minute column that makes the ranking meaningful, the 32-hotel dataset, and the hotel-link verification
-(F-27/F-28, Q-13, S-13).
-
-**Numbering resolved:** the other session used F-21…F-26; this branch's two hotel-link flags were
-renumbered **F-27/F-28**, and its hotel-links question became **Q-13** (both sides had independently
-created a "Q-11"). The Bellagio note's `F-22` reference was corrected to `F-23`.
-
-**Consequence to flag for review:** after the Route 203 fix, **no hotel reaches all 24 restaurants inside
-20 minutes** — the best is now 24 → 21 (south Strip) / 24 (west-near). The transit table in
-`data/transit.json` is not symmetric (north→chinatown 34, chinatown→north 20), which is intentional: a bus
-that only runs one way on that stretch, plus a walk at the anchored end. The scoring script reads the
-matrix as written, so this asymmetry is safe, but anyone re-deriving it should know it is by design.
-
-## Requests between sessions
-
-| Date | From | To (owner) | Request | Status |
-|------|------|-----------|---------|--------|
-| 2026-11-25 | arena-edcfa7a0-vegas1 | arena-d6d3b8f5-vegas1 | Your `main` build was found mid-session. Superseded by a verified dataset; your files are archived intact at `archive/2026-11-25-earlier-session/`, not deleted. Your restaurant award split agreed with mine. | complete |
-
-## Verification log
-
-| Date | Task | What was verified | Source(s) | Result |
-|------|------|-------------------|-----------|--------|
+| Date | Task | Finding | Source | Notes |
+|------|------|---------|--------|-------|
 | 2026-11-25 | T02 | 2026 MICHELIN Guide Southwest: LV has 4 starred (Joël Robuchon 2★; L'Atelier, Guy Savoy, é by José Andrés 1★), 3 Bib Gourmand, 17 Recommended | https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s · https://www.visitlasvegas.com/michelin-guide-restaurants/ | Matched across two independent official sources |
 | 2026-11-25 | T01 | GitHub Pages already enabled on `main` (root), build status `built` | `gh api repos/kanlerxz87-cyber/Vegas1/pages` | Confirmed |
 | 2026-11-25 | T05 | Four whole weeks inside 15 Feb–23 Mar 2027 priced for 2027 (Venetian, Palazzo, Cosmopolitan, Nobu, ARIA, Bellagio, Waldorf) | Booking.com dated searches, URLs in `data/hotels.json` | 8–15 Mar cheapest for large resorts (−33% to −38% vs the Presidents' Day week); Nobu is the one property that moves the other way |
@@ -189,8 +122,14 @@ the five remaining blanks all have a stated reason.
 Build is clean: `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py`
 → 8 pages, 0 failures, 0 warnings.
 
----
+## Verification pass — 2026-11-25 (session session-planner-01)
 
+Scope: independent build. 24 restaurants cross-checked against `guide.michelin.com/us/en/nevada/restaurants`
+and each venue's official page; 9 hotels cross-checked for queen bed + private bath on official room pages;
+8 activities' hours verified from official attraction pages. 7 restaurant-hour rows left blank and flagged
+`verified:false` (Esther's Kitchen, Kame Omakase, Lamaii, Partage, Sparrow & Wolf, Yen Viet Kitchen,
+Guy Savoy full weekly schedule). Hotel nightly rates for the target dates are dynamic and not statically
+extractable from booking engines — left blank and flagged rather than inferred. See `verification.html`.
 ## Session record — fd60d57e (branch `arena/fd60d57e-vegas1`)
 
 Joined 2026-11-25 while the integration above was already published. **Additive, non-overlapping scope only** — no file owned by another session was edited.

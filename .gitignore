@@ -1,8 +1,9 @@
+node_modules/
+.DS_Store
+*.log
 __pycache__/
 *.py[cod]
-.DS_Store
 .venv/
-node_modules/
 
 # build scratch
 site/
