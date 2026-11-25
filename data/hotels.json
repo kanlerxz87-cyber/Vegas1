@@ -1,0 +1,473 @@
+{
+  "meta": {
+    "purpose": "Hotel shortlist for a couple (2 adults), 7 nights, private bathroom, queen-or-larger bed.",
+    "pricing_method": "All prices are the '7 nights' / '1 week, 2 adults' totals quoted by Booking.com for the exact date window shown, for a room with a king or queen bed and an attached (private) bathroom. Booking.com totals INCLUDE the mandatory resort fee and EXCLUDE the 13.38% Nevada room tax, which is stated on every rate as 'Excluded: 13.38% TAX'. A separate 'all-in' figure is computed below and labelled as computed, not quoted.",
+    "tax_rate_note": "13.38% is the tax rate Booking.com displays for these Las Vegas properties. It is applied to the pre-tax total to give an indicative all-in figure.",
+    "verified_on": "2026-11-25",
+    "caveat": "Hotel rates are live and change daily. Every number here is a real quoted rate captured on 2026-11-25 for the stated dates, not an estimate. Re-check before booking.",
+    "currency": "USD"
+  },
+  "date_windows": [
+    {
+      "window": "2027-02-15 to 2027-02-22",
+      "label": "Mon 15 Feb – Mon 22 Feb 2027",
+      "note": "User's preferred vacation window"
+    },
+    {
+      "window": "2027-02-22 to 2027-03-01",
+      "label": "Mon 22 Feb – Mon 1 Mar 2027",
+      "note": "One week later"
+    },
+    {
+      "window": "2027-03-16 to 2027-03-23",
+      "label": "Tue 16 Mar – Tue 23 Mar 2027",
+      "note": "Latest feasible window inside the allowed range"
+    }
+  ],
+  "hotels": [
+    {
+      "id": "bellagio",
+      "name": "Bellagio",
+      "operator": "MGM Resorts International",
+      "address": "3600 S. Las Vegas Blvd., Las Vegas, NV 89109",
+      "cluster": "Center Strip",
+      "monorail_station": "Horseshoe / Paris Station",
+      "monorail_walk": "2,300 ft walking (per Booking.com property page)",
+      "room_used": "Room with 2 queen beds (Accessible Premier Two Queen, 510 sq ft) — meets 'queen or larger'",
+      "bed": "Queen x2",
+      "private_bathroom": true,
+      "bathrobe_included": true,
+      "resort_fee_per_night": 55,
+      "tax_rate": 0.1338,
+      "prices": {
+        "2027-02-15": {
+          "seven_night_total_incl_resort_fee": 3072.3,
+          "rate_type": "Non-refundable, Black Friday deal, 34% off",
+          "source": "https://www.booking.com/hotel/us/bellagio.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
+        },
+        "2027-02-22": null,
+        "2027-03-16": null
+      },
+      "amenities_verified": [
+        "5 swimming pools",
+        "Spa and wellness centre",
+        "Hot tub",
+        "Sauna",
+        "Massage",
+        "Parking (valet, garage, EV charging)",
+        "Multiple restaurants incl. Sadelle's, PRIME, Mayfair Supper Club",
+        "Conservatory & Botanical Gardens",
+        "Free Wifi"
+      ],
+      "amenities_source": "https://www.booking.com/hotel/us/bellagio.html",
+      "michelin_key": null,
+      "google_style_rating": 8.6,
+      "rating_scale": 10,
+      "reviews": 9215,
+      "location_score": 9.5,
+      "official_url": "https://bellagio.mgmresorts.com/",
+      "booking_url": "https://www.booking.com/hotel/us/bellagio.html",
+      "notes": "Fountains of Bellagio perform free in front of the hotel. Two MICHELIN-relevant restaurants: Michael Mina (currently marked temporarily closed by Bellagio) and China Poblano is a short walk at the Cosmopolitan.",
+      "cheapest_room_in_window": 3072.3,
+      "cheapest_room_note": "Accessible Premier Two Queen (2 queens, 510 sq ft) at $3,072.30 for 7 nights, non-refundable Black Friday rate. A refundable version of the same room was quoted at $3,330.65."
+    },
+    {
+      "id": "caesars-palace",
+      "name": "Caesars Palace",
+      "operator": "Caesars Entertainment",
+      "address": "3570 S. Las Vegas Blvd., Las Vegas, NV 89109",
+      "cluster": "Center Strip",
+      "monorail_station": "Flamingo / Caesars Palace Station",
+      "monorail_walk": "2,350 ft walking (per Booking.com property page)",
+      "room_used": "Julius Deluxe Room King Non-Smoking (360 sq ft) — private bathroom with double vanity",
+      "bed": "King",
+      "private_bathroom": true,
+      "bathrobe_included": null,
+      "resort_fee_per_night": 55,
+      "tax_rate": 0.1338,
+      "prices": {
+        "2027-02-15": {
+          "seven_night_total_incl_resort_fee": 1622,
+          "rate_type": "Free cancellation before 13 Feb 2027; no prepayment; refundable",
+          "source": "https://www.booking.com/hotel/us/harrah-s-caesars-palace.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
+        },
+        "2027-02-22": null,
+        "2027-03-16": null
+      },
+      "cheapest_room_in_window": 1580,
+      "cheapest_room_note": "'Room Type Assigned on Arrival' (1 king, 360 sq ft) quoted at $1,580 total for the same 7 nights, free cancellation before 13 Feb 2027 — $42 less than the named Julius room.",
+      "amenities_verified": [
+        "5 swimming pools",
+        "Spa and wellness centre (Qua)",
+        "Hot tub",
+        "Sauna",
+        "Massage",
+        "Parking (valet)",
+        "Pet-friendly (fees may apply)",
+        "Continental/American breakfast available",
+        "Restaurant Guy Savoy on site"
+      ],
+      "amenities_source": "https://www.booking.com/hotel/us/harrah-s-caesars-palace.html",
+      "michelin_key": null,
+      "google_style_rating": 7.9,
+      "rating_scale": 10,
+      "reviews": 10086,
+      "location_score": 9.2,
+      "official_url": "https://www.caesars.com/caesars-palace",
+      "booking_url": "https://www.booking.com/hotel/us/harrah-s-caesars-palace.html",
+      "notes": "Hosts Restaurant Guy Savoy (1 MICHELIN Star). Cheapest 1-star-restaurant-hotel combination on the Strip in this window."
+    },
+    {
+      "id": "mgm-grand",
+      "name": "MGM Grand",
+      "operator": "MGM Resorts International",
+      "address": "3799 S. Las Vegas Blvd., Las Vegas, NV 89109",
+      "cluster": "Center-South Strip",
+      "monorail_station": "MGM Grand Station",
+      "monorail_walk": "Station is inside the resort (two entrances)",
+      "room_used": "MGM King (446 sq ft) — attached bathroom",
+      "bed": "King",
+      "private_bathroom": true,
+      "bathrobe_included": null,
+      "resort_fee_per_night": 50,
+      "tax_rate": 0.1338,
+      "prices": {
+        "2027-02-15": {
+          "seven_night_total_incl_resort_fee": 1509,
+          "rate_type": "Non-refundable, Black Friday deal, 31% off",
+          "source": "https://www.booking.com/hotel/us/mgm-grande.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
+        },
+        "2027-02-22": {
+          "seven_night_total_incl_resort_fee": null,
+          "rate_type": "Only suites were quoted in the retrieved page section; the standard king was not captured for this window",
+          "source": "https://www.booking.com/hotel/us/mgm-grande.html?checkin=2027-02-22&checkout=2027-03-01&group_adults=2&no_rooms=1&selected_currency=USD"
+        },
+        "2027-03-16": {
+          "seven_night_total_incl_resort_fee": 1175,
+          "rate_type": "Studio King Accessible, Black Friday deal, free cancellation before 13 Mar 2027",
+          "source": "https://www.booking.com/hotel/us/mgm-grande.html?checkin=2027-03-16&checkout=2027-03-23&group_adults=2&no_rooms=1&selected_currency=USD"
+        }
+      },
+      "cheapest_room_in_window": 1509,
+      "cheapest_room_note": "MGM King non-refundable at $1,509. A refundable version of the same room was quoted at $1,682. MGM Two Queen (2 queens, 446 sq ft) was the same $1,509 non-refundable.",
+      "amenities_verified": [
+        "Attached bathroom",
+        "Air conditioning",
+        "Flat-screen TV",
+        "Grand Garden Arena",
+        "Multiple restaurants",
+        "Monorail station inside resort"
+      ],
+      "amenities_source": "https://www.booking.com/hotel/us/mgm-grande.html",
+      "michelin_key": null,
+      "google_style_rating": null,
+      "rating_scale": 10,
+      "reviews": null,
+      "location_score": null,
+      "official_url": "https://mgmgrand.mgmresorts.com/",
+      "booking_url": "https://www.booking.com/hotel/us/mgm-grande.html",
+      "notes": "Densest cluster of starred dining in Las Vegas: Restaurant de Joël Robuchon (2 stars) AND L'Atelier de Joël Robuchon (1 star) are both inside this hotel, and the Monorail station is in the building."
+    },
+    {
+      "id": "new-york-new-york",
+      "name": "New York-New York",
+      "operator": "MGM Resorts International",
+      "address": "3790 S. Las Vegas Blvd., Las Vegas, NV 89109",
+      "cluster": "Center-South Strip",
+      "monorail_station": "MGM Grand Station (via pedestrian bridge)",
+      "monorail_walk": null,
+      "room_used": "Soho King View (350 sq ft) — attached bathroom",
+      "bed": "King",
+      "private_bathroom": true,
+      "bathrobe_included": null,
+      "resort_fee_per_night": 45,
+      "tax_rate": 0.1338,
+      "prices": {
+        "2027-02-15": {
+          "seven_night_total_incl_resort_fee": 1225,
+          "rate_type": "Non-refundable, Bonus savings, 30% off",
+          "source": "https://www.booking.com/hotel/us/new-york-new-york.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
+        },
+        "2027-02-22": null,
+        "2027-03-16": null
+      },
+      "cheapest_room_in_window": 1160,
+      "cheapest_room_note": "Soho Two Queen (2 queens, 350 sq ft) quoted at $1,160 total, non-refundable, Black Friday deal.",
+      "amenities_verified": [
+        "Attached bathroom",
+        "Air conditioning",
+        "Flat-screen TV",
+        "Casino",
+        "Multiple restaurants"
+      ],
+      "amenities_source": "https://www.booking.com/hotel/us/new-york-new-york.html",
+      "michelin_key": null,
+      "google_style_rating": null,
+      "rating_scale": 10,
+      "reviews": null,
+      "location_score": null,
+      "official_url": "https://nynewyork.mgmresorts.com/",
+      "booking_url": "https://www.booking.com/hotel/us/new-york-new-york.html",
+      "notes": "Adjacent to Park MGM and a short walk to MGM Grand's Monorail station."
+    },
+    {
+      "id": "planet-hollywood",
+      "name": "Planet Hollywood Resort & Casino",
+      "operator": "Caesars Entertainment",
+      "address": "3667 S. Las Vegas Blvd., Las Vegas, NV 89109",
+      "cluster": "Center Strip",
+      "monorail_station": "Horseshoe / Paris Station",
+      "monorail_walk": null,
+      "room_used": "Ultra Hip, King, Non-Smoking (430 sq ft) — attached bathroom",
+      "bed": "King",
+      "private_bathroom": true,
+      "bathrobe_included": null,
+      "resort_fee_per_night": 55,
+      "tax_rate": 0.1338,
+      "prices": {
+        "2027-02-15": {
+          "seven_night_total_incl_resort_fee": 1026.17,
+          "rate_type": "Free cancellation before 13 Feb 2027; no prepayment; refundable; Black Friday deal 48% off",
+          "source": "https://www.booking.com/hotel/us/planet-hollywood.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
+        },
+        "2027-02-22": null,
+        "2027-03-16": null
+      },
+      "cheapest_room_in_window": 1026.17,
+      "cheapest_room_note": "Refundable king room at $1,026.17 total. Strong value for a full-cancellation-flexibility booking directly opposite the Horseshoe/Paris Monorail station.",
+      "amenities_verified": [
+        "Attached bathroom",
+        "Air conditioning",
+        "Flat-screen TV",
+        "Free Wifi",
+        "Casino",
+        "Miracle Mile Shops attached"
+      ],
+      "amenities_source": "https://www.booking.com/hotel/us/planet-hollywood.html",
+      "michelin_key": null,
+      "google_style_rating": null,
+      "rating_scale": 10,
+      "reviews": null,
+      "location_score": null,
+      "official_url": "https://www.caesars.com/planet-hollywood",
+      "booking_url": "https://www.booking.com/hotel/us/planet-hollywood.html",
+      "notes": "Directly across the street from the Horseshoe/Paris Monorail station — best transit position of any sub-$1,100 hotel found."
+    },
+    {
+      "id": "flamingo",
+      "name": "Flamingo Las Vegas",
+      "operator": "Caesars Entertainment",
+      "address": "3555 S. Las Vegas Blvd., Las Vegas, NV 89109",
+      "cluster": "Center Strip",
+      "monorail_station": "Flamingo / Caesars Palace Station",
+      "monorail_walk": "Station is at the property (per Monorail station guide)",
+      "room_used": "Fab Room, 2 Queens, Non-Smoking (350 sq ft) — attached bathroom",
+      "bed": "Queen x2",
+      "private_bathroom": true,
+      "bathrobe_included": null,
+      "resort_fee_per_night": 50,
+      "tax_rate": 0.1338,
+      "prices": {
+        "2027-02-15": {
+          "seven_night_total_incl_resort_fee": 667.55,
+          "rate_type": "Free cancellation before 13 Feb 2027; no prepayment; refundable; Black Friday deal 42% off",
+          "source": "https://www.booking.com/hotel/us/flamingo-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
+        },
+        "2027-02-22": null,
+        "2027-03-16": null
+      },
+      "cheapest_room_in_window": 625.65,
+      "cheapest_room_note": "'Room Type Assigned on Arrival' (1 king, 350 sq ft) quoted at $625.65 total for the same 7 nights, refundable, free cancellation before 13 Feb 2027.",
+      "amenities_verified": [
+        "Pool with a view",
+        "Attached bathroom",
+        "Air conditioning",
+        "Flat-screen TV",
+        "Free Wifi",
+        "Wildlife Habitat (flamingos on site)"
+      ],
+      "amenities_source": "https://www.booking.com/hotel/us/flamingo-casino.html",
+      "michelin_key": null,
+      "google_style_rating": 7.8,
+      "rating_scale": 10,
+      "reviews": 24746,
+      "location_score": null,
+      "official_url": "https://www.caesars.com/flamingo-las-vegas",
+      "booking_url": "https://www.booking.com/hotel/us/flamingo-casino.html",
+      "notes": "Cheapest verified 7-night total with a private bathroom and queen-or-better bed AND a Monorail station on property. Weaker guest score (7.8/10)."
+    },
+    {
+      "id": "luxor",
+      "name": "Luxor",
+      "operator": "MGM Resorts International",
+      "address": "3900 S. Las Vegas Blvd., Las Vegas, NV 89119",
+      "cluster": "South Strip",
+      "monorail_station": null,
+      "monorail_walk": "No Monorail station; nearest is MGM Grand, reachable by the free Mandalay Bay–Excalibur tram plus a walk",
+      "room_used": "Tower Premier Two Queen (449 sq ft) — attached bathroom",
+      "bed": "Queen x2",
+      "private_bathroom": true,
+      "bathrobe_included": null,
+      "resort_fee_per_night": 45,
+      "tax_rate": 0.1338,
+      "prices": {
+        "2027-02-15": {
+          "seven_night_total_incl_resort_fee": 569.42,
+          "rate_type": "Non-refundable, Black Friday deal, 28% off",
+          "source": "https://www.booking.com/hotel/us/luxor.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
+        },
+        "2027-02-22": null,
+        "2027-03-16": null
+      },
+      "cheapest_room_in_window": 556,
+      "cheapest_room_note": "Pyramid King quoted at $556 total (non-refundable, 7 nights) — the single lowest verified 7-night total in this study.",
+      "amenities_verified": [
+        "Attached bathroom",
+        "Air conditioning",
+        "Flat-screen TV",
+        "Free Wifi",
+        "Casino"
+      ],
+      "amenities_source": "https://www.booking.com/hotel/us/luxor.html",
+      "michelin_key": null,
+      "google_style_rating": 7.3,
+      "rating_scale": 10,
+      "reviews": 22249,
+      "location_score": null,
+      "official_url": "https://luxor.mgmresorts.com/",
+      "booking_url": "https://www.booking.com/hotel/us/luxor.html",
+      "notes": "Cheapest accommodation found, but it is the worst transit position on this list: no Monorail station and the furthest south, so travel times to the spring Mountain Road MICHELIN cluster exceed one hour by bus."
+    },
+    {
+      "id": "trump-international",
+      "name": "Trump International Hotel Las Vegas",
+      "operator": "Trump Hotels",
+      "address": "2000 N. Fashion Show Dr., Las Vegas, NV 89109",
+      "cluster": "North Strip (off-Strip, behind Fashion Show)",
+      "monorail_station": null,
+      "monorail_walk": "No station at property; nearest is SAHARA or Westgate, both >1 mile",
+      "room_used": "Superior King (includes a sofa bed)",
+      "bed": "King",
+      "private_bathroom": true,
+      "bathrobe_included": null,
+      "resort_fee_per_night": null,
+      "tax_rate": 0.1338,
+      "prices": {
+        "2027-02-15": {
+          "seven_night_total_incl_resort_fee": 1883,
+          "rate_type": "Free cancellation; Black Friday deal — note this figure is quoted tax-and-fees-INCLUSIVE by the search listing",
+          "source": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&group_children=0&selected_currency=USD&nflt=class%3D5&order=price"
+        },
+        "2027-02-22": null,
+        "2027-03-16": null
+      },
+      "cheapest_room_in_window": 1883,
+      "cheapest_room_note": "Quoted at $1,883 'including taxes and fees' in the search listing — this one is already all-in, unlike the other rows.",
+      "amenities_verified": [
+        "No casino on property",
+        "Attached bathroom",
+        "Air conditioning",
+        "Flat-screen TV"
+      ],
+      "amenities_source": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&group_children=0&selected_currency=USD&nflt=class%3D5&order=price",
+      "michelin_key": null,
+      "google_style_rating": 9.1,
+      "rating_scale": 10,
+      "reviews": 7771,
+      "location_score": null,
+      "official_url": "https://www.trumphotels.com/las-vegas",
+      "booking_url": "https://www.booking.com/hotel/us/trump-international-tower.html",
+      "notes": "Best guest score (9.1) of the hotels priced here, but the weakest dining-cluster position and no direct Monorail access."
+    },
+    {
+      "id": "wynn",
+      "name": "Wynn Las Vegas",
+      "operator": "Wynn Resorts",
+      "address": "3131 S. Las Vegas Blvd., Las Vegas, NV 89109",
+      "cluster": "North Strip",
+      "monorail_station": null,
+      "monorail_walk": "No Monorail station on property; SAHARA Station is the closest, about 1.5 miles south",
+      "room_used": "Wynn Resort King (approx 640 sq ft, derived from the quoted sq-ft on comparable Wynn rooms) — private bathroom with bathrobe and slippers",
+      "bed": "King",
+      "private_bathroom": true,
+      "bathrobe_included": true,
+      "resort_fee_per_night": 55,
+      "tax_rate": 0.1338,
+      "prices": {
+        "2027-02-15": {
+          "seven_night_total_incl_resort_fee": 5828,
+          "rate_type": "Refundable, free cancellation before 12 Feb 2027",
+          "source": "https://www.booking.com/hotel/us/wynn-las-vegas.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
+        },
+        "2027-02-22": null,
+        "2027-03-16": null
+      },
+      "cheapest_room_in_window": 5828,
+      "cheapest_room_note": "The lowest-priced Wynn king room captured was $5,828 for 7 nights, refundable. The Wynn Resort Two Queens was $6,198.",
+      "amenities_verified": [
+        "Attached bathroom",
+        "Bathrobe and slippers",
+        "Minibar",
+        "Mountain / landmark / city views",
+        "Room service"
+      ],
+      "amenities_source": "https://www.booking.com/hotel/us/wynn-las-vegas.html",
+      "michelin_key": null,
+      "google_style_rating": null,
+      "rating_scale": 10,
+      "reviews": null,
+      "location_score": null,
+      "official_url": "https://www.wynnlasvegas.com/",
+      "booking_url": "https://www.booking.com/hotel/us/wynn-las-vegas.html",
+      "notes": "Hosts Wing Lei (MICHELIN Selected). Also home to many MICHELIN-key and Forbes Five-Star venues, but the highest 7-night total in this comparison."
+    },
+    {
+      "id": "cosmopolitan",
+      "name": "The Cosmopolitan of Las Vegas",
+      "operator": "MGM Resorts International",
+      "address": "3708 S. Las Vegas Blvd., Las Vegas, NV 89109",
+      "cluster": "Center Strip",
+      "monorail_station": "Horseshoe / Paris Station",
+      "monorail_walk": "Short walk; the property sits between Bellagio and the Horseshoe/Paris station",
+      "room_used": "City Room Accessible (460 sq ft, 2 queen beds) — private bathroom with shower and hairdryer",
+      "bed": "Queen x2",
+      "private_bathroom": true,
+      "bathrobe_included": null,
+      "resort_fee_per_night": 55,
+      "tax_rate": 0.1338,
+      "prices": {
+        "2027-02-15": {
+          "seven_night_total_incl_resort_fee": null,
+          "rate_type": "NOT AVAILABLE for the full 7 nights. Every room type on the property page returned 'Not available on our site for your dates'.",
+          "source": "https://www.booking.com/hotel/us/the-cosmopolitan-of-las-vegas-las-vegas2.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
+        },
+        "2027-02-22": null,
+        "2027-03-16": {
+          "seven_night_total_incl_resort_fee": 2093.71,
+          "rate_type": "Non-refundable, 32% off, Black Friday deal",
+          "source": "https://www.booking.com/hotel/us/the-cosmopolitan-of-las-vegas-las-vegas2.html?checkin=2027-03-09&checkout=2027-03-16&group_adults=2&no_rooms=1&selected_currency=USD"
+        }
+      },
+      "cheapest_room_in_window": null,
+      "cheapest_room_note": "Critical finding: the Cosmopolitan was UNAVAILABLE for 15–22 Feb 2027. Booking.com's own alternatives for the property started at 4-night stays from $2,504 for 13–17 Feb, confirming the window is blocked. A comparable 7-night stay would cost about $2,094–$3,015 in March.",
+      "amenities_verified": [
+        "Spa and wellness centre",
+        "Beach chairs / loungers",
+        "Rooftop pool",
+        "Sustainability certification",
+        "Private terrace rooms",
+        "Attached bathroom",
+        "Minibar"
+      ],
+      "amenities_source": "https://www.booking.com/hotel/us/the-cosmopolitan-of-las-vegas-las-vegas2.html",
+      "michelin_key": null,
+      "google_style_rating": 8.5,
+      "rating_scale": 10,
+      "reviews": 2390,
+      "location_score": null,
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/",
+      "booking_url": "https://www.booking.com/hotel/us/the-cosmopolitan-of-las-vegas-las-vegas2.html",
+      "notes": "Hosts TWO MICHELIN-listed restaurants: é by José Andrés (1 star) and China Poblano (Bib Gourmand). Its unavailability in the preferred window is a material planning constraint."
+    }
+  ]
+}

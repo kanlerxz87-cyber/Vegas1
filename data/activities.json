@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "purpose": "Free and paid things to do in the preferred Feb–Mar 2027 window, for a couple. Only officially sourced facts.",
+    "verified_on": "2026-11-25",
+    "social_link_policy": "Social profiles are listed only where the operator's own website links to them. Where no official profile could be confirmed the cell is blank and flagged rather than guessed."
+  },
+  "activities": [
+    {
+      "id": "fountains-of-bellagio",
+      "name": "Fountains of Bellagio",
+      "category": "Free show",
+      "venue": "Bellagio — the lake in front of the hotel",
+      "address": "3600 S. Las Vegas Blvd., Las Vegas, NV 89109",
+      "price": "Free",
+      "price_note": "No ticket required; publicly viewable from the Strip sidewalk and the Bellagio bridge.",
+      "hours": {
+        "mon_fri": "Every 30 minutes from 3:00 PM to 7:30 PM, then every 15 minutes from 8:00 PM to midnight",
+        "sat_sun_holidays": "Every 30 minutes from 12:00 PM to 7:30 PM, then every 15 minutes from 8:00 PM to midnight"
+      },
+      "days_open": "Daily",
+      "exceptions": "Shows are cancelled in high winds and other inclement weather. Schedule subject to change.",
+      "duration": null,
+      "booking_required": false,
+      "official_url": "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html",
+      "social": [],
+      "unverified_fields": ["duration", "social"]
+    },
+    {
+      "id": "high-roller",
+      "name": "High Roller Observation Wheel",
+      "category": "Paid attraction",
+      "venue": "The LINQ Promenade",
+      "address": "3535 S. Las Vegas Blvd., Las Vegas, NV 89109",
+      "price": "Adult daytime $23.50; Adult anytime $34.75; Happy Half Hour (21+, open bar) $60; Youth 4–12 $8.50 daytime / $17.50 anytime; children 3 and under free",
+      "price_note": "Prices exclude tax and fees. For 2 adults the daytime cost is therefore $47.00 plus tax/fees and the anytime cost is $69.50 plus tax/fees.",
+      "cost_couple_daytime": 47.00,
+      "cost_couple_anytime": 69.50,
+      "cost_couple_currency": "USD",
+      "cost_couple_note": "Computed as 2 × the officially published adult price. Tax and fees excluded.",
+      "hours": {
+        "daily": "Operates daily; the observation wheel runs through the day and evening. The official page publishes a calendar that could not be captured as a static weekly table, so exact daily opening times are left blank."
+      },
+      "days_open": "Daily",
+      "exceptions": "Height 550 ft. 28 air-conditioned cabins, up to 40 people per cabin. One rotation takes about 30 minutes and boarding does not stop the wheel. Nevada residents get 20% off standard tickets in January and June before 5 PM with valid ID.",
+      "duration": "Approximately 30 minutes per rotation",
+      "booking_required": "Not required, but timed tickets are sold and the official page links to Ticketmaster",
+      "official_url": "https://www.caesars.com/linq/things-to-do/attractions/high-roller",
+      "social": [
+        {"platform": "Instagram", "url": "https://www.instagram.com/thelinq/", "note": "Property-level account, linked from the official The LINQ page footer"},
+        {"platform": "YouTube", "url": "https://www.youtube.com/user/linqvegas", "note": "Property-level channel, linked from the official The LINQ page footer"},
+        {"platform": "X (Twitter)", "url": "https://twitter.com/thelinq", "note": "Property-level account, linked from the official The LINQ page footer"},
+        {"platform": "Facebook", "url": "https://www.facebook.com/TheLINQ", "note": "Property-level page, linked from the official The LINQ page footer"}
+      ],
+      "unverified_fields": ["hours"]
+    },
+    {
+      "id": "sphere-metallica",
+      "name": "Metallica at Sphere (Life Under 4 Suns residency)",
+      "category": "Concert residency",
+      "venue": "Sphere",
+      "address": "255 Sands Ave., Las Vegas, NV 89169",
+      "price": null,
+      "price_note": "Ticket prices are date- and seat-dependent and are not published as a single figure on the shows page. Left blank rather than estimated.",
+      "hours": {"daily": "Show times vary by performance date"},
+      "days_open": "Selected dates from 28 January 2027 to 13 March 2027",
+      "exceptions": "This is the only major Sphere residency whose confirmed run fully covers the 15 February – 23 March 2027 planning window. Competitors do not: the Eagles run 13 Nov 2026 – 23 Jan 2027 (ends before the window), Backstreet Boys 26 Dec 2026 – 2 Jan 2027 (ends before the window), and John Mayer 8 Apr – 12 Jun 2027 (starts after the window).",
+      "duration": null,
+      "booking_required": true,
+      "official_url": "https://www.thesphere.com/shows",
+      "social": [],
+      "unverified_fields": ["price", "hours", "duration", "social"]
+    },
+    {
+      "id": "sphere-venue",
+      "name": "Sphere — venue experience / Postcard from Earth",
+      "category": "Immersive venue",
+      "venue": "Sphere",
+      "address": "255 Sands Ave., Las Vegas, NV 89169",
+      "price": null,
+      "price_note": "Not published as a single figure on the shows page; left blank.",
+      "hours": {"daily": null},
+      "days_open": null,
+      "exceptions": "Programming changes frequently. The shows calendar is the authoritative list and should be re-checked for the actual Feb–Mar 2027 dates.",
+      "duration": null,
+      "booking_required": true,
+      "official_url": "https://www.thesphere.com/shows",
+      "social": [],
+      "unverified_fields": ["price", "hours", "days_open", "duration", "social"]
+    }
+  ]
+}
