@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Suggestions - Vegas1 Las Vegas Vacation Planner</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <a href="../index.html" class="logo">Vegas<span>1</span></a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">&#9776;</button>
+      <nav class="nav" id="mainNav">
+        <a href="../index.html">Home</a>
+        <a href="hotels.html">Hotels</a>
+        <a href="restaurants.html">Michelin Restaurants</a>
+        <a href="activities.html">Activities</a>
+        <a href="booking.html">Best Time to Book</a>
+        <a href="suggestions.html" class="active">Suggestions</a>
+        <a href="questions.html">Questions & Answers</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content container">
+    <section class="card">
+      <h2>Site Improvement Suggestions</h2>
+      <p class="section-subtitle">These suggestions are for review before implementation. No changes should be made without explicit approval.</p>
+
+      <div class="suggestion-card">
+        <h4>1. Real-Time Hotel Price Integration</h4>
+        <p>Integrate with hotel booking APIs (Expedia, Booking.com, Hotels.com, or direct hotel APIs) to display real-time pricing and availability instead of estimates.</p>
+        <p><strong>Benefit:</strong> Users would see accurate, up-to-date pricing.</p>
+        <p><strong>Implementation:</strong> Requires API keys, rate limit handling, caching, and fallback display.</p>
+        <span class="suggestion-status status-proposed">Proposed - needs review</span>
+      </div>
+
+      <div class="suggestion-card">
+        <h4>2. Restaurant Hours and Day Verification</h4>
+        <p>Add a data collection workflow to verify restaurant hours, days open, and exceptions from each restaurant's official website.</p>
+        <p><strong>Benefit:</strong> Complete the currently blank "days open" and "hours" columns.</p>
+        <p><strong>Implementation:</strong> Manual research or automated scraping.</p>
+        <span class="suggestion-status status-proposed">Proposed - needs review</span>
+      </div>
+
+      <div class="suggestion-card">
+        <h4>3. Social Media Link Collection</h4>
+        <p>Systematically collect YouTube, TikTok, and Instagram links for each restaurant and activity from their official websites and social media profiles.</p>
+        <p><strong>Benefit:</strong> Complete social media columns; provide visual content to help users decide.</p>
+        <p><strong>Implementation:</strong> Manual research; could add crowdsourced link submission feature.</p>
+        <span class="suggestion-status status-proposed">Proposed - needs review</span>
+      </div>
+
+      <div class="suggestion-card">
+        <h4>4. Interactive Map</h4>
+        <p>Add an interactive map showing hotel locations, Michelin restaurants, and activities with travel time overlays.</p>
+        <p><strong>Benefit:</strong> Users could visually assess proximity and travel times.</p>
+        <p><strong>Implementation:</strong> Google Maps API or Mapbox (requires API key and possibly billing).</p>
+        <span class="suggestion-status status-proposed">Proposed - needs review</span>
+      </div>
+
+      <div class="suggestion-card">
+        <h4>5. User Accounts and Saved Trips</h4>
+        <p>Allow users to create accounts, save favorites, and build custom itineraries.</p>
+        <p><strong>Benefit:</strong> Personalized planning experience.</p>
+        <p><strong>Implementation:</strong> Requires backend authentication, database, and UI. Significant development effort.</p>
+        <span class="suggestion-status status-proposed">Proposed - needs review</span>
+      </div>
+
+      <div class="suggestion-card">
+        <h4>6. Price Alert System</h4>
+        <p>Email notifications when hotel prices drop below a user-specified threshold for selected dates.</p>
+        <p><strong>Benefit:</strong> Users can book at optimal prices without constantly checking.</p>
+        <p><strong>Implementation:</strong> Price monitoring backend and email service integration.</p>
+        <span class="suggestion-status status-proposed">Proposed - needs review</span>
+      </div>
+
+      <div class="suggestion-card">
+        <h4>7. Mobile App Version</h4>
+        <p>Create a mobile app (React Native or Flutter) for on-the-go access during the trip.</p>
+        <p><strong>Benefit:</strong> Better mobile experience than a responsive website.</p>
+        <p><strong>Implementation:</strong> Separate codebase, app store submissions, ongoing maintenance.</p>
+        <span class="suggestion-status status-proposed">Proposed - needs review</span>
+      </div>
+
+      <div class="suggestion-card">
+        <h4>8. Multi-Language Support</h4>
+        <p>Add translations for international visitors.</p>
+        <p><strong>Benefit:</strong> Broader audience reach.</p>
+        <p><strong>Implementation:</strong> Translation management system, language detection, UI internationalization.</p>
+        <span class="suggestion-status status-proposed">Proposed - needs review</span>
+      </div>
+
+      <div class="suggestion-card">
+        <h4>9. Weather Integration</h4>
+        <p>Display weather forecasts for the trip dates.</p>
+        <p><strong>Benefit:</strong> Helps users plan outdoor activities.</p>
+        <p><strong>Implementation:</strong> Weather API integration (OpenWeather, WeatherAPI, etc.).</p>
+        <span class="suggestion-status status-proposed">Proposed - needs review</span>
+      </div>
+
+      <div class="suggestion-card">
+        <h4>10. Review Aggregation</h4>
+        <p>Aggregate reviews from TripAdvisor, Yelp, Google Reviews for each restaurant and activity.</p>
+        <p><strong>Benefit:</strong> Users get a balanced view beyond Michelin ratings.</p>
+        <p><strong>Implementation:</strong> Multiple API integrations or scraping with legal considerations.</p>
+        <span class="suggestion-status status-proposed">Proposed - needs review</span>
+      </div>
+
+      <div class="source-note">
+        <p><strong>Review process:</strong> Each suggestion should be reviewed by stakeholders, estimated for development effort, prioritized by impact vs. cost, and scheduled for implementation or declined. No implementation should proceed without sign-off.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Vegas1 - Las Vegas Vacation Planning</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobileMenuBtn')?.addEventListener('click', function() {
+      const nav = document.getElementById('mainNav');
+      nav.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
