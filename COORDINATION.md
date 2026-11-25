@@ -145,3 +145,29 @@ Joined 2026-11-25 while the integration above was already published. **Additive,
 **Irregularities:** `data/flags.json` v2 — S-01/S-02/S-04/S-05 verified fills awaiting integration; S-03 self-correction; F07/F11/F13 remain open and match FLAGS.md items. v1 flags against the archived first site are retained as a record.
 
 **Merge/conflict log (rule 5):** rebased onto `origin/main` repeatedly on 2026-11-25 while PRs #1/#2/#3/#4/#5 landed in parallel; COORDINATION.md conflicts resolved each time by keeping the integration session's board verbatim and appending this record; the superseded bootstrap commit was skipped (nothing discarded — content preserved here and in git history).
+
+## QA pass against the rendered site — session edcfa7a0 — 2026-11-25
+
+This pass read the **live** pages back and compared them to the JSON that generates them, rather than
+trusting that a green build meant a correct page. All nine defects below were found that way; none was
+caught by any validator.
+
+| # | Defect | How it was found | Fix |
+|---|---|---|---|
+| 1 | **Desert Rose in the wrong zone.** Tagged `center-strip` and described as "a 15-minute walk to the centre-Strip Michelin cluster"; the address is 5051 Duke Ellington Way, one block east of the Strip at the Tropicana/MGM Grand corner. | Its own note contradicted its own zone. | Zone → `south-strip`; walk claim restated as 15–20 min to the Robuchon rooms at MGM Grand. Price, score and suite size were always right, so the pick survives with the correct reason. |
+| 2 | **`desertroseresort.com` returns HTTP 500.** | Fetched it. | Repointed to the real operator page (Shell Vacations Hospitality / Wyndham Extra Holidays). |
+| 3 | **28 of 32 hotel `official_url` links were never fetched** — the restaurant links all were. | Comparing how each field was sourced. | Cards now mark them *"not fetched — may have moved"*. Four confirmed: Desert Rose, LINQ, Palms Place, Venetian. The Booking.com "Price source ✓" link on every card is always fetched, so nothing is unreachable. F-27/F-28, Q-13, S-13. |
+| 4 | **Day span printed twice** — "Tue–Sat" then "Tue–Sat 5:00 PM – 9:30 PM". | Reading the rendered hours column. | Stripped when `hours` already starts with `days`. Robuchon + Partage. |
+| 5 | **Hand-typed counts in the question register**: Q-03 "21 restaurants / fourteen Recommended", Q-07 "45 YouTube links", Q-04 "Twelve of the 21", S-12 "Ten of the 21". | Cross-checking rendered text against `data/restaurants.json`. | Actual: 24 listings, 17 Recommended, 69 links, 15 with a phone number, 12 with fully verified hours. All derived now. Same bug class as PR #5, in files PR #5 did not touch. |
+| 6 | **Three nav pages were empty shells.** `pricing.html` 2,258 b, `verification.html` 2,225 b, `summary.html` 1,621 b — each with **0 table rows and 0 source links**; pricing built its whole body from an empty `<div id="tbl-pricing">`. Regenerating would have deleted them and broken every nav bar. | Counting `<tr>` and `href="http` in the committed files. | `gen_site.py` now owns all three and routes them at the sections carrying the figures. Nothing deleted, no nav broken. |
+| 7 | **Four cross-page anchors pointed at ids that did not exist.** | Added an anchor check to `validate.py`. | Stable ids added to the five target sections plus one per suggestion. The check is permanent, so it cannot regress. |
+| 8 | **Caesars note overstated.** "Two Michelin-starred restaurants in-building-adjacent range" read as if both were inside; only Guy Savoy is. | Reading the rendered note. | Rewritten: Guy Savoy (1★) in the building; Robuchon and L'Atelier a 10-minute ride south. |
+| 9 | Missing space before the "not fetched" marker. | Reading the rendered HTML. | `&nbsp;` separator. |
+
+**Final state:** 11 pages published to both the repo root and `docs/`; `validate.py` reports 11 pages,
+0 failures, 0 warnings, 0 broken anchors; committed output is byte-identical to a fresh generator run (no
+drift); Pages build `built`; confirmed on the live URL.
+
+**Lesson worth keeping:** all nine defects were invisible to `build.py` and `validate.py`. They appeared only
+when the rendered text was read and compared back to the data. A green validator proves the generator ran,
+not that the page is true.
