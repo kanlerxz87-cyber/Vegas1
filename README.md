@@ -72,3 +72,10 @@ from station lists and route maps, and is labelled as one. Recorded as F-21 in `
 An independent session built a second complete site with **official-property booking-engine rates** (Caesars/Wynn/Resorts World direct, sampled 2026-11-25) — preserved and readable at **[docs/session-af795000/](docs/session-af795000/)** (exec summary, hotels, Michelin 24, activities, analysis, suggestions, open questions, flagged register). Machine-readable: `data/session-af795000-*.json`; research backup: `notes/research-log.md`.
 
 Headline verified numbers (7 nights, Feb 15–22, 2027, 2 adults, incl. resort fee, excl. tax): **Flamingo $595 · Horseshoe $763 · Planet Hollywood $1,092 · Paris $1,526 · Caesars Palace $1,582 · Resorts World ≈$1,942 · Wynn $4,739 (Cyber $677/nt — book by Dec 4, 2026)**. The preferred week is the cheapest verified 7-night window in the Feb 15 – Mar 23 range. See the subsite's hotels page for source links per row.
+
+
+## Session supplement — session-48dbf0ae (Booking.com dated quotes + independent site)
+
+A third independent session built a parallel site with **Booking.com dated search quotes** (7 nights Feb 15–22, 2027, before 13.38% tax) and a full MICHELIN cost-for-2 table — preserved at **[docs/session-48dbf0ae/](docs/session-48dbf0ae/)** (exec summary, hotels ranking, 24 restaurants Star/Bib/listed, activities, suggestions Q1–Q10, flagged register, line-by-line `VERIFICATION.md`). Machine-readable: `data/session-48dbf0ae-*.json`.
+
+Headline numbers (7 nights Feb 15–22, 2027, 2 adults, before tax, resort fee included): **Flamingo $625.65 · MGM Grand $1,508.50 · Caesars Palace $1,580 · Bellagio $3,072.30 · Venetian $4,573.16**; preferred 3-night window Feb 15–18: **Flamingo $166.65 · MGM $614.10–$887**. Also verified: Partage official menu ($130/$160/$210), é open Tue–Sun (official), RTC Strip fares $4/$6/$8/$20 with a **fare change proposed 2027-01-31**, and that **no $35 7-day Strip pass exists**. Cross-session price differences vs the canonical/af795000 figures follow the same rule: **check the property's own booking engine for your exact dates before deciding.**

@@ -14,6 +14,7 @@ then commit and push that claim immediately.
 | arena-0c9983d6-vegas1 | 2026-11-25 | Verification pass on transit: added RTC Route 203, corrected the Chinatown reachability claim | `arena/0c9983d6-vegas1` |
 | arena-126d963c-vegas1 | 2026-11-25 | Restaurant hours + closure status verification pass | `arena/126d963c-vegas1` |
 | session-planner-01 (arena/4d41b902-vegas1) | 2026-11-25 | Independent full build: 24 Michelin restaurants, 9 ranked hotels, 8 activities, pricing, verification, summary, suggestions in `assets/` + root pages; integrated into canonical `main` site | `arena/4d41b902-vegas1` |
+| session-48dbf0ae (arena/48dbf0ae-vegas1) | 2026-11-25 | Independent research + build (24 MICHELIN restaurants w/ cost-for-2, 9 dated Booking.com 7-night quotes, 9 activities, flags register, line-by-line VERIFICATION log); integrated as archived subsite `docs/session-48dbf0ae/` — live root site untouched | `arena/48dbf0ae-vegas1` |
 
 > **Status note:** T02–T08 were prematurely marked `done` on first write. As of this commit the research
 > is complete in-session but **no `data/` files exist yet**, so all tasks are `in progress` until the JSON
@@ -55,6 +56,7 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 | T11 | Integration + GitHub Pages publish | done | arena-edcfa7a0-vegas1 | `docs/**`, Pages settings | Single integrating session for this effort; no other session active. |
 | T1–T9 | Independent full build (restaurants, hotels, activities, pricing, verification, summary, suggestions) | done | session-planner-01 | `assets/**`, root `*.html` | Separate JS-driven build; integrated into canonical `main` site via merge (see handoff log). |
 | T10 | Integrate, re-verify, deploy GitHub Pages | done | session-planner-01 | repo-wide | Merged independent build into canonical `main` site; supplementary pages linked from nav. |
+| T1–T9 (independent) | Independent verified build + link-check pass | done | session-48dbf0ae | `docs/session-48dbf0ae/**`, `data/session-48dbf0ae-*.json` | Claimed on a fork-era task board that predates this one; no canonical file touched. See session record at end of file. |
 
 ## Correction record — RTC Route 203 — 2026-11-25
 
@@ -189,3 +191,43 @@ Independent full-session build of the same brief (started from base 9b8bcfa befo
 **No work discarded in this merge:** canonical site/data/FLAGS/scripts kept from main; my outputs relocated to the paths above (this record's first bullets). PR #16.
 
 **Addendum (post-merge cross-session conflict — flag for users):** The canonical site's headline "February is the expensive week — moving to 8–15 Mar cuts the Venetian by 36%" (from Booking.com OTA snapshots in `data/hotels.json`) **conflicts** with session-af795000's official-engine finding that Feb 15–22 is the *cheapest* verified 7-night window at every property checked (Caesars Palace $1,582 vs Mar 8–15 calendar ≈$2,013; Flamingo $595 vs ≈$804; Wynn/RW Feb sampled). Both may be right for different properties/sources (Venetian March was not machine-verifiable for af795000; OTA snapshots can undercut official BAR). Resolution rule for users: **check the specific property's own booking engine for the specific dates before deciding**; neither claim should be quoted unqualified. Recorded 2026-11-25.
+
+
+## Session record — session-48dbf0ae (independent build + link check) — 2026-11-25
+
+Branch `arena/48dbf0ae-vegas1` forked from `9b8bcfa` **before** this board existed, so its early
+claims (T01–T09) were made against a now-superseded task board. No work from any other session was
+edited or discarded. Integrated additively per the `session-af795000` pattern:
+
+- **Site (7 pages, mobile-first):** `docs/session-48dbf0ae/` — index, executive summary, hotels,
+  michelin, activities, suggestions + open questions (Q1–Q10), flagged-for-review, plus
+  `VERIFICATION.md` (line-by-line source→value log) and its own stylesheet.
+- **Data:** `data/session-48dbf0ae-hotels.json`, `data/session-48dbf0ae-michelin.json`,
+  `data/session-48dbf0ae-activities.json` (all rows carry source URLs; blanks = unverified).
+- **Live site:** root `index.html` and all canonical `data/*.json` were **not modified** by this
+  session's PR; the archived workflow that would have repointed Pages was deleted in this merge.
+
+**Verified findings worth cross-reference (2026-11-25):**
+- Booking.com dated quotes, 7 nights Feb 15–22 2027, 2 adults, before 13.38% tax (resort fee in):
+  Flamingo **$625.65** (king, −40% BF) · LINQ $640 incl tax · Horseshoe $813 incl tax ·
+  MGM Grand $1,508.50 · Caesars Palace $1,580 · Bellagio $3,072.30 · Cosmopolitan $3,432.80 ·
+  ARIA $3,797.50 · Venetian $4,573.16. Budget cards: Rio Masquerade $483, Gold Coast $768,
+  Orleans $1,067. Preferred window (Feb 15–18, 3 nights): Flamingo $166.65 / MGM $614.10–$887.
+- Week lever at MGM Grand: Feb 15–22 $1,508.50 vs **Feb 22–Mar 1 $1,293.60** (post–Super Bowl LXI
+  dip; game Sun Feb 14, 2027 + Presidents' Day Mon Feb 15 inflate the target week's first nights).
+  Flamingo runs the other way: target week $625.65 < Mar 1–8 $925.85. Consistent with the
+  canonical addendum: **per-property check required**.
+- Partage official menu fetched live: 5-course **$130** / 7-course **$160** / Signature **$210**
+  (supersedes $80–$130 and $120–$198 third-party figures).
+- é by José Andrés official site: **open Tue–Sun**, two shows 5:30/8:30 PM, nine seats, tickets
+  release 3 months ahead (resolves a Sunday-service source conflict).
+- RTC official fares confirmed: Strip & All Access $4 / $6 / $8 / **$20 3-day** — there is **no
+  $35 7-day Strip pass** (an error this session caught and corrected in its own draft); a fare
+  change is proposed from **2027-01-31** and must be re-checked before travel.
+- Link-check pass: all internal links valid; ~20 critical external links re-fetched live
+  (MICHELIN guide, Caesars, Bellagio, Mott 32, Esther's, é, Partage, COTE, Sparrow + Wolf,
+  Kabuto, SoulBelly, Anima, Stubborn Seed, Neon Museum, YEN Viet). Sandbox curl cannot reach
+  external hosts; verification used `fetch_page` + `web_search`.
+
+**No work discarded in this merge:** canonical root site, `docs/` canonical pages, `data/*.json`,
+`scripts/`, `FLAGS.md`, `archive/` all kept from `main`.
