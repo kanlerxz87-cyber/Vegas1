@@ -133,7 +133,7 @@
       "sources": [
         "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html"
       ],
-      "how_to_close": "Restaurant row kept, but with the closure stated on the row and flagged F-22. No reopen date is published, so no date is assumed.",
+      "how_to_close": "Restaurant row kept, but with the closure stated on the row and flagged **F-23**. No reopen date is published, so no date is assumed.",
       "substitution": ""
     },
     {
@@ -145,7 +145,7 @@
       "sources": [
         "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html"
       ],
-      "how_to_close": "All five corrected or explicitly left blank with the reason recorded. See FLAGS.md F-21 to F-24.",
+      "how_to_close": "All five corrected or explicitly left blank with the reason recorded. See FLAGS.md **F-22 to F-25**.",
       "substitution": ""
     }
   ]
