@@ -8,7 +8,8 @@ A sourced trip plan for **two adults**, seven nights, between **15 February and 
 
 | Path | What it is |
 |------|-----------|
-| `docs/` | The published site (8 pages, plain HTML + one stylesheet, no framework, no CDN) |
+| `docs/` | The site source (8 pages, plain HTML + one stylesheet, no framework, no CDN) |
+| `index.html`, `*.html`, `style.css` (repo root) | The **same generated site**, written to the root as well. GitHub Pages on this repo is pinned to `main:/` and the API refuses to repoint it to `/docs`, so the root copy is what visitors actually get. Both are produced by `scripts/gen_site.py` — never edit either by hand. |
 | `data/restaurants.json` | 24 MICHELIN listings with award tier, hours, exceptions, prices, official + YouTube links |
 | `data/hotels.json` | 32 hotels with dated 7-night totals, bed/bathroom fit, Michelin proximity counts |
 | `data/price-windows.json` | The week-by-week price comparison that answers "cheapest time to book" |
@@ -32,8 +33,8 @@ python3 scripts/gen_site.py   # render docs/
 python3 scripts/validate.py   # link + structure checks
 ```
 
-No dependencies beyond the Python 3 standard library. GitHub Pages serves `docs/` from `main`
-directly; `.nojekyll` is present so no Jekyll step runs.
+No dependencies beyond the Python 3 standard library. `gen_site.py` writes the site to **both**
+`docs/` and the repo root; `.nojekyll` is present in both so no Jekyll step runs.
 
 ## The three findings
 
