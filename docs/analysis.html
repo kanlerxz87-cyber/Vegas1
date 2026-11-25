@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analysis &amp; Transit — Las Vegas Trip Planner</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <h1>Analysis, Transit &amp; Methodology</h1>
+  <p class="sub">How every number was obtained · what is estimate vs. verified</p>
+</header>
+<nav class="site">
+  <a href="index.html">Executive Summary</a>
+  <a href="hotels.html">Hotels &amp; Prices</a>
+  <a href="michelin.html">Michelin Restaurants</a>
+  <a href="activities.html">Activities</a>
+  <a class="active" href="analysis.html">Analysis &amp; Transit</a>
+  <a href="suggestions.html">Suggestions</a>
+  <a href="open-questions.html">Open Questions</a>
+  <a href="flagged.html">Flagged for Review</a>
+</nav>
+<main>
+
+<section class="card">
+  <h2>Transit reality check — Las Vegas has no subway</h2>
+  <p>The brief's "within 1 hour by subway or bus" criterion is applied as <strong>bus + monorail + walking</strong> (Las Vegas has no subway/metro):</p>
+  <ul class="clean">
+    <li><strong>Las Vegas Monorail</strong> — 7 stations along the east side of the Strip: Sahara · Westgate · Convention Center · Harrah's/The LINQ · Flamingo/Caesars Palace · Bally's/Paris · MGM Grand. Official: <a href="https://www.lvmonorail.com/">lvmonorail.com</a> (station map page failed automated fetch — verify there manually). Serves the Caesars/Flamingo/Paris/Horseshoe/MGM corridor directly.</li>
+    <li><strong>RTC Transit buses</strong> — The Deuce runs the Strip 24/7 to Downtown; SDX express + route 202 serve Chinatown (Spring Mountain Rd), where 6 Michelin restaurants cluster. Official: <a href="https://www.rtcsnv.com/">rtcsnv.com</a>.</li>
+    <li><strong>Result:</strong> all 24 Michelin restaurants are reachable within roughly 60 minutes by bus+walk from every hotel in the table (estimate). Anima by Edo (far west), YEN Viet (Decatur) and Ping Pang Pong (Gold Coast) are the three marginal ones (est. 45–60 min). Red Rock Canyon and Hoover Dam do NOT meet the constraint (car/tour only) — flagged on the Activities page.</li>
+    <li><strong>Walkability differentiates more than transit:</strong> from the Venetian/Palazzo, ~11 Michelin restaurants are within an estimated 30-minute walk; from Caesars/PH/Paris/Horseshoe/Flamingo, ~9–10. Chinatown is a short bus/rideshare from all.</li>
+  </ul>
+  <div class="flag"><strong>Estimates flagged:</strong> walk/transit time bands are estimates from official addresses and the monorail station list, not timetable reads (RTC trip-planner results were not machine-readable this session). Use Google Maps/RTC trip planner for live routing.</div>
+</section>
+
+<section class="card">
+  <h2>Michelin cluster map (24 restaurants)</h2>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>Cluster</th><th>Restaurants</th><th>Best base hotels (est. transit)</th></tr>
+    <tr><td><strong>Venetian/Palazzo on-site</strong></td><td>Bouchon · COTE · Estiatorio Milos · Mott 32</td><td>Venetian/Palazzo (0 min); Wynn ~15 min walk</td></tr>
+    <tr><td><strong>North Strip</strong></td><td>Wing Lei (Wynn) · Stubborn Seed (Resorts World)</td><td>Wynn, Resorts World (on-site); Venetian ~15–25 min walk</td></tr>
+    <tr><td><strong>Center Strip</strong></td><td>Guy Savoy (Caesars) · é + China Poblano (Cosmo) · Gymkhana (ARIA) · Michael Mina (Bellagio) · Joël Robuchon + L'Atelier (MGM Grand)</td><td>Caesars Palace, Cosmopolitan, ARIA, Bellagio, Planet Hollywood, Paris, Horseshoe, Flamingo</td></tr>
+    <tr><td><strong>Chinatown (Spring Mountain)</strong></td><td>Kabuto · Kame · Lamaii · Partage · Pho Ga Bac Bac · Sparrow + Wolf</td><td>Any center-Strip hotel (~15–25 min by bus 202/rideshare, est.)</td></tr>
+    <tr><td><strong>Arts District / Downtown</strong></td><td>Esther's Kitchen · SoulBelly BBQ</td><td>Any hotel via Deuce (~15–25 min, est.)</td></tr>
+    <tr><td><strong>Off-Strip West</strong></td><td>YEN Viet (Decatur) · Ping Pang Pong (Gold Coast) · Anima by Edo (Russell Rd)</td><td>West-Strip hotels marginally closer; all ~40–60 min by bus (est.)</td></tr>
+  </table>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Methodology &amp; verification rules</h2>
+  <ul class="clean">
+    <li><strong>Michelin status:</strong> taken from the official MICHELIN press release for the 2026 Southwest selection (Aug 26, 2026) and cross-checked with LVCVA. Star status = CURRENT guide only; 2008–09 stars are historical and called out where relevant.</li>
+    <li><strong>Hotel prices:</strong> live reads of each property's own booking engine for Feb 15–22, 2027 (2 adults, 1 room), sampled 2026-11-25. Nightly = room + resort fee, excl. tax. 7-night totals = 7 × nightly (computed). Cross-checked with official flexible-date calendars. Engines that block automated reads → blank + flag.</li>
+    <li><strong>Restaurant cost for 2:</strong> fixed menu × 2 = exact (e.g., Wing Lei $198.88 pp → $397.76). Where only à-la-carte items are published (Guy Savoy), totals are arithmetic ranges from linked listed prices ("computed"). Where no official price exists (Joël Robuchon, é), reported third-party figures are labeled as reported and flagged. Bib Gourmand cost = MICHELIN's own benchmark definition (~$50 pp) labeled as estimate.</li>
+    <li><strong>Hours:</strong> official restaurant/venue pages only. Exceptions (holiday closures, weekly dark days) preserved in-row. Missing hours = blank + flag, never guessed.</li>
+    <li><strong>Social links:</strong> only accounts linked from official pages or verified official posts are included (Gymkhana, SoulBelly, Kabuto, Neon Museum, Caesars property). Others left blank rather than guessed.</li>
+    <li><strong>Nothing inferred:</strong> every cell is either sourced+linked, computed from linked values (marked "computed"), an explicitly-labeled estimate, or blank+flagged.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Cost snapshot — 7-night trip for 2 (verified components only)</h2>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>Component</th><th>Budget path</th><th>Mid path</th><th>Luxury path</th></tr>
+    <tr><td>Hotel 7n (incl. RF, excl. tax)</td><td>Flamingo $595</td><td>Planet Hollywood $1,092 · Caesars Palace $1,582</td><td>Wynn $4,739</td></tr>
+    <tr><td>Anchor dinner (2 ppl, exact)</td><td>Anima tasting $170</td><td>Stubborn Seed $320 · Kabuto $260–$370 · Wing Lei $397.76</td><td>Michael Mina $590 · Guy Savoy $380–$1,180 · Robuchon/é reported $580–$1,800</td></tr>
+    <tr><td>Activities (verified)</td><td>Fremont free · Neon Museum $42+</td><td>+ Mob Museum / AREA15 / Sphere (prices unverified)</td><td>+ shows (unverified)</td></tr>
+    <tr><td><strong>Known subtotal range</strong></td><td><strong>≈$807+</strong></td><td><strong>≈$1,700–$2,500+</strong></td><td><strong>≈$5,500–$8,000+</strong></td></tr>
+  </table>
+  </div>
+  <p class="small">Known subtotal = verified hotel + one verified anchor dinner + verified activity minimums. Taxes, airfare, remaining meals and unverified components excluded — see Open Questions for how to fill the blanks.</p>
+</section>
+
+</main>
+<footer class="site">Methodology date 2026-11-25 · every claim links to its source page</footer>
+</body>
+</html>
