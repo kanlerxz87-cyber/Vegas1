@@ -715,34 +715,63 @@ last bus before a 9:30 PM dinner at Wing Lei.</li>
 def build_activities():
     rows = ""
     for a in ACTIVITIES["activities"]:
-        price = (f"${a['per_person_usd']}" if a.get("per_person_usd") not in (None, "")
-                 else UNV)
+        pp = a.get("price_pp")
+        if pp == 0:
+            price = '<span class="ok">free</span>'
+        elif pp not in (None, ""):
+            price = f"${pp:,.2f}<div class=\"src\">{e(a.get('price_note') or '')}</div>"
+        else:
+            price = UNV
+        for2 = a.get("price_for_two")
+        if for2 not in (None, ""):
+            two = f"${for2:,.2f}"
+        elif pp == 0:
+            two = "$0"
+        else:
+            two = UNV
+        mins = a.get("transit_minutes_from_top_hotel")
+        if mins is None:
+            tcell = '<span class="no">outside the 60-min rule</span>'
+        else:
+            badge = "ok" if mins <= 60 else "no"
+            tcell = f'<span class="{badge}">{mins} min</span>'
+        tcell += f'<div class="src">{e(a.get("transit_note") or "")}</div>'
+        if a.get("transit_source"):
+            tcell += (f'<div class="src"><a href="{e(a["transit_source"])}" '
+                      'target="_blank" rel="noopener">route</a></div>')
+        src = ""
+        if a.get("hours_source"):
+            src = (f'<div class="src"><a href="{e(a["hours_source"])}" '
+                   'target="_blank" rel="noopener">hours source</a></div>')
         rows += f"""<tr>
 <td><a href="{e(a['official_site'])}" target="_blank" rel="noopener">{e(a['name'])}</a>
 <div class="src">{e(a['category'])}</div></td>
 <td class="src">{e(a['location'])}</td>
-<td>{cell(a.get('hours'))}</td>
+<td>{cell(a.get('hours'))}{src}</td>
 <td>{cell(a.get('open_days'))}</td>
 <td class="src">{cell(a.get('exceptions'))}</td>
 <td class="num">{price}</td>
-<td class="src">{e(a['transit_note'])}</td>
+<td class="num">{two}</td>
+<td>{tcell}</td>
 </tr>"""
     body = f"""
 <h1>Activities</h1>
-<p class="lead">Non-restaurant things to do, each judged against the same 60-minute rule.
-Two are explicitly flagged as <em>outside</em> it rather than quietly included.</p>
+<p class="lead">Non-restaurant things to do, each measured against the same 60-minute rule —
+with the actual route time from the top-ranked hotel, not a guess. Two are explicitly flagged as
+<em>outside</em> it rather than quietly included.</p>
 
 <div class="tblwrap"><table>
 <thead><tr><th>Activity</th><th>Location</th><th>Hours</th><th>Open days</th>
-<th>Exceptions</th><th>Price pp</th><th>Transit reality</th></tr></thead>
+<th>Exceptions</th><th>Price pp</th><th>2 adults</th><th>Transit from #1 hotel</th></tr></thead>
 <tbody>{rows}</tbody></table></div>
 
 <div class="warnbox">
-<strong>Hours and prices for most activities are blank on purpose.</strong>
-Museum and attraction sites change hours seasonally and many do not publish a machine-readable
-schedule. Rather than copy a number from a blog, the cell stays
-<span class="unv">unverified</span>. Each row links the official site — that is the
-one-click check.
+<strong>What is verified and what is not.</strong>
+Hours, days and ticket prices for the Fountains, High Roller and Mob Museum come from those venues'
+own pages and are quoted above. The Sphere has no fixed hours or price — its programme is
+concert-driven and the February 2027 line-up does not exist yet, so those cells stay unverified
+rather than being filled with a plausible-looking number. Every circuit time is a live Google Maps
+transit query, and the “route” link reconstructs it in one click.
 </div>
 
 <h2>Two activities that break your own rule</h2>
