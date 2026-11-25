@@ -90,3 +90,15 @@ IRREGULARITY #4: web result (zola wedding page) lists "The Vanderpump Hotel" amo
 - Kabuto price: need omakase price (kabutolv.com /reserve page).
 - "Subway" does not exist in Las Vegas. Transit = RTC Transit buses (The Deuce/SDX strip routes) + Las Vegas Monorail (7 stations, Sahara–MGM Grand). Verify on rtcsnv.com + lvmonorail.com before publishing transit claims.
 - Presidents' Day 2027 = Mon Feb 15, 2027 (3rd Monday) — preferred week includes holiday weekend; likely higher rates. Cheapest-week data to be fetched (Caesars + Flamingo W2–W5).
+
+## D. Rate calendars (Caesars, "flexible-dates" view; lowest available incl. resort fees, excl. tax; fetched 2026-11-25)
+Caesars Palace Feb 2027: 1:$342, 2:$356, 3:$356, 4:$278, 5:$290, 6:$290, 7:$231, 8:$231, 9:$231, 10:$231, 11:$231, 12:$155, 13:$366, 14:$203, 15:$133, 16:$231, 17:$231, 18:$231, 19:$240, 20:$181, 21:$245, 22:$245, 23:$245, 24:$245, 25:$221, 26:$221, 27:$328, 28:$133
+Caesars Palace Mar 2027: 1:$563, 2:SoldOut, 3:$263, 4:$221, 5:$346, 6:$258, 7:$231, 8:$231, 9:$249, 10:$425, 11:$171, 12:$295, 13:$402, 14:$286, 15:$254, 16:$254, 17:$152, 18:$247, 19:$494, 20:$425, 21:$208, 22:$208, 23:$245, 24:$286, 25:$162, 26:$240, 27:$240, 28:$133, 29:$217, 30:$286, 31:$286
+Flamingo Mar 2027: 1:$55, 2:$130, 3:$130, 4:$130, 5:$193, 6:$175, 7:$55, 8:$55, 9:$55, 10:$87, 11:$130, 12:$256, 13:$166, 14:$55, 15:$55, 16:$55, 17:$81, 18:$130, 19:$256, 20:$193, 21:$55, 22:$55, 23:$55, 24:$55, 25:$62, 26:$121, 27:$121, 28:$55, 29:$55, 30:$55, 31:$55
+Exact-dates 7-night W2 (Feb 22–Mar 1): CP assigned $248/n ($1,736 total), Flamingo assigned $119/n ($833 total).
+Exact-dates 7-night W3 (Mar 1–8): CP unavailable (Mar 2 sold out) → calendar view; Flamingo assigned $124/n ($868 total).
+
+FINDING (cheapest stay week, verified window Feb 15 – Mar 23, 2027): Feb 15–22 is the cheapest 7-night window at every verified property (CP $226/n vs $248 W2; Flamingo $85/n vs $119/$124 later; calendar sums agree: CP Feb 15–21 avg $213 vs Feb 22–28 avg $250). March contains spikes: CP Mar 19–20 ($494/$425) & Mar 13 ($402), Flamingo Mar 12/19 ($256) — consistent with March Madness weekends. Cheap March nights exist at Flamingo ($55 floor) but no full 7-night window beats Feb 15–22 inside the allowed range (Flamingo Mar 21–27 sums to $524 but ends Mar 28 — OUT of range; flagged as outside-window insight).
+Caution: calendar values are "lowest available rate... may vary based on length of stay"; exact-dates 7-night searches are the authoritative totals. Values sampled twice (Feb fetch vs Mar fetch) drifted a few dollars (e.g., CP Mar 1 $549→$563) — label as "sampled 2026-11-25".
+
+BOOK-TIME FINDING: Wynn Cyber sale: book Nov 20–Dec 4, 2026 (NOW) for stays thru Jun 30, 2027 → Wynn Resort King $677/night (vs $833 Flexible) + $75/day resort credit. Caesars: best-available promos auto-applied ("Book by Dec 20/30, 2027"); +15% off with free Caesars Rewards signup (banner on booking pages). Caesars cancel/deposit: CP $100/day deposit; others $50/day. Wynn: 1 night charged at booking, 72h cancel.
