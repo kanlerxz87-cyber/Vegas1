@@ -1129,7 +1129,7 @@ def build_flagged():
          "Medium — likely demand, but could be an inventory-release pattern. Re-check monthly.",
          "https://www.booking.com/hotel/us/hotel-park-mgm.html"),
         ("H2", "Hotel", "Two quotes for the same hotel are not like-for-like",
-         "Trump International shows $1,661 for 7 nights (15–22 Feb) and $1,828 for 8 nights (22 Feb–1 Mar); "
+         "Trump International shows $1,661 for 7 nights (15–22 Feb) and $1,828 for 7 nights (22 Feb–1 Mar); "
          "only the second states 'Includes taxes and fees'.",
          "High — do not compare them as if equal.",
          ""),

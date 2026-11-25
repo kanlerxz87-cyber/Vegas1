@@ -26,11 +26,12 @@
           "hotel": "Trump International Hotel Las Vegas",
           "room": "Superior King Room",
           "window": "2027-02-22 to 2027-03-01",
-          "nights": 8,
+          "nights": 7,
           "total_usd": 1828,
-          "per_night_usd": 229,
+          "per_night_usd": 261,
           "includes_taxes_and_fees": "YES - page states 'Includes taxes and fees'",
-          "query": "https://www.booking.com/searchresults.en-us.html?ss=Las+Vegas&checkin=2027-02-22&checkout=2027-03-01&group_adults=2&no_rooms=1&selected_currency=USD&order=class"
+          "query": "https://www.booking.com/searchresults.en-us.html?ss=Las+Vegas&checkin=2027-02-22&checkout=2027-03-01&group_adults=2&no_rooms=1&selected_currency=USD&order=class",
+          "per_night_note": "recomputed as total_usd / 7 nights"
         }
       ],
       "warning": "The two quotes are NOT like-for-like: the later window explicitly includes taxes and fees, the earlier one does not. The apparent $8/night saving is smaller than the tax difference. A true like-for-like sweep is an OPEN TASK (see open-questions)."
@@ -46,26 +47,119 @@
     }
   },
   "seven_night_quotes_2027_02_15_22": [
-    { "hotel": "Masquerade Tower at Rio", "total_usd": 483, "per_night_usd": 69, "room": "1 King Suite", "status": "verified" },
-    { "hotel": "Circus Circus", "total_usd": 489, "per_night_usd": 25, "room": "Run of House", "status": "verified" },
-    { "hotel": "Flamingo Las Vegas", "total_usd": 626, "per_night_usd": 40, "room": "Room Type Assigned on Arrival", "status": "verified" },
-    { "hotel": "Gold Coast", "total_usd": 768, "per_night_usd": 64, "room": "Deluxe Two Doubles", "status": "verified" },
-    { "hotel": "Harrah's Las Vegas", "total_usd": 961, "per_night_usd": 87, "room": "Room Type Assigned on Arrival", "status": "verified" },
-    { "hotel": "Signature Rental by Owner Direct", "total_usd": 982, "per_night_usd": 122, "room": "PH Floor Studio King", "status": "verified" },
-    { "hotel": "Orleans Hotel and Casino", "total_usd": 1067, "per_night_usd": 106, "room": "Double Room", "status": "verified" },
-    { "hotel": "NOBU Hotel Las Vegas", "total_usd": 1125, "per_night_usd": 106, "room": "Deluxe King", "status": "verified" },
-    { "hotel": "The Signature MGM Condos", "total_usd": 1205, "per_night_usd": 110, "room": "1BR Apartment", "status": "verified" },
-    { "hotel": "Trump International", "total_usd": 1661, "per_night_usd": 198, "room": "Superior King", "status": "verified" },
-    { "hotel": "Green Valley Ranch", "total_usd": 2258, "per_night_usd": 268, "room": "Resort Room", "status": "verified" },
-    { "hotel": "Red Rock Casino Resort & Spa", "total_usd": 2337, "per_night_usd": 279, "room": "Luxury Room", "status": "verified" },
-    { "hotel": "W Las Vegas", "total_usd": 2493, "per_night_usd": 306, "room": "W Premier King Suite", "status": "verified" }
+    {
+      "hotel": "Masquerade Tower at Rio",
+      "total_usd": 483,
+      "per_night_usd": 69,
+      "room": "1 King Suite",
+      "status": "verified"
+    },
+    {
+      "hotel": "Circus Circus",
+      "total_usd": 489,
+      "per_night_usd": 25,
+      "room": "Run of House",
+      "status": "verified"
+    },
+    {
+      "hotel": "Flamingo Las Vegas",
+      "total_usd": 626,
+      "per_night_usd": 40,
+      "room": "Room Type Assigned on Arrival",
+      "status": "verified"
+    },
+    {
+      "hotel": "Gold Coast",
+      "total_usd": 768,
+      "per_night_usd": 64,
+      "room": "Deluxe Two Doubles",
+      "status": "verified"
+    },
+    {
+      "hotel": "Harrah's Las Vegas",
+      "total_usd": 961,
+      "per_night_usd": 87,
+      "room": "Room Type Assigned on Arrival",
+      "status": "verified"
+    },
+    {
+      "hotel": "Signature Rental by Owner Direct",
+      "total_usd": 982,
+      "per_night_usd": 122,
+      "room": "PH Floor Studio King",
+      "status": "verified"
+    },
+    {
+      "hotel": "Orleans Hotel and Casino",
+      "total_usd": 1067,
+      "per_night_usd": 106,
+      "room": "Double Room",
+      "status": "verified"
+    },
+    {
+      "hotel": "NOBU Hotel Las Vegas",
+      "total_usd": 1125,
+      "per_night_usd": 106,
+      "room": "Deluxe King",
+      "status": "verified"
+    },
+    {
+      "hotel": "The Signature MGM Condos",
+      "total_usd": 1205,
+      "per_night_usd": 110,
+      "room": "1BR Apartment",
+      "status": "verified"
+    },
+    {
+      "hotel": "Trump International",
+      "total_usd": 1661,
+      "per_night_usd": 198,
+      "room": "Superior King",
+      "status": "verified"
+    },
+    {
+      "hotel": "Green Valley Ranch",
+      "total_usd": 2258,
+      "per_night_usd": 268,
+      "room": "Resort Room",
+      "status": "verified"
+    },
+    {
+      "hotel": "Red Rock Casino Resort & Spa",
+      "total_usd": 2337,
+      "per_night_usd": 279,
+      "room": "Luxury Room",
+      "status": "verified"
+    },
+    {
+      "hotel": "W Las Vegas",
+      "total_usd": 2493,
+      "per_night_usd": 306,
+      "room": "W Premier King Suite",
+      "status": "verified"
+    }
   ],
   "unavailable_for_preferred_dates": [
-    { "hotel": "Park MGM Las Vegas", "note": "Unavailable for Feb 15-22. 7 nights Feb 13-20 from $2,063." },
-    { "hotel": "ARIA Resort & Casino", "note": "Unavailable for Feb 15-22. 7 nights Feb 13-20 from $4,881." },
-    { "hotel": "Bellagio", "note": "Unavailable for Feb 15-22. No 7-night block offered in the flexible alternatives." },
-    { "hotel": "The Cosmopolitan of Las Vegas", "note": "Unavailable for Feb 15-22. 7 nights Feb 13-20 from $4,642." },
-    { "hotel": "Caesars Palace", "note": "No 7-night block from Feb 15. Only 4-5 night blocks from Feb 16-19." }
+    {
+      "hotel": "Park MGM Las Vegas",
+      "note": "Unavailable for Feb 15-22. 7 nights Feb 13-20 from $2,063."
+    },
+    {
+      "hotel": "ARIA Resort & Casino",
+      "note": "Unavailable for Feb 15-22. 7 nights Feb 13-20 from $4,881."
+    },
+    {
+      "hotel": "Bellagio",
+      "note": "Unavailable for Feb 15-22. No 7-night block offered in the flexible alternatives."
+    },
+    {
+      "hotel": "The Cosmopolitan of Las Vegas",
+      "note": "Unavailable for Feb 15-22. 7 nights Feb 13-20 from $4,642."
+    },
+    {
+      "hotel": "Caesars Palace",
+      "note": "No 7-night block from Feb 15. Only 4-5 night blocks from Feb 16-19."
+    }
   ],
   "operational_note_preferred_window": "The user's preferred vacation time (2027-02-15 to 2027-02-18) is only 3 nights, below the 1-2 week trip length also requested. The site treats 2027-02-15 as the START of a 7-night stay (to 2027-02-22), which honours both the preferred start date and the 7-night pricing comparison. This conflict is logged on Open Questions.",
   "note_on_events": "No official source was checked for conventions, rodeos or race events inside Feb 15 - Mar 23 2027. Event collisions are the single most likely cause of a bad price. Logged as the top open question."
