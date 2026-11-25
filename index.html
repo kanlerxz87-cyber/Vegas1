@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vegas1 · Las Vegas Trip Plan</title>
+<meta name="description" content="Verified Las Vegas trip plan: hotels ranked by nearby Michelin restaurants, Michelin dining, activities, and open questions.">
+<link rel="stylesheet" href="src/styles.css">
+<script src="src/app.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">Vegas1<span class="dot">.</span> Trip Plan</div>
+    <nav class="mainnav">
+      <a href="index.html">Home</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="michelin.html">Michelin</a>
+      <a href="activities.html">Activities</a>
+      <a href="suggestions.html">Suggestions</a>
+      <a href="review.html">Review</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <span class="eyebrow">Las Vegas · 2 adults · Feb 2027</span>
+    <h1>Trip Planning — Las Vegas</h1>
+    <p>Collected, organized and verified plan: hotels ranked by nearby Michelin restaurants, Michelin-starred dining, activities within an hour, and the open questions that must be answered before booking. Every figure links to an official source; unverified values are flagged, never guessed.</p>
+  </div>
+
+  <!-- Executive summary -->
+  <section class="card">
+    <h2><span class="ic">★</span> Executive Summary</h2>
+    <p class="sub">Key decisions and the facts behind them, in one place.</p>
+    <div class="grid cols-3">
+      <div class="stat"><div class="k">Window</div><div class="v">Feb 15–23, 2027</div></div>
+      <div class="stat"><div class="k">Preferred</div><div class="v">Feb 15–18, 2027</div></div>
+      <div class="stat"><div class="k">Travelers</div><div class="v">2 adults</div></div>
+    </div>
+    <ul class="clean" style="margin-top:14px;">
+      <li><b>Destination & dates.</b> Las Vegas, NV. 1–2 weeks within 2027-02-15 → 2027-03-23; preferred window 2027-02-15 → 2027-02-18. Hotel pricing is verified against a <b>7-night stay, 2027-02-15 → 2027-02-22</b>, 2 adults, 1 room, taxes and fees included. <a href="hotels.html">See hotels →</a></li>
+      <li><b>Hotels.</b> Five Strip hotels satisfy the requirement (private bathroom + king bed ≥ queen). Ranked by the number of Michelin restaurants reachable within 1 hour by bus/monorail, then by 7-night price. Cheapest verified option: <b>Luxor — $556</b> for 7 nights. Best Michelin-access pick: <b>MGM Grand — $1,210</b> (two starred restaurants on-site). <a href="hotels.html">See hotels →</a></li>
+      <li><b>Michelin.</b> The inaugural <b>2026 MICHELIN Guide Southwest</b> (revealed 2026-08-26) returned Michelin to Las Vegas after 17 years: <b>24</b> Las Vegas distinctions — 1 Two-Star, 3 One-Star, 3 Bib Gourmand, 17 Michelin Selected. Distinctions (star vs. listed) are labeled on every row. <a href="michelin.html">See Michelin →</a></li>
+      <li><b>Activities.</b> Selected free and ticketed attractions are reachable within an hour from the chosen hotels. Free anchors: Bellagio Fountains, Bellagio Conservatory, Fremont Street Experience. <a href="activities.html">See activities →</a></li>
+      <li><b>Transit reality.</b> Las Vegas has <b>no subway</b>. "Subway or bus" maps to the <b>Deuce</b> bus (24/7, full Strip + Downtown) and the <b>Las Vegas Monorail</b> (east Strip only). This affects the 1-hour activity/restaurant reach. <a href="hotels.html#transit">Transit detail →</a></li>
+      <li><b>Verification.</b> Every table row carries a source link to an official site. Exact one-way transit times and several restaurant cost figures are estimates and are flagged as <b>UNVERIFIED</b> on the <a href="review.html">Flagged for Review</a> page rather than filled in.</li>
+      <li><b>Before you decide.</b> The <a href="suggestions.html">Suggestions</a> page lists the questions, missing information and answers still needed, plus concrete ways to discover them.</li>
+    </ul>
+  </section>
+
+  <!-- Snapshot tables -->
+  <section class="card">
+    <h2><span class="ic">◆</span> At a Glance</h2>
+    <p class="sub">Top-line numbers. Full detail and sources on each subpage.</p>
+    <div class="grid cols-2">
+      <div>
+        <h3 style="margin:0 0 8px;font-size:1rem;">Top-ranked hotels (7 nights, Feb 15–22 2027)</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>#</th><th>Hotel</th><th>7-night total</th></tr></thead>
+            <tbody>
+              <tr><td><span class="rank top1">1</span></td><td class="name">MGM Grand</td><td>$1,210</td></tr>
+              <tr><td><span class="rank">2</span></td><td class="name">Planet Hollywood</td><td>$949</td></tr>
+              <tr><td><span class="rank">3</span></td><td class="name">Horseshoe (Bally's)</td><td>$717</td></tr>
+              <tr><td><span class="rank">4</span></td><td class="name">Flamingo</td><td>$626</td></tr>
+              <tr><td><span class="rank">5</span></td><td class="name">Luxor</td><td>$556</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin:0 0 8px;font-size:1rem;">Michelin distinctions (Las Vegas, 2026)</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Distinction</th><th>Count</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td><span class="badge b-2star">Two Stars</span></td><td>1</td><td>Excellent cooking, worth a detour</td></tr>
+              <tr><td><span class="badge b-1star">One Star</span></td><td>3</td><td>High-quality cooking, worth a stop</td></tr>
+              <tr><td><span class="badge b-bib">Bib Gourmand</span></td><td>3</td><td>Good food at good value</td></tr>
+              <tr><td><span class="badge b-sel">Michelin Selected</span></td><td>17</td><td>Listed in the guide, no star</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p class="sub" style="margin-top:12px;">Ranking is by Michelin-reach within 1 hour, then price. "Listed in the guide" ≠ "has a star" — the badge column makes the distinction explicit.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="ic">→</span> How to use this plan</h2>
+    <p class="sub">Three steps, then decide.</p>
+    <ol style="line-height:1.8;">
+      <li><b>Pick a hotel</b> from the <a href="hotels.html">Hotels</a> page — balance Michelin reach against the 7-night price.</li>
+      <li><b>Plan dining</b> from the <a href="michelin.html">Michelin</a> page — filter by star / Bib / Selected and by cost for two, and note each restaurant's days and hours.</li>
+      <li><b>Fill the days</b> from the <a href="activities.html">Activities</a> page — every pick is within an hour of the chosen hotels.</li>
+    </ol>
+    <div class="note warn"><b>Read before booking:</b> hotel rates are dynamic and were captured on 2026-11-25 for the exact dates 2027-02-15 → 2027-02-22. Re-check live pricing before booking, and confirm bed type (several rooms are "assigned on arrival"). See <a href="review.html">Flagged for Review</a>.</div>
+  </section>
+</main>
+
+<footer>
+  Vegas1 Trip Plan · data verified against official sources · generated 2026-11-25 ·
+  <a href="review.html">Flagged for Review</a> · <a href="suggestions.html">Suggestions</a>
+</footer>
+</body>
+</html>

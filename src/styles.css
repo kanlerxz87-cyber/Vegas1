@@ -1,0 +1,210 @@
+/* Vegas1 — Trip Planning Las Vegas
+   Clean, mobile-first dashboard styling. No external dependencies. */
+
+:root {
+  --bg: #0f1419;
+  --panel: #1a212c;
+  --panel-2: #222c3a;
+  --ink: #e8edf3;
+  --ink-dim: #9fb0c3;
+  --accent: #e0b341;       /* warm gold — Michelin / Vegas */
+  --accent-2: #4dd2ff;
+  --good: #48d08a;
+  --warn: #ffb454;
+  --bad: #ff6b6b;
+  --line: #2c3949;
+  --star: #ffd34d;
+  --radius: 12px;
+  --shadow: 0 4px 18px rgba(0, 0, 0, .35);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent-2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- Top bar / nav ---------- */
+header.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(15, 20, 25, .92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.brand {
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: .3px;
+  white-space: nowrap;
+}
+.brand .dot { color: var(--accent); }
+nav.mainnav { display: flex; flex-wrap: wrap; gap: 4px; margin-left: auto; }
+nav.mainnav a {
+  color: var(--ink-dim);
+  padding: 7px 11px;
+  border-radius: 8px;
+  font-size: .9rem;
+  font-weight: 600;
+}
+nav.mainnav a:hover { background: var(--panel-2); text-decoration: none; color: var(--ink); }
+nav.mainnav a.active { background: var(--accent); color: #1a1408; }
+
+/* ---------- Layout ---------- */
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 22px 16px 64px;
+}
+.hero {
+  background: linear-gradient(135deg, #1d2a3a, #15202c);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 22px;
+  box-shadow: var(--shadow);
+  margin-bottom: 22px;
+}
+.hero h1 { margin: 0 0 8px; font-size: 1.6rem; line-height: 1.2; }
+.hero p { margin: 0; color: var(--ink-dim); }
+.eyebrow {
+  display: inline-block;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+section.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow);
+}
+section.card h2 {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+section.card h2 .ic { color: var(--accent); }
+.sub { color: var(--ink-dim); margin: 0 0 16px; font-size: .9rem; }
+
+/* ---------- Summary grid ---------- */
+.grid { display: grid; gap: 14px; }
+.grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.stat {
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px;
+}
+.stat .k { font-size: .75rem; color: var(--ink-dim); text-transform: uppercase; letter-spacing: .08em; }
+.stat .v { font-size: 1.4rem; font-weight: 800; margin-top: 4px; }
+
+/* ---------- Tables ---------- */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--line); border-radius: 10px; }
+table { width: 100%; border-collapse: collapse; font-size: .85rem; min-width: 640px; }
+thead th {
+  background: var(--panel-2);
+  color: var(--ink-dim);
+  text-align: left;
+  padding: 11px 12px;
+  font-size: .74rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+tbody td { padding: 11px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: rgba(224, 179, 65, .05); }
+td .name { font-weight: 700; }
+td .muted { color: var(--ink-dim); font-size: .78rem; }
+
+/* Michelin distinction badges */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: .72rem; font-weight: 700; white-space: nowrap; }
+.b-2star { background: #3a2f12; color: var(--star); border: 1px solid #6b5417; }
+.b-1star { background: #2a2a1a; color: var(--star); border: 1px solid #5a5320; }
+.b-bib   { background: #173024; color: var(--good); border: 1px solid #1f5240; }
+.b-sel   { background: #1b2740; color: var(--accent-2); border: 1px solid #2a4570; }
+.b-flag  { background: #3a1c1c; color: var(--warn); border: 1px solid #6b3434; }
+
+.rank {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--panel-2); border: 1px solid var(--line);
+  font-weight: 800; font-size: .8rem;
+}
+.rank.top1 { background: var(--accent); color: #1a1408; border-color: var(--accent); }
+
+.pill { display:inline-block; background: var(--panel-2); border:1px solid var(--line); padding:2px 7px; border-radius:8px; font-size:.74rem; color:var(--ink-dim); margin:1px 2px 1px 0; }
+
+/* ---------- Notes / callouts ---------- */
+.note {
+  background: #1a2a22; border: 1px solid #24473a; color: #bfe6cf;
+  border-radius: 10px; padding: 12px 14px; font-size: .85rem; margin: 14px 0;
+}
+.note.warn { background: #2a2114; border-color: #4a3a17; color: #f0d9a8; }
+.note.flag { background: #2a1717; border-color: #4a2424; color: #f5c9c9; }
+.note b { color: var(--ink); }
+
+/* ---------- Forms / suggestions ---------- */
+ul.clean { list-style: none; padding: 0; margin: 0; }
+ul.clean li { padding: 10px 0; border-bottom: 1px solid var(--line); }
+ul.clean li:last-child { border-bottom: none; }
+.q-block { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin-bottom: 12px; }
+.q-block .q { font-weight: 700; }
+.q-block .a { color: var(--ink-dim); font-size: .9rem; margin-top: 4px; }
+
+/* ---------- Footer ---------- */
+footer {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  color: var(--ink-dim);
+  font-size: .8rem;
+  border-top: 1px solid var(--line);
+}
+footer a { color: var(--ink-dim); }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 760px) {
+  .grid.cols-2, .grid.cols-3 { grid-template-columns: 1fr; }
+  .hero { padding: 20px 16px; }
+  .hero h1 { font-size: 1.35rem; }
+  nav.mainnav { width: 100%; margin-left: 0; }
+  main { padding: 16px 12px 48px; }
+  table { font-size: .8rem; }
+  thead th, tbody td { padding: 9px 9px; }
+}
+@media (max-width: 480px) {
+  .topbar-inner { padding: 10px 12px; }
+  .brand { font-size: 1rem; }
+  nav.mainnav a { padding: 6px 8px; font-size: .82rem; }
+}
