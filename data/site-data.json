@@ -1,0 +1,1196 @@
+{
+  "meta": {
+    "title": "Las Vegas Trip Planner",
+    "as_of": "2026-11-25",
+    "session": "arena-3860068e",
+    "branch": "arena/3860068e-vegas1",
+    "legend": "Blank cell = not confirmed on an official source. ⚠ = flagged for review. Every row lists its official source link."
+  },
+  "key_facts": {
+    "trip_window": "Feb 15 – Mar 23, 2027 (trip 1–2 weeks)",
+    "preferred_dates": "Feb 15 (Mon) – Feb 18 (Thu), 2027 — 3 nights",
+    "seven_night_scenario": "Feb 15 (Mon) – Feb 22 (Mon), 2027 — 7 nights",
+    "party": "2 adults; private bathroom; queen or larger bed (brief)"
+  },
+  "executive_summary": [
+    "Preferred dates Feb 15–18, 2027 begin on Monday Feb 15, which is Washington's Birthday (Presidents' Day). The U.S. Office of Personnel Management lists it as a federal holiday. [OPM 2027 holidays](https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/)",
+    "The 2026 Michelin Southwest selection for Las Vegas has 24 listings: 4 with stars (Joël Robuchon 2★; L'Atelier, é by José Andrés and Restaurant Guy Savoy 1★ each), 3 Bib Gourmand and 17 Recommended or Selected. [LVCVA Michelin page](https://www.visitlasvegas.com/michelin-guide-restaurants/)",
+    "Area labels for the 24 listings are inconsistent across sources (several are 'per LVCVA' with no address), so distance from each hotel is unverified. Travel times by subway or bus (the brief's 1-hour rule) are not yet retrieved from RTC.",
+    "Hotel ranking (same-resort Michelin listings only, NOT the brief's 1-hour rule): 1) Venetian incl. Palazzo (4 listings, 0 stars); 2) MGM Grand (2 listings, 3 stars: Robuchon 2★, L'Atelier 1★); 3) Cosmopolitan (2 listings: é 1★, China Poblano Bib); 4) Caesars (1 listing, 1★ Guy Savoy); 5–8) ARIA, Bellagio, Resorts World, Wynn (1 listing each, 0 stars).",
+    "Room fit verified on official pages: Cosmopolitan 'City Room Queen' (2 queen beds, max 4) and ARIA 'Deluxe Two Queen Room' (2 queen beds). Private bathroom is not stated on any retrieved official room page — unverified.",
+    "PRICES ARE NOT VERIFIED. No official rate for Feb 15–18 or Feb 15–22, 2027 was retrieved. All hotel and per-person restaurant price cells are blank and flagged.",
+    "Booking timing (official): é by José Andrés takes reservations up to three months ahead, so the Feb 2027 dates fall inside that window now. LVCVA says most starred restaurants release tables 30–60 days ahead, which for a Feb 15 date means roughly Dec 17, 2026 – Jan 16, 2027 (derived, not a verified booking-date rule).",
+    "Activities: Red Rock Canyon is about 30 minutes from the Strip and needs timed entry Oct 1–May 31 (BLM). Hoover Dam is 30 miles southeast of Las Vegas (Reclamation). Valley of Fire's drive time is not on its official page.",
+    "Biggest blockers before a decision: hotel rates, bathroom/room specifics, restaurant per-person prices, social links, travel times, and your answers on trip length, budget and planned activities (see Questions)."
+  ],
+  "michelin": [
+    {
+      "name": "Joël Robuchon",
+      "area": "MGM Grand · The Strip",
+      "michelin": "2 Stars (2026)",
+      "cuisine": "French",
+      "price_level": "$$$$",
+      "est_cost_for_2": "",
+      "hours": "Tue–Sat 5:00–9:30 PM; Mon & Sun closed",
+      "exceptions": "Business Formal dress code; reservations 702.891.7925",
+      "official_url": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html",
+      "michelin_source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html",
+      "social": "",
+      "flags": [
+        "Cost for 2 not published on official page"
+      ]
+    },
+    {
+      "name": "L'Atelier de Joël Robuchon",
+      "area": "MGM Grand · The Strip",
+      "michelin": "1 Star (2026)",
+      "cuisine": "Modern French (counter)",
+      "price_level": "$$$",
+      "est_cost_for_2": "",
+      "hours": "Mon 5:00–9:30 PM; Thu–Sun 5:00–9:30 PM; Tue–Wed closed",
+      "exceptions": "Reservations 702.891.7358; page also listed Nov 19–21, 2026 hours (past dates)",
+      "official_url": "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html",
+      "michelin_source": "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html",
+      "social": "",
+      "flags": [
+        "Cost for 2 not published on official page"
+      ]
+    },
+    {
+      "name": "é by José Andrés",
+      "area": "The Cosmopolitan · The Strip",
+      "michelin": "1 Star (2026)",
+      "cuisine": "Spanish avant-garde tasting menu",
+      "price_level": "$$$$",
+      "est_cost_for_2": "",
+      "hours": "Tue–Sat 5:30–8:30 PM; Mon & Sun closed",
+      "exceptions": "Only two seatings nightly; online reservations up to three months ahead (official). Phone 877.893.2003",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html",
+      "michelin_source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html",
+      "social": "",
+      "flags": [
+        "Cost for 2 not published on official page"
+      ]
+    },
+    {
+      "name": "Restaurant Guy Savoy",
+      "area": "Caesars Palace · 3570 Las Vegas Blvd S",
+      "michelin": "1 Star (2026)",
+      "cuisine": "French",
+      "price_level": "$$$$",
+      "est_cost_for_2": "",
+      "hours": "",
+      "exceptions": "Krug table 9-course dinner (official). Reservations via OpenTable link on official page",
+      "official_url": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy",
+      "michelin_source": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy",
+      "social": "",
+      "flags": [
+        "Day-by-day hours not captured; page shows only 'Closed' and 'Opens 5:00 PM'",
+        "Cost for 2 not published on official page"
+      ]
+    },
+    {
+      "name": "China Poblano",
+      "area": "The Cosmopolitan · The Strip",
+      "michelin": "Bib Gourmand (2026)",
+      "cuisine": "Chinese / Mexican",
+      "price_level": "$$",
+      "est_cost_for_2": "",
+      "hours": "Mon–Thu 11:00 AM–10:00 PM; Fri 11:00 AM–10:30 PM; Sat 10:00 AM–10:30 PM; Sun 10:00 AM–10:00 PM",
+      "exceptions": "Cocktail hour Mon–Thu 4–6 PM. Private dining 13+ call 877.551.7776",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html",
+      "michelin_source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html",
+      "social": "",
+      "flags": []
+    },
+    {
+      "name": "Esther's Kitchen",
+      "area": "Downtown · Arts District",
+      "michelin": "Bib Gourmand (2026) — per LVCVA",
+      "cuisine": "Italian (seasonal)",
+      "price_level": "",
+      "est_cost_for_2": "",
+      "hours": "",
+      "exceptions": "",
+      "official_url": "https://www.estherslv.com/",
+      "michelin_source": "https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "social": "",
+      "flags": [
+        "Hours and price not on captured official page",
+        "Michelin wording not on restaurant's own page"
+      ]
+    },
+    {
+      "name": "Yen Viet Kitchen",
+      "area": "Off-Strip (per LVCVA)",
+      "michelin": "Bib Gourmand (2026) — per LVCVA",
+      "cuisine": "Vietnamese",
+      "price_level": "",
+      "est_cost_for_2": "",
+      "hours": "",
+      "exceptions": "Order/menu via official online ordering link",
+      "official_url": "https://www.yenvietkitchen.com/",
+      "michelin_source": "https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "social": "",
+      "flags": [
+        "Hours, price and street address not on captured official page"
+      ]
+    },
+    {
+      "name": "Anima by EDO",
+      "area": "Off-Strip · 9205 W Russell Rd #185 (The Gramercy)",
+      "michelin": "Recommended (2026) — per LVCVA",
+      "cuisine": "Spanish / Mediterranean (tasting menus)",
+      "price_level": "",
+      "est_cost_for_2": "$170 + tax/tip (2 × $85 tasting menu, official per-person price)",
+      "hours": "Dinner nightly, served from 5:00 PM",
+      "exceptions": "Monday Pasta & Wine Night: two pastas + one bottle for $65 (official weekly special)",
+      "official_url": "https://animabyedo.com/",
+      "michelin_source": "https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "social": "",
+      "flags": [
+        "Closing time not captured",
+        "Michelin wording not on restaurant's own page"
+      ]
+    },
+    {
+      "name": "Bouchon",
+      "area": "The Venetian · South Tower, Level 10",
+      "michelin": "Recommended (2026) — per LVCVA",
+      "cuisine": "French bistro (Thomas Keller)",
+      "price_level": "$$$",
+      "est_cost_for_2": "",
+      "hours": "Mon–Wed 5:00–10:00 PM; Thu 8:00 AM–1:00 PM & 5:00–10:00 PM; Fri–Sun 8:00 AM–2:00 PM & 5:00–10:00 PM",
+      "exceptions": "Brunch Thu–Sun; no brunch on Thanksgiving. Phone 702.414.6200",
+      "official_url": "https://www.venetianlasvegas.com/dining/restaurants/bouchon.html",
+      "michelin_source": "https://www.venetianlasvegas.com/dining/restaurants/bouchon.html",
+      "social": "",
+      "flags": [
+        "Michelin wording not on restaurant's own page (listed by LVCVA)",
+        "Cost for 2 not published"
+      ]
+    },
+    {
+      "name": "COTE Las Vegas",
+      "area": "The Venetian · Restaurant Row",
+      "michelin": "Recommended (2026) — per LVCVA",
+      "cuisine": "Korean BBQ steakhouse",
+      "price_level": "$$$",
+      "est_cost_for_2": "",
+      "hours": "Mon–Thu 5:00–11:00 PM; Fri–Sat 4:30 PM–12:00 AM; Sun 5:00–11:00 PM",
+      "exceptions": "Magic Hour Sun–Thu 5–6 PM and 10–11 PM. Phone 702.607.2683",
+      "official_url": "https://www.venetianlasvegas.com/dining/restaurants/cote.html",
+      "michelin_source": "https://www.venetianlasvegas.com/dining/restaurants/cote.html",
+      "social": "",
+      "flags": [
+        "Cost for 2 not published"
+      ]
+    },
+    {
+      "name": "Estiatorio Milos",
+      "area": "The Venetian · Restaurant Row",
+      "michelin": "Recommended (2026) — per LVCVA",
+      "cuisine": "Greek seafood",
+      "price_level": "$$$$",
+      "est_cost_for_2": "",
+      "hours": "Mon–Thu 11:30 AM–10:30 PM; Fri–Sat 11:30 AM–11:00 PM; Sun 11:30 AM–10:30 PM",
+      "exceptions": "Lunch 11:30 AM–3 PM; midday menu 3–5 PM. Phone 702.414.1270",
+      "official_url": "https://www.venetianlasvegas.com/restaurants/estiatorio-milos.html",
+      "michelin_source": "https://www.venetianlasvegas.com/restaurants/estiatorio-milos.html",
+      "social": "",
+      "flags": [
+        "Michelin wording not on restaurant's own page (listed by LVCVA)",
+        "Cost for 2 not published"
+      ]
+    },
+    {
+      "name": "Gymkhana",
+      "area": "ARIA · 3730 S Las Vegas Blvd",
+      "michelin": "Recommended (2026) — per LVCVA",
+      "cuisine": "Indian",
+      "price_level": "$$$$",
+      "est_cost_for_2": "",
+      "hours": "Mon–Thu 5:00–10:00 PM; Fri–Sat 5:00–10:30 PM; Sun 5:00–10:00 PM",
+      "exceptions": "Children 6+; under-21s not admitted after 10 PM; business casual. Phone 702.590.9520",
+      "official_url": "https://aria.mgmresorts.com/en/restaurants/gymkhana.html",
+      "michelin_source": "https://aria.mgmresorts.com/en/restaurants/gymkhana.html",
+      "social": "https://www.instagram.com/gymkhanalasvegas",
+      "flags": [
+        "Cost for 2 not published"
+      ]
+    },
+    {
+      "name": "Kabuto Edomae Sushi",
+      "area": "Chinatown · 5040 Spring Mountain Rd (address from official post text)",
+      "michelin": "Selected (2026) — official site; Recommended per LVCVA",
+      "cuisine": "Edomae sushi omakase",
+      "price_level": "",
+      "est_cost_for_2": "",
+      "hours": "Daily 5:30–9:00 PM (from official site post text)",
+      "exceptions": "Reservation only (official post text)",
+      "official_url": "https://www.kabutolv.com/",
+      "michelin_source": "https://www.kabutolv.com/",
+      "social": "https://www.instagram.com/p/DgF3xboF22x/",
+      "flags": [
+        "Hours taken from an Instagram post image on the official site; verify on the reservation page",
+        "Social link is a single post, not the account"
+      ]
+    },
+    {
+      "name": "Kame Omakase",
+      "area": "Chinatown (per LVCVA)",
+      "michelin": "Recommended (2026) — per LVCVA",
+      "cuisine": "Omakase",
+      "price_level": "",
+      "est_cost_for_2": "",
+      "hours": "",
+      "exceptions": "",
+      "official_url": "https://sushikame.com/",
+      "michelin_source": "https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "social": "",
+      "flags": [
+        "LVCVA links kameomakase.com; that address redirects to sushikame.com — domain mismatch",
+        "Hours, address and price not captured"
+      ]
+    },
+    {
+      "name": "Lamaii",
+      "area": "Chinatown · 4480 Spring Mountain Rd #700 (official)",
+      "michelin": "Selected (2026) — official site",
+      "cuisine": "Modern Thai",
+      "price_level": "",
+      "est_cost_for_2": "",
+      "hours": "",
+      "exceptions": "Second location in Henderson (2645 St. Rose Pkwy #150)",
+      "official_url": "https://www.lamaiilv.com/",
+      "michelin_source": "https://www.lamaiilv.com/",
+      "social": "",
+      "flags": [
+        "Hours and price not captured",
+        "LVCVA lists Lamaii as Off-Strip; official address is Chinatown"
+      ]
+    },
+    {
+      "name": "Michael Mina",
+      "area": "Bellagio · 3600 S Las Vegas Blvd",
+      "michelin": "Recommended (MICHELIN wording on official page)",
+      "cuisine": "Seafood",
+      "price_level": "$$$$",
+      "est_cost_for_2": "$590 + tax/service (2 × $295++ tasting menu, official per-person price)",
+      "hours": "",
+      "exceptions": "Official page shows 'Monday to Sunday: Closed' and seasonal closures Nov 22–30, Dec 6–8, 13–15, 20–22; status 'Temporarily closed'",
+      "official_url": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
+      "michelin_source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
+      "social": "",
+      "flags": [
+        "Hours conflict on official page — February 2027 status unknown",
+        "Michelin shown as Recommended, not stars"
+      ]
+    },
+    {
+      "name": "Mott 32",
+      "area": "The Palazzo casino floor (official)",
+      "michelin": "Recommended (2026) — per LVCVA",
+      "cuisine": "Chinese (Cantonese, Szechuan, Beijing)",
+      "price_level": "$$$",
+      "est_cost_for_2": "",
+      "hours": "Mon–Fri: lunch 11:00 AM–2:30 PM, dinner 5:00–10:00 PM; Sat–Sun: lunch/brunch 10:30 AM–2:30 PM, dinner 5:00–10:00 PM",
+      "exceptions": "Groups 12+: 702.607.3232",
+      "official_url": "https://www.venetianlasvegas.com/dining/restaurants/mott-32.html",
+      "michelin_source": "https://www.venetianlasvegas.com/dining/restaurants/mott-32.html",
+      "social": "",
+      "flags": [
+        "LVCVA lists it under 'The Strip'; official page says it is on the Palazzo casino floor",
+        "Uses the Venetian domain"
+      ]
+    },
+    {
+      "name": "Partage",
+      "area": "Chinatown (per LVCVA)",
+      "michelin": "Recommended (2026) — per LVCVA; official site title references MICHELIN Guide",
+      "cuisine": "Modern French tasting menus (5, 7 or 9 courses)",
+      "price_level": "",
+      "est_cost_for_2": "",
+      "hours": "",
+      "exceptions": "Chef's Table (9-course) and bar experiences listed (official); booking via OpenTable widget",
+      "official_url": "https://partage.vegas/",
+      "michelin_source": "https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "social": "",
+      "flags": [
+        "Hours, price and address not captured",
+        "Official title says MICHELIN Guide; restaurant-level Michelin wording not confirmed"
+      ]
+    },
+    {
+      "name": "Pho Ga Bac Bac",
+      "area": "Chinatown (per LVCVA)",
+      "michelin": "Recommended 2026 (official site)",
+      "cuisine": "Vietnamese (chicken pho)",
+      "price_level": "",
+      "est_cost_for_2": "",
+      "hours": "Open 24 hours (official site)",
+      "exceptions": "Reservation requests are not guaranteed on major holidays or peak times (official)",
+      "official_url": "https://bestchickenpho.com/",
+      "michelin_source": "https://bestchickenpho.com/",
+      "social": "",
+      "flags": [
+        "Price not captured"
+      ]
+    },
+    {
+      "name": "Ping Pang Pong",
+      "area": "Gold Coast · Off-Strip (per LVCVA)",
+      "michelin": "Recommended (2026) — per LVCVA",
+      "cuisine": "Chinese (dim sum at lunch)",
+      "price_level": "",
+      "est_cost_for_2": "",
+      "hours": "Daily 10:00 AM–3:00 AM (Gold Coast official page)",
+      "exceptions": "Reservations suggested: (702) 247-8136",
+      "official_url": "https://goldcoast.boydgaming.com/dine/gc-ping-pang-pong",
+      "michelin_source": "https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "social": "",
+      "flags": [
+        "Street address not captured",
+        "Michelin wording not on restaurant's own page"
+      ]
+    },
+    {
+      "name": "SoulBelly BBQ (Main Street)",
+      "area": "Downtown · Arts District · 1327 S Main St",
+      "michelin": "Selected (2026) — Main Street location only (official site); Recommended per LVCVA",
+      "cuisine": "Central Texas BBQ",
+      "price_level": "",
+      "est_cost_for_2": "",
+      "hours": "Tue–Thu 11:00 AM–9:00 PM; Fri–Sat 11:00 AM–10:00 PM; Sun 11:00 AM–9:00 PM; Mon closed",
+      "exceptions": "Kitchen takes food orders until closing; Fri–Sat reverse happy hour 9–10 PM (official). Michelin does not apply to SoulBelly Express (Miracle Mile)",
+      "official_url": "https://soulbellybbq.com/",
+      "michelin_source": "https://soulbellybbq.com/",
+      "social": "https://www.instagram.com/soulbellybbqlv",
+      "flags": []
+    },
+    {
+      "name": "Sparrow + Wolf",
+      "area": "Chinatown (per LVCVA)",
+      "michelin": "Recommended (2026) — per LVCVA",
+      "cuisine": "New American",
+      "price_level": "",
+      "est_cost_for_2": "",
+      "hours": "",
+      "exceptions": "Credit card required; max 4 per table; $25/guest charge for cancellations within 24 hours (official)",
+      "official_url": "https://sparrowandwolflv.com/",
+      "michelin_source": "https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "social": "",
+      "flags": [
+        "Hours not captured",
+        "Official site content is dated 2024–2025 (event pages)"
+      ]
+    },
+    {
+      "name": "Stubborn Seed",
+      "area": "Resorts World · The District",
+      "michelin": "Selected (2026) — official site; Recommended per LVCVA",
+      "cuisine": "Modern American (Jeremy Ford)",
+      "price_level": "",
+      "est_cost_for_2": "",
+      "hours": "Main dining room daily 5:00–10:00 PM; bar & lounge daily 4:00–10:00 PM",
+      "exceptions": "Thanksgiving hours 12–6 PM (Nov 26, 2026 only). Phone 702-676-8062",
+      "official_url": "https://www.rwlasvegas.com/dining/stubborn-seed/",
+      "michelin_source": "https://www.rwlasvegas.com/dining/stubborn-seed/",
+      "social": "",
+      "flags": [
+        "Cost for 2 not published"
+      ]
+    },
+    {
+      "name": "Wing Lei",
+      "area": "Wynn Las Vegas · Wynn Tower Suites",
+      "michelin": "Recommended (2026) — per LVCVA (not stated on restaurant page)",
+      "cuisine": "Chinese (Cantonese, Shanghai, Szechuan)",
+      "price_level": "",
+      "est_cost_for_2": "",
+      "hours": "Thu, Sun, Mon 5:30–9:30 PM; Fri–Sat 5:30–10:00 PM; Tue–Wed closed",
+      "exceptions": "Children under 5 not permitted; Forbes Five-Star (official). Phone +1 (702) 770-3388",
+      "official_url": "https://www.wynnlasvegas.com/dining/fine-dining/wing-lei",
+      "michelin_source": "https://www.visitlasvegas.com/michelin-guide-restaurants/",
+      "social": "",
+      "flags": [
+        "Michelin not mentioned on restaurant page",
+        "Cost for 2 not published"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "rank": 1,
+      "name": "The Venetian Resort (incl. The Palazzo)",
+      "address": "",
+      "michelin_listed": "4: Bouchon, COTE, estiatorio Milos (Venetian); Mott 32 (Palazzo)",
+      "stars": "0",
+      "room_fit": "",
+      "private_bath": "",
+      "price_3n": "",
+      "price_7n": "",
+      "official_url": "https://www.venetianlasvegas.com/",
+      "source": "https://www.venetianlasvegas.com/dining/restaurants/bouchon.html",
+      "flags": [
+        "Address not captured",
+        "No room page retrieved",
+        "Price not verified"
+      ]
+    },
+    {
+      "rank": 2,
+      "name": "MGM Grand",
+      "address": "3799 S Las Vegas Blvd",
+      "michelin_listed": "2: Joël Robuchon (2★), L'Atelier (1★)",
+      "stars": "3 (2★ + 1★)",
+      "room_fit": "",
+      "private_bath": "",
+      "price_3n": "",
+      "price_7n": "",
+      "official_url": "https://mgmgrand.mgmresorts.com/",
+      "source": "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html",
+      "flags": [
+        "Room page not retrieved",
+        "Price not verified"
+      ]
+    },
+    {
+      "rank": 3,
+      "name": "The Cosmopolitan of Las Vegas",
+      "address": "3708 Las Vegas Blvd South",
+      "michelin_listed": "2: é by José Andrés (1★), China Poblano (Bib)",
+      "stars": "1",
+      "room_fit": "City Room Queen: 2 queen beds, 460 sq ft, max 4 guests. Terrace Studio Two Queen: 2 queen beds, 730 sq ft. Also 1-king suites.",
+      "private_bath": "",
+      "price_3n": "",
+      "price_7n": "",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/hotel.html",
+      "source": "https://cosmopolitanlasvegas.mgmresorts.com/en/hotel.html",
+      "flags": [
+        "Private bathroom not stated on official room page",
+        "Price not verified"
+      ]
+    },
+    {
+      "rank": 4,
+      "name": "Caesars Palace",
+      "address": "3570 Las Vegas Blvd South",
+      "michelin_listed": "1: Restaurant Guy Savoy (1★)",
+      "stars": "1",
+      "room_fit": "",
+      "private_bath": "",
+      "price_3n": "",
+      "price_7n": "",
+      "official_url": "https://www.caesars.com/caesars-palace/hotel",
+      "source": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy",
+      "flags": [
+        "Room page not retrieved",
+        "Price not verified"
+      ]
+    },
+    {
+      "rank": 5,
+      "name": "ARIA Resort & Casino",
+      "address": "3730 S Las Vegas Blvd",
+      "michelin_listed": "1: Gymkhana (Recommended)",
+      "stars": "0",
+      "room_fit": "Deluxe Two Queen Room: 2 queen beds, 520 sq ft, max 4. Deluxe King Room: 1 king, 520 sq ft, max 3.",
+      "private_bath": "",
+      "price_3n": "",
+      "price_7n": "",
+      "official_url": "https://aria.mgmresorts.com/en/hotel.html",
+      "source": "https://aria.mgmresorts.com/en/hotel.html",
+      "flags": [
+        "Private bathroom not stated on official room page",
+        "Price not verified"
+      ]
+    },
+    {
+      "rank": 6,
+      "name": "Bellagio",
+      "address": "3600 S Las Vegas Blvd",
+      "michelin_listed": "1: Michael Mina (Recommended)",
+      "stars": "0",
+      "room_fit": "",
+      "private_bath": "",
+      "price_3n": "",
+      "price_7n": "",
+      "official_url": "https://bellagio.mgmresorts.com/",
+      "source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
+      "flags": [
+        "Room page not retrieved",
+        "Price not verified"
+      ]
+    },
+    {
+      "rank": 7,
+      "name": "Resorts World Las Vegas",
+      "address": "",
+      "michelin_listed": "1: Stubborn Seed (Selected 2026)",
+      "stars": "0",
+      "room_fit": "",
+      "private_bath": "",
+      "price_3n": "",
+      "price_7n": "",
+      "official_url": "https://www.rwlasvegas.com/",
+      "source": "https://www.rwlasvegas.com/dining/stubborn-seed/",
+      "flags": [
+        "Address and room page not captured",
+        "Price not verified"
+      ]
+    },
+    {
+      "rank": 8,
+      "name": "Wynn Las Vegas",
+      "address": "",
+      "michelin_listed": "1: Wing Lei (Recommended; restaurant is in Wynn Tower Suites)",
+      "stars": "0",
+      "room_fit": "",
+      "private_bath": "",
+      "price_3n": "",
+      "price_7n": "",
+      "official_url": "https://www.wynnlasvegas.com/",
+      "source": "https://www.wynnlasvegas.com/dining/fine-dining/wing-lei",
+      "flags": [
+        "Address and room page not captured",
+        "Price not verified"
+      ]
+    }
+  ],
+  "hotel_rank_rule": "Rank = number of Michelin-listed restaurants inside the same resort (verified). Ties: more stars first, then alphabetical. Off-property restaurants (Chinatown, Downtown, Off-Strip) are NOT counted because bus/transit time is unverified.",
+  "activities": [
+    {
+      "name": "Red Rock Canyon National Conservation Area",
+      "operator": "Bureau of Land Management",
+      "distance": "17 miles west of the Strip; about 30 minutes (BLM)",
+      "hours": "Scenic Drive: Nov–Feb 6:00 AM–5:00 PM (BLM)",
+      "entry": "Timed-entry reservation required Oct 1–May 31 for entry 8 AM–5 PM, via recreation.gov or (877) 444-6777",
+      "fees": "",
+      "transit": "Public transportation does not extend to Red Rock (BLM)",
+      "official_url": "https://www.blm.gov/programs/national-conservation-lands/nevada/red-rock-canyon",
+      "booking_url": "https://www.recreation.gov/timed-entry/10075177",
+      "social": "https://instagram.com/mypubliclands (agency account, not place-specific)",
+      "flags": [
+        "Entrance fee not captured from the official page",
+        "Opening days not captured"
+      ]
+    },
+    {
+      "name": "Hoover Dam",
+      "operator": "Bureau of Reclamation",
+      "distance": "30 miles southeast of Las Vegas (Reclamation)",
+      "hours": "Last tour departs 4:10 PM; doors close 4:15 PM (Reclamation tour page; day/season not captured)",
+      "entry": "Guided dam tour tickets are sold on-site only, first come first served; tours often sell out (Reclamation)",
+      "fees": "Parking $10 per vehicle in the Nevada garage (Reclamation). Tour prices not captured",
+      "transit": "",
+      "official_url": "https://www.usbr.gov/lc/hooverdam/service/index.html",
+      "booking_url": "https://www.usbr.gov/lc/hooverdam/service/directions.html",
+      "social": "https://instagram.com/bureau_of_reclamation (agency account, not place-specific)",
+      "flags": [
+        "Tour prices not captured",
+        "Drive time not stated on official page",
+        "Special-event restrictions 2 weeks before/after Easter (Reclamation) — verify dates"
+      ]
+    },
+    {
+      "name": "Valley of Fire State Park",
+      "operator": "Nevada State Parks",
+      "distance": "Not stated on official page",
+      "hours": "Open daily, sunrise to sunset; Visitor Center daily 9:00 AM–4:00 PM (NV State Parks)",
+      "entry": "Reservations not required for day use (NV State Parks)",
+      "fees": "$10 per Nevada vehicle; $15 per non-Nevada vehicle (NV State Parks)",
+      "transit": "Rideshare pickup can be unreliable inside the park (NV State Parks)",
+      "official_url": "https://parks.nv.gov/parks/valley-of-fire",
+      "booking_url": "https://www.reservenevada.com/NevadaWeb/Default.aspx#!park/22",
+      "social": "",
+      "flags": [
+        "Distance and drive time not on official page",
+        "Dec 1–14 maintenance closure and May 15–Sep 30 trail closures do not overlap Feb 2027"
+      ]
+    },
+    {
+      "name": "Lake Mead National Recreation Area",
+      "operator": "National Park Service",
+      "distance": "",
+      "hours": "",
+      "entry": "",
+      "fees": "",
+      "transit": "",
+      "official_url": "https://www.nps.gov/lake/index.htm",
+      "booking_url": "https://www.nps.gov/lake/planyourvisit/fees.htm",
+      "social": "",
+      "flags": [
+        "Hours, fees and distance not captured (only the overview page was retrieved)",
+        "Contact: 702-293-8990 (NPS)"
+      ]
+    }
+  ],
+  "booking": {
+    "key_dates": [
+      {
+        "date": "Mon Feb 15, 2027",
+        "what": "Washington's Birthday (Presidents' Day) — federal holiday",
+        "source": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/"
+      },
+      {
+        "date": "Thu Feb 18, 2027",
+        "what": "Preferred check-out (3 nights)",
+        "source": "User brief"
+      },
+      {
+        "date": "Mon Feb 22, 2027",
+        "what": "Check-out for a 7-night stay starting Feb 15",
+        "source": "Calendar arithmetic"
+      },
+      {
+        "date": "Tue Mar 23, 2027",
+        "what": "End of allowed trip window",
+        "source": "User brief"
+      }
+    ],
+    "windows": [
+      {
+        "item": "é by José Andrés reservations",
+        "rule": "Reservations can be made online up to three months in advance",
+        "for_feb_15": "Open now (Nov 25, 2026 is within 3 months of Feb 15, 2027)",
+        "source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html"
+      },
+      {
+        "item": "Michelin-starred restaurants in general",
+        "rule": "Most release tables 30 to 60 days ahead (LVCVA FAQ)",
+        "for_feb_15": "Approx. Dec 17, 2026 – Jan 16, 2027 (derived from the 30–60 day rule, not a verified release calendar)",
+        "source": "https://www.visitlasvegas.com/michelin-guide-restaurants/"
+      },
+      {
+        "item": "Hoover Dam guided tour tickets",
+        "rule": "Sold on-site only, not online; tours routinely sell out (Reclamation)",
+        "for_feb_15": "Buy on the day; arrive early",
+        "source": "https://www.usbr.gov/lc/hooverdam/service/index.html"
+      },
+      {
+        "item": "Red Rock Canyon scenic drive",
+        "rule": "Timed-entry reservation required Oct 1–May 31 (BLM)",
+        "for_feb_15": "Reserve on recreation.gov before the trip",
+        "source": "https://www.blm.gov/programs/national-conservation-lands/nevada/red-rock-canyon"
+      },
+      {
+        "item": "Sparrow + Wolf cancellation policy",
+        "rule": "Credit card to hold; $25/guest for cancellations within 24 hours (official)",
+        "for_feb_15": "Applies if booked",
+        "source": "https://sparrowandwolflv.com/"
+      }
+    ],
+    "cheapest_hotel_booking_time": "NOT DETERMINED. No official 2027 rate history was retrieved for any hotel. Cannot honestly name a cheapest booking date.",
+    "unverified": [
+      "Hotel nightly rates for Feb 15–18 and Feb 15–22, 2027",
+      "Resort fees and taxes",
+      "Price history / cheapest booking window",
+      "Restaurant per-person prices (except the two official per-person tasting menus)"
+    ]
+  },
+  "repo_review": [
+    {
+      "item": "Repository visibility",
+      "finding": "Public repository kanlerxz87-cyber/Vegas1; default branch main.",
+      "status": "Verified",
+      "source": "https://api.github.com/repos/kanlerxz87-cyber/Vegas1 (GitHub API)"
+    },
+    {
+      "item": "Files on main",
+      "finding": "Only README.md. No index page, no data, no license, no .gitignore.",
+      "status": "Irregular — review",
+      "source": "https://github.com/kanlerxz87-cyber/Vegas1"
+    },
+    {
+      "item": "README.md content",
+      "finding": "A single line: '# Vegas1'. No description or setup text.",
+      "status": "Irregular — review",
+      "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/README.md"
+    },
+    {
+      "item": "Git history",
+      "finding": "One commit, 'Initial commit' (9b8bcfa).",
+      "status": "Verified",
+      "source": "https://github.com/kanlerxz87-cyber/Vegas1/commits/main"
+    },
+    {
+      "item": "GitHub Pages config (before this session)",
+      "finding": "Pages was enabled, built from branch main, path /. Live URL: https://kanlerxz87-cyber.github.io/Vegas1/",
+      "status": "Irregular — review (live URL had no site content)",
+      "source": "https://api.github.com/repos/kanlerxz87-cyber/Vegas1/pages"
+    },
+    {
+      "item": "Branch naming in the brief",
+      "finding": "The brief asks for session-<id>/<task> branches. Session rules fix the branch to arena/3860068e-vegas1. Brief text also has escaped placeholders (&amp;lt;id&amp;gt;).",
+      "status": "Irregular — logged in COORDINATION.md",
+      "source": "COORDINATION.md (this repo)"
+    },
+    {
+      "item": "Subway requirement",
+      "finding": "The brief asks for travel 'by subway or bus'. Sources reviewed show RTC bus service; no subway was found in them. Needs confirmation.",
+      "status": "Irregular — review",
+      "source": "https://www.rtcsnv.com/"
+    },
+    {
+      "item": "Michelin Guide official site",
+      "finding": "guide.michelin.com could not be fetched from the sandbox. Michelin status here comes from the LVCVA page and restaurant-owned pages.",
+      "status": "Unverified — manual check needed",
+      "source": "https://guide.michelin.com/us/en/nevada/las-vegas/restaurants"
+    },
+    {
+      "item": "Kame Omakase link",
+      "finding": "LVCVA links kameomakase.com; that address redirects to sushikame.com.",
+      "status": "Irregular — review",
+      "source": "https://www.visitlasvegas.com/michelin-guide-restaurants/"
+    },
+    {
+      "item": "Mott 32 location",
+      "finding": "LVCVA text says Mott 32 is at The Palazzo; its link goes to the Venetian site. Official page says Palazzo casino floor.",
+      "status": "Irregular — review",
+      "source": "https://www.venetianlasvegas.com/dining/restaurants/mott-32.html"
+    },
+    {
+      "item": "Lamaii area",
+      "finding": "LVCVA lists Lamaii as Off-Strip; official site gives a Chinatown address.",
+      "status": "Irregular — review",
+      "source": "https://www.lamaiilv.com/"
+    },
+    {
+      "item": "Wing Lei Michelin status",
+      "finding": "LVCVA lists it as Recommended; the restaurant's own page does not mention Michelin.",
+      "status": "Irregular — review",
+      "source": "https://www.wynnlasvegas.com/dining/fine-dining/wing-lei"
+    },
+    {
+      "item": "Michael Mina hours",
+      "finding": "Official page shows 'Monday to Sunday: Closed' plus seasonal closures and 'Temporarily closed'.",
+      "status": "Irregular — review",
+      "source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html"
+    },
+    {
+      "item": "Guy Savoy hours",
+      "finding": "Official page shows only 'Closed' and 'Opens 5:00 PM' with no day-by-day hours.",
+      "status": "Irregular — review",
+      "source": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy"
+    },
+    {
+      "item": "Sparrow + Wolf site content",
+      "finding": "Event pages are dated 2024–2025 (Valentine's 2025, NYE 2024).",
+      "status": "Stale content — review",
+      "source": "https://sparrowandwolflv.com/"
+    },
+    {
+      "item": "Gymkhana Instagram",
+      "finding": "Official page link to Instagram is present; the 'Stay Informed' link carries date=2025-12-03.",
+      "status": "Stale link — review",
+      "source": "https://aria.mgmresorts.com/en/restaurants/gymkhana.html"
+    },
+    {
+      "item": "Michelin count consistency",
+      "finding": "LVCVA states 24 distinctions. Counted 4 starred + 3 Bib + 17 Recommended/Selected = 24. Consistent.",
+      "status": "Verified",
+      "source": "https://www.visitlasvegas.com/michelin-guide-restaurants/"
+    },
+    {
+      "item": "Feb 15 2027 holiday",
+      "finding": "OPM lists Monday Feb 15, 2027 as Washington's Birthday.",
+      "status": "Verified",
+      "source": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/"
+    },
+    {
+      "item": "Trip length conflict",
+      "finding": "Brief asks for 1–2 weeks but the preferred dates are 3 nights (Feb 15–18).",
+      "status": "Irregular — decision needed",
+      "source": "User brief"
+    }
+  ],
+  "questions": {
+    "answered": [
+      {
+        "q": "Is Feb 15, 2027 a holiday?",
+        "a": "Yes — Washington's Birthday (Presidents' Day), per OPM.",
+        "source": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/"
+      },
+      {
+        "q": "How many Michelin listings are in Las Vegas for 2026?",
+        "a": "24 (4 stars, 3 Bib Gourmand, 17 Recommended/Selected).",
+        "source": "https://www.visitlasvegas.com/michelin-guide-restaurants/"
+      },
+      {
+        "q": "Which hotels have queen or larger beds (official)?",
+        "a": "Cosmopolitan (City Room Queen, 2 queens) and ARIA (Deluxe Two Queen, 2 queens). Other hotels not yet checked.",
+        "source": "https://cosmopolitanlasvegas.mgmresorts.com/en/hotel.html · https://aria.mgmresorts.com/en/hotel.html"
+      },
+      {
+        "q": "How far is Red Rock Canyon from the Strip?",
+        "a": "About 30 minutes (17 miles west); timed entry required Oct 1–May 31.",
+        "source": "https://www.blm.gov/programs/national-conservation-lands/nevada/red-rock-canyon"
+      }
+    ],
+    "missing": [
+      {
+        "q": "Trip length: 3 nights (Feb 15–18) or 7 nights (pricing request)?",
+        "why": "The brief asks for 1–2 weeks, but 3 nights is shorter. Drives which price table matters.",
+        "how_to_find": "Your answer (no external source)"
+      },
+      {
+        "q": "Total hotel budget for the stay (per night and per 7 nights)?",
+        "why": "Needed to filter hotels; none can be ranked on price yet.",
+        "how_to_find": "Your answer"
+      },
+      {
+        "q": "Hotel rate for Feb 15–18 and Feb 15–22, 2027 at each shortlisted hotel?",
+        "why": "Core requirement; no official 2027 rate was retrieved.",
+        "how_to_find": "Official 'Check Rates' pages on each hotel site; record date/time of each check"
+      },
+      {
+        "q": "Resort fees and taxes per hotel?",
+        "why": "Changes total cost.",
+        "how_to_find": "Official hotel fee disclosure on the booking page"
+      },
+      {
+        "q": "Private bathroom confirmed per room type?",
+        "why": "Brief requirement; not stated on the official room pages reviewed.",
+        "how_to_find": "Official room-detail pages (each room type)"
+      },
+      {
+        "q": "Which activities are planned?",
+        "why": "Needed for the 1-hour travel analysis (Red Rock, Hoover Dam, Valley of Fire, shows, Sphere, etc.).",
+        "how_to_find": "Your answer"
+      },
+      {
+        "q": "Rent a car or use RTC bus / rideshare?",
+        "why": "Changes which hotel-to-activity and hotel-to-restaurant times apply.",
+        "how_to_find": "Your answer"
+      },
+      {
+        "q": "Is subway acceptable, or only bus/monorail/rideshare?",
+        "why": "The brief says subway or bus. No subway was found in sources reviewed.",
+        "how_to_find": "Your answer; then RTC trip planner check"
+      },
+      {
+        "q": "Travel times hotel → each restaurant and activity (transit and drive)?",
+        "why": "Brief's 1-hour requirement cannot be checked without them.",
+        "how_to_find": "RTC Trip Planner (official) for bus times; drive times need a mapping tool (third party, flagged)"
+      },
+      {
+        "q": "Restaurant spend per person (exact or range) for 2 adults?",
+        "why": "Brief asks for totals per couple; most restaurants publish only $ symbols.",
+        "how_to_find": "Official menus or price pages on each restaurant site"
+      },
+      {
+        "q": "Which restaurant tier is in scope: stars only, or stars + Bib + Recommended?",
+        "why": "Changes the restaurant list (4 vs 24).",
+        "how_to_find": "Your answer"
+      },
+      {
+        "q": "Michelin status and current hours on guide.michelin.com?",
+        "why": "Michelin's own site could not be reached from the sandbox.",
+        "how_to_find": "Manual check on guide.michelin.com (not accessible from here)"
+      },
+      {
+        "q": "Social links (YouTube / TikTok / Instagram) for each place?",
+        "why": "Brief asks for one per place; only a few are on official sites.",
+        "how_to_find": "Official footer or 'follow us' links on each venue site"
+      },
+      {
+        "q": "Are you flying from Amsterdam? Which dates for flights?",
+        "why": "Affects arrival/departure and entry requirements.",
+        "how_to_find": "Your answer; then official U.S. entry requirements (travel.state.gov)"
+      },
+      {
+        "q": "Loyalty programs (MGM Rewards, Caesars Rewards, Wynn Rewards)?",
+        "why": "Affects rates and dining priority (MGM Gold+ gets priority online dining, per the MGM page).",
+        "how_to_find": "Your answer"
+      },
+      {
+        "q": "Can dates move within Feb 15–Mar 23 for lower prices?",
+        "why": "Price comparison across the window.",
+        "how_to_find": "Your answer"
+      },
+      {
+        "q": "Major events in Las Vegas in Feb–Mar 2027 (conventions, sports, concerts)?",
+        "why": "Events raise room rates; none researched yet.",
+        "how_to_find": "Official Visit Las Vegas events calendar (not yet checked)"
+      }
+    ]
+  },
+  "suggestions": [
+    {
+      "id": "S1",
+      "suggestion": "Set up a fixed-schedule capture of official 'Check Rates' prices for each shortlisted hotel (weekly, same dates), recording date and time of each capture.",
+      "benefit": "Builds the verified price history needed for the cheapest-booking-time question.",
+      "needs": "Your approval of the schedule and the date set",
+      "decision": "Pending"
+    },
+    {
+      "id": "S2",
+      "suggestion": "Check guide.michelin.com manually for star status and hours of each of the 24 listings.",
+      "benefit": "Upgrades Michelin rows from LVCVA-only to Michelin-primary sources.",
+      "needs": "Manual check (sandbox cannot reach the site)",
+      "decision": "Pending"
+    },
+    {
+      "id": "S3",
+      "suggestion": "Use the RTC Trip Planner (official) to record bus times from each hotel to each Michelin cluster and activity.",
+      "benefit": "Verifies the 1-hour-by-transit requirement.",
+      "needs": "Your activity list and hotel shortlist",
+      "decision": "Pending"
+    },
+    {
+      "id": "S4",
+      "suggestion": "Use a non-official mapping tool for drive times, clearly marked as third-party.",
+      "benefit": "Covers Valley of Fire and Hoover Dam drives, which official pages don't state.",
+      "needs": "Your approval to use a non-official source",
+      "decision": "Pending"
+    },
+    {
+      "id": "S5",
+      "suggestion": "Sweep each venue's official site footer for YouTube, TikTok and Instagram links; record only links found on official pages.",
+      "benefit": "Fills the social-link column without guessing handles.",
+      "needs": "None beyond approval",
+      "decision": "Pending"
+    },
+    {
+      "id": "S6",
+      "suggestion": "Split the hotel table into a 3-night scenario (Feb 15–18) and a 7-night scenario (Feb 15–22).",
+      "benefit": "Matches both pricing requests.",
+      "needs": "Your decision on trip length",
+      "decision": "Pending"
+    },
+    {
+      "id": "S7",
+      "suggestion": "Narrow to 3–5 finalist hotels after questions are answered, then verify rooms, fees and rates for those only.",
+      "benefit": "Concentrates verification effort.",
+      "needs": "Your budget and room preferences",
+      "decision": "Pending"
+    },
+    {
+      "id": "S8",
+      "suggestion": "Add a build-time link checker that fails the site if any official URL in the data no longer resolves.",
+      "benefit": "Keeps every row's source link working.",
+      "needs": "Approval to add a script to the build",
+      "decision": "Pending"
+    },
+    {
+      "id": "S9",
+      "suggestion": "Add a weighted decision page (price, Michelin count, room fit, activities, transit time) after answers are in.",
+      "benefit": "Makes the final choice transparent.",
+      "needs": "Answers to the questions and weights from you",
+      "decision": "Pending"
+    },
+    {
+      "id": "S10",
+      "suggestion": "Stamp each row with its capture date so stale values are visible.",
+      "benefit": "Shows how fresh each official value is.",
+      "needs": "None",
+      "decision": "Pending"
+    }
+  ],
+  "flagged": [
+    {
+      "area": "Hotels",
+      "item": "All hotel nightly prices (3- and 7-night)",
+      "reason": "No official 2027 rate retrieved"
+    },
+    {
+      "area": "Hotels",
+      "item": "Private bathroom for every room type",
+      "reason": "Not stated on the official room pages reviewed"
+    },
+    {
+      "area": "Hotels",
+      "item": "Addresses: Venetian, Wynn, Resorts World",
+      "reason": "Not captured"
+    },
+    {
+      "area": "Hotels",
+      "item": "Room fit for Caesars, Bellagio, MGM Grand, Venetian, Wynn, Resorts World",
+      "reason": "Room pages not retrieved"
+    },
+    {
+      "area": "Michelin",
+      "item": "Michelin status on guide.michelin.com (all 24)",
+      "reason": "Guide site unreachable from sandbox; LVCVA used instead"
+    },
+    {
+      "area": "Michelin",
+      "item": "Hours for Guy Savoy, Esther's, Yen Viet, Kame, Lamaii, Partage, Sparrow + Wolf, Ping Pang Pong address",
+      "reason": "Not captured or ambiguous"
+    },
+    {
+      "area": "Michelin",
+      "item": "Michael Mina hours in Feb 2027",
+      "reason": "Official page conflicts (Closed daily + seasonal closures)"
+    },
+    {
+      "area": "Michelin",
+      "item": "Cost for two — all restaurants except Anima and Michael Mina",
+      "reason": "Official per-person prices not published"
+    },
+    {
+      "area": "Michelin",
+      "item": "Social links for all except Gymkhana, SoulBelly, Kabuto (post only)",
+      "reason": "Not yet searched"
+    },
+    {
+      "area": "Activities",
+      "item": "Red Rock entrance fee; Hoover Dam tour prices; Lake Mead hours and fees; Valley of Fire distance",
+      "reason": "Not captured from official pages"
+    },
+    {
+      "area": "Booking",
+      "item": "Cheapest booking time for any hotel",
+      "reason": "No rate history"
+    },
+    {
+      "area": "Transit",
+      "item": "Every 1-hour travel claim (bus or drive)",
+      "reason": "No travel-time source checked yet"
+    },
+    {
+      "area": "Brief",
+      "item": "'Subway' requirement",
+      "reason": "No subway in sources reviewed; confirm"
+    }
+  ],
+  "sources": [
+    {
+      "label": "LVCVA — Michelin Star Restaurants in Las Vegas",
+      "url": "https://www.visitlasvegas.com/michelin-guide-restaurants/"
+    },
+    {
+      "label": "OPM — Federal Holidays (2027)",
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/"
+    },
+    {
+      "label": "BLM — Red Rock Canyon NCA",
+      "url": "https://www.blm.gov/programs/national-conservation-lands/nevada/red-rock-canyon"
+    },
+    {
+      "label": "Bureau of Reclamation — Hoover Dam tours",
+      "url": "https://www.usbr.gov/lc/hooverdam/service/index.html"
+    },
+    {
+      "label": "Bureau of Reclamation — Hoover Dam directions",
+      "url": "https://www.usbr.gov/lc/hooverdam/service/directions.html"
+    },
+    {
+      "label": "NV State Parks — Valley of Fire",
+      "url": "https://parks.nv.gov/parks/valley-of-fire"
+    },
+    {
+      "label": "NPS — Lake Mead NRA",
+      "url": "https://www.nps.gov/lake/index.htm"
+    },
+    {
+      "label": "RTC of Southern Nevada",
+      "url": "https://www.rtcsnv.com/"
+    },
+    {
+      "label": "MGM Grand — Joël Robuchon",
+      "url": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html"
+    },
+    {
+      "label": "MGM Grand — L'Atelier",
+      "url": "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html"
+    },
+    {
+      "label": "Cosmopolitan — é by José Andrés",
+      "url": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html"
+    },
+    {
+      "label": "Cosmopolitan — China Poblano",
+      "url": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html"
+    },
+    {
+      "label": "Cosmopolitan — Rooms & Suites",
+      "url": "https://cosmopolitanlasvegas.mgmresorts.com/en/hotel.html"
+    },
+    {
+      "label": "Caesars — Restaurant Guy Savoy",
+      "url": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy"
+    },
+    {
+      "label": "Bellagio — Michael Mina",
+      "url": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html"
+    },
+    {
+      "label": "ARIA — Gymkhana",
+      "url": "https://aria.mgmresorts.com/en/restaurants/gymkhana.html"
+    },
+    {
+      "label": "ARIA — Rooms & Suites",
+      "url": "https://aria.mgmresorts.com/en/hotel.html"
+    },
+    {
+      "label": "Venetian — Bouchon",
+      "url": "https://www.venetianlasvegas.com/dining/restaurants/bouchon.html"
+    },
+    {
+      "label": "Venetian — COTE",
+      "url": "https://www.venetianlasvegas.com/dining/restaurants/cote.html"
+    },
+    {
+      "label": "Venetian — estiatorio Milos",
+      "url": "https://www.venetianlasvegas.com/restaurants/estiatorio-milos.html"
+    },
+    {
+      "label": "Venetian — Mott 32",
+      "url": "https://www.venetianlasvegas.com/dining/restaurants/mott-32.html"
+    },
+    {
+      "label": "Wynn — Wing Lei",
+      "url": "https://www.wynnlasvegas.com/dining/fine-dining/wing-lei"
+    },
+    {
+      "label": "Resorts World — Stubborn Seed",
+      "url": "https://www.rwlasvegas.com/dining/stubborn-seed/"
+    },
+    {
+      "label": "Anima by EDO",
+      "url": "https://animabyedo.com/"
+    },
+    {
+      "label": "Kabuto",
+      "url": "https://www.kabutolv.com/"
+    },
+    {
+      "label": "Kame Omakase (sushikame.com)",
+      "url": "https://sushikame.com/"
+    },
+    {
+      "label": "Lamaii",
+      "url": "https://www.lamaiilv.com/"
+    },
+    {
+      "label": "Partage",
+      "url": "https://partage.vegas/"
+    },
+    {
+      "label": "Pho Ga Bac Bac",
+      "url": "https://bestchickenpho.com/"
+    },
+    {
+      "label": "Ping Pang Pong (Gold Coast)",
+      "url": "https://goldcoast.boydgaming.com/dine/gc-ping-pang-pong"
+    },
+    {
+      "label": "SoulBelly BBQ",
+      "url": "https://soulbellybbq.com/"
+    },
+    {
+      "label": "Sparrow + Wolf",
+      "url": "https://sparrowandwolflv.com/"
+    },
+    {
+      "label": "Esther's Kitchen",
+      "url": "https://www.estherslv.com/"
+    },
+    {
+      "label": "Yen Viet Kitchen",
+      "url": "https://www.yenvietkitchen.com/"
+    }
+  ]
+}
