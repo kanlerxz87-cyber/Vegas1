@@ -350,6 +350,30 @@ so the content is deployed and only the root document is wrong. Full diagnosis a
     return page("index.html", "Overview", body)
 
 # ---------------------------------------------------------------- hotels
+# Published resort fees actually encountered while researching, with their sources.
+# Every one of these is a third-party claim, so none is used as a value - they exist
+# only to show how much the published figures disagree.
+RESORT_FEE_DISPUTE = [
+    ("Flamingo", "$42", "vegasvox.com"),
+    ("Flamingo", "$45", "lasvegasjaunt comment"),
+    ("Flamingo", "$50 (+tax = $56.63)", "unleashvegas.com / lasvegasjaunt table"),
+    ("Flamingo", "$56.63", "Orbitz property-policy panel"),
+    ("Caesars Palace", "$49.95 + 13.38% tax", "lasvegaswonders.com"),
+    ("Caesars Palace", "$55", "lasvegasjaunt.com"),
+    ("Caesars Palace", "$62.30", "travelocity.com / bookonvegas.com"),
+]
+
+def resort_fee_breakeven():
+    """For each ranked hotel, how much per-night resort fee would the rival need
+    to overtake it? Turns an unknown into a decision the reader can make."""
+    priced = sorted([h for r in SCORES if (h := r["hotel"]).get("total_usd")],
+                    key=lambda x: x["total_usd"])
+    out = []
+    for a, b in zip(priced, priced[1:]):
+        gap = b["total_usd"] - a["total_usd"]
+        out.append((a, b, gap, gap / 7))
+    return out
+
 def hotel_michelin_detail(hid):
     """Return (summary_html, venue_list, cost_lo, cost_hi, n_known) for one hotel."""
     rows = [r for r in TRANSIT["rows"] if r["hotel_id"] == hid]
@@ -440,6 +464,16 @@ def build_hotels():
 <td class="no">{e(u['status_2027-02-15_22'])}</td><td>{e(u['alternative_7_nights'])}</td>
 <td class="src"><a href="{e(u['booking_url'])}" target="_blank" rel="noopener">check</a></td></tr>"""
 
+    fee_rows = "".join(
+        f'<tr><td>{e(h)}</td><td class="num">{e(v)}</td><td class="src">{e(src)}</td></tr>'
+        for h, v, src in RESORT_FEE_DISPUTE)
+    breakeven_rows = "".join(
+        f'<tr><td><a href="{e(a["official_site"])}" target="_blank" rel="noopener">{e(a["name"])}</a></td>'
+        f'<td><a href="{e(b["official_site"])}" target="_blank" rel="noopener">{e(b["name"])}</a></td>'
+        f'<td class="num">${gap:,}</td><td class="num">${per_night:,.2f}</td>'
+        f'<td class="src">{e(a["name"])} costs more than ${per_night:,.2f}/night extra in fees</td></tr>'
+        for a, b, gap, per_night in resort_fee_breakeven())
+
     body = f"""
 <h1>Hotels</h1>
 <p class="lead">7 nights, 2 adults, 1 room, <strong>15–22 February 2027</strong>.
@@ -493,6 +527,32 @@ Note also how few venues publish a price at all: that scarcity is the single big
 <p class="src">Four flagship Strip properties were already sold out or blocked for that week
 15 months out. If any of them is a must-stay, the trip dates have to move — that is a decision
 for <a href="questions.html">Open Questions</a>.</p>
+
+<h2>Resort fees: why I refused to pick a number</h2>
+<p>Resort fees decide this table. They are charged per night, on top of the room, and they
+are not in the Booking.com totals above. The problem is that the published figures for the
+<em>same hotel</em> disagree wildly:</p>
+<div class="tblwrap"><table>
+<thead><tr><th>Hotel</th><th>Resort fee claimed</th><th>Where that number comes from</th></tr></thead>
+<tbody>{fee_rows}</tbody></table></div>
+<p>Flamingo's fee alone is quoted at four different prices. Caesars Palace at three.
+None of those sources is the hotel's own checkout page, so under your rule none of them can be
+written into the table as a fact. Picking the middle one would look tidy and be wrong.</p>
+
+<p><strong>So here is the useful alternative — the break-even point.</strong> For each pair of
+adjacent hotels, this is how much more expensive the cheaper one's resort fee would have to be
+before the order flips:</p>
+<div class="tblwrap"><table>
+<thead><tr><th>Cheaper hotel</th><th>Next hotel</th><th>Room-price gap over 7 nights</th>
+<th>Gap per night</th><th>Order flips if…</th></tr></thead>
+<tbody>{breakeven_rows}</tbody></table></div>
+<div class="okbox">
+<strong>How to use this.</strong> The top four hotels are within $143 of each other across seven
+nights, so a $20/night fee difference can reorder them completely. But the same table also shows the
+robust result: <em>no plausible resort fee moves a $480 hotel below a $2,300 hotel</em>. The
+expensive end of this list is expensive no matter what the fees are, and the cheap end is cheap.
+The middle is where the fees decide, and only a live booking total at checkout can settle it.
+</div>
 
 <h2>What is still missing here</h2>
 <ul>
