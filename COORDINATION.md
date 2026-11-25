@@ -88,3 +88,40 @@ hotels, TikTok/Instagram for 17 venues, activity hours and ticket prices, prices
 starred restaurants, and 355 of 360 transit pairs.
 
 **Full page:** `docs/verification.html` · **Irregularities:** `docs/flagged.html`
+
+---
+
+## Final state — session arena-f9e78242 (updated 2026-11-25)
+
+**Branch:** `arena/f9e78242-vegas1` · 13 pages · `python3 check.py` → 453 checks, 0 failures.
+
+### Publishing is blocked and needs a human
+`gh api .../pages --method PUT` returns **403** for this integration. Pages therefore still serves
+`main` at path `/`. This branch's site lives in `docs/` and cannot be published from here.
+
+### Live site defect found by runtime test (X10)
+`https://kanlerxz87-cyber.github.io/Vegas1/` returns a page whose body is `# Vegas1` — i.e. README.md,
+not the `index.html` committed to main. All sub-pages render correctly, so the deploy is live and only
+the root document is wrong. **Fix:** re-run the `pages-build-deployment` workflow on main, or push any
+commit to main. Verify the root title reads "Vegas1 - Las Vegas Vacation Planning".
+
+### Data state (all in `plan-data/`, none of it overlaps main's `data/`)
+| File | State |
+|---|---|
+| `michelin.json` | 24/24 venues, distinctions verified against the official press release |
+| `restaurant-details.json` | 24/24 covered; **19 with official hours**; 4 with exact prices; 2 publish nothing in text and are flagged |
+| `activities.json` | 7 activities; hours+prices verified for 5; 12 YouTube links; measured transit for 5 |
+| `hotels.json` | 13 priced + 4 unavailable for the preferred window |
+| `events-2027.json` | **new** — 7 events overlapping the travel window, with per-event sources |
+| `pricing.json` | nights/rate arithmetic corrected; now enforced by check.py |
+| `cross-session-audit.json` | 12 claims audited incl. the live-site X10 finding |
+
+### Open items, in priority order
+1. **Publish.** Blocked on human action (above).
+2. **Convention-week conflict.** Preferred 15–18 Feb overlaps MAGIC + Roofing Expo + WWIN. Prices for
+   15–22 Feb may be inflated. Two candidate quiet weeks identified (8–15 Feb, 8–15 Mar) but the LVCVA
+   official calendar could not be fetched to confirm.
+3. **Resort fees.** Still unverified by design — four sources disagree per hotel. Quantified as a
+   break-even table instead.
+4. **Route matrix.** 5 of a possible 15×24 measured. Enough to rank, not to prove.
+5. **Kame Omakase / Partage / Yen Viet** publish no hours in text form; flagged, not guessed.
