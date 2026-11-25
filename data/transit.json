@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "question": "Q-01: the user asked to rank hotels by Michelin restaurants within 1 hour by subway or bus.",
+    "answer": "Las Vegas has no subway or metro rail. The 'by subway or bus' constraint is therefore modelled on three systems that do not share a ticket: RTC transit buses (The Deuce / SDX / local routes), the Las Vegas Monorail, and the Boring Company Vegas Loop.",
+    "honesty": "Every minute figure here is an ESTIMATE built from official station lists and route maps, rounded to 5 minutes. No official source publishes door-to-door travel times. These are planning estimates, not timetables.",
+    "generated_by": "scripts/build.py recomputes michelin_within_60 and michelin_within_20 in data/hotels.json from this matrix — do not hand-edit those two fields."
+  },
+  "systems": [
+    {
+      "id": "monorail",
+      "name": "Las Vegas Monorail",
+      "fare_note": "Single ride $6.25 paper / $5.75 e-ticket. 1-day $15.50 / $13.95, 2-day $27, 3-day $33, 4-day $40, 5-day $48.25, 7-day $64 / $59.95.",
+      "hours": "Mon 7am–12am; Tue–Thu 7am–2am; Fri–Sun 7am–3am",
+      "stations": ["MGM Grand", "Horseshoe / Paris", "Flamingo / Caesars Palace", "Harrah's / The LINQ", "Boingo (Las Vegas Convention Center)", "Westgate", "SAHARA"],
+      "official_url": "https://www.lvmonorail.com/stations/",
+      "fare_url": "https://www.lvmonorail.com/ticket-information/",
+      "note": "3.9 miles end to end, roughly 4–8 minute headways. Does NOT reach the airport or downtown."
+    },
+    {
+      "id": "rtc",
+      "name": "RTC Transit — The Deuce & SDX",
+      "fare_note": "Strip & Downtown Express / Deuce: $4 single, $6 2-hour, $8 24-hour, $20 3-day. Nevada local fares are $1.",
+      "hours": "24 hours on the Strip corridor",
+      "official_url": "https://www.rtcsnv.com/ways-to-travel/fares-passes/",
+      "note": "The only 24-hour option, and the only one that reaches downtown (Fremont Street) and the Arts District."
+    },
+    {
+      "id": "loop",
+      "name": "Vegas Loop (Boring Company)",
+      "fare_note": "Encore / Resorts World / Westgate $4.75 (day pass $13.25); Las Vegas Convention Center ↔ Strip $5; Fontainebleau $7.00; SAHARA $7.50; airport $12–14.",
+      "stations": ["Resorts World", "Encore", "Westgate", "Las Vegas Convention Center", "Fontainebleau", "SAHARA", "Airport"],
+      "official_url": "https://www.boringcompany.com/projects/las-vegas-loop",
+      "note": "Point-to-point in Tesla vehicles, not a rail line. Fare bands vary by station pair."
+    }
+  ],
+  "zones": [
+    {"id": "south-strip", "label": "South Strip", "examples": "MGM Grand, The Signature, Four Seasons, Mandalay Bay"},
+    {"id": "center-strip", "label": "Centre Strip", "examples": "Bellagio, Cosmopolitan, ARIA, Caesars Palace, Horseshoe, Paris, Cromwell, Flamingo, LINQ"},
+    {"id": "north-strip", "label": "North Strip", "examples": "Wynn, Encore, Venetian, Palazzo, Resorts World, Fontainebleau, SAHARA, Trump"},
+    {"id": "west-near", "label": "West of the Strip", "examples": "Gold Coast, Palms, Palms Place, Rio"},
+    {"id": "chinatown", "label": "Chinatown / Spring Mountain Rd", "examples": "Kabuto, KAME, Lamaii, Partage, Sparrow + Wolf, Pho Ga Bac Bac"},
+    {"id": "downtown-arts", "label": "Downtown & Arts District", "examples": "Esther's Kitchen, SoulBelly BBQ, Fremont Street"},
+    {"id": "west-far", "label": "Far West (Russell Rd)", "examples": "Anima by EDO"},
+    {"id": "off-strip", "label": "Off-Strip / Henderson / Summerlin", "examples": "Green Valley Ranch, Red Rock, Cliffs at Peace Canyon"}
+  ],
+  "minutes": {
+    "south-strip":   {"south-strip": 0,  "center-strip": 10, "north-strip": 20, "west-near": 15, "chinatown": 25, "downtown-arts": 30, "west-far": 35, "off-strip": 35},
+    "center-strip":  {"south-strip": 10, "center-strip": 0,  "north-strip": 10, "west-near": 10, "chinatown": 20, "downtown-arts": 25, "west-far": 30, "off-strip": 35},
+    "north-strip":   {"south-strip": 20, "center-strip": 10, "north-strip": 0,  "west-near": 20, "chinatown": 20, "downtown-arts": 20, "west-far": 30, "off-strip": 40},
+    "west-near":     {"south-strip": 15, "center-strip": 10, "north-strip": 20, "west-near": 0,  "chinatown": 10, "downtown-arts": 20, "west-far": 20, "off-strip": 35},
+    "chinatown":     {"south-strip": 25, "center-strip": 20, "north-strip": 20, "west-near": 10, "chinatown": 0,  "downtown-arts": 20, "west-far": 15, "off-strip": 40},
+    "downtown-arts": {"south-strip": 30, "center-strip": 25, "north-strip": 20, "west-near": 20, "chinatown": 20, "downtown-arts": 0,  "west-far": 30, "off-strip": 40},
+    "west-far":      {"south-strip": 35, "center-strip": 30, "north-strip": 30, "west-near": 20, "chinatown": 15, "downtown-arts": 30, "west-far": 0,  "off-strip": 30},
+    "off-strip":     {"south-strip": 35, "center-strip": 35, "north-strip": 40, "west-near": 35, "chinatown": 40, "downtown-arts": 40, "west-far": 30, "off-strip": 0}
+  },
+  "finding": {
+    "inside_60": "The Strip is about 4 miles long and Chinatown is about 3 miles west of it, so EVERY hotel in the dataset — including Henderson and Summerlin — reaches all 24 Michelin listings inside 60 minutes. The user's literal metric returns a flat 24/24 for every property and therefore cannot rank anything.",
+    "fix": "A second, stricter column was added: how many Michelin restaurants are within a 20-MINUTE one-way trip. That column separates the field and drives the ranking.",
+    "disclose": "This substitution is a material interpretation of the brief and is raised as Q-01 on the Questions page."
+  }
+}
