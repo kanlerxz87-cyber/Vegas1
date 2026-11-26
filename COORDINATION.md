@@ -297,7 +297,7 @@ Branch `arena/f527b427-vegas1`, forked from `e4fb98e` (main). Claim committed an
 | All 24 Las Vegas MICHELIN names and tiers (4 starred, 3 Bib, 17 Recommended) | **Confirmed.** Names and tiers match the release. The 17 Recommended names match the release's Las Vegas list. | [MICHELIN press release, 31 Aug 2026](https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s) · [Visit Las Vegas](https://www.visitlasvegas.com/michelin-guide-restaurants/) |
 | Michael Mina (Bellagio) closed | **Confirmed** on Bellagio's dining index ("Temporarily Closed"). Reopen date not published. | [Bellagio dining index](https://bellagio.mgmresorts.com/en/restaurants.html?filter=property,Bellagio_Las_Vegas) |
 | RTC Strip and All Access fares: $4 / $6 / $8 / $20 | **Confirmed** (regular fare). | [RTC fares & passes](https://www.rtcsnv.com/ways-to-travel/fares-passes/) |
-| Route 203 Decatur → Las Vegas Blvd | **Corrected.** The timetable gives about 10–17 min by time of day (2 of 6 PDF pages read). The model's 14 min is a midpoint, not a published value. | [RTC Route 203 PDF](https://rtcws.rtcsnv.com/routePDF/203.pdf) |
+| Route 203 Decatur → Las Vegas Blvd | **Corrected.** The timetable gives about 8–17 min across sampled rows (weekday eastbound 10–17 from pages 1–2; Saturday westbound 8–9 from page 3; pages 4–6 not read). The model's 14 min is a midpoint, not a published value. | [RTC Route 203 PDF](https://rtcws.rtcsnv.com/routePDF/203.pdf) |
 | Venetian 60 m² Luxury King Suite, 15–22 Feb vs 8–15 Mar 2027 | **Contradicted.** Feb US$5,185.05; Mar €4,472.36 (EUR display); both incl. taxes and fees. The stored $2,407 / $3,757 are withdrawn (F-39). | [Booking.com Feb, USD](https://www.booking.com/hotel/us/the-venetian-resort-casino.de.html?aid=356980&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&sb_price_type=total&type=total) · [Booking.com Mar](https://www.booking.com/hotel/us/the-venetian-resort-casino.de.html?checkin=2027-03-08&checkout=2027-03-15&group_adults=2&no_rooms=1) |
 | Palms Place room (studio, king + sofa bed, bathroom) | **Not confirmed** on palms.com (room specs absent from the fetched text). Kept, flagged (F-41). | [palms.com/palms-place](https://www.palms.com/palms-place/) · [palms.com/stay](https://www.palms.com/stay) |
 | Per-night vs 7-night totals | **Inconsistent** on 17 of 42 rows, 16 properties (F-40). Shown as captured. | `data/hotels.json` (computed) |
@@ -306,7 +306,7 @@ Branch `arena/f527b427-vegas1`, forked from `e4fb98e` (main). Claim committed an
 
 - `data/hotels.json`: Venetian prices set to null; the captures moved to `prices_withdrawn_2026_11_26`. F-40 added on 16 properties; F-41 on Palms Place.
 - `data/price-windows.json`, `data/questions.json` (Q-06 → open), `data/suggestions.json` (S-01 → unproven): the "36% cheaper" headline removed.
-- `data/transit.json`, `data/travel_matrix.json`: "14 min" wording changed to "10–17 min; 14 midpoint". Model values unchanged.
+- `data/transit.json`, `data/travel_matrix.json`: "14 min" wording changed to "8–17 min across sampled rows; 14 midpoint". Model values unchanged.
 - `data/restaurants.json`: Michael Mina re-check note, F-43.
 - `data/review-flags.json` (new): F-39 to F-46 plus confirmed items C-11 to C-13, each with source links.
 - `scripts/gen_site.py`: `flagged.html` added to navigation and generated; sort and comparison code made safe for withdrawn values; headline cards and notes rewritten; anchors added to question cards.
@@ -327,7 +327,7 @@ Branch `arena/f527b427-vegas1`, forked from `e4fb98e` (main). Claim committed an
 
 **Not verified in this session (stay blank or flagged):** the 28 hotel rate rows other than the Venetian were not reproduced on their own engines (F-44); bed and bathroom for 29 of 32 hotels come from Booking.com rate blocks, not official pages; restaurant hours were not re-fetched beyond the Michael Mina check; activities were not re-fetched. A line-by-line check of every row was not possible in one session. This audit covered the headline claims and every stored-value conflict found by the consistency scan.
 
-**Merge / PR:** see the entry below this section once the PR is merged.
+**Merge / PR:** PR #23 (arena/f527b427-vegas1 → main) merged with `--merge` at 2026-11-26T22:05:26Z, merge commit `b6b486ba1d6094701d618f37c8adeb9b1e4c1f90`. Pages build for that commit: success (run 45902487167); Pages API status `built`. Live check: `flagged.html` serves the audit sections and R-01…R-18. Post-merge fixes and this record go in a follow-up PR (see the PR and merge record for arena-f527b427-vegas1 below).
 
 ## PR and merge record — arena-b54b3346-vegas1 (R01) — 2026-11-26
 
@@ -349,3 +349,13 @@ Branch `arena/f527b427-vegas1`, forked from `e4fb98e` (main). Claim committed an
 - Cache-busted live check: https://kanlerxz87-cyber.github.io/Vegas1/?ver=20261126 showed the revised mixed-source date claim; https://kanlerxz87-cyber.github.io/Vegas1/flagged.html showed the published F-29/F-30 register.
 - Local verification: `python3 scripts/build.py`, `python3 scripts/gen_site.py`, `python3 scripts/validate.py` — 13 pages, 0 failures, 0 warnings; `git diff --check` clean.
 - Rate-source caveat remains open by design; no universal cheapest-week or official-rate-only comparison is claimed. See F-29/F-30 and Q-06.
+
+## PR and merge record — arena-f527b427-vegas1 (T14) — 2026-11-26
+
+- **PR #23** https://github.com/kanlerxz87-cyber/Vegas1/pull/23 — merged with `--merge` at 2026-11-26T22:05:26Z, merge commit `b6b486ba1d6094701d618f37c8adeb9b1e4c1f90`. Flagged items did not block the merge.
+- **Pages:** build for `b6b486b` succeeded (run 45902487167); API status `built`. Live `flagged.html` checked by fetch: serves R-01…R-18 and the F-39…F-46 audit sections.
+- **Race with `main`:** `main` moved four times while PR #23 was open (PRs #24, #25, #26, #28 from other sessions). Each time it was integrated with `git merge origin/main`, not rebased. A `git pull --rebase` on a branch that already contained merged `main` history replayed other sessions' commits and stopped with a conflict. It was aborted (`git rebase --abort`); nothing was lost and no force-push was used.
+- **Overlap resolved:** T12 ID duplicated (other session's T12 merged first). Our row is T14. Our flag register is F-39…F-46 (main keeps F-29/F-30 for rate basis and rate refresh). Our confirmed items are C-11…C-13 (main uses C-01…C-10).
+- **Follow-up PR** (this record and these fixes): removed orphan `pages/flagged.html` (unlinked, 11 broken links; replaced by generated `flagged.html`). Corrected the Venetian room attribution: the US$5,185.05 row's room name was not seen in the chunks read, so it is now marked unverified. Widened the Route 203 range to 8–17 min across sampled rows (weekday eastbound 10–17 from PDF pages 1–2; Saturday westbound 8–9 from page 3); pages 4–6 still unread.
+- **Not verified in this session (left blank or flagged):** Route 203 pages 4–6; hotel `official_url` links (F-27/R-08); Instagram and TikTok handles (R-02); hotel rates beyond the Venetian and per-night reconciliation (F-40).
+

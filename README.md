@@ -56,7 +56,7 @@ No dependencies beyond the Python 3 standard library. `gen_site.py` writes the s
 The first transit model in this repository recorded **Chinatown / Spring Mountain Rd as reachable
 only by car or rideshare**. That was wrong. RTC **Route 203** runs the length of Spring Mountain
 Road and its [published timetable](https://rtcws.rtcsnv.com/routePDF/203.pdf) carries a timed stop
-at **Las Vegas Blvd**, giving Decatur to Las Vegas Blvd about **10 to 17 minutes**, depending on the time of day. The model uses 14, the midpoint (F-32).
+at **Las Vegas Blvd**, giving Decatur to Las Vegas Blvd about **8 to 17 minutes** across the sampled runs (weekday eastbound 10–17; Saturday westbound 8–9). The model uses 14, the midpoint (F-32).
 
 It matters because **seven of the 24 MICHELIN listings sit on that one road** — nearly a third of
 the guide. The north Strip therefore reaches Chinatown in about **34 minutes**, not never. This is
