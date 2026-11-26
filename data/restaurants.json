@@ -54,7 +54,7 @@
         "F-01",
         "F-22"
       ],
-      "notes": "Two independent creator videos in this dataset claim three Michelin stars — that is the pre-2010 status. The 2026 Guide lists Joël Robuchon at TWO stars, which the restaurant's own page also states. NOTE: the same page carries a dated banner (\"open 4:00–8:00 PM Thu 19 – Sat 21 November\") that applies to a 2026 date, not to 2027 — do not carry it forward. Also the 2026 MICHELIN Service Award went to GM Sean Christopher, so award rows and staff awards must not be confused.",
+      "notes": "Two independent creator videos in this dataset claim three Michelin stars — that is the pre-2010 status. The 2026 Guide lists Joël Robuchon at TWO stars, which the restaurant's own page also states. NOTE: the same page carries a dated banner (\"open 4:00–8:00 PM Thu 19 – Sat 21 November\") that applies to a 2026 date, not to 2027 — do not carry it forward. Also the 2026 MICHELIN Service Award went to GM Sean Christopher, so award rows and staff awards must not be confused. Reservations number 702.891.7925 printed on the official MGM Grand page (verified 2026-11-26).",
       "hours_source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html (\"Hours of operation\" block, retrieved 2026-11-25)"
     },
     {
@@ -353,9 +353,10 @@
       "verified": "partial",
       "flags": [
         "F-02",
-        "F-23"
+        "F-23",
+        "F-43"
       ],
-      "notes": "SERIOUS: the restaurant's own page shows \"Temporarily closed\" for all seven days, so the $590++ tasting-menu figure on this row is a price for a service that is not currently running. This row must not be presented as a bookable option without a re-check. Reopen date is not published. Do not assume it reopens before Feb 2027.",
+      "notes": "SERIOUS: the restaurant's own page shows \"Temporarily closed\" for all seven days, so the $590++ tasting-menu figure on this row is a price for a service that is not currently running. This row must not be presented as a bookable option without a re-check. Reopen date is not published. Do not assume it reopens before Feb 2027. Re-checked 2026-11-26: Bellagio's own dining index (bellagio.mgmresorts.com/en/restaurants.html?filter=property,Bellagio_Las_Vegas) lists Michael Mina as 'Temporarily Closed' with a $$$$ seafood label. No reopen date is published (F-23, F-43).",
       "hours_source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html (retrieved 2026-11-25)"
     },
     {

@@ -1,7 +1,7 @@
 # COORDINATION.md — Shared Task Board
 
 **Repo:** kanlerxz87-cyber/Vegas1
-**Last updated:** 2026-11-25
+**Last updated:** 2026-11-26
 **Purpose:** multi-session coordination so parallel agents never edit the same files.
 Read this file *before* starting any task. Claim a task by writing your session ID below,
 then commit and push that claim immediately.
@@ -10,18 +10,20 @@ then commit and push that claim immediately.
 
 | Session | Started | Scope now | Branch |
 |---------|---------|-----------|--------|
+| arena/71886f12-vegas1 | 2026-11-26 | T14 — completed activity social-link visibility and executive-summary cleanup after the merged T13 rate audit | `arena/71886f12-vegas1` |
+| arena/c419e2da-vegas1 | 2026-11-26 | T13 — post-merge hotel-rate claim audit; reconcile OTA/direct source conflict, refresh official booking engines, preserve PR #22 repo-review pages | `arena/c419e2da-vegas1` |
 | arena-edcfa7a0-vegas1 | 2026-11-25 | T02–T11 — research complete; writing `data/*.json`, building `docs/`, publishing | `arena/edcfa7a0-vegas1` |
-| arena-ca2c6c85-vegas1 | 2026-11-26 | Full line-by-line re-verification of canonical data against official sources, irregularity fixes, rebuild, PR to main + GitHub Pages deploy | `arena/ca2c6c85-vegas1` |
 | arena-0c9983d6-vegas1 | 2026-11-25 | Verification pass on transit: added RTC Route 203, corrected the Chinatown reachability claim | `arena/0c9983d6-vegas1` |
 | arena-126d963c-vegas1 | 2026-11-25 | Restaurant hours + closure status verification pass | `arena/126d963c-vegas1` |
 | session-planner-01 (arena/4d41b902-vegas1) | 2026-11-25 | Independent full build: 24 Michelin restaurants, 9 ranked hotels, 8 activities, pricing, verification, summary, suggestions in `assets/` + root pages; integrated into canonical `main` site | `arena/4d41b902-vegas1` |
 | session-48dbf0ae (arena/48dbf0ae-vegas1) | 2026-11-25 | Independent research + build (24 MICHELIN restaurants w/ cost-for-2, 9 dated Booking.com 7-night quotes, 9 activities, flags register, line-by-line VERIFICATION log); integrated as archived subsite `docs/session-48dbf0ae/` — live root site untouched | `arena/48dbf0ae-vegas1` |
+| arena-f527b427-vegas1 | 2026-11-26 | **Repo review + line-by-line audit + Flagged-for-Review page + integration.** Scope: correct the Venetian/“cheapest week” headline, Route 203 timing wording, Michael Mina closure source, per-night reconciliation flags; add a live `flagged.html`; regenerate site; PR to `main`. | `arena/f527b427-vegas1` |
 | arena-b54b3346-vegas1 | 2026-11-26 | Repo review + line-by-line verification spot-check; writes `notes/repo-review-2026-11-26.md` only (no change to live site or `data/`) | `arena/b54b3346-vegas1` |
+| arena-ca2c6c85-vegas1 | 2026-11-26 | Line-by-line re-verification sweep of canonical `data/` vs official sources (Michelin tiers, RTC/Monorail fares, Route 203 timetable, restaurant/hotel/activity pages); Guy Savoy price filled from official Caesars menu; Robuchon/Partage phones filled; Mob Museum hours corrected; final integration PR + Pages deploy to `main` | `arena/ca2c6c85-vegas1` |
 
-> **Status note:** T02–T08 were prematurely marked `done` on first write. As of this commit the research
-> is complete in-session but **no `data/` files exist yet**, so all tasks are `in progress` until the JSON
-> tables are written and verified. No other sessions are active, so this session owns every scope; the
-> integration rule in §8 is therefore satisfied by a single integrating session (this one).
+> **Status note:** Original T01–T11 integration is published from `main`. Follow-up T12 (repo review and
+> Flagged for Review/Repo Review pages) was merged in PR #22; T13 is the current branch's post-merge rate
+> consistency audit. Independent archives remain additive and have not been overwritten.
 
 ## Rules (summary)
 
@@ -45,21 +47,34 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 
 | ID | Task | Status | Owner (session ID) | File scope | Notes |
 |----|------|--------|--------------------|-----------|-------|
-| T01 | Repo inventory + founding constraints | in progress | arena-ca2c6c85-vegas1 | `COORDINATION.md`, `docs/` | Repo was empty (README only) at commit `9b8bcfa`. GitHub Pages already enabled from `main` root. Bash sandbox has no general internet; all verification is via `fetch_page` / `web_search`. |
-| T02 | Michelin 2026 Southwest selection — star/list status per Las Vegas restaurant | done | arena-ca2c6c85-vegas1 | `data/restaurants.json` | Verified against michelin.com press release and visitlasvegas.com: 4 starred (Robuchon 2★; é, Guy Savoy, L'Atelier 1★), 3 Bib (China Poblano, Esther's Kitchen, YEN Viet Kitchen), 17 Recommended, 0 three-star. |
-| T03 | Restaurant hours, days open, reservations, price per couple | done | arena-ca2c6c85-vegas1 | `data/restaurants.json` | Robuchon, Guy Savoy, é, Partage hours re-verified on official pages; Guy Savoy price cell filled from official menu; remaining blanks left blank + flagged (Q-04 open). |
-| T04 | Hotel shortlist, room-type fit (king/queen + private bathroom) | done | arena-ca2c6c85-vegas1 | `data/hotels.json` | Desert Rose (two baths, king+queen) and Venetian (all suites) confirmed on official pages; assigned-on-arrival bed risk remains flagged F-11. |
-| T05 | Verified 7-night pricing per hotel for dated windows | done | arena-ca2c6c85-vegas1 | `data/hotels.json`, `data/price-windows.json` | Booking.com captures 2026-11-25 with basis stated; 8–15 Mar 2027 cheapest for large resorts; caveats Q-09/S-09. |
-| T06 | Transit model (monorail, Deuce/bus, Vegas Loop) + ≤60-minute scoring | done | arena-ca2c6c85-vegas1 | `data/transit.json`, `data/hotels.json` | RTC/Monorail fares and Route 203 14-minute timing verified on official pages; all other minutes labeled estimates (Q-01 interpreted). |
-| T07 | Activities list with official + social links, hours, exceptions | done | arena-ca2c6c85-vegas1 | `data/activities.json` | Neon Museum, Mob Museum (hours corrected), High Roller, Fremont Street verified on official pages; Sphere flagged F-16. |
-| T08 | Open-questions register + suggestions backlog | done | arena-ca2c6c85-vegas1 | `data/questions.json`, `data/suggestions.json` | Q-04 answer updated (four venues with real prices; 17/24 phones); no guesses in tables. |
-| T09 | Static site build (mobile-first dashboard) | done | arena-ca2c6c85-vegas1 | `docs/**`, `scripts/**` | Rebuilt: 11 pages, 0 failures, 0 warnings; root and docs/ byte-identical. |
-| T10 | Verification pass + Flagged for Review page | done | arena-ca2c6c85-vegas1 | `docs/verification.html`, `FLAGS.md` | Verification log above; irregularities disclosed; blanks never inferred. |
-| T11 | Integration + GitHub Pages publish | in progress | arena-ca2c6c85-vegas1 | `docs/**`, Pages settings | PR from `arena/ca2c6c85-vegas1` to `main`, merge, confirm Pages deploy. |
+| T01 | Repo inventory + founding constraints | done | arena-edcfa7a0-vegas1 | `COORDINATION.md`, `docs/` | Repo was empty (README only) at commit `9b8bcfa`. GitHub Pages already enabled from `main` root. Bash sandbox has no general internet; all verification is via `fetch_page` / `web_search`. |
+| T02 | Michelin 2026 Southwest selection — star/list status per Las Vegas restaurant | done | arena-edcfa7a0-vegas1 | `data/restaurants.json` | Source: official Michelin press release + LVCVA (visitlasvegas.com). Re-confirmed 2026-11-26 by arena-ca2c6c85-vegas1 (4★/2★ Robuchon; 1★ é, Guy Savoy, L'Atelier; 3 Bib; 17 Recommended; 0 three-star). |
+| T03 | Restaurant hours, days open, reservations, price per couple | done | arena-edcfa7a0-vegas1 | `data/restaurants.json` | Gaps left blank + flagged. Re-confirmed 2026-11-26: Robuchon, Guy Savoy, é, Partage hours on official pages; Guy Savoy price cell filled from official menu (Q-04 updated). |
+| T04 | Hotel shortlist, room-type fit (king/queen + private bathroom) | done | arena-edcfa7a0-vegas1 | `data/hotels.json` | Official hotel room pages. Re-confirmed 2026-11-26: Desert Rose (two baths, king + queen) on Shell Vacations official page; Venetian all-suites on venetianlasvegas.com. |
+| T05 | Verified 7-night pricing per hotel for dated windows | done | arena-edcfa7a0-vegas1 | `data/hotels.json`, `data/price-windows.json` | Booking.com dated search results, captured 2026-11-25. Resort fees handled separately. Revised by T13: source-conflict warning disclosed, no universal cheapest date asserted. |
+| T06 | Transit model (monorail, Deuce/bus, Vegas Loop) + ≤60-minute scoring | done | arena-edcfa7a0-vegas1 | `data/transit.json`, `data/hotels.json` | Route 203 correction applied (F-21). Re-confirmed 2026-11-26: RTC/Monorail fares and Route 203 Decatur→Las Vegas Blvd 14-minute timing on official pages. |
+| T07 | Activities list with official + social links, hours, exceptions | done | arena-edcfa7a0-vegas1 | `data/activities.json` | Re-confirmed 2026-11-26: Neon Museum, Mob Museum (hours corrected), High Roller, Fremont Street on official pages; Sphere flagged F-16. T14 added visible social columns. |
+| T08 | Open-questions register + suggestions backlog | done | arena-edcfa7a0-vegas1 | `data/questions.json`, `data/suggestions.json` | Q-01/Q-02 substitutions disclosed; Q-04 updated 2026-11-26 (four venues with real prices, 17/24 phones). |
+| T09 | Static site build (mobile-first dashboard) | done | arena-edcfa7a0-vegas1 | `docs/**`, `scripts/**` | Rebuilt after merge: 13 pages, 0 failures, 0 warnings with merged generator. |
+| T10 | Verification pass + Flagged for Review page | done | arena-edcfa7a0-vegas1 | `docs/verification.html`, `FLAGS.md` | Verification log extended 2026-11-26 below; blanks never inferred; Flagged for Review page retained from PR #22. |
+| T13 | Post-merge hotel-rate claim audit; revise public date recommendation and disclose source/volatility limitations | done | arena/c419e2da-vegas1 | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `scripts/gen_site.py`, `data/{hotels,price-windows,questions,suggestions}.json`, generated root + `docs/` pages | Replaced market-wide March savings claim with a source-conflict warning; labeled OTA quote basis, recorded 25 Nov sample and 26 Nov direct-engine refresh (F-29/F-30), and retained PR #22 Flagged for Review/Repo Review pages. No universal cheapest date asserted. |
+| T14 | Activity social-link visibility and executive-summary cleanup after T13 | done | arena/71886f12-vegas1 | `COORDINATION.md`, `README.md`, `executive-summary.md`, `scripts/gen_site.py`, generated root/docs pages | Completed and merged in PR #25 on 2026-11-26; Pages deployment verified. Details and sources below. |
+| T11 | Integration + GitHub Pages publish | done | arena-edcfa7a0-vegas1 | `docs/**`, Pages settings | Single integrating session for this effort; no other session active. |
 | T1–T9 | Independent full build (restaurants, hotels, activities, pricing, verification, summary, suggestions) | done | session-planner-01 | `assets/**`, root `*.html` | Separate JS-driven build; integrated into canonical `main` site via merge (see handoff log). |
 | T10 | Integrate, re-verify, deploy GitHub Pages | done | session-planner-01 | repo-wide | Merged independent build into canonical `main` site; supplementary pages linked from nav. |
 | T1–T9 (independent) | Independent verified build + link-check pass | done | session-48dbf0ae | `docs/session-48dbf0ae/**`, `data/session-48dbf0ae-*.json` | Claimed on a fork-era task board that predates this one; no canonical file touched. See session record at end of file. |
+| T12 | Repo review (line-by-line spot verification of canonical data), root **Flagged for Review** + **Repo review** pages, integration + Pages redeploy | done | arena-939a824e-vegas1 (branch `arena/939a824e-vegas1`) | `COORDINATION.md`, `FLAGS.md`, `README.md`, `scripts/gen_site.py`, `data/review.json`, `data/questions.json`, `data/suggestions.json`, `executive-summary.md`, generated `docs/**` and root `*.html` | Done 2026-11-26. 10 line-by-line checks (C-01…C-10), 18 irregularities (R-01…R-18) recorded in `data/review.json` and published on the Flagged for Review page. Hotel prices, social links and hotel official URLs were NOT re-checked (see limits). |
 | R01 | Repo review: live-site spot-check, link audit, irregularity register | done | arena-b54b3346-vegas1 | `notes/repo-review-2026-11-26.md`, `COORDINATION.md` | Done 2026-11-26. Live site, `data/`, `docs/`, root pages NOT edited. Irregularities F-01–F-07 flagged for owner review. Sources: michelin.com 2026 Southwest press release; GitHub Pages API; build/validate logs. RTC fares fetch failed (F-04). |
+| T14 | Repo review, line-by-line audit of headline claims, Flagged-for-Review page, integration + PR | done | arena-f527b427-vegas1 | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `data/hotels.json`, `data/price-windows.json`, `data/questions.json`, `data/suggestions.json`, `data/transit.json`, `data/travel_matrix.json`, `data/restaurants.json`, `data/review-flags.json` (new), `scripts/gen_site.py`, `docs/**`, root `*.html` | Claimed 2026-11-26 under the ID T12 in commit `3fc6739`; renamed T14 at integration because T12 was already used by arena-939a824e-vegas1 (merged PR #21, #22); T13 is used by arena-c419e2da-vegas1. Overlapping files were integrated by merge, not edited in parallel. Other sessions: please log requests here rather than editing these files. |
+
+## T14 verification / integration record — 2026-11-26
+
+- **Upstream overlap and resolution:** PR #24 (arena/c419e2da, T13) merged while this branch was in progress and updated the same hotel-pricing/summary generator scope. Rebased onto its latest `main`; preserved its `data/hotels.json`, `data/price-windows.json`, `data/questions.json`, `data/suggestions.json`, F-29/F-30, and the PR #22 Flagged for Review/Repo Review pages. T14 only added the missing visible social columns for activities and refreshed the executive summary/README counts and warnings; no T13 rate findings were replaced.
+- **Activity rendering:** the five activity rows now display official venue links, days/hours, exceptions, couple-price basis, and YouTube/Instagram/TikTok columns. Only links already in `data/activities.json` render; dashes explicitly mean no profile/video was verified in the dataset.
+- **Executive summary:** now resolves the 3-night preferred dates vs 7-night pricing mismatch, distinguishes dated OTA and direct-engine sources, carries forward F-29/F-30 occupancy/rate volatility, and links the Open Questions, Suggestions, Flagged for Review and Repo review pages. README inventory counts reflect 13 pages, five activity rows, 13 questions and 30 F-entries.
+- **Build / QA:** `python3 -m json.tool data/suggestions.json`, `python3 -m py_compile scripts/gen_site.py`, `python3 scripts/build.py`, `python3 scripts/gen_site.py`, `python3 scripts/validate.py`, and `git diff --check` passed. Validator: 13 top-level pages, 0 failures, 0 warnings, 361 external links. Root and `docs/` copies are generated from the same source; the Flagged for Review and Repo review pages remain in both.
+- **Remaining limitation:** hotel rates in the canonical 32-property table remain dated Booking.com snapshots rather than official property quotes; direct official rate evidence is partial and volatile (F-29/F-30). No universal cheapest week or current 7-night price is asserted.
+- **PR and deployment:** [PR #25](https://github.com/kanlerxz87-cyber/Vegas1/pull/25) merged on 2026-11-26 as merge commit `0e9c5299efb91ea9e7bd3383b6305bdc297ebce9`. GitHub Pages build `1406755620` reached **built** with no error; Pages API reports `built` at `https://kanlerxz87-cyber.github.io/Vegas1/`. Fetched the live overview and `activities.html` after deploy; both show the updated source disclosures and five-row social-link table.
 
 ## Correction record — RTC Route 203 — 2026-11-25
 
@@ -87,19 +102,6 @@ JS-driven site (`assets/data.js`, `assets/app.js`, root pages `pricing.html`, `v
 
 | Date | Task | Finding | Source | Notes |
 |------|------|---------|--------|-------|
-| 2026-11-26 | T02 | Michelin 2026 Southwest Las Vegas: 4 starred (Joël Robuchon 2★; é by José Andrés, Guy Savoy, L'Atelier de Joël Robuchon 1★), 3 Bib Gourmand (China Poblano, Esther's Kitchen, YEN Viet Kitchen), 17 Recommended, 0 three-star; all 24 official URLs in data/restaurants.json match LVCVA's listing | https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s · https://www.visitlasvegas.com/michelin-guide-restaurants/ | Matches across two independent official sources. Press-release page is dated 31 Aug 2026; data meta says 26 Aug 2026 — non-material date discrepancy, noted only. |
-| 2026-11-26 | T03 | Joël Robuchon hours Tue–Sat 5:00–9:30 PM, closed Sun/Mon, no under-6s, business formal + phone 702.891.7925 verified on MGM page. Guy Savoy menu verified on official Caesars main-menu (effective 11.5.2026): à la carte $100–$290/dish → $200–$580 for two; Krug Chef's Table $1,500/pp → $3,000 for two; price cell filled with arithmetic shown, not estimated. é hours Tue–Sat 5:30–8:30 PM + phone 877.893.2003 verified on Cosmopolitan/MGM page. Partage hours Tue–Sat 5–9 PM + phone 702-582-5852 verified on partage.vegas/contact. Wing Lei hours Thu/Sun/Mon 5:30–9:30 PM, Fri–Sat to 10 PM corroborated via official Wynn page content | mgmgrand.mgmresorts.com · caesars.com · cosmopolitanlasvegas.mgmresorts.com · partage.vegas | Q-04 answer updated: four venues now print real prices; phone count 17/24. |
-| 2026-11-26 | T04 | Desert Rose Resort address 5051 Duke Ellington Way + two-bathroom suites with king bed + queen bed confirmed on Shell Vacations Hospitality operator page. Venetian "all suites" confirmed on venetianlasvegas.com. Caesars Palace official page resolves | https://www.shellvacationsclubrentals.com/resorts/nevada/las-vegas/desert-rose-resort · https://www.venetianlasvegas.com/ · https://www.caesars.com/caesars-palace | Wynn property page is JS-blocked in this sandbox; Wing Lei hours corroborated via search snippet of the official page instead. |
-| 2026-11-26 | T06 | RTC Strip & All Access fares $4 single / $6 2-hour / $8 24-hour / $20 3-day; 7-day pass $20 — all verified on rtcsnv.com (no $35 7-day Strip pass exists). Monorail fares $5.75 e-ticket single … $59.95 7-day + 7 stations (MGM Grand … SAHARA) verified on lvmonorail.com. Route 203 Decatur→Las Vegas Blvd = 14 minutes observed in official timetable (e.g. 8:24→8:38) | https://www.rtcsnv.com/ways-to-travel/fares-passes/ · https://www.lvmonorail.com/ticket-information/ · https://www.lvmonorail.com/stations/ · https://rtcws.rtcsnv.com/routePDF/203.pdf | Transit model's only published timepoint confirmed; all other minute figures remain labeled estimates. |
-| 2026-11-26 | T07 | Neon Museum: 2027 Admission from $21, daily 3–11 PM from 1 Jan 2027, IG @theneonmuseumlasvegas + TikTok @neonmuseumlasvegas from site footer. Mob Museum hours corrected: museum Sun–Wed & Fri–Sat 9–9, Thu 9–4; Underground 11–11 (to midnight Fri–Sat). High Roller daytime $23.50 / anytime $34.75 (+ tax & fees), daily 12 PM–5 PM / anytime from 6 PM, 30-min rotation. Fremont Street: free, three stages nightly | neonmuseum.org · themobmuseum.org · https://www.caesars.com/linq/things-to-do/attractions/high-roller · fremontstreetexperience.com | activities.json Mob Museum hours row corrected; Sphere remains flagged F-16 (no single price, 2027 calendar unpublished). |
-| 2026-11-26 | T09/T10 | Rebuilt after data edits: 11 pages, 0 failures, 0 warnings, 289 external links; repo root and docs/ are byte-identical; validate.py clean | scripts/build.py · scripts/gen_site.py · scripts/validate.py | Q-04, Q-07 phone counts corrected to 17/24. |
-
-## Irregularities noted this session (2026-11-26)
-
-- michelin.com press-release page carries date **31 Aug 2026** while data meta and earlier sessions record the reveal as **26 Aug 2026**. Award content (4 starred / 3 Bib / 17 Recommended) matches both official sources; the date difference is non-material and is disclosed here rather than "corrected" into a single claim.
-- Wynn Las Vegas property pages (wynnlasvegas.com) do not render in this sandbox's fetcher (JS shell), so Wing Lei hours rest on a search-result rendering of the official page plus third-party corroboration; row stays `verified: partial`.
-- Booking.com 2027 captures remain promotional "Black Friday" rates excluding resort fee/tax (Q-09, S-09); they are evidence for the measured windows only, not a guarantee of 2027 pricing. Users must re-check property booking engines before booking.
-|------|------|---------|--------|-------|
 | 2026-11-25 | T02 | 2026 MICHELIN Guide Southwest: LV has 4 starred (Joël Robuchon 2★; L'Atelier, Guy Savoy, é by José Andrés 1★), 3 Bib Gourmand, 17 Recommended | https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s · https://www.visitlasvegas.com/michelin-guide-restaurants/ | Matched across two independent official sources |
 | 2026-11-25 | T01 | GitHub Pages already enabled on `main` (root), build status `built` | `gh api repos/kanlerxz87-cyber/Vegas1/pages` | Confirmed |
 | 2026-11-25 | T05 | Four whole weeks inside 15 Feb–23 Mar 2027 priced for 2027 (Venetian, Palazzo, Cosmopolitan, Nobu, ARIA, Bellagio, Waldorf) | Booking.com dated searches, URLs in `data/hotels.json` | 8–15 Mar cheapest for large resorts (−33% to −38% vs the Presidents' Day week); Nobu is the one property that moves the other way |
@@ -107,9 +109,26 @@ JS-driven site (`assets/data.js`, `assets/app.js`, root pages `pricing.html`, `v
 | 2026-11-25 | T02/T03 | All 24 award labels re-checked against three independent sources; `meta.counts` now computed from the array, not typed | michelin.com press release · visitlasvegas.com · lasvegasweekly.com | 4 starred (1×2★, 3×1★) · 3 Bib · 17 Recommended · 0 three-star |
 | 2026-11-25 | T09/T10 | 8 pages rendered, 0 broken internal links, 0 structural warnings, 280 external source links, all HTML well-formed | `scripts/validate.py` | Pass |
 | 2026-11-25 | T11 | F1 2027 Las Vegas GP confirmed 18–20 Nov 2027 — **outside** the 15 Feb–23 Mar window, so it is not a price driver here | f1experiences.com · dord.racing | Confirmed and excluded |
+| 2026-11-26 | T12 | MICHELIN 2026 SW tiers confirmed: 1×2★, 3×1★, 3 Bib, 17 Recommended | https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s · https://www.visitlasvegas.com/michelin-guide-restaurants/ | Confirmed (C-01) |
+| 2026-11-26 | T12 | Joël Robuchon hours Tue–Sat 5:00–9:30 PM, business formal; reservations 702.891.7925 (was blank — filled) | https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html | Confirmed (C-03, C-04) |
+| 2026-11-26 | T12 | é by José Andrés Tue–Sat 5:30–8:30 PM; archived subsite's Tue–Sun is wrong | https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html | Confirmed (C-05); conflict logged R-06 |
+| 2026-11-26 | T12 | Wing Lei Thu, Sun–Mon 5:30–9:30 PM; Fri–Sat to 10 PM; Tue–Wed closed; Forbes Five-Star; no Michelin star claim | https://www.wynnlasvegas.com/dining/fine-dining/wing-lei | Confirmed (C-06) |
+| 2026-11-26 | T12 | RTC Strip/Downtown fares: 2-hour $6, 24-hour $8, 3-day $20 | https://rtcws.rtcsnv.com/mobile/geoFares.html | Confirmed (C-07) |
+| 2026-11-26 | T12 | Michelin release page dated 31 Aug 2026; data says 26 Aug 2026 | https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s | Conflict (C-02, R-05) |
+| 2026-11-26 | T13 | Removed any market-wide cheapest-week claim; official and OTA data have different scopes, prices changed in a one-day refresh | https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1 · https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0 · https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2027-02-15&children[]=0&departure_date=2027-02-22&view=calendar · https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0 | `fetch_page` refreshed official booking engines; Caesars and Wynn displayed nightly rates; Venetian displayed a tax-included total with a 4+ guest label. Recorded as F-29/F-30; exact rate conditions require confirmation. |
+| 2026-11-26 | T13 | PR #24 merged and GitHub Pages deployed successfully; cache-busted re-fetch confirmed updated homepage and Flagged for Review page | https://github.com/kanlerxz87-cyber/Vegas1/pull/24 · https://github.com/kanlerxz87-cyber/Vegas1/actions/runs/45901945140 · https://kanlerxz87-cyber.github.io/Vegas1/?ver=20261126 · https://kanlerxz87-cyber.github.io/Vegas1/flagged.html | Merge commit `768f5aacd704ee3ba06edc6a5e0254a8462ea48e`; Actions build/deploy succeeded; Pages API `built`. |
+| 2026-11-26 | T02/T03 | Re-verified Michelin tiers and restaurant rows vs official sources: Robuchon hours Tue–Sat 5:00–9:30 PM + phone 702.891.7925; Guy Savoy official menu effective 11.5.2026 ($100–$290 dishes → $200–$580 for two; Krug Chef's Table $1,500/pp → $3,000 for two — price cell filled, arithmetic shown, not estimated); é hours Tue–Sat 5:30–8:30 PM + phone 877.893.2003; Partage hours Tue–Sat 5–9 PM + phone 702-582-5852 | https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html · https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu · https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html · https://partage.vegas/contact | Confirmed; Q-04 answer updated to four priced venues; phone count 17/24 |
+| 2026-11-26 | T04 | Re-verified bed/bath claims on official pages: Desert Rose two-bathroom suites with king + queen beds (Shell Vacations Hospitality operator page); Venetian all-suites | https://www.shellvacationsclubrentals.com/resorts/nevada/las-vegas/desert-rose-resort · https://www.venetianlasvegas.com/ | Confirmed |
+| 2026-11-26 | T06 | Re-verified RTC Strip fares ($4/$6/$8/$20; 7-day $20), Monorail fares/stations, Route 203 Decatur→Las Vegas Blvd 14 minutes (timetable row 8:24→8:38) | https://www.rtcsnv.com/ways-to-travel/fares-passes/ · https://www.lvmonorail.com/ticket-information/ · https://rtcws.rtcsnv.com/routePDF/203.pdf | Confirmed |
+| 2026-11-26 | T07 | Re-verified activities: Neon Museum 2027 Admission from $21 daily 3–11 PM from 1 Jan 2027 + IG/TikTok from site footer; Mob Museum hours corrected (Thu 9–4, otherwise 9–9 museum / 11–11 Underground); High Roller $23.50 daytime / $34.75 anytime + fees; Fremont Street free, three stages nightly | neonmuseum.org · themobmuseum.org · caesars.com/linq/things-to-do/attractions/high-roller · fremontstreetexperience.com | Confirmed; activities.json Mob Museum row corrected |
 
 ## Irregularities / handoff notes
 
+- **Hotel price conflict (F-29/F-30):** canonical 32-hotel rate rows are Booking.com snapshots, not official hotel-engine quotes. The 25 Nov direct-engine sample and one-day-later fetch do not provide a comparable market-wide answer; the latter also surfaced a Venetian 4+ guest label mismatch. F-29/F-30 are published on the Flagged for Review page. Do not recommend a universal cheapest week.
+- **Wynn Las Vegas page is JS-blocked in this sandbox** — Wing Lei hours rest on a search-result rendering of the official page plus third-party corroboration; row stays `verified: partial`. Retry the Wynn property page if a later sandbox supports JS rendering.
+- **Date discrepancy:** Michelin press-release page is dated 31 Aug 2026 while data meta records 26 Aug 2026. Award content matches both official sources; disclosed, non-material.
+- **Booking.com 2027 captures remain promotional "Black Friday" rates excluding resort fee/tax** (Q-09, S-09); evidence for measured windows only — users must re-check official booking engines before booking.
+- **Rebase conflict (2026-11-26):** PR #22 from `arena/939a824e-vegas1` landed while T13 was being pushed. Rebased onto `origin/main`, preserved its new `data/review.json`, Flagged for Review and Repo Review page generation, and regenerated all 13 pages from the merged generator. No work from PR #22 was discarded.
 - **No Michelin Guide existed for Las Vegas 2010–2025.** The 2026 Southwest guide is the
   first since 2009. Any hotel ranking based on Michelin proximity must cite the 2026 guide,
   not older lists (many older "Michelin" claims online are stale).
@@ -190,6 +209,24 @@ drift); Pages build `built`; confirmed on the live URL.
 when the rendered text was read and compared back to the data. A green validator proves the generator ran,
 not that the page is true.
 
+## Session record — arena-939a824e-vegas1 (T12) — 2026-11-26
+
+Branch `arena/939a824e-vegas1` (base `e4fb98e`). Scope: repo review, Flagged for Review page, Repo review page, integration with the canonical site.
+
+- **Done:** 10 line-by-line checks against official pages (C-01…C-10; 8 confirmed or conflicting, 2 not checked). 18 irregularities recorded (R-01…R-18). R-15…R-18 cover the other session's review (notes/repo-review-2026-11-26.md, F-01…F-07) in `data/review.json`, with severity, action and source link. Published as `flagged.html` and `repo-review.html` on the live root site and `docs/`.
+- **Headline corrected:** the 'February is the expensive week' claim (index, README, executive summary) now says the cheapest week depends on the property (R-15).
+- **Data changes (kept minimal):** one official gap closed (Robuchon reservation phone, from MGM page). Two overstated labels corrected in text: `data/suggestions.json` (hours count) and `data/questions.json` ("working" video links, not checked). `executive-summary.md` corrected the same way. `README.md` flag count corrected (22 → 28). The Sources page flag count is now derived from `FLAGS.md`.
+- **Not changed (by design):** hotel prices, YouTube/TikTok/Instagram links, hotel official URLs, and the archived `docs/session-*` subsites. These are flagged, not altered.
+- **Irregularities to review:** see the Flagged for Review page (R-01…R-14). Highest priority: restaurant and hotel `verified` labels overstate what was confirmed (R-01, R-03); no Instagram/TikTok links recorded (R-02); the literal ≤60-minute metric cannot rank hotels (R-04); two sessions give opposite cheapest weeks (R-13).
+- **PR and merge:** PR #21 (`arena/939a824e-vegas1` → `main`) https://github.com/kanlerxz87-cyber/Vegas1/pull/21 — merged with `--merge` at 2026-11-26T21:55:54Z, merge commit `f0ab1b6de19f0e62f0b8eae0915268ded05dc24c`. Pages deploy on `main` succeeded (run 45901447883); the live pages `flagged.html` and `repo-review.html` were fetched and render. Flagged irregularities did not block the merge.
+- **Follow-up:** a fix to two cross-references (R-03 and R-13 pointed to Q-03; the booking-engine question is Q-06) is in a second small PR, recorded in the PR record below.
+
+## PR and merge record — arena-939a824e-vegas1 (T12) — 2026-11-26
+
+- PR #21: https://github.com/kanlerxz87-cyber/Vegas1/pull/21 — merged `--merge` 2026-11-26T21:55:54Z, merge commit `f0ab1b6`. Pages on `main` built and deployed (run 45901447883, success), Pages API `built`.
+- Flagged irregularities R-01…R-18 published on https://kanlerxz87-cyber.github.io/Vegas1/flagged.html and did not block the merge.
+- Follow-up cross-reference fix (R-03, R-13: Q-03 → Q-06) in a second PR; see its record below when merged.
+
 ## Session record — session-af795000 (arena/af795000-vegas1) — 2026-11-25
 
 Independent full-session build of the same brief (started from base 9b8bcfa before the integrations above). Per rule 5, this merge kept the integration sessions' canonical site and data verbatim; my complete site + datasets are preserved as a self-contained subsite and dated files:
@@ -257,8 +294,76 @@ edited or discarded. Integrated additively per the `session-af795000` pattern:
 **No work discarded in this merge:** canonical root site, `docs/` canonical pages, `data/*.json`,
 `scripts/`, `FLAGS.md`, `archive/` all kept from `main`.
 
+## Session record — T14 (claimed as T12 in 3fc6739) — arena-f527b427-vegas1 — 2026-11-26
+
+Branch `arena/f527b427-vegas1`, forked from `e4fb98e` (main). Claim committed and pushed first (`3fc6739`).
+
+**What was checked against official or primary sources (fetched 26 Nov 2026):**
+
+| Item | Result | Source |
+|---|---|---|
+| All 24 Las Vegas MICHELIN names and tiers (4 starred, 3 Bib, 17 Recommended) | **Confirmed.** Names and tiers match the release. The 17 Recommended names match the release's Las Vegas list. | [MICHELIN press release, 31 Aug 2026](https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s) · [Visit Las Vegas](https://www.visitlasvegas.com/michelin-guide-restaurants/) |
+| Michael Mina (Bellagio) closed | **Confirmed** on Bellagio's dining index ("Temporarily Closed"). Reopen date not published. | [Bellagio dining index](https://bellagio.mgmresorts.com/en/restaurants.html?filter=property,Bellagio_Las_Vegas) |
+| RTC Strip and All Access fares: $4 / $6 / $8 / $20 | **Confirmed** (regular fare). | [RTC fares & passes](https://www.rtcsnv.com/ways-to-travel/fares-passes/) |
+| Route 203 Decatur → Las Vegas Blvd | **Corrected.** The timetable gives about 8–17 min across sampled rows (weekday eastbound 10–17 from pages 1–2; Saturday westbound 8–9 from page 3; pages 4–6 not read). The model's 14 min is a midpoint, not a published value. | [RTC Route 203 PDF](https://rtcws.rtcsnv.com/routePDF/203.pdf) |
+| Venetian 60 m² Luxury King Suite, 15–22 Feb vs 8–15 Mar 2027 | **Contradicted.** Feb US$5,185.05; Mar €4,472.36 (EUR display); both incl. taxes and fees. The stored $2,407 / $3,757 are withdrawn (F-39). | [Booking.com Feb, USD](https://www.booking.com/hotel/us/the-venetian-resort-casino.de.html?aid=356980&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&sb_price_type=total&type=total) · [Booking.com Mar](https://www.booking.com/hotel/us/the-venetian-resort-casino.de.html?checkin=2027-03-08&checkout=2027-03-15&group_adults=2&no_rooms=1) |
+| Palms Place room (studio, king + sofa bed, bathroom) | **Not confirmed** on palms.com (room specs absent from the fetched text). Kept, flagged (F-41). | [palms.com/palms-place](https://www.palms.com/palms-place/) · [palms.com/stay](https://www.palms.com/stay) |
+| Per-night vs 7-night totals | **Inconsistent** on 17 of 42 rows, 16 properties (F-40). Shown as captured. | `data/hotels.json` (computed) |
+
+**Changes made (all reversible from git):**
+
+- `data/hotels.json`: Venetian prices set to null; the captures moved to `prices_withdrawn_2026_11_26`. F-40 added on 16 properties; F-41 on Palms Place.
+- `data/price-windows.json`, `data/questions.json` (Q-06 → open), `data/suggestions.json` (S-01 → unproven): the "36% cheaper" headline removed.
+- `data/transit.json`, `data/travel_matrix.json`: "14 min" wording changed to "8–17 min across sampled rows; 14 midpoint". Model values unchanged.
+- `data/restaurants.json`: Michael Mina re-check note, F-43.
+- `data/review-flags.json` (new): F-39 to F-46 plus confirmed items C-11 to C-13, each with source links.
+- `scripts/gen_site.py`: `flagged.html` added to navigation and generated; sort and comparison code made safe for withdrawn values; headline cards and notes rewritten; anchors added to question cards.
+- `executive-summary.md`, `README.md`, `FLAGS.md`: headline and counts corrected (12 pages, 312 links, 13 questions with 7 open, 19 restaurants with hours, 21 of 24 without a price for two).
+- Generated: `docs/*` and root `*.html` (both regenerated by `scripts/gen_site.py`).
+
+**Validation:** `scripts/build.py` passes; `scripts/gen_site.py` writes 12 pages; `scripts/validate.py` → 12 pages, 0 failures, 0 warnings, 312 external links, 0 broken anchors.
+
+**Irregularities for review (F-46, logged, not all fixed):**
+
+1. Task IDs on this board are reused (T10 appears twice; T1–T9 appears in two rows). Left as-is, since other sessions' references point at them.
+2. Three Michelin datasets and three hotel datasets overlap. They agree on the 24 award names, but not on every hotel rate. A human should choose the canonical copy.
+3. `docs/session-af795000/` and `docs/session-48dbf0ae/` still carry their own price claims, including that February is the cheapest week. Not updated; archived.
+4. `pages/flagged.html` was an orphan (not linked, generated by no script). The canonical `flagged.html` replaces it in the nav. The orphan is left in place.
+5. `data/flags.json` uses F07-style IDs; FLAGS.md uses F-07.
+6. A Pages-related workflow run on `arena/48dbf0ae-vegas1` (run 45643448267) failed. Not on main; main's Pages builds succeed.
+7. Instagram and TikTok: **zero** handles recorded for the 24 restaurants (F-19). The YouTube requirement is met for 24 of 24 (69 links). This is the largest gap against the brief.
+
+**Not verified in this session (stay blank or flagged):** the 28 hotel rate rows other than the Venetian were not reproduced on their own engines (F-44); bed and bathroom for 29 of 32 hotels come from Booking.com rate blocks, not official pages; restaurant hours were not re-fetched beyond the Michael Mina check; activities were not re-fetched. A line-by-line check of every row was not possible in one session. This audit covered the headline claims and every stored-value conflict found by the consistency scan.
+
+**Merge / PR:** PR #23 (arena/f527b427-vegas1 → main) merged with `--merge` at 2026-11-26T22:05:26Z, merge commit `b6b486ba1d6094701d618f37c8adeb9b1e4c1f90`. Pages build for that commit: success (run 45902487167); Pages API status `built`. Live check: `flagged.html` serves the audit sections and R-01…R-18. Post-merge fixes and this record go in a follow-up PR (see the PR and merge record for arena-f527b427-vegas1 below).
+
 ## PR and merge record — arena-b54b3346-vegas1 (R01) — 2026-11-26
 
 - PR: https://github.com/kanlerxz87-cyber/Vegas1/pull/19 — merged with `--merge` at 2026-11-26T21:53:11Z, merge commit `c466c8b4fa88c58d95eaea23913fcdf1f05b4188`.
 - Pages after merge: `pages build and deployment` on `main` completed with success; Pages API status `built`.
 - Flagged irregularities F-01–F-07 did not block the merge. They are listed in `notes/repo-review-2026-11-26.md` and in this file.
+
+## Coordination event — 2026-11-26 — arena-f527b427-vegas1
+
+- **Ran into:** `main` moved while this session's PR was open. PRs #21 and #22 (arena-939a824e-vegas1, T12) had merged a Flagged page, Repo review page, and cross-reference fixes over the same files (`scripts/gen_site.py`, README, executive summary, generated `docs/**`).
+- **Resolution:** integrated by `git merge origin/main` on `arena/f527b427-vegas1`, not discarded. Their R-01…R-18 register and Repo review page are kept. Our F-39…F-46 audit and `data/review-flags.json` are rendered as sections on the same `flagged.html`. Our headline wording (withdrawn Venetian claim) stays. Their property-specific caveat (Caesars Palace and Flamingo, February cheaper on their own engines) is kept in the README and summary.
+- **Duplicate ID:** our T12 is renamed T14 on the board (T13 is taken by arena-c419e2da-vegas1). The R-items and T12 rows from the other session are unchanged.
+- **Nothing else from the other session was overwritten.**
+
+## PR and merge record — arena/c419e2da-vegas1 (T13) — 2026-11-26
+
+- PR #24: https://github.com/kanlerxz87-cyber/Vegas1/pull/24 — merged with `--merge` at 2026-11-26T22:00:35Z; merge commit `768f5aacd704ee3ba06edc6a5e0254a8462ea48e`.
+- Pages deployment run: https://github.com/kanlerxz87-cyber/Vegas1/actions/runs/45901945140 — success; Pages API status `built`.
+- Cache-busted live check: https://kanlerxz87-cyber.github.io/Vegas1/?ver=20261126 showed the revised mixed-source date claim; https://kanlerxz87-cyber.github.io/Vegas1/flagged.html showed the published F-29/F-30 register.
+- Local verification: `python3 scripts/build.py`, `python3 scripts/gen_site.py`, `python3 scripts/validate.py` — 13 pages, 0 failures, 0 warnings; `git diff --check` clean.
+- Rate-source caveat remains open by design; no universal cheapest-week or official-rate-only comparison is claimed. See F-29/F-30 and Q-06.
+
+## PR and merge record — arena-f527b427-vegas1 (T14) — 2026-11-26
+
+- **PR #23** https://github.com/kanlerxz87-cyber/Vegas1/pull/23 — merged with `--merge` at 2026-11-26T22:05:26Z, merge commit `b6b486ba1d6094701d618f37c8adeb9b1e4c1f90`. Flagged items did not block the merge.
+- **Pages:** build for `b6b486b` succeeded (run 45902487167); API status `built`. Live `flagged.html` checked by fetch: serves R-01…R-18 and the F-39…F-46 audit sections.
+- **Race with `main`:** `main` moved four times while PR #23 was open (PRs #24, #25, #26, #28 from other sessions). Each time it was integrated with `git merge origin/main`, not rebased. A `git pull --rebase` on a branch that already contained merged `main` history replayed other sessions' commits and stopped with a conflict. It was aborted (`git rebase --abort`); nothing was lost and no force-push was used.
+- **Overlap resolved:** T12 ID duplicated (other session's T12 merged first). Our row is T14. Our flag register is F-39…F-46 (main keeps F-29/F-30 for rate basis and rate refresh). Our confirmed items are C-11…C-13 (main uses C-01…C-10).
+- **Follow-up PR** (this record and these fixes): removed orphan `pages/flagged.html` (unlinked, 11 broken links; replaced by generated `flagged.html`). Corrected the Venetian room attribution: the US$5,185.05 row's room name was not seen in the chunks read, so it is now marked unverified. Widened the Route 203 range to 8–17 min across sampled rows (weekday eastbound 10–17 from PDF pages 1–2; Saturday westbound 8–9 from page 3); pages 4–6 still unread.
+- **Not verified in this session (left blank or flagged):** Route 203 pages 4–6; hotel `official_url` links (F-27/R-08); Instagram and TikTok handles (R-02); hotel rates beyond the Venetian and per-night reconciliation (F-40).
+

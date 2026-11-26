@@ -8,20 +8,23 @@ A sourced trip plan for **two adults**, seven nights, between **15 February and 
 
 | Path | What it is |
 |------|-----------|
-| `docs/` | The site source (8 pages, plain HTML + one stylesheet, no framework, no CDN) |
+| `docs/` | The site source (13 top-level pages, plain HTML + one stylesheet, no framework, no CDN) |
 | `index.html`, `*.html`, `style.css` (repo root) | The **same generated site**, written to the root as well. GitHub Pages on this repo is pinned to `main:/` and the API refuses to repoint it to `/docs`, so the root copy is what visitors actually get. Both are produced by `scripts/gen_site.py` — never edit either by hand. |
 | `data/restaurants.json` | 24 MICHELIN listings with award tier, hours, exceptions, prices, official + YouTube links |
 | `data/hotels.json` | 32 hotels with dated 7-night totals, bed/bathroom fit, Michelin proximity counts |
-| `data/price-windows.json` | The week-by-week price comparison that answers "cheapest time to book" |
+| `data/price-windows.json` | Dated Booking.com comparison; read with official-engine snapshots and F-29/F-30 because no universal cheapest week is established |
 | `data/transit.json` | Monorail / RTC bus / Vegas Loop fares and the zone-to-restaurant minute matrix |
-| `data/activities.json` | Four verified venues with official hours and prices for two |
-| `data/questions.json` | 11-question register: answered, interpreted, still open — each with how to close it |
+| `data/activities.json` | Five activity entries with official details/social links when verified; blank social links remain unverified |
+| `data/questions.json` | 13-question register: answered, interpreted, still open — each with how to close it |
 | `data/suggestions.json` | 13 decision improvements with honest trade-offs |
 | `scripts/build.py` | Recomputes the Michelin proximity counts from the transit matrix; runs integrity checks |
 | `scripts/gen_site.py` | Renders `docs/` from the JSON. All counts derived, none typed by hand |
 | `scripts/validate.py` | Link and structure checks for the built site |
-| `FLAGS.md` | The 22 things that did not verify cleanly |
+| `FLAGS.md` | 30 flagged items (F-01 to F-30), including hotel rate basis/recency limitations |
+| `data/review-flags.json` | The 26 Nov 2026 audit register (F-39 to F-46) and confirmed items C-11 to C-13, each with source links. Rendered on `flagged.html` |
 | `executive-summary.md` | The one-page version |
+| `data/review.json` | Repo review: line-by-line checks, limits, and irregularities (2026-11-26) |
+| `docs/flagged.html`, `docs/repo-review.html` | **Flagged for Review** and **Repo review** pages (generated) |
 | `COORDINATION.md` | Multi-session task board, merge record and verification log |
 | `archive/` | The earlier session's build, preserved intact rather than overwritten |
 
@@ -38,8 +41,10 @@ No dependencies beyond the Python 3 standard library. `gen_site.py` writes the s
 
 ## The three findings
 
-1. **8–15 March 2027 is the cheap week.** The same Venetian suite is $2,407 instead of $3,757 — about
-   a third less — because the 15 February week contains Presidents' Day.
+1. **No market-wide cheapest week is established.** Booking.com snapshots show a lower 8–15 March quote for
+   some rooms, while an official-engine sample checked 2026-11-25 favored the preferred February dates at some
+   properties. A 2026-11-26 direct-engine refresh showed rates changing within one day and an occupancy-label
+   mismatch for a Venetian result. These sources/bases are not comparable; verify exact dates directly (Q-06, F-29/F-30).
 2. **The requested "within 1 hour by subway or bus" ranking cannot rank anything.** Las Vegas has no
    subway, and every hotel is within an hour of all 24 restaurants. A 20-minute column drives the
    ranking instead; disclosed as Q-01.
@@ -51,7 +56,7 @@ No dependencies beyond the Python 3 standard library. `gen_site.py` writes the s
 The first transit model in this repository recorded **Chinatown / Spring Mountain Rd as reachable
 only by car or rideshare**. That was wrong. RTC **Route 203** runs the length of Spring Mountain
 Road and its [published timetable](https://rtcws.rtcsnv.com/routePDF/203.pdf) carries a timed stop
-at **Las Vegas Blvd**, giving Decatur to Las Vegas Blvd in **14 minutes**.
+at **Las Vegas Blvd**, giving Decatur to Las Vegas Blvd about **8 to 17 minutes** across the sampled runs (weekday eastbound 10–17; Saturday westbound 8–9). The model uses 14, the midpoint (F-32).
 
 It matters because **seven of the 24 MICHELIN listings sit on that one road** — nearly a third of
 the guide. The north Strip therefore reaches Chinatown in about **34 minutes**, not never. This is
@@ -62,8 +67,10 @@ from station lists and route maps, and is labelled as one. Recorded as F-21 in `
 
 - **No inferred values.** Blank means unverified. Every blank is listed in `FLAGS.md` and on the
   Questions page with a route to close it.
-- **Every row cites a source.** 280 external links across 8 pages.
+- **Every row cites a source.** 380 external links across 13 pages.
+- **Sources and gaps are disclosed.** Hotel prices in the canonical 32-property table are Booking.com snapshots (not official property rates); this does not meet the strict official-rate-only requirement and is flagged as F-29. A dated direct-engine sample and 26 Nov refresh are linked from Sources & Flags; rates must be rechecked on the property's own engine.
 - **Estimates are labelled.** Only the transit minutes are estimates, and they say so everywhere.
+- **Flags are published.** Everything that did not verify cleanly is on `flagged.html`, with its sources.
 - **No prior work was discarded.** A parallel session merged a first version to `main` mid-project;
   it is preserved in `archive/` with a written comparison of why each dataset was superseded.
 
@@ -71,7 +78,7 @@ from station lists and route maps, and is labelled as one. Recorded as F-21 in `
 
 An independent session built a second complete site with **official-property booking-engine rates** (Caesars/Wynn/Resorts World direct, sampled 2026-11-25) — preserved and readable at **[docs/session-af795000/](docs/session-af795000/)** (exec summary, hotels, Michelin 24, activities, analysis, suggestions, open questions, flagged register). Machine-readable: `data/session-af795000-*.json`; research backup: `notes/research-log.md`.
 
-Headline verified numbers (7 nights, Feb 15–22, 2027, 2 adults, incl. resort fee, excl. tax): **Flamingo $595 · Horseshoe $763 · Planet Hollywood $1,092 · Paris $1,526 · Caesars Palace $1,582 · Resorts World ≈$1,942 · Wynn $4,739 (Cyber $677/nt — book by Dec 4, 2026)**. The preferred week is the cheapest verified 7-night window in the Feb 15 – Mar 23 range. See the subsite's hotels page for source links per row.
+Historical official-engine snapshots for seven nights, Feb 15–22, captured 25 Nov, included the amounts shown in the subsite (generally resort fee included, tax excluded; bed guarantee varies). Do not read those as a current quote or a market-wide cheapest week: official engines refreshed 26 Nov, rates moved, and the Venetian result carried a 4+ guest occupancy label. F-29/F-30 and the official-engine page preserve the source URLs and limitations; recheck exact room, dates, fee/tax, occupancy and cancellation conditions before booking.
 
 
 ## Session supplement — session-48dbf0ae (Booking.com dated quotes + independent site)

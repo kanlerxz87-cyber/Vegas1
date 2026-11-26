@@ -4,7 +4,7 @@
   "answer": "Las Vegas has no subway or metro rail. The 'by subway or bus' constraint is therefore modelled on three systems that do not share a ticket: RTC transit buses (The Deuce / SDX / local routes), the Las Vegas Monorail, and the Boring Company Vegas Loop.",
   "honesty": "Every minute figure here is an ESTIMATE built from official station lists and route maps, rounded to 5 minutes. No official source publishes door-to-door travel times. These are planning estimates, not timetables.",
   "generated_by": "scripts/build.py recomputes michelin_within_60 and michelin_within_20 in data/hotels.json from this matrix — do not hand-edit those two fields.",
-  "route_203_correction": "An earlier version of this matrix recorded Chinatown / Spring Mountain Rd as reachable only by car or rideshare, with no RTC service. That was wrong. Route 203 runs the length of Spring Mountain Road and its official timetable carries a timed stop at Las Vegas Blvd, 14 minutes from Decatur. Because the Chinatown zone holds seven of the 24 MICHELIN listings, the correction raises the north Strip's short-trip counts and makes Wynn/Resorts World/SAHARA the best bases for that cluster. Timetable: https://rtcws.rtcsnv.com/routePDF/203.pdf"
+  "route_203_correction": "An earlier version of this matrix recorded Chinatown / Spring Mountain Rd as reachable only by car or rideshare, with no RTC service. That was wrong. Route 203 runs the length of Spring Mountain Road and its official timetable carries a timed stop at Las Vegas Blvd. Weekday runs take about 10 to 17 minutes from Decatur to Las Vegas Blvd depending on the time of day (14 minutes is used as the midpoint). Because the Chinatown zone holds seven of the 24 MICHELIN listings, the correction raises the north Strip's short-trip counts and makes Wynn/Resorts World/SAHARA the best bases for that cluster. Timetable: https://rtcws.rtcsnv.com/routePDF/203.pdf"
  },
  "systems": [
   {
@@ -53,7 +53,7 @@
     "Charleston",
     "Lake Mead Blvd."
    ],
-   "published_timing": "The timetable's eastbound runs give Decatur to Las Vegas Blvd. in 14 minutes, with Rainbow in between. That is the whole Spring Mountain Road corridor the Chinatown restaurants sit on. Combined with a walk to the stop and a platform wait, the north Strip lands at about 34 minutes door to door.",
+   "published_timing": "The timetable runs sampled give Decatur to Las Vegas Blvd. about 8 to 17 minutes depending on direction, day and time (weekday eastbound 10–17; Saturday westbound 8–9; 14 minutes is the model midpoint), with Rainbow in between. That is the whole Spring Mountain Road corridor the Chinatown restaurants sit on. Combined with a walk to the stop and a platform wait, the north Strip lands at about 34 minutes door to door.",
    "why_it_matters": "This is the ONLY published travel time in the model, and it is the one that decides whether the seven Chinatown restaurants are inside the one-hour limit. They are: from the north end of the Strip, where Spring Mountain Road crosses Las Vegas Boulevard, Route 203 puts Chinatown about 30 minutes away door to door.",
    "scope_note": "Route 203 stops at Las Vegas Blvd at the north end of the Strip, near Wynn, Encore, Resorts World and SAHARA. It does not reach the center or south Strip, so those hotels need a northbound leg first.",
    "note": "RTC local route, not an express. Runs the full length of Spring Mountain Road, which is the road the Chinatown MICHELIN cluster sits on. Stops about every quarter mile."
@@ -203,6 +203,6 @@
   "inside_60": "The Strip is about 4 miles long and Chinatown is about 3 miles west of it, so EVERY hotel in the dataset — including Henderson and Summerlin — reaches all 24 Michelin listings inside 60 minutes. The user's literal metric returns a flat 24/24 for every property and therefore cannot rank anything.",
   "fix": "A second, stricter column was added: how many Michelin restaurants are within a 20-MINUTE one-way trip. That column separates the field and drives the ranking.",
   "disclose": "This substitution is a material interpretation of the brief and is raised as Q-01 on the Questions page.",
-  "route_203_note": "Correction applied: the north Strip to Chinatown timing is 34 minutes, not the 20 previously estimated. It is built from Route 203's published 14-minute Decatur-to-Las-Vegas-Blvd run plus a 7-minute walk from Wynn to the Spring Mountain Road stop, an 8-minute platform wait and a 5-minute walk at the far end. Anchored at Wynn, the north Strip hotel closest to that junction; Venetian and Palazzo sit further south and will take longer."
+  "route_203_note": "Correction applied: the north Strip to Chinatown timing is 34 minutes, not the 20 previously estimated. It is built from Route 203's timetable (about 8 to 17 minutes Decatur to Las Vegas Blvd; the model uses 14, the midpoint) plus a 7-minute walk from Wynn to the Spring Mountain Road stop, an 8-minute platform wait and a 5-minute walk at the far end. Anchored at Wynn, the north Strip hotel closest to that junction; Venetian and Palazzo sit further south and will take longer."
  }
 }

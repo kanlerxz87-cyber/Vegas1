@@ -11,7 +11,7 @@
 <header class="top">
   <div class="wrap">
     <div class="brand"><span class="dot"></span>Las Vegas · Feb–Mar 2027</div>
-    <nav><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="restaurants.html">Michelin</a><a href="activities.html">Things to do</a><a href="transit.html">Getting around</a><a href="questions.html">Open questions</a><a href="suggestions.html" class="on">Suggestions</a><a href="sources.html">Sources</a></nav>
+    <nav><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="restaurants.html">Michelin</a><a href="activities.html">Things to do</a><a href="transit.html">Getting around</a><a href="questions.html">Open questions</a><a href="suggestions.html" class="on">Suggestions</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="repo-review.html">Repo review</a></nav>
   </div>
 </header>
 <main class="wrap">
@@ -23,20 +23,20 @@
   
 <section class="panel">
   <h2>1</h2>
-  <p>13 proposals, ranked by how much they change the outcome. <strong>4 of them need a decision
+  <p>13 proposals, ranked by how much they change the outcome. <strong>3 of them need a decision
   from you</strong> before the plan can be finalised — they are marked in the list. Nothing here was silently
   applied to the data.</p>
-  <p>The three that matter most: move the trip to <strong>8–15 March</strong> (saves about $1,400 on the same suite),
+  <p>The three that matter most: compare exact hotel dates on the <strong>property's own booking engine</strong> before changing dates (the Booking.com and official-engine samples conflict),
   settle whether this is a <strong>three-night or seven-night</strong> trip (which changes every hotel number by
-  over half), and <strong>refuse unassigned-room rates</strong> (which removes the three cheapest hotels on the site).</p>
+  over half), and <strong>refuse unassigned-room rates</strong> (which removes the three cheapest hotels on the site). See the <a href="https://kanlerxz87-cyber.github.io/Vegas1/docs/session-af795000/hotels.html">official-engine sample</a> and its direct links.</p>
 </section>
 <div class="suglist">
 <article class="sug" id="S-01">
-  <h3><span class="sid">S-01</span> Move the trip to 8–15 March 2027
-   <span class="impact hi">high impact</span><span class="pill need">needs your decision</span></h3>
-  <p>This is the biggest lever in the whole plan. The same suite at The Venetian is $2,407 instead of $3,757; at the Palazzo $2,422 instead of $3,932; at the Cosmopolitan $2,307 instead of $3,433. That is roughly $1,300–$1,500 saved on seven nights for the same rooms, because the February week contains Presidents&#x27; Day (15 Feb 2027).</p>
-  <p class="trade"><strong>Trade-off:</strong> The couple&#x27;s stated preferred arrival is 15 Feb. Moving loses that date but keeps the trip inside the 15 Feb – 23 Mar envelope and buys an extra dinner at a starred restaurant for the same money.</p>
-  <p class="tiny">Evidence: data/price-windows.json</p>
+  <h3><span class="sid">S-01</span> Compare exact dates on the hotel&#x27;s own booking engine before shifting the trip
+   <span class="impact hi">high impact</span><span class="pill">recommended</span></h3>
+  <p>Do not assume 8–15 March is cheaper overall. The 25 Nov Booking.com snapshots showed lower March quotes for The Venetian, Palazzo and Cosmopolitan. On 26 Nov the Venetian&#x27;s figures were not reproduced on Booking.com&#x27;s own page (F-39), and the Palazzo and Cosmopolitan figures have not been re-checked (F-44). A separate official-property-engine sample reports the preferred 15–22 February week as cheapest at the properties it checked. The samples differ by property coverage, room/rate terms and fee/tax basis. This evidence does not establish a market-wide cheapest week.</p>
+  <p class="trade"><strong>Trade-off:</strong> Keeping the preferred dates avoids changing plans based on a source conflict; checking exact dates and the same room/fee basis property by property may still identify a cheaper alternative. Recheck rates close to booking because the captures are dated 25 November 2026.</p>
+  <p class="tiny">Evidence: Booking.com snapshot table: data/price-windows.json and data/hotels.json. Official-engine sample with per-property booking links: docs/session-af795000/hotels.html.</p>
 </article>
 <article class="sug" id="S-02">
   <h3><span class="sid">S-02</span> Decide whether this is a 3-night or a 7-night trip
@@ -48,9 +48,9 @@
 <article class="sug" id="S-03">
   <h3><span class="sid">S-03</span> Refuse &#x27;Room Type Assigned on Arrival&#x27; rates
    <span class="impact md">medium impact</span><span class="pill">recommended</span></h3>
-  <p>The three cheapest hotel totals in the dataset (LINQ $564, Flamingo $626, Horseshoe $717) are all unassigned-room promotions. They undercut the field by so much that they distort the ranking, and none of them guarantees the queen-or-larger bed the couple asked for.</p>
-  <p class="trade"><strong>Trade-off:</strong> Booking a named king room at the same properties costs more but actually meets the requirement. Expect roughly $100–$200/week more.</p>
-  <p class="tiny">Evidence: data/hotels.json flags F-11</p>
+  <p>The three lowest Booking.com quote snapshots (LINQ $564, Flamingo $626, Horseshoe $717) are all unassigned-room promotions. These offers do not guarantee the queen-or-larger bed the couple asked for, and the quote totals are not official property rates.</p>
+  <p class="trade"><strong>Trade-off:</strong> A named king or two-queen room is necessary to verify bed fit. The price difference is not established here; check the named room on the property&#x27;s official booking engine rather than adding an assumed uplift.</p>
+  <p class="tiny">Evidence: data/hotels.json flags F-11 and F-29; official-engine examples are linked at docs/session-af795000/hotels.html</p>
 </article>
 <article class="sug" id="S-04">
   <h3><span class="sid">S-04</span> Book the four starred restaurants first, then build the trip around them
@@ -70,7 +70,7 @@
   <h3><span class="sid">S-06</span> Base the trip centre-Strip, not at the Venetian or the Wynn
    <span class="impact md">medium impact</span><span class="pill need">needs your decision</span></h3>
   <p>The Venetian complex holds four Michelin listings and the Wynn holds one, which makes the north Strip look like the obvious base. But the centre Strip is within 20 minutes of 15 Michelin restaurants — more than any other zone — and is reachable from both ends of the Monorail.</p>
-  <p class="trade"><strong>Trade-off:</strong> Choosing centre Strip (Cosmopolitan, ARIA, Bellagio, Vdara, Caesars) costs more per night than the Venetian in the March window, and gives up the in-building convenience of four restaurants under one roof.</p>
+  <p class="trade"><strong>Trade-off:</strong> Choosing centre Strip (Cosmopolitan, ARIA, Bellagio, Vdara, Caesars) gives up the in-building convenience of four restaurants under one roof. Price comparisons should use identical dates, room classes, taxes and resort-fee basis from official property engines; the current OTA/direct samples are not comparable enough to establish a cost premium.</p>
   <p class="tiny">Evidence: data/transit.json, data/hotels.json</p>
 </article>
 <article class="sug" id="S-07">
@@ -111,7 +111,7 @@
 <article class="sug" id="S-12">
   <h3><span class="sid">S-12</span> Re-verify only what can actually change
    <span class="impact md">medium impact</span><span class="pill">recommended</span></h3>
-  <p>17 of the 24 restaurants have fully verified hours and days. The four starred rooms, Michael Mina (currently marked Temporarily closed) and Wing Lei are the ones whose closure would waste an evening, so re-check those six the week before travel rather than re-checking all 24.</p>
+  <p>Hours and days are recorded for 19 of the 24 restaurants; 5 are blank (Michael Mina, KAME, Sparrow + Wolf, Esther&#x27;s Kitchen, YEN Viet) and are flagged, not guessed. 17 rows are marked verified. The four starred rooms, Michael Mina (currently marked Temporarily closed) and Wing Lei are the ones whose closure would waste an evening, so re-check those six the week before travel rather than re-checking all 24.</p>
   <p class="trade"><strong>Trade-off:</strong> Accepts that a minor venue may be dark on the night. Saves about an hour of checking.</p>
   <p class="tiny">Evidence: data/questions.json Q-08</p>
 </article>
@@ -125,7 +125,7 @@
 
 </main>
 <footer class="wrap">
-  <p>Prices captured 25 Nov 2026 from Booking.com for exact date ranges, 2 adults, 1 room, USD.
+  <p>Prices captured 25 Nov 2026 from Booking.com for exact date ranges, 2 adults, 1 room, USD; spot-checked 26 Nov 2026 (see <a href="flagged.html">Flagged for review</a>).
   Every row links to its source. Blank means <strong>not verified</strong> — never estimated.</p>
   <p>Las Vegas had no MICHELIN Guide between 2010 and 2025. All awards here are from the 2026
   Southwest selection, the first since 2009.</p>
