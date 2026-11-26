@@ -1,28 +1,110 @@
 {
   "meta": {
     "purpose": "Dated Booking.com third-party quote snapshots for comparing selected hotel/date pairs; this dataset alone does not establish the cheapest week across Las Vegas.",
-    "method": "Booking.com searches for whole weeks, 2 adults, 1 room, USD, sorted by price, captured 2026-11-25. These are not official property-engine quotes. Only properties that appeared in a captured result block are listed; see F-29 for the conflicting official-engine sample.",
+    "method": "Booking.com searches for whole weeks, 2 adults, 1 room, USD, sorted by price, captured 2026-11-25. These are not official property-engine quotes. Only properties that appeared in a captured result block are listed; see F-29 for the conflicting official-engine sample. Venetian figures withdrawn on 26 Nov 2026 (F-39): not reproduced on Booking.com's own Venetian page.",
     "caveat": "The user's stated window is 2027-02-15 → 2027-03-23. Everything outside that range is excluded. The four Booking.com windows below sit inside it; 22 Feb–1 Mar was not sampled in this dataset.",
     "windows": [
-      {"id": "W1", "checkin": "2027-02-15", "checkout": "2027-02-22", "label": "15–22 Feb 2027", "note": "Starts on the user's preferred arrival date."},
-      {"id": "W2", "checkin": "2027-03-01", "checkout": "2027-03-08", "label": "1–8 Mar 2027", "note": ""},
-      {"id": "W3", "checkin": "2027-03-08", "checkout": "2027-03-15", "label": "8–15 Mar 2027", "note": ""},
-      {"id": "W4", "checkin": "2027-03-15", "checkout": "2027-03-22", "label": "15–22 Mar 2027", "note": "Ends the day before the user's outer limit."}
-    ]
+      {
+        "id": "W1",
+        "checkin": "2027-02-15",
+        "checkout": "2027-02-22",
+        "label": "15–22 Feb 2027",
+        "note": "Starts on the user's preferred arrival date."
+      },
+      {
+        "id": "W2",
+        "checkin": "2027-03-01",
+        "checkout": "2027-03-08",
+        "label": "1–8 Mar 2027",
+        "note": ""
+      },
+      {
+        "id": "W3",
+        "checkin": "2027-03-08",
+        "checkout": "2027-03-15",
+        "label": "8–15 Mar 2027",
+        "note": ""
+      },
+      {
+        "id": "W4",
+        "checkin": "2027-03-15",
+        "checkout": "2027-03-22",
+        "label": "15–22 Mar 2027",
+        "note": "Ends the day before the user's outer limit."
+      }
+    ],
+    "audit_2026_11_26": "Venetian W1/W3 withdrawn (F-39). Other captured values are unchanged but are not reproduced in the 26 Nov audit (F-44)."
   },
   "matrix": [
-    {"hotel": "The Venetian Resort", "W1": 3757, "W2": null, "W3": 2407, "W4": null, "room_note": "Luxury King Suite throughout"},
-    {"hotel": "The Palazzo at The Venetian", "W1": 3932, "W2": null, "W3": 2422, "W4": null, "room_note": "Luxury King Suite throughout"},
-    {"hotel": "The Cosmopolitan", "W1": 3433, "W2": null, "W3": 2307, "W4": null, "room_note": ""},
-    {"hotel": "Nobu Hotel at Caesars Palace", "W1": 1125, "W2": null, "W3": 1750, "W4": null, "room_note": "Nobu's cheapest week is February, the opposite of the big resorts"},
-    {"hotel": "ARIA Resort & Casino", "W1": 3798, "W2": null, "W3": null, "W4": 2507, "room_note": "Deluxe King in W4"},
-    {"hotel": "Bellagio", "W1": 3072, "W2": 3258, "W3": null, "W4": 2544, "room_note": "Room class varies by window"},
-    {"hotel": "Waldorf Astoria Las Vegas", "W1": 7980, "W2": 3463, "W3": null, "W4": null, "room_note": "W1 is a 1-bedroom suite; W2 is a Deluxe King"}
+    {
+      "hotel": "The Venetian Resort",
+      "W1": null,
+      "W2": null,
+      "W3": null,
+      "W4": null,
+      "room_note": "WITHDRAWN 2026-11-26 (F-39): not reproduced on Booking.com's own page. Luxury King Suite, 60 m²."
+    },
+    {
+      "hotel": "The Palazzo at The Venetian",
+      "W1": 3932,
+      "W2": null,
+      "W3": 2422,
+      "W4": null,
+      "room_note": "Luxury King Suite throughout · Not reproduced in the 26 Nov audit (F-44)"
+    },
+    {
+      "hotel": "The Cosmopolitan",
+      "W1": 3433,
+      "W2": null,
+      "W3": 2307,
+      "W4": null,
+      "room_note": "Not reproduced in the 26 Nov audit (F-44)"
+    },
+    {
+      "hotel": "Nobu Hotel at Caesars Palace",
+      "W1": 1125,
+      "W2": null,
+      "W3": 1750,
+      "W4": null,
+      "room_note": "Nobu's cheapest week is February, the opposite of the big resorts · Not reproduced in the 26 Nov audit (F-44)"
+    },
+    {
+      "hotel": "ARIA Resort & Casino",
+      "W1": 3798,
+      "W2": null,
+      "W3": null,
+      "W4": 2507,
+      "room_note": "Deluxe King in W4 · Not reproduced in the 26 Nov audit (F-44)"
+    },
+    {
+      "hotel": "Bellagio",
+      "W1": 3072,
+      "W2": 3258,
+      "W3": null,
+      "W4": 2544,
+      "room_note": "Room class varies by window · Not reproduced in the 26 Nov audit (F-44)"
+    },
+    {
+      "hotel": "Waldorf Astoria Las Vegas",
+      "W1": 7980,
+      "W2": 3463,
+      "W3": null,
+      "W4": null,
+      "room_note": "W1 is a 1-bedroom suite; W2 is a Deluxe King · Not reproduced in the 26 Nov audit (F-44)"
+    }
   ],
   "derived": {
-    "lowest_sampled_ota_quotes": {"window": "W3", "label": "8–15 Mar 2027", "scope": "Among the selected Booking.com room/date snapshots only; the same sampled rooms at Venetian ($2,407 vs $3,757), Palazzo ($2,422 vs $3,932), and Cosmopolitan ($2,307 vs $3,433) had lower W3 quotes."},
-    "w1_quote_note": "W1 (15–22 Feb) is higher than W3 in these selected OTA snapshots for Venetian, Palazzo and Cosmopolitan, but this is not an overall market or official-rate finding. Other official property-engine samples conflict.",
-    "anomaly": "Nobu at Caesars Palace is cheaper in the sampled W1 Booking.com quote ($1,125) than W3 ($1,750). No explanation verified — flagged F-12.",
-    "recommendation": "Do not move dates based on this partial OTA snapshot. Compare the same named room and fee/tax basis at each hotel's official booking engine; the official-engine sample conflicts with the OTA result and no market-wide cheapest date is established."
+    "cheapest_week_overall": {
+      "window": null,
+      "label": "Unresolved",
+      "evidence": "The 25 Nov captures pointed to 8–15 Mar, but the one property checked on its own engine on 26 Nov (The Venetian) did not reproduce it. Feb 15–22 vs Mar 8–15 on the same 60 m² suite is not established. See F-39 and F-44."
+    },
+    "most_expensive_week_overall": {
+      "window": "W1",
+      "label": "15–22 Feb 2027",
+      "evidence": "Every large resort is at its highest captured rate; the week contains US Presidents' Day (15 Feb 2027). The link between the holiday and the price is a reasonable reading of the calendar, but the CAUSE is not verified by any source."
+    },
+    "anomaly": "Nobu at Caesars Palace is the one property that is CHEAPER in W1 ($1,125) than W3 ($1,750). No explanation verified — flagged F-12.",
+    "recommendation": "Do not move the trip on the strength of this table. Before choosing any week, check each property's own booking engine for the same room class, the same taxes/fees basis and the same loyalty status, for both candidate weeks (Q-06)."
   }
 }

@@ -21,6 +21,7 @@ A sourced trip plan for **two adults**, seven nights, between **15 February and 
 | `scripts/gen_site.py` | Renders `docs/` from the JSON. All counts derived, none typed by hand |
 | `scripts/validate.py` | Link and structure checks for the built site |
 | `FLAGS.md` | 30 flagged items (F-01 to F-30), including hotel rate basis/recency limitations |
+| `data/review-flags.json` | The 26 Nov 2026 audit register (F-39 to F-46) and confirmed items C-11 to C-13, each with source links. Rendered on `flagged.html` |
 | `executive-summary.md` | The one-page version |
 | `data/review.json` | Repo review: line-by-line checks, limits, and irregularities (2026-11-26) |
 | `docs/flagged.html`, `docs/repo-review.html` | **Flagged for Review** and **Repo review** pages (generated) |
@@ -55,7 +56,7 @@ No dependencies beyond the Python 3 standard library. `gen_site.py` writes the s
 The first transit model in this repository recorded **Chinatown / Spring Mountain Rd as reachable
 only by car or rideshare**. That was wrong. RTC **Route 203** runs the length of Spring Mountain
 Road and its [published timetable](https://rtcws.rtcsnv.com/routePDF/203.pdf) carries a timed stop
-at **Las Vegas Blvd**, giving Decatur to Las Vegas Blvd in **14 minutes**.
+at **Las Vegas Blvd**, giving Decatur to Las Vegas Blvd about **10 to 17 minutes**, depending on the time of day. The model uses 14, the midpoint (F-32).
 
 It matters because **seven of the 24 MICHELIN listings sit on that one road** — nearly a third of
 the guide. The north Strip therefore reaches Chinatown in about **34 minutes**, not never. This is
@@ -66,8 +67,10 @@ from station lists and route maps, and is labelled as one. Recorded as F-21 in `
 
 - **No inferred values.** Blank means unverified. Every blank is listed in `FLAGS.md` and on the
   Questions page with a route to close it.
+- **Every row cites a source.** 380 external links across 13 pages.
 - **Sources and gaps are disclosed.** Hotel prices in the canonical 32-property table are Booking.com snapshots (not official property rates); this does not meet the strict official-rate-only requirement and is flagged as F-29. A dated direct-engine sample and 26 Nov refresh are linked from Sources & Flags; rates must be rechecked on the property's own engine.
 - **Estimates are labelled.** Only the transit minutes are estimates, and they say so everywhere.
+- **Flags are published.** Everything that did not verify cleanly is on `flagged.html`, with its sources.
 - **No prior work was discarded.** A parallel session merged a first version to `main` mid-project;
   it is preserved in `archive/` with a written comparison of why each dataset was superseded.
 
