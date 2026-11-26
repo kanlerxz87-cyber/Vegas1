@@ -436,3 +436,32 @@ the F-29…F-34 numbering, the "26 August 2026" date).
 **Build state:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py`
 → **13 pages · 0 failures · 0 warnings · 394 external links**; root and `docs/` byte-identical.
 
+## PR and merge record — arena/3c6d076e-vegas1 (T15) — 2026-11-26
+
+| PR | Head → base | Merged | Merge commit | Contents |
+|----|-------------|--------|--------------|----------|
+| [#33](https://github.com/kanlerxz87-cyber/Vegas1/pull/33) | `arena/3c6d076e-vegas1` → `main` | **MERGED** 2026-11-26T22:27:14Z | `8ab4f57` | Official-link re-check (18 confirmed / 8 refused / 5 unopened / 1 sibling), F-47 Cromwell→Vanderpump rename, F-48 search-list price labels, F-49 link states, F-50 Esther's Kitchen address, F-51 MICHELIN date 31 Aug 2026, per-flag source links + `#F-nn` anchors on `flagged.html`, Route 203 corridor precision, Q-13 answered, S-13 implemented, S-14/S-15 added |
+| [#34](https://github.com/kanlerxz87-cyber/Vegas1/pull/34) | `arena/3c6d076e-vegas1` → `main` | **MERGED** 2026-11-26T22:28:58Z | `61b03e5` | Landing page and the Michael Mina warning now route to `flagged.html` (the labelled review page) instead of the `sources.html#flags` anchor |
+
+**Pages deploy confirmed:** `gh api repos/…/pages/builds` → build for `61b03e5c` **status `built`**;
+`pages.status = built`, source `main:/`, live at
+<https://kanlerxz87-cyber.github.io/Vegas1/>. Verified by fetching the live `index.html` and
+`flagged.html`: the landing page shows "Four things that change the answer" with item 3 carrying the
+Vanderpump/F-47 finding, and the live `flagged.html` serves the audit rows plus the F-47…F-51 register.
+
+**Pre-merge checks:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py`
+→ **13 pages · 0 failures · 0 warnings · 394 external links**, `docs/` and repo root byte-identical. No CI
+checks are configured on this repo (`gh pr checks` reports none), so the local validator is the gate; both
+PRs were `MERGEABLE / CLEAN` before merging and nothing was merged in a broken state.
+
+**Numbering caution for the next session:** flags F-31…F-38 have never been used, and the 26 Nov audit owns
+F-39…F-46 in `data/review-flags.json`. New register rows go in `FLAGS.md` as table rows (F-49 onward is free;
+`flagged.html` renders them automatically and says plainly that the register is not contiguous). Counts on the
+site (flag total, page total, link total) are derived by `scripts/gen_site.py` from `FLAGS.md` and the build —
+they are not typed, so do not hand-edit generated HTML in either `docs/` or the repo root.
+
+**Also for the next session:** `caesars.com/cromwell`, `palazzo.com`, `aria.com`, `bellagio.com` and
+`cosmopolitanlasvegas.com` all answer via redirect to a canonical page. They work in a browser, so they were
+left as-is and marked confirmed — but the Cromwell case shows a redirect can hide a rebrand, so re-open the
+redirect targets (not just the vanity domains) when prices are re-captured.
+
