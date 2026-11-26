@@ -467,6 +467,9 @@ a missing entry and it is not an average. Only three restaurants print a real pe
 def build_activities():
     rows = []
     for a in ACT["activities"]:
+        yt = " · ".join(f'<a href="{e(u)}" target="_blank" rel="noopener">video {i+1}</a>' for i, u in enumerate(a.get("youtube", []))) or '<span class="muted">—</span>'
+        ig = f'<a href="{e(a["instagram"])}" target="_blank" rel="noopener">Instagram</a>' if a.get("instagram") else '<span class="muted">—</span>'
+        tt = f'<a href="{e(a["tiktok"])}" target="_blank" rel="noopener">TikTok</a>' if a.get("tiktok") else '<span class="muted">—</span>'
         rows.append(f"""<tr>
 <td><a href="{e(a['official_url'])}" target="_blank" rel="noopener">{e(a['name'])}</a>
  <div class="tiny">{e(a['type'])} · {e(a['zone'].replace('-',' '))}</div></td>
@@ -474,6 +477,7 @@ def build_activities():
 <td class="tiny">{e(a['exceptions']) or '—'}</td>
 <td class="num">{e(a['price_per_couple']) or '—'}</td>
 <td class="tiny">{e(a['price_note'])}</td>
+<td class="tiny">{yt}</td><td class="tiny">{ig}</td><td class="tiny">{tt}</td>
 </tr>""")
 
     nv = "".join(
@@ -482,13 +486,14 @@ def build_activities():
 
     body = f"""
 <section class="panel">
-  <h2>Four things worth the day</h2>
+  <h2>{len(ACT['activities'])} activities</h2>
   <div class="scroll">
   <table class="data">
-  <thead><tr><th>Venue</th><th>Days &amp; hours</th><th>Exceptions</th><th>2 adults</th><th>Price basis</th></tr></thead>
+  <thead><tr><th>Venue</th><th>Days &amp; hours</th><th>Exceptions</th><th>2 adults</th><th>Price basis</th><th>YouTube</th><th>Instagram</th><th>TikTok</th></tr></thead>
   <tbody>{''.join(rows)}</tbody>
   </table>
   </div>
+  <p class="note">Social columns show only links present in the dataset; <strong>— means no link was verified for this entry</strong>, not that the venue has no account or video. See <a href="questions.html">Open questions</a> for discovery gaps.</p>
 </section>
 
 <section class="panel">
@@ -505,7 +510,7 @@ def build_activities():
 </section>
 """
     return page("activities.html", "Things to do",
-                "Four verified venues with official hours and prices for two — and two that were checked and deliberately left out.",
+                f"{len(ACT['activities'])} verified activity entries with official hours/prices where published, plus explicit blanks where no official social profile was verified.",
                 body)
 
 
