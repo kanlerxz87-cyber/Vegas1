@@ -8,7 +8,7 @@ A sourced trip plan for **two adults**, seven nights, between **15 February and 
 
 | Path | What it is |
 |------|-----------|
-| `docs/` | The site source (12 pages, plain HTML + one stylesheet, no framework, no CDN) |
+| `docs/` | The site source (13 pages, plain HTML + one stylesheet, no framework, no CDN) |
 | `index.html`, `*.html`, `style.css` (repo root) | The **same generated site**, written to the root as well. GitHub Pages on this repo is pinned to `main:/` and the API refuses to repoint it to `/docs`, so the root copy is what visitors actually get. Both are produced by `scripts/gen_site.py` — never edit either by hand. |
 | `data/restaurants.json` | 24 MICHELIN listings with award tier, hours, exceptions, prices, official + YouTube links |
 | `data/hotels.json` | 32 hotels with dated 7-night totals, bed/bathroom fit, Michelin proximity counts |
@@ -43,10 +43,10 @@ No dependencies beyond the Python 3 standard library. `gen_site.py` writes the s
 
 ## The three findings
 
-1. **The cheaper-week claim is withdrawn.** The 25 Nov captures showed 8–15 March as about a third cheaper
-   for the Venetian ($2,407 vs $3,757). On 26 Nov, Booking.com's own Venetian page did not reproduce it
-   (US$5,185 for 15–22 Feb vs €4,472 for 8–15 Mar, both incl. taxes and fees). Withdrawn — F-29, Q-06.
-   Official booking engines checked on 25 Nov (Caesars Palace, Flamingo; recorded in COORDINATION.md) price February lower, so the cheapest week is property-specific.
+1. **No market-wide cheapest week is established.** Booking.com snapshots show a lower 8–15 March quote for
+   some rooms, while an official-engine sample checked 2026-11-25 favored the preferred February dates at some
+   properties. A 2026-11-26 direct-engine refresh showed rates changing within one day and an occupancy-label
+   mismatch for a Venetian result. These sources/bases are not comparable; verify exact dates directly (Q-06, F-29/F-30).
 2. **The requested "within 1 hour by subway or bus" ranking cannot rank anything.** Las Vegas has no
    subway, and every hotel is within an hour of all 24 restaurants. A 20-minute column drives the
    ranking instead; disclosed as Q-01.
@@ -69,7 +69,8 @@ from station lists and route maps, and is labelled as one. Recorded as F-21 in `
 
 - **No inferred values.** Blank means unverified. Every blank is listed in `FLAGS.md` and on the
   Questions page with a route to close it.
-- **Every row cites a source.** 312 external links across 12 pages.
+- **Every row cites a source.** 378 external links across 13 pages.
+- **Sources and gaps are disclosed.** Hotel prices in the canonical 32-property table are Booking.com snapshots (not official property rates); this does not meet the strict official-rate-only requirement and is flagged as F-29. A dated direct-engine sample and 26 Nov refresh are linked from Sources & Flags; rates must be rechecked on the property's own engine.
 - **Estimates are labelled.** Only the transit minutes are estimates, and they say so everywhere.
 - **Flags are published.** Everything that did not verify cleanly is on `flagged.html`, with its sources.
 - **No prior work was discarded.** A parallel session merged a first version to `main` mid-project;

@@ -23,20 +23,20 @@
   
 <section class="panel">
   <h2>1</h2>
-  <p>13 proposals, ranked by how much they change the outcome. <strong>4 of them need a decision
+  <p>13 proposals, ranked by how much they change the outcome. <strong>3 of them need a decision
   from you</strong> before the plan can be finalised — they are marked in the list. Nothing here was silently
   applied to the data.</p>
-  <p>The three that matter most: move the trip to <strong>8–15 March</strong> (saves about $1,400 on the same suite),
+  <p>The three that matter most: compare exact hotel dates on the <strong>property's own booking engine</strong> before changing dates (the Booking.com and official-engine samples conflict),
   settle whether this is a <strong>three-night or seven-night</strong> trip (which changes every hotel number by
-  over half), and <strong>refuse unassigned-room rates</strong> (which removes the three cheapest hotels on the site).</p>
+  over half), and <strong>refuse unassigned-room rates</strong> (which removes the three cheapest hotels on the site). See the <a href="https://kanlerxz87-cyber.github.io/Vegas1/docs/session-af795000/hotels.html">official-engine sample</a> and its direct links.</p>
 </section>
 <div class="suglist">
 <article class="sug" id="S-01">
-  <h3><span class="sid">S-01</span> Test the 8–15 March 2027 week before moving the trip (not yet proven)
-   <span class="impact hi">high impact</span><span class="pill need">needs your decision</span></h3>
-  <p>This was presented as the biggest lever. It is now unproven. The stored Venetian figures ($2,407 vs $3,757) were withdrawn (F-29) after Booking.com&#x27;s own Venetian page did not reproduce them on 26 Nov 2026. The check is cheap: run the same property search for both weeks, same room class, same taxes/fees basis, and decide only if the saving holds.</p>
-  <p class="trade"><strong>Trade-off:</strong> Moving loses the preferred 15 Feb arrival (Presidents&#x27; Day weekend). If the check shows no real saving, nothing is lost by keeping 15 Feb.</p>
-  <p class="tiny">Evidence: data/price-windows.json; data/questions.json (Q-06); FLAGS.md F-29 and F-36</p>
+  <h3><span class="sid">S-01</span> Compare exact dates on the hotel&#x27;s own booking engine before shifting the trip
+   <span class="impact hi">high impact</span><span class="pill">recommended</span></h3>
+  <p>Do not assume 8–15 March is cheaper overall. The 25 Nov Booking.com snapshots showed lower March quotes for The Venetian, Palazzo and Cosmopolitan. On 26 Nov the Venetian&#x27;s figures were not reproduced on Booking.com&#x27;s own page (F-29), and the Palazzo and Cosmopolitan figures have not been re-checked (F-36). A separate official-property-engine sample reports the preferred 15–22 February week as cheapest at the properties it checked. The samples differ by property coverage, room/rate terms and fee/tax basis. This evidence does not establish a market-wide cheapest week.</p>
+  <p class="trade"><strong>Trade-off:</strong> Keeping the preferred dates avoids changing plans based on a source conflict; checking exact dates and the same room/fee basis property by property may still identify a cheaper alternative. Recheck rates close to booking because the captures are dated 25 November 2026.</p>
+  <p class="tiny">Evidence: Booking.com snapshot table: data/price-windows.json and data/hotels.json. Official-engine sample with per-property booking links: docs/session-af795000/hotels.html.</p>
 </article>
 <article class="sug" id="S-02">
   <h3><span class="sid">S-02</span> Decide whether this is a 3-night or a 7-night trip
@@ -48,9 +48,9 @@
 <article class="sug" id="S-03">
   <h3><span class="sid">S-03</span> Refuse &#x27;Room Type Assigned on Arrival&#x27; rates
    <span class="impact md">medium impact</span><span class="pill">recommended</span></h3>
-  <p>The three cheapest hotel totals in the dataset (LINQ $564, Flamingo $626, Horseshoe $717) are all unassigned-room promotions. They undercut the field by so much that they distort the ranking, and none of them guarantees the queen-or-larger bed the couple asked for.</p>
-  <p class="trade"><strong>Trade-off:</strong> Booking a named king room at the same properties costs more but actually meets the requirement. Expect roughly $100–$200/week more.</p>
-  <p class="tiny">Evidence: data/hotels.json flags F-11</p>
+  <p>The three lowest Booking.com quote snapshots (LINQ $564, Flamingo $626, Horseshoe $717) are all unassigned-room promotions. These offers do not guarantee the queen-or-larger bed the couple asked for, and the quote totals are not official property rates.</p>
+  <p class="trade"><strong>Trade-off:</strong> A named king or two-queen room is necessary to verify bed fit. The price difference is not established here; check the named room on the property&#x27;s official booking engine rather than adding an assumed uplift.</p>
+  <p class="tiny">Evidence: data/hotels.json flags F-11 and F-29; official-engine examples are linked at docs/session-af795000/hotels.html</p>
 </article>
 <article class="sug" id="S-04">
   <h3><span class="sid">S-04</span> Book the four starred restaurants first, then build the trip around them
@@ -70,7 +70,7 @@
   <h3><span class="sid">S-06</span> Base the trip centre-Strip, not at the Venetian or the Wynn
    <span class="impact md">medium impact</span><span class="pill need">needs your decision</span></h3>
   <p>The Venetian complex holds four Michelin listings and the Wynn holds one, which makes the north Strip look like the obvious base. But the centre Strip is within 20 minutes of 15 Michelin restaurants — more than any other zone — and is reachable from both ends of the Monorail.</p>
-  <p class="trade"><strong>Trade-off:</strong> Choosing centre Strip (Cosmopolitan, ARIA, Bellagio, Vdara, Caesars) costs more per night than the Venetian in the March window, and gives up the in-building convenience of four restaurants under one roof.</p>
+  <p class="trade"><strong>Trade-off:</strong> Choosing centre Strip (Cosmopolitan, ARIA, Bellagio, Vdara, Caesars) gives up the in-building convenience of four restaurants under one roof. Price comparisons should use identical dates, room classes, taxes and resort-fee basis from official property engines; the current OTA/direct samples are not comparable enough to establish a cost premium.</p>
   <p class="tiny">Evidence: data/transit.json, data/hotels.json</p>
 </article>
 <article class="sug" id="S-07">

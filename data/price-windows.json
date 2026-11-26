@@ -1,8 +1,8 @@
 {
   "meta": {
-    "purpose": "Real dated prices so 'cheapest time to book' is answered with evidence, not a guess.",
-    "method": "Booking.com searches for whole weeks, 2 adults, 1 room, USD, sorted by price, captured 2026-11-25. Only properties that appeared in a captured result block are listed.",
-    "caveat": "The user's stated window is 2027-02-15 → 2027-03-23. Everything outside that range is excluded. All five windows below sit inside it.",
+    "purpose": "Dated Booking.com third-party quote snapshots for comparing selected hotel/date pairs; this dataset alone does not establish the cheapest week across Las Vegas.",
+    "method": "Booking.com searches for whole weeks, 2 adults, 1 room, USD, sorted by price, captured 2026-11-25. These are not official property-engine quotes. Only properties that appeared in a captured result block are listed; see F-29 for the conflicting official-engine sample. Venetian figures withdrawn on 26 Nov 2026 (F-29): not reproduced on Booking.com's own Venetian page.",
+    "caveat": "The user's stated window is 2027-02-15 → 2027-03-23. Everything outside that range is excluded. The four Booking.com windows below sit inside it; 22 Feb–1 Mar was not sampled in this dataset.",
     "windows": [
       {
         "id": "W1",

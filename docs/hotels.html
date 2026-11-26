@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hotels · Las Vegas 2027</title>
-<meta name="description" content="32 properties, real 7-night totals for dated windows, and a bed requirement that removes the cheapest three.">
+<meta name="description" content="32 properties with dated Booking.com 7-night quote snapshots (not official hotel rates), room-fit flags, and a separate official-engine sample.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,14 +17,13 @@
 <main class="wrap">
   <div class="pagehead">
     <h1>Hotels</h1>
-    <p class="sub">32 properties, real 7-night totals for dated windows, and a bed requirement that removes the cheapest three.</p>
+    <p class="sub">32 properties with dated Booking.com 7-night quote snapshots (not official hotel rates), room-fit flags, and a separate official-engine sample.</p>
     
   </div>
   
 <section class="panel">
-  <h2 id="cheapest-week">Which week is cheapest — like for like</h2>
-  <p>Only properties measured in more than one week are shown, so every percentage compares the same
-  hotel (usually the same room class) against itself:</p>
+  <h2 id="cheapest-week">Which week had the lower Booking.com quote — selected pairs only</h2>
+  <p>Only properties measured in more than one Booking.com date window are shown. Where room classes match, each comparison is within the same hotel; these third-party snapshots do not establish official rates or a market-wide cheapest week:</p>
   <div class="scroll">
   <table class="data">
   <thead><tr><th>Hotel</th><th>15–22 Feb</th><th>1–8 Mar</th><th>8–15 Mar</th><th>15–22 Mar</th><th>Best vs worst</th><th>Room note</th></tr></thead>
@@ -35,7 +34,7 @@
   On 26 Nov, Booking.com's own Venetian page showed the same 60 m² suite at US$5,185 for 15–22 Feb and €4,472 for
   8–15 Mar, both including taxes and fees, so the stored Venetian figures are withdrawn (F-29). The other rows
   are not reproduced (F-36). Presidents' Day (15 Feb 2027) is a verified calendar fact; whether it moves prices is not
-  established. See <a href="questions.html#Q-06">Q-06</a> for how to close it.</p>
+  established. See <a href="questions.html#Q-06">Q-06</a> for how to close it.</p> Compare the exact named room, fees, taxes, cancellation terms and dates on each property's own booking page before booking.</p>
 </section>
 
 <section class="panel">
@@ -59,7 +58,7 @@
 <th>#</th><th>Hotel</th><th>Class</th><th>Guest</th>
 <th title="MICHELIN restaurants within a 20-minute one-way trip">≤20 min</th>
 <th title="MICHELIN restaurants within 60 minutes — the figure the brief asked for">≤60 min</th>
-<th>Bed</th><th>7 nights<br><span class="thsub">15–22 Feb</span></th>
+<th>Bed</th><th>Booking.com quote<br><span class="thsub">7 nights · 15–22 Feb</span></th>
 </tr></thead>
 <tbody><tr>
 <td class="rank">1</td>
@@ -354,16 +353,15 @@
 </tr></tbody>
 </table>
 </div>
-<p class="note">Sorted by MICHELIN proximity inside 20 minutes, then by price. The ≤60 min column is the
+<p class="note">Sorted by MICHELIN proximity inside 20 minutes, then by the dated Booking.com quote (not an official property rate). The ≤60 min column is the
 brief's literal metric and is <strong>24 for every property</strong> — it cannot rank anything, which is why the
 20-minute column drives the order. Both are recomputed by <code>scripts/build.py</code> from one zone matrix.</p>
 
 </section>
 
 <section class="panel">
-  <h2 id="every-hotel">Every hotel, with both price bases</h2>
-  <p>Booking.com search totals generally exclude resort fee and local tax. Where a property publishes its own
-  rate, both figures are shown rather than one.</p>
+  <h2 id="every-hotel">Every hotel — dated Booking.com quote snapshots</h2>
+  <p>These are third-party Booking.com search totals, generally excluding resort fees and local tax; they are not official property-engine quotes. The <a href="https://kanlerxz87-cyber.github.io/Vegas1/docs/session-af795000/hotels.html">separate official-engine sample</a> covers only selected properties/dates and has a different fee/tax basis. Do not combine these datasets or read them as a verified market-wide rate ranking.</p>
   <p class="note"><strong>Link honesty:</strong> a "Price source ✓" link is a Booking.com URL this session
   actually fetched. An "Official" link without a tick points at the property's own domain but was not fetched,
   so it is marked <em>not fetched — may have moved</em> rather than presented as verified. Four of the 32 were
@@ -374,7 +372,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">west near · 4★ · guest score 7.7
   · 24 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$866</td><td class="num muted">$80</td><td class="tiny">603 ft² studio, free cancellation</td></tr></tbody>
   </table>
   <p class="tiny">Bed: king + sofa bed · private bathroom: yes
@@ -391,7 +389,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">center strip · 4★ · guest score 7.7
   · 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$564</td><td class="num muted">$31</td><td class="tiny">Black Friday deal, free cancellation, pay at property — cheapest total in the dataset</td></tr></tbody>
   </table>
   <p class="tiny">Bed: 1 king (shown) — not guaranteed · private bathroom: yes
@@ -408,7 +406,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">center strip · 3★ · guest score —
   · 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$626</td><td class="num muted">$39</td><td class="tiny">Black Friday deal, free cancellation, pay at property</td></tr></tbody>
   </table>
   <p class="tiny">Bed: 1 king (shown) — not guaranteed · private bathroom: yes
@@ -425,7 +423,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">center strip · 4★ · guest score —
   · 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$717</td><td class="num muted">$53</td><td class="tiny">Free cancellation; pay at property</td></tr></tbody>
   </table>
   <p class="tiny">Bed: unverified · private bathroom: yes
@@ -442,7 +440,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">center strip · 5★ · guest score 7.9
   · 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$1,125</td><td class="num muted">$161</td><td class="tiny">Lowest displayed rate band $1,125–$1,327</td></tr><tr><td>2027-03-08→2027-03-15</td><td class="num">$1,750</td><td class="num muted">$195</td><td class="tiny">Up +56% vs the February week</td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -459,7 +457,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">center strip · 5★ · guest score 7.9
   · 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$1,580</td><td class="num muted">$226</td><td class="tiny"></td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -476,7 +474,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">center strip · 5★ · guest score 7.4
   · 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$1,978</td><td class="num muted">$283</td><td class="tiny"></td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -493,7 +491,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">center strip · 5★ · guest score 8.1
   · 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$2,888</td><td class="num muted">$413</td><td class="tiny"></td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -510,7 +508,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">center strip · 5★ · guest score 8.9
   · 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$3,013</td><td class="num muted">$430</td><td class="tiny"></td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -527,7 +525,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">center strip · 5★ · guest score 8.6
   · 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$3,072</td><td class="num muted">$439</td><td class="tiny">Black Friday deal rate; standard rate from $4,651</td></tr><tr><td>2027-03-01→2027-03-08</td><td class="num">$3,258</td><td class="num muted">$410</td><td class="tiny">Accessible Premier King</td></tr><tr><td>2027-03-15→2027-03-22</td><td class="num">$2,544</td><td class="num muted">$308</td><td class="tiny">Spa Premier King — cheapest Bellagio week measured</td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -544,7 +542,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">center strip · 5★ · guest score 8.5
   · 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$3,433</td><td class="num muted">$490</td><td class="tiny"></td></tr><tr><td>2027-03-08→2027-03-15</td><td class="num">$2,307</td><td class="num muted">$275</td><td class="tiny">Black Friday deal rate — 33% below the February week</td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -561,7 +559,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">center strip · 5★ · guest score 8.1
   · 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$3,798</td><td class="num muted">$543</td><td class="tiny"></td></tr><tr><td>2027-03-15→2027-03-22</td><td class="num">$2,507</td><td class="num muted">$303</td><td class="tiny">Deluxe King — 34% below February</td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -578,7 +576,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">center strip · 5★ · guest score —
   · 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$6,778</td><td class="num muted">$968</td><td class="tiny"></td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -595,7 +593,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">center strip · 5★ · guest score 8.5
   · 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$7,980</td><td class="num muted">$1,140</td><td class="tiny">1-bedroom suite</td></tr><tr><td>2027-03-01→2027-03-08</td><td class="num">$3,463</td><td class="num muted">$440</td><td class="tiny">Deluxe King Room — 57% below the February suite rate; different room class</td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -612,7 +610,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">north strip · 4★ · guest score 8.4
   · 17 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$801</td><td class="num muted">$59</td><td class="tiny">Free cancellation</td></tr></tbody>
   </table>
   <p class="tiny">Bed: 1 king (shown) — not guaranteed · private bathroom: yes
@@ -629,7 +627,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">north strip · 5★ · guest score 9.1
   · 17 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$1,661</td><td class="num muted">$237</td><td class="tiny"></td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -646,7 +644,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">north strip · 5★ · guest score 9.0
   · 17 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$2,596</td><td class="num muted">$371</td><td class="tiny"></td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -663,7 +661,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">north strip · 5★ · guest score 9.0
   · 17 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$3,201</td><td class="num muted">$457</td><td class="tiny">Black Friday deal rate</td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -680,7 +678,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">north strip · 5★ · guest score 9.0
   · 17 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$3,932</td><td class="num muted">$562</td><td class="tiny"></td></tr><tr><td>2027-03-08→2027-03-15</td><td class="num">$2,422</td><td class="num muted">$291</td><td class="tiny">721 ft² — 38% below February</td></tr></tbody>
   </table>
   <p class="tiny">Bed: king + sofa bed · private bathroom: yes
@@ -697,7 +695,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">north strip · 5★ · guest score 9.0
   · 17 MICHELIN within 20 min · resort fee: $55/night</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$4,093</td><td class="num muted">$585</td><td class="tiny">Booking search total, resort fee basis not stated</td></tr><tr><td>2027-02-15→2027-02-22</td><td class="num">$5,128</td><td class="num muted">$678</td><td class="tiny">Wynn property page: 745 ft², INCLUDES $55/night resort fee, EXCLUDES 13.38% tax. Free cancellation before 2027-02-12.</td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -714,7 +712,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">north strip · 5★ · guest score 9.0
   · 17 MICHELIN within 20 min · resort fee: $55/night</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$4,378</td><td class="num muted">$625</td><td class="tiny">Run-of-House, Booking search total</td></tr><tr><td>2027-02-15→2027-02-22</td><td class="num">$5,828</td><td class="num muted">$778</td><td class="tiny">Wynn property page: 640 ft², INCLUDES $55/night resort fee, EXCLUDES 13.38% tax</td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -731,7 +729,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">north strip · 5★ · guest score 9.0
   · 17 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">—</td><td class="num muted">—</td><td class="tiny">WITHDRAWN 2026-11-26 (F-29): the 25 Nov capture could not be reproduced on the property page.</td></tr><tr><td>2027-03-08→2027-03-15</td><td class="num">—</td><td class="num muted">—</td><td class="tiny">WITHDRAWN 2026-11-26 (F-29): the 25 Nov capture could not be reproduced on the property page.</td></tr></tbody>
   </table>
   <p class="tiny">Bed: king + sofa bed · private bathroom: yes
@@ -748,7 +746,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">downtown arts · 4★ · guest score 7.8
   · 16 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$749</td><td class="num muted">$61</td><td class="tiny">Black Friday deal, free cancellation</td></tr></tbody>
   </table>
   <p class="tiny">Bed: multiple bed types — not guaranteed · private bathroom: yes
@@ -765,7 +763,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">downtown arts · 3★ · guest score —
   · 16 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$832</td><td class="num muted">$80</td><td class="tiny">Free cancellation</td></tr></tbody>
   </table>
   <p class="tiny">Bed: multiple bed types — not guaranteed · private bathroom: yes
@@ -782,7 +780,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">south strip · 3★ · guest score 9.1
   · 15 MICHELIN within 20 min · resort fee: none — &#x27;No Resort Fees&#x27; rate</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$922</td><td class="num muted">$132</td><td class="tiny">646 ft² suite, 0.3 miles from MGM Grand</td></tr></tbody>
   </table>
   <p class="tiny">Bed: king + sofa bed · private bathroom: yes
@@ -799,7 +797,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">south strip · 5★ · guest score —
   · 15 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$1,465</td><td class="num muted">$209</td><td class="tiny"></td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -816,7 +814,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">south strip · 5★ · guest score 7.8
   · 15 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$2,493</td><td class="num muted">$356</td><td class="tiny"></td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -833,7 +831,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">south strip · 5★ · guest score 9.3
   · 15 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$2,981</td><td class="num muted">$426</td><td class="tiny"></td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -850,7 +848,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">off strip · 4★ · guest score 8.9
   · 0 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$800</td><td class="num muted">$114</td><td class="tiny">Black Friday deal, free cancellation. Displayed per-night $114 against a $1,143 pre-discount figure.</td></tr></tbody>
   </table>
   <p class="tiny">Bed: queen · private bathroom: not stated
@@ -867,7 +865,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">off strip · 3★ · guest score —
   · 0 MICHELIN within 20 min · resort fee: none / not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$832</td><td class="num muted">$119</td><td class="tiny"></td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -884,7 +882,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">off strip · 5★ · guest score 9.1
   · 0 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$2,012</td><td class="num muted">$287</td><td class="tiny"></td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -901,7 +899,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">off strip · 5★ · guest score 8.5
   · 0 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$2,507</td><td class="num muted">$358</td><td class="tiny"></td></tr></tbody>
   </table>
   <p class="tiny">Bed: king · private bathroom: yes
@@ -916,12 +914,12 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 </section>
 
 <section class="panel callout">
-  <h2>The three cheapest totals are traps</h2>
-  <p>The LINQ ($564), Flamingo ($626) and Horseshoe ($717) headline the dataset, but all three are
-  <strong>"room type assigned on arrival"</strong> promotions. The king bed shown at booking is not contractual, so
-  they do not satisfy the queen-or-larger requirement until check-in. Book a <em>named</em> room class at the
-  same properties — expect $100–$200 more per week — or take Desert Rose at $922 with the bed guaranteed and
-  no resort fee.</p>
+  <h2>Lowest Booking.com quotes: bed and source caveats</h2>
+  <p>The LINQ ($564), Flamingo ($626) and Horseshoe ($717) headline the third-party snapshot, but each lowest rate is a
+  <strong>"room type assigned on arrival"</strong> promotion. The bed is not guaranteed at booking, so these rates do not
+  establish the requested queen-or-larger room fit. Named-room direct rates need to be checked on each property's
+  official booking engine; no $100–$200 uplift is assumed. The separate official-engine sample includes some named-room
+  alternatives and direct links, but does not establish a universal cheapest hotel.</p>
 </section>
 
 </main>

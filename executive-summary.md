@@ -9,7 +9,12 @@ Figures captured 25 November 2026 and spot-checked 26 November 2026. Live site: 
 
 Three findings shape this trip. The 26 November check overturned one of them.
 
-**1. The cheaper-week claim is withdrawn and unproven.** The 25 November captures suggested that 8–15 March 2027 is about a third cheaper at the big resorts. On 26 November, Booking.com's own Venetian page did not reproduce that. The same 60 m² Luxury King Suite showed **US$5,185** for 15–22 February and **€4,472** for 8–15 March, both including taxes and fees. The stored $2,407 vs $3,757 figures are withdrawn (F-29). The official booking engines at Caesars Palace and Flamingo, checked 25 Nov, priced February lower, so the cheapest week depends on the property. Whether another week is cheaper is an open question (Q-06).
+**1. No market-wide cheapest week is established.** Booking.com snapshots show lower March quotes for
+some sampled rooms; a separate 25 Nov official-engine sample found the preferred February dates cheapest
+at properties it checked. A 26 Nov direct-engine refresh returned changed rates and a Venetian quote with
+an unclear 4+ guest-suite occupancy label. The property coverage, room/rate terms and fee/tax bases differ.
+Do not move dates on this evidence alone; compare exact dates and named rooms at each hotel's official
+booking engine. See the [official-engine sample](docs/session-af795000/hotels.html) and flagged findings F-29/F-30.
 
 **2. The requested ranking metric cannot rank anything.** The brief asked to order hotels by how many MICHELIN restaurants fall within an hour by public transport. Las Vegas has no subway, and the Strip is four miles long with Chinatown three miles west of it. So **every one of the 32 hotels is within an hour of all 24 restaurants**. A 20-minute column was added and is what actually separates the field. This is disclosed as Q-01 rather than quietly swapped.
 
@@ -19,9 +24,9 @@ Three findings shape this trip. The 26 November check overturned one of them.
 
 | | Pick | Why |
 |---|---|---|
-| **Best value** | **Desert Rose Resort** — $922 for 7 nights | 9.1 guest score, 646 ft² one-bedroom suite, king bed, private bathroom, **no resort fee**. One block east of the Strip, a 15–20 minute walk to the Robuchon rooms at MGM Grand. |
-| **Date move** | **Not yet — check first** | The 8–15 March saving is unproven (F-29). Before moving, check each property's own booking engine for both weeks, with the same room class and the same taxes basis. 15 February remains the preferred date. |
-| **Best location for Michelin** | **Palms Place** — $866 | 24 of 24 restaurants within 20 minutes. The room (studio, king and sofa bed) is taken from the Booking.com rate block and is not yet confirmed on Palms' own site (F-31). |
+| **Value candidate (not a final pick)** | **Desert Rose Resort** — Booking.com snapshot $922 for 7 nights | Room fit and amenities are described on the official property page, but this total is not an official property quote and must be rechecked before it supports a recommendation. |
+| **Best date window** | **Not established** | Booking.com snapshots and direct official-engine samples conflict; compare the same room and fee/tax basis at the hotel's official booking engine. |
+| **Best location for Michelin** | **Palms Place / west-of-Strip candidates** | Transit counts are estimates and the stated ≤60-minute metric saturates at 24/24. Rate references on the main table are Booking.com snapshots, not official quotes. |
 | **Avoid** | Red Rock, Green Valley Ranch, Cliffs at Peace Canyon | Correct resorts, 11–17 miles from every dinner. **0** restaurants inside 20 minutes. |
 
 ## The Michelin picture
@@ -43,4 +48,4 @@ Restaurant prices are also open: 21 of 24 publish no price for two.
 
 ## How to trust any number here
 
-Every figure links to its source. The generated site has **12 pages**, **312 external source links** and **0 failures** in the validator. The [Flagged for review](flagged.html) page lists every item that did not verify cleanly (F-01 to F-38), the links used to check it, and the items that were confirmed. Nothing is presented as an estimate, except the transit minutes, which are labelled as estimates. The Route 203 timetable gives 10 to 17 minutes between Decatur and Las Vegas Blvd depending on the time of day; the model uses 14 (F-32).
+Every figure links to its source. The generated site has **13 pages**, **378 external source links** and **0 failures** in the validator. The [Flagged for review](flagged.html) page lists every item that did not verify cleanly (F-01 to F-38), the links used to check it, and the items that were confirmed. Nothing is presented as an estimate, except the transit minutes, which are labelled as estimates. The Route 203 timetable gives 10 to 17 minutes between Decatur and Las Vegas Blvd depending on the time of day; the model uses 14 (F-32).
