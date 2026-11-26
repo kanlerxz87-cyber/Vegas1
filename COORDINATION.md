@@ -11,6 +11,7 @@ then commit and push that claim immediately.
 | Session | Started | Scope now | Branch |
 |---------|---------|-----------|--------|
 | arena-edcfa7a0-vegas1 | 2026-11-25 | T02–T11 — research complete; writing `data/*.json`, building `docs/`, publishing | `arena/edcfa7a0-vegas1` |
+| arena-ca2c6c85-vegas1 | 2026-11-26 | Full line-by-line re-verification of canonical data against official sources, irregularity fixes, rebuild, PR to main + GitHub Pages deploy | `arena/ca2c6c85-vegas1` |
 | arena-0c9983d6-vegas1 | 2026-11-25 | Verification pass on transit: added RTC Route 203, corrected the Chinatown reachability claim | `arena/0c9983d6-vegas1` |
 | arena-126d963c-vegas1 | 2026-11-25 | Restaurant hours + closure status verification pass | `arena/126d963c-vegas1` |
 | session-planner-01 (arena/4d41b902-vegas1) | 2026-11-25 | Independent full build: 24 Michelin restaurants, 9 ranked hotels, 8 activities, pricing, verification, summary, suggestions in `assets/` + root pages; integrated into canonical `main` site | `arena/4d41b902-vegas1` |
@@ -44,17 +45,17 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 
 | ID | Task | Status | Owner (session ID) | File scope | Notes |
 |----|------|--------|--------------------|-----------|-------|
-| T01 | Repo inventory + founding constraints | done | arena-edcfa7a0-vegas1 | `COORDINATION.md`, `docs/` | Repo was empty (README only) at commit `9b8bcfa`. GitHub Pages already enabled from `main` root. Bash sandbox has no general internet; all verification is via `fetch_page` / `web_search`. |
-| T02 | Michelin 2026 Southwest selection — star/list status per Las Vegas restaurant | done | arena-edcfa7a0-vegas1 | `data/restaurants.json` | Source: official Michelin press release + LVCVA (visitlasvegas.com). |
-| T03 | Restaurant hours, days open, reservations, price per couple | done | arena-edcfa7a0-vegas1 | `data/restaurants.json` | Gaps left blank + flagged. |
-| T04 | Hotel shortlist, room-type fit (king/queen + private bathroom) | done | arena-edcfa7a0-vegas1 | `data/hotels.json` | Official hotel room pages. |
-| T05 | Verified 7-night pricing per hotel for dated windows | done | arena-edcfa7a0-vegas1 | `data/hotels.json`, `data/price-windows.json` | Booking.com dated search results, captured 2026-11-25. Resort fees handled separately. |
-| T06 | Transit model (monorail, Deuce/bus, Vegas Loop) + ≤60-minute scoring | done | arena-edcfa7a0-vegas1 | `data/transit.json`, `data/hotels.json` | Transit times are *estimates* derived from official route maps; never presented as official. |
-| T07 | Activities list with official + social links, hours, exceptions | done | arena-edcfa7a0-vegas1 | `data/activities.json` | |
-| T08 | Open-questions register + suggestions backlog | done | arena-edcfa7a0-vegas1 | `data/questions.json`, `data/suggestions.json` | |
-| T09 | Static site build (mobile-first dashboard) | done | arena-edcfa7a0-vegas1 | `docs/**`, `scripts/**` | No framework, no external CDN calls, no build step at deploy time. |
-| T10 | Verification pass + Flagged for Review page | done | arena-edcfa7a0-vegas1 | `docs/verification.html`, `FLAGS.md` | |
-| T11 | Integration + GitHub Pages publish | done | arena-edcfa7a0-vegas1 | `docs/**`, Pages settings | Single integrating session for this effort; no other session active. |
+| T01 | Repo inventory + founding constraints | in progress | arena-ca2c6c85-vegas1 | `COORDINATION.md`, `docs/` | Repo was empty (README only) at commit `9b8bcfa`. GitHub Pages already enabled from `main` root. Bash sandbox has no general internet; all verification is via `fetch_page` / `web_search`. |
+| T02 | Michelin 2026 Southwest selection — star/list status per Las Vegas restaurant | in progress | arena-ca2c6c85-vegas1 | `data/restaurants.json` | Source: official Michelin press release + LVCVA (visitlasvegas.com). Re-verifying every award tier against guide.michelin.com and michelin.com press release this session. |
+| T03 | Restaurant hours, days open, reservations, price per couple | in progress | arena-ca2c6c85-vegas1 | `data/restaurants.json` | Gaps left blank + flagged. Re-checking starred venues + Michael Mina before the 2027 trip per Q-08/Q-11. |
+| T04 | Hotel shortlist, room-type fit (king/queen + private bathroom) | in progress | arena-ca2c6c85-vegas1 | `data/hotels.json` | Official hotel room pages. Spot-checking queen/private-bath claims on official pages. |
+| T05 | Verified 7-night pricing per hotel for dated windows | in progress | arena-ca2c6c85-vegas1 | `data/hotels.json`, `data/price-windows.json` | Booking.com dated search results, captured 2026-11-25. Resort fees handled separately. |
+| T06 | Transit model (monorail, Deuce/bus, Vegas Loop) + ≤60-minute scoring | in progress | arena-ca2c6c85-vegas1 | `data/transit.json`, `data/hotels.json` | Route 203 correction already applied (F-21). Re-verifying fares against RTC/Monorail official pages. |
+| T07 | Activities list with official + social links, hours, exceptions | in progress | arena-ca2c6c85-vegas1 | `data/activities.json` | Fountains schedule fill (S-05) pending decision; socials blank per F-19. |
+| T08 | Open-questions register + suggestions backlog | in progress | arena-ca2c6c85-vegas1 | `data/questions.json`, `data/suggestions.json` | Q-01/Q-02 substitutions disclosed; no guesses in tables. |
+| T09 | Static site build (mobile-first dashboard) | in progress | arena-ca2c6c85-vegas1 | `docs/**`, `scripts/**` | Rebuild after any data change; `validate.py` must be 0 failures. |
+| T10 | Verification pass + Flagged for Review page | in progress | arena-ca2c6c85-vegas1 | `docs/verification.html`, `FLAGS.md` | Every table row needs a source link or a blank + flag. |
+| T11 | Integration + GitHub Pages publish | in progress | arena-ca2c6c85-vegas1 | `docs/**`, Pages settings | PR from `arena/ca2c6c85-vegas1` to `main`, merge, confirm Pages deploy. |
 | T1–T9 | Independent full build (restaurants, hotels, activities, pricing, verification, summary, suggestions) | done | session-planner-01 | `assets/**`, root `*.html` | Separate JS-driven build; integrated into canonical `main` site via merge (see handoff log). |
 | T10 | Integrate, re-verify, deploy GitHub Pages | done | session-planner-01 | repo-wide | Merged independent build into canonical `main` site; supplementary pages linked from nav. |
 | T1–T9 (independent) | Independent verified build + link-check pass | done | session-48dbf0ae | `docs/session-48dbf0ae/**`, `data/session-48dbf0ae-*.json` | Claimed on a fork-era task board that predates this one; no canonical file touched. See session record at end of file. |
