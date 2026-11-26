@@ -74,7 +74,7 @@
       "status": "corrected",
       "title": "Route 203 Decatur to Las Vegas Blvd is a range, not 14 minutes",
       "where": "transit.html, travel_matrix.json, transit.json, executive summary and README",
-      "what": "RTC's weekday timetable for Route 203 (eastbound, first two of six PDF pages read in this audit) gives Decatur to Las Vegas Blvd running times of about 10 to 17 minutes depending on the run: about 10 minutes in the early-morning runs and 15 to 17 minutes in the afternoon. The 14-minute figure used in the model is a midpoint, not a published value. Update: a Saturday westbound run on the PDF's third page shows Las Vegas Blvd to Decatur at about 8–9 minutes, so the sampled range is 8–17 minutes across directions and days; pages 4–6 are still unread.",
+      "what": "RTC's weekday timetable for Route 203 (eastbound, first two of six PDF pages read in this audit) gives Decatur to Las Vegas Blvd running times of about 10 to 17 minutes depending on the run. The 14-minute figure used in the model is a midpoint, not a published value. Update: a Saturday westbound run on the PDF's third page shows Las Vegas Blvd to Decatur at about 8–9 minutes, so the sampled range is 8–17 minutes across directions and days; pages 4–6 are still unread.",
       "effect": "Wording corrected everywhere. The model still uses 14 minutes, so the 34-minute north-Strip-to-Chinatown estimate is unchanged but should be read as a range that moves with the time of day. Still an estimate.",
       "sources": [
         {
