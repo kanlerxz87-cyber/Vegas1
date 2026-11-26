@@ -16,7 +16,7 @@
       "deuce_mph": 8.0,
       "wait_minutes_per_boarding": 8.0,
       "transfer_penalty_minutes": 10.0,
-      "note": "Only the Route 203 Decatur-to-Las-Vegas-Blvd timetable range is published (about 10 to 17 minutes by time of day). The model uses 14, the midpoint. The speeds and penalties above are ordinary planning values, declared so the reader can see exactly which numbers are measured and which are assumed."
+      "note": "Only the Route 203 Decatur-to-Las-Vegas-Blvd timetable range is published (about 8 to 17 minutes by time of day (weekday eastbound 10–17; Saturday westbound 8–9)). The model uses 14, the midpoint. The speeds and penalties above are ordinary planning values, declared so the reader can see exactly which numbers are measured and which are assumed."
     },
     "calibration": {
       "numbers_per_mile": 337.0,
@@ -530,7 +530,7 @@
           "minutes": 10.0
         },
         {
-          "leg": "Route 203 west toward Decatur (timetable 10–17 min; model 14)",
+          "leg": "Route 203 west toward Decatur (timetable 8–17 min; model 14)",
           "minutes": 14.0
         },
         {
@@ -658,7 +658,7 @@
           "minutes": 10.0
         },
         {
-          "leg": "Route 203 west toward Decatur (timetable 10–17 min; model 14)",
+          "leg": "Route 203 west toward Decatur (timetable 8–17 min; model 14)",
           "minutes": 14.0
         },
         {
@@ -786,7 +786,7 @@
           "minutes": 10.0
         },
         {
-          "leg": "Route 203 west toward Decatur (timetable 10–17 min; model 14)",
+          "leg": "Route 203 west toward Decatur (timetable 8–17 min; model 14)",
           "minutes": 14.0
         },
         {
@@ -926,7 +926,7 @@
           "minutes": 10.0
         },
         {
-          "leg": "Route 203 west toward Decatur (timetable 10–17 min; model 14)",
+          "leg": "Route 203 west toward Decatur (timetable 8–17 min; model 14)",
           "minutes": 14.0
         },
         {
@@ -1054,7 +1054,7 @@
           "minutes": 10.0
         },
         {
-          "leg": "Route 203 west toward Decatur (timetable 10–17 min; model 14)",
+          "leg": "Route 203 west toward Decatur (timetable 8–17 min; model 14)",
           "minutes": 14.0
         },
         {
@@ -1170,7 +1170,7 @@
           "minutes": 10.0
         },
         {
-          "leg": "Route 203 west toward Decatur (timetable 10–17 min; model 14)",
+          "leg": "Route 203 west toward Decatur (timetable 8–17 min; model 14)",
           "minutes": 14.0
         },
         {
@@ -1286,7 +1286,7 @@
           "minutes": 10.0
         },
         {
-          "leg": "Route 203 west toward Decatur (timetable 10–17 min; model 14)",
+          "leg": "Route 203 west toward Decatur (timetable 8–17 min; model 14)",
           "minutes": 14.0
         },
         {
@@ -1438,7 +1438,7 @@
           "minutes": 10.0
         },
         {
-          "leg": "Route 203 west toward Decatur (timetable 10–17 min; model 14)",
+          "leg": "Route 203 west toward Decatur (timetable 8–17 min; model 14)",
           "minutes": 14.0
         },
         {
@@ -1590,7 +1590,7 @@
           "minutes": 10.0
         },
         {
-          "leg": "Route 203 west toward Decatur (timetable 10–17 min; model 14)",
+          "leg": "Route 203 west toward Decatur (timetable 8–17 min; model 14)",
           "minutes": 14.0
         },
         {
@@ -1718,7 +1718,7 @@
           "minutes": 10.0
         },
         {
-          "leg": "Route 203 west toward Decatur (timetable 10–17 min; model 14)",
+          "leg": "Route 203 west toward Decatur (timetable 8–17 min; model 14)",
           "minutes": 14.0
         },
         {
@@ -1846,7 +1846,7 @@
           "minutes": 8.0
         },
         {
-          "leg": "Route 203 west toward Decatur (timetable 10–17 min; model 14)",
+          "leg": "Route 203 west toward Decatur (timetable 8–17 min; model 14)",
           "minutes": 14.0
         },
         {
@@ -1986,7 +1986,7 @@
           "minutes": 8.0
         },
         {
-          "leg": "Route 203 west toward Decatur (timetable 10–17 min; model 14)",
+          "leg": "Route 203 west toward Decatur (timetable 8–17 min; model 14)",
           "minutes": 14.0
         },
         {

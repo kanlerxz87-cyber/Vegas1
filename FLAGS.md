@@ -51,7 +51,7 @@ Items F-39 to F-46 come from the 26 November 2026 line-by-line audit (task T12).
 - **F-39** Venetian $2,407 vs $3,757 "36% cheaper in March" figures withdrawn: not reproduced on Booking.com's own page.
 - **F-40** Per-night and 7-night totals do not reconcile on 17 of 42 captured rows (16 properties).
 - **F-41** Palms Place room specification comes from the Booking.com rate block only.
-- **F-42** Route 203 Decatur → Las Vegas Blvd is about 10–17 minutes by time of day, not a single 14.
+- **F-42** Route 203 Decatur → Las Vegas Blvd is about 8–17 minutes across the sampled timetable rows (weekday eastbound 10–17; Saturday westbound 8–9), not a single 14.
 - **F-43** Michael Mina closure re-confirmed on Bellagio's dining index.
 - **F-44** Other week-to-week captures not reproduced (only the Venetian was checked on its own engine).
 - **F-45** Promotional and one-day-snapshot rates; re-capture within 60 days of travel.
