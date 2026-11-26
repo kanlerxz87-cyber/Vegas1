@@ -53,7 +53,8 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 | T08 | Open-questions register + suggestions backlog | done | arena-edcfa7a0-vegas1 | `data/questions.json`, `data/suggestions.json` | |
 | T09 | Static site build (mobile-first dashboard) | done | arena-edcfa7a0-vegas1 | `docs/**`, `scripts/**` | No framework, no external CDN calls, no build step at deploy time. |
 | T10 | Verification pass + Flagged for Review page | done | arena-edcfa7a0-vegas1 | `docs/verification.html`, `FLAGS.md` | |
-| T11 | Integration + GitHub Pages publish | done | arena-edcfa7a0-vegas1 | `docs/**`, Pages settings | Single integrating session for this effort; no other session active. |
+| T11 | Integration + GitHub Pages publish | done | arena-edcfa7a0-vegas1 | `docs/**`, Pages settings | Initial publish completed; current pass will re-check deployed state. |
+| T12 | Final integration re-audit, corrections, and deploy confirmation | in progress | arena/a6dea130-vegas1 | `COORDINATION.md`, `data/*.json`, `scripts/{build,gen_site,validate}.py`, `docs/**`, root generated HTML/CSS, `FLAGS.md` | Claimed 2026-11-26. Historical claims in this board have no commits since 2026-11-25 (>60 min); canonical integration scope is taken over per §7. Shared data/site files will be touched only after re-auditing all currently published rows and validating the generated result. |
 | T1–T9 | Independent full build (restaurants, hotels, activities, pricing, verification, summary, suggestions) | done | session-planner-01 | `assets/**`, root `*.html` | Separate JS-driven build; integrated into canonical `main` site via merge (see handoff log). |
 | T10 | Integrate, re-verify, deploy GitHub Pages | done | session-planner-01 | repo-wide | Merged independent build into canonical `main` site; supplementary pages linked from nav. |
 | T1–T9 (independent) | Independent verified build + link-check pass | done | session-48dbf0ae | `docs/session-48dbf0ae/**`, `data/session-48dbf0ae-*.json` | Claimed on a fork-era task board that predates this one; no canonical file touched. See session record at end of file. |
@@ -231,3 +232,8 @@ edited or discarded. Integrated additively per the `session-af795000` pattern:
 
 **No work discarded in this merge:** canonical root site, `docs/` canonical pages, `data/*.json`,
 `scripts/`, `FLAGS.md`, `archive/` all kept from `main`.
+
+
+## Integration re-audit — 2026-11-26 (session arena/a6dea130-vegas1)
+
+**Claim:** T12 — final integration re-audit, corrections, and deploy confirmation. Historical task claims in this board are dated 2026-11-25 and have no newer commits; this session takes over the integration scope under rule §7. Branch is the Arena-assigned `arena/a6dea130-vegas1`. Initial work is verification of generated pages against source datasets and fresh official-source checks; no shared data/site files are changed until the review identifies a specific correction.
