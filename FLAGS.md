@@ -1,7 +1,7 @@
 # FLAGS.md — everything that did not verify cleanly
 
 Every flag below is referenced from the site. A flag means **the cell is blank or the value is
-labelled**, never that a plausible number was filled in.
+labelled**, never that a plausible number was filled in. Newer parallel audit findings F-39–F-46 are kept in `data/review-flags.json` and summarized below.
 
 | ID | Where | What | Effect on the plan |
 |----|-------|------|--------------------|
@@ -25,7 +25,7 @@ labelled**, never that a plausible number was filled in.
 | **F-18** | Bellagio Fountains | Official page fetch failed twice. Show schedule unverified. | No hours listed on the activities page. |
 | **F-19** | Instagram / TikTok | Handles are not printed on most official pages. Only the Neon Museum publishes its own. | Blank rather than guessed — see Q-07. |
 | **F-20** | Transit minutes | Every minute value is an estimate from official station lists and route maps. No official door-to-door times exist. | Labelled "estimate" everywhere. |
-| **F-21** | Chinatown / Route 203 | **Correction.** An earlier version of this dataset recorded Chinatown / Spring Mountain Rd as reachable only by car or rideshare. RTC Route 203 runs the length of that road with a timed stop at Las Vegas Blvd, and its published timetable gives Decatur → Las Vegas Blvd in 14 minutes. | North Strip to Chinatown is ~34 min, not unreachable. Raises the north-Strip short-trip counts. Seven listings are affected. |
+| **F-21** | Chinatown / Route 203 | **Correction.** An earlier version of this dataset recorded Chinatown / Spring Mountain Rd as reachable only by car or rideshare. RTC Route 203 runs the length of that road with a timed stop at Las Vegas Blvd; the timetable gives about 10–17 minutes from Decatur to Las Vegas Blvd depending on the run (14 minutes is the model midpoint). | North Strip to Chinatown is ~34 min, not unreachable. Raises the north-Strip short-trip counts. Seven listings are affected. |
 | **F-22** | Joël Robuchon | Hours were blank and the row was marked `partial`. The restaurant's own MGM page publishes **Tue–Sat 5:00–9:30 PM**, closed Sun and Mon, no under-6s, business formal. | Now verified. Tue–Sat is the only possible booking window — check it before fixing a night. |
 | **F-23** | Michael Mina | The Bellagio page's Hours of operation block reads **"Monday to Sunday: Closed"** and the venue is labelled **Temporarily closed**. The `$590++` tasting-menu figure on the row is therefore a price for a service that is not running. | Must not be offered as a bookable dinner, and Bellagio must not be sold on it. Reopen date is **not** published; do not assume Feb 2027. |
 | **F-24** | Partage | Hours were blank because they live on `/contact`, not on `/restaurant` (which is only a booking widget): **Tue–Sat 5–9 PM**. | Now verified. Same page confirms a strict no-vegan / no-coeliac / no-dairy kitchen. |
@@ -43,6 +43,21 @@ labelled**, never that a plausible number was filled in.
 ## Current-rate verification — 2026-11-26
 
 The dated official booking-engine snapshots and all source URLs are stored in [`data/direct-rates.json`](data/direct-rates.json) and rendered on the Hotels page. The date-specific average nightly rates and calculated seven-night subtotals are not guarantees and exclude room taxes. Calculated subtotals are explicitly distinguished from official checkout totals. The limited-time Wynn offer and book-by date are linked to the official rate page and offer terms. The current sample does not establish an overall lowest hotel or a final recommendation because private bathroom wording and full checkout totals remain unconfirmed.
+
+## Later repo-audit findings (F-39–F-46)
+
+The parallel 26 Nov consistency pass added eight findings, with detailed evidence in [`data/review-flags.json`](data/review-flags.json) and the full [Flagged for review](flagged.html) page. These supplement—not replace—the current hotel quote flags F-29–F-31.
+
+Items F-39 to F-46 come from the 26 November 2026 line-by-line audit (task T12). They are kept in `data/review-flags.json`, with source links, and rendered on the site's **Flagged for review** page (`flagged.html`). Summary:
+
+- **F-39** Venetian $2,407 vs $3,757 "36% cheaper in March" figures withdrawn: not reproduced on Booking.com's own page.
+- **F-40** Per-night and 7-night totals do not reconcile on 17 of 42 captured rows (16 properties).
+- **F-41** Palms Place room specification comes from the Booking.com rate block only.
+- **F-42** Route 203 Decatur → Las Vegas Blvd is about 10–17 minutes by time of day, not a single 14.
+- **F-43** Michael Mina closure re-confirmed on Bellagio's dining index.
+- **F-44** Other week-to-week captures not reproduced (only the Venetian was checked on its own engine).
+- **F-45** Promotional and one-day-snapshot rates; re-capture within 60 days of travel.
+- **F-46** Repository irregularities (duplicate board IDs, stale counts, overlapping datasets, orphan page, failed branch run).
 
 ## Deliberate non-inclusions
 

@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "purpose": "Items that did not verify cleanly, or were corrected, in the 2026-11-26 line-by-line audit (task T12). Rendered on flagged.html. Each entry carries the source links used. Blank or flagged means NOT verified; nothing here is an estimate presented as fact.",
+    "checked": "2026-11-26",
+    "checked_by": "arena-f527b427-vegas1",
+    "numbering": "Continues FLAGS.md (F-01 to F-28). New items are F-39 onward.",
+    "blocking": "None. Flagged and unverified items do not block the merge; they are published here for review."
+  },
+  "flags": [
+    {
+      "id": "F-39",
+      "status": "contradicted",
+      "title": "Venetian 'cheapest week' figures withdrawn",
+      "where": "The Venetian Resort: hotels.json, price-windows.json, questions Q-06, suggestion S-01, index card, executive summary, README",
+      "what": "The stored captures $3,757 (15–22 Feb 2027) and $2,407 (8–15 Mar 2027) for the Venetian's 60 m² Luxury King Suite (about 646 ft²) could not be reproduced. On 26 Nov 2026 Booking.com's own Venetian page showed the same suite at US$5,185.05 for 15–22 Feb 2027 (list US$9,934; 'Bonusrabatt' −48%) and €4,472.36 for 8–15 Mar 2027 (list €6,479; −31%), both labelled 'including taxes and fees'. The March page was displayed in EUR and no conversion was applied. Even at €1 = $1 the March figure is about 86% above the stored $2,407.",
+      "effect": "Venetian totals are withdrawn (shown as —). The '36% cheaper in March' claim is removed from the index, executive summary, questions and suggestions. The 25 Nov captures are kept in hotels.json under prices_withdrawn_2026_11_26 for audit.",
+      "sources": [
+        {
+          "label": "Booking.com, The Venetian, 15–22 Feb 2027, USD, incl. taxes & fees (fetched 26 Nov 2026)",
+          "url": "https://www.booking.com/hotel/us/the-venetian-resort-casino.de.html?aid=356980&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&sb_price_type=total&type=total"
+        },
+        {
+          "label": "Booking.com, The Venetian, 8–15 Mar 2027, displayed in EUR (fetched 26 Nov 2026; tracking parameters removed)",
+          "url": "https://www.booking.com/hotel/us/the-venetian-resort-casino.de.html?checkin=2027-03-08&checkout=2027-03-15&group_adults=2&no_rooms=1"
+        },
+        {
+          "label": "Venetian official site (room type context)",
+          "url": "https://www.venetianlasvegas.com/"
+        }
+      ]
+    },
+    {
+      "id": "F-40",
+      "status": "unverified",
+      "title": "Per-night and 7-night totals do not reconcile",
+      "where": "16 properties; 17 of 42 captured rows (see each hotel card)",
+      "what": "On these rows, total ÷ 7 differs from the stated per-night figure by more than 3%. Examples: Flamingo $626 total but $39/night (×7 = $273); Palms Place $866 total but $80/night (×7 = $560); Cosmopolitan Mar $2,307 total but $275/night (×7 = $1,925). The capture does not say whether the per-night figure excludes taxes/fees or the total includes them.",
+      "effect": "Both figures are shown as captured. Do not divide one by seven or multiply the other. The basis of each row must be checked on the property's own booking engine.",
+      "sources": [
+        {
+          "label": "Booking.com, Flamingo, 15–22 Feb 2027 (capture 25 Nov 2026)",
+          "url": "https://www.booking.com/hotel/us/flamingo-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
+        },
+        {
+          "label": "Booking.com, Palms Place, 15–22 Feb 2027 (capture 25 Nov 2026)",
+          "url": "https://www.booking.com/hotel/us/palms-place.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
+        },
+        {
+          "label": "Booking.com, The Cosmopolitan (stored booking_url; the 8–15 Mar capture uses the same URL pattern with 2027-03-08 → 03-15)",
+          "url": "https://www.booking.com/hotel/us/the-cosmopolitan-of-las-vegas.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
+        }
+      ]
+    },
+    {
+      "id": "F-41",
+      "status": "unverified",
+      "title": "Palms Place room specification not confirmed on the official site",
+      "where": "Palms Place Hotel and Spa",
+      "what": "'Studio with Mountain View, 603 ft², king + sofa bed, private bathroom' comes from the Booking.com rate block. The Palms pages fetched on 26 Nov 2026 (/palms-place and /stay) did not state room size, bed or bathroom in the captured text.",
+      "effect": "Treat the room as unverified until the bed and bathroom are confirmed on Palms' own booking page before relying on the queen-or-larger requirement.",
+      "sources": [
+        {
+          "label": "Palms Place official page",
+          "url": "https://www.palms.com/palms-place/"
+        },
+        {
+          "label": "Palms Casino Resort, Stay page",
+          "url": "https://www.palms.com/stay"
+        }
+      ]
+    },
+    {
+      "id": "F-42",
+      "status": "corrected",
+      "title": "Route 203 Decatur to Las Vegas Blvd is a range, not 14 minutes",
+      "where": "transit.html, travel_matrix.json, transit.json, executive summary and README",
+      "what": "RTC's weekday timetable for Route 203 (eastbound, first two of six PDF pages read in this audit) gives Decatur to Las Vegas Blvd running times of about 10 to 17 minutes depending on the run: about 10 minutes in the early-morning runs and 15 to 17 minutes in the afternoon. The 14-minute figure used in the model is a midpoint, not a published value.",
+      "effect": "Wording corrected everywhere. The model still uses 14 minutes, so the 34-minute north-Strip-to-Chinatown estimate is unchanged but should be read as a range that moves with the time of day. Still an estimate.",
+      "sources": [
+        {
+          "label": "RTC Route 203 timetable (PDF)",
+          "url": "https://rtcws.rtcsnv.com/routePDF/203.pdf"
+        }
+      ]
+    },
+    {
+      "id": "F-43",
+      "status": "confirmed",
+      "title": "Michael Mina (Bellagio) closure re-confirmed",
+      "where": "Michael Mina, Bellagio",
+      "what": "Bellagio's own dining index lists Michael Mina as 'Temporarily Closed' ($$$$, seafood). This re-confirms F-23 on a second page. No reopen date is published.",
+      "effect": "The $590 for two is not a bookable dinner. Do not plan around it or sell Bellagio on it.",
+      "sources": [
+        {
+          "label": "Bellagio Dining index (filter: Bellagio)",
+          "url": "https://bellagio.mgmresorts.com/en/restaurants.html?filter=property,Bellagio_Las_Vegas"
+        },
+        {
+          "label": "Michael Mina, Bellagio official page",
+          "url": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html"
+        }
+      ]
+    },
+    {
+      "id": "F-44",
+      "status": "unverified",
+      "title": "Other week-to-week comparisons not reproduced",
+      "where": "Palazzo, Cosmopolitan, ARIA, Bellagio, Waldorf Astoria, Nobu at Caesars",
+      "what": "Only the Venetian was checked on its own booking page on 26 Nov 2026. The other week-to-week captures (for example Palazzo $2,422 vs $3,932, Cosmopolitan $2,307 vs $3,433) were not reproduced in this audit, and the Venetian result shows the method can be off.",
+      "effect": "Shown as captured, labelled 'not reproduced', and not used as a recommendation. Nobu's February-cheaper result is still unexplained (F-12).",
+      "sources": [
+        {
+          "label": "Booking.com, Palazzo (stored booking_url; the 8–15 Mar capture uses the same URL pattern with 2027-03-08 → 03-15)",
+          "url": "https://www.booking.com/hotel/us/the-palazzo-resort-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
+        },
+        {
+          "label": "Booking.com, The Cosmopolitan (stored booking_url, 15–22 Feb 2027; the 8–15 Mar capture uses the same URL pattern)",
+          "url": "https://www.booking.com/hotel/us/the-cosmopolitan-of-las-vegas.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"
+        }
+      ]
+    },
+    {
+      "id": "F-45",
+      "status": "information",
+      "title": "Promotional rates and one-day snapshots",
+      "where": "All Booking.com captures",
+      "what": "The Venetian page states that its Black Friday offer covers selected stays booked between 19 Nov 2026 and 31 Dec 2027. Several captured rows carry 'Black Friday' or 'Bonus' labels. Every price is a single-day snapshot taken 25 to 26 Nov 2026.",
+      "effect": "Re-capture every figure within 60 days of travel before booking (Q-06).",
+      "sources": [
+        {
+          "label": "Booking.com, The Venetian, 8–15 Mar 2027 (promotion text on page)",
+          "url": "https://www.booking.com/hotel/us/the-venetian-resort-casino.de.html?checkin=2027-03-08&checkout=2027-03-15&group_adults=2&no_rooms=1"
+        }
+      ]
+    },
+    {
+      "id": "F-46",
+      "status": "needs review",
+      "title": "Repository irregularities found in the review",
+      "where": "Repository root, COORDINATION.md, README.md, executive-summary.md, pages/, data/",
+      "what": "(a) COORDINATION.md reuses task IDs: T10 appears twice and T1–T9 appears in two different session rows. (b) README.md and executive-summary.md gave 8 pages and 280 external links; the generator renders 11 pages with 288 external links (scripts/validate.py). (c) Three Michelin datasets and three hotel datasets hold overlapping facts (canonical plus session-*). They agree on the 24 award names, but not on every hotel rate. The archived sub-sites docs/session-af795000/ and docs/session-48dbf0ae/ still carry their own price claims, including that February is the cheapest week; they were not updated by this audit and are not the canonical plan. (d) pages/flagged.html was an orphan page, linked from no navigation and generated by no script. It is replaced by the generated flagged.html. (e) data/flags.json uses F07-style IDs; FLAGS.md uses F-07. (f) A 'pages build and deployment' run on branch arena/48dbf0ae-vegas1 failed (run 45643448267). That branch is not main, and main's Pages builds succeed.",
+      "effect": "Items (b) and (d) are fixed in this audit. Items (a), (c), (e) and (f) are logged for a human decision on which copy to keep.",
+      "sources": [
+        {
+          "label": "COORDINATION.md on main",
+          "url": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/COORDINATION.md"
+        },
+        {
+          "label": "GitHub Actions runs for this repository",
+          "url": "https://github.com/kanlerxz87-cyber/Vegas1/actions"
+        },
+        {
+          "label": "Live site",
+          "url": "https://kanlerxz87-cyber.github.io/Vegas1/"
+        }
+      ]
+    }
+  ],
+  "confirmed": [
+    {
+      "id": "C-11",
+      "what": "All 24 Las Vegas MICHELIN names and award tiers match the 2026 Southwest selection: 4 starred (Joël Robuchon 2★; L'Atelier de Joël Robuchon, Restaurant Guy Savoy and é by José Andrés 1★), 3 Bib Gourmand (China Poblano, Esther's Kitchen, YEN Viet Kitchen) and 17 Recommended. The release's Las Vegas Recommended list matches the 17 names on the site.",
+      "sources": [
+        {
+          "label": "MICHELIN Guide press release, 31 Aug 2026 (Southwest selection)",
+          "url": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s"
+        },
+        {
+          "label": "Visit Las Vegas, MICHELIN restaurants in Las Vegas",
+          "url": "https://www.visitlasvegas.com/michelin-guide-restaurants/"
+        }
+      ]
+    },
+    {
+      "id": "C-12",
+      "what": "RTC Strip and All Access fares: Single $4, 2 Hour $6, 24 Hour $8, 3-Day $20 (regular fare). These match the site. The 'no $35 seven-day Strip pass' note is consistent with this page. The 2027 fare change reported in the 48dbf0ae session was not checked in this audit.",
+      "sources": [
+        {
+          "label": "RTC Southern Nevada, Fares & Passes",
+          "url": "https://www.rtcsnv.com/ways-to-travel/fares-passes/"
+        }
+      ]
+    },
+    {
+      "id": "C-13",
+      "what": "Joël Robuchon Tue–Sat 5:00–9:30 PM and Partage Tue–Sat 5–9 PM, Michael Mina closed: these were re-checked against the venue pages in earlier passes. This audit did not re-fetch them, so they are listed as previously verified, not newly verified.",
+      "sources": [
+        {
+          "label": "Joël Robuchon, MGM Grand",
+          "url": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html"
+        }
+      ]
+    }
+  ],
+  "repo_irregularities_note": "Full list in F-46. Nothing on the board has been deleted; duplicate IDs are logged, not renumbered, to avoid breaking other sessions' references."
+}

@@ -24,7 +24,7 @@ A source-linked planning dashboard for **two adults**, with a requested travel w
 | `questions.html` | Answered, interpreted and open questions, with discovery steps |
 | `suggestions.html` | Decision-improvement suggestions and trade-offs |
 | `review.html` | Current hotel rate conflicts, private-bathroom verification and official source links (F-29–F-31) |
-| `flagged.html` | Full flagged/repo-irregularity register retained from the parallel main-branch review |
+| `flagged.html` | Full flagged/repo-irregularity register, including the parallel consistency audit (F-39–F-46) |
 | `repo-review.html` | Line-by-line source audit and repository review findings |
 | `sources.html` | Official source directory and selected quality flags |
 | `pricing.html` / `verification.html` / `summary.html` | Shortcuts into the primary detail pages |
@@ -34,9 +34,10 @@ The GitHub Pages site is published from the repository root on `main`. The gener
 ## Data and verification
 
 - `data/direct-rates.json` — official dated rate snapshots captured 2026-11-26, including exact official source URLs, date windows, fee/tax basis, and explicitly blank quote gaps.
+- `data/review-flags.json` — separate 26 Nov consistency-audit findings F-39–F-46 with primary source URLs; not a replacement for the current direct-rate flags.
 - `data/hotels.json` and `data/price-windows.json` — preserved historical third-party Booking.com snapshots from 2026-11-25. They are **not official hotel rates** and are not used for a current booking recommendation.
 - `data/restaurants.json`, `data/activities.json`, `data/transit.json`, `data/questions.json`, `data/suggestions.json` — core restaurant, activity, transit, questions and suggestions data.
-- `FLAGS.md` — unresolved and historical verification flags. Blank means unverified; do not treat an estimate or snapshot as a final charge.
+- `FLAGS.md` — current F-01–F-31 flags; parallel consistency findings F-39–F-46 are detailed in `data/review-flags.json` and `flagged.html`. Blank means unverified; do not treat an estimate or snapshot as a final charge.
 - `notes/repo-review-2026-11-26.md` — independent repository review and earlier issues, including the original unqualified price headline and missing review page.
 - `COORDINATION.md` — shared task board and verification log.
 
