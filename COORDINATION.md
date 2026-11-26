@@ -242,3 +242,9 @@ edited or discarded. Integrated additively per the `session-af795000` pattern:
 
 **No work discarded in this merge:** canonical root site, `docs/` canonical pages, `data/*.json`,
 `scripts/`, `FLAGS.md`, `archive/` all kept from `main`.
+
+## Session claim — arena/c9eed9ad-vegas1 — 2026-11-26
+
+**Scope:** final integration / price-source audit for the active task. This session is the sole active owner; all previously listed task owners are completed historical sessions. Files: `COORDINATION.md`, `data/direct-rates.json`, `data/review-items.json`, `scripts/gen_site.py`, generated root HTML and `docs/*.html`, `FLAGS.md`, `README.md`, `executive-summary.md`. No parallel branch/worktree will be created because Arena has fixed this session to `arena/c9eed9ad-vegas1`.
+
+**Tasks:** verify current official hotel booking-engine quotes for the preferred 15–22 Feb 2027 week; separate official direct quotes from older third-party snapshots; add a linked Flagged for Review route; re-run site build/link validation. Status: in progress.
