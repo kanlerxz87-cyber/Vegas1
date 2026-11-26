@@ -127,7 +127,7 @@
       "severity": "high",
       "where": "data/hotels.json (verified, official_verified fields)",
       "issue": "28 of 32 hotels are official_verified 'no', yet 29 rows carry verified 'yes'. Their prices come from Booking.com search results, not the property's own booking engine. The 'verified' label on those rows describes the search snapshot, not the room rate.",
-      "action": "Treat every hotel price as an OTA snapshot until the property's own booking engine confirms it for the exact dates (see Q-03 on the Questions page).",
+      "action": "Treat every hotel price as an OTA snapshot until the property's own booking engine confirms it for the exact dates (see Q-06 on the Questions page).",
       "source": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price"
     },
     {
@@ -207,7 +207,7 @@
       "severity": "medium",
       "where": "Cheapest week (data/hotels.json vs docs/session-af795000/)",
       "issue": "Canonical data says the 8–15 March week is the cheapest for large resorts, using Booking.com snapshots. The af795000 session says Feb 15–22 is the cheapest, using official booking engines for four properties. The two sources conflict for the same properties.",
-      "action": "Open question. Check each property's own booking engine for the exact dates before deciding (Q-03).",
+      "action": "Open question. Check each property's own booking engine for the exact dates before deciding (Q-06).",
       "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/COORDINATION.md"
     },
     {
