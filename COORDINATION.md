@@ -19,6 +19,7 @@ then commit and push that claim immediately.
 | session-48dbf0ae (arena/48dbf0ae-vegas1) | 2026-11-25 | Independent research + build (24 MICHELIN restaurants w/ cost-for-2, 9 dated Booking.com 7-night quotes, 9 activities, flags register, line-by-line VERIFICATION log); integrated as archived subsite `docs/session-48dbf0ae/` — live root site untouched | `arena/48dbf0ae-vegas1` |
 | arena-f527b427-vegas1 | 2026-11-26 | **Repo review + line-by-line audit + Flagged-for-Review page + integration.** Scope: correct the Venetian/“cheapest week” headline, Route 203 timing wording, Michael Mina closure source, per-night reconciliation flags; add a live `flagged.html`; regenerate site; PR to `main`. | `arena/f527b427-vegas1` |
 | arena-b54b3346-vegas1 | 2026-11-26 | Repo review + line-by-line verification spot-check; writes `notes/repo-review-2026-11-26.md` only (no change to live site or `data/`) | `arena/b54b3346-vegas1` |
+| arena/3c6d076e-vegas1 | 2026-11-26 | T15 — official-link re-check across all 32 hotels, MICHELIN announcement-date correction, Route 203 corridor precision, flag-register deep links with per-item source links on `flagged.html` | `arena/3c6d076e-vegas1`
 | arena-ca2c6c85-vegas1 | 2026-11-26 | Line-by-line re-verification sweep of canonical `data/` vs official sources (Michelin tiers, RTC/Monorail fares, Route 203 timetable, restaurant/hotel/activity pages); Guy Savoy price filled from official Caesars menu; Robuchon/Partage phones filled; Mob Museum hours corrected; final integration PR + Pages deploy to `main` | `arena/ca2c6c85-vegas1` |
 
 > **Status note:** Original T01–T11 integration is published from `main`. Follow-up T12 (repo review and
@@ -368,4 +369,61 @@ Branch `arena/f527b427-vegas1`, forked from `e4fb98e` (main). Claim committed an
 - **Not verified in this session (left blank or flagged):** Route 203 pages 4–6; hotel `official_url` links (F-27/R-08); Instagram and TikTok handles (R-02); hotel rates beyond the Venetian and per-night reconciliation (F-40).
 - **PR #30** https://github.com/kanlerxz87-cyber/Vegas1/pull/30 — merged with `--merge`, merge commit `efd480d41b6b7cd2fa30d9981bc300ab71028cdf`. Removes an unverified early-morning/afternoon timing detail from F-42. Pages build for `efd480d`: success (API status `built`).
 - **Final state of this session's merges:** PR #23, #29, #30 on `main`; live site builds green on each. Flagged items (F-39…F-46, R-01…R-18, F-01…F-30) published and not blocking.
+
+## Session record — arena/3c6d076e-vegas1 (T15) — 2026-11-26
+
+**Scope claimed:** `data/hotels.json`, `data/restaurants.json`, `data/questions.json`,
+`data/suggestions.json`, `FLAGS.md`, `README.md`, `scripts/gen_site.py`, generated site (root +
+`docs/`), and this file. No other session's file was edited.
+
+**Rebase note (important for other sessions).** This session started from `main` at `e4fb98e2`. By
+the time work finished, `main` had moved **41 commits ahead** (PRs #29–#32 landed, adding
+`flagged.html`, `repo-review.html`, `data/review-flags.json`, F-39…F-46 and a renumbered flag
+space). Rather than merge those, my two commits were kept on
+`session-backup-3c6d` (`9a3fb2c`, `f12b788`) and **every finding was re-applied by hand against
+main's current structure**, so nothing from `arena/f527b427`, `arena/ca2c6c85` or `arena/c419e2da`
+was overwritten. Consequences of that re-application:
+- my flag IDs had to move: the findings that were `F-29`/`F-30`/`F-31`/`F-32` on the backup branch
+  are now **F-47** (Cromwell rebrand), **F-48** (search-list price links), **F-49** (official-link
+  states), **F-50** (Esther's Kitchen address) and **F-51** (announcement date). F-31…F-38 are
+  unused; the register is not contiguous and `flagged.html` now says so rather than implying it is.
+- main's `flagged.html` already rendered `FLAGS.md`; this session added, to that same page, a
+  **per-flag "Check it here" column** (official page resolved from the venue named in the flag),
+  **row anchors** (`flagged.html#F-nn`) that the ⚑ markers on hotel cards now deep-link to, and
+  markdown rendering for register cells so `code`/bold stops printing as punctuation.
+
+**Verification performed (all fetched 2026-11-26, official sources only):**
+- `michelin.com` press release — 2★ Joël Robuchon; 1★ é, Restaurant Guy Savoy, L'Atelier; Monte (Utah)
+  excluded; 3 LV Bib Gourmand; 17 LV Recommended; **announcement dated 31 Aug 2026**. Site copy and
+  `data/restaurants.json` said 26 Aug → corrected (F-51), and the date is now recorded as a field with
+  its source URL in `data/restaurants.json`.
+- `estherslv.com` home + `/about` re-fetched: no street address published; `/hours-location` still
+  errors. So the Michelin-vs-dataset address conflict stays unresolved and is flagged (F-50).
+- RTC Route 203 timetable: eastbound Decatur → Las Vegas Blvd ≈14 min midpoint; **six** listings sit on
+  Spring Mountain Rd and Yen Viet Kitchen is at 3575 S. Decatur Blvd (a published timepoint) — the
+  "seven sit on that one road" sentence was imprecise and is corrected on `transit.html`, `FLAGS.md`
+  F-21 and `README.md`.
+- **All 32 hotel `Official` links** were opened where the site would answer: **18 confirmed live**,
+  **8 refuse automated access** (Crockfords returns HTTP 500), **5 not opened**, **1** lands on the
+  parent property's page (Nobu at Caesars). Encoded as `official_verified: yes / blocked / sibling / no`
+  plus a per-row `official_check` note; `gen_site.py` renders a matching label so the wording cannot
+  drift from the state. F-27 rewritten to point at F-49 instead of contradicting it.
+- **F-47, the one finding that changes a booking:** `caesars.com/cromwell` **301-redirects to
+  `caesars.com/vanderpump-hotel`** — the property is now **The Vanderpump Hotel** (188 rooms, 21 suites,
+  3595 Las Vegas Blvd South, 702-777-3777). Row renamed, address recorded from that page, and the
+  $1,978 seven-night total marked as a Cromwell-era number that must be re-quoted (S-15). The landing
+  page's "things that change the answer" list now carries it as a fourth item.
+- **F-48:** 15 of 32 rows were priced from a **dated Booking.com search-results list**, not a property
+  quote page. Those cards now read "Price source — dated search list, not a room quote"; the other 17
+  keep the tick. No price was changed — only the claim attached to it.
+- Fontainebleau's own site confirms it holds **one MICHELIN Key for 2026**, the only MICHELIN Key resort
+  and casino in Las Vegas (a hotel award, separate from restaurant stars) → recorded on that row.
+- Horseshoe/Flamingo pages confirm Caesars sells **named room types with a stated bed** direct, which is
+  the practical answer to F-11 → suggestion **S-14** added; **S-13** marked implemented.
+
+**Irregularities flagged for the couple's review (all on `flagged.html`, none blocking):** F-47, F-48,
+F-49, F-50, F-51. `Q-13` moved from open to answered with the exact split above.
+
+**Build state:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py`
+→ **13 pages · 0 failures · 0 warnings · 394 external links**; root and `docs/` byte-identical.
 

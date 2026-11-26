@@ -9,7 +9,70 @@
     "cheapest_note": "Lowest captured Booking.com 7-night quote in this dataset is LINQ at $564 for 2027-02-15→02-22, but it is a third-party quote, not an official property rate, and is 'Room Type Assigned on Arrival' — the bed size is not guaranteed until check-in. Official direct rates are separately sampled and conflict on date comparisons; see F-29.",
     "housekeeping_note": "Hotel rows are unchanged by the 2026-11-25 verification pass; the only structural addition is this note. See FLAGS.md F-21 to F-25 for restaurant-level corrections found in the same pass.",
     "official_link_note": "official_verified='yes' means this session fetched the URL and it resolved to the property. 'no' means the URL is the property's own domain but was not fetched, so it may have moved — the Booking.com 'Price source' link on every card is always a fetched, working source.",
-    "audit_2026_11_26": "Line-by-line audit 2026-11-26 (T12). Venetian rows withdrawn (F-39). Per-night vs 7-night reconciliation failures flagged on every affected row (F-40). Palms Place room specifications flagged (F-41). No other value was changed."
+    "audit_2026_11_26": "Line-by-line audit 2026-11-26 (T12). Venetian rows withdrawn (F-39). Per-night vs 7-night reconciliation failures flagged on every affected row (F-40). Palms Place room specifications flagged (F-41). No other value was changed.",
+    "official_link_check": {
+      "date": "2026-11-26",
+      "verified_by_fetch": [
+        "aria",
+        "bellagio",
+        "caesars-palace",
+        "cosmopolitan",
+        "cromwell",
+        "flamingo",
+        "fontainebleau",
+        "four-seasons",
+        "golden-nugget",
+        "horseshoe",
+        "palazzo",
+        "plaza",
+        "sahara",
+        "trump-international"
+      ],
+      "refused_automated_access": [
+        "wynn",
+        "encore",
+        "vdara",
+        "secret-suites-vdara",
+        "nomad-reserve",
+        "crockfords",
+        "bluegreen-club-36",
+        "w-las-vegas"
+      ],
+      "lands_on_sibling_page": [
+        "nobu-caesars"
+      ],
+      "not_opened": [
+        "cirrus-cliffs",
+        "green-valley-ranch",
+        "red-rock",
+        "waldorf-astoria",
+        "mgm-signature"
+      ],
+      "search_list_price_rows": [
+        "Caesars Palace",
+        "Cliffs at Peace Canyon",
+        "Crockfords Las Vegas (Resorts World)",
+        "Fontainebleau Las Vegas",
+        "Four Seasons Hotel Las Vegas",
+        "Green Valley Ranch Resort",
+        "NoMad Las Vegas / The Reserve at Park MGM",
+        "Nobu Hotel at Caesars Palace",
+        "Red Rock Casino Resort & Spa",
+        "Secret Suites at Vdara",
+        "The Signature at MGM Grand",
+        "The Vanderpump Hotel (formerly The Cromwell)",
+        "Trump International Hotel Las Vegas",
+        "Vdara Hotel & Spa",
+        "W Las Vegas"
+      ],
+      "rule": "official_verified is 'yes' only where the property's own page answered and named the property. 'blocked' means the URL was opened and the site refused this environment (or returned HTTP 500); 'sibling' means it opens but lands on the parent property's page; 'no' means it was not opened. None of the three is presented as a verified link.",
+      "tally": {
+        "yes": 18,
+        "blocked": 8,
+        "sibling": 1,
+        "no": 5
+      }
+    }
   },
   "hotels": [
     {
@@ -44,10 +107,13 @@
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
       "flags": [
-        "F-40"
+        "F-40",
+        "F-49"
       ],
       "notes": "Cheapest five-star brand on the Strip for this week. Located inside Caesars Palace, so it inherits Caesars' centre-Strip position and monorail access.",
-      "official_verified": "no"
+      "official_verified": "sibling",
+      "official_check": "opened 2026-11-26 — caesars.com/caesars-palace/hotel/nobu-hotel redirects to the Caesars Palace rooms page, so the link does not land on a Nobu Hotel page (F-49)",
+      "price_basis": "search-list"
     },
     {
       "id": "caesars-palace",
@@ -76,7 +142,9 @@
       "verified": "yes",
       "flags": [],
       "notes": "Guy Savoy (1★) is in the building, so Caesars is the only property with a starred restaurant under its own roof; Joël Robuchon and L'Atelier are a 10-minute ride south. Note that Nobu, also inside Caesars Palace, is the cheaper five-star brand in the same complex.",
-      "official_verified": "no"
+      "official_verified": "yes",
+      "official_check": "fetched 2026-11-26 — caesars.com/caesars-palace is live",
+      "price_basis": "search-list"
     },
     {
       "id": "trump-international",
@@ -105,11 +173,13 @@
       "verified": "yes",
       "flags": [],
       "notes": "Highest guest score (9.1) of any property under $2,000 for this week. Non-gaming, no casino floor, set one block west of the Strip.",
-      "official_verified": "no"
+      "official_verified": "yes",
+      "official_check": "fetched 2026-11-26 — trumphotels.com/las-vegas is live",
+      "price_basis": "search-list"
     },
     {
       "id": "cromwell",
-      "name": "The Cromwell",
+      "name": "The Vanderpump Hotel (formerly The Cromwell)",
       "tier": "luxury",
       "zone": "center-strip",
       "stars": 5,
@@ -129,12 +199,17 @@
       ],
       "michelin_within_60": 24,
       "michelin_within_20": 21,
-      "official_url": "https://www.caesars.com/cromwell",
+      "official_url": "https://www.caesars.com/vanderpump-hotel",
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
-      "flags": [],
-      "notes": "Smallest, adults-oriented Caesars property at Flamingo Rd. Lowest guest score (7.4) of the five-star group — the price is location, not service.",
-      "official_verified": "no"
+      "flags": [
+        "F-47"
+      ],
+      "notes": "Renamed on the Caesars site between the price capture (25 Nov 2026) and this check (26 Nov 2026): the Cromwell URL now redirects to The Vanderpump Hotel, Lisa Vanderpump's boutique property — same building at 3595 Las Vegas Blvd South, new brand. The Booking.com quote on this row was taken under the Cromwell name, so re-quote it under the new one before booking. Smallest, adults-oriented property in the Caesars group; lowest guest score (7.4) of the five-star set — the price is location, not service.",
+      "official_verified": "yes",
+      "price_basis": "search-list",
+      "address": "3595 Las Vegas Blvd South, Las Vegas, NV 89109",
+      "official_check": "fetched 2026-11-26 — caesars.com/cromwell 301-redirects to caesars.com/vanderpump-hotel, which presents the property as The Vanderpump Hotel (188 rooms, 21 suites, 3595 Las Vegas Blvd South, 702-777-3777)"
     },
     {
       "id": "w-las-vegas",
@@ -163,7 +238,9 @@
       "verified": "yes",
       "flags": [],
       "notes": "",
-      "official_verified": "no"
+      "official_verified": "blocked",
+      "official_check": "fetch attempted 2026-11-26 — marriott.com returned no content (bot-blocked)",
+      "price_basis": "search-list"
     },
     {
       "id": "crockfords",
@@ -192,7 +269,9 @@
       "verified": "yes",
       "flags": [],
       "notes": "Shares Resorts World with Stubborn Seed and has a Sahara Monorail stop plus a Vegas Loop station on site.",
-      "official_verified": "no"
+      "official_verified": "blocked",
+      "official_check": "fetch attempted 2026-11-26 — rwlasvegas.com/hotels/crockfords/ returned HTTP 500",
+      "price_basis": "search-list"
     },
     {
       "id": "vdara",
@@ -221,7 +300,9 @@
       "verified": "yes",
       "flags": [],
       "notes": "All-suite, non-gaming, no-smoking. Walkable to Bellagio, ARIA and the Cosmopolitan dining cluster.",
-      "official_verified": "no"
+      "official_verified": "blocked",
+      "official_check": "fetch attempted 2026-11-26 — mgmresorts.com/en/hotels/vdara.html returned no content (bot-blocked)",
+      "price_basis": "search-list"
     },
     {
       "id": "four-seasons",
@@ -250,7 +331,9 @@
       "verified": "yes",
       "flags": [],
       "notes": "Best guest score in the dataset (9.3). Sits at the top of Mandalay Bay — the quiet end of the Strip, furthest from the Michelin cluster.",
-      "official_verified": "no"
+      "official_verified": "yes",
+      "official_check": "fetched 2026-11-26 — fourseasons.com/lasvegas confirms 3960 Las Vegas Boulevard South and 1-702-632-5000",
+      "price_basis": "search-list"
     },
     {
       "id": "nomad-reserve",
@@ -279,7 +362,9 @@
       "verified": "yes",
       "flags": [],
       "notes": "",
-      "official_verified": "no"
+      "official_verified": "blocked",
+      "official_check": "fetch attempted 2026-11-26 — mgmresorts.com property page, bot-blocked",
+      "price_basis": "search-list"
     },
     {
       "id": "bellagio",
@@ -323,7 +408,9 @@
         "F-40"
       ],
       "notes": "Michael Mina is in-building but currently closed with no published reopen date (see FLAGS.md F-23), so a Bellagio booking should be sold on its own merits rather than on that restaurant. Rate varies by room class between windows, so the three totals are not like-for-like.",
-      "official_verified": "no"
+      "official_verified": "yes",
+      "official_check": "fetched 2026-11-26 — bellagio.com serves the property's own site",
+      "price_basis": "property-page"
     },
     {
       "id": "fontainebleau",
@@ -353,8 +440,10 @@
       "flags": [
         "F-06"
       ],
-      "notes": "Newest large resort in the dataset. Vegas Loop station on site ($7 fare band).",
-      "official_verified": "no"
+      "notes": "Newest large resort in the dataset. Vegas Loop station on site ($7 fare band). Confirmed from the property's own site on 2026-11-26: Fontainebleau is the only MICHELIN Key resort and casino in Las Vegas, holding one MICHELIN Key for a second year in 2026 — a hotel award, separate from restaurant stars.",
+      "official_verified": "yes",
+      "official_check": "fetched 2026-11-26 — fontainebleaulasvegas.com is live",
+      "price_basis": "search-list"
     },
     {
       "id": "cosmopolitan",
@@ -391,7 +480,9 @@
         "F-40"
       ],
       "notes": "Holds é by José Andrés (1★) and China Poblano (Bib Gourmand) under one roof — the densest Michelin per square metre on the list.",
-      "official_verified": "no"
+      "official_verified": "yes",
+      "official_check": "fetched 2026-11-26 — cosmopolitanlasvegas.com serves the property's own site (residential-styled rooms with private terraces)",
+      "price_basis": "property-page"
     },
     {
       "id": "venetian",
@@ -442,7 +533,8 @@
           "per_night_as_captured_2026_11_25": 289,
           "room_as_captured": "Newly Remodeled Luxury King Suite, 646 ft² — 36% below February"
         }
-      ]
+      ],
+      "price_basis": "property-page"
     },
     {
       "id": "aria",
@@ -479,7 +571,9 @@
         "F-40"
       ],
       "notes": "Gymkhana is in-building. Connected by tram to Bellagio and Park MGM.",
-      "official_verified": "no"
+      "official_verified": "yes",
+      "official_check": "fetched 2026-11-26 — aria.com serves the property's own site; room list shows Deluxe King Room and Deluxe Two Queen Room",
+      "price_basis": "property-page"
     },
     {
       "id": "palazzo",
@@ -516,7 +610,9 @@
         "F-40"
       ],
       "notes": "721 ft² base suite — the largest standard suite in the dataset.",
-      "official_verified": "no"
+      "official_verified": "yes",
+      "official_check": "fetched 2026-11-26 — palazzo.com 301-redirects to venetianlasvegas.com/hotel/the-palazzo.html, which lists Luxury Two Queen Suite (720 sq ft, 2 queens) and Luxury King Suite, each with an oversized bathroom",
+      "price_basis": "property-page"
     },
     {
       "id": "encore",
@@ -551,10 +647,13 @@
       "verified": "yes",
       "flags": [
         "F-09",
-        "F-40"
+        "F-40",
+        "F-49"
       ],
       "notes": "Two totals for the same week differ by $1,035 because the fee/tax basis differs. The property-page figure is the more complete number.",
-      "official_verified": "no"
+      "official_verified": "blocked",
+      "official_check": "fetch attempted 2026-11-26 — same Wynn page, bot-blocked; the row reuses the Wynn URL (F-49)",
+      "price_basis": "property-page"
     },
     {
       "id": "wynn",
@@ -592,7 +691,9 @@
         "F-40"
       ],
       "notes": "Wing Lei is in-building. Same double-basis caveat as Encore.",
-      "official_verified": "no"
+      "official_verified": "blocked",
+      "official_check": "fetch attempted 2026-11-26 — the property page returned no content to this environment (bot-blocked)",
+      "price_basis": "property-page"
     },
     {
       "id": "secret-suites-vdara",
@@ -619,9 +720,13 @@
       "official_url": "https://www.mgmresorts.com/en/hotels/vdara.html",
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
-      "flags": [],
+      "flags": [
+        "F-49"
+      ],
       "notes": "Third-party suite inventory inside Vdara — listed for completeness, not recommended.",
-      "official_verified": "no"
+      "official_verified": "blocked",
+      "official_check": "fetch attempted 2026-11-26 — same Vdara page, bot-blocked; the row reuses the Vdara URL (F-49)",
+      "price_basis": "search-list"
     },
     {
       "id": "waldorf-astoria",
@@ -659,7 +764,9 @@
         "F-40"
       ],
       "notes": "Non-gaming, no-smoking, centre-Strip. The February figure is a suite; the March figure is a standard room, so they are not comparable.",
-      "official_verified": "no"
+      "official_verified": "no",
+      "official_check": "not fetched — hilton.com was not opened this session; treated as unverified, not as refused",
+      "price_basis": "property-page"
     },
     {
       "id": "cirrus-cliffs",
@@ -690,7 +797,9 @@
         "F-14"
       ],
       "notes": "Off-Strip condo ~20 min drive from the Strip. Appeared in a five-star filter despite being a condominium complex — do not treat the star rating as reliable.",
-      "official_verified": "no"
+      "official_verified": "no",
+      "official_check": "no official URL in the dataset at all — nothing to fetch",
+      "price_basis": "search-list"
     },
     {
       "id": "desert-rose",
@@ -720,7 +829,8 @@
       "flags": [],
       "notes": "Best value in the dataset: 9.1 guest score, 646 ft² one-bedroom suite with a full kitchen, private bathroom and no resort fee. One block east of the Strip behind the Tropicana/MGM Grand corner — a 15–20 minute walk to the Joël Robuchon and L'Atelier rooms at MGM Grand, not to the centre-Strip cluster. Official page: Shell Vacations Hospitality (Wyndham Extra Holidays). The marketing domain desertroseresort.com returned HTTP 500 on 25 Nov 2026, so it is not linked.",
       "address": "5051 Duke Ellington Way, Las Vegas, NV 89119",
-      "official_verified": "yes"
+      "official_verified": "yes",
+      "price_basis": "property-page"
     },
     {
       "id": "golden-nugget",
@@ -752,7 +862,9 @@
         "F-40"
       ],
       "notes": "'Run of House' means the bed type is assigned at check-in — fails the queen-or-larger guarantee unless you book a named room class.",
-      "official_verified": "no"
+      "official_verified": "yes",
+      "official_check": "fetched 2026-11-26 — goldennugget.com/las-vegas is live; tower/room list published (Rush Tower Premier Queens, Gold Tower Refreshed Doubles)",
+      "price_basis": "property-page"
     },
     {
       "id": "horseshoe",
@@ -783,8 +895,10 @@
         "F-11",
         "F-40"
       ],
-      "notes": "Directly connected to a Monorail station and across the street from the Bellagio/Cosmo cluster. Bed type not confirmed in the captured rate block.",
-      "official_verified": "no"
+      "notes": "Directly connected to a Monorail station and across the street from the Bellagio/Cosmo cluster. Bed type not confirmed in the captured rate block. Booked direct, Caesars sells named room types with a stated bed, which is exactly what the assigned-on-arrival rate on this row does not guarantee (F-11).",
+      "official_verified": "yes",
+      "official_check": "fetched 2026-11-26 — caesars.com/horseshoe-las-vegas is live; the rooms block names 'Resort Executive Suite | 1 King' (650 sq ft, soaking tub) and 'Resort Premium Suite | 1 King' (1,500 sq ft)",
+      "price_basis": "property-page"
     },
     {
       "id": "flamingo",
@@ -815,8 +929,10 @@
         "F-11",
         "F-40"
       ],
-      "notes": "Second-cheapest verified total. Room type is assigned on arrival, so the king bed shown is not contractual.",
-      "official_verified": "no"
+      "notes": "Second-cheapest verified total. Room type is assigned on arrival, so the king bed shown is not contractual. Booked direct, Caesars sells named room types with a stated bed, which is exactly what the assigned-on-arrival rate on this row does not guarantee (F-11).",
+      "official_verified": "yes",
+      "official_check": "fetched 2026-11-26 — caesars.com/flamingo-las-vegas is live; the 'Rooms from $61' banner on the capture day is a November 2026 promo and was NOT used for this plan",
+      "price_basis": "property-page"
     },
     {
       "id": "linq",
@@ -848,7 +964,8 @@
         "F-40"
       ],
       "notes": "Cheapest verified 7-night total, and it is centre-Strip next to the High Roller. But $31/night is a Black Friday promotional rate on an unassigned room — treat as a floor, not a forecast.",
-      "official_verified": "yes"
+      "official_verified": "yes",
+      "price_basis": "property-page"
     },
     {
       "id": "sahara",
@@ -880,7 +997,9 @@
         "F-40"
       ],
       "notes": "Northernmost Monorail stop and a Vegas Loop station — the best transit-per-dollar on the list.",
-      "official_verified": "no"
+      "official_verified": "yes",
+      "official_check": "fetched 2026-11-26 — saharalasvegas.com serves the property's own site; The Alex rooms are listed individually (e.g. The Alex Deluxe King, 425 sq ft)",
+      "price_basis": "property-page"
     },
     {
       "id": "plaza",
@@ -912,7 +1031,9 @@
         "F-40"
       ],
       "notes": "Downtown, at the Fremont Street Experience. Pairs with Esther's Kitchen and SoulBelly BBQ.",
-      "official_verified": "no"
+      "official_verified": "yes",
+      "official_check": "fetched 2026-11-26 — plazahotelcasino.com confirms 1 Main Street, Las Vegas NV 89101, (800) 634-6575, Deluxe Two Queens (~325 sq ft, 2 queens) and Luxe King (1 king)",
+      "price_basis": "property-page"
     },
     {
       "id": "palms-place",
@@ -944,7 +1065,8 @@
         "F-41"
       ],
       "notes": "Off-Strip but only ~1.5 miles west of centre-Strip; Ping Pang Pong (Gold Coast) and the Chinatown cluster are both short hops. Room type, bed and bathroom come from the Booking.com rate block; the palms.com pages fetched on 2026-11-26 (/palms-place and /stay) did not state them (F-41).",
-      "official_verified": "yes"
+      "official_verified": "yes",
+      "price_basis": "property-page"
     },
     {
       "id": "bluegreen-club-36",
@@ -975,7 +1097,9 @@
         "F-15"
       ],
       "notes": "Only property in the dataset with an explicitly stated QUEEN bed (satisfies 'queen or larger' precisely). Private bathroom not stated in the captured block — one-bedroom timeshare units normally have one, but that is an inference, so it stays blank.",
-      "official_verified": "no"
+      "official_verified": "blocked",
+      "official_check": "fetch attempted 2026-11-26 — bluegreenvacations.com returned no content (bot-blocked)",
+      "price_basis": "property-page"
     },
     {
       "id": "mgm-signature",
@@ -1004,7 +1128,9 @@
       "verified": "yes",
       "flags": [],
       "notes": "All-suite, non-gaming towers behind MGM Grand. Walking distance to Joël Robuchon and L'Atelier.",
-      "official_verified": "no"
+      "official_verified": "no",
+      "official_check": "not fetched — the MGM Resorts host refused every other request today, so this page was not opened",
+      "price_basis": "search-list"
     },
     {
       "id": "green-valley-ranch",
@@ -1035,7 +1161,9 @@
         "F-14"
       ],
       "notes": "In Henderson, ~11 miles from the Strip. 9.1 guest score, but every dinner becomes a 30–40 minute trip.",
-      "official_verified": "no"
+      "official_verified": "no",
+      "official_check": "not fetched this session",
+      "price_basis": "search-list"
     },
     {
       "id": "red-rock",
@@ -1066,7 +1194,9 @@
         "F-14"
       ],
       "notes": "Summerlin, ~17 miles northwest of the Strip. Excellent resort, wrong trip.",
-      "official_verified": "no"
+      "official_verified": "no",
+      "official_check": "not fetched this session",
+      "price_basis": "search-list"
     }
   ]
 }

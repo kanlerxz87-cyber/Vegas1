@@ -174,7 +174,7 @@ def build_index():
 </section>
 
 <section class="panel">
-  <h2 id="three-things">Three things that change the answer</h2>
+  <h2 id="three-things">Four things that change the answer</h2>
   <ol class="tight">
     <li><strong>The 7-night basis collides with the requested dates.</strong> The preferred window
     2027-02-15 → 2027-02-18 is three nights, not seven. Seven-night totals starting on 15 Feb are used
@@ -182,6 +182,9 @@ def build_index():
     <li><strong>The "within 1 hour" ranking does not rank anything.</strong> Every hotel in Las Vegas is within
     an hour of all {N_TOTAL} restaurants, so the metric returns {N_TOTAL}/{N_TOTAL} for all {n_hotels} properties. A
     <em>20-minute</em> column was added and is what actually separates them — <a href="questions.html">Q-01</a>.</li>
+    <li><strong>One ranked hotel no longer exists under the name this site priced.</strong> The official page for
+    The Cromwell now redirects to <strong>The Vanderpump Hotel</strong>, so that row's $1,978 total is a
+    Cromwell-era number and must be re-quoted before it is used — <a href="flagged.html#F-47">F-47</a>.</li>
     <li><strong>The cheapest week is not settled across sources.</strong> The 25 Nov Booking.com snapshots showed lower March quotes for some large resorts, but the Venetian figure was withdrawn on 26 Nov (<a href="flagged.html">F-39</a>). A separate 25 Nov sample of official booking engines found the preferred 15–22 February week cheapest at properties checked. The samples are not like-for-like. Compare exact dates and named-room terms at the hotel's own booking engine before moving dates — <a href="questions.html#Q-06">Q-06</a>.</li>
   </ol>
 </section>
@@ -301,14 +304,27 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
             f'<td class="tiny">{e(p["note"])}</td></tr>'
             for p in h["prices"]
         )
-        unverified = (
-            ""
-            if h.get("official_verified") == "yes"
-            else '&nbsp;<span class="tinymuted">(not fetched — may have moved)</span>'
+        ov = h.get("official_verified")
+        if ov == "yes":
+            unverified = ""
+        elif ov == "blocked":
+            unverified = '&nbsp;<span class="tinymuted">(opened 26 Nov 2026 — the site refuses automated access)</span>'
+        elif ov == "sibling":
+            unverified = (
+                '&nbsp;<span class="tinymuted">(this URL lands on the parent property’s page, '
+                "not this property's own)</span>"
+            )
+        else:
+            unverified = '&nbsp;<span class="tinymuted">(not fetched — may have moved)</span>'
+        ps_label = (
+            "Price source — dated search list, not a room quote"
+            if h.get("price_basis") == "search-list"
+            else "Price source ✓"
         )
         flags = ""
         if h["flags"]:
-            flags = f'<p class="flagline">⚑ {", ".join(e(f) for f in h["flags"])} — see <a href="sources.html#flags">flags</a></p>'
+            fl = " · ".join(f'<a href="flagged.html#{f}">{f}</a>' for f in h["flags"])
+            flags = f'<p class="flagline">⚑ {fl}</p>'
         cards.append(f"""
 <article class="hotel">
   <h3>{e(h['name'])} <span class="pill">{e(h['tier'])}</span></h3>
@@ -324,7 +340,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   {flags}
   <p class="links">
     <a href="{e(h['official_url'])}" target="_blank" rel="noopener">Official</a>{unverified}
-    <a href="{e(h['booking_url'])}" target="_blank" rel="noopener">Price source ✓</a>
+    <a href="{e(h['booking_url'])}" target="_blank" rel="noopener">{ps_label}</a>
   </p>
 </article>""")
 
@@ -365,10 +381,12 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <section class="panel">
   <h2 id="every-hotel">Every hotel — dated Booking.com quote snapshots</h2>
   <p>These are third-party Booking.com search totals, generally excluding resort fees and local tax; they are not official property-engine quotes. The <a href="https://kanlerxz87-cyber.github.io/Vegas1/docs/session-af795000/hotels.html">separate official-engine sample</a> covers only selected properties/dates and has a different fee/tax basis. Do not combine these datasets or read them as a verified market-wide rate ranking.</p>
-  <p class="note"><strong>Link honesty:</strong> a "Price source ✓" link is a Booking.com URL this session
-  actually fetched. An "Official" link without a tick points at the property's own domain but was not fetched,
-  so it is marked <em>not fetched — may have moved</em> rather than presented as verified. Four of the 32 were
-  fetched and confirmed (Desert Rose, LINQ, Palms Place, The Venetian).</p>
+  <p class="note"><strong>Link honesty, after the 26 Nov 2026 re-check:</strong> <strong>18 of the 32</strong>
+  "Official" links were opened and returned the property's own page; <strong>8 refused automated access</strong>
+  from this environment (Crockfords returned HTTP 500) and are marked <em>refuses automated access</em> —
+  refused, not broken; <strong>5 were not opened</strong> and keep <em>not fetched — may have moved</em>. One link (Nobu at Caesars) opens but lands on the parent property's page.
+  A "Price source" link is the Booking.com URL the number came from; where that URL is a dated search-results list
+  rather than the property's own quote page, the card says so — the link then proves the search, not the room.</p>
   <div class="hotels">{''.join(cards)}</div>
 </section>
 
@@ -441,7 +459,8 @@ a missing entry and it is not an average. Only three restaurants print a real pe
 <section class="panel">
   <h2>What "MICHELIN" means here</h2>
   <p>Las Vegas had <strong>no MICHELIN Guide between 2010 and 2025</strong>. The 2026 Southwest selection —
-  published 26 August 2026 — is the city's first since 2009, which is why so many videos and blogs still
+  announced 31 August 2026 on the official michelin.com press release — is the city's first since 2009,
+  which is why so many videos and blogs still
   describe restaurants as starred when they no longer are.</p>
   <div class="grid4">
     <div class="card"><div class="big">0</div><div class="lbl">three-star</div><p>There are none in Las Vegas.</p></div>
@@ -578,8 +597,9 @@ def build_transit():
   and its published timetable carries a timed stop at <strong>Las Vegas Blvd</strong> — the north end of the Strip,
   where Wynn, Encore, Resorts World and SAHARA are.</p>
   <p>This matters more than any other single number on this site, because <strong>seven of the 24 MICHELIN listings
-  sit on that one road</strong>: Partage, Kabuto, KAME Omakase, Lamaii, Sparrow + Wolf, Pho Ga Bac Bac and YEN Viet
-  Kitchen. Nearly a third of the guide is on a road that turns out to have a bus.</p>
+  sit within a few blocks of that one corridor</strong>: Partage, Kabuto, KAME Omakase, Lamaii, Sparrow + Wolf
+  and Pho Ga Bac Bac on Spring Mountain Road itself, plus Yen Viet Kitchen at 3575 S. Decatur Blvd — a published
+  Route 203 timepoint. Nearly a third of the guide is on a road that turns out to have a bus.</p>
   <p>The sampled timetable runs give <strong>Decatur to Las Vegas Blvd in about 8–17 minutes, depending on direction, day and time</strong> (weekday eastbound 10–17; Saturday westbound 8–9) (14 is the model midpoint; F-42). Adding a walk to the
   stop, a platform wait and a walk at the far end puts the north Strip at about <strong>34 minutes</strong> from
   Chinatown door to door — comfortably inside the brief's one-hour limit, from a hotel with no Monorail station.</p>
@@ -817,6 +837,77 @@ REVIEW = load("review.json")
 FLAGS_MD = ROOT / "FLAGS.md"
 
 
+GENERIC_WORDS = {
+    "hotel", "hotels", "resort", "resorts", "casino", "vegas", "las", "spa", "the", "and", "club",
+    "grill", "restaurant", "steakhouse", "kitchen", "bistro", "lounge", "bar", "suite", "suites",
+    "experience", "at", "de", "by", "la", "international", "observation", "wheel", "museum", "guide",
+}
+
+# flags that are not about one venue get one hand-picked official page, taken from the datasets
+# or from a page this session actually opened
+FLAG_CHECK_EXTRA = {
+    "F-10": ("Booking.com dated search used for every rate",
+             "https://www.booking.com/hotel/us/the-linq-and-casino.html?checkin=2027-02-15"
+             "&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"),
+    "F-17": ("Booking.com 7-night capture, same basis",
+             "https://www.booking.com/hotel/us/the-linq-and-casino.html?checkin=2027-02-15"
+             "&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"),
+    "F-19": ("Visit Las Vegas — MICHELIN restaurants", "https://www.visitlasvegas.com/michelin-guide-restaurants/"),
+    "F-20": ("RTC fares & passes", "https://www.rtcsnv.com/ways-to-travel/fares-passes/"),
+    "F-21": ("RTC Route 203 timetable (PDF)", "https://rtcws.rtcsnv.com/routePDF/203.pdf"),
+    "F-42": ("RTC Route 203 timetable (PDF)", "https://rtcws.rtcsnv.com/routePDF/203.pdf"),
+    "F-26": ("Bellagio restaurant page carrying the banner",
+             "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html"),
+    "F-27": ("Flag register in the repository", "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/FLAGS.md"),
+    "F-48": ("Booking.com dated search list (the basis for those 15 rows)",
+             "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15"
+             "&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"),
+}
+
+
+def _tok_hits(tok, hay):
+    """whole-word match, so 'china' cannot match 'Chinatown' and 'green' cannot match 'Bluegreen'"""
+    return re.search(r"(?<![a-z0-9])" + re.escape(tok) + r"(?![a-z0-9])", hay) is not None
+
+
+def _venue_tokens(name):
+    toks = [t for t in re.split(r"[^a-z0-9']+", name.lower().replace("jo\u00ebl", "joel")) if len(t) >= 4]
+    return [t for t in toks if t not in GENERIC_WORDS] or [name.lower().strip()]
+
+
+def _flag_check_links(fid, where):
+    """the official page(s) a flag should be checked against — all URLs already live in the datasets"""
+    hay = where.lower().replace("jo\u00ebl", "joel")
+    links, seen = [], set()
+
+    def add(label, url):
+        if url and url not in seen:
+            seen.add(url)
+            links.append((label, url))
+
+    for r in RES["restaurants"]:
+        nm = r["name"].lower().replace("jo\u00ebl", "joel")
+        if _tok_hits(nm, hay) or any(_tok_hits(t, hay) for t in _venue_tokens(r["name"])):
+            add(r["name"], r.get("official_url"))
+    for a in ACT["activities"]:
+        base = a["name"].split(" (")[0]
+        if _tok_hits(base.lower(), hay) or any(_tok_hits(t, hay) for t in _venue_tokens(base)):
+            add(base, a.get("official_url"))
+    for h in HOTELS["hotels"]:
+        key = h["name"].lower().split(" (")[0]
+        if _tok_hits(key, hay) or any(_tok_hits(t, hay) for t in _venue_tokens(h["name"])):
+            add(h["name"], h.get("official_url") or h.get("booking_url"))
+    if fid in FLAG_CHECK_EXTRA:
+        label, url = FLAG_CHECK_EXTRA[fid]
+        if url not in seen:
+            links.insert(0, (label, url))
+    if not links:
+        return '<a href="sources.html">Sources page</a>'
+    return "<br>".join(
+        f'<a href="{e(u)}" target="_blank" rel="noopener">{e(n)}</a>' for n, u in links[:6]
+    )
+
+
 def _flag_register():
     rows = []
     for line in FLAGS_MD.read_text(encoding="utf-8").splitlines():
@@ -825,6 +916,14 @@ def _flag_register():
             if len(cells) == 4:
                 rows.append(cells)
     return rows
+
+
+def _flag_cell(text):
+    """FLAGS.md is markdown; the register needs bold and code rendered, not printed as punctuation"""
+    out = e(text)
+    out = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", out)
+    out = re.sub(r"`([^`]+)`", r"<code>\1</code>", out)
+    return out
 
 
 def _sev(s):
@@ -841,8 +940,9 @@ def _src(url, label=None):
 def build_flagged():
     fl = _flag_register()
     f_rows = "".join(
-        f'<tr><td class="mono">{e(c[0])}</td><td>{e(c[1])}</td><td>{e(c[2])}</td><td>{e(c[3])}</td>'
-        f'<td><a href="https://github.com/kanlerxz87-cyber/Vegas1/blob/main/FLAGS.md" target="_blank" rel="noopener">FLAGS.md</a></td></tr>'
+        f'<tr id="{e(c[0])}"><td class="mono">{e(c[0])}</td><td>{_flag_cell(c[1])}</td>'
+        f'<td>{_flag_cell(c[2])}</td><td>{_flag_cell(c[3])}</td>'
+        f'<td class="tiny">{_flag_check_links(c[0], c[1])}</td></tr>'
         for c in fl
     )
     r_rows = "".join(
@@ -868,10 +968,13 @@ def build_flagged():
 </section>
 
 <section class="panel" id="flags">
-  <h2>Data flags F-01 to F-{len(fl):02d} ({len(fl)})</h2>
-  <p>The full register, with the reasoning for each, is in <code>FLAGS.md</code>. Each row is generated from that file.</p>
+  <h2>Data flags — {len(fl)} rows in the register</h2>
+  <p>The full register, with the reasoning for each, is in <code>FLAGS.md</code>. Each row is generated from that
+  file, is addressable as <code>flagged.html#F-nn</code>, and names the official page to check it against. F-01 to
+  F-30 and F-47 to F-49 are rows of that register; F-39 to F-46 are the audit rows above, kept in
+  <code>data/review-flags.json</code>. F-31 to F-38 were never used, so the numbering is not contiguous.</p>
   <div class="scroll"><table class="data">
-  <thead><tr><th>ID</th><th>Where</th><th>What</th><th>Effect on the plan</th><th>Register</th></tr></thead>
+  <thead><tr><th>ID</th><th>Where</th><th>What</th><th>Effect on the plan</th><th>Check it here</th></tr></thead>
   <tbody>{f_rows}</tbody>
   </table></div>
 </section>
@@ -899,7 +1002,8 @@ def build_repo_review():
     n_yt = sum(1 for x in R if x.get("youtube"))
     n_ver = sum(1 for x in R if x.get("verified") == "yes")
     H = HOTELS["hotels"]
-    h_off_no = sum(1 for x in H if x.get("official_verified") == "no")
+    h_off_no = sum(1 for x in H if x.get("official_verified") not in ("yes",))
+    h_off_yes = sum(1 for x in H if x.get("official_verified") == "yes")
     h_ver_yes = sum(1 for x in H if x.get("verified") == "yes")
     h_same = sum(1 for x in H if x.get("michelin_within_60") == N_TOTAL)
     counts = [
@@ -911,7 +1015,8 @@ def build_repo_review():
         ("Restaurants with a TikTok link", n_tt, "none recorded in the data (F-19)"),
         ("Restaurants with at least one YouTube link", n_yt, "recorded, not opened this session"),
         ("Hotels (rows)", len(H), "32 properties"),
-        ("Hotels with official_verified = no", h_off_no, "prices are OTA snapshots, see R-03"),
+        ("Hotels whose official page is confirmed live", h_off_yes, "fetched 25–26 Nov 2026"),
+        ("Hotels whose official page is not confirmed", h_off_no, "refused automated access, or not opened"),
         ("Hotel rows marked verified = yes", h_ver_yes, "label reflects the search snapshot, see R-03"),
         ("Hotels where Michelin within 60 min = all 24", h_same, "the literal metric cannot rank, see R-04"),
     ]
@@ -1172,13 +1277,13 @@ def build_audit_sections():
     cls = {"contradicted": "bad", "unverified": "warn", "needs review": "warn",
            "corrected": "ok", "confirmed": "ok", "information": "muted"}
     new_rows = "".join(
-        f'<tr><td class="mono">{e(f["id"])}</td>'
+        f'<tr id="{e(f["id"])}"><td class="mono">{e(f["id"])}</td>'
         f'<td><span class="tag {cls.get(f["status"], "")}">{e(f["status"])}</span></td>'
         f'<td><strong>{e(f["title"])}</strong><div class="tiny">{e(f["where"])}</div></td>'
         f'<td>{e(f["what"])}</td><td>{e(f["effect"])}</td><td class="tiny">{_links(f["sources"])}</td></tr>'
         for f in rv["flags"])
     conf_rows = "".join(
-        f'<tr><td class="mono">{e(c["id"])}</td><td>{e(c["what"])}</td>'
+        f'<tr id="{e(c["id"])}"><td class="mono">{e(c["id"])}</td><td>{e(c["what"])}</td>'
         f'<td class="tiny">{_links(c["sources"])}</td></tr>' for c in rv["confirmed"])
     return f"""
 <section class="panel" id="audit-flags">
