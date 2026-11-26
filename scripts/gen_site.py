@@ -141,7 +141,7 @@ def build_index():
         (str(N_TOTAL), "MICHELIN listings", f"{N_STARRED} starred · {N_BIB} Bib Gourmand · {N_REC} Recommended.<br>No three-star restaurant exists in Las Vegas."),
         ("0", "subway lines", "Las Vegas has no metro. Buses, Monorail and the Vegas Loop were modelled instead — <a href='questions.html'>Q-01</a>."),
         (money(w1(cheapest)), "lowest OTA quote", f"{e(cheapest['name'])} — a Booking.com snapshot with an <em>unassigned room</em>, not a confirmed official-property rate. See Hotels and Flags."),
-        ("Unproven", "saving from moving a week", "The 36% figure was <em>withdrawn</em> after a live check did not reproduce it (F-29). <a href='questions.html#Q-06'>Q-06</a>."),
+        ("Unproven", "saving from moving a week", "The 36% figure was <em>withdrawn</em> after a live check did not reproduce it (F-39). <a href='questions.html#Q-06'>Q-06</a>."),
     ]
     card_html = "".join(
         f'<div class="card"><div class="big">{v}</div><div class="lbl">{e(k)}</div><p>{t}</p></div>'
@@ -182,7 +182,7 @@ def build_index():
     <li><strong>The "within 1 hour" ranking does not rank anything.</strong> Every hotel in Las Vegas is within
     an hour of all {N_TOTAL} restaurants, so the metric returns {N_TOTAL}/{N_TOTAL} for all {n_hotels} properties. A
     <em>20-minute</em> column was added and is what actually separates them — <a href="questions.html">Q-01</a>.</li>
-    <li><strong>The cheapest week is not settled across sources.</strong> The 25 Nov Booking.com snapshots showed lower March quotes for some large resorts, but the Venetian figure was withdrawn on 26 Nov (<a href="flagged.html">F-29</a>). A separate 25 Nov sample of official booking engines found the preferred 15–22 February week cheapest at properties checked. The samples are not like-for-like. Compare exact dates and named-room terms at the hotel's own booking engine before moving dates — <a href="questions.html#Q-06">Q-06</a>.</li>
+    <li><strong>The cheapest week is not settled across sources.</strong> The 25 Nov Booking.com snapshots showed lower March quotes for some large resorts, but the Venetian figure was withdrawn on 26 Nov (<a href="flagged.html">F-39</a>). A separate 25 Nov sample of official booking engines found the preferred 15–22 February week cheapest at properties checked. The samples are not like-for-like. Compare exact dates and named-room terms at the hotel's own booking engine before moving dates — <a href="questions.html#Q-06">Q-06</a>.</li>
   </ol>
 </section>
 
@@ -340,8 +340,8 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   </div>
   <p class="note"><strong>Not settled.</strong> The 25 Nov captures suggested 8–15 March is cheaper for the big resorts.
   On 26 Nov, Booking.com's own Venetian page showed the same 60 m² suite at US$5,185 for 15–22 Feb and €4,472 for
-  8–15 Mar, both including taxes and fees, so the stored Venetian figures are withdrawn (F-29). The other rows
-  are not reproduced (F-36). Presidents' Day (15 Feb 2027) is a verified calendar fact; whether it moves prices is not
+  8–15 Mar, both including taxes and fees, so the stored Venetian figures are withdrawn (F-39). The other rows
+  are not reproduced (F-44). Presidents' Day (15 Feb 2027) is a verified calendar fact; whether it moves prices is not
   established. See <a href="questions.html#Q-06">Q-06</a> for how to close it.</p> Compare the exact named room, fees, taxes, cancellation terms and dates on each property's own booking page before booking.</p>
 </section>
 
@@ -481,6 +481,9 @@ a missing entry and it is not an average. Only three restaurants print a real pe
 def build_activities():
     rows = []
     for a in ACT["activities"]:
+        yt = " · ".join(f'<a href="{e(u)}" target="_blank" rel="noopener">video {i+1}</a>' for i, u in enumerate(a.get("youtube", []))) or '<span class="muted">—</span>'
+        ig = f'<a href="{e(a["instagram"])}" target="_blank" rel="noopener">Instagram</a>' if a.get("instagram") else '<span class="muted">—</span>'
+        tt = f'<a href="{e(a["tiktok"])}" target="_blank" rel="noopener">TikTok</a>' if a.get("tiktok") else '<span class="muted">—</span>'
         rows.append(f"""<tr>
 <td><a href="{e(a['official_url'])}" target="_blank" rel="noopener">{e(a['name'])}</a>
  <div class="tiny">{e(a['type'])} · {e(a['zone'].replace('-',' '))}</div></td>
@@ -488,6 +491,7 @@ def build_activities():
 <td class="tiny">{e(a['exceptions']) or '—'}</td>
 <td class="num">{e(a['price_per_couple']) or '—'}</td>
 <td class="tiny">{e(a['price_note'])}</td>
+<td class="tiny">{yt}</td><td class="tiny">{ig}</td><td class="tiny">{tt}</td>
 </tr>""")
 
     nv = "".join(
@@ -496,13 +500,14 @@ def build_activities():
 
     body = f"""
 <section class="panel">
-  <h2>Four things worth the day</h2>
+  <h2>{len(ACT['activities'])} activities</h2>
   <div class="scroll">
   <table class="data">
-  <thead><tr><th>Venue</th><th>Days &amp; hours</th><th>Exceptions</th><th>2 adults</th><th>Price basis</th></tr></thead>
+  <thead><tr><th>Venue</th><th>Days &amp; hours</th><th>Exceptions</th><th>2 adults</th><th>Price basis</th><th>YouTube</th><th>Instagram</th><th>TikTok</th></tr></thead>
   <tbody>{''.join(rows)}</tbody>
   </table>
   </div>
+  <p class="note">Social columns show only links present in the dataset; <strong>— means no link was verified for this entry</strong>, not that the venue has no account or video. See <a href="questions.html">Open questions</a> for discovery gaps.</p>
 </section>
 
 <section class="panel">
@@ -519,7 +524,7 @@ def build_activities():
 </section>
 """
     return page("activities.html", "Things to do",
-                "Four verified venues with official hours and prices for two — and two that were checked and deliberately left out.",
+                f"{len(ACT['activities'])} verified activity entries with official hours/prices where published, plus explicit blanks where no official social profile was verified.",
                 body)
 
 
@@ -575,7 +580,7 @@ def build_transit():
   <p>This matters more than any other single number on this site, because <strong>seven of the 24 MICHELIN listings
   sit on that one road</strong>: Partage, Kabuto, KAME Omakase, Lamaii, Sparrow + Wolf, Pho Ga Bac Bac and YEN Viet
   Kitchen. Nearly a third of the guide is on a road that turns out to have a bus.</p>
-  <p>The timetable's eastbound runs give <strong>Decatur to Las Vegas Blvd in about 10–17 minutes, depending on the time of day</strong> (14 is the model midpoint; F-32). Adding a walk to the
+  <p>The timetable's eastbound runs give <strong>Decatur to Las Vegas Blvd in about 10–17 minutes, depending on the time of day</strong> (14 is the model midpoint; F-42). Adding a walk to the
   stop, a platform wait and a walk at the far end puts the north Strip at about <strong>34 minutes</strong> from
   Chinatown door to door — comfortably inside the brief's one-hour limit, from a hotel with no Monorail station.</p>
   <p>This is the <strong>only published travel time in the whole model</strong>. Every other minute figure here is an
@@ -724,7 +729,7 @@ def build_sources():
         ("F-17", "14-night variant", "The brief allows two weeks; only seven nights were priced."),
         ("F-18", "Bellagio Fountains", "Official page failed to load; schedule unverified."),
         ("F-19", "Instagram / TikTok", "Handles not published; blank rather than guessed."),
-        ("F-29", "Hotel price basis", "The 32-hotel prices are Booking.com snapshots, not official property quotes; independent official-engine samples conflict on the cheapest week."),
+        ("F-39", "Hotel price basis", "The 32-hotel prices are Booking.com snapshots, not official property quotes; independent official-engine samples conflict on the cheapest week."),
         ("F-30", "Official hotel rates, refreshed 26 Nov 2026", "Caesars Julius King $201/night and Wynn Cyber $677/night, each including resort fee before tax; Venetian returned $6,170.43 tax-included but labels suites as 4+ guests. Volatile; confirm exact total and occupancy."),
     ]
     for fid, where, what in flags:
@@ -1155,14 +1160,14 @@ def build_route(name, title, subtitle, links):
     return page(name, title, subtitle, body)
 
 
-# ---------------------------------------------------------------- audit sections (F-29 onward)
+# ---------------------------------------------------------------- audit sections (F-39 onward)
 def _links(srcs):
     return "<br>".join(
         f'<a href="{e(x["url"])}" target="_blank" rel="noopener">{e(x["label"])}</a>' for x in srcs)
 
 
 def build_audit_sections():
-    """F-29 onward from data/review-flags.json (26 Nov 2026 audit). Embedded in flagged.html."""
+    """F-39 onward from data/review-flags.json (26 Nov 2026 audit). Embedded in flagged.html."""
     rv = load("review-flags.json")
     cls = {"contradicted": "bad", "unverified": "warn", "needs review": "warn",
            "corrected": "ok", "confirmed": "ok", "information": "muted"}
@@ -1177,7 +1182,7 @@ def build_audit_sections():
         f'<td class="tiny">{_links(c["sources"])}</td></tr>' for c in rv["confirmed"])
     return f"""
 <section class="panel" id="audit-flags">
-  <h2>New flags from the 26 Nov 2026 audit (F-29 to F-{rv["flags"][-1]["id"][2:]})</h2>
+  <h2>New flags from the 26 Nov 2026 audit (F-39 to F-{rv["flags"][-1]["id"][2:]})</h2>
   <p class="note">Each row says what was checked, what was found, what the plan does about it, and where to look.
   <strong>Contradicted</strong> means a stored value was withdrawn. <strong>Unverified</strong> means it stays on the site, labelled, and needs checking before you rely on it.</p>
   <div class="scroll"><table class="data">

@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "Dated Booking.com third-party quote snapshots for comparing selected hotel/date pairs; this dataset alone does not establish the cheapest week across Las Vegas.",
-    "method": "Booking.com searches for whole weeks, 2 adults, 1 room, USD, sorted by price, captured 2026-11-25. These are not official property-engine quotes. Only properties that appeared in a captured result block are listed; see F-29 for the conflicting official-engine sample. Venetian figures withdrawn on 26 Nov 2026 (F-29): not reproduced on Booking.com's own Venetian page.",
+    "method": "Booking.com searches for whole weeks, 2 adults, 1 room, USD, sorted by price, captured 2026-11-25. These are not official property-engine quotes. Only properties that appeared in a captured result block are listed; see F-29 for the conflicting official-engine sample. Venetian figures withdrawn on 26 Nov 2026 (F-39): not reproduced on Booking.com's own Venetian page.",
     "caveat": "The user's stated window is 2027-02-15 → 2027-03-23. Everything outside that range is excluded. The four Booking.com windows below sit inside it; 22 Feb–1 Mar was not sampled in this dataset.",
     "windows": [
       {
@@ -33,7 +33,7 @@
         "note": "Ends the day before the user's outer limit."
       }
     ],
-    "audit_2026_11_26": "Venetian W1/W3 withdrawn (F-29). Other captured values are unchanged but are not reproduced in the 26 Nov audit (F-36)."
+    "audit_2026_11_26": "Venetian W1/W3 withdrawn (F-39). Other captured values are unchanged but are not reproduced in the 26 Nov audit (F-44)."
   },
   "matrix": [
     {
@@ -42,7 +42,7 @@
       "W2": null,
       "W3": null,
       "W4": null,
-      "room_note": "WITHDRAWN 2026-11-26 (F-29): not reproduced on Booking.com's own page. Luxury King Suite, 60 m²."
+      "room_note": "WITHDRAWN 2026-11-26 (F-39): not reproduced on Booking.com's own page. Luxury King Suite, 60 m²."
     },
     {
       "hotel": "The Palazzo at The Venetian",
@@ -50,7 +50,7 @@
       "W2": null,
       "W3": 2422,
       "W4": null,
-      "room_note": "Luxury King Suite throughout · Not reproduced in the 26 Nov audit (F-36)"
+      "room_note": "Luxury King Suite throughout · Not reproduced in the 26 Nov audit (F-44)"
     },
     {
       "hotel": "The Cosmopolitan",
@@ -58,7 +58,7 @@
       "W2": null,
       "W3": 2307,
       "W4": null,
-      "room_note": "Not reproduced in the 26 Nov audit (F-36)"
+      "room_note": "Not reproduced in the 26 Nov audit (F-44)"
     },
     {
       "hotel": "Nobu Hotel at Caesars Palace",
@@ -66,7 +66,7 @@
       "W2": null,
       "W3": 1750,
       "W4": null,
-      "room_note": "Nobu's cheapest week is February, the opposite of the big resorts · Not reproduced in the 26 Nov audit (F-36)"
+      "room_note": "Nobu's cheapest week is February, the opposite of the big resorts · Not reproduced in the 26 Nov audit (F-44)"
     },
     {
       "hotel": "ARIA Resort & Casino",
@@ -74,7 +74,7 @@
       "W2": null,
       "W3": null,
       "W4": 2507,
-      "room_note": "Deluxe King in W4 · Not reproduced in the 26 Nov audit (F-36)"
+      "room_note": "Deluxe King in W4 · Not reproduced in the 26 Nov audit (F-44)"
     },
     {
       "hotel": "Bellagio",
@@ -82,7 +82,7 @@
       "W2": 3258,
       "W3": null,
       "W4": 2544,
-      "room_note": "Room class varies by window · Not reproduced in the 26 Nov audit (F-36)"
+      "room_note": "Room class varies by window · Not reproduced in the 26 Nov audit (F-44)"
     },
     {
       "hotel": "Waldorf Astoria Las Vegas",
@@ -90,14 +90,14 @@
       "W2": 3463,
       "W3": null,
       "W4": null,
-      "room_note": "W1 is a 1-bedroom suite; W2 is a Deluxe King · Not reproduced in the 26 Nov audit (F-36)"
+      "room_note": "W1 is a 1-bedroom suite; W2 is a Deluxe King · Not reproduced in the 26 Nov audit (F-44)"
     }
   ],
   "derived": {
     "cheapest_week_overall": {
       "window": null,
       "label": "Unresolved",
-      "evidence": "The 25 Nov captures pointed to 8–15 Mar, but the one property checked on its own engine on 26 Nov (The Venetian) did not reproduce it. Feb 15–22 vs Mar 8–15 on the same 60 m² suite is not established. See F-29 and F-36."
+      "evidence": "The 25 Nov captures pointed to 8–15 Mar, but the one property checked on its own engine on 26 Nov (The Venetian) did not reproduce it. Feb 15–22 vs Mar 8–15 on the same 60 m² suite is not established. See F-39 and F-44."
     },
     "most_expensive_week_overall": {
       "window": "W1",

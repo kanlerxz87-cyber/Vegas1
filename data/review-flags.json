@@ -3,12 +3,12 @@
     "purpose": "Items that did not verify cleanly, or were corrected, in the 2026-11-26 line-by-line audit (task T12). Rendered on flagged.html. Each entry carries the source links used. Blank or flagged means NOT verified; nothing here is an estimate presented as fact.",
     "checked": "2026-11-26",
     "checked_by": "arena-f527b427-vegas1",
-    "numbering": "Continues FLAGS.md (F-01 to F-28). New items are F-29 onward.",
+    "numbering": "Continues FLAGS.md (F-01 to F-28). New items are F-39 onward.",
     "blocking": "None. Flagged and unverified items do not block the merge; they are published here for review."
   },
   "flags": [
     {
-      "id": "F-29",
+      "id": "F-39",
       "status": "contradicted",
       "title": "Venetian 'cheapest week' figures withdrawn",
       "where": "The Venetian Resort: hotels.json, price-windows.json, questions Q-06, suggestion S-01, index card, executive summary, README",
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "id": "F-30",
+      "id": "F-40",
       "status": "unverified",
       "title": "Per-night and 7-night totals do not reconcile",
       "where": "16 properties; 17 of 42 captured rows (see each hotel card)",
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "id": "F-31",
+      "id": "F-41",
       "status": "unverified",
       "title": "Palms Place room specification not confirmed on the official site",
       "where": "Palms Place Hotel and Spa",
@@ -70,7 +70,7 @@
       ]
     },
     {
-      "id": "F-32",
+      "id": "F-42",
       "status": "corrected",
       "title": "Route 203 Decatur to Las Vegas Blvd is a range, not 14 minutes",
       "where": "transit.html, travel_matrix.json, transit.json, executive summary and README",
@@ -84,7 +84,7 @@
       ]
     },
     {
-      "id": "F-33",
+      "id": "F-43",
       "status": "confirmed",
       "title": "Michael Mina (Bellagio) closure re-confirmed",
       "where": "Michael Mina, Bellagio",
@@ -102,7 +102,7 @@
       ]
     },
     {
-      "id": "F-36",
+      "id": "F-44",
       "status": "unverified",
       "title": "Other week-to-week comparisons not reproduced",
       "where": "Palazzo, Cosmopolitan, ARIA, Bellagio, Waldorf Astoria, Nobu at Caesars",
@@ -120,7 +120,7 @@
       ]
     },
     {
-      "id": "F-37",
+      "id": "F-45",
       "status": "information",
       "title": "Promotional rates and one-day snapshots",
       "where": "All Booking.com captures",
@@ -134,7 +134,7 @@
       ]
     },
     {
-      "id": "F-38",
+      "id": "F-46",
       "status": "needs review",
       "title": "Repository irregularities found in the review",
       "where": "Repository root, COORDINATION.md, README.md, executive-summary.md, pages/, data/",
@@ -158,7 +158,7 @@
   ],
   "confirmed": [
     {
-      "id": "C-01",
+      "id": "C-11",
       "what": "All 24 Las Vegas MICHELIN names and award tiers match the 2026 Southwest selection: 4 starred (Joël Robuchon 2★; L'Atelier de Joël Robuchon, Restaurant Guy Savoy and é by José Andrés 1★), 3 Bib Gourmand (China Poblano, Esther's Kitchen, YEN Viet Kitchen) and 17 Recommended. The release's Las Vegas Recommended list matches the 17 names on the site.",
       "sources": [
         {
@@ -172,7 +172,7 @@
       ]
     },
     {
-      "id": "C-02",
+      "id": "C-12",
       "what": "RTC Strip and All Access fares: Single $4, 2 Hour $6, 24 Hour $8, 3-Day $20 (regular fare). These match the site. The 'no $35 seven-day Strip pass' note is consistent with this page. The 2027 fare change reported in the 48dbf0ae session was not checked in this audit.",
       "sources": [
         {
@@ -182,7 +182,7 @@
       ]
     },
     {
-      "id": "C-03",
+      "id": "C-13",
       "what": "Joël Robuchon Tue–Sat 5:00–9:30 PM and Partage Tue–Sat 5–9 PM, Michael Mina closed: these were re-checked against the venue pages in earlier passes. This audit did not re-fetch them, so they are listed as previously verified, not newly verified.",
       "sources": [
         {
@@ -192,5 +192,5 @@
       ]
     }
   ],
-  "repo_irregularities_note": "Full list in F-38. Nothing on the board has been deleted; duplicate IDs are logged, not renumbered, to avoid breaking other sessions' references."
+  "repo_irregularities_note": "Full list in F-46. Nothing on the board has been deleted; duplicate IDs are logged, not renumbered, to avoid breaking other sessions' references."
 }

@@ -10,7 +10,7 @@
       "impact": "high",
       "needs_decision": false,
       "status": "recommended",
-      "body": "Do not assume 8–15 March is cheaper overall. The 25 Nov Booking.com snapshots showed lower March quotes for The Venetian, Palazzo and Cosmopolitan. On 26 Nov the Venetian's figures were not reproduced on Booking.com's own page (F-29), and the Palazzo and Cosmopolitan figures have not been re-checked (F-36). A separate official-property-engine sample reports the preferred 15–22 February week as cheapest at the properties it checked. The samples differ by property coverage, room/rate terms and fee/tax basis. This evidence does not establish a market-wide cheapest week.",
+      "body": "Do not assume 8–15 March is cheaper overall. The 25 Nov Booking.com snapshots showed lower March quotes for The Venetian, Palazzo and Cosmopolitan. On 26 Nov the Venetian's figures were not reproduced on Booking.com's own page (F-39), and the Palazzo and Cosmopolitan figures have not been re-checked (F-44). A separate official-property-engine sample reports the preferred 15–22 February week as cheapest at the properties it checked. The samples differ by property coverage, room/rate terms and fee/tax basis. This evidence does not establish a market-wide cheapest week.",
       "trade_off": "Keeping the preferred dates avoids changing plans based on a source conflict; checking exact dates and the same room/fee basis property by property may still identify a cheaper alternative. Recheck rates close to booking because the captures are dated 25 November 2026.",
       "evidence": "Booking.com snapshot table: data/price-windows.json and data/hotels.json. Official-engine sample with per-property booking links: docs/session-af795000/hotels.html."
     },
