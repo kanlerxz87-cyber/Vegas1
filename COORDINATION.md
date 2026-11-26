@@ -58,7 +58,7 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 | T1–T9 | Independent full build (restaurants, hotels, activities, pricing, verification, summary, suggestions) | done | session-planner-01 | `assets/**`, root `*.html` | Separate JS-driven build; integrated into canonical `main` site via merge (see handoff log). |
 | T10 | Integrate, re-verify, deploy GitHub Pages | done | session-planner-01 | repo-wide | Merged independent build into canonical `main` site; supplementary pages linked from nav. |
 | T1–T9 (independent) | Independent verified build + link-check pass | done | session-48dbf0ae | `docs/session-48dbf0ae/**`, `data/session-48dbf0ae-*.json` | Claimed on a fork-era task board that predates this one; no canonical file touched. See session record at end of file. |
-| R01 | Repo review: live-site spot-check, link audit, irregularity register | in progress | arena-b54b3346-vegas1 | `notes/repo-review-2026-11-26.md`, `COORDINATION.md` | Claimed 2026-11-26. Live site, `data/`, `docs/`, root pages NOT edited. |
+| R01 | Repo review: live-site spot-check, link audit, irregularity register | done | arena-b54b3346-vegas1 | `notes/repo-review-2026-11-26.md`, `COORDINATION.md` | Done 2026-11-26. Live site, `data/`, `docs/`, root pages NOT edited. Irregularities F-01–F-07 flagged for owner review. Sources: michelin.com 2026 Southwest press release; GitHub Pages API; build/validate logs. RTC fares fetch failed (F-04). |
 
 ## Correction record — RTC Route 203 — 2026-11-25
 
@@ -194,6 +194,15 @@ Independent full-session build of the same brief (started from base 9b8bcfa befo
 
 **Addendum (post-merge cross-session conflict — flag for users):** The canonical site's headline "February is the expensive week — moving to 8–15 Mar cuts the Venetian by 36%" (from Booking.com OTA snapshots in `data/hotels.json`) **conflicts** with session-af795000's official-engine finding that Feb 15–22 is the *cheapest* verified 7-night window at every property checked (Caesars Palace $1,582 vs Mar 8–15 calendar ≈$2,013; Flamingo $595 vs ≈$804; Wynn/RW Feb sampled). Both may be right for different properties/sources (Venetian March was not machine-verifiable for af795000; OTA snapshots can undercut official BAR). Resolution rule for users: **check the specific property's own booking engine for the specific dates before deciding**; neither claim should be quoted unqualified. Recorded 2026-11-25.
 
+
+## Session record — arena-b54b3346-vegas1 (R01 repo review) — 2026-11-26
+
+- **Verified (official source):** MICHELIN 2026 Southwest press release — Robuchon 2★; é, Guy Savoy, L'Atelier 1★; Las Vegas Bibs = China Poblano, Esther's Kitchen, YEN Viet. Matches the site's 4 starred / 3 Bib / 17 Recommended. https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s
+- **Checked locally:** `build.py` integrity passed; `gen_site.py` output identical to committed; `validate.py` 11 pages / 0 failures; internal-link scan of 46 HTML files found 11 broken links, all in unpublished `pages/flagged.html`.
+- **Pages:** `main` build status `built`, deploy success. One failed run on `arena/48dbf0ae-vegas1` (F-03).
+- **Not verified this session:** RTC fares (fetch failed), the 288 external links, and all dynamic hotel/restaurant prices.
+- **Irregularities (full register in `notes/repo-review-2026-11-26.md`):** F-01 live homepage states "February is expensive / −36% in March" unqualified, contradicting the cross-session addendum above. F-02 no root Flagged-for-Review page is published. F-03 failed Actions run. F-04 RTC fares unconfirmed. F-05 row-level link verification incomplete. F-06 duplicate task IDs on the board. F-07 README drift.
+- **Changes:** added `notes/repo-review-2026-11-26.md` and this record only. Live site, `data/`, `docs/`, and root pages unchanged.
 
 ## Session record — session-48dbf0ae (independent build + link check) — 2026-11-25
 
