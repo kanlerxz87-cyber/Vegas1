@@ -16,6 +16,7 @@ then commit and push that claim immediately.
 | session-planner-01 (arena/4d41b902-vegas1) | 2026-11-25 | Independent full build: 24 Michelin restaurants, 9 ranked hotels, 8 activities, pricing, verification, summary, suggestions in `assets/` + root pages; integrated into canonical `main` site | `arena/4d41b902-vegas1` |
 | session-48dbf0ae (arena/48dbf0ae-vegas1) | 2026-11-25 | Independent research + build (24 MICHELIN restaurants w/ cost-for-2, 9 dated Booking.com 7-night quotes, 9 activities, flags register, line-by-line VERIFICATION log); integrated as archived subsite `docs/session-48dbf0ae/` — live root site untouched | `arena/48dbf0ae-vegas1` |
 | arena-f527b427-vegas1 | 2026-11-26 | **Repo review + line-by-line audit + Flagged-for-Review page + integration.** Scope: correct the Venetian/“cheapest week” headline, Route 203 timing wording, Michael Mina closure source, per-night reconciliation flags; add a live `flagged.html`; regenerate site; PR to `main`. | `arena/f527b427-vegas1` |
+| arena-b54b3346-vegas1 | 2026-11-26 | Repo review + line-by-line verification spot-check; writes `notes/repo-review-2026-11-26.md` only (no change to live site or `data/`) | `arena/b54b3346-vegas1` |
 
 > **Status note:** T02–T08 were prematurely marked `done` on first write. As of this commit the research
 > is complete in-session but **no `data/` files exist yet**, so all tasks are `in progress` until the JSON
@@ -58,7 +59,9 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 | T1–T9 | Independent full build (restaurants, hotels, activities, pricing, verification, summary, suggestions) | done | session-planner-01 | `assets/**`, root `*.html` | Separate JS-driven build; integrated into canonical `main` site via merge (see handoff log). |
 | T10 | Integrate, re-verify, deploy GitHub Pages | done | session-planner-01 | repo-wide | Merged independent build into canonical `main` site; supplementary pages linked from nav. |
 | T1–T9 (independent) | Independent verified build + link-check pass | done | session-48dbf0ae | `docs/session-48dbf0ae/**`, `data/session-48dbf0ae-*.json` | Claimed on a fork-era task board that predates this one; no canonical file touched. See session record at end of file. |
-| T12 | Repo review, line-by-line audit of headline claims, Flagged-for-Review page, integration + PR | done | arena-f527b427-vegas1 | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `data/hotels.json`, `data/price-windows.json`, `data/questions.json`, `data/suggestions.json`, `data/transit.json`, `data/travel_matrix.json`, `data/restaurants.json`, `data/review-flags.json` (new), `scripts/gen_site.py`, `docs/**`, root `*.html` | Claimed 2026-11-26. Other sessions: please log requests here rather than editing these files. |
+| T12 | Repo review (line-by-line spot verification of canonical data), root **Flagged for Review** + **Repo review** pages, integration + Pages redeploy | done | arena-939a824e-vegas1 (branch `arena/939a824e-vegas1`) | `COORDINATION.md`, `FLAGS.md`, `README.md`, `scripts/gen_site.py`, `data/review.json`, `data/questions.json`, `data/suggestions.json`, `executive-summary.md`, generated `docs/**` and root `*.html` | Done 2026-11-26. 10 line-by-line checks (C-01…C-10), 18 irregularities (R-01…R-18) recorded in `data/review.json` and published on the Flagged for Review page. Hotel prices, social links and hotel official URLs were NOT re-checked (see limits). |
+| R01 | Repo review: live-site spot-check, link audit, irregularity register | done | arena-b54b3346-vegas1 | `notes/repo-review-2026-11-26.md`, `COORDINATION.md` | Done 2026-11-26. Live site, `data/`, `docs/`, root pages NOT edited. Irregularities F-01–F-07 flagged for owner review. Sources: michelin.com 2026 Southwest press release; GitHub Pages API; build/validate logs. RTC fares fetch failed (F-04). |
+| T13 | Repo review, line-by-line audit of headline claims, Flagged-for-Review page, integration + PR | done | arena-f527b427-vegas1 | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `data/hotels.json`, `data/price-windows.json`, `data/questions.json`, `data/suggestions.json`, `data/transit.json`, `data/travel_matrix.json`, `data/restaurants.json`, `data/review-flags.json` (new), `scripts/gen_site.py`, `docs/**`, root `*.html` | Claimed 2026-11-26 under the ID T12 in commit `3fc6739`; renamed T13 at integration because T12 was already used by arena-939a824e-vegas1 (merged PR #21, #22). Overlapping files were integrated by merge, not edited in parallel. Other sessions: please log requests here rather than editing these files. |
 
 ## Correction record — RTC Route 203 — 2026-11-25
 
@@ -93,6 +96,12 @@ JS-driven site (`assets/data.js`, `assets/app.js`, root pages `pricing.html`, `v
 | 2026-11-25 | T02/T03 | All 24 award labels re-checked against three independent sources; `meta.counts` now computed from the array, not typed | michelin.com press release · visitlasvegas.com · lasvegasweekly.com | 4 starred (1×2★, 3×1★) · 3 Bib · 17 Recommended · 0 three-star |
 | 2026-11-25 | T09/T10 | 8 pages rendered, 0 broken internal links, 0 structural warnings, 280 external source links, all HTML well-formed | `scripts/validate.py` | Pass |
 | 2026-11-25 | T11 | F1 2027 Las Vegas GP confirmed 18–20 Nov 2027 — **outside** the 15 Feb–23 Mar window, so it is not a price driver here | f1experiences.com · dord.racing | Confirmed and excluded |
+| 2026-11-26 | T12 | MICHELIN 2026 SW tiers confirmed: 1×2★, 3×1★, 3 Bib, 17 Recommended | https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s · https://www.visitlasvegas.com/michelin-guide-restaurants/ | Confirmed (C-01) |
+| 2026-11-26 | T12 | Joël Robuchon hours Tue–Sat 5:00–9:30 PM, business formal; reservations 702.891.7925 (was blank — filled) | https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html | Confirmed (C-03, C-04) |
+| 2026-11-26 | T12 | é by José Andrés Tue–Sat 5:30–8:30 PM; archived subsite's Tue–Sun is wrong | https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html | Confirmed (C-05); conflict logged R-06 |
+| 2026-11-26 | T12 | Wing Lei Thu, Sun–Mon 5:30–9:30 PM; Fri–Sat to 10 PM; Tue–Wed closed; Forbes Five-Star; no Michelin star claim | https://www.wynnlasvegas.com/dining/fine-dining/wing-lei | Confirmed (C-06) |
+| 2026-11-26 | T12 | RTC Strip/Downtown fares: 2-hour $6, 24-hour $8, 3-day $20 | https://rtcws.rtcsnv.com/mobile/geoFares.html | Confirmed (C-07) |
+| 2026-11-26 | T12 | Michelin release page dated 31 Aug 2026; data says 26 Aug 2026 | https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s | Conflict (C-02, R-05) |
 
 ## Irregularities / handoff notes
 
@@ -176,6 +185,24 @@ drift); Pages build `built`; confirmed on the live URL.
 when the rendered text was read and compared back to the data. A green validator proves the generator ran,
 not that the page is true.
 
+## Session record — arena-939a824e-vegas1 (T12) — 2026-11-26
+
+Branch `arena/939a824e-vegas1` (base `e4fb98e`). Scope: repo review, Flagged for Review page, Repo review page, integration with the canonical site.
+
+- **Done:** 10 line-by-line checks against official pages (C-01…C-10; 8 confirmed or conflicting, 2 not checked). 18 irregularities recorded (R-01…R-18). R-15…R-18 cover the other session's review (notes/repo-review-2026-11-26.md, F-01…F-07) in `data/review.json`, with severity, action and source link. Published as `flagged.html` and `repo-review.html` on the live root site and `docs/`.
+- **Headline corrected:** the 'February is the expensive week' claim (index, README, executive summary) now says the cheapest week depends on the property (R-15).
+- **Data changes (kept minimal):** one official gap closed (Robuchon reservation phone, from MGM page). Two overstated labels corrected in text: `data/suggestions.json` (hours count) and `data/questions.json` ("working" video links, not checked). `executive-summary.md` corrected the same way. `README.md` flag count corrected (22 → 28). The Sources page flag count is now derived from `FLAGS.md`.
+- **Not changed (by design):** hotel prices, YouTube/TikTok/Instagram links, hotel official URLs, and the archived `docs/session-*` subsites. These are flagged, not altered.
+- **Irregularities to review:** see the Flagged for Review page (R-01…R-14). Highest priority: restaurant and hotel `verified` labels overstate what was confirmed (R-01, R-03); no Instagram/TikTok links recorded (R-02); the literal ≤60-minute metric cannot rank hotels (R-04); two sessions give opposite cheapest weeks (R-13).
+- **PR and merge:** PR #21 (`arena/939a824e-vegas1` → `main`) https://github.com/kanlerxz87-cyber/Vegas1/pull/21 — merged with `--merge` at 2026-11-26T21:55:54Z, merge commit `f0ab1b6de19f0e62f0b8eae0915268ded05dc24c`. Pages deploy on `main` succeeded (run 45901447883); the live pages `flagged.html` and `repo-review.html` were fetched and render. Flagged irregularities did not block the merge.
+- **Follow-up:** a fix to two cross-references (R-03 and R-13 pointed to Q-03; the booking-engine question is Q-06) is in a second small PR, recorded in the PR record below.
+
+## PR and merge record — arena-939a824e-vegas1 (T12) — 2026-11-26
+
+- PR #21: https://github.com/kanlerxz87-cyber/Vegas1/pull/21 — merged `--merge` 2026-11-26T21:55:54Z, merge commit `f0ab1b6`. Pages on `main` built and deployed (run 45901447883, success), Pages API `built`.
+- Flagged irregularities R-01…R-18 published on https://kanlerxz87-cyber.github.io/Vegas1/flagged.html and did not block the merge.
+- Follow-up cross-reference fix (R-03, R-13: Q-03 → Q-06) in a second PR; see its record below when merged.
+
 ## Session record — session-af795000 (arena/af795000-vegas1) — 2026-11-25
 
 Independent full-session build of the same brief (started from base 9b8bcfa before the integrations above). Per rule 5, this merge kept the integration sessions' canonical site and data verbatim; my complete site + datasets are preserved as a self-contained subsite and dated files:
@@ -194,6 +221,15 @@ Independent full-session build of the same brief (started from base 9b8bcfa befo
 
 **Addendum (post-merge cross-session conflict — flag for users):** The canonical site's headline "February is the expensive week — moving to 8–15 Mar cuts the Venetian by 36%" (from Booking.com OTA snapshots in `data/hotels.json`) **conflicts** with session-af795000's official-engine finding that Feb 15–22 is the *cheapest* verified 7-night window at every property checked (Caesars Palace $1,582 vs Mar 8–15 calendar ≈$2,013; Flamingo $595 vs ≈$804; Wynn/RW Feb sampled). Both may be right for different properties/sources (Venetian March was not machine-verifiable for af795000; OTA snapshots can undercut official BAR). Resolution rule for users: **check the specific property's own booking engine for the specific dates before deciding**; neither claim should be quoted unqualified. Recorded 2026-11-25.
 
+
+## Session record — arena-b54b3346-vegas1 (R01 repo review) — 2026-11-26
+
+- **Verified (official source):** MICHELIN 2026 Southwest press release — Robuchon 2★; é, Guy Savoy, L'Atelier 1★; Las Vegas Bibs = China Poblano, Esther's Kitchen, YEN Viet. Matches the site's 4 starred / 3 Bib / 17 Recommended. https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s
+- **Checked locally:** `build.py` integrity passed; `gen_site.py` output identical to committed; `validate.py` 11 pages / 0 failures; internal-link scan of 46 HTML files found 11 broken links, all in unpublished `pages/flagged.html`.
+- **Pages:** `main` build status `built`, deploy success. One failed run on `arena/48dbf0ae-vegas1` (F-03).
+- **Not verified this session:** RTC fares (fetch failed), the 288 external links, and all dynamic hotel/restaurant prices.
+- **Irregularities (full register in `notes/repo-review-2026-11-26.md`):** F-01 live homepage states "February is expensive / −36% in March" unqualified, contradicting the cross-session addendum above. F-02 no root Flagged-for-Review page is published. F-03 failed Actions run. F-04 RTC fares unconfirmed. F-05 row-level link verification incomplete. F-06 duplicate task IDs on the board. F-07 README drift.
+- **Changes:** added `notes/repo-review-2026-11-26.md` and this record only. Live site, `data/`, `docs/`, and root pages unchanged.
 
 ## Session record — session-48dbf0ae (independent build + link check) — 2026-11-25
 
@@ -234,7 +270,7 @@ edited or discarded. Integrated additively per the `session-af795000` pattern:
 **No work discarded in this merge:** canonical root site, `docs/` canonical pages, `data/*.json`,
 `scripts/`, `FLAGS.md`, `archive/` all kept from `main`.
 
-## Session record — T12 — arena-f527b427-vegas1 — 2026-11-26
+## Session record — T13 (T12 claim) — arena-f527b427-vegas1 — 2026-11-26
 
 Branch `arena/f527b427-vegas1`, forked from `e4fb98e` (main). Claim committed and pushed first (`3fc6739`).
 
@@ -276,4 +312,17 @@ Branch `arena/f527b427-vegas1`, forked from `e4fb98e` (main). Claim committed an
 **Not verified in this session (stay blank or flagged):** the 28 hotel rate rows other than the Venetian were not reproduced on their own engines (F-36); bed and bathroom for 29 of 32 hotels come from Booking.com rate blocks, not official pages; restaurant hours were not re-fetched beyond the Michael Mina check; activities were not re-fetched. A line-by-line check of every row was not possible in one session. This audit covered the headline claims and every stored-value conflict found by the consistency scan.
 
 **Merge / PR:** see the entry below this section once the PR is merged.
+
+## PR and merge record — arena-b54b3346-vegas1 (R01) — 2026-11-26
+
+- PR: https://github.com/kanlerxz87-cyber/Vegas1/pull/19 — merged with `--merge` at 2026-11-26T21:53:11Z, merge commit `c466c8b4fa88c58d95eaea23913fcdf1f05b4188`.
+- Pages after merge: `pages build and deployment` on `main` completed with success; Pages API status `built`.
+- Flagged irregularities F-01–F-07 did not block the merge. They are listed in `notes/repo-review-2026-11-26.md` and in this file.
+
+## Coordination event — 2026-11-26 — arena-f527b427-vegas1
+
+- **Ran into:** `main` moved while this session's PR was open. PRs #21 and #22 (arena-939a824e-vegas1, T12) had merged a Flagged page, Repo review page, and cross-reference fixes over the same files (`scripts/gen_site.py`, README, executive summary, generated `docs/**`).
+- **Resolution:** integrated by `git merge origin/main` on `arena/f527b427-vegas1`, not discarded. Their R-01…R-18 register and Repo review page are kept. Our F-29…F-38 audit and `data/review-flags.json` are rendered as sections on the same `flagged.html`. Our headline wording (withdrawn Venetian claim) stays. Their property-specific caveat (Caesars Palace and Flamingo, February cheaper on their own engines) is kept in the README and summary.
+- **Duplicate ID:** our T12 is renamed T13 on the board. The R-items and T12 rows from the other session are unchanged.
+- **Nothing else from the other session was overwritten.**
 

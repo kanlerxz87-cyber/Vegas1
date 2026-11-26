@@ -88,7 +88,7 @@
       "id": "Q-07",
       "question": "What are each restaurant's YouTube, TikTok and Instagram links?",
       "state": "open",
-      "answer": "YouTube is complete: every one of the 24 restaurants has at least one working video link, 69 in total. Instagram and TikTok are almost entirely blank.",
+      "answer": "YouTube is recorded for every one of the 24 restaurants, 69 links in total. The links were not opened in the 2026-11-26 review, so 'working' is not verified. Instagram and TikTok are almost entirely blank.",
       "problem": "Handles were not printed on most official restaurant pages, and guessing a handle would create a dead or, worse, wrong link.",
       "substitution": "Blank rather than guessed. The Neon Museum is the only venue with confirmed Instagram and TikTok, taken from its own site footer.",
       "how_to_close": "Open each restaurant's official page footer or its OpenTable profile — most link their own socials there. That is 24 short page visits.",

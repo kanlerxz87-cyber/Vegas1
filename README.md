@@ -22,7 +22,11 @@ A sourced trip plan for **two adults**, seven nights, between **15 February and 
 | `scripts/validate.py` | Link and structure checks for the built site |
 | `FLAGS.md` | The 28 earlier flags that did not verify cleanly (F-01 to F-28) |
 | `data/review-flags.json` | The 26 Nov 2026 audit register (F-29 onward) and confirmed items, each with source links. Rendered on `flagged.html` |
+| `data/review.json` | Repo review: line-by-line checks, limits, and irregularities (2026-11-26, other session) |
+| `docs/flagged.html`, `docs/repo-review.html` | **Flagged for Review** and **Repo review** pages (generated) |
 | `executive-summary.md` | The one-page version |
+| `data/review.json` | Repo review: line-by-line checks, limits, and irregularities (2026-11-26) |
+| `docs/flagged.html`, `docs/repo-review.html` | **Flagged for Review** and **Repo review** pages (generated) |
 | `COORDINATION.md` | Multi-session task board, merge record and verification log |
 | `archive/` | The earlier session's build, preserved intact rather than overwritten |
 
@@ -42,6 +46,7 @@ No dependencies beyond the Python 3 standard library. `gen_site.py` writes the s
 1. **The cheaper-week claim is withdrawn.** The 25 Nov captures showed 8–15 March as about a third cheaper
    for the Venetian ($2,407 vs $3,757). On 26 Nov, Booking.com's own Venetian page did not reproduce it
    (US$5,185 for 15–22 Feb vs €4,472 for 8–15 Mar, both incl. taxes and fees). Withdrawn — F-29, Q-06.
+   Official booking engines checked on 25 Nov (Caesars Palace, Flamingo; recorded in COORDINATION.md) price February lower, so the cheapest week is property-specific.
 2. **The requested "within 1 hour by subway or bus" ranking cannot rank anything.** Las Vegas has no
    subway, and every hotel is within an hour of all 24 restaurants. A 20-minute column drives the
    ranking instead; disclosed as Q-01.

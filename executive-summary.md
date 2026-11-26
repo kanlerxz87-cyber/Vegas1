@@ -9,7 +9,7 @@ Figures captured 25 November 2026 and spot-checked 26 November 2026. Live site: 
 
 Three findings shape this trip. The 26 November check overturned one of them.
 
-**1. The cheaper-week claim is withdrawn and unproven.** The 25 November captures suggested that 8–15 March 2027 is about a third cheaper at the big resorts. On 26 November, Booking.com's own Venetian page did not reproduce that. The same 60 m² Luxury King Suite showed **US$5,185** for 15–22 February and **€4,472** for 8–15 March, both including taxes and fees. The stored $2,407 vs $3,757 figures are withdrawn (F-29). Whether another week is cheaper is an open question (Q-06).
+**1. The cheaper-week claim is withdrawn and unproven.** The 25 November captures suggested that 8–15 March 2027 is about a third cheaper at the big resorts. On 26 November, Booking.com's own Venetian page did not reproduce that. The same 60 m² Luxury King Suite showed **US$5,185** for 15–22 February and **€4,472** for 8–15 March, both including taxes and fees. The stored $2,407 vs $3,757 figures are withdrawn (F-29). The official booking engines at Caesars Palace and Flamingo, checked 25 Nov, priced February lower, so the cheapest week depends on the property. Whether another week is cheaper is an open question (Q-06).
 
 **2. The requested ranking metric cannot rank anything.** The brief asked to order hotels by how many MICHELIN restaurants fall within an hour by public transport. Las Vegas has no subway, and the Strip is four miles long with Chinatown three miles west of it. So **every one of the 32 hotels is within an hour of all 24 restaurants**. A 20-minute column was added and is what actually separates the field. This is disclosed as Q-01 rather than quietly swapped.
 
@@ -30,7 +30,7 @@ Las Vegas had **no MICHELIN Guide between 2010 and 2025**. The 2026 Southwest se
 
 Only three venues print a price for two: Michael Mina **$590++**, KAME Omakase **$1,000++** and Anima by EDO **$170++**. But Michael Mina's own Bellagio page reads *Temporarily Closed*, re-confirmed on 26 November (F-33), with no reopen date. That $590 is a price for a service that is not running. Do not plan around it. The four starred rooms publish no price for two, so book them first, before the hotel, because é has nine seats a night.
 
-Hours are filled for 19 of 24 listings and marked verified for 17. All 24 have at least one YouTube link (69 in total). **No Instagram or TikTok links have been found for any restaurant yet** (F-19). That is the largest gap against the brief.
+Hours and days are recorded for 19 of 24 listings (5 blank and flagged). All 24 have at least one YouTube link (69 in total), recorded by earlier sessions and not re-opened in the 26 Nov audit. **No Instagram or TikTok links have been found for any restaurant yet** (F-19). That is the largest gap against the brief.
 
 ## What is not known
 

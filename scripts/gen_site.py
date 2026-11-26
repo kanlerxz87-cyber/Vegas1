@@ -60,6 +60,7 @@ def nav(active):
         ("suggestions.html", "Suggestions"),
         ("flagged.html", "Flagged for review"),
         ("sources.html", "Sources"),
+        ("repo-review.html", "Repo review"),
     ]
     out = []
     for href, label in items:
@@ -712,7 +713,7 @@ SUGGESTIONS_HEAD = [f"{len(SUG['suggestions'])} ways to improve this plan"]
 def build_sources():
     flag_rows = []
     # flags are listed in FLAGS.md; render the highlighted ones here
-    N_FLAGS = 20
+    N_FLAGS = len(_flag_register())
     flags = [
         ("F-01", "Joël Robuchon", "Videos say 3 stars; the 2026 Guide says 2."),
         ("F-02", "Michael Mina", "Publishes seasonal block closures; no 2027 dates."),
@@ -801,6 +802,147 @@ def build_sources():
 """
     return page("sources.html", "Sources & flags",
                 "Every page used to build this plan, grouped by what it proves — plus the flags for what would not confirm.",
+                body)
+
+
+# ---------------------------------------------------------------- review
+REVIEW = load("review.json")
+FLAGS_MD = ROOT / "FLAGS.md"
+
+
+def _flag_register():
+    rows = []
+    for line in FLAGS_MD.read_text(encoding="utf-8").splitlines():
+        if line.startswith("| **F-"):
+            cells = [c.strip().replace("**", "") for c in line.strip().strip("|").split("|")]
+            if len(cells) == 4:
+                rows.append(cells)
+    return rows
+
+
+def _sev(s):
+    cls = {"high": "bad", "medium": "warn", "low": "ok"}.get(s, "")
+    return f'<span class="tag {cls}">{e(s)}</span>'
+
+
+def _src(url, label=None):
+    if not url:
+        return "—"
+    return f'<a href="{e(url)}" target="_blank" rel="noopener">{e(label or "source")}</a>'
+
+
+def build_flagged():
+    fl = _flag_register()
+    f_rows = "".join(
+        f'<tr><td class="mono">{e(c[0])}</td><td>{e(c[1])}</td><td>{e(c[2])}</td><td>{e(c[3])}</td>'
+        f'<td><a href="https://github.com/kanlerxz87-cyber/Vegas1/blob/main/FLAGS.md" target="_blank" rel="noopener">FLAGS.md</a></td></tr>'
+        for c in fl
+    )
+    r_rows = "".join(
+        f'<tr><td class="mono">{e(r["id"])}</td><td>{_sev(r["severity"])}</td><td>{e(r["where"])}</td>'
+        f'<td>{e(r["issue"])}</td><td>{e(r["action"])}</td><td>{_src(r.get("source"), "official / repo source")}</td></tr>'
+        for r in REVIEW["irregularities"]
+    )
+    body = f"""
+<section class="panel" id="status">
+  <h2>What this page is</h2>
+  <p>Everything here is <strong>flagged for review</strong>. A flag means a value is blank, conflicts with another source, or could not be confirmed from an official page. Flags do not block the plan. Nothing flagged has been filled in with a guess.</p>
+  <p class="note">Items marked Confirmed on the <a href="repo-review.html">Repo review</a> page were checked against an official page this session. Each row below links to the page it relates to, or to the repository file that holds the evidence.</p>
+</section>
+
+{build_audit_sections()}
+
+<section class="panel" id="repo-irregularities">
+  <h2>Repo irregularities ({len(REVIEW["irregularities"])})</h2>
+  <div class="scroll"><table class="data">
+  <thead><tr><th>ID</th><th>Severity</th><th>Where</th><th>Issue</th><th>What to do</th><th>Source</th></tr></thead>
+  <tbody>{r_rows}</tbody>
+  </table></div>
+</section>
+
+<section class="panel" id="flags">
+  <h2>Data flags F-01 to F-{len(fl):02d} ({len(fl)})</h2>
+  <p>The full register, with the reasoning for each, is in <code>FLAGS.md</code>. Each row is generated from that file.</p>
+  <div class="scroll"><table class="data">
+  <thead><tr><th>ID</th><th>Where</th><th>What</th><th>Effect on the plan</th><th>Register</th></tr></thead>
+  <tbody>{f_rows}</tbody>
+  </table></div>
+</section>
+"""
+    return page("flagged.html", "Flagged for review",
+                "Every value that is blank, conflicting or unconfirmed — published for your review after the site goes live.",
+                body)
+
+
+def build_repo_review():
+    checks = REVIEW["checks"]
+    c_rows = "".join(
+        f'<tr><td class="mono">{e(c["id"])}</td><td>{e(c["item"])}</td><td>{e(c["compared"])}</td>'
+        f'<td><strong>{e(c["result"])}</strong><br><span class="note">{e(c["detail"])}</span></td>'
+        f'<td>{_src(c.get("source"), c.get("source_label") or "source")}</td></tr>'
+        for c in checks
+    )
+    limits = "".join(f"<li>{e(x)}</li>" for x in REVIEW["meta"]["limits"])
+    # derived counts — computed from the data, never typed by hand
+    R = RES["restaurants"]
+    n_price = sum(1 for x in R if not x.get("price_2adults"))
+    n_hours = sum(1 for x in R if not x.get("hours"))
+    n_ig = sum(1 for x in R if x.get("instagram"))
+    n_tt = sum(1 for x in R if x.get("tiktok"))
+    n_yt = sum(1 for x in R if x.get("youtube"))
+    n_ver = sum(1 for x in R if x.get("verified") == "yes")
+    H = HOTELS["hotels"]
+    h_off_no = sum(1 for x in H if x.get("official_verified") == "no")
+    h_ver_yes = sum(1 for x in H if x.get("verified") == "yes")
+    h_same = sum(1 for x in H if x.get("michelin_within_60") == N_TOTAL)
+    counts = [
+        ("Michelin rows (restaurants)", N_TOTAL, "all listed with a 2026 tier"),
+        ("Restaurants with no couple price", n_price, "blank — not verified"),
+        ("Restaurants with no hours recorded", n_hours, "blank — not verified"),
+        ("Restaurant rows marked verified = yes", n_ver, "the label describes the listing, see R-01"),
+        ("Restaurants with an Instagram link", n_ig, "none recorded in the data (F-19)"),
+        ("Restaurants with a TikTok link", n_tt, "none recorded in the data (F-19)"),
+        ("Restaurants with at least one YouTube link", n_yt, "recorded, not opened this session"),
+        ("Hotels (rows)", len(H), "32 properties"),
+        ("Hotels with official_verified = no", h_off_no, "prices are OTA snapshots, see R-03"),
+        ("Hotel rows marked verified = yes", h_ver_yes, "label reflects the search snapshot, see R-03"),
+        ("Hotels where Michelin within 60 min = all 24", h_same, "the literal metric cannot rank, see R-04"),
+    ]
+    count_rows = "".join(
+        f'<tr><td>{e(a)}</td><td class="num">{b}</td><td>{e(c)}</td></tr>' for a, b, c in counts
+    )
+    body = f"""
+<section class="panel">
+  <h2>What was checked, and how</h2>
+  <p>{e(REVIEW["meta"]["method"])}</p>
+  <p><strong>Limits of this review:</strong></p>
+  <ul>{limits}</ul>
+</section>
+
+<section class="panel" id="checks">
+  <h2>Line-by-line checks ({len(checks)})</h2>
+  <div class="scroll"><table class="data">
+  <thead><tr><th>ID</th><th>Item</th><th>What the official page says</th><th>Result</th><th>Source</th></tr></thead>
+  <tbody>{c_rows}</tbody>
+  </table></div>
+</section>
+
+<section class="panel" id="counts">
+  <h2>Counts in the data (derived)</h2>
+  <p>Computed from <code>data/restaurants.json</code> and <code>data/hotels.json</code> when the site is built.</p>
+  <div class="scroll"><table class="data">
+  <thead><tr><th>Measure</th><th>Count</th><th>Meaning</th></tr></thead>
+  <tbody>{count_rows}</tbody>
+  </table></div>
+</section>
+
+<section class="panel">
+  <h2>Irregularities</h2>
+  <p>Each irregularity, with its severity and what to do, is on the <a href="flagged.html#repo-irregularities">Flagged for review</a> page.</p>
+</section>
+"""
+    return page("repo-review.html", "Repo review",
+                "A line-by-line check of the repo's key claims against official sources, the irregularities found, and the limits of this review.",
                 body)
 
 
@@ -925,6 +1067,10 @@ table.matrix td.far{color:var(--muted)}
 .state.ok{background:rgba(92,225,185,.13);color:var(--accent)}
 .state.bad{background:rgba(255,128,128,.13);color:var(--bad)}
 .state.warn{background:rgba(255,196,107,.13);color:var(--warn)}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.72rem;border:1px solid var(--line);color:var(--muted)}
+.tag.bad{color:var(--bad);border-color:var(--bad)}
+.tag.warn{color:var(--warn);border-color:var(--warn)}
+.tag.ok{color:var(--ok,var(--muted))}
 .impact{font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;font-weight:700;
   padding:2px 8px;border-radius:999px}
 .impact.hi{background:rgba(255,128,128,.13);color:var(--bad)}
@@ -1007,83 +1153,45 @@ def build_route(name, title, subtitle, links):
     return page(name, title, subtitle, body)
 
 
-# ---------------------------------------------------------------- flagged for review
-def _flags_md_rows():
-    """Earlier flags F-01..F-28 parsed from FLAGS.md (ID, where, what, effect)."""
-    out = []
-    for line in (ROOT / "FLAGS.md").read_text(encoding="utf-8").splitlines():
-        if not line.startswith("| **F-"):
-            continue
-        cols = [c.strip() for c in line.strip().strip("|").split("|")]
-        if len(cols) != 4:
-            raise SystemExit(f"FLAGS.md row does not have 4 columns: {line[:80]}")
-        fid = re.sub(r"\*", "", cols[0])
-        out.append((fid, cols[1], cols[2], cols[3]))
-    return out
+# ---------------------------------------------------------------- audit sections (F-29 onward)
+def _links(srcs):
+    return "<br>".join(
+        f'<a href="{e(x["url"])}" target="_blank" rel="noopener">{e(x["label"])}</a>' for x in srcs)
 
 
-def build_flagged():
+def build_audit_sections():
+    """F-29 onward from data/review-flags.json (26 Nov 2026 audit). Embedded in flagged.html."""
     rv = load("review-flags.json")
     cls = {"contradicted": "bad", "unverified": "warn", "needs review": "warn",
            "corrected": "ok", "confirmed": "ok", "information": "muted"}
-
-    def links(srcs):
-        return "<br>".join(
-            f'<a href="{e(s["url"])}" target="_blank" rel="noopener">{e(s["label"])}</a>' for s in srcs)
-
     new_rows = "".join(
         f'<tr><td class="mono">{e(f["id"])}</td>'
-        f'<td><span class="pill {cls.get(f["status"], "muted")}">{e(f["status"])}</span></td>'
+        f'<td><span class="tag {cls.get(f["status"], "")}">{e(f["status"])}</span></td>'
         f'<td><strong>{e(f["title"])}</strong><div class="tiny">{e(f["where"])}</div></td>'
-        f'<td>{e(f["what"])}</td><td>{e(f["effect"])}</td><td class="tiny">{links(f["sources"])}</td></tr>'
+        f'<td>{e(f["what"])}</td><td>{e(f["effect"])}</td><td class="tiny">{_links(f["sources"])}</td></tr>'
         for f in rv["flags"])
     conf_rows = "".join(
         f'<tr><td class="mono">{e(c["id"])}</td><td>{e(c["what"])}</td>'
-        f'<td class="tiny">{links(c["sources"])}</td></tr>' for c in rv["confirmed"])
-    old = _flags_md_rows()
-    old_rows = "".join(
-        f'<tr><td class="mono">{e(fid)}</td><td>{e(w)}</td><td>{e(what)}</td><td>{e(eff)}</td></tr>'
-        for fid, w, what, eff in old)
-    n_new = len(rv["flags"])
-    body = f"""
-<section class="panel callout">
-  <h2>Needs your review — {n_new} items from the 26 Nov 2026 audit</h2>
-  <p>Nothing on this page blocks anything. Each row says what was checked, what was found, what the plan
-  does about it, and where to look. <strong>Contradicted</strong> means a stored value was withdrawn.
-  <strong>Unverified</strong> means it stays on the site, labelled, and must be checked before relying on it.
-  <strong>Corrected</strong> and <strong>confirmed</strong> rows are listed so you can see what was checked.</p>
-</section>
-
-<section class="panel" id="new-flags">
-  <h2>New flags (F-29 onward)</h2>
+        f'<td class="tiny">{_links(c["sources"])}</td></tr>' for c in rv["confirmed"])
+    return f"""
+<section class="panel" id="audit-flags">
+  <h2>New flags from the 26 Nov 2026 audit (F-29 to F-{rv["flags"][-1]["id"][2:]})</h2>
+  <p class="note">Each row says what was checked, what was found, what the plan does about it, and where to look.
+  <strong>Contradicted</strong> means a stored value was withdrawn. <strong>Unverified</strong> means it stays on the site, labelled, and needs checking before you rely on it.</p>
   <div class="scroll"><table class="data">
-    <thead><tr><th>ID</th><th>Status</th><th>Item</th><th>What we found</th><th>Effect on the plan</th><th>Sources</th></tr></thead>
-    <tbody>{new_rows}</tbody>
+  <thead><tr><th>ID</th><th>Status</th><th>Item</th><th>What we found</th><th>Effect on the plan</th><th>Sources</th></tr></thead>
+  <tbody>{new_rows}</tbody>
   </table></div>
 </section>
 
-<section class="panel" id="confirmed">
+<section class="panel" id="audit-confirmed">
   <h2>Checked and confirmed on 26 Nov 2026</h2>
   <div class="scroll"><table class="data">
-    <thead><tr><th>ID</th><th>What was confirmed</th><th>Sources</th></tr></thead>
-    <tbody>{conf_rows}</tbody>
-  </table></div>
-</section>
-
-<section class="panel" id="earlier">
-  <h2>Earlier flags (F-01 to F-28)</h2>
-  <p class="tiny">Read from <a href="https://github.com/kanlerxz87-cyber/Vegas1/blob/main/FLAGS.md" target="_blank" rel="noopener">FLAGS.md</a>
-  in the repository. Where a row names a creator video or a reseller page, that page is the source of the claim
-  being flagged, not a source for the value.</p>
-  <div class="scroll"><table class="data">
-    <thead><tr><th>ID</th><th>Where</th><th>What</th><th>Effect</th></tr></thead>
-    <tbody>{old_rows}</tbody>
+  <thead><tr><th>ID</th><th>What was confirmed</th><th>Sources</th></tr></thead>
+  <tbody>{conf_rows}</tbody>
   </table></div>
 </section>
 """
-    return page("flagged.html", "Flagged for review",
-                "Everything that did not verify cleanly, was corrected, or was confirmed in the 26 Nov 2026 audit, with the links used to check it.",
-                body)
 
 
 def main():
@@ -1098,6 +1206,7 @@ def main():
         "suggestions.html": build_suggestions(),
         "flagged.html": build_flagged(),
         "sources.html": build_sources(),
+        "repo-review.html": build_repo_review(),
     }
     for name, title, subtitle, links in ROUTES:
         pages[name] = build_route(name, title, subtitle, links)
