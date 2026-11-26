@@ -31,7 +31,7 @@ not contractual. They cannot be recommended against a stated queen-or-larger req
 | | Pick | Why |
 |---|---|---|
 | **Best value** | **Desert Rose Resort** — $922 for 7 nights | 9.1 guest score, 646 ft² one-bedroom suite, king bed, private bathroom, **no resort fee**, 15-min walk to the centre-Strip restaurants. The only property that is cheap, well-rated and correctly bedded at once. |
-| **Best if the date can move** | **The Venetian, 8–15 March** — $2,407 | Four MICHELIN listings inside the complex, 646 ft² suite, 23 restaurants within 20 minutes. $1,350 cheaper than the February week. |
+| **Best if the date can move** | **The Venetian, 8–15 March** — $2,407 | Four MICHELIN listings inside the complex, 646 ft² suite, 23 restaurants within 20 minutes. $1,350 cheaper than the February week on Booking.com snapshots. Caesars Palace and Flamingo are cheaper in February on their own booking engines, so check each property for your dates (Q-06). |
 | **Best location for Michelin** | **Anything west of the Strip** — Palms Place, $866 | 24/24 restaurants inside 20 minutes, because it sits between Chinatown and the Strip. The least obvious and most useful answer on the site. |
 | **Avoid** | Red Rock, Green Valley Ranch, Cliffs at Peace Canyon | Correct resorts, 11–17 miles from every dinner. **0** restaurants inside 20 minutes. |
 
@@ -46,8 +46,8 @@ Only three venues print a real price for two: Michael Mina **$590++**, KAME Omak
 Anima by EDO **$170++** — but Michael Mina's own Bellagio page currently reads *"Monday to Sunday: Closed"*
 with a *Temporarily closed* label and no published reopen date, so that $590 is a price for a service that
 is not running. Do not plan around it. The four starred rooms are all "price on request" — book them first, before
-the hotel, because é has nine seats a night. Hours are confirmed for 17 of the 24 listings and all 24
-have at least one working video link (69 in total).
+the hotel, because é has nine seats a night. Hours and days are recorded for 19 of the 24 listings (5 blank and flagged),
+and all 24 have at least one YouTube link (69 in total). The links were recorded by earlier sessions and were not opened in the 2026-11-26 review.
 
 ## What is not known
 

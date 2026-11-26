@@ -20,8 +20,10 @@ A sourced trip plan for **two adults**, seven nights, between **15 February and 
 | `scripts/build.py` | Recomputes the Michelin proximity counts from the transit matrix; runs integrity checks |
 | `scripts/gen_site.py` | Renders `docs/` from the JSON. All counts derived, none typed by hand |
 | `scripts/validate.py` | Link and structure checks for the built site |
-| `FLAGS.md` | The 22 things that did not verify cleanly |
+| `FLAGS.md` | The 28 things that did not verify cleanly (F-01 to F-28) |
 | `executive-summary.md` | The one-page version |
+| `data/review.json` | Repo review: line-by-line checks, limits, and irregularities (2026-11-26) |
+| `docs/flagged.html`, `docs/repo-review.html` | **Flagged for Review** and **Repo review** pages (generated) |
 | `COORDINATION.md` | Multi-session task board, merge record and verification log |
 | `archive/` | The earlier session's build, preserved intact rather than overwritten |
 
@@ -38,8 +40,10 @@ No dependencies beyond the Python 3 standard library. `gen_site.py` writes the s
 
 ## The three findings
 
-1. **8–15 March 2027 is the cheap week.** The same Venetian suite is $2,407 instead of $3,757 — about
-   a third less — because the 15 February week contains Presidents' Day.
+1. **8–15 March 2027 is cheaper at the Venetian on Booking.com snapshots** — $2,407 instead of $3,757, about
+   a third less. The 15 February week contains Presidents' Day. But the official booking engines at Caesars Palace
+   and Flamingo (checked 2026-11-25, recorded in COORDINATION.md) price February lower, so the cheapest week is
+   property-specific (Q-06).
 2. **The requested "within 1 hour by subway or bus" ranking cannot rank anything.** Las Vegas has no
    subway, and every hotel is within an hour of all 24 restaurants. A 20-minute column drives the
    ranking instead; disclosed as Q-01.
