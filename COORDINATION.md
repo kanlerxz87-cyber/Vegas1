@@ -1,7 +1,7 @@
 # COORDINATION.md — Shared Task Board
 
 **Repo:** kanlerxz87-cyber/Vegas1
-**Last updated:** 2026-11-25
+**Last updated:** 2026-11-26
 **Purpose:** multi-session coordination so parallel agents never edit the same files.
 Read this file *before* starting any task. Claim a task by writing your session ID below,
 then commit and push that claim immediately.
@@ -54,7 +54,7 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 | T09 | Static site build (mobile-first dashboard) | done | arena-edcfa7a0-vegas1 | `docs/**`, `scripts/**` | No framework, no external CDN calls, no build step at deploy time. |
 | T10 | Verification pass + Flagged for Review page | done | arena-edcfa7a0-vegas1 | `docs/verification.html`, `FLAGS.md` | |
 | T11 | Integration + GitHub Pages publish | done | arena-edcfa7a0-vegas1 | `docs/**`, Pages settings | Initial publish completed; current pass will re-check deployed state. |
-| T12 | Final integration re-audit, corrections, and deploy confirmation | in progress | arena/a6dea130-vegas1 | `COORDINATION.md`, `data/*.json`, `scripts/{build,gen_site,validate}.py`, `docs/**`, root generated HTML/CSS, `FLAGS.md` | Claimed 2026-11-26. Historical claims in this board have no commits since 2026-11-25 (>60 min); canonical integration scope is taken over per §7. Shared data/site files will be touched only after re-auditing all currently published rows and validating the generated result. |
+| T12 | Final integration re-audit, corrections, and deploy confirmation | blocked | arena/a6dea130-vegas1 | Coordination/handoff only pending resolution | Claimed 2026-11-26 while the visible task board showed only 2026-11-25 claims. Discovered active overlapping integration PR #27 from `arena/c9eed9ad-vegas1` (claim commit 2026-11-26 21:53Z; updated 22:07Z) after preparing local audit changes. Do not open/merge a competing PR or overwrite that scope. Source findings and candidate diffs remain in this branch's worktree pending coordination after #27. |
 | T1–T9 | Independent full build (restaurants, hotels, activities, pricing, verification, summary, suggestions) | done | session-planner-01 | `assets/**`, root `*.html` | Separate JS-driven build; integrated into canonical `main` site via merge (see handoff log). |
 | T10 | Integrate, re-verify, deploy GitHub Pages | done | session-planner-01 | repo-wide | Merged independent build into canonical `main` site; supplementary pages linked from nav. |
 | T1–T9 (independent) | Independent verified build + link-check pass | done | session-48dbf0ae | `docs/session-48dbf0ae/**`, `data/session-48dbf0ae-*.json` | Claimed on a fork-era task board that predates this one; no canonical file touched. See session record at end of file. |
@@ -236,4 +236,22 @@ edited or discarded. Integrated additively per the `session-af795000` pattern:
 
 ## Integration re-audit — 2026-11-26 (session arena/a6dea130-vegas1)
 
-**Claim:** T12 — final integration re-audit, corrections, and deploy confirmation. Historical task claims in this board are dated 2026-11-25 and have no newer commits; this session takes over the integration scope under rule §7. Branch is the Arena-assigned `arena/a6dea130-vegas1`. Initial work is verification of generated pages against source datasets and fresh official-source checks; no shared data/site files are changed until the review identifies a specific correction.
+**Initial claim (22:07Z):** T12 — final integration re-audit, corrections, and deploy confirmation. At claim time, the board showed only historical 2026-11-25 claims; branch is the Arena-assigned `arena/a6dea130-vegas1`. After the claim, `gh pr list` revealed active overlapping PR #27 from `arena/c9eed9ad-vegas1`, whose claim commit was authored 21:53Z and whose scope includes official hotel-rate audit, Flagged page, source-row checks, social links, and integration. This session stops parallel integration here; T12 is now **blocked** pending PR #27 coordination/merge. No competing PR will be opened from this branch.
+
+### T12 audit findings and implementation — 2026-11-26
+
+**Source checks performed (official/primary):**
+- Bellagio Fountains: https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html — confirmed daily schedule, free admission, schedule-may-vary notice, weather cancellation caveat. Added to `data/activities.json`; F-18 changed to resolved.
+- High Roller: https://www.caesars.com/linq/things-to-do/attractions/high-roller — rechecked current closing time (11:30 PM), ticket windows and prices ($23.50 daytime / $34.75 anytime, plus taxes/fees); corrected displayed start time to noon. Official FAQ footer links to The LINQ's Instagram and YouTube accounts; these are labelled property accounts, not a dedicated High Roller account.
+- The Mob Museum: https://themobmuseum.org/ and its official press release https://themobmuseum.org/press_releases/the-mob-museum-to-unveil-new-digital-underworld-exhibit-with-check-point-technologies-live-threat-map-tuesday-oct-21/ — confirmed normal museum/Underground schedule and official Instagram reference.
+- The Neon Museum: https://neonmuseum.org/ — confirmed 2027 admission from $21, daily 3–11 PM, and linked official Instagram/TikTok profiles.
+- Anima by EDO: https://animabyedo.com/ — confirmed address, nightly dinner from 5 PM, Monday pasta/wine offer and $85 tasting-menu price per person.
+- KAME: https://sushikame.com/ returns only the JavaScript shell; retained blank hours and switched the row's primary source to the official site, with the OpenTable listing explicitly linked separately for reservation/price details.
+- Caesars Palace official hotel page and Wynn official rooms page, plus the dated Booking.com searches in `data/hotels.json`: the historical official-engine and Booking.com rate records do not share a normalized room/fee/tax/promotion basis. Added F-29 and changed Q-06 to open; March is described only as the lower week among selected matched Booking.com observations, not a universal cheapest week.
+- RTC Route 203 PDF (https://rtcws.rtcsnv.com/routePDF/203.pdf), Monorail stations (https://www.lvmonorail.com/stations/), and Vegas Loop (https://www.boringcompany.com/projects/las-vegas-loop) are linked beside the activity-by-hotel-zone travel estimates. Estimates are labelled as estimates.
+
+**Candidate site/QA work in this checkout (not yet integrated):** prepared a dedicated `flagged.html` route with 29 flags and sources; activity-zone travel estimates; official activity socials where identified; sources on hotel price rows; rate-source caveats; and validation for itinerary row sources, table columns, anchors and root/docs parity. This overlaps PR #27; do not merge this draft independently.
+
+**Candidate build verification:** `python3 -m py_compile scripts/build.py scripts/gen_site.py scripts/validate.py`; `python3 scripts/build.py`; `python3 scripts/gen_site.py`; `python3 scripts/validate.py` — 12 pages, 524 external links, 0 failures, 0 warnings. Separate audit counted 29 flagged rows and found no itinerary data table row missing an external source link. Root and `docs/` generated pages are byte-identical in this local draft.
+
+**Coordination request:** PR #27 owner/session, please compare this session's official Bellagio Fountains schedule (F-18), High Roller noon–11:30 PM hours, KAME official-site/OpenTable source split, activity travel estimates by hotel zone, and source-aware price claim F-29/Q-06 against the PR branch. These are already present in this branch's draft but are not pushed as integration changes. T12 stays blocked until the overlapping integration is resolved; no merge or Pages verification is claimed here.
