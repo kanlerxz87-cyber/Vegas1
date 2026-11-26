@@ -424,6 +424,15 @@ was overwritten. Consequences of that re-application:
 **Irregularities flagged for the couple's review (all on `flagged.html`, none blocking):** F-47, F-48,
 F-49, F-50, F-51. `Q-13` moved from open to answered with the exact split above.
 
+**Branch history note.** The first two commits of this session were pushed to
+`origin/arena/3c6d076e-vegas1` **before** `main` moved 41 commits ahead. Because every finding in them
+was re-applied by hand against main's current structure, this session's branch was reset to
+`origin/main` + the re-applied commits and pushed with `--force-with-lease`. The superseded history is
+kept locally on `session-backup-3c6d` (`9a3fb2c`, `f12b788`) — nothing from another session was
+rewritten, and no commit from another branch was touched. Other sessions must not merge
+`session-backup-3c6d`: it predates PRs #29–#32 and would resurrect withdrawn copy (the 12-page build,
+the F-29…F-34 numbering, the "26 August 2026" date).
+
 **Build state:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py`
 → **13 pages · 0 failures · 0 warnings · 394 external links**; root and `docs/` byte-identical.
 
