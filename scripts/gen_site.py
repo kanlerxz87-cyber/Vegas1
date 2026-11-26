@@ -376,53 +376,56 @@ a missing entry and it is not an average. Only three restaurants print a real pe
 # ---------------------------------------------------------------- activities
 def build_activities():
     rows = []
-    for a in ACT["activities"]:
-        social_links = []
+    for activity in ACT["activities"]:
+        links = []
         for key, label in (("instagram", "Instagram"), ("tiktok", "TikTok"), ("youtube", "YouTube")):
-            url = a.get(key)
-            if url:
-                social_links.append(f'<a href="{e(url)}" target="_blank" rel="noopener">{label}</a>')
-        socials = ' · '.join(social_links) if social_links else '<span class="warn">not verified</span>'
+            value = activity.get(key)
+            urls = value if isinstance(value, list) else ([value] if value else [])
+            for index, url in enumerate(urls):
+                link_label = f"{label} {index + 1}" if len(urls) > 1 else label
+                links.append(f'<a href="{e(url)}" target="_blank" rel="noopener">{link_label}</a>')
+        socials = ' · '.join(links) if links else '<span class="warn">not verified</span>'
         rows.append(f"""<tr>
-<td><a href="{e(a['official_url'])}" target="_blank" rel="noopener">{e(a['name'])}</a>
- <div class="tiny">{e(a['type'])} · {e(a['zone'].replace('-',' '))}</div></td>
-<td>{e(a['days'])}<div class="tiny">{e(a['hours'])}</div></td>
-<td class="tiny">{e(a['exceptions']) or '—'}</td>
-<td class="num">{e(a['price_per_couple']) or '—'}</td>
-<td class="tiny">{e(a['price_note'])}</td>
+<td><a href="{e(activity['official_url'])}" target="_blank" rel="noopener">{e(activity['name'])}</a>
+ <div class="tiny">{e(activity['type'])} · {e(activity['zone'].replace('-',' '))}</div></td>
+<td>{e(activity['days'])}<div class="tiny">{e(activity['hours'])}</div></td>
+<td class="tiny">{e(activity['exceptions']) or '—'}</td>
+<td class="num">{e(activity['price_per_couple']) or '—'}</td>
+<td class="tiny">{e(activity['price_note'])}</td>
 <td class="tiny">{socials}</td>
 </tr>""")
 
-    nv = "".join(
-        f'<li><strong>{e(n["name"])}</strong> — {e(n["reason"])}</li>' for n in ACT["not_verified"]
+    not_verified = "".join(
+        f'<li><strong>{e(item["name"])}</strong> — {e(item["reason"])}</li>' for item in ACT["not_verified"]
     )
-
+    count = len(ACT["activities"])
     body = f"""
 <section class="panel">
-  <h2>Four things worth the day</h2>
+  <h2>{count} activities</h2>
   <div class="scroll">
   <table class="data">
-  <thead><tr><th>Venue</th><th>Days &amp; hours</th><th>Exceptions</th><th>2 adults</th><th>Price basis</th><th>Official social links</th></tr></thead>
+  <thead><tr><th>Venue</th><th>Days &amp; hours</th><th>Exceptions</th><th>2 adults</th><th>Price basis</th><th>Official social/video links</th></tr></thead>
   <tbody>{''.join(rows)}</tbody>
   </table>
   </div>
+  <p class="note">Social and video columns show only links present in the dataset; <strong>“not verified” means no profile or video link was confirmed for that entry</strong>, not that none exists. See <a href="questions.html">Open questions</a> for discovery gaps.</p>
 </section>
 
 <section class="panel">
   <h2>Deliberately not listed</h2>
   <p>These were checked and could not be verified, so no hours, price or link is published for them:</p>
-  <ul class="tight">{nv}</ul>
+  <ul class="tight">{not_verified}</ul>
 </section>
 
 <section class="panel callout">
   <h2>The one free thing</h2>
   <p>The <strong>Fremont Street Experience</strong> runs live music on three stages every night under the canopy,
-  and entry is free. Put it on the same day as the Mob Museum and the Neon Museum — all three are downtown,
-  and downtown is the one zone that is a 25–30 minute trip from everywhere else.</p>
+  and entry is free. Put it on the same day as the Mob Museum and the Neon Museum — all three are downtown.
+  Check official event and attraction schedules before setting the day.</p>
 </section>
 """
     return page("activities.html", "Things to do",
-                "Four verified venues with official hours and prices for two — and two that were checked and deliberately left out.",
+                f"{count} activity entries with official hours and prices where published, plus verified social/video links where available.",
                 body)
 
 
