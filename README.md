@@ -40,8 +40,10 @@ No dependencies beyond the Python 3 standard library. `gen_site.py` writes the s
 
 ## The three findings
 
-1. **8–15 March 2027 is the cheap week.** The same Venetian suite is $2,407 instead of $3,757 — about
-   a third less — because the 15 February week contains Presidents' Day.
+1. **8–15 March 2027 is cheaper at the Venetian on Booking.com snapshots** — $2,407 instead of $3,757, about
+   a third less. The 15 February week contains Presidents' Day. But the official booking engines at Caesars Palace
+   and Flamingo (checked 2026-11-25, recorded in COORDINATION.md) price February lower, so the cheapest week is
+   property-specific (Q-06).
 2. **The requested "within 1 hour by subway or bus" ranking cannot rank anything.** Las Vegas has no
    subway, and every hotel is within an hour of all 24 restaurants. A 20-minute column drives the
    ranking instead; disclosed as Q-01.

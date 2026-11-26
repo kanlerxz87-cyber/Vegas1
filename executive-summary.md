@@ -31,7 +31,7 @@ not contractual. They cannot be recommended against a stated queen-or-larger req
 | | Pick | Why |
 |---|---|---|
 | **Best value** | **Desert Rose Resort** — $922 for 7 nights | 9.1 guest score, 646 ft² one-bedroom suite, king bed, private bathroom, **no resort fee**, 15-min walk to the centre-Strip restaurants. The only property that is cheap, well-rated and correctly bedded at once. |
-| **Best if the date can move** | **The Venetian, 8–15 March** — $2,407 | Four MICHELIN listings inside the complex, 646 ft² suite, 23 restaurants within 20 minutes. $1,350 cheaper than the February week. |
+| **Best if the date can move** | **The Venetian, 8–15 March** — $2,407 | Four MICHELIN listings inside the complex, 646 ft² suite, 23 restaurants within 20 minutes. $1,350 cheaper than the February week on Booking.com snapshots. Caesars Palace and Flamingo are cheaper in February on their own booking engines, so check each property for your dates (Q-06). |
 | **Best location for Michelin** | **Anything west of the Strip** — Palms Place, $866 | 24/24 restaurants inside 20 minutes, because it sits between Chinatown and the Strip. The least obvious and most useful answer on the site. |
 | **Avoid** | Red Rock, Green Valley Ranch, Cliffs at Peace Canyon | Correct resorts, 11–17 miles from every dinner. **0** restaurants inside 20 minutes. |
 

@@ -94,6 +94,15 @@
       "detail": "Links remain as recorded by earlier sessions.",
       "source": "",
       "source_label": ""
+    },
+    {
+      "id": "C-10",
+      "item": "RTC fares — official page used in place of rtcsnv.com/fares (which failed in the other review)",
+      "compared": "Official RTC mobile fares page, Strip/Downtown 2-Hour, 24-Hour and 3-Day passes.",
+      "result": "Confirmed",
+      "detail": "$6 / $8 / $20. The 'fare change proposed from 2027-01-31' noted by an earlier session was not on this page, so it remains unverified (not confirmed either way).",
+      "source": "https://rtcws.rtcsnv.com/mobile/geoFares.html",
+      "source_label": "RTC Transit — fares (official)"
     }
   ],
   "irregularities": [
@@ -208,6 +217,38 @@
       "issue": "The phone field was blank although the official page prints a reservations number.",
       "action": "Filled from the official page this session (C-04).",
       "source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html"
+    },
+    {
+      "id": "R-15",
+      "severity": "high",
+      "where": "Homepage headline (index.html, gen_site.py), executive-summary.md, README.md",
+      "issue": "The February-vs-March headline said 'February is the expensive week' with no qualifier. Another session's review (notes/repo-review-2026-11-26.md, its F-01) found this contradicts official booking-engine checks for Caesars Palace and Flamingo, recorded in COORDINATION.md.",
+      "action": "Corrected in this session: all three places now say the cheapest week depends on the property and point to Q-06. Re-pricing the Venetian and Palazzo on their own engines is still open.",
+      "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/notes/repo-review-2026-11-26.md"
+    },
+    {
+      "id": "R-16",
+      "severity": "medium",
+      "where": "pages/flagged.html (unpublished)",
+      "issue": "The stale pages/flagged.html has 11 broken relative links and was never published (noted as F-02 in notes/repo-review-2026-11-26.md).",
+      "action": "Superseded: the working Flagged for Review page is now published at the root as flagged.html. The stale file is left in place, not published, and should be deleted at the owner's discretion.",
+      "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/pages/flagged.html"
+    },
+    {
+      "id": "R-17",
+      "severity": "low",
+      "where": "GitHub Actions (branch arena/48dbf0ae-vegas1)",
+      "issue": "A 'Publish site to GitHub Pages' run on archived branch arena/48dbf0ae-vegas1 failed (notes F-03). The Pages workflow on main has succeeded on every recent run.",
+      "action": "No effect on the live site (main:/). Delete or ignore the failed branch run when the branch is retired.",
+      "source": "https://github.com/kanlerxz87-cyber/Vegas1/actions"
+    },
+    {
+      "id": "R-18",
+      "severity": "low",
+      "where": "README.md, index.html (drift)",
+      "issue": "README and the live site drifted apart on the headline finding (notes F-07). Fixed for the headline in this session; other README wording was not re-checked.",
+      "action": "Regenerate README wording from the same source as the site at the next integration.",
+      "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/README.md"
     }
   ]
 }

@@ -178,8 +178,10 @@ def build_index():
     <li><strong>The "within 1 hour" ranking does not rank anything.</strong> Every hotel in Las Vegas is within
     an hour of all {N_TOTAL} restaurants, so the metric returns {N_TOTAL}/{N_TOTAL} for all {n_hotels} properties. A
     <em>20-minute</em> column was added and is what actually separates them — <a href="questions.html">Q-01</a>.</li>
-    <li><strong>February is the expensive week.</strong> 15 Feb 2027 is Presidents' Day. Moving to 8–15 March
-    cuts the Venetian by {pct}% and the Palazzo by 38% for the identical suite.</li>
+    <li><strong>February vs March depends on the property — do not take one week as the answer.</strong>
+    Booking.com snapshots (2026-11-25) show 8–15 March {pct}% cheaper at the Venetian and 38% cheaper at the Palazzo.
+    But the official booking-engine checks recorded in <a href="https://github.com/kanlerxz87-cyber/Vegas1/blob/main/COORDINATION.md" target="_blank" rel="noopener">COORDINATION.md</a>
+    found 15–22 Feb cheaper at Caesars Palace and Flamingo. Check each property's own booking engine for your dates — <a href="questions.html">Q-06</a>.</li>
   </ol>
 </section>
 
