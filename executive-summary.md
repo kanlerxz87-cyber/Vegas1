@@ -1,65 +1,46 @@
 # Las Vegas 2027 — Executive summary
 
 **Two adults · seven nights · between 15 February and 23 March 2027**
-All figures captured 25 November 2026. Live site: <https://kanlerxz87-cyber.github.io/Vegas1/>
+Figures captured 25 November 2026 and spot-checked 26 November 2026. Live site: <https://kanlerxz87-cyber.github.io/Vegas1/>
 
 ---
 
 ## The headline
 
-Three findings change the shape of this trip, and none of them is the thing the brief expected.
+Three findings shape this trip. The 26 November check overturned one of them.
 
-**1. The cheapest week is not the preferred week.** Four whole weeks were priced inside the allowed
-envelope. **8–15 March 2027** is cheaper than the 15 February week for every large resort, by about
-a third — the same Luxury King Suite at The Venetian is **$2,407 instead of $3,757**, and at the
-Palazzo $2,422 instead of $3,932. 15 February 2027 is Presidents' Day. Moving the trip one week
-later buys an extra starred dinner for the same money.
+**1. The cheaper-week claim is withdrawn and unproven.** The 25 November captures suggested that 8–15 March 2027 is about a third cheaper at the big resorts. On 26 November, Booking.com's own Venetian page did not reproduce that. The same 60 m² Luxury King Suite showed **US$5,185** for 15–22 February and **€4,472** for 8–15 March, both including taxes and fees. The stored $2,407 vs $3,757 figures are withdrawn (F-29). Whether another week is cheaper is an open question (Q-06).
 
-**2. The requested ranking metric cannot rank anything.** The brief asked to order hotels by how
-many MICHELIN restaurants fall within an hour by public transport. Las Vegas has no subway, and the
-Strip is four miles long with Chinatown three miles west of it — so **every one of the 32 hotels is
-within an hour of all 24 restaurants**. The metric returns 24/24 for all of them, including the ones
-in Henderson. A 20-minute column was added and is what actually separates the field. This is
-disclosed as Q-01 rather than quietly swapped.
+**2. The requested ranking metric cannot rank anything.** The brief asked to order hotels by how many MICHELIN restaurants fall within an hour by public transport. Las Vegas has no subway, and the Strip is four miles long with Chinatown three miles west of it. So **every one of the 32 hotels is within an hour of all 24 restaurants**. A 20-minute column was added and is what actually separates the field. This is disclosed as Q-01 rather than quietly swapped.
 
-**3. The three cheapest hotels fail the brief's own bed requirement.** The LINQ ($564), Flamingo
-($626) and Horseshoe ($717) all headline at "room type assigned on arrival" — the king bed shown is
-not contractual. They cannot be recommended against a stated queen-or-larger requirement.
+**3. The three cheapest hotels fail the brief's own bed requirement.** The LINQ ($564), Flamingo ($626) and Horseshoe ($717) all headline at "room type assigned on arrival", so the king bed shown is not contractual. They cannot be recommended against a stated queen-or-larger requirement.
 
 ## What to book
 
 | | Pick | Why |
 |---|---|---|
-| **Best value** | **Desert Rose Resort** — $922 for 7 nights | 9.1 guest score, 646 ft² one-bedroom suite, king bed, private bathroom, **no resort fee**, 15-min walk to the centre-Strip restaurants. The only property that is cheap, well-rated and correctly bedded at once. |
-| **Best if the date can move** | **The Venetian, 8–15 March** — $2,407 | Four MICHELIN listings inside the complex, 646 ft² suite, 23 restaurants within 20 minutes. $1,350 cheaper than the February week. |
-| **Best location for Michelin** | **Anything west of the Strip** — Palms Place, $866 | 24/24 restaurants inside 20 minutes, because it sits between Chinatown and the Strip. The least obvious and most useful answer on the site. |
+| **Best value** | **Desert Rose Resort** — $922 for 7 nights | 9.1 guest score, 646 ft² one-bedroom suite, king bed, private bathroom, **no resort fee**. One block east of the Strip, a 15–20 minute walk to the Robuchon rooms at MGM Grand. |
+| **Date move** | **Not yet — check first** | The 8–15 March saving is unproven (F-29). Before moving, check each property's own booking engine for both weeks, with the same room class and the same taxes basis. 15 February remains the preferred date. |
+| **Best location for Michelin** | **Palms Place** — $866 | 24 of 24 restaurants within 20 minutes. The room (studio, king and sofa bed) is taken from the Booking.com rate block and is not yet confirmed on Palms' own site (F-31). |
 | **Avoid** | Red Rock, Green Valley Ranch, Cliffs at Peace Canyon | Correct resorts, 11–17 miles from every dinner. **0** restaurants inside 20 minutes. |
 
 ## The Michelin picture
 
-Las Vegas had **no MICHELIN Guide between 2010 and 2025** — the 2026 Southwest selection is the
-city's first since 2009, which is why so many videos still call restaurants starred when they are
-not. Of 24 listings: **4 starred** (Joël Robuchon 2★; L'Atelier, Guy Savoy, é by José Andrés 1★),
-**3 Bib Gourmand**, **17 Recommended**. There is no three-star restaurant in Las Vegas.
+Las Vegas had **no MICHELIN Guide between 2010 and 2025**. The 2026 Southwest selection is the city's first since 2009, which is why so many videos still call restaurants starred when they are not. On 26 November all 24 names and award tiers were matched against the Michelin press release (F-34). Of the 24 listings: **4 starred** (Joël Robuchon 2★; L'Atelier, Guy Savoy and é by José Andrés 1★), **3 Bib Gourmand** and **17 Recommended**. There is no three-star restaurant in Las Vegas.
 
-Only three venues print a real price for two: Michael Mina **$590++**, KAME Omakase **$1,000++**,
-Anima by EDO **$170++** — but Michael Mina's own Bellagio page currently reads *"Monday to Sunday: Closed"*
-with a *Temporarily closed* label and no published reopen date, so that $590 is a price for a service that
-is not running. Do not plan around it. The four starred rooms are all "price on request" — book them first, before
-the hotel, because é has nine seats a night. Hours are confirmed for 17 of the 24 listings and all 24
-have at least one working video link (69 in total).
+Only three venues print a price for two: Michael Mina **$590++**, KAME Omakase **$1,000++** and Anima by EDO **$170++**. But Michael Mina's own Bellagio page reads *Temporarily Closed*, re-confirmed on 26 November (F-33), with no reopen date. That $590 is a price for a service that is not running. Do not plan around it. The four starred rooms publish no price for two, so book them first, before the hotel, because é has nine seats a night.
+
+Hours are filled for 19 of 24 listings and marked verified for 17. All 24 have at least one YouTube link (69 in total). **No Instagram or TikTok links have been found for any restaurant yet** (F-19). That is the largest gap against the brief.
 
 ## What is not known
 
-6 of the 11 register questions remain open. Each blank has a stated route to close it. The two that
-matter: **restaurant prices** (18 of 21 venues publish none) and **whether this is a 3-night or
-7-night trip** — the brief says 1–2 weeks but the preferred dates 15–18 February are three nights,
-which would cut every hotel figure on this site by more than half.
+**7 of the 13 questions are open.** Each has a route to close it. The two that matter most:
+
+- **Whether the cheaper-week saving is real** (Q-06). The Venetian check went against it.
+- **Whether this is a 3-night or a 7-night trip.** The brief says 1–2 weeks, but the preferred dates 15–18 February are three nights. That would cut every hotel figure on this site by more than half (Q-02).
+
+Restaurant prices are also open: 21 of 24 publish no price for two.
 
 ## How to trust any number here
 
-Every figure links to its source. **8 pages, 280 external source links, 0 broken internal links.**
-Twenty-two flags record everything that would not verify cleanly, including two where a creator video
-contradicts the official award (Robuchon "3 stars", Wing Lei "starred"). Where a number could not be
-confirmed the cell is blank. Nothing on the site is an estimate — except the transit minutes, which
-are labelled as estimates on every page that shows them.
+Every figure links to its source. The generated site has **12 pages**, **312 external source links** and **0 failures** in the validator. The [Flagged for review](flagged.html) page lists every item that did not verify cleanly (F-01 to F-38), the links used to check it, and the items that were confirmed. Nothing is presented as an estimate, except the transit minutes, which are labelled as estimates. The Route 203 timetable gives 10 to 17 minutes between Decatur and Las Vegas Blvd depending on the time of day; the model uses 14 (F-32).

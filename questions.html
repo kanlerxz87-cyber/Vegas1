@@ -11,7 +11,7 @@
 <header class="top">
   <div class="wrap">
     <div class="brand"><span class="dot"></span>Las Vegas · Feb–Mar 2027</div>
-    <nav><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="restaurants.html">Michelin</a><a href="activities.html">Things to do</a><a href="transit.html">Getting around</a><a href="questions.html" class="on">Open questions</a><a href="suggestions.html">Suggestions</a><a href="sources.html">Sources</a></nav>
+    <nav><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="restaurants.html">Michelin</a><a href="activities.html">Things to do</a><a href="transit.html">Getting around</a><a href="questions.html" class="on">Open questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a></nav>
   </div>
 </header>
 <main class="wrap">
@@ -23,18 +23,18 @@
   
 <section class="panel">
   <h2>What is known, what is not, and how to find out</h2>
-  <p>13 questions drove this plan. 5 are fully closed, 2 required a stated interpretation because
-  the brief does not map onto Las Vegas as written, and 6 are still open — those are the ones where a
+  <p>13 questions drove this plan. 4 are fully closed, 2 required a stated interpretation because
+  the brief does not map onto Las Vegas as written, and 7 are still open — those are the ones where a
   table on this site shows a blank rather than a guess.</p>
   <div class="grid4">
-    <div class="card"><div class="big">5</div><div class="lbl">answered</div><p>Confirmed against an official source, link attached.</p></div>
+    <div class="card"><div class="big">4</div><div class="lbl">answered</div><p>Confirmed against an official source, link attached.</p></div>
     <div class="card"><div class="big">2</div><div class="lbl">interpreted</div><p>The question does not fit the city; the substitution is disclosed.</p></div>
-    <div class="card"><div class="big">6</div><div class="lbl">open</div><p>Not confirmable now. Blank in the data, with a route to close it.</p></div>
+    <div class="card"><div class="big">7</div><div class="lbl">open</div><p>Not confirmable now. Blank in the data, with a route to close it.</p></div>
     <div class="card"><div class="big">0</div><div class="lbl">filled by guess</div><p>No value on this site was inferred.</p></div>
   </div>
 </section>
 <div class="qalist">
-<article class="qa">
+<article class="qa" id="Q-01">
   <h3><span class="qid">Q-01</span> Rank hotels by how many Michelin restaurants are within 1 hour by subway or bus.
     <span class="state warn">interpreted</span></h3>
   <p><strong>Answer:</strong> Las Vegas has no subway or metro. Buses (RTC Deuce/SDX), the Monorail and the Vegas Loop were substituted, and separate fares were checked for each.</p>
@@ -43,7 +43,7 @@
   <p class="tiny"><strong>How to close it:</strong> Nothing to close. It is a property of the city. If a stricter or looser threshold is preferred, the zone matrix in data/transit.json allows recomputation in one step.</p>
   <details><summary>Sources</summary><ul class="srcs"><li><a href="https://www.lvmonorail.com/stations/" target="_blank" rel="noopener">https://www.lvmonorail.com/stations/</a></li><li><a href="https://www.rtcsnv.com/ways-to-travel/fares-passes/" target="_blank" rel="noopener">https://www.rtcsnv.com/ways-to-travel/fares-passes/</a></li><li><a href="https://www.boringcompany.com/projects/las-vegas-loop" target="_blank" rel="noopener">https://www.boringcompany.com/projects/las-vegas-loop</a></li></ul></details>
 </article>
-<article class="qa">
+<article class="qa" id="Q-02">
   <h3><span class="qid">Q-02</span> Trip length is 1–2 weeks, but the preferred window is 2027-02-15 → 2027-02-18.
     <span class="state warn">interpreted</span></h3>
   <p><strong>Answer:</strong> 2027-02-15 → 2027-02-18 is three nights. Pricing therefore uses the 7-night block starting on the preferred arrival date (2027-02-15 → 2027-02-22), which satisfies the stated 7-night basis and still starts on the requested date.</p>
@@ -52,7 +52,7 @@
   <p class="tiny"><strong>How to close it:</strong> Ask the couple which they meant. If 3 nights, re-run the price capture with checkout 2027-02-18; every slug and window in data/hotels.json is ready for it.</p>
   
 </article>
-<article class="qa">
+<article class="qa" id="Q-03">
   <h3><span class="qid">Q-03</span> Which of the 24 Michelin restaurants are starred, and which are only listed?
     <span class="state ok">answered</span></h3>
   <p><strong>Answer:</strong> Four are starred: Joël Robuchon (2★), L&#x27;Atelier Robuchon (1★), Guy Savoy (1★), é by José Andrés (1★). The other 20 listings carry no star: 3 are Bib Gourmand (China Poblano, Esther&#x27;s Kitchen, Yen Viet Kitchen) and 17 are Recommended.</p>
@@ -61,7 +61,7 @@
   <p class="tiny"><strong>How to close it:</strong> Closed. Cross-checked against the Michelin press release, LVCVA and Las Vegas Weekly.</p>
   <details><summary>Sources</summary><ul class="srcs"><li><a href="https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s" target="_blank" rel="noopener">https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s</a></li><li><a href="https://www.visitlasvegas.com/michelin-guide-restaurants/" target="_blank" rel="noopener">https://www.visitlasvegas.com/michelin-guide-restaurants/</a></li><li><a href="https://lasvegasweekly.com/dining/2026/aug/27/michelin-guide-southwest-las-vegas-restaurants/" target="_blank" rel="noopener">https://lasvegasweekly.com/dining/2026/aug/27/michelin-guide-southwest-las-vegas-restaurants/</a></li></ul></details>
 </article>
-<article class="qa">
+<article class="qa" id="Q-04">
   <h3><span class="qid">Q-04</span> What does dinner for two cost at each Michelin restaurant?
     <span class="state bad">open</span></h3>
   <p><strong>Answer:</strong> Only three venues print a real number: Michael Mina ($295++ per person), Anima by EDO ($85 per person), KAME Omakase ($500 per person, from its own OpenTable description). Everything else leaves the cell blank. Note Michael Mina is currently marked Temporarily closed — see Q-11.</p>
@@ -70,7 +70,7 @@
   <p class="tiny"><strong>How to close it:</strong> Book a table on OpenTable for a dummy date and read the deposit or prepay amount, or phone the numbers listed in data/restaurants.json. 15 of the 24 venues publish a phone number and can be called in one sitting.</p>
   <details><summary>Sources</summary><ul class="srcs"><li><a href="https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html" target="_blank" rel="noopener">https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html</a></li><li><a href="https://animabyedo.com" target="_blank" rel="noopener">https://animabyedo.com</a></li><li><a href="https://www.opentable.com/r/kame-omakase-las-vegas" target="_blank" rel="noopener">https://www.opentable.com/r/kame-omakase-las-vegas</a></li></ul></details>
 </article>
-<article class="qa">
+<article class="qa" id="Q-05">
   <h3><span class="qid">Q-05</span> Does each hotel room actually have a private bathroom and a queen-or-larger bed?
     <span class="state bad">open</span></h3>
   <p><strong>Answer:</strong> Most do — every four- and five-star property in the dataset states a private bathroom and a king or queen bed in its rate block. Three exceptions are flagged: rooms sold as &#x27;assigned on arrival&#x27; (LINQ, Flamingo, SAHARA, Golden Nugget) do not guarantee the bed type, and Bluegreen Club 36&#x27;s private bathroom is not stated.</p>
@@ -79,16 +79,16 @@
   <p class="tiny"><strong>How to close it:</strong> Book a NAMED room class, not &#x27;Run of House&#x27; / &#x27;Room Type Assigned on Arrival&#x27;. On Booking.com that means opening the room-type list and picking a specific king or queen category.</p>
   
 </article>
-<article class="qa">
+<article class="qa" id="Q-06">
   <h3><span class="qid">Q-06</span> Which week inside 2027-02-15 → 2027-03-23 is actually cheapest?
-    <span class="state ok">answered</span></h3>
-  <p><strong>Answer:</strong> Of the four whole weeks measured, 8–15 March 2027 is the cheapest for the large resorts: Venetian $2,407 vs $3,757 in February (−36%), Palazzo $2,422 vs $3,932 (−38%), Cosmopolitan $2,307 vs $3,433 (−33%).</p>
-  <p><strong>Why it is not closed:</strong> Only four windows were measured, and one property (Nobu) moved the other way — cheaper in February. Rates captured on 2026-11-25 are promotional &#x27;Black Friday&#x27; prices that will not survive into 2027.</p>
+    <span class="state bad">open</span></h3>
+  <p><strong>Answer:</strong> Not settled. The 25 Nov captures showed 8–15 March as cheaper for the big resorts (Venetian $2,407 vs $3,757, −36%; Palazzo, Cosmopolitan similar). On 26 Nov, Booking.com&#x27;s own Venetian page for the same 60 m² Luxury King Suite showed US$5,185.05 for 15–22 Feb 2027 and €4,472.36 for 8–15 Mar 2027, both including taxes and fees. The stored $2,407 and $3,757 are therefore withdrawn (F-29), and the saving is unverified. The other 25 Nov figures are not reproduced (F-36). Nobu was cheaper in February, and no cause is verified.</p>
+  <p><strong>Why it is not closed:</strong> The two captures differ in currency (EUR and USD on the displayed pages), in list price and in loyalty discount (48% in February, 31% in March). Only four windows were measured. Booking.com labels these rates &#x27;Black Friday&#x27; or &#x27;Bonus&#x27; offers, and those can end.</p>
   <p><strong>What was done instead:</strong> Four windows are shown as evidence rather than a claim that a specific date is the global minimum.</p>
-  <p class="tiny"><strong>How to close it:</strong> Re-run the same Booking.com searches (URL pattern is in data/hotels.json) about six months out, and again 60 days out. That also catches the 2027 show calendar, which is not yet published.</p>
-  
+  <p class="tiny"><strong>How to close it:</strong> For each candidate week, open each property&#x27;s own booking engine with the same room class, dates, 2 adults and 1 room. Record the total with taxes and fees, in USD, and whether any member discount applies. Repeat about 60 days before arrival. Then decide.</p>
+  <details><summary>Sources</summary><ul class="srcs"><li><a href="https://www.booking.com/hotel/us/the-venetian-resort-casino.de.html?aid=356980&amp;checkin=2027-02-15&amp;checkout=2027-02-22&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD&amp;sb_price_type=total&amp;type=total" target="_blank" rel="noopener">https://www.booking.com/hotel/us/the-venetian-resort-casino.de.html?aid=356980&amp;checkin=2027-02-15&amp;checkout=2027-02-22&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD&amp;sb_price_type=total&amp;type=total</a></li><li><a href="https://www.booking.com/hotel/us/the-venetian-resort-casino.de.html?checkin=2027-03-08&amp;checkout=2027-03-15&amp;group_adults=2&amp;no_rooms=1" target="_blank" rel="noopener">https://www.booking.com/hotel/us/the-venetian-resort-casino.de.html?checkin=2027-03-08&amp;checkout=2027-03-15&amp;group_adults=2&amp;no_rooms=1</a></li></ul></details>
 </article>
-<article class="qa">
+<article class="qa" id="Q-07">
   <h3><span class="qid">Q-07</span> What are each restaurant&#x27;s YouTube, TikTok and Instagram links?
     <span class="state bad">open</span></h3>
   <p><strong>Answer:</strong> YouTube is complete: every one of the 24 restaurants has at least one working video link, 69 in total. Instagram and TikTok are almost entirely blank.</p>
@@ -97,7 +97,7 @@
   <p class="tiny"><strong>How to close it:</strong> Open each restaurant&#x27;s official page footer or its OpenTable profile — most link their own socials there. That is 24 short page visits.</p>
   
 </article>
-<article class="qa">
+<article class="qa" id="Q-08">
   <h3><span class="qid">Q-08</span> Are the opening hours current for the trip dates (February–March 2027)?
     <span class="state bad">open</span></h3>
   <p><strong>Answer:</strong> Hours were captured on 2026-11-25 and are the venues&#x27; current published hours. Several are seasonal or reduced: Wing Lei and L&#x27;Atelier are closed two weekdays, SoulBelly closes Mondays, Michael Mina publishes block closures.</p>
@@ -106,7 +106,7 @@
   <p class="tiny"><strong>How to close it:</strong> Re-check the four starred restaurants and Michael Mina two weeks before travel — these are the ones that will ruin an evening if they are dark.</p>
   
 </article>
-<article class="qa">
+<article class="qa" id="Q-09">
   <h3><span class="qid">Q-09</span> Do the hotel prices include resort fees and tax?
     <span class="state bad">open</span></h3>
   <p><strong>Answer:</strong> Not consistently. Booking.com search totals generally exclude the resort fee and local tax; the Wynn property pages quote room plus $55/night resort fee but exclude 13.38% tax.</p>
@@ -115,7 +115,7 @@
   <p class="tiny"><strong>How to close it:</strong> Add the resort fee (typically $35–$55/night on the Strip) and 13.38% tax to every Booking.com total before comparing. That is roughly +$250 to +$390 per week on a mid-Strip room.</p>
   
 </article>
-<article class="qa">
+<article class="qa" id="Q-10">
   <h3><span class="qid">Q-10</span> Is there a convention, race or holiday in the chosen week that changes the price?
     <span class="state ok">answered</span></h3>
   <p><strong>Answer:</strong> The Formula 1 Las Vegas Grand Prix is NOT in this window — the 2027 race is 18–20 November 2027, well outside 15 Feb–23 Mar. US Presidents&#x27; Day falls on 15 Feb 2027, the first day of the preferred window.</p>
@@ -124,7 +124,7 @@
   <p class="tiny"><strong>How to close it:</strong> Check the Las Vegas Convention and Visitors Authority events calendar and the Las Vegas Motor Speedway schedule for the chosen week. NASCAR&#x27;s spring race weekend is traditionally in early March.</p>
   <details><summary>Sources</summary><ul class="srcs"><li><a href="https://f1experiences.com/2027-las-vegas-grand-prix" target="_blank" rel="noopener">https://f1experiences.com/2027-las-vegas-grand-prix</a></li><li><a href="https://dord.racing/events/2027/f1-las-vegas-gp" target="_blank" rel="noopener">https://dord.racing/events/2027/f1-las-vegas-gp</a></li></ul></details>
 </article>
-<article class="qa">
+<article class="qa" id="Q-11">
   <h3><span class="qid">Q-11</span> Is every MICHELIN-listed restaurant in the dataset actually open for a February 2027 trip?
     <span class="state ok">answered</span></h3>
   <p><strong>Answer:</strong> One is not. Michael Mina at Bellagio publishes &quot;Monday to Sunday: Closed&quot; in its Hours of operation block and carries a &quot;Temporarily closed&quot; label on its own Bellagio page. Its $590++ tasting-menu price is still printed on that page, so a reader could easily mistake a dormant venue for an available one.</p>
@@ -133,7 +133,7 @@
   <p class="tiny"><strong>How to close it:</strong> Restaurant row kept, but with the closure stated on the row and flagged **F-23**. No reopen date is published, so no date is assumed.</p>
   <details><summary>Sources</summary><ul class="srcs"><li><a href="https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html" target="_blank" rel="noopener">https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html</a></li></ul></details>
 </article>
-<article class="qa">
+<article class="qa" id="Q-12">
   <h3><span class="qid">Q-12</span> Do the published opening hours in this dataset survive a second check against the venues&#x27; own sites?
     <span class="state ok">answered</span></h3>
   <p><strong>Answer:</strong> Five rows needed correction: Joël Robuchon (hours blank → Tue–Sat 5:00–9:30 PM), Partage (blank → Tue–Sat 5–9 PM, published on the Contact page only), Sparrow + Wolf (no hours published at all), KAME Omakase (no weekly hours on its booking page) and Michael Mina (closed). Nineteen of 24 rows now carry a verified hours string.</p>
@@ -142,7 +142,7 @@
   <p class="tiny"><strong>How to close it:</strong> All five corrected or explicitly left blank with the reason recorded. See FLAGS.md **F-22 to F-25**.</p>
   <details><summary>Sources</summary><ul class="srcs"><li><a href="https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html" target="_blank" rel="noopener">https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html</a></li></ul></details>
 </article>
-<article class="qa">
+<article class="qa" id="Q-13">
   <h3><span class="qid">Q-13</span> Are the hotels&#x27; own websites still live at the URLs this site links to?
     <span class="state bad">open</span></h3>
   <p><strong>Answer:</strong> Four of 32 were fetched and resolved: Desert Rose (Shell Vacations Hospitality), The LINQ, Palms Place and The Venetian. The other 28 point at the property&#x27;s own domain but were not fetched, so they are labelled &#x27;not fetched — may have moved&#x27; instead of being presented as checked.</p>
@@ -154,7 +154,7 @@
 
 </main>
 <footer class="wrap">
-  <p>Prices captured 25 Nov 2026 from Booking.com for exact date ranges, 2 adults, 1 room, USD.
+  <p>Prices captured 25 Nov 2026 from Booking.com for exact date ranges, 2 adults, 1 room, USD; spot-checked 26 Nov 2026 (see <a href="flagged.html">Flagged for review</a>).
   Every row links to its source. Blank means <strong>not verified</strong> — never estimated.</p>
   <p>Las Vegas had no MICHELIN Guide between 2010 and 2025. All awards here are from the 2026
   Southwest selection, the first since 2009.</p>

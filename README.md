@@ -8,7 +8,7 @@ A sourced trip plan for **two adults**, seven nights, between **15 February and 
 
 | Path | What it is |
 |------|-----------|
-| `docs/` | The site source (8 pages, plain HTML + one stylesheet, no framework, no CDN) |
+| `docs/` | The site source (12 pages, plain HTML + one stylesheet, no framework, no CDN) |
 | `index.html`, `*.html`, `style.css` (repo root) | The **same generated site**, written to the root as well. GitHub Pages on this repo is pinned to `main:/` and the API refuses to repoint it to `/docs`, so the root copy is what visitors actually get. Both are produced by `scripts/gen_site.py` — never edit either by hand. |
 | `data/restaurants.json` | 24 MICHELIN listings with award tier, hours, exceptions, prices, official + YouTube links |
 | `data/hotels.json` | 32 hotels with dated 7-night totals, bed/bathroom fit, Michelin proximity counts |
@@ -20,7 +20,8 @@ A sourced trip plan for **two adults**, seven nights, between **15 February and 
 | `scripts/build.py` | Recomputes the Michelin proximity counts from the transit matrix; runs integrity checks |
 | `scripts/gen_site.py` | Renders `docs/` from the JSON. All counts derived, none typed by hand |
 | `scripts/validate.py` | Link and structure checks for the built site |
-| `FLAGS.md` | The 22 things that did not verify cleanly |
+| `FLAGS.md` | The 28 earlier flags that did not verify cleanly (F-01 to F-28) |
+| `data/review-flags.json` | The 26 Nov 2026 audit register (F-29 onward) and confirmed items, each with source links. Rendered on `flagged.html` |
 | `executive-summary.md` | The one-page version |
 | `COORDINATION.md` | Multi-session task board, merge record and verification log |
 | `archive/` | The earlier session's build, preserved intact rather than overwritten |
@@ -38,8 +39,9 @@ No dependencies beyond the Python 3 standard library. `gen_site.py` writes the s
 
 ## The three findings
 
-1. **8–15 March 2027 is the cheap week.** The same Venetian suite is $2,407 instead of $3,757 — about
-   a third less — because the 15 February week contains Presidents' Day.
+1. **The cheaper-week claim is withdrawn.** The 25 Nov captures showed 8–15 March as about a third cheaper
+   for the Venetian ($2,407 vs $3,757). On 26 Nov, Booking.com's own Venetian page did not reproduce it
+   (US$5,185 for 15–22 Feb vs €4,472 for 8–15 Mar, both incl. taxes and fees). Withdrawn — F-29, Q-06.
 2. **The requested "within 1 hour by subway or bus" ranking cannot rank anything.** Las Vegas has no
    subway, and every hotel is within an hour of all 24 restaurants. A 20-minute column drives the
    ranking instead; disclosed as Q-01.
@@ -51,7 +53,7 @@ No dependencies beyond the Python 3 standard library. `gen_site.py` writes the s
 The first transit model in this repository recorded **Chinatown / Spring Mountain Rd as reachable
 only by car or rideshare**. That was wrong. RTC **Route 203** runs the length of Spring Mountain
 Road and its [published timetable](https://rtcws.rtcsnv.com/routePDF/203.pdf) carries a timed stop
-at **Las Vegas Blvd**, giving Decatur to Las Vegas Blvd in **14 minutes**.
+at **Las Vegas Blvd**, giving Decatur to Las Vegas Blvd about **10 to 17 minutes**, depending on the time of day. The model uses 14, the midpoint (F-32).
 
 It matters because **seven of the 24 MICHELIN listings sit on that one road** — nearly a third of
 the guide. The north Strip therefore reaches Chinatown in about **34 minutes**, not never. This is
@@ -62,8 +64,9 @@ from station lists and route maps, and is labelled as one. Recorded as F-21 in `
 
 - **No inferred values.** Blank means unverified. Every blank is listed in `FLAGS.md` and on the
   Questions page with a route to close it.
-- **Every row cites a source.** 280 external links across 8 pages.
+- **Every row cites a source.** 312 external links across 12 pages.
 - **Estimates are labelled.** Only the transit minutes are estimates, and they say so everywhere.
+- **Flags are published.** Everything that did not verify cleanly is on `flagged.html`, with its sources.
 - **No prior work was discarded.** A parallel session merged a first version to `main` mid-project;
   it is preserved in `archive/` with a written comparison of why each dataset was superseded.
 

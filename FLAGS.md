@@ -25,9 +25,9 @@ labelled**, never that a plausible number was filled in.
 | **F-18** | Bellagio Fountains | Official page fetch failed twice. Show schedule unverified. | No hours listed on the activities page. |
 | **F-19** | Instagram / TikTok | Handles are not printed on most official pages. Only the Neon Museum publishes its own. | Blank rather than guessed — see Q-07. |
 | **F-20** | Transit minutes | Every minute value is an estimate from official station lists and route maps. No official door-to-door times exist. | Labelled "estimate" everywhere. |
-| **F-21** | Chinatown / Route 203 | **Correction.** An earlier version of this dataset recorded Chinatown / Spring Mountain Rd as reachable only by car or rideshare. RTC Route 203 runs the length of that road with a timed stop at Las Vegas Blvd, and its published timetable gives Decatur → Las Vegas Blvd in 14 minutes. | North Strip to Chinatown is ~34 min, not unreachable. Raises the north-Strip short-trip counts. Seven listings are affected. |
+| **F-21** | Chinatown / Route 203 | **Correction.** An earlier version of this dataset recorded Chinatown / Spring Mountain Rd as reachable only by car or rideshare. RTC Route 203 runs the length of that road with a timed stop at Las Vegas Blvd. Its weekday timetable gives Decatur → Las Vegas Blvd about 10–17 minutes by time of day (14 is the model midpoint; see F-32). | North Strip to Chinatown is ~34 min, not unreachable. Raises the north-Strip short-trip counts. Seven listings are affected. |
 | **F-22** | Joël Robuchon | Hours were blank and the row was marked `partial`. The restaurant's own MGM page publishes **Tue–Sat 5:00–9:30 PM**, closed Sun and Mon, no under-6s, business formal. | Now verified. Tue–Sat is the only possible booking window — check it before fixing a night. |
-| **F-23** | Michael Mina | The Bellagio page's Hours of operation block reads **"Monday to Sunday: Closed"** and the venue is labelled **Temporarily closed**. The `$590++` tasting-menu figure on the row is therefore a price for a service that is not running. | Must not be offered as a bookable dinner, and Bellagio must not be sold on it. Reopen date is **not** published; do not assume Feb 2027. |
+| **F-23** | Michael Mina | Re-confirmed 26 Nov 2026 on Bellagio's dining index ("Temporarily Closed"). The Bellagio page's Hours of operation block reads **"Monday to Sunday: Closed"** and the venue is labelled **Temporarily closed**. The `$590++` tasting-menu figure on the row is therefore a price for a service that is not running. | Must not be offered as a bookable dinner, and Bellagio must not be sold on it. Reopen date is **not** published; do not assume Feb 2027. |
 | **F-24** | Partage | Hours were blank because they live on `/contact`, not on `/restaurant` (which is only a booking widget): **Tue–Sat 5–9 PM**. | Now verified. Same page confirms a strict no-vegan / no-coeliac / no-dairy kitchen. |
 | **F-25** | Sparrow + Wolf | The official site publishes **no opening hours** anywhere on its front or menu page — only an OpenTable widget. | Hours left blank rather than taken from a reseller. Card-hold ($25/guest inside 24h) and 4-guest table cap recorded on the row. |
 | **F-26** | Sample-date banners | Several MGM pages carry a dated banner (e.g. *"open 4:00–8:00 PM Thursday 19 – Saturday 21 November"*) that refers to a **2026** date. | Carrying such a banner into a 2027 plan would be a silent error. Ignored, and called out on the affected rows. |
@@ -41,3 +41,17 @@ labelled**, never that a plausible number was filled in.
 - **Formula 1 is not in this window.** The 2027 Las Vegas GP is 18–20 November 2027. It was checked precisely because it would otherwise wreck a Strip price.
 - **Cirque du Soleil** was listed by a reseller at $158.65 per person with no show name, no venue and no 2027 date — excluded.
 - **MGM Grand room price** could not be captured: Booking.com's own property page redirected to a generic Las Vegas search. No price is published for it rather than a guess.
+
+## Audit of 26 Nov 2026 (F-29 onward)
+
+Items F-29 to F-38 come from the 26 November 2026 line-by-line audit (task T12). They are kept in `data/review-flags.json`, with source links, and rendered on the site's **Flagged for review** page (`flagged.html`). Summary:
+
+- **F-29** Venetian $2,407 vs $3,757 "36% cheaper in March" figures withdrawn: not reproduced on Booking.com's own page.
+- **F-30** Per-night and 7-night totals do not reconcile on 17 of 42 captured rows (16 properties).
+- **F-31** Palms Place room specification comes from the Booking.com rate block only.
+- **F-32** Route 203 Decatur → Las Vegas Blvd is about 10–17 minutes by time of day, not a single 14.
+- **F-33** Michael Mina closure re-confirmed on Bellagio's dining index.
+- **F-36** Other week-to-week captures not reproduced (only the Venetian was checked on its own engine).
+- **F-37** Promotional and one-day-snapshot rates; re-capture within 60 days of travel.
+- **F-38** Repository irregularities (duplicate board IDs, stale counts, overlapping datasets, orphan page, failed branch run).
+

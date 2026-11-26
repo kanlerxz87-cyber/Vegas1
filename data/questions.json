@@ -74,12 +74,15 @@
     {
       "id": "Q-06",
       "question": "Which week inside 2027-02-15 → 2027-03-23 is actually cheapest?",
-      "state": "answered",
-      "answer": "Of the four whole weeks measured, 8–15 March 2027 is the cheapest for the large resorts: Venetian $2,407 vs $3,757 in February (−36%), Palazzo $2,422 vs $3,932 (−38%), Cosmopolitan $2,307 vs $3,433 (−33%).",
-      "problem": "Only four windows were measured, and one property (Nobu) moved the other way — cheaper in February. Rates captured on 2026-11-25 are promotional 'Black Friday' prices that will not survive into 2027.",
+      "state": "open",
+      "answer": "Not settled. The 25 Nov captures showed 8–15 March as cheaper for the big resorts (Venetian $2,407 vs $3,757, −36%; Palazzo, Cosmopolitan similar). On 26 Nov, Booking.com's own Venetian page for the same 60 m² Luxury King Suite showed US$5,185.05 for 15–22 Feb 2027 and €4,472.36 for 8–15 Mar 2027, both including taxes and fees. The stored $2,407 and $3,757 are therefore withdrawn (F-29), and the saving is unverified. The other 25 Nov figures are not reproduced (F-36). Nobu was cheaper in February, and no cause is verified.",
+      "problem": "The two captures differ in currency (EUR and USD on the displayed pages), in list price and in loyalty discount (48% in February, 31% in March). Only four windows were measured. Booking.com labels these rates 'Black Friday' or 'Bonus' offers, and those can end.",
       "substitution": "Four windows are shown as evidence rather than a claim that a specific date is the global minimum.",
-      "how_to_close": "Re-run the same Booking.com searches (URL pattern is in data/hotels.json) about six months out, and again 60 days out. That also catches the 2027 show calendar, which is not yet published.",
-      "sources": []
+      "how_to_close": "For each candidate week, open each property's own booking engine with the same room class, dates, 2 adults and 1 room. Record the total with taxes and fees, in USD, and whether any member discount applies. Repeat about 60 days before arrival. Then decide.",
+      "sources": [
+        "https://www.booking.com/hotel/us/the-venetian-resort-casino.de.html?aid=356980&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&sb_price_type=total&type=total",
+        "https://www.booking.com/hotel/us/the-venetian-resort-casino.de.html?checkin=2027-03-08&checkout=2027-03-15&group_adults=2&no_rooms=1"
+      ]
     },
     {
       "id": "Q-07",

@@ -8,7 +8,8 @@
     "proximity_rule": "michelin_within_60 is the user's literal metric (count of the 24 Michelin restaurants reachable in ≤60 min by RTC bus / Monorail / Vegas Loop). On the Strip it saturates at 24 for every hotel, so michelin_within_20 is used as the ranking tiebreaker. See data/transit.json for the zone matrix — every minute figure is an ESTIMATE derived from official route maps, never an official running time.",
     "cheapest_note": "Cheapest verified 7-night total in this dataset is LINQ at $564 for 2027-02-15→02-22, but that is a 'Room Type Assigned on Arrival' rate — the bed size is not guaranteed until check-in.",
     "housekeeping_note": "Hotel rows are unchanged by the 2026-11-25 verification pass; the only structural addition is this note. See FLAGS.md F-21 to F-25 for restaurant-level corrections found in the same pass.",
-    "official_link_note": "official_verified='yes' means this session fetched the URL and it resolved to the property. 'no' means the URL is the property's own domain but was not fetched, so it may have moved — the Booking.com 'Price source' link on every card is always a fetched, working source."
+    "official_link_note": "official_verified='yes' means this session fetched the URL and it resolved to the property. 'no' means the URL is the property's own domain but was not fetched, so it may have moved — the Booking.com 'Price source' link on every card is always a fetched, working source.",
+    "audit_2026_11_26": "Line-by-line audit 2026-11-26 (T12). Venetian rows withdrawn (F-29). Per-night vs 7-night reconciliation failures flagged on every affected row (F-30). Palms Place room specifications flagged (F-31). No other value was changed."
   },
   "hotels": [
     {
@@ -42,7 +43,9 @@
       "official_url": "https://www.caesars.com/caesars-palace/hotel/nobu-hotel",
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price",
       "verified": "yes",
-      "flags": [],
+      "flags": [
+        "F-30"
+      ],
       "notes": "Cheapest five-star brand on the Strip for this week. Located inside Caesars Palace, so it inherits Caesars' centre-Strip position and monorail access.",
       "official_verified": "no"
     },
@@ -316,7 +319,8 @@
       "booking_url": "https://www.booking.com/hotel/us/bellagio.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
       "flags": [
-        "F-13"
+        "F-13",
+        "F-30"
       ],
       "notes": "Michael Mina is in-building but currently closed with no published reopen date (see FLAGS.md F-23), so a Bellagio booking should be sold on its own merits rather than on that restaurant. Rate varies by room class between windows, so the three totals are not like-for-like.",
       "official_verified": "no"
@@ -383,7 +387,9 @@
       "official_url": "https://www.cosmopolitanlasvegas.com/",
       "booking_url": "https://www.booking.com/hotel/us/the-cosmopolitan-of-las-vegas.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
-      "flags": [],
+      "flags": [
+        "F-30"
+      ],
       "notes": "Holds é by José Andrés (1★) and China Poblano (Bib Gourmand) under one roof — the densest Michelin per square metre on the list.",
       "official_verified": "no"
     },
@@ -395,32 +401,48 @@
       "stars": 5,
       "guest_score": 9.0,
       "reviews": null,
-      "room": "Newly Remodeled Luxury King Suite (Mar) / lowest (Feb)",
+      "room": "Luxury King Suite, 60 m² (≈646 ft²) — both windows show this room name on the Booking.com page; the 25 Nov captures were not reproduced (F-29)",
       "bed": "king + sofa bed",
       "private_bath": true,
       "resort_fee": "not captured",
       "prices": [
         {
           "window": "2027-02-15→2027-02-22",
-          "total_7n": 3757,
-          "per_night": 537,
-          "note": "Luxury King Suite"
+          "total_7n": null,
+          "per_night": null,
+          "note": "WITHDRAWN 2026-11-26 (F-29): the 25 Nov capture could not be reproduced on the property page."
         },
         {
           "window": "2027-03-08→2027-03-15",
-          "total_7n": 2407,
-          "per_night": 289,
-          "note": "Newly Remodeled Luxury King Suite, 646 ft² — 36% below February"
+          "total_7n": null,
+          "per_night": null,
+          "note": "WITHDRAWN 2026-11-26 (F-29): the 25 Nov capture could not be reproduced on the property page."
         }
       ],
       "michelin_within_60": 24,
       "michelin_within_20": 17,
       "official_url": "https://www.venetianlasvegas.com/",
       "booking_url": "https://www.booking.com/hotel/us/the-venetian-resort-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
-      "verified": "yes",
-      "flags": [],
-      "notes": "Four Michelin listings inside the complex: Mott 32, COTE, Bouchon, Estiatorio Milos. All-suite, 646 ft²+ standard.",
-      "official_verified": "yes"
+      "verified": "no",
+      "flags": [
+        "F-29"
+      ],
+      "notes": "WITHDRAWN 2026-11-26 (F-29). The 2026-11-25 captures ($3,757 Feb / $2,407 Mar) could not be reproduced: Booking.com's own Venetian page on 2026-11-26 shows the same 60 m² Luxury King Suite (≈646 ft²) at US$5,185.05 for 15–22 Feb 2027 and €4,472.36 for 8–15 Mar 2027, both including taxes and fees after a 'Bonusrabatt' label. The 36% saving is therefore NOT verified. Michelin: four listings inside the complex (Mott 32, COTE, Bouchon, Estiatorio Milos). All-suite, 646 ft²+ standard.",
+      "official_verified": "yes",
+      "prices_withdrawn_2026_11_26": [
+        {
+          "window": "2027-02-15→2027-02-22",
+          "total_7n_as_captured_2026_11_25": 3757,
+          "per_night_as_captured_2026_11_25": 537,
+          "room_as_captured": "Luxury King Suite"
+        },
+        {
+          "window": "2027-03-08→2027-03-15",
+          "total_7n_as_captured_2026_11_25": 2407,
+          "per_night_as_captured_2026_11_25": 289,
+          "room_as_captured": "Newly Remodeled Luxury King Suite, 646 ft² — 36% below February"
+        }
+      ]
     },
     {
       "id": "aria",
@@ -453,7 +475,9 @@
       "official_url": "https://www.aria.com/",
       "booking_url": "https://www.booking.com/hotel/us/aria-resort-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
-      "flags": [],
+      "flags": [
+        "F-30"
+      ],
       "notes": "Gymkhana is in-building. Connected by tram to Bellagio and Park MGM.",
       "official_verified": "no"
     },
@@ -488,7 +512,9 @@
       "official_url": "https://www.palazzo.com/",
       "booking_url": "https://www.booking.com/hotel/us/the-palazzo-resort-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
-      "flags": [],
+      "flags": [
+        "F-30"
+      ],
       "notes": "721 ft² base suite — the largest standard suite in the dataset.",
       "official_verified": "no"
     },
@@ -524,7 +550,8 @@
       "booking_url": "https://www.booking.com/hotel/us/wynn-las-vegas-boulevard.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
       "flags": [
-        "F-09"
+        "F-09",
+        "F-30"
       ],
       "notes": "Two totals for the same week differ by $1,035 because the fee/tax basis differs. The property-page figure is the more complete number.",
       "official_verified": "no"
@@ -561,7 +588,8 @@
       "booking_url": "https://www.booking.com/hotel/us/wynn-las-vegas-boulevard.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
       "flags": [
-        "F-09"
+        "F-09",
+        "F-30"
       ],
       "notes": "Wing Lei is in-building. Same double-basis caveat as Encore.",
       "official_verified": "no"
@@ -627,7 +655,8 @@
       "booking_url": "https://www.booking.com/hotel/us/waldorf-astoria-las-vegas.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
       "flags": [
-        "F-13"
+        "F-13",
+        "F-30"
       ],
       "notes": "Non-gaming, no-smoking, centre-Strip. The February figure is a suite; the March figure is a standard room, so they are not comparable.",
       "official_verified": "no"
@@ -719,7 +748,8 @@
       "booking_url": "https://www.booking.com/hotel/us/golden-nugget-amp-casino-las-vegas.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
       "flags": [
-        "F-11"
+        "F-11",
+        "F-30"
       ],
       "notes": "'Run of House' means the bed type is assigned at check-in — fails the queen-or-larger guarantee unless you book a named room class.",
       "official_verified": "no"
@@ -750,7 +780,8 @@
       "booking_url": "https://www.booking.com/hotel/us/bally-s-las-vegas-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "partial",
       "flags": [
-        "F-11"
+        "F-11",
+        "F-30"
       ],
       "notes": "Directly connected to a Monorail station and across the street from the Bellagio/Cosmo cluster. Bed type not confirmed in the captured rate block.",
       "official_verified": "no"
@@ -781,7 +812,8 @@
       "booking_url": "https://www.booking.com/hotel/us/flamingo-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
       "flags": [
-        "F-11"
+        "F-11",
+        "F-30"
       ],
       "notes": "Second-cheapest verified total. Room type is assigned on arrival, so the king bed shown is not contractual.",
       "official_verified": "no"
@@ -812,7 +844,8 @@
       "booking_url": "https://www.booking.com/hotel/us/the-linq-and-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
       "flags": [
-        "F-11"
+        "F-11",
+        "F-30"
       ],
       "notes": "Cheapest verified 7-night total, and it is centre-Strip next to the High Roller. But $31/night is a Black Friday promotional rate on an unassigned room — treat as a floor, not a forecast.",
       "official_verified": "yes"
@@ -843,7 +876,8 @@
       "booking_url": "https://www.booking.com/hotel/us/sahara-lasvegas-hotel-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
       "flags": [
-        "F-11"
+        "F-11",
+        "F-30"
       ],
       "notes": "Northernmost Monorail stop and a Vegas Loop station — the best transit-per-dollar on the list.",
       "official_verified": "no"
@@ -874,7 +908,8 @@
       "booking_url": "https://www.booking.com/hotel/us/plaza-amp-casino.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
       "flags": [
-        "F-11"
+        "F-11",
+        "F-30"
       ],
       "notes": "Downtown, at the Fremont Street Experience. Pairs with Esther's Kitchen and SoulBelly BBQ.",
       "official_verified": "no"
@@ -904,8 +939,11 @@
       "official_url": "https://www.palms.com/palms-place/",
       "booking_url": "https://www.booking.com/hotel/us/palms-place.html?checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD",
       "verified": "yes",
-      "flags": [],
-      "notes": "Off-Strip but only ~1.5 miles west of centre-Strip; Ping Pang Pong (Gold Coast) and the Chinatown cluster are both short hops.",
+      "flags": [
+        "F-30",
+        "F-31"
+      ],
+      "notes": "Off-Strip but only ~1.5 miles west of centre-Strip; Ping Pang Pong (Gold Coast) and the Chinatown cluster are both short hops. Room type, bed and bathroom come from the Booking.com rate block; the palms.com pages fetched on 2026-11-26 (/palms-place and /stay) did not state them (F-31).",
       "official_verified": "yes"
     },
     {

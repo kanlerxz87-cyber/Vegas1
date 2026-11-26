@@ -9,6 +9,7 @@ No framework, no CDN, no build step at deploy time. Everything is plain HTML +
 one stylesheet, so GitHub Pages serves docs/ directly from main.
 """
 import json
+import re
 import html
 from pathlib import Path
 
@@ -57,6 +58,7 @@ def nav(active):
         ("transit.html", "Getting around"),
         ("questions.html", "Open questions"),
         ("suggestions.html", "Suggestions"),
+        ("flagged.html", "Flagged for review"),
         ("sources.html", "Sources"),
     ]
     out = []
@@ -92,7 +94,7 @@ def page(active, title, subtitle, body, lead=""):
   {body}
 </main>
 <footer class="wrap">
-  <p>Prices captured 25 Nov 2026 from Booking.com for exact date ranges, 2 adults, 1 room, USD.
+  <p>Prices captured 25 Nov 2026 from Booking.com for exact date ranges, 2 adults, 1 room, USD; spot-checked 26 Nov 2026 (see <a href="flagged.html">Flagged for review</a>).
   Every row links to its source. Blank means <strong>not verified</strong> — never estimated.</p>
   <p>Las Vegas had no MICHELIN Guide between 2010 and 2025. All awards here are from the 2026
   Southwest selection, the first since 2009.</p>
@@ -103,10 +105,18 @@ def page(active, title, subtitle, body, lead=""):
 
 
 # ---------------------------------------------------------------- figures
+def first_total(h):
+    """First captured 7-night total; inf when withdrawn or missing, so it sorts last."""
+    for p in h["prices"]:
+        if p.get("total_7n") is not None:
+            return p["total_7n"]
+    return float("inf")
+
+
 def luxury_rows():
     """Hotels ranked: 20-min Michelin count desc, then 7-night price asc."""
     hs = [h for h in HOTELS["hotels"] if h["tier"] != "off-strip"]
-    return sorted(hs, key=lambda h: (-h["michelin_within_20"], h["prices"][0]["total_7n"]))
+    return sorted(hs, key=lambda h: (-h["michelin_within_20"], first_total(h)))
 
 
 def w1(h):
@@ -124,17 +134,13 @@ def build_index():
 
     # headline numbers
     n_hotels = len(HOTELS["hotels"])
-    cheapest = min(HOTELS["hotels"], key=lambda h: w1(h))
-    v_w1 = next(p for p in next(h for h in HOTELS["hotels"] if h["id"] == "venetian")["prices"] if p["window"].startswith("2027-02-15"))
-    v_w3 = next(p for p in next(h for h in HOTELS["hotels"] if h["id"] == "venetian")["prices"] if p["window"].startswith("2027-03-08"))
-    saving = v_w1["total_7n"] - v_w3["total_7n"]
-    pct = round(100 * saving / v_w1["total_7n"])
+    cheapest = min((h for h in HOTELS["hotels"] if w1(h) is not None), key=lambda h: w1(h))
 
     cards = [
         (str(N_TOTAL), "MICHELIN listings", f"{N_STARRED} starred · {N_BIB} Bib Gourmand · {N_REC} Recommended.<br>No three-star restaurant exists in Las Vegas."),
         ("0", "subway lines", "Las Vegas has no metro. Buses, Monorail and the Vegas Loop were modelled instead — <a href='questions.html'>Q-01</a>."),
-        (money(cheapest["prices"][0]["total_7n"]), "cheapest 7 nights", f"{e(cheapest['name'])} — but that is an <em>unassigned room</em> rate. See the caveat on the Hotels page."),
-        (money(saving), "saved by moving a week", f"The same Venetian suite costs {pct}% less on 8–15 Mar than on 15–22 Feb. That is the single biggest lever here."),
+        (money(w1(cheapest)), "cheapest 7 nights", f"{e(cheapest['name'])} — but that is an <em>unassigned room</em> rate. See the caveat on the Hotels page."),
+        ("Unproven", "saving from moving a week", "The 36% figure was <em>withdrawn</em> after a live check did not reproduce it (F-29). <a href='questions.html#Q-06'>Q-06</a>."),
     ]
     card_html = "".join(
         f'<div class="card"><div class="big">{v}</div><div class="lbl">{e(k)}</div><p>{t}</p></div>'
@@ -176,8 +182,9 @@ def build_index():
     <li><strong>The "within 1 hour" ranking does not rank anything.</strong> Every hotel in Las Vegas is within
     an hour of all {N_TOTAL} restaurants, so the metric returns {N_TOTAL}/{N_TOTAL} for all {n_hotels} properties. A
     <em>20-minute</em> column was added and is what actually separates them — <a href="questions.html">Q-01</a>.</li>
-    <li><strong>February is the expensive week.</strong> 15 Feb 2027 is Presidents' Day. Moving to 8–15 March
-    cuts the Venetian by {pct}% and the Palazzo by 38% for the identical suite.</li>
+    <li><strong>The cheaper-week claim is unproven.</strong> The 25 Nov captures suggested 8–15 March is cheaper
+    for the big resorts. A 26 Nov check of the Venetian's own Booking.com page did not reproduce it, so the figures
+    are withdrawn — <a href="flagged.html">F-29</a>, <a href="questions.html#Q-06">Q-06</a>.</li>
   </ol>
 </section>
 
@@ -289,7 +296,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 
     # ---- full property cards
     cards = []
-    for h in sorted(HOTELS["hotels"], key=lambda x: (-x["michelin_within_20"], x["prices"][0]["total_7n"])):
+    for h in sorted(HOTELS["hotels"], key=lambda x: (-x["michelin_within_20"], first_total(x))):
         plist = "".join(
             f'<tr><td>{e(p["window"])}</td><td class="num">{money(p["total_7n"])}</td>'
             f'<td class="num muted">{money(p["per_night"])}</td>'
@@ -334,10 +341,11 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <tbody>{''.join(cmp_rows)}</tbody>
   </table>
   </div>
-  <p class="note"><strong>8–15 March is the cheap week.</strong> The Venetian, Palazzo and Cosmopolitan all drop by
-  roughly a third for the same suite. 15–22 February — which contains Presidents' Day on 15 Feb 2027 — is the
-  expensive one. The holiday is a verified calendar fact; that it <em>causes</em> the price gap is an inference,
-  so it is described as the likely driver and not as proven.</p>
+  <p class="note"><strong>Not settled.</strong> The 25 Nov captures suggested 8–15 March is cheaper for the big resorts.
+  On 26 Nov, Booking.com's own Venetian page showed the same 60 m² suite at US$5,185 for 15–22 Feb and €4,472 for
+  8–15 Mar, both including taxes and fees, so the stored Venetian figures are withdrawn (F-29). The other rows
+  are not reproduced (F-36). Presidents' Day (15 Feb 2027) is a verified calendar fact; whether it moves prices is not
+  established. See <a href="questions.html#Q-06">Q-06</a> for how to close it.</p>
 </section>
 
 <section class="panel">
@@ -571,7 +579,7 @@ def build_transit():
   <p>This matters more than any other single number on this site, because <strong>seven of the 24 MICHELIN listings
   sit on that one road</strong>: Partage, Kabuto, KAME Omakase, Lamaii, Sparrow + Wolf, Pho Ga Bac Bac and YEN Viet
   Kitchen. Nearly a third of the guide is on a road that turns out to have a bus.</p>
-  <p>The timetable's eastbound runs give <strong>Decatur to Las Vegas Blvd in 14 minutes</strong>. Adding a walk to the
+  <p>The timetable's eastbound runs give <strong>Decatur to Las Vegas Blvd in about 10–17 minutes, depending on the time of day</strong> (14 is the model midpoint; F-32). Adding a walk to the
   stop, a platform wait and a walk at the far end puts the north Strip at about <strong>34 minutes</strong> from
   Chinatown door to door — comfortably inside the brief's one-hour limit, from a hotel with no Monorail station.</p>
   <p>This is the <strong>only published travel time in the whole model</strong>. Every other minute figure here is an
@@ -627,7 +635,7 @@ def build_questions():
         problem = f'<p><strong>Why it is not closed:</strong> {e(q["problem"])}</p>' if q.get("problem") else ""
         sub = f'<p><strong>What was done instead:</strong> {e(q["substitution"])}</p>' if q.get("substitution") else ""
         cards.append(f"""
-<article class="qa">
+<article class="qa" id="{e(q['id'])}">
   <h3><span class="qid">{e(q['id'])}</span> {e(q['question'])}
     <span class="state {state_cls[q['state']]}">{e(q['state'])}</span></h3>
   <p><strong>Answer:</strong> {e(q['answer'])}</p>
@@ -961,7 +969,7 @@ ROUTES = [
         "Verification",
         "A line-by-line audit trail: what was confirmed against which source, and every value that could not be confirmed and was therefore left blank.",
         [
-            ("Flags — the 28 things that did not verify cleanly", "sources.html#flags"),
+            ("Flagged for review — every item that did not verify cleanly, with sources", "flagged.html"),
             ("Every source used, grouped by what it proves", "sources.html"),
             ("Open questions, and how to close each one", "questions.html"),
             ("Transit minutes and their stated limits", "transit.html#matrix"),
@@ -999,6 +1007,85 @@ def build_route(name, title, subtitle, links):
     return page(name, title, subtitle, body)
 
 
+# ---------------------------------------------------------------- flagged for review
+def _flags_md_rows():
+    """Earlier flags F-01..F-28 parsed from FLAGS.md (ID, where, what, effect)."""
+    out = []
+    for line in (ROOT / "FLAGS.md").read_text(encoding="utf-8").splitlines():
+        if not line.startswith("| **F-"):
+            continue
+        cols = [c.strip() for c in line.strip().strip("|").split("|")]
+        if len(cols) != 4:
+            raise SystemExit(f"FLAGS.md row does not have 4 columns: {line[:80]}")
+        fid = re.sub(r"\*", "", cols[0])
+        out.append((fid, cols[1], cols[2], cols[3]))
+    return out
+
+
+def build_flagged():
+    rv = load("review-flags.json")
+    cls = {"contradicted": "bad", "unverified": "warn", "needs review": "warn",
+           "corrected": "ok", "confirmed": "ok", "information": "muted"}
+
+    def links(srcs):
+        return "<br>".join(
+            f'<a href="{e(s["url"])}" target="_blank" rel="noopener">{e(s["label"])}</a>' for s in srcs)
+
+    new_rows = "".join(
+        f'<tr><td class="mono">{e(f["id"])}</td>'
+        f'<td><span class="pill {cls.get(f["status"], "muted")}">{e(f["status"])}</span></td>'
+        f'<td><strong>{e(f["title"])}</strong><div class="tiny">{e(f["where"])}</div></td>'
+        f'<td>{e(f["what"])}</td><td>{e(f["effect"])}</td><td class="tiny">{links(f["sources"])}</td></tr>'
+        for f in rv["flags"])
+    conf_rows = "".join(
+        f'<tr><td class="mono">{e(c["id"])}</td><td>{e(c["what"])}</td>'
+        f'<td class="tiny">{links(c["sources"])}</td></tr>' for c in rv["confirmed"])
+    old = _flags_md_rows()
+    old_rows = "".join(
+        f'<tr><td class="mono">{e(fid)}</td><td>{e(w)}</td><td>{e(what)}</td><td>{e(eff)}</td></tr>'
+        for fid, w, what, eff in old)
+    n_new = len(rv["flags"])
+    body = f"""
+<section class="panel callout">
+  <h2>Needs your review — {n_new} items from the 26 Nov 2026 audit</h2>
+  <p>Nothing on this page blocks anything. Each row says what was checked, what was found, what the plan
+  does about it, and where to look. <strong>Contradicted</strong> means a stored value was withdrawn.
+  <strong>Unverified</strong> means it stays on the site, labelled, and must be checked before relying on it.
+  <strong>Corrected</strong> and <strong>confirmed</strong> rows are listed so you can see what was checked.</p>
+</section>
+
+<section class="panel" id="new-flags">
+  <h2>New flags (F-29 onward)</h2>
+  <div class="scroll"><table class="data">
+    <thead><tr><th>ID</th><th>Status</th><th>Item</th><th>What we found</th><th>Effect on the plan</th><th>Sources</th></tr></thead>
+    <tbody>{new_rows}</tbody>
+  </table></div>
+</section>
+
+<section class="panel" id="confirmed">
+  <h2>Checked and confirmed on 26 Nov 2026</h2>
+  <div class="scroll"><table class="data">
+    <thead><tr><th>ID</th><th>What was confirmed</th><th>Sources</th></tr></thead>
+    <tbody>{conf_rows}</tbody>
+  </table></div>
+</section>
+
+<section class="panel" id="earlier">
+  <h2>Earlier flags (F-01 to F-28)</h2>
+  <p class="tiny">Read from <a href="https://github.com/kanlerxz87-cyber/Vegas1/blob/main/FLAGS.md" target="_blank" rel="noopener">FLAGS.md</a>
+  in the repository. Where a row names a creator video or a reseller page, that page is the source of the claim
+  being flagged, not a source for the value.</p>
+  <div class="scroll"><table class="data">
+    <thead><tr><th>ID</th><th>Where</th><th>What</th><th>Effect</th></tr></thead>
+    <tbody>{old_rows}</tbody>
+  </table></div>
+</section>
+"""
+    return page("flagged.html", "Flagged for review",
+                "Everything that did not verify cleanly, was corrected, or was confirmed in the 26 Nov 2026 audit, with the links used to check it.",
+                body)
+
+
 def main():
     DOCS.mkdir(exist_ok=True)
     pages = {
@@ -1009,6 +1096,7 @@ def main():
         "transit.html": build_transit(),
         "questions.html": build_questions(),
         "suggestions.html": build_suggestions(),
+        "flagged.html": build_flagged(),
         "sources.html": build_sources(),
     }
     for name, title, subtitle, links in ROUTES:

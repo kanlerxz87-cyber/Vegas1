@@ -58,7 +58,7 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 | T1–T9 | Independent full build (restaurants, hotels, activities, pricing, verification, summary, suggestions) | done | session-planner-01 | `assets/**`, root `*.html` | Separate JS-driven build; integrated into canonical `main` site via merge (see handoff log). |
 | T10 | Integrate, re-verify, deploy GitHub Pages | done | session-planner-01 | repo-wide | Merged independent build into canonical `main` site; supplementary pages linked from nav. |
 | T1–T9 (independent) | Independent verified build + link-check pass | done | session-48dbf0ae | `docs/session-48dbf0ae/**`, `data/session-48dbf0ae-*.json` | Claimed on a fork-era task board that predates this one; no canonical file touched. See session record at end of file. |
-| T12 | Repo review, line-by-line audit of headline claims, Flagged-for-Review page, integration + PR | in progress | arena-f527b427-vegas1 | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `data/hotels.json`, `data/price-windows.json`, `data/questions.json`, `data/suggestions.json`, `data/transit.json`, `data/travel_matrix.json`, `data/restaurants.json`, `data/review-flags.json` (new), `scripts/gen_site.py`, `docs/**`, root `*.html` | Claimed 2026-11-26. Other sessions: please log requests here rather than editing these files. |
+| T12 | Repo review, line-by-line audit of headline claims, Flagged-for-Review page, integration + PR | done | arena-f527b427-vegas1 | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `data/hotels.json`, `data/price-windows.json`, `data/questions.json`, `data/suggestions.json`, `data/transit.json`, `data/travel_matrix.json`, `data/restaurants.json`, `data/review-flags.json` (new), `scripts/gen_site.py`, `docs/**`, root `*.html` | Claimed 2026-11-26. Other sessions: please log requests here rather than editing these files. |
 
 ## Correction record — RTC Route 203 — 2026-11-25
 
@@ -233,3 +233,47 @@ edited or discarded. Integrated additively per the `session-af795000` pattern:
 
 **No work discarded in this merge:** canonical root site, `docs/` canonical pages, `data/*.json`,
 `scripts/`, `FLAGS.md`, `archive/` all kept from `main`.
+
+## Session record — T12 — arena-f527b427-vegas1 — 2026-11-26
+
+Branch `arena/f527b427-vegas1`, forked from `e4fb98e` (main). Claim committed and pushed first (`3fc6739`).
+
+**What was checked against official or primary sources (fetched 26 Nov 2026):**
+
+| Item | Result | Source |
+|---|---|---|
+| All 24 Las Vegas MICHELIN names and tiers (4 starred, 3 Bib, 17 Recommended) | **Confirmed.** Names and tiers match the release. The 17 Recommended names match the release's Las Vegas list. | [MICHELIN press release, 31 Aug 2026](https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s) · [Visit Las Vegas](https://www.visitlasvegas.com/michelin-guide-restaurants/) |
+| Michael Mina (Bellagio) closed | **Confirmed** on Bellagio's dining index ("Temporarily Closed"). Reopen date not published. | [Bellagio dining index](https://bellagio.mgmresorts.com/en/restaurants.html?filter=property,Bellagio_Las_Vegas) |
+| RTC Strip and All Access fares: $4 / $6 / $8 / $20 | **Confirmed** (regular fare). | [RTC fares & passes](https://www.rtcsnv.com/ways-to-travel/fares-passes/) |
+| Route 203 Decatur → Las Vegas Blvd | **Corrected.** The timetable gives about 10–17 min by time of day (2 of 6 PDF pages read). The model's 14 min is a midpoint, not a published value. | [RTC Route 203 PDF](https://rtcws.rtcsnv.com/routePDF/203.pdf) |
+| Venetian 60 m² Luxury King Suite, 15–22 Feb vs 8–15 Mar 2027 | **Contradicted.** Feb US$5,185.05; Mar €4,472.36 (EUR display); both incl. taxes and fees. The stored $2,407 / $3,757 are withdrawn (F-29). | [Booking.com Feb, USD](https://www.booking.com/hotel/us/the-venetian-resort-casino.de.html?aid=356980&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&sb_price_type=total&type=total) · [Booking.com Mar](https://www.booking.com/hotel/us/the-venetian-resort-casino.de.html?checkin=2027-03-08&checkout=2027-03-15&group_adults=2&no_rooms=1) |
+| Palms Place room (studio, king + sofa bed, bathroom) | **Not confirmed** on palms.com (room specs absent from the fetched text). Kept, flagged (F-31). | [palms.com/palms-place](https://www.palms.com/palms-place/) · [palms.com/stay](https://www.palms.com/stay) |
+| Per-night vs 7-night totals | **Inconsistent** on 17 of 42 rows, 16 properties (F-30). Shown as captured. | `data/hotels.json` (computed) |
+
+**Changes made (all reversible from git):**
+
+- `data/hotels.json`: Venetian prices set to null; the captures moved to `prices_withdrawn_2026_11_26`. F-30 added on 16 properties; F-31 on Palms Place.
+- `data/price-windows.json`, `data/questions.json` (Q-06 → open), `data/suggestions.json` (S-01 → unproven): the "36% cheaper" headline removed.
+- `data/transit.json`, `data/travel_matrix.json`: "14 min" wording changed to "10–17 min; 14 midpoint". Model values unchanged.
+- `data/restaurants.json`: Michael Mina re-check note, F-33.
+- `data/review-flags.json` (new): F-29 to F-38 plus confirmed items C-01 to C-03, each with source links.
+- `scripts/gen_site.py`: `flagged.html` added to navigation and generated; sort and comparison code made safe for withdrawn values; headline cards and notes rewritten; anchors added to question cards.
+- `executive-summary.md`, `README.md`, `FLAGS.md`: headline and counts corrected (12 pages, 312 links, 13 questions with 7 open, 19 restaurants with hours, 21 of 24 without a price for two).
+- Generated: `docs/*` and root `*.html` (both regenerated by `scripts/gen_site.py`).
+
+**Validation:** `scripts/build.py` passes; `scripts/gen_site.py` writes 12 pages; `scripts/validate.py` → 12 pages, 0 failures, 0 warnings, 312 external links, 0 broken anchors.
+
+**Irregularities for review (F-38, logged, not all fixed):**
+
+1. Task IDs on this board are reused (T10 appears twice; T1–T9 appears in two rows). Left as-is, since other sessions' references point at them.
+2. Three Michelin datasets and three hotel datasets overlap. They agree on the 24 award names, but not on every hotel rate. A human should choose the canonical copy.
+3. `docs/session-af795000/` and `docs/session-48dbf0ae/` still carry their own price claims, including that February is the cheapest week. Not updated; archived.
+4. `pages/flagged.html` was an orphan (not linked, generated by no script). The canonical `flagged.html` replaces it in the nav. The orphan is left in place.
+5. `data/flags.json` uses F07-style IDs; FLAGS.md uses F-07.
+6. A Pages-related workflow run on `arena/48dbf0ae-vegas1` (run 45643448267) failed. Not on main; main's Pages builds succeed.
+7. Instagram and TikTok: **zero** handles recorded for the 24 restaurants (F-19). The YouTube requirement is met for 24 of 24 (69 links). This is the largest gap against the brief.
+
+**Not verified in this session (stay blank or flagged):** the 28 hotel rate rows other than the Venetian were not reproduced on their own engines (F-36); bed and bathroom for 29 of 32 hotels come from Booking.com rate blocks, not official pages; restaurant hours were not re-fetched beyond the Michael Mina check; activities were not re-fetched. A line-by-line check of every row was not possible in one session. This audit covered the headline claims and every stored-value conflict found by the consistency scan.
+
+**Merge / PR:** see the entry below this section once the PR is merged.
+
