@@ -1,7 +1,7 @@
 # COORDINATION.md — Shared Task Board
 
 **Repo:** kanlerxz87-cyber/Vegas1
-**Last updated:** 2026-11-25
+**Last updated:** 2026-11-26
 **Purpose:** multi-session coordination so parallel agents never edit the same files.
 Read this file *before* starting any task. Claim a task by writing your session ID below,
 then commit and push that claim immediately.
@@ -57,6 +57,7 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 | T1–T9 | Independent full build (restaurants, hotels, activities, pricing, verification, summary, suggestions) | done | session-planner-01 | `assets/**`, root `*.html` | Separate JS-driven build; integrated into canonical `main` site via merge (see handoff log). |
 | T10 | Integrate, re-verify, deploy GitHub Pages | done | session-planner-01 | repo-wide | Merged independent build into canonical `main` site; supplementary pages linked from nav. |
 | T1–T9 (independent) | Independent verified build + link-check pass | done | session-48dbf0ae | `docs/session-48dbf0ae/**`, `data/session-48dbf0ae-*.json` | Claimed on a fork-era task board that predates this one; no canonical file touched. See session record at end of file. |
+| T12 | Repo review (line-by-line spot verification of canonical data), root **Flagged for Review** + **Repo Review** pages, integration + Pages redeploy | in progress | arena-939a824e-vegas1 (branch `arena/939a824e-vegas1`) | `COORDINATION.md`, `FLAGS.md`, `scripts/gen_site.py`, `data/flags.json`, generated `docs/**` and root `*.html` | Claimed 2026-11-26. No other session is active on these files. Integration of the canonical site is done by this session. |
 
 ## Correction record — RTC Route 203 — 2026-11-25
 
