@@ -20,8 +20,10 @@ A sourced trip plan for **two adults**, seven nights, between **15 February and 
 | `scripts/build.py` | Recomputes the Michelin proximity counts from the transit matrix; runs integrity checks |
 | `scripts/gen_site.py` | Renders `docs/` from the JSON. All counts derived, none typed by hand |
 | `scripts/validate.py` | Link and structure checks for the built site |
-| `FLAGS.md` | The 22 things that did not verify cleanly |
+| `FLAGS.md` | The 28 things that did not verify cleanly (F-01 to F-28) |
 | `executive-summary.md` | The one-page version |
+| `data/review.json` | Repo review: line-by-line checks, limits, and irregularities (2026-11-26) |
+| `docs/flagged.html`, `docs/repo-review.html` | **Flagged for Review** and **Repo review** pages (generated) |
 | `COORDINATION.md` | Multi-session task board, merge record and verification log |
 | `archive/` | The earlier session's build, preserved intact rather than overwritten |
 

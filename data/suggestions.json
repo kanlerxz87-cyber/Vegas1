@@ -120,7 +120,7 @@
       "impact": "medium",
       "needs_decision": false,
       "status": "recommended",
-      "body": "17 of the 24 restaurants have fully verified hours and days. The four starred rooms, Michael Mina (currently marked Temporarily closed) and Wing Lei are the ones whose closure would waste an evening, so re-check those six the week before travel rather than re-checking all 24.",
+      "body": "Hours and days are recorded for 19 of the 24 restaurants; 5 are blank (Michael Mina, KAME, Sparrow + Wolf, Esther's Kitchen, YEN Viet) and are flagged, not guessed. 17 rows are marked verified. The four starred rooms, Michael Mina (currently marked Temporarily closed) and Wing Lei are the ones whose closure would waste an evening, so re-check those six the week before travel rather than re-checking all 24.",
       "trade_off": "Accepts that a minor venue may be dark on the night. Saves about an hour of checking.",
       "evidence": "data/questions.json Q-08"
     },
