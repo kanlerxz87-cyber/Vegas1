@@ -20,7 +20,7 @@ A sourced trip plan for **two adults**, seven nights, between **15 February and 
 | `scripts/build.py` | Recomputes the Michelin proximity counts from the transit matrix; runs integrity checks |
 | `scripts/gen_site.py` | Renders `docs/` from the JSON. All counts derived, none typed by hand |
 | `scripts/validate.py` | Link and structure checks for the built site |
-| `FLAGS.md` | 30 flagged items (F-01 to F-30), including hotel rate basis/recency limitations |
+| `FLAGS.md` | 33 register rows (F-01 to F-30, plus F-47 to F-49 from the 26 Nov link re-check), including hotel rate basis/recency limitations |
 | `data/review-flags.json` | The 26 Nov 2026 audit register (F-39 to F-46) and confirmed items C-11 to C-13, each with source links. Rendered on `flagged.html` |
 | `executive-summary.md` | The one-page version |
 | `data/review.json` | Repo review: line-by-line checks, limits, and irregularities (2026-11-26) |
@@ -63,11 +63,21 @@ the guide. The north Strip therefore reaches Chinatown in about **34 minutes**, 
 the only *published* travel time in the model; every other minute figure remains an estimate built
 from station lists and route maps, and is labelled as one. Recorded as F-21 in `FLAGS.md`.
 
+## A rename found while re-checking hotel links
+
+On 26 Nov 2026 every hotel `Official` link was opened where the site would answer. `caesars.com/cromwell`
+**301-redirects to `caesars.com/vanderpump-hotel`** — the property is now presented as **The Vanderpump Hotel**
+(188 rooms, 3595 Las Vegas Blvd South, 702-777-3777). The row was renamed and logged as F-47: its seven-night
+total was captured under the Cromwell name and must be re-quoted before booking. The sweep also settled F-27 —
+18 of 32 official pages are now confirmed live, 8 refuse automated access, 5 were not opened and 1 (Nobu at
+Caesars) lands on the parent property's page — and it exposed F-48: 15 hotel totals came from a dated
+Booking.com **search list** rather than a property quote page, so those cards now say so.
+
 ## Ground rules this project followed
 
 - **No inferred values.** Blank means unverified. Every blank is listed in `FLAGS.md` and on the
   Questions page with a route to close it.
-- **Every row cites a source.** 380 external links across 13 pages.
+- **Every row cites a source.** 394 external links across 13 pages (counted by `scripts/validate.py` on the current build).
 - **Sources and gaps are disclosed.** Hotel prices in the canonical 32-property table are Booking.com snapshots (not official property rates); this does not meet the strict official-rate-only requirement and is flagged as F-29. A dated direct-engine sample and 26 Nov refresh are linked from Sources & Flags; rates must be rechecked on the property's own engine.
 - **Estimates are labelled.** Only the transit minutes are estimates, and they say so everywhere.
 - **Flags are published.** Everything that did not verify cleanly is on `flagged.html`, with its sources.

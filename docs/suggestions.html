@@ -23,7 +23,7 @@
   
 <section class="panel">
   <h2>1</h2>
-  <p>13 proposals, ranked by how much they change the outcome. <strong>3 of them need a decision
+  <p>15 proposals, ranked by how much they change the outcome. <strong>3 of them need a decision
   from you</strong> before the plan can be finalised — they are marked in the list. Nothing here was silently
   applied to the data.</p>
   <p>The three that matter most: compare exact hotel dates on the <strong>property's own booking engine</strong> before changing dates (the Booking.com and official-engine samples conflict),
@@ -117,10 +117,24 @@
 </article>
 <article class="sug" id="S-13">
   <h3><span class="sid">S-13</span> Spend ten minutes closing the 28 unverified hotel links
-   <span class="impact lo">low impact</span><span class="pill">open</span></h3>
-  <p>Four hotel official links were fetched and confirmed. The other 28 were written from the property&#x27;s own domain but never opened, so the site labels them &#x27;not fetched — may have moved&#x27;. That label is honest but it is also unfinished work. Opening 28 pages and fixing the dead ones would remove the caveat entirely.</p>
+   <span class="impact lo">low impact</span><span class="pill">implemented</span></h3>
+  <p>Four hotel official links were fetched and confirmed. The other 28 were written from the property&#x27;s own domain but never opened, so the site labels them &#x27;not fetched — may have moved&#x27;. That label is honest but it is also unfinished work. Opening 28 pages and fixing the dead ones would remove the caveat entirely. DONE 2026-11-26: 14 more links were opened and confirmed, the Cromwell row was renamed after its official page redirected to The Vanderpump Hotel, and the rows that refuse automated access are now labelled as refused rather than left ambiguous.</p>
   <p class="trade"><strong>Trade-off:</strong> Ten minutes of clicking for no change to the plan&#x27;s cost or ranking. The Booking.com price-source link on every card already works, so nothing is currently unreachable.</p>
   <p class="tiny">Evidence: FLAGS.md F-27, data/questions.json Q-13</p>
+</article>
+<article class="sug" id="S-14">
+  <h3><span class="sid">S-14</span> Book Caesars-family rooms direct, not on the assigned-rate this site quotes
+   <span class="impact md">medium impact</span><span class="pill">recommended</span></h3>
+  <p>The official Caesars pages for Flamingo, Horseshoe and The Vanderpump were opened on 2026-11-26 and all of them sell NAMED room types with a stated bed (e.g. Horseshoe &#x27;Resort Executive Suite | 1 King, 650 sq ft, soaking tub&#x27;). The cheap totals on those rows come from an assigned-on-arrival OTA rate (F-11). Booking direct trades a higher nightly number for a guaranteed bed.</p>
+  <p class="trade"><strong>Trade-off:</strong> Direct is usually $100–200/week more on these three, and it removes the F-11 risk entirely.</p>
+  <p class="tiny">Evidence: https://www.caesars.com/horseshoe-las-vegas ; F-11, F-48</p>
+</article>
+<article class="sug" id="S-15">
+  <h3><span class="sid">S-15</span> Re-quote the former Cromwell row before it is used in the ranking
+   <span class="impact lo">low impact</span><span class="pill">open</span></h3>
+  <p>The $1,978 seven-night total on that row was captured on 2026-11-25 under the name The Cromwell. On 2026-11-26 the property&#x27;s official page presented it as The Vanderpump Hotel. Until it is re-quoted under the new brand the row is a Cromwell-era number on a Vanderpump property, and it sits at rank 7 on the Michelin-proximity table, above three cheaper centre-Strip options.</p>
+  <p class="trade"><strong>Trade-off:</strong> Costs one dated search. Until then the number should not be treated as bookable.</p>
+  <p class="tiny">Evidence: https://www.caesars.com/vanderpump-hotel ; F-47</p>
 </article></div>
 
 </main>

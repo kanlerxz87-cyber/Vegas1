@@ -126,8 +126,8 @@
       "id": "R-03",
       "severity": "high",
       "where": "data/hotels.json (verified, official_verified fields)",
-      "issue": "28 of 32 hotels are official_verified 'no', yet 29 rows carry verified 'yes'. Their prices come from Booking.com search results, not the property's own booking engine. The 'verified' label on those rows describes the search snapshot, not the room rate.",
-      "action": "Treat every hotel price as an OTA snapshot until the property's own booking engine confirms it for the exact dates (see Q-06 on the Questions page).",
+      "issue": "28 of 32 hotels were official_verified 'no', yet 29 rows carry verified 'yes'. Their prices come from Booking.com search results, not the property's own booking engine. The 'verified' label on those rows describes the search snapshot, not the room rate. Re-checked 2026-11-26: 18 of 32 official pages are now confirmed live by fetch, 8 refuse automated access, 5 were not opened and 1 lands on the parent property's page; 15 of the 32 price links are a dated search list rather than a room quote.",
+      "action": "Still treat every hotel price as an OTA snapshot until the property's own booking engine confirms it for the exact dates (Q-06). What changed on 2026-11-26: the link state is no longer ambiguous — each card says whether the official page was confirmed, refused automated access, was not opened, or lands on a sibling property's page, and search-list prices say so (F-48, F-49).",
       "source": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price"
     },
     {

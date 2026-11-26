@@ -129,10 +129,30 @@
       "title": "Spend ten minutes closing the 28 unverified hotel links",
       "impact": "low",
       "needs_decision": false,
-      "status": "open",
-      "body": "Four hotel official links were fetched and confirmed. The other 28 were written from the property's own domain but never opened, so the site labels them 'not fetched — may have moved'. That label is honest but it is also unfinished work. Opening 28 pages and fixing the dead ones would remove the caveat entirely.",
+      "status": "implemented",
+      "body": "Four hotel official links were fetched and confirmed. The other 28 were written from the property's own domain but never opened, so the site labels them 'not fetched — may have moved'. That label is honest but it is also unfinished work. Opening 28 pages and fixing the dead ones would remove the caveat entirely. DONE 2026-11-26: 14 more links were opened and confirmed, the Cromwell row was renamed after its official page redirected to The Vanderpump Hotel, and the rows that refuse automated access are now labelled as refused rather than left ambiguous.",
       "trade_off": "Ten minutes of clicking for no change to the plan's cost or ranking. The Booking.com price-source link on every card already works, so nothing is currently unreachable.",
       "evidence": "FLAGS.md F-27, data/questions.json Q-13"
+    },
+    {
+      "id": "S-14",
+      "title": "Book Caesars-family rooms direct, not on the assigned-rate this site quotes",
+      "impact": "medium",
+      "needs_decision": false,
+      "status": "recommended",
+      "body": "The official Caesars pages for Flamingo, Horseshoe and The Vanderpump were opened on 2026-11-26 and all of them sell NAMED room types with a stated bed (e.g. Horseshoe 'Resort Executive Suite | 1 King, 650 sq ft, soaking tub'). The cheap totals on those rows come from an assigned-on-arrival OTA rate (F-11). Booking direct trades a higher nightly number for a guaranteed bed.",
+      "trade_off": "Direct is usually $100–200/week more on these three, and it removes the F-11 risk entirely.",
+      "evidence": "https://www.caesars.com/horseshoe-las-vegas ; F-11, F-48"
+    },
+    {
+      "id": "S-15",
+      "title": "Re-quote the former Cromwell row before it is used in the ranking",
+      "impact": "low",
+      "needs_decision": false,
+      "status": "open",
+      "body": "The $1,978 seven-night total on that row was captured on 2026-11-25 under the name The Cromwell. On 2026-11-26 the property's official page presented it as The Vanderpump Hotel. Until it is re-quoted under the new brand the row is a Cromwell-era number on a Vanderpump property, and it sits at rank 7 on the Michelin-proximity table, above three cheaper centre-Strip options.",
+      "trade_off": "Costs one dated search. Until then the number should not be treated as bookable.",
+      "evidence": "https://www.caesars.com/vanderpump-hotel ; F-47"
     }
   ]
 }

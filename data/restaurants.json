@@ -3,7 +3,7 @@
     "title": "Michelin Guide — Las Vegas, 2026 Southwest selection",
     "guide_year": 2026,
     "captured": "2026-11-25",
-    "important_note": "Las Vegas had NO Michelin Guide between 2010 and 2025. The 2026 Southwest selection (announced 26 Aug 2026) is the first Las Vegas guide since 2009. Many older 'Michelin' claims online are stale.",
+    "important_note": "Las Vegas had NO Michelin Guide between 2010 and 2025. The 2026 Southwest selection (announced 31 Aug 2026 on michelin.com; the ceremony was held at Fontainebleau Las Vegas) is the first Las Vegas guide since 2009. Many older 'Michelin' claims online are stale.",
     "counts": {
       "three_star": 0,
       "two_star": 1,
@@ -20,7 +20,12 @@
       "https://lasvegasweekly.com/dining/2026/aug/27/michelin-guide-southwest-las-vegas-restaurants/"
     ],
     "price_rule": "price_2adults is ONLY filled where an official or reservation-platform page states the price. Blank = not verified. '++' means plus tax and gratuity, as printed by the venue.",
-    "social_rule": "Only links captured from a search result that resolves to the named restaurant are listed. Instagram/TikTok handles are left blank rather than guessed — see FLAGS.md F-06."
+    "social_rule": "Only links captured from a search result that resolves to the named restaurant are listed. Instagram/TikTok handles are left blank rather than guessed — see FLAGS.md F-06.",
+    "announcement_date": {
+      "value": "2026-08-31",
+      "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s",
+      "note": "Corrected 2026-11-26; earlier copies of this dataset said 26 Aug 2026 (F-51)."
+    }
   },
   "restaurants": [
     {
@@ -554,9 +559,10 @@
       "phone": "",
       "verified": "partial",
       "flags": [
-        "F-07"
+        "F-07",
+        "F-50"
       ],
-      "notes": "Hours were NOT obtainable: /hours-location returned an error and the home page carries no hours block. Brunch is its signature — call before planning."
+      "notes": "Hours were NOT obtainable: /hours-location returned an error and the home page carries no hours block. Brunch is its signature — call before planning. Address conflict recorded as F-50: the MICHELIN press release says 1131 S. Main St., this row says 1130 S Casino Center Blvd, and the venue's own pages publish neither."
     },
     {
       "id": "soulbelly-bbq",
