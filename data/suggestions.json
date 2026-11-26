@@ -6,13 +6,13 @@
   "suggestions": [
     {
       "id": "S-01",
-      "title": "Move the trip to 8–15 March 2027",
+      "title": "Compare exact dates on the hotel's own booking engine before shifting the trip",
       "impact": "high",
-      "needs_decision": true,
-      "status": "open",
-      "body": "This is the biggest lever in the whole plan. The same suite at The Venetian is $2,407 instead of $3,757; at the Palazzo $2,422 instead of $3,932; at the Cosmopolitan $2,307 instead of $3,433. That is roughly $1,300–$1,500 saved on seven nights for the same rooms, because the February week contains Presidents' Day (15 Feb 2027).",
-      "trade_off": "The couple's stated preferred arrival is 15 Feb. Moving loses that date but keeps the trip inside the 15 Feb – 23 Mar envelope and buys an extra dinner at a starred restaurant for the same money.",
-      "evidence": "data/price-windows.json"
+      "needs_decision": false,
+      "status": "recommended",
+      "body": "Do not assume 8–15 March is cheaper overall. The canonical Booking.com snapshots show lower March quotes for The Venetian, Palazzo and Cosmopolitan, while the separate official-property-engine sample reports the preferred 15–22 February week as cheapest at the properties it checked. The samples differ by property coverage, room/rate terms and fee/tax basis; some official engines could not be read. This evidence does not establish a market-wide cheapest week.",
+      "trade_off": "Keeping the preferred dates avoids changing plans based on a source conflict; checking exact dates and the same room/fee basis property by property may still identify a cheaper alternative. Recheck rates close to booking because the captures are dated 25 November 2026.",
+      "evidence": "Booking.com snapshot table: data/price-windows.json and data/hotels.json. Official-engine sample with per-property booking links: docs/session-af795000/hotels.html."
     },
     {
       "id": "S-02",
@@ -30,9 +30,9 @@
       "impact": "medium",
       "needs_decision": false,
       "status": "recommended",
-      "body": "The three cheapest hotel totals in the dataset (LINQ $564, Flamingo $626, Horseshoe $717) are all unassigned-room promotions. They undercut the field by so much that they distort the ranking, and none of them guarantees the queen-or-larger bed the couple asked for.",
-      "trade_off": "Booking a named king room at the same properties costs more but actually meets the requirement. Expect roughly $100–$200/week more.",
-      "evidence": "data/hotels.json flags F-11"
+      "body": "The three lowest Booking.com quote snapshots (LINQ $564, Flamingo $626, Horseshoe $717) are all unassigned-room promotions. These offers do not guarantee the queen-or-larger bed the couple asked for, and the quote totals are not official property rates.",
+      "trade_off": "A named king or two-queen room is necessary to verify bed fit. The price difference is not established here; check the named room on the property's official booking engine rather than adding an assumed uplift.",
+      "evidence": "data/hotels.json flags F-11 and F-29; official-engine examples are linked at docs/session-af795000/hotels.html"
     },
     {
       "id": "S-04",
@@ -61,7 +61,7 @@
       "needs_decision": true,
       "status": "open",
       "body": "The Venetian complex holds four Michelin listings and the Wynn holds one, which makes the north Strip look like the obvious base. But the centre Strip is within 20 minutes of 15 Michelin restaurants — more than any other zone — and is reachable from both ends of the Monorail.",
-      "trade_off": "Choosing centre Strip (Cosmopolitan, ARIA, Bellagio, Vdara, Caesars) costs more per night than the Venetian in the March window, and gives up the in-building convenience of four restaurants under one roof.",
+      "trade_off": "Choosing centre Strip (Cosmopolitan, ARIA, Bellagio, Vdara, Caesars) gives up the in-building convenience of four restaurants under one roof. Price comparisons should use identical dates, room classes, taxes and resort-fee basis from official property engines; the current OTA/direct samples are not comparable enough to establish a cost premium.",
       "evidence": "data/transit.json, data/hotels.json"
     },
     {

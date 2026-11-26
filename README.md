@@ -40,10 +40,10 @@ No dependencies beyond the Python 3 standard library. `gen_site.py` writes the s
 
 ## The three findings
 
-1. **8–15 March 2027 is cheaper at the Venetian on Booking.com snapshots** — $2,407 instead of $3,757, about
-   a third less. The 15 February week contains Presidents' Day. But the official booking engines at Caesars Palace
-   and Flamingo (checked 2026-11-25, recorded in COORDINATION.md) price February lower, so the cheapest week is
-   property-specific (Q-06).
+1. **No market-wide cheapest week is established.** Booking.com snapshots show a lower 8–15 March quote for
+   some rooms, while an official-engine sample checked 2026-11-25 favored the preferred February dates at some
+   properties. A 2026-11-26 direct-engine refresh showed rates changing within one day and an occupancy-label
+   mismatch for a Venetian result. These sources/bases are not comparable; verify exact dates directly (Q-06, F-29/F-30).
 2. **The requested "within 1 hour by subway or bus" ranking cannot rank anything.** Las Vegas has no
    subway, and every hotel is within an hour of all 24 restaurants. A 20-minute column drives the
    ranking instead; disclosed as Q-01.
@@ -66,7 +66,7 @@ from station lists and route maps, and is labelled as one. Recorded as F-21 in `
 
 - **No inferred values.** Blank means unverified. Every blank is listed in `FLAGS.md` and on the
   Questions page with a route to close it.
-- **Every row cites a source.** 280 external links across 8 pages.
+- **Sources and gaps are disclosed.** Hotel prices in the canonical 32-property table are Booking.com snapshots (not official property rates); this does not meet the strict official-rate-only requirement and is flagged as F-29. A dated direct-engine sample and 26 Nov refresh are linked from Sources & Flags; rates must be rechecked on the property's own engine.
 - **Estimates are labelled.** Only the transit minutes are estimates, and they say so everywhere.
 - **No prior work was discarded.** A parallel session merged a first version to `main` mid-project;
   it is preserved in `archive/` with a written comparison of why each dataset was superseded.

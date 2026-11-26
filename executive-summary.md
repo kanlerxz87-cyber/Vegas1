@@ -9,11 +9,12 @@ All figures captured 25 November 2026. Live site: <https://kanlerxz87-cyber.gith
 
 Three findings change the shape of this trip, and none of them is the thing the brief expected.
 
-**1. The cheapest week is not the preferred week.** Four whole weeks were priced inside the allowed
-envelope. **8–15 March 2027** is cheaper than the 15 February week for every large resort, by about
-a third — the same Luxury King Suite at The Venetian is **$2,407 instead of $3,757**, and at the
-Palazzo $2,422 instead of $3,932. 15 February 2027 is Presidents' Day. Moving the trip one week
-later buys an extra starred dinner for the same money.
+**1. No market-wide cheapest week is established.** Booking.com snapshots show lower March quotes for
+some sampled rooms; a separate 25 Nov official-engine sample found the preferred February dates cheapest
+at properties it checked. A 26 Nov direct-engine refresh returned changed rates and a Venetian quote with
+an unclear 4+ guest-suite occupancy label. The property coverage, room/rate terms and fee/tax bases differ.
+Do not move dates on this evidence alone; compare exact dates and named rooms at each hotel's official
+booking engine. See the [official-engine sample](docs/session-af795000/hotels.html) and flagged findings F-29/F-30.
 
 **2. The requested ranking metric cannot rank anything.** The brief asked to order hotels by how
 many MICHELIN restaurants fall within an hour by public transport. Las Vegas has no subway, and the
@@ -30,9 +31,9 @@ not contractual. They cannot be recommended against a stated queen-or-larger req
 
 | | Pick | Why |
 |---|---|---|
-| **Best value** | **Desert Rose Resort** — $922 for 7 nights | 9.1 guest score, 646 ft² one-bedroom suite, king bed, private bathroom, **no resort fee**, 15-min walk to the centre-Strip restaurants. The only property that is cheap, well-rated and correctly bedded at once. |
-| **Best if the date can move** | **The Venetian, 8–15 March** — $2,407 | Four MICHELIN listings inside the complex, 646 ft² suite, 23 restaurants within 20 minutes. $1,350 cheaper than the February week on Booking.com snapshots. Caesars Palace and Flamingo are cheaper in February on their own booking engines, so check each property for your dates (Q-06). |
-| **Best location for Michelin** | **Anything west of the Strip** — Palms Place, $866 | 24/24 restaurants inside 20 minutes, because it sits between Chinatown and the Strip. The least obvious and most useful answer on the site. |
+| **Value candidate (not a final pick)** | **Desert Rose Resort** — Booking.com snapshot $922 for 7 nights | Room fit and amenities are described on the official property page, but this total is not an official property quote and must be rechecked before it supports a recommendation. |
+| **Best date window** | **Not established** | Booking.com snapshots and direct official-engine samples conflict; compare the same room and fee/tax basis at the hotel's official booking engine. |
+| **Best location for Michelin** | **Palms Place / west-of-Strip candidates** | Transit counts are estimates and the stated ≤60-minute metric saturates at 24/24. Rate references on the main table are Booking.com snapshots, not official quotes. |
 | **Avoid** | Red Rock, Green Valley Ranch, Cliffs at Peace Canyon | Correct resorts, 11–17 miles from every dinner. **0** restaurants inside 20 minutes. |
 
 ## The Michelin picture

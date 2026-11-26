@@ -127,16 +127,11 @@ def build_index():
     # headline numbers
     n_hotels = len(HOTELS["hotels"])
     cheapest = min(HOTELS["hotels"], key=lambda h: w1(h))
-    v_w1 = next(p for p in next(h for h in HOTELS["hotels"] if h["id"] == "venetian")["prices"] if p["window"].startswith("2027-02-15"))
-    v_w3 = next(p for p in next(h for h in HOTELS["hotels"] if h["id"] == "venetian")["prices"] if p["window"].startswith("2027-03-08"))
-    saving = v_w1["total_7n"] - v_w3["total_7n"]
-    pct = round(100 * saving / v_w1["total_7n"])
-
     cards = [
         (str(N_TOTAL), "MICHELIN listings", f"{N_STARRED} starred · {N_BIB} Bib Gourmand · {N_REC} Recommended.<br>No three-star restaurant exists in Las Vegas."),
         ("0", "subway lines", "Las Vegas has no metro. Buses, Monorail and the Vegas Loop were modelled instead — <a href='questions.html'>Q-01</a>."),
-        (money(cheapest["prices"][0]["total_7n"]), "cheapest 7 nights", f"{e(cheapest['name'])} — but that is an <em>unassigned room</em> rate. See the caveat on the Hotels page."),
-        (money(saving), "saved by moving a week", f"The same Venetian suite costs {pct}% less on 8–15 Mar than on 15–22 Feb. That is the single biggest lever here."),
+        (money(cheapest["prices"][0]["total_7n"]), "lowest OTA quote", f"{e(cheapest['name'])} — this is a Booking.com snapshot with an <em>unassigned room</em>, not a confirmed official-property rate. See Hotels and Flags."),
+        ("Mixed", "date-price evidence", "Booking.com snapshots favor March for some hotels; sampled official hotel engines favor the preferred February week for others. No universal cheapest week is established."),
     ]
     card_html = "".join(
         f'<div class="card"><div class="big">{v}</div><div class="lbl">{e(k)}</div><p>{t}</p></div>'
@@ -154,9 +149,8 @@ def build_index():
   <p>Two adults, seven nights in Las Vegas, sometime between <strong>15 February and 23 March 2027</strong>.
   The brief asked for hotels ranked by price, location and how many MICHELIN restaurants are within an hour
   by public transport — and for every number to be traceable to a source.</p>
-  <p>Everything on this site was captured from official hotel, restaurant, transit and MICHELIN pages on
-  <strong>25 November 2026</strong>. Where a number could not be confirmed it is <strong>blank</strong> and listed on the
-  <a href="questions.html">Open questions</a> page. Nothing was estimated into a table.</p>
+  <p>Hotel, restaurant, transit and MICHELIN venue details were captured from official pages on
+  <strong>25 November 2026</strong>. The main hotel-rate comparison is an explicitly labelled <strong>Booking.com snapshot</strong>, not a hotel-issued quote; a separate sample of official property engines conflicts for some date comparisons. Where a value could not be confirmed from its stated source it is blank and flagged on the <a href="sources.html#flags">Sources &amp; flags</a> page. Transit times are labelled estimates, not official running times.</p>
 </section>
 
 <section class="grid4">{card_html}</section>
@@ -178,20 +172,17 @@ def build_index():
     <li><strong>The "within 1 hour" ranking does not rank anything.</strong> Every hotel in Las Vegas is within
     an hour of all {N_TOTAL} restaurants, so the metric returns {N_TOTAL}/{N_TOTAL} for all {n_hotels} properties. A
     <em>20-minute</em> column was added and is what actually separates them — <a href="questions.html">Q-01</a>.</li>
-    <li><strong>February vs March depends on the property — do not take one week as the answer.</strong>
-    Booking.com snapshots (2026-11-25) show 8–15 March {pct}% cheaper at the Venetian and 38% cheaper at the Palazzo.
-    But the official booking-engine checks recorded in <a href="https://github.com/kanlerxz87-cyber/Vegas1/blob/main/COORDINATION.md" target="_blank" rel="noopener">COORDINATION.md</a>
-    found 15–22 Feb cheaper at Caesars Palace and Flamingo. Check each property's own booking engine for your dates — <a href="questions.html">Q-06</a>.</li>
+    <li><strong>The cheapest week is not settled across sources.</strong> Booking.com snapshots show lower March quotes for some large resorts; a separate 25 Nov sample of official hotel booking engines found the preferred 15–22 February week cheapest at properties checked. The samples are not a like-for-like market comparison; the 26 Nov Venetian direct result also carries an unclear 4+ guest occupancy label. Compare exact dates and named-room terms at the hotel's own booking engine before moving dates — see the <a href="https://kanlerxz87-cyber.github.io/Vegas1/docs/session-af795000/hotels.html">dated official-engine sample and its source links</a> plus <a href="sources.html#flags">F-30</a>.</li>
   </ol>
 </section>
 
 <section class="panel callout">
   <h2>If you read only one row</h2>
-  <p><strong>Desert Rose Resort</strong> — {money(922)} for seven nights, 9.1 guest score, a 646 ft² one-bedroom
-  suite with a full kitchen, a king bed and a private bathroom, <em>no resort fee</em>, and a 15–20 minute walk to
-  the Joël Robuchon and L'Atelier rooms at MGM Grand. It is the only property that is simultaneously cheap,
-  well-rated and correctly bedded. The catch is that it is a low-rise condo hotel with no casino, set one
-  block off the Strip — <a href="hotels.html">Hotels</a> explains the trade.</p>
+  <p><strong>Desert Rose Resort is a value candidate, not a confirmed best buy.</strong> The displayed $922 seven-night
+  figure is a Booking.com snapshot, not an official property rate. Its room/bed and bathroom fit are described on the
+  hotel's official page, but the total must be rechecked with the property before it can support a final decision.
+  It is a low-rise condo hotel with no casino, one block off the Strip — see the <a href="hotels.html">hotel page</a>,
+  source flags, and the <a href="https://kanlerxz87-cyber.github.io/Vegas1/docs/session-af795000/hotels.html">official-engine sample</a>.</p>
 </section>
 """
     return page("index.html", "Las Vegas, seven nights, 2027",
@@ -227,12 +218,12 @@ def build_hotels():
 <th>#</th><th>Hotel</th><th>Class</th><th>Guest</th>
 <th title="MICHELIN restaurants within a 20-minute one-way trip">≤20 min</th>
 <th title="MICHELIN restaurants within 60 minutes — the figure the brief asked for">≤60 min</th>
-<th>Bed</th><th>7 nights<br><span class="thsub">15–22 Feb</span></th>
+<th>Bed</th><th>Booking.com quote<br><span class="thsub">7 nights · 15–22 Feb</span></th>
 </tr></thead>
 <tbody>{''.join(rows)}</tbody>
 </table>
 </div>
-<p class="note">Sorted by MICHELIN proximity inside 20 minutes, then by price. The ≤60 min column is the
+<p class="note">Sorted by MICHELIN proximity inside 20 minutes, then by the dated Booking.com quote (not an official property rate). The ≤60 min column is the
 brief's literal metric and is <strong>24 for every property</strong> — it cannot rank anything, which is why the
 20-minute column drives the order. Both are recomputed by <code>scripts/build.py</code> from one zone matrix.</p>
 """
@@ -314,7 +305,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p class="meta">{e(h['zone'].replace('-',' '))} · {h['stars']}★ · guest score {h['guest_score'] or '—'}
   · {h['michelin_within_20']} MICHELIN within 20 min · resort fee: {e(h['resort_fee'])}</p>
   <table class="data slim">
-    <thead><tr><th>Window</th><th>7 nights</th><th>/night</th><th>Note</th></tr></thead>
+    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody>{plist}</tbody>
   </table>
   <p class="tiny">Bed: {e(h['bed'])} · private bathroom: {'yes' if h['private_bath'] else 'not stated'}
@@ -329,19 +320,15 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 
     body = f"""
 <section class="panel">
-  <h2 id="cheapest-week">Which week is cheapest — like for like</h2>
-  <p>Only properties measured in more than one week are shown, so every percentage compares the same
-  hotel (usually the same room class) against itself:</p>
+  <h2 id="cheapest-week">Which week had the lower Booking.com quote — selected pairs only</h2>
+  <p>Only properties measured in more than one Booking.com date window are shown. Where room classes match, each comparison is within the same hotel; these third-party snapshots do not establish official rates or a market-wide cheapest week:</p>
   <div class="scroll">
   <table class="data">
   <thead><tr><th>Hotel</th><th>15–22 Feb</th><th>1–8 Mar</th><th>8–15 Mar</th><th>15–22 Mar</th><th>Best vs worst</th><th>Room note</th></tr></thead>
   <tbody>{''.join(cmp_rows)}</tbody>
   </table>
   </div>
-  <p class="note"><strong>8–15 March is the cheap week.</strong> The Venetian, Palazzo and Cosmopolitan all drop by
-  roughly a third for the same suite. 15–22 February — which contains Presidents' Day on 15 Feb 2027 — is the
-  expensive one. The holiday is a verified calendar fact; that it <em>causes</em> the price gap is an inference,
-  so it is described as the likely driver and not as proven.</p>
+  <p class="note"><strong>Do not treat this as the overall cheapest week.</strong> This table is a set of Booking.com snapshots and shows 8–15 March lower for some named rooms. A separate 25 Nov official property-engine sample found 15–22 February cheapest at properties checked; other official engines were blocked or not sampled for every date. The scopes and room/fee bases differ, so there is no verified market-wide winner. A 26 Nov re-fetch also showed official-engine rates changing from the 25 Nov sample; the Venetian result has an occupancy-label mismatch. See <a href="sources.html#flags">F-30</a> and the <a href="https://kanlerxz87-cyber.github.io/Vegas1/docs/session-af795000/hotels.html">dated official-engine sample</a>. Compare the exact named room, fees, taxes, cancellation terms and dates on each property's own booking page before booking.</p>
 </section>
 
 <section class="panel">
@@ -362,9 +349,8 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 </section>
 
 <section class="panel">
-  <h2 id="every-hotel">Every hotel, with both price bases</h2>
-  <p>Booking.com search totals generally exclude resort fee and local tax. Where a property publishes its own
-  rate, both figures are shown rather than one.</p>
+  <h2 id="every-hotel">Every hotel — dated Booking.com quote snapshots</h2>
+  <p>These are third-party Booking.com search totals, generally excluding resort fees and local tax; they are not official property-engine quotes. The <a href="https://kanlerxz87-cyber.github.io/Vegas1/docs/session-af795000/hotels.html">separate official-engine sample</a> covers only selected properties/dates and has a different fee/tax basis. Do not combine these datasets or read them as a verified market-wide rate ranking.</p>
   <p class="note"><strong>Link honesty:</strong> a "Price source ✓" link is a Booking.com URL this session
   actually fetched. An "Official" link without a tick points at the property's own domain but was not fetched,
   so it is marked <em>not fetched — may have moved</em> rather than presented as verified. Four of the 32 were
@@ -373,16 +359,16 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 </section>
 
 <section class="panel callout">
-  <h2>The three cheapest totals are traps</h2>
-  <p>The LINQ ($564), Flamingo ($626) and Horseshoe ($717) headline the dataset, but all three are
-  <strong>"room type assigned on arrival"</strong> promotions. The king bed shown at booking is not contractual, so
-  they do not satisfy the queen-or-larger requirement until check-in. Book a <em>named</em> room class at the
-  same properties — expect $100–$200 more per week — or take Desert Rose at $922 with the bed guaranteed and
-  no resort fee.</p>
+  <h2>Lowest Booking.com quotes: bed and source caveats</h2>
+  <p>The LINQ ($564), Flamingo ($626) and Horseshoe ($717) headline the third-party snapshot, but each lowest rate is a
+  <strong>"room type assigned on arrival"</strong> promotion. The bed is not guaranteed at booking, so these rates do not
+  establish the requested queen-or-larger room fit. Named-room direct rates need to be checked on each property's
+  official booking engine; no $100–$200 uplift is assumed. The separate official-engine sample includes some named-room
+  alternatives and direct links, but does not establish a universal cheapest hotel.</p>
 </section>
 """
     return page("hotels.html", "Hotels",
-                f"{len(HOTELS['hotels'])} properties, real 7-night totals for dated windows, and a bed requirement that removes the cheapest three.",
+                f"{len(HOTELS['hotels'])} properties with dated Booking.com 7-night quote snapshots (not official hotel rates), room-fit flags, and a separate official-engine sample.",
                 body)
 
 
@@ -690,9 +676,9 @@ def build_suggestions():
   <p>{n_sug} proposals, ranked by how much they change the outcome. <strong>{len(needs)} of them need a decision
   from you</strong> before the plan can be finalised — they are marked in the list. Nothing here was silently
   applied to the data.</p>
-  <p>The three that matter most: move the trip to <strong>8–15 March</strong> (saves about $1,400 on the same suite),
+  <p>The three that matter most: compare exact hotel dates on the <strong>property's own booking engine</strong> before changing dates (the Booking.com and official-engine samples conflict),
   settle whether this is a <strong>three-night or seven-night</strong> trip (which changes every hotel number by
-  over half), and <strong>refuse unassigned-room rates</strong> (which removes the three cheapest hotels on the site).</p>
+  over half), and <strong>refuse unassigned-room rates</strong> (which removes the three cheapest hotels on the site). See the <a href="https://kanlerxz87-cyber.github.io/Vegas1/docs/session-af795000/hotels.html">official-engine sample</a> and its direct links.</p>
 </section>
 <div class="suglist">{''.join(cards)}</div>
 """
@@ -724,6 +710,8 @@ def build_sources():
         ("F-17", "14-night variant", "The brief allows two weeks; only seven nights were priced."),
         ("F-18", "Bellagio Fountains", "Official page failed to load; schedule unverified."),
         ("F-19", "Instagram / TikTok", "Handles not published; blank rather than guessed."),
+        ("F-29", "Hotel price basis", "The 32-hotel prices are Booking.com snapshots, not official property quotes; independent official-engine samples conflict on the cheapest week."),
+        ("F-30", "Official hotel rates, refreshed 26 Nov 2026", "Caesars Julius King $201/night and Wynn Cyber $677/night, each including resort fee before tax; Venetian returned $6,170.43 tax-included but labels suites as 4+ guests. Volatile; confirm exact total and occupancy."),
     ]
     for fid, where, what in flags:
         flag_rows.append(f'<tr><td class="mono">{fid}</td><td>{e(where)}</td><td>{e(what)}</td></tr>')
@@ -762,6 +750,11 @@ def build_sources():
         ("Booking.com — same search, 15–22 Mar 2027", "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-03-15&checkout=2027-03-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price"),
         ("Booking.com — Wynn Las Vegas property page", "https://www.booking.com/hotel/us/wynn-las-vegas-boulevard.html"),
         ("Wynn Las Vegas — rooms and suites", "https://www.wynnlasvegas.com/rooms-and-suite"),
+        ("Official-engine price sample — dated rate links", "https://kanlerxz87-cyber.github.io/Vegas1/docs/session-af795000/hotels.html"),
+        ("Caesars Palace — official exact-date booking search", "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1"),
+        ("Wynn — official exact-date booking engine", "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0"),
+        ("Resorts World — official exact-date booking engine (fee legend conflict flagged)", "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0"),
+        ("The Venetian — official exact-date booking engine (occupancy label requires checking)", "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2027-02-15&children[]=0&departure_date=2027-02-22&view=calendar"),
     ])
     groups.setdefault("Context checks", []).extend([
         ("F1 Experiences — 2027 Las Vegas GP, 18–20 Nov 2027", "https://f1experiences.com/2027-las-vegas-gp"),
@@ -790,8 +783,8 @@ def build_sources():
   <tbody>{''.join(flag_rows)}</tbody>
   </table>
   </div>
-  <p class="note">The full list (all {N_FLAGS} flags) and the deliberate non-inclusions are in
-  <code>FLAGS.md</code> at the repository root.</p>
+  <p class="note">The full list (all {N_FLAGS} flags) and deliberate non-inclusions are on the
+  <a href="flagged.html">Flagged for Review</a> page and in the repository's <a href="https://github.com/kanlerxz87-cyber/Vegas1/blob/main/FLAGS.md">FLAGS.md register</a>.</p>
 </section>
 {''.join(blocks)}
 """
@@ -1096,7 +1089,7 @@ ROUTES = [
         "Pricing",
         "Every price this plan uses, gathered in one place: hotels across all four measured weeks, restaurant totals for two, and the costs that sit outside the room rate.",
         [
-            ("Which week is cheapest — like for like", "hotels.html#cheapest-week"),
+            ("Selected Booking.com date comparisons (not a market-wide result)", "hotels.html#cheapest-week"),
             ("Every hotel, with both price bases", "hotels.html#every-hotel"),
             ("What dinner for two actually costs", "restaurants.html#costs"),
             ("Budget resort fees and 13.38% tax", "suggestions.html#S-08"),
