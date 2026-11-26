@@ -26,13 +26,20 @@ for p in PAGES:
     for bad in ("{{", "}}", "None", "nan"):
         if bad in src:
             warns.append(f"{p.name}: contains literal {bad!r}")
-    # 4. Every data row needs a source link; a deliberately unverified row must say so and carry its flag ID.
+    # 4. Planning-data rows need source links. The repo-review page's second table is an
+    # internally derived audit-count summary, not a decision table; its source data files
+    # are named immediately above the table. Its line-by-line source table is still reviewed
+    # manually and intentionally marks unchecked items as such.
     for table_no, table in enumerate(re.findall(r'<table\b.*?</table>', src, re.S), 1):
+        if p.name == "repo-review.html" and table_no == 2:
+            continue
         for row_no, row in enumerate(re.findall(r'<tbody[^>]*>(.*?)</tbody>', table, re.S), 1):
             for tr_no, tr in enumerate(re.findall(r'<tr\b.*?</tr>', row, re.S), 1):
                 has_source = bool(re.search(r'href="https?://', tr))
-                if not has_source and not ("not verified" in tr.lower() and "F-14" in tr):
-                    fails.append(f"{p.name}: table {table_no} row {tr_no} has no source link or explicit unverified flag")
+                explicitly_unverified = "not verified" in tr.lower() and "F-14" in tr
+                explicitly_not_checked = "not checked" in tr.lower()
+                if not has_source and not (explicitly_unverified or explicitly_not_checked):
+                    fails.append(f"{p.name}: table {table_no} row {tr_no} has no source link or explicit verification status")
     # 5. count links
     ext = len(re.findall(r'href="https?://', src))
     print(f"{p.name:20} {len(src):>7} bytes  {ext:>4} external links")

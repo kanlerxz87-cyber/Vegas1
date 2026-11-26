@@ -23,7 +23,9 @@ A source-linked planning dashboard for **two adults**, with a requested travel w
 | `transit.html` | Operator fares, Route 203 correction, estimated zone matrix and transit caveats |
 | `questions.html` | Answered, interpreted and open questions, with discovery steps |
 | `suggestions.html` | Decision-improvement suggestions and trade-offs |
-| `review.html` | Flagged hotel rate conflicts, private-bathroom verification and official source links |
+| `review.html` | Current hotel rate conflicts, private-bathroom verification and official source links (F-29–F-31) |
+| `flagged.html` | Full flagged/repo-irregularity register retained from the parallel main-branch review |
+| `repo-review.html` | Line-by-line source audit and repository review findings |
 | `sources.html` | Official source directory and selected quality flags |
 | `pricing.html` / `verification.html` / `summary.html` | Shortcuts into the primary detail pages |
 

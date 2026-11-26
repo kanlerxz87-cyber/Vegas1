@@ -249,7 +249,7 @@ edited or discarded. Integrated additively per the `session-af795000` pattern:
 
 ## Final integration — arena/c9eed9ad-vegas1 — 2026-11-26
 
-**Status: done (pending this branch's PR merge/deploy).** Work stayed on `arena/c9eed9ad-vegas1`; the required claim was committed and pushed there. No other session had an active overlapping scope. Historical session task IDs have been prefixed (`P*`, `S48-*`) to remove duplicate identifiers without rewriting their records.
+**Status: done (PR #27 open; merge/deploy pending).** Work stayed on `arena/c9eed9ad-vegas1`; the claim was committed and pushed there. The PR initially conflicted with the newer main-branch repo-review integration. Those changes were merged into this branch without discarding them: `data/review.json`, root/docs `flagged.html`, root/docs `repo-review.html`, and their supporting data/style changes are preserved; generated planning pages were regenerated against the combined current data, and nav links to both full audit pages were retained. No other session had an active overlapping scope. Historical session task IDs have been prefixed (`P*`, `S48-*`) to remove duplicate identifiers without rewriting their records.
 
 ### Direct hotel quote checks (official booking engines; fetched 2026-11-26)
 
@@ -275,8 +275,8 @@ Basis: two adults, one room, seven nights, exact 2027 date windows. Caesars page
 
 - `python3 -m py_compile scripts/gen_site.py scripts/validate.py` — passed.
 - `python3 scripts/build.py` — passed integrity checks (24 restaurants; 4 starred, 3 Bib, 17 Recommended; 32 hotels; ≤60-minute count 24 for all; rescoring consistent).
-- `python3 scripts/gen_site.py` — 12 pages generated to root and `docs/`.
-- `python3 scripts/validate.py` — 12 pages, 0 failures, 0 warnings; 338 external links counted (not all fetched).
+- `python3 scripts/gen_site.py` — 12 canonical planning pages generated to root and `docs/`; preserved main-branch `flagged.html` and `repo-review.html` supplements remain alongside them.
+- `python3 scripts/validate.py` — 14 pages, 0 failures, 0 warnings; 396 external links counted (not all fetched). The validator source-audits planning tables and the repo-review page's line-by-line source table; its second, internally derived metrics summary is excluded from source-link enforcement.
 - Separate repo-wide local relative-HTML-link scan — 0 broken links outside preserved archived subsites; this also caught/fixed the historical `pages/flagged.html` path defects.
 - Official pages fetched during the pass: Caesars Palace, Flamingo, Horseshoe exact-date booking engines; Wynn exact-date room/offer page and terms; Resorts World exact-date calendar; Sphere official page and corporate release; High Roller official page; The Mob Museum official page; Neon Museum official page; Fremont Street Experience official page; official Instagram profiles for Sphere, High Roller, Mob Museum and Fremont Street. Individual URLs are recorded in the generated source page and the relevant JSON rows.
 
@@ -285,4 +285,10 @@ Basis: two adults, one room, seven nights, exact 2027 date windows. Caesars page
 - Official prices change and the sampled rates exclude taxes. Exact tax-inclusive totals and private-bathroom confirmation are left unverified. Recheck at checkout.
 - The brief's 15–18 Feb preference is three nights, while the hotel comparison is seven nights; fourteen-night totals are not priced.
 - The >300 external links are counted, not exhaustively fetched. `validate.py` performs no live external-network checks.
-- GitHub Pages currently deploys `main:/`; this branch must be merged before the new pages become public. PR and deploy outcome will be added once completed.
+- GitHub Pages deploys `main:/`; the content becomes public after PR #27 merges and the Pages workflow succeeds. Final outcome will be appended after merge/deployment confirmation.
+
+## Main-branch integration preserved during PR #27 conflict resolution
+
+- PR #24 (`arena/c419e2da-vegas1`, T13): merged to `main` with `--merge` on 2026-11-26 at 22:00:35Z; merge commit `768f5aacd704ee3ba06edc6a5e0254a8462ea48e`.
+- Its Pages workflow succeeded; Pages API status was `built`. The preserved review introduced `data/review.json`, `flagged.html`, `repo-review.html`, their `docs/` copies, and follow-up corrections to source notes and transit/restaurant data.
+- The subsequent `origin/main` merge into this branch produced conflicts in generated files, `scripts/gen_site.py`, `data/suggestions.json`, `README.md`, and this board. Resolution retained the current official direct-rate integration and current canonical `review.html`, while retaining the separate main-branch flagged/repo-review artifacts. The site generator nav now links both current and historical review routes. `FLAGS.md` was consolidated so F-29/F-30 each appear once and F-31 is retained.

@@ -58,7 +58,9 @@ def nav(active):
         ("transit.html", "Getting around"),
         ("questions.html", "Open questions"),
         ("suggestions.html", "Suggestions"),
-        ("review.html", "Flagged for review"),
+        ("review.html", "Flagged for review (current)"),
+        ("flagged.html", "Full flags & repo issues"),
+        ("repo-review.html", "Repo review"),
         ("sources.html", "Sources"),
     ]
     out = []

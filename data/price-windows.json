@@ -1,8 +1,8 @@
 {
   "meta": {
-    "purpose": "Real dated prices so 'cheapest time to book' is answered with evidence, not a guess.",
-    "method": "Booking.com searches for whole weeks, 2 adults, 1 room, USD, sorted by price, captured 2026-11-25. Only properties that appeared in a captured result block are listed.",
-    "caveat": "The user's stated window is 2027-02-15 → 2027-03-23. Everything outside that range is excluded. All five windows below sit inside it.",
+    "purpose": "Dated Booking.com third-party quote snapshots for comparing selected hotel/date pairs; this dataset alone does not establish the cheapest week across Las Vegas.",
+    "method": "Booking.com searches for whole weeks, 2 adults, 1 room, USD, sorted by price, captured 2026-11-25. These are not official property-engine quotes. Only properties that appeared in a captured result block are listed; see F-29 for the conflicting official-engine sample.",
+    "caveat": "The user's stated window is 2027-02-15 → 2027-03-23. Everything outside that range is excluded. The four Booking.com windows below sit inside it; 22 Feb–1 Mar was not sampled in this dataset.",
     "windows": [
       {"id": "W1", "checkin": "2027-02-15", "checkout": "2027-02-22", "label": "15–22 Feb 2027", "note": "Starts on the user's preferred arrival date."},
       {"id": "W2", "checkin": "2027-03-01", "checkout": "2027-03-08", "label": "1–8 Mar 2027", "note": ""},
@@ -20,9 +20,9 @@
     {"hotel": "Waldorf Astoria Las Vegas", "W1": 7980, "W2": 3463, "W3": null, "W4": null, "room_note": "W1 is a 1-bedroom suite; W2 is a Deluxe King"}
   ],
   "derived": {
-    "cheapest_week_overall": {"window": "W3", "label": "8–15 Mar 2027", "evidence": "Venetian $2,407 vs $3,757 (−36%), Palazzo $2,422 vs $3,932 (−38%), Cosmopolitan $2,307 vs $3,433 (−33%)"},
-    "most_expensive_week_overall": {"window": "W1", "label": "15–22 Feb 2027", "evidence": "Every large resort is at its highest captured rate; the week contains US Presidents' Day (15 Feb 2027). The link between the holiday and the price is a reasonable reading of the calendar, but the CAUSE is not verified by any source."},
-    "anomaly": "Nobu at Caesars Palace is the one property that is CHEAPER in W1 ($1,125) than W3 ($1,750). No explanation verified — flagged F-12.",
-    "recommendation": "If the couple can move the trip from 15 Feb to the 8–15 Mar window, the same suites at the Venetian/Palazzo/Cosmopolitan cost roughly $1,300–$1,500 less for seven nights. That is the single largest cost lever in this plan."
+    "lowest_sampled_ota_quotes": {"window": "W3", "label": "8–15 Mar 2027", "scope": "Among the selected Booking.com room/date snapshots only; the same sampled rooms at Venetian ($2,407 vs $3,757), Palazzo ($2,422 vs $3,932), and Cosmopolitan ($2,307 vs $3,433) had lower W3 quotes."},
+    "w1_quote_note": "W1 (15–22 Feb) is higher than W3 in these selected OTA snapshots for Venetian, Palazzo and Cosmopolitan, but this is not an overall market or official-rate finding. Other official property-engine samples conflict.",
+    "anomaly": "Nobu at Caesars Palace is cheaper in the sampled W1 Booking.com quote ($1,125) than W3 ($1,750). No explanation verified — flagged F-12.",
+    "recommendation": "Do not move dates based on this partial OTA snapshot. Compare the same named room and fee/tax basis at each hotel's official booking engine; the official-engine sample conflicts with the OTA result and no market-wide cheapest date is established."
   }
 }
