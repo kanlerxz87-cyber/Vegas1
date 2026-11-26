@@ -1,65 +1,37 @@
 # Las Vegas 2027 — Executive summary
 
-**Two adults · seven nights · between 15 February and 23 March 2027**
-All figures captured 25 November 2026. Live site: <https://kanlerxz87-cyber.github.io/Vegas1/>
+**Two adults · travel window 15 February–23 March 2027 · preferred dates 15–18 February**
+**Current official hotel rate checks captured: 26 November 2026**
+**Live dashboard:** <https://kanlerxz87-cyber.github.io/Vegas1/>
 
----
+## At a glance
 
-## The headline
+- **The trip-length choice is unresolved.** Preferred dates 15–18 February span three nights; the main price sample uses seven-night blocks. Fourteen-night totals have not been verified.
+- **Hotel prices do not support a universal cheapest-week claim.** Official direct booking engines were checked for three Caesars properties over five seven-night windows and a Wynn promotional offer was checked separately. The dated results vary by hotel and room type. Taxes are excluded; nightly-rate × 7 values are arithmetic subtotals, not official checkout totals.
+- **Lowest checked direct nightly rate in this sample:** Horseshoe Resort Room, 1 King, at **$105/night** for 15–22 March 2027 (resort fee included; tax excluded). Its 15–22 February rate was **$128/night**. The official description mentions a marble bathroom but does not explicitly say “private”; verify that requirement and final total before booking. This is not a city-wide best-hotel recommendation.
+- **Caesars Palace:** the standard Julius Deluxe King was **$201/night** on 15–22 February and **$317/night** on 15–22 March. Two other fetched dates displayed only a different hearing-impaired King variant, so those cells are left blank; 1–8 March returned no exact quote. Resort fee is included, taxes excluded. This is not a complete cheapest-week comparison.
+- **Flamingo:** a named two-queen room was **$86/night** on 15–22 February, **$125** on 22 February–1 March, **$132** on 1–8 March, and **$122** on 8–15 March. The exact 15–22 March two-queen quote did not appear in the captured result. The page does not explicitly confirm a private bathroom for this room category.
+- **Wynn promotion:** the official Cyber offer displayed **$677 average/night** for a 640 sq ft Resort King (resort fee included; tax excluded), book by **4 December 2026** for qualifying stays through 30 June 2027. The deadline is verified; the offer is not proven to be the cheapest available rate.
+- **Current decision gate:** the exact room and its private bathroom, full tax-inclusive total, cancellation rules, and trip length need confirmation before selecting a hotel. See the linked **[Flagged for review](https://kanlerxz87-cyber.github.io/Vegas1/review.html)** page.
 
-Three findings change the shape of this trip, and none of them is the thing the brief expected.
+## MICHELIN and transit
 
-**1. The cheapest week is not the preferred week.** Four whole weeks were priced inside the allowed
-envelope. **8–15 March 2027** is cheaper than the 15 February week for every large resort, by about
-a third — the same Luxury King Suite at The Venetian is **$2,407 instead of $3,757**, and at the
-Palazzo $2,422 instead of $3,932. 15 February 2027 is Presidents' Day. Moving the trip one week
-later buys an extra starred dinner for the same money.
+The official 2026 Southwest selection includes **24 Las Vegas listings**: 4 starred (Joël Robuchon 2★; L'Atelier de Joël Robuchon, Restaurant Guy Savoy, and é by José Andrés 1★), 3 Bib Gourmand and 17 Recommended. A recommendation/listing is not a star. Restaurant price-for-two is shown only where the source supports it; otherwise the value is blank or “on request.” Each restaurant entry has an official page link and available video links, plus recorded hours/exceptions where verified.
 
-**2. The requested ranking metric cannot rank anything.** The brief asked to order hotels by how
-many MICHELIN restaurants fall within an hour by public transport. Las Vegas has no subway, and the
-Strip is four miles long with Chinatown three miles west of it — so **every one of the 32 hotels is
-within an hour of all 24 restaurants**. The metric returns 24/24 for all of them, including the ones
-in Henderson. A 20-minute column was added and is what actually separates the field. This is
-disclosed as Q-01 rather than quietly swapped.
+Las Vegas has **no subway**. The plan models RTC bus, Monorail and Vegas Loop. The requested ≤60-minute restaurant count is 24/24 for every hotel, so it cannot rank hotels. A ≤20-minute alternative is shown and labelled as a model. The RTC Route 203 timetable is the only published point-to-point travel time; other transit estimates are not official running times.
 
-**3. The three cheapest hotels fail the brief's own bed requirement.** The LINQ ($564), Flamingo
-($626) and Horseshoe ($717) all headline at "room type assigned on arrival" — the king bed shown is
-not contractual. They cannot be recommended against a stated queen-or-larger requirement.
+## Sources, limits and review
 
-## What to book
+The official quote pages identify the captured dates, room categories and resort-fee/tax basis. Hotel prices are volatile. Several official engines display nightly averages rather than a final stay charge; the site does not invent taxes or a checkout total. Missing exact-date quotes remain blank, not “sold out.” Historical Booking.com numbers remain in the repo for audit context but are explicitly third-party, dated 25 November, and are not used for the current hotel recommendation.
 
-| | Pick | Why |
-|---|---|---|
-| **Best value** | **Desert Rose Resort** — $922 for 7 nights | 9.1 guest score, 646 ft² one-bedroom suite, king bed, private bathroom, **no resort fee**, 15-min walk to the centre-Strip restaurants. The only property that is cheap, well-rated and correctly bedded at once. |
-| **Best if the date can move** | **The Venetian, 8–15 March** — $2,407 | Four MICHELIN listings inside the complex, 646 ft² suite, 23 restaurants within 20 minutes. $1,350 cheaper than the February week. |
-| **Best location for Michelin** | **Anything west of the Strip** — Palms Place, $866 | 24/24 restaurants inside 20 minutes, because it sits between Chinatown and the Strip. The least obvious and most useful answer on the site. |
-| **Avoid** | Red Rock, Green Valley Ranch, Cliffs at Peace Canyon | Correct resorts, 11–17 miles from every dinner. **0** restaurants inside 20 minutes. |
+The dashboard includes an executive overview, hotels, restaurants, activities, transit, open questions, suggestions, sources and a dedicated review page. Suggestions are proposals with trade-offs; none is silently applied.
 
-## The Michelin picture
+### Questions to settle before booking
 
-Las Vegas had **no MICHELIN Guide between 2010 and 2025** — the 2026 Southwest selection is the
-city's first since 2009, which is why so many videos still call restaurants starred when they are
-not. Of 24 listings: **4 starred** (Joël Robuchon 2★; L'Atelier, Guy Savoy, é by José Andrés 1★),
-**3 Bib Gourmand**, **17 Recommended**. There is no three-star restaurant in Las Vegas.
+1. Three nights, seven nights, or up to fourteen?
+2. Must the preferred 15–18 February dates be retained, or can the stay move?
+3. What is the lodging budget including room tax, resort fees, deposits and cancellation penalties?
+4. Which named room category meets the queen-or-larger bed and private-bathroom requirement?
+5. Which starred/listed restaurants or activities are must-dos, and what dietary or accessibility constraints apply?
 
-Only three venues print a real price for two: Michael Mina **$590++**, KAME Omakase **$1,000++**,
-Anima by EDO **$170++** — but Michael Mina's own Bellagio page currently reads *"Monday to Sunday: Closed"*
-with a *Temporarily closed* label and no published reopen date, so that $590 is a price for a service that
-is not running. Do not plan around it. The four starred rooms are all "price on request" — book them first, before
-the hotel, because é has nine seats a night. Hours are confirmed for 17 of the 24 listings and all 24
-have at least one working video link (69 in total).
-
-## What is not known
-
-6 of the 11 register questions remain open. Each blank has a stated route to close it. The two that
-matter: **restaurant prices** (18 of 21 venues publish none) and **whether this is a 3-night or
-7-night trip** — the brief says 1–2 weeks but the preferred dates 15–18 February are three nights,
-which would cut every hotel figure on this site by more than half.
-
-## How to trust any number here
-
-Every figure links to its source. **8 pages, 280 external source links, 0 broken internal links.**
-Twenty-two flags record everything that would not verify cleanly, including two where a creator video
-contradicts the official award (Robuchon "3 stars", Wing Lei "starred"). Where a number could not be
-confirmed the cell is blank. Nothing on the site is an estimate — except the transit minutes, which
-are labelled as estimates on every page that shows them.
+See [Open questions](https://kanlerxz87-cyber.github.io/Vegas1/questions.html) for the current answer and discovery path for each.

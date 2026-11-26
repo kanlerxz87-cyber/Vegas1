@@ -26,7 +26,14 @@ for p in PAGES:
     for bad in ("{{", "}}", "None", "nan"):
         if bad in src:
             warns.append(f"{p.name}: contains literal {bad!r}")
-    # 4. count links
+    # 4. Every data row needs a source link; a deliberately unverified row must say so and carry its flag ID.
+    for table_no, table in enumerate(re.findall(r'<table\b.*?</table>', src, re.S), 1):
+        for row_no, row in enumerate(re.findall(r'<tbody[^>]*>(.*?)</tbody>', table, re.S), 1):
+            for tr_no, tr in enumerate(re.findall(r'<tr\b.*?</tr>', row, re.S), 1):
+                has_source = bool(re.search(r'href="https?://', tr))
+                if not has_source and not ("not verified" in tr.lower() and "F-14" in tr):
+                    fails.append(f"{p.name}: table {table_no} row {tr_no} has no source link or explicit unverified flag")
+    # 5. count links
     ext = len(re.findall(r'href="https?://', src))
     print(f"{p.name:20} {len(src):>7} bytes  {ext:>4} external links")
 

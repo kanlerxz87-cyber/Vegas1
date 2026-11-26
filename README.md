@@ -1,81 +1,59 @@
-# Vegas1 — Las Vegas, seven nights, 2027
+# Vegas1 — Las Vegas trip planner, 2027
 
-A sourced trip plan for **two adults**, seven nights, between **15 February and 23 March 2027**.
+A source-linked planning dashboard for **two adults**, with a requested travel window of **15 February–23 March 2027** and preferred dates **15–18 February 2027**. The preferred window is three nights; the dated hotel comparisons on the site use seven-night stays, so those are kept separate and clearly labelled.
 
-**Live site → <https://kanlerxz87-cyber.github.io/Vegas1/>**
+**Live site:** <https://kanlerxz87-cyber.github.io/Vegas1/>
 
-## What is here
+## Current verified takeaways (captured 26 November 2026)
 
-| Path | What it is |
-|------|-----------|
-| `docs/` | The site source (8 pages, plain HTML + one stylesheet, no framework, no CDN) |
-| `index.html`, `*.html`, `style.css` (repo root) | The **same generated site**, written to the root as well. GitHub Pages on this repo is pinned to `main:/` and the API refuses to repoint it to `/docs`, so the root copy is what visitors actually get. Both are produced by `scripts/gen_site.py` — never edit either by hand. |
-| `data/restaurants.json` | 24 MICHELIN listings with award tier, hours, exceptions, prices, official + YouTube links |
-| `data/hotels.json` | 32 hotels with dated 7-night totals, bed/bathroom fit, Michelin proximity counts |
-| `data/price-windows.json` | The week-by-week price comparison that answers "cheapest time to book" |
-| `data/transit.json` | Monorail / RTC bus / Vegas Loop fares and the zone-to-restaurant minute matrix |
-| `data/activities.json` | Four verified venues with official hours and prices for two |
-| `data/questions.json` | 11-question register: answered, interpreted, still open — each with how to close it |
-| `data/suggestions.json` | 13 decision improvements with honest trade-offs |
-| `scripts/build.py` | Recomputes the Michelin proximity counts from the transit matrix; runs integrity checks |
-| `scripts/gen_site.py` | Renders `docs/` from the JSON. All counts derived, none typed by hand |
-| `scripts/validate.py` | Link and structure checks for the built site |
-| `FLAGS.md` | The 22 things that did not verify cleanly |
-| `executive-summary.md` | The one-page version |
-| `COORDINATION.md` | Multi-session task board, merge record and verification log |
-| `archive/` | The earlier session's build, preserved intact rather than overwritten |
+1. **MICHELIN status:** the 2026 Southwest selection includes 24 Las Vegas listings: 4 starred, 3 Bib Gourmand and 17 Recommended. The star distinction is separate from listings/recommendations; see the MICHELIN page and official links there.
+2. **Transit:** Las Vegas has no subway. The site models RTC buses, the Monorail and Vegas Loop separately. The user's ≤60-minute threshold returns 24/24 restaurants for all hotels, so it cannot rank the properties; a ≤20-minute estimate is shown separately. Only the Route 203 timepoint is a published timetable value; other trip-time figures are estimates.
+3. **Hotel prices:** current direct booking-engine snapshots were captured for selected named room categories and exact seven-night dates. Rates are displayed nightly averages, resort-fee inclusion is identified per property, and taxes are excluded. Any seven-night subtotal is explicitly an arithmetic calculation, not an official checkout total. Private-bathroom confirmation and exact tax-inclusive totals remain open for the quoted rooms.
+4. **No universal cheapest week is supported.** The checked direct-engine price pattern differs by hotel and room type. The site does not present the older Booking.com snapshot as an official hotel price or use it to choose a winner. Re-check the exact room and dates before booking.
+5. **A limited-time official offer:** Wynn's public Cyber offer page showed $677 average/night for a 640 sq ft Wynn Resort King, resort fee included and tax excluded, with a booking deadline of **4 December 2026** for eligible stays through 30 June 2027. This is an offer deadline, not evidence it is the cheapest hotel or stay window.
 
-## Rebuild
+## Site map
+
+| Page | Contents |
+|---|---|
+| `index.html` | Executive dashboard and key decision limits |
+| `hotels.html` | Current official quote sample, 32-property screening inventory, bed/bathroom caveats |
+| `restaurants.html` | 24 MICHELIN entries: starred vs Bib Gourmand vs Recommended, hours, cost-for-two where verified, official and video links |
+| `activities.html` | Venue hours, exceptions, couple pricing and official links |
+| `transit.html` | Operator fares, Route 203 correction, estimated zone matrix and transit caveats |
+| `questions.html` | Answered, interpreted and open questions, with discovery steps |
+| `suggestions.html` | Decision-improvement suggestions and trade-offs |
+| `review.html` | Flagged hotel rate conflicts, private-bathroom verification and official source links |
+| `sources.html` | Official source directory and selected quality flags |
+| `pricing.html` / `verification.html` / `summary.html` | Shortcuts into the primary detail pages |
+
+The GitHub Pages site is published from the repository root on `main`. The generated site is written to both the repository root and `docs/`; both are built from the same JSON data by `scripts/gen_site.py`.
+
+## Data and verification
+
+- `data/direct-rates.json` — official dated rate snapshots captured 2026-11-26, including exact official source URLs, date windows, fee/tax basis, and explicitly blank quote gaps.
+- `data/hotels.json` and `data/price-windows.json` — preserved historical third-party Booking.com snapshots from 2026-11-25. They are **not official hotel rates** and are not used for a current booking recommendation.
+- `data/restaurants.json`, `data/activities.json`, `data/transit.json`, `data/questions.json`, `data/suggestions.json` — core restaurant, activity, transit, questions and suggestions data.
+- `FLAGS.md` — unresolved and historical verification flags. Blank means unverified; do not treat an estimate or snapshot as a final charge.
+- `notes/repo-review-2026-11-26.md` — independent repository review and earlier issues, including the original unqualified price headline and missing review page.
+- `COORDINATION.md` — shared task board and verification log.
+
+### Rebuild and validate
 
 ```bash
-python3 scripts/build.py      # rescore + integrity checks
-python3 scripts/gen_site.py   # render docs/
-python3 scripts/validate.py   # link + structure checks
+python3 scripts/build.py
+python3 scripts/gen_site.py
+python3 scripts/validate.py
 ```
 
-No dependencies beyond the Python 3 standard library. `gen_site.py` writes the site to **both**
-`docs/` and the repo root; `.nojekyll` is present in both so no Jekyll step runs.
+No dependencies beyond Python 3's standard library. `scripts/build.py` checks MICHELIN counts and recalculates hotel proximity from the zone matrix. `scripts/gen_site.py` generates pages. `scripts/validate.py` checks generated page structure and internal anchors; it does **not** fetch all external links or revalidate prices.
 
-## The three findings
+## Decision points still open
 
-1. **8–15 March 2027 is the cheap week.** The same Venetian suite is $2,407 instead of $3,757 — about
-   a third less — because the 15 February week contains Presidents' Day.
-2. **The requested "within 1 hour by subway or bus" ranking cannot rank anything.** Las Vegas has no
-   subway, and every hotel is within an hour of all 24 restaurants. A 20-minute column drives the
-   ranking instead; disclosed as Q-01.
-3. **The three cheapest hotels fail the brief's bed requirement.** LINQ, Flamingo and Horseshoe are
-   all "room type assigned on arrival" — the bed is not guaranteed until check-in.
+- Is the trip three nights (15–18 February) or seven to fourteen nights?
+- Is the preferred arrival date fixed, or can the dates move within the full window?
+- Which named room category is acceptable, and can the hotel confirm a private bathroom in writing?
+- What is the maximum total lodging budget including room taxes, resort fees, and deposit/cancellation terms?
+- Which restaurants or activities are must-dos, and what are the dietary/accessibility requirements?
 
-## A correction worth knowing about
-
-The first transit model in this repository recorded **Chinatown / Spring Mountain Rd as reachable
-only by car or rideshare**. That was wrong. RTC **Route 203** runs the length of Spring Mountain
-Road and its [published timetable](https://rtcws.rtcsnv.com/routePDF/203.pdf) carries a timed stop
-at **Las Vegas Blvd**, giving Decatur to Las Vegas Blvd in **14 minutes**.
-
-It matters because **seven of the 24 MICHELIN listings sit on that one road** — nearly a third of
-the guide. The north Strip therefore reaches Chinatown in about **34 minutes**, not never. This is
-the only *published* travel time in the model; every other minute figure remains an estimate built
-from station lists and route maps, and is labelled as one. Recorded as F-21 in `FLAGS.md`.
-
-## Ground rules this project followed
-
-- **No inferred values.** Blank means unverified. Every blank is listed in `FLAGS.md` and on the
-  Questions page with a route to close it.
-- **Every row cites a source.** 280 external links across 8 pages.
-- **Estimates are labelled.** Only the transit minutes are estimates, and they say so everywhere.
-- **No prior work was discarded.** A parallel session merged a first version to `main` mid-project;
-  it is preserved in `archive/` with a written comparison of why each dataset was superseded.
-
-## Session supplement — session-af795000 (verified rates + standalone site)
-
-An independent session built a second complete site with **official-property booking-engine rates** (Caesars/Wynn/Resorts World direct, sampled 2026-11-25) — preserved and readable at **[docs/session-af795000/](docs/session-af795000/)** (exec summary, hotels, Michelin 24, activities, analysis, suggestions, open questions, flagged register). Machine-readable: `data/session-af795000-*.json`; research backup: `notes/research-log.md`.
-
-Headline verified numbers (7 nights, Feb 15–22, 2027, 2 adults, incl. resort fee, excl. tax): **Flamingo $595 · Horseshoe $763 · Planet Hollywood $1,092 · Paris $1,526 · Caesars Palace $1,582 · Resorts World ≈$1,942 · Wynn $4,739 (Cyber $677/nt — book by Dec 4, 2026)**. The preferred week is the cheapest verified 7-night window in the Feb 15 – Mar 23 range. See the subsite's hotels page for source links per row.
-
-
-## Session supplement — session-48dbf0ae (Booking.com dated quotes + independent site)
-
-A third independent session built a parallel site with **Booking.com dated search quotes** (7 nights Feb 15–22, 2027, before 13.38% tax) and a full MICHELIN cost-for-2 table — preserved at **[docs/session-48dbf0ae/](docs/session-48dbf0ae/)** (exec summary, hotels ranking, 24 restaurants Star/Bib/listed, activities, suggestions Q1–Q10, flagged register, line-by-line `VERIFICATION.md`). Machine-readable: `data/session-48dbf0ae-*.json`.
-
-Headline numbers (7 nights Feb 15–22, 2027, 2 adults, before tax, resort fee included): **Flamingo $625.65 · MGM Grand $1,508.50 · Caesars Palace $1,580 · Bellagio $3,072.30 · Venetian $4,573.16**; preferred 3-night window Feb 15–18: **Flamingo $166.65 · MGM $614.10–$887**. Also verified: Partage official menu ($130/$160/$210), é open Tue–Sun (official), RTC Strip fares $4/$6/$8/$20 with a **fare change proposed 2027-01-31**, and that **no $35 7-day Strip pass exists**. Cross-session price differences vs the canonical/af795000 figures follow the same rule: **check the property's own booking engine for your exact dates before deciding.**
+The site lists the steps to resolve each gap. It does not make assumptions or ask the visitor to provide data in order to browse the findings.

@@ -2,7 +2,7 @@
   "meta": {
     "captured": "2026-11-25",
     "rule": "Hours and prices only where an official page prints them. Blank means not verified. 'per couple' means cost for 2 adults.",
-    "activity_social_rule": "Only links seen on or found for the named venue. Instagram/TikTok handles left blank rather than guessed."
+    "activity_social_rule": "Only social profiles verified by an official venue source or the profile itself are linked. Blank means no account could be confirmed."
   },
   "activities": [
     {
@@ -18,11 +18,14 @@
       "official_url": "https://www.thesphere.com/",
       "booking_hint": "Official tickets route through Ticketmaster: https://www.ticketmaster.com/the-wizard-of-oz-at-sphere-tickets/artist/3552227",
       "youtube": [],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/SphereVegas/",
       "tiktok": "",
       "verified": "partial",
-      "flags": ["F-16"],
-      "notes": "The single most distinctive thing to do in Las Vegas right now. Book only once the 2027 calendar is live."
+      "flags": [
+        "F-16"
+      ],
+      "notes": "The single most distinctive thing to do in Las Vegas right now. Book only once the 2027 calendar is live.",
+      "social_source": "https://www.sphereentertainmentco.com/hello-my-name-is-orbi/"
     },
     {
       "id": "high-roller",
@@ -37,11 +40,12 @@
       "official_url": "https://www.caesars.com/linq/things-to-do/attractions/high-roller",
       "booking_hint": "Ticketmaster artist 2333410",
       "youtube": [],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/highrollervegas/",
       "tiktok": "",
       "verified": "yes",
       "flags": [],
-      "notes": "Happy Half Hour is an open-bar cabin with a bartender for the full rotation."
+      "notes": "Happy Half Hour is an open-bar cabin with a bartender for the full rotation.",
+      "social_source": "https://www.caesars.com/linq"
     },
     {
       "id": "mob-museum",
@@ -56,11 +60,12 @@
       "official_url": "https://themobmuseum.org/",
       "booking_hint": "https://admission.themobmuseum.org/",
       "youtube": [],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/themobmuseum/",
       "tiktok": "",
       "verified": "yes",
       "flags": [],
-      "notes": "A morning-arrival discount and an evening-arrival discount are offered online only on the Premier Pass."
+      "notes": "A morning-arrival discount and an evening-arrival discount are offered online only on the Premier Pass.",
+      "social_source": "https://www.instagram.com/themobmuseum/"
     },
     {
       "id": "neon-museum",
@@ -79,7 +84,8 @@
       "tiktok": "https://www.tiktok.com/@neonmuseumlasvegas",
       "verified": "yes",
       "flags": [],
-      "notes": "Social handles taken directly from the museum's own site footer. 45-minute guided History and Movies tours are add-ons."
+      "notes": "Social handles taken directly from the museum's own site footer. 45-minute guided History and Movies tours are add-ons.",
+      "social_source": "https://neonmuseum.org/"
     },
     {
       "id": "fremont-street",
@@ -94,15 +100,22 @@
       "official_url": "https://www.fremontstreetexperience.com/",
       "booking_hint": "https://fremontstreetexperience.com/calendar#cal",
       "youtube": [],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/fremontstreet/",
       "tiktok": "",
       "verified": "yes",
       "flags": [],
-      "notes": "Free — the obvious way to keep a downtown evening cheap. SlotZilla zipline is a paid add-on on the same site."
+      "notes": "Free — the obvious way to keep a downtown evening cheap. SlotZilla zipline is a paid add-on on the same site.",
+      "social_source": "https://www.instagram.com/fremontstreet/"
     }
   ],
   "not_verified": [
-    {"name": "Bellagio Fountains", "reason": "The official Bellagio page for the fountains returned a fetch error twice. Show times and the current schedule could not be confirmed, so no hours or links are published here. Free to watch; check https://www.bellagio.com/ on arrival."},
-    {"name": "Cirque du Soleil / other production shows", "reason": "Booking.com listed 'Cirque Du Soleil Admission' from $158.65 per person, but that is a reseller listing with no show name, no venue and no 2027 date. Not published as fact."}
+    {
+      "name": "Bellagio Fountains",
+      "reason": "The official Bellagio page for the fountains returned a fetch error twice. Show times and the current schedule could not be confirmed, so no hours or links are published here. Free to watch; check https://www.bellagio.com/ on arrival."
+    },
+    {
+      "name": "Cirque du Soleil / other production shows",
+      "reason": "Booking.com listed 'Cirque Du Soleil Admission' from $158.65 per person, but that is a reseller listing with no show name, no venue and no 2027 date. Not published as fact."
+    }
   ]
 }

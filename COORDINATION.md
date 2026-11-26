@@ -1,7 +1,7 @@
 # COORDINATION.md — Shared Task Board
 
 **Repo:** kanlerxz87-cyber/Vegas1
-**Last updated:** 2026-11-25
+**Last updated:** 2026-11-26
 **Purpose:** multi-session coordination so parallel agents never edit the same files.
 Read this file *before* starting any task. Claim a task by writing your session ID below,
 then commit and push that claim immediately.
@@ -16,11 +16,9 @@ then commit and push that claim immediately.
 | session-planner-01 (arena/4d41b902-vegas1) | 2026-11-25 | Independent full build: 24 Michelin restaurants, 9 ranked hotels, 8 activities, pricing, verification, summary, suggestions in `assets/` + root pages; integrated into canonical `main` site | `arena/4d41b902-vegas1` |
 | session-48dbf0ae (arena/48dbf0ae-vegas1) | 2026-11-25 | Independent research + build (24 MICHELIN restaurants w/ cost-for-2, 9 dated Booking.com 7-night quotes, 9 activities, flags register, line-by-line VERIFICATION log); integrated as archived subsite `docs/session-48dbf0ae/` — live root site untouched | `arena/48dbf0ae-vegas1` |
 | arena-b54b3346-vegas1 | 2026-11-26 | Repo review + line-by-line verification spot-check; writes `notes/repo-review-2026-11-26.md` only (no change to live site or `data/`) | `arena/b54b3346-vegas1` |
+| arena-c9eed9ad-vegas1 | 2026-11-26 | Final integration: current official rate audit, mobile Flagged-for-Review page, source-row checks, social links | `arena/c9eed9ad-vegas1` |
 
-> **Status note:** T02–T08 were prematurely marked `done` on first write. As of this commit the research
-> is complete in-session but **no `data/` files exist yet**, so all tasks are `in progress` until the JSON
-> tables are written and verified. No other sessions are active, so this session owns every scope; the
-> integration rule in §8 is therefore satisfied by a single integrating session (this one).
+> **Status note (historical correction):** T02–T11 were completed and integrated by the earlier sessions; canonical `data/` files and `docs/` pages exist. This active session is the final integration owner for the current branch. The new exact-date hotel checks and newly found gaps are recorded below; older task rows are historical records, not open work.
 
 ## Rules (summary)
 
@@ -55,9 +53,9 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 | T09 | Static site build (mobile-first dashboard) | done | arena-edcfa7a0-vegas1 | `docs/**`, `scripts/**` | No framework, no external CDN calls, no build step at deploy time. |
 | T10 | Verification pass + Flagged for Review page | done | arena-edcfa7a0-vegas1 | `docs/verification.html`, `FLAGS.md` | |
 | T11 | Integration + GitHub Pages publish | done | arena-edcfa7a0-vegas1 | `docs/**`, Pages settings | Single integrating session for this effort; no other session active. |
-| T1–T9 | Independent full build (restaurants, hotels, activities, pricing, verification, summary, suggestions) | done | session-planner-01 | `assets/**`, root `*.html` | Separate JS-driven build; integrated into canonical `main` site via merge (see handoff log). |
-| T10 | Integrate, re-verify, deploy GitHub Pages | done | session-planner-01 | repo-wide | Merged independent build into canonical `main` site; supplementary pages linked from nav. |
-| T1–T9 (independent) | Independent verified build + link-check pass | done | session-48dbf0ae | `docs/session-48dbf0ae/**`, `data/session-48dbf0ae-*.json` | Claimed on a fork-era task board that predates this one; no canonical file touched. See session record at end of file. |
+| P01–P09 | Independent full build (restaurants, hotels, activities, pricing, verification, summary, suggestions) | done | session-planner-01 | `assets/**`, root `*.html` | Separate JS-driven build; integrated into canonical `main` site via merge (see handoff log). |
+| P10 | Integrate, re-verify, deploy GitHub Pages | done | session-planner-01 | repo-wide | Merged independent build into canonical `main` site; supplementary pages linked from nav. |
+| S48-01–S48-09 | Independent verified build + link-check pass | done | session-48dbf0ae | `docs/session-48dbf0ae/**`, `data/session-48dbf0ae-*.json` | Claimed on a fork-era task board that predates this one; no canonical file touched. See session record at end of file. |
 | R01 | Repo review: live-site spot-check, link audit, irregularity register | done | arena-b54b3346-vegas1 | `notes/repo-review-2026-11-26.md`, `COORDINATION.md` | Done 2026-11-26. Live site, `data/`, `docs/`, root pages NOT edited. Irregularities F-01–F-07 flagged for owner review. Sources: michelin.com 2026 Southwest press release; GitHub Pages API; build/validate logs. RTC fares fetch failed (F-04). |
 
 ## Correction record — RTC Route 203 — 2026-11-25
@@ -245,6 +243,46 @@ edited or discarded. Integrated additively per the `session-af795000` pattern:
 
 ## Session claim — arena/c9eed9ad-vegas1 — 2026-11-26
 
-**Scope:** final integration / price-source audit for the active task. This session is the sole active owner; all previously listed task owners are completed historical sessions. Files: `COORDINATION.md`, `data/direct-rates.json`, `data/review-items.json`, `scripts/gen_site.py`, generated root HTML and `docs/*.html`, `FLAGS.md`, `README.md`, `executive-summary.md`. No parallel branch/worktree will be created because Arena has fixed this session to `arena/c9eed9ad-vegas1`.
+**Scope:** final integration / price-source audit on the Arena-fixed branch. Files: `COORDINATION.md`, `data/direct-rates.json`, `data/activities.json`, `data/suggestions.json`, `scripts/gen_site.py`, `scripts/validate.py`, generated root HTML and `docs/*.html`, `pages/flagged.html`, `FLAGS.md`, `README.md`, `executive-summary.md`. Review findings are embedded in `data/direct-rates.json`; no separate `review-items.json` was created. No parallel branch/worktree was created because Arena fixes the session to `arena/c9eed9ad-vegas1`.
 
-**Tasks:** verify current official hotel booking-engine quotes for the preferred 15–22 Feb 2027 week; separate official direct quotes from older third-party snapshots; add a linked Flagged for Review route; re-run site build/link validation. Status: in progress.
+**Tasks:** verify current official hotel booking-engine quotes for the preferred 15–22 Feb 2027 week and like-for-like windows; separate official direct quotes from old third-party snapshots; add a linked Flagged for Review route and verified activity social links; enforce source-link and internal-anchor checks. Status: done; final validation details and deployment follow below.
+
+## Final integration — arena/c9eed9ad-vegas1 — 2026-11-26
+
+**Status: done (pending this branch's PR merge/deploy).** Work stayed on `arena/c9eed9ad-vegas1`; the required claim was committed and pushed there. No other session had an active overlapping scope. Historical session task IDs have been prefixed (`P*`, `S48-*`) to remove duplicate identifiers without rewriting their records.
+
+### Direct hotel quote checks (official booking engines; fetched 2026-11-26)
+
+Basis: two adults, one room, seven nights, exact 2027 date windows. Caesars pages state each quoted nightly average includes resort fee and excludes tax; Wynn's public Cyber offer states its displayed average includes resort fee and excludes tax; Resorts World has contradictory resort-fee legends. No fetched booking page exposed a final tax-inclusive seven-night checkout total. The hotel's displayed whole-dollar average multiplied by seven is shown only as a clearly labeled arithmetic subtotal, not as an official final price.
+
+- **Flamingo — Flamingo Room | 2 Queens:** $86/night for 15–22 Feb; $125 for 22 Feb–1 Mar; $132 for 1–8 Mar; $122 for 8–15 Mar. Each exact-date booking-engine URL is stored beside the value in `data/direct-rates.json`. The 15–22 Mar exact named-room quote was not returned and remains blank.
+- **Horseshoe — Resort Room | 1 King:** $128, $213, $294, $145 and $105/night across 15–22 Feb, 22 Feb–1 Mar, 1–8 Mar, 8–15 Mar and 15–22 Mar respectively. All five exact-date quotes are linked in `data/direct-rates.json`; among this sampled room/date set the 15–22 Mar displayed average is lowest.
+- **Caesars Palace — Julius Deluxe Room | 1 King | Non-Smoking:** $201/night on 15–22 Feb and $317/night on 15–22 Mar. On the 22 Feb–1 Mar and 8–15 Mar result pages the visible King quote was a hearing-impaired room variant, so it was left blank rather than treated as the same room. The 1–8 Mar request returned no usable exact-date standard-room quote. The two comparable exact-room quotes are linked in `data/direct-rates.json`.
+- **Wynn Las Vegas — Wynn Resort King:** official dated offer showed $677 average/night; resort fee included, tax excluded. Official offer terms: book 20 Nov–4 Dec 2026 for stays through 30 Jun 2027. This is a time-limited offer, not a proven cheapest property/date. Source: https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0 · terms: https://www.wynnlasvegas.com/terms-and-conditions/2026-cyber-sale-offer-public
+- **Resorts World Hilton tower:** the official calendar itself printed both “excludes daily resort fee and taxes” and “includes $55 daily resort fee and excludes taxes.” Exact total intentionally left blank and flagged F-30: https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0
+
+**Requirement gap:** the direct booking cards name bed sizes, but do not explicitly call the exact room-category bathroom private. The site does not claim that requirement is verified; F-31 asks for written confirmation. No fully compliant hotel winner is asserted from the partial sample.
+
+### Other integration fixes
+
+- Removed Booking.com price amounts from the decision-table view; retained them only in the historical dataset for audit context. The old unqualified “March is cheapest / save $1,350” headline was replaced with a per-property, room-specific caveat (F-29).
+- Published a generated **Flagged for review** page at `review.html` and linked it from every primary navigation. F-29–F-31 are displayed with official source links; historical F-01–F-28 remain in `FLAGS.md` and the Sources page.
+- Added official venue social links for Sphere (official Sphere corporate release identifies @SphereVegas), High Roller (Caesars/official profile), The Mob Museum (official profile), The Neon Museum (official site), and Fremont Street Experience (profile identifies itself as official). Sources are listed in `sources.html`; details are in `data/activities.json`.
+- Fixed relative links on the old unpublished `pages/flagged.html` and labeled it as a historical supplement; it routes users to the canonical review page.
+- `scripts/validate.py` now checks that each generated data-table row has an external source link, except a row explicitly left unverified with an issue ID.
+
+### Verification performed
+
+- `python3 -m py_compile scripts/gen_site.py scripts/validate.py` — passed.
+- `python3 scripts/build.py` — passed integrity checks (24 restaurants; 4 starred, 3 Bib, 17 Recommended; 32 hotels; ≤60-minute count 24 for all; rescoring consistent).
+- `python3 scripts/gen_site.py` — 12 pages generated to root and `docs/`.
+- `python3 scripts/validate.py` — 12 pages, 0 failures, 0 warnings; 338 external links counted (not all fetched).
+- Separate repo-wide local relative-HTML-link scan — 0 broken links outside preserved archived subsites; this also caught/fixed the historical `pages/flagged.html` path defects.
+- Official pages fetched during the pass: Caesars Palace, Flamingo, Horseshoe exact-date booking engines; Wynn exact-date room/offer page and terms; Resorts World exact-date calendar; Sphere official page and corporate release; High Roller official page; The Mob Museum official page; Neon Museum official page; Fremont Street Experience official page; official Instagram profiles for Sphere, High Roller, Mob Museum and Fremont Street. Individual URLs are recorded in the generated source page and the relevant JSON rows.
+
+### Remaining limitations / irregularities
+
+- Official prices change and the sampled rates exclude taxes. Exact tax-inclusive totals and private-bathroom confirmation are left unverified. Recheck at checkout.
+- The brief's 15–18 Feb preference is three nights, while the hotel comparison is seven nights; fourteen-night totals are not priced.
+- The >300 external links are counted, not exhaustively fetched. `validate.py` performs no live external-network checks.
+- GitHub Pages currently deploys `main:/`; this branch must be merged before the new pages become public. PR and deploy outcome will be added once completed.
