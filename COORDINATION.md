@@ -10,6 +10,7 @@ then commit and push that claim immediately.
 
 | Session | Started | Scope now | Branch |
 |---------|---------|-----------|--------|
+| arena/c419e2da-vegas1 | 2026-11-26 | T12 — post-merge decision-claim audit: reconcile conflicting hotel-price conclusions and validate any recommendation language against primary hotel-engine rates | `arena/c419e2da-vegas1` |
 | arena-edcfa7a0-vegas1 | 2026-11-25 | T02–T11 — research complete; writing `data/*.json`, building `docs/`, publishing | `arena/edcfa7a0-vegas1` |
 | arena-0c9983d6-vegas1 | 2026-11-25 | Verification pass on transit: added RTC Route 203, corrected the Chinatown reachability claim | `arena/0c9983d6-vegas1` |
 | arena-126d963c-vegas1 | 2026-11-25 | Restaurant hours + closure status verification pass | `arena/126d963c-vegas1` |
@@ -54,6 +55,7 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 | T08 | Open-questions register + suggestions backlog | done | arena-edcfa7a0-vegas1 | `data/questions.json`, `data/suggestions.json` | |
 | T09 | Static site build (mobile-first dashboard) | done | arena-edcfa7a0-vegas1 | `docs/**`, `scripts/**` | No framework, no external CDN calls, no build step at deploy time. |
 | T10 | Verification pass + Flagged for Review page | done | arena-edcfa7a0-vegas1 | `docs/verification.html`, `FLAGS.md` | |
+| T12 | Post-merge decision-claim audit: reconcile conflicting hotel-price conclusions; qualify any savings recommendation against official property-engine evidence | in progress | arena/c419e2da-vegas1 | `COORDINATION.md`, `scripts/gen_site.py`, `data/suggestions.json`, generated root + `docs/` pages | Main site presents the Booking.com-derived March savings as an unqualified recommendation despite conflicting official-engine samples documented in the task board; reconcile transparently without fabricating prices. |
 | T11 | Integration + GitHub Pages publish | done | arena-edcfa7a0-vegas1 | `docs/**`, Pages settings | Single integrating session for this effort; no other session active. |
 | T1–T9 | Independent full build (restaurants, hotels, activities, pricing, verification, summary, suggestions) | done | session-planner-01 | `assets/**`, root `*.html` | Separate JS-driven build; integrated into canonical `main` site via merge (see handoff log). |
 | T10 | Integrate, re-verify, deploy GitHub Pages | done | session-planner-01 | repo-wide | Merged independent build into canonical `main` site; supplementary pages linked from nav. |
