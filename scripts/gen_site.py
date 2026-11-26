@@ -160,7 +160,7 @@ def build_index():
   The brief asked for hotels ranked by price, location and how many MICHELIN restaurants are within an hour
   by public transport — and for every number to be traceable to a source.</p>
   <p>Hotel, restaurant, transit and MICHELIN venue details were captured from official pages on
-  <strong>25 November 2026</strong>. The main hotel-rate comparison is an explicitly labelled <strong>Booking.com snapshot</strong>, not a hotel-issued quote; a separate sample of official property engines conflicts for some date comparisons. Where a value could not be confirmed from its stated source it is blank and flagged on the <a href="sources.html#flags">Sources &amp; flags</a> page. Transit times are labelled estimates, not official running times.</p>
+  <strong>25 November 2026</strong>. The main hotel-rate comparison is an explicitly labelled <strong>Booking.com snapshot</strong>, not a hotel-issued quote; a separate sample of official property engines conflicts for some date comparisons. Where a value could not be confirmed from its stated source it is blank and written up on the <a href="flagged.html">Flagged for review</a> page, with the official link to check it against. Transit times are labelled estimates, not official running times.</p>
 </section>
 
 <section class="grid4">{card_html}</section>
@@ -482,7 +482,7 @@ a missing entry and it is not an average. Only three restaurants print a real pe
     <li><strong>Michael Mina</strong> — $295++ per person, 10-course tasting → <strong>$590++</strong> for two,
       <strong>but the venue is currently closed</strong>: its own Bellagio page reads &ldquo;Monday to Sunday: Closed&rdquo;
       and labels it <em>Temporarily closed</em>, with no reopen date published. Treat this as a price for a service that
-      is not running, not as a bookable dinner (FLAGS.md <a href="sources.html#flags">F-23</a>).</li>
+      is not running, not as a bookable dinner (<a href="flagged.html#F-23">F-23</a>).</li>
     <li><strong>KAME Omakase</strong> — $500 per person, signature omakase → <strong>$1,000++</strong> for two.</li>
     <li><strong>Anima by EDO</strong> — $85 per person tasting → <strong>$170++</strong> for two.</li>
   </ul>
