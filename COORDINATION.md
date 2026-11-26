@@ -1,7 +1,7 @@
 # COORDINATION.md — Shared Task Board
 
 **Repo:** kanlerxz87-cyber/Vegas1
-**Last updated:** 2026-11-25
+**Last updated:** 2026-11-26
 **Purpose:** multi-session coordination so parallel agents never edit the same files.
 Read this file *before* starting any task. Claim a task by writing your session ID below,
 then commit and push that claim immediately.
@@ -15,6 +15,7 @@ then commit and push that claim immediately.
 | arena-126d963c-vegas1 | 2026-11-25 | Restaurant hours + closure status verification pass | `arena/126d963c-vegas1` |
 | session-planner-01 (arena/4d41b902-vegas1) | 2026-11-25 | Independent full build: 24 Michelin restaurants, 9 ranked hotels, 8 activities, pricing, verification, summary, suggestions in `assets/` + root pages; integrated into canonical `main` site | `arena/4d41b902-vegas1` |
 | session-48dbf0ae (arena/48dbf0ae-vegas1) | 2026-11-25 | Independent research + build (24 MICHELIN restaurants w/ cost-for-2, 9 dated Booking.com 7-night quotes, 9 activities, flags register, line-by-line VERIFICATION log); integrated as archived subsite `docs/session-48dbf0ae/` — live root site untouched | `arena/48dbf0ae-vegas1` |
+| arena-f527b427-vegas1 | 2026-11-26 | **Repo review + line-by-line audit + Flagged-for-Review page + integration.** Scope: correct the Venetian/“cheapest week” headline, Route 203 timing wording, Michael Mina closure source, per-night reconciliation flags; add a live `flagged.html`; regenerate site; PR to `main`. | `arena/f527b427-vegas1` |
 
 > **Status note:** T02–T08 were prematurely marked `done` on first write. As of this commit the research
 > is complete in-session but **no `data/` files exist yet**, so all tasks are `in progress` until the JSON
@@ -57,6 +58,7 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 | T1–T9 | Independent full build (restaurants, hotels, activities, pricing, verification, summary, suggestions) | done | session-planner-01 | `assets/**`, root `*.html` | Separate JS-driven build; integrated into canonical `main` site via merge (see handoff log). |
 | T10 | Integrate, re-verify, deploy GitHub Pages | done | session-planner-01 | repo-wide | Merged independent build into canonical `main` site; supplementary pages linked from nav. |
 | T1–T9 (independent) | Independent verified build + link-check pass | done | session-48dbf0ae | `docs/session-48dbf0ae/**`, `data/session-48dbf0ae-*.json` | Claimed on a fork-era task board that predates this one; no canonical file touched. See session record at end of file. |
+| T12 | Repo review, line-by-line audit of headline claims, Flagged-for-Review page, integration + PR | in progress | arena-f527b427-vegas1 | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `data/hotels.json`, `data/price-windows.json`, `data/questions.json`, `data/suggestions.json`, `data/transit.json`, `data/travel_matrix.json`, `data/restaurants.json`, `data/review-flags.json` (new), `scripts/gen_site.py`, `docs/**`, root `*.html` | Claimed 2026-11-26. Other sessions: please log requests here rather than editing these files. |
 
 ## Correction record — RTC Route 203 — 2026-11-25
 
