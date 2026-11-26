@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "captured": "2026-11-26",
+    "stay_windows": [
+      {
+        "id": "W1",
+        "label": "15–22 Feb 2027",
+        "checkin": "2027-02-15",
+        "checkout": "2027-02-22"
+      },
+      {
+        "id": "W2",
+        "label": "22 Feb–1 Mar 2027",
+        "checkin": "2027-02-22",
+        "checkout": "2027-03-01"
+      },
+      {
+        "id": "W3",
+        "label": "1–8 Mar 2027",
+        "checkin": "2027-03-01",
+        "checkout": "2027-03-08"
+      },
+      {
+        "id": "W4",
+        "label": "8–15 Mar 2027",
+        "checkin": "2027-03-08",
+        "checkout": "2027-03-15"
+      },
+      {
+        "id": "W5",
+        "label": "15–22 Mar 2027",
+        "checkin": "2027-03-15",
+        "checkout": "2027-03-22"
+      }
+    ],
+    "basis": "Official hotel booking engines; two adults, one room, seven nights. Displayed nightly average includes the resort fee and excludes taxes where the page says so. Exact final stay totals, taxes, and room availability can change; the 7-night arithmetic subtotal is not an exact checkout quote.",
+    "method": "Only room categories explicitly named in the official engine results are included. Blank means the requested exact room/date quote did not appear in the fetched page; it does not mean sold out. Hotel engines displayed nightly rates, not a final seven-night checkout total, so subtotals are arithmetic (displayed rounded average × 7) and are labeled as such. A Caesars Palace page sometimes exposed only a hearing-impaired King variant; those values are not substituted for the standard King room and remain blank in the comparison.",
+    "official_offer_deadline": {
+      "hotel": "Wynn Las Vegas",
+      "offer": "Wynn Cyber Exclusive + Up to $300 Resort Credit",
+      "book_by": "2026-12-04",
+      "stay_dates": "2026-11-22 through 2027-06-30",
+      "room": "Wynn Resort King, 640 sq ft",
+      "displayed_average_nightly": 677,
+      "resort_fee": "Included",
+      "taxes": "Excluded",
+      "source": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
+      "terms_source": "https://www.wynnlasvegas.com/terms-and-conditions/2026-cyber-sale-offer-public",
+      "status": "Official offer and deadline confirmed on 2026-11-26. Not evidence that this is the lowest available price across all hotels or dates."
+    }
+  },
+  "hotels": [
+    {
+      "name": "Flamingo Las Vegas",
+      "room": "Flamingo Room | 2 Queens",
+      "bed": "2 queen beds (official room category)",
+      "private_bathroom": "Not explicitly confirmed for this exact category; verify before booking.",
+      "resort_fee": "$50/night included in displayed rate; taxes excluded.",
+      "rates": {
+        "W1": 86,
+        "W2": 125,
+        "W3": 132,
+        "W4": 122,
+        "W5": null
+      },
+      "source_urls": {
+        "W1": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=flv&numberOfAdults=2&numberOfRooms=1",
+        "W2": "https://www.caesars.com/book/room-list?arrivalDate=02/22/2027&departureDate=03/01/2027&dateSearchFormat=exact-dates&propCode=flv&numberOfAdults=2&numberOfRooms=1",
+        "W3": "https://www.caesars.com/book/room-list?arrivalDate=03/01/2027&departureDate=03/08/2027&dateSearchFormat=exact-dates&propCode=flv&numberOfAdults=2&numberOfRooms=1",
+        "W4": "https://www.caesars.com/book/room-list?arrivalDate=03/08/2027&departureDate=03/15/2027&dateSearchFormat=exact-dates&propCode=flv&numberOfAdults=2&numberOfRooms=1"
+      }
+    },
+    {
+      "name": "Horseshoe Las Vegas",
+      "room": "Resort Room | 1 King",
+      "bed": "1 king bed (official room category)",
+      "private_bathroom": "A marble bathroom is described for this room; the page does not explicitly use the word private. Verify before booking.",
+      "resort_fee": "$50/night included in displayed rate; taxes excluded.",
+      "rates": {
+        "W1": 128,
+        "W2": 213,
+        "W3": 294,
+        "W4": 145,
+        "W5": 105
+      },
+      "source_urls": {
+        "W1": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=blv&numberOfAdults=2&numberOfRooms=1",
+        "W2": "https://www.caesars.com/book/room-list?arrivalDate=02/22/2027&departureDate=03/01/2027&dateSearchFormat=exact-dates&propCode=blv&numberOfAdults=2&numberOfRooms=1",
+        "W3": "https://www.caesars.com/book/room-list?arrivalDate=03/01/2027&departureDate=03/08/2027&dateSearchFormat=exact-dates&propCode=blv&numberOfAdults=2&numberOfRooms=1",
+        "W4": "https://www.caesars.com/book/room-list?arrivalDate=03/08/2027&departureDate=03/15/2027&dateSearchFormat=exact-dates&propCode=blv&numberOfAdults=2&numberOfRooms=1",
+        "W5": "https://www.caesars.com/book/room-list?arrivalDate=03/15/2027&departureDate=03/22/2027&dateSearchFormat=exact-dates&propCode=blv&numberOfAdults=2&numberOfRooms=1"
+      }
+    },
+    {
+      "name": "Caesars Palace",
+      "room": "Julius Deluxe Room | 1 King | Non-Smoking",
+      "bed": "1 king bed (official room category)",
+      "private_bathroom": "Room description names a stone-and-glass bathroom; the page does not explicitly use the word private. Verify before booking.",
+      "resort_fee": "$55/night included in displayed rate; taxes excluded.",
+      "rates": {
+        "W1": 201,
+        "W2": null,
+        "W3": null,
+        "W4": null,
+        "W5": 317
+      },
+      "source_urls": {
+        "W1": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
+        "W5": "https://www.caesars.com/book/room-list?arrivalDate=03/15/2027&departureDate=03/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1"
+      }
+    }
+  ],
+  "review_items": [
+    {
+      "id": "F-29",
+      "severity": "high",
+      "title": "Hotel price conclusions conflict across source and capture dates",
+      "finding": "The older Booking.com sample and official-engine notes from 2026-11-25 do not agree on a universal cheapest week. A fresh official-engine check on 2026-11-26 found property-specific rates: the same named Horseshoe King category was lowest on 15–22 Mar among five quoted windows ($105/night). At Caesars Palace the named standard King category was quoted at $201/night for 15–22 Feb and $317/night for 15–22 Mar; two other pages showed a different hearing-impaired King variant and were left blank for like-for-like comparison, and 1–8 Mar returned no exact quote. No city-wide or universal cheapest week can be supported by this sample. Direct quotes are volatile and exclude tax.",
+      "action": "Compare the exact room category and dates on the hotel's own checkout page immediately before booking; do not rely on the old 'March is cheapest' or 'February is cheapest' headline. For a valid comparison, match the named room category as well as the dates.",
+      "source_urls": [
+        "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
+        "https://www.caesars.com/book/room-list?arrivalDate=02/22/2027&departureDate=03/01/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
+        "https://www.caesars.com/book/room-list?arrivalDate=03/08/2027&departureDate=03/15/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
+        "https://www.caesars.com/book/room-list?arrivalDate=03/15/2027&departureDate=03/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
+        "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=blv&numberOfAdults=2&numberOfRooms=1",
+        "https://www.caesars.com/book/room-list?arrivalDate=03/15/2027&departureDate=03/22/2027&dateSearchFormat=exact-dates&propCode=blv&numberOfAdults=2&numberOfRooms=1"
+      ]
+    },
+    {
+      "id": "F-30",
+      "severity": "medium",
+      "title": "Resorts World rate page contains contradictory resort-fee legends",
+      "finding": "The official dated Hilton-tower results page displays both 'Calendar pricing excludes daily resort fee and taxes' and 'Calendar pricing includes $55 daily resort fee and excludes taxes.' A nightly calendar value cannot safely be converted to a comparable seven-night stay price until the legend is resolved.",
+      "action": "Get a final checkout total or written confirmation from the property; leave the total blank until then.",
+      "source_urls": [
+        "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0"
+      ]
+    },
+    {
+      "id": "F-31",
+      "severity": "medium",
+      "title": "Private bathroom requirement not stated on the live direct-rate cards",
+      "finding": "Current official quote cards name a bed category and describe a bathroom for Horseshoe and Caesars; they do not explicitly state that the bathroom is private. Room assignment rates at Flamingo do not guarantee a bed category at all. The bed and private-bath requirement must be confirmed together against the exact booked category.",
+      "action": "Confirm the exact room's bed and private bathroom in writing before payment. Do not select an unassigned room rate for this brief.",
+      "source_urls": [
+        "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=blv&numberOfAdults=2&numberOfRooms=1",
+        "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
+        "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=flv&numberOfAdults=2&numberOfRooms=1"
+      ]
+    }
+  ]
+}
