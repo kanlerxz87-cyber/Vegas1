@@ -242,3 +242,9 @@ edited or discarded. Integrated additively per the `session-af795000` pattern:
 
 **No work discarded in this merge:** canonical root site, `docs/` canonical pages, `data/*.json`,
 `scripts/`, `FLAGS.md`, `archive/` all kept from `main`.
+
+## PR and merge record — arena-b54b3346-vegas1 (R01) — 2026-11-26
+
+- PR: https://github.com/kanlerxz87-cyber/Vegas1/pull/19 — merged with `--merge` at 2026-11-26T21:53:11Z, merge commit `c466c8b4fa88c58d95eaea23913fcdf1f05b4188`.
+- Pages after merge: `pages build and deployment` on `main` completed with success; Pages API status `built`.
+- Flagged irregularities F-01–F-07 did not block the merge. They are listed in `notes/repo-review-2026-11-26.md` and in this file.
