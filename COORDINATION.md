@@ -749,3 +749,11 @@ Scope extension for integration: `scripts/check_evidence.py` regression updated 
 Second upstream integration: main advanced through PR #44/#49 to `05b0361`, adding dining/cost pages and menu research. Kept both new page categories, all canonical price/social data, both source audit logs and the new legacy dining builder. Primary decision views continue to exclude assumed à-la-carte meal sizes or all-in totals; current fixed-price menus rechecked where possible. Own flags use session-unique EC-01–EC-07 because upstream allocated F-64–F-66 during research. No upstream F-ID is reused.
 
 Two requested `git pull --rebase` attempts were aborted without losing changes: merge-preserving replay hit a filesystem filename-length limit in historical merge labels; plain replay conflicted in historical coordination commits. Upstream was integrated using explicit merges instead. No history reset, alternate branch, force push or discarded dataset was used.
+
+### T-ec1d72e2 regression and summary checkpoint
+
+Updated the established `check_evidence.py` entry point to run 11 standard-library regression tests for all 15 pages, 33 hotel rows, blank unsupported hotel fields, fixed-menu arithmetic, every table row's reference, retained social provenance, local anchors, accessibility markup and root/docs parity. `validate.py` additionally detects broken local anchors, duplicate IDs and publication drift. Reconciled README/executive summary with the strict renderer; assumed meal budgets are not current recommendations. Build/generate/validate and all 11 tests pass (15 pages, 0 failures, 0 warnings, 461 external-link occurrences). These are offline checks, not exhaustive remote verification.
+
+Browser attempt: Playwright + serverless Chromium installed only under `/tmp`; launch blocked by missing OS `libnspr4`, `libnss3`, `libnssutil3`. No visual/mobile rendering result is claimed. HTML responsive-table/viewport/label tests pass; a local preview binds 0.0.0.0:8000.
+
+Third pull-rebase replay was also aborted safely because shallow ancestry attempted to replay historical initial commits. Explicit integration merges and normal fast-forward pushes are used instead; no force push. New upstream main `5ceb3d6` will be integrated before publication; PR #54 is another session's active work and will not be merged/closed by this session.
