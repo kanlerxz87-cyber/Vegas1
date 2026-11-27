@@ -657,3 +657,23 @@ While PR #44 was open, `main` advanced again through PRs #45, #46 and #48 (activ
 Checks repeated after the second merge: `build.py`, `gen_site.py`, `validate.py` → **14 pages · 0 failures · 0 warnings**;
 `check_evidence.py` **PASS**; `check_links.py` reports Instagram blocks (expected — the platform refuses automated
 requests) and is not a pass/fail gate.
+
+### Post-merge live check — T19 follow-up (2026-11-27)
+
+[PR #44](https://github.com/kanlerxz87-cyber/Vegas1/pull/44) **MERGED** 2026-11-27T17:41:44Z, merge commit
+`af5e762177e7ec3a567360998333c6b423180e67`. Pages build for that commit reached **built** with `error: null`
+and `pages.status = built`.
+
+Fetching the live pages with a cache-busting query (`?v=af5e762`) confirmed:
+
+- `dining.html` served the three totals — **$712.30 / $1,025.06 / $1,855.06** — and the page's "no hotel figure"
+  statement;
+- `restaurants.html` served the Guy Savoy estimate with its menu link, Anima's `$170 (exact)`, Esther's Kitchen's
+  estimate and its `Daily / times not published` row, and the 21 Instagram links.
+
+**One bug was found by reading the live page, and fixed here:** the RTC row printed **$6.00** instead of $120.00.
+The generator parsed the fare note with `split("3-day")`, which after another session reworded the note was
+followed by "Nevada local fares are $1" — so it multiplied the *residential* fare. Replaced with a label-anchored
+regular expression that reads the amount attached to the label ("$20 3-day"), and `check_evidence.py` now asserts
+both `$120.00` (RTC) and `$119.90` (Monorail) appear. The three dining totals were unaffected because they use the
+Monorail line. This is recorded rather than quietly patched: a live-page read found what the offline validator could not.

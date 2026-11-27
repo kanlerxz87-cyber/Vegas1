@@ -74,6 +74,8 @@ def main():
     dining = (ROOT / 'dining.html').read_text()
     assert '$712.30' in dining and '$1,025.06' in dining and '$1,855.06' in dining
     assert 'No hotel figure is used' in dining
+    assert '$120.00' in dining, 'RTC three-day pass total lost (fare-note parsing regression)'
+    assert '$119.90' in dining, 'monorail seven-day total lost'
     mob = next(a for a in activities if a['id'] == 'mob-museum')
     assert 'daily 9:00 AM–9:00 PM' in mob['hours']
     assert next(a for a in activities if a['id'] == 'high-roller')['hours'] == ''
