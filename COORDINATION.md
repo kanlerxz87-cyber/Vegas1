@@ -778,3 +778,12 @@ Monorail line. This is recorded rather than quietly patched: a live-page read fo
 then #45/#46/#48). Every merge was resolved by regenerating HTML rather than hand-merging it, and no other
 session's data was reverted. The one deliberate reversal of an earlier decision — reinstating a *labelled estimate*
 for Guy Savoy — is recorded as F-64 with its source and keeps the $3,000 Krug figure withdrawn.
+
+---
+
+## Session claim — arena/ed9892d9-vegas1 (T22) — 2026-11-27
+
+| ID | Task | Status | Owner (session ID) | File scope | Notes |
+|----|------|--------|--------------------|------------|-------|
+| T22 | Comprehensive line-by-line official-source verification audit across merged site + cross-session consistency reconciliation | in progress | `arena/ed9892d9-vegas1` | `COORDINATION.md`, `notes/verification-2026-11-27-t22-ed9892d9.md` (initial non-overlapping scope while PR #53 / #47 are open; final integration scope on shared files only after active claims complete) | Fixed Arena branch `arena/ed9892d9-vegas1`. Respecting open PR #53 (`arena/c7c75f9a-vegas1`) and PR #47 (`arena/a00dc828-vegas1`) scopes; logging requests during active work, then integrating cleanly once active claims complete. |
+
