@@ -838,7 +838,7 @@
   },
   "checks": [
     {
-      "id": "F-52",
+      "id": "F-64",
       "title": "Unsupported transit ranking withdrawn",
       "finding": "The zone matrix assigns zero minutes inside a zone, fixed times without departures and includes Loop vehicles. It does not establish bus-only door-to-door times or all 24 restaurants within 60 minutes, especially Henderson/Summerlin. Primary rank/count fields are blank. Historical model retained in data/transit.json; not recomputed into verified data.",
       "sources": [
@@ -847,7 +847,7 @@
       ]
     },
     {
-      "id": "F-53",
+      "id": "F-65",
       "title": "No verified all-in seven-night hotel total",
       "finding": "Historical OTA totals and rounded official nightly rates cannot support strict official all-in seven-night ranking. Caesars and Flamingo show technical-error banners with prices; Wynn rendered occupancy is ambiguous. No checkout total verified; primary totals blank, no cheapest-week or optimal-purchase-day claim.",
       "sources": [
@@ -857,7 +857,7 @@
       ]
     },
     {
-      "id": "F-54",
+      "id": "F-66",
       "title": "Mob Museum Thursday schedule corrected",
       "finding": "Official weekly schedule now says daily 9 AM–9 PM. The inherited recurring Thursday 4 PM close generalized a Thanksgiving exception. Current early-closure page lists date-specific exceptions, not a weekly Thursday rule.",
       "sources": [
@@ -865,9 +865,9 @@
       ]
     },
     {
-      "id": "F-55",
+      "id": "F-67",
       "title": "Social verification is field-specific",
-      "finding": "Only social links observed on the official venue/property page enter primary tables. Property-wide channels are labelled, not represented as restaurant videos. Other inherited YouTube links remain in raw datasets as unreviewed leads, not verified venue evidence.",
+      "finding": "Fresh social fields contain only links observed on official venue/property pages in this integration. Expandable prior-session account evidence is retained with its original provenance/caveats and not claimed rechecked here. Creator-video leads without specific verification remain only in raw datasets. Some prior YouTube fields conflict with their caveats (empty official channel versus separate creator video); no promotion based on field presence alone.",
       "sources": [
         "https://aria.mgmresorts.com/en/restaurants/gymkhana.html",
         "https://kabutolv.com",
@@ -875,7 +875,7 @@
       ]
     },
     {
-      "id": "F-56",
+      "id": "F-68",
       "title": "High Roller source contradicts its own times",
       "finding": "Opening badge says 12:30 PM but tickets say noon; anytime ticket text conflicts with FAQ. No full weekly closing schedule extracted. Hours field blank; current starting-price subtotals not 2027 all-in quotes.",
       "sources": [
@@ -883,7 +883,7 @@
       ]
     },
     {
-      "id": "F-57",
+      "id": "F-69",
       "title": "Guide status does not guarantee opening or booking",
       "finding": "Michael Mina is listed Recommended in Michelin 2026 but official venue says temporarily closed; 2027 opening unverified. KAME inherited official link was actually OpenTable; official sushikame.com loads only minimal heading. Guy Savoy menu fetch exposes à la carte prices but no complete fixed-menu total, so no assumed couple spend shown.",
       "sources": [
@@ -894,7 +894,7 @@
       ]
     },
     {
-      "id": "F-58",
+      "id": "F-70",
       "title": "Scope of line-by-line verification",
       "finding": "All 24 restaurant award tiers and addresses compared individually to Michelin’s selection. Venue pages opened for all 24 restaurants and five activities; missing fields remain blank. Only five of 33 hotel candidates have fresh official room/contact/engine evidence (Caesars, Flamingo, Wynn, Desert Rose, Cliffs); other candidate links are inherited, not claimed checked. External URLs not all tested for current availability; local links tested separately. No full end-to-end trip feasibility or dated reservations verified.",
       "sources": [

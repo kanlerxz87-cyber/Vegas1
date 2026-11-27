@@ -1,0 +1,315 @@
+{
+ "meta": {
+  "title": "Social + video links — verification record",
+  "built": "2026-11-27",
+  "session": "arena/c045ad05-vegas1 (T17)",
+  "why": "FLAGS.md F-19 and review item R-02 recorded that no restaurant carried an Instagram or TikTok link. Two sessions worked this in parallel on 2026-11-27 (this one and the T18 hotel/verification session); the rows below are the reconciled union, with every handle re-opened before it was kept.",
+  "rule": "A link is published only when (a) the venue's own official page links to it, or (b) the account itself was opened and its bio/posts tie it to the named venue. A bare guess from a username is never enough. Blank means no account could be tied to the venue.",
+  "method": "Every URL in this file was opened with the page fetcher on 2026-11-27 and read. Where a platform blocked the fetch, the link is recorded only if an official venue page links to it, and 'evidence' says so.",
+  "limits": [
+   "Instagram follower counts, bios and recent-post lists were read on 2026-11-27; they change.",
+   "TikTok returned HTTP 400 to every fetch from this sandbox, so no TikTok link is published on the strength of a TikTok page read. The one TikTok link carried over is linked from the venue's own official footer (F-56).",
+   "YouTube channel pages were opened for the two venues listed; a channel returning 'This channel doesn't have any content' is not published (F-57).",
+   "A dormant account still documents official footage, but its bio may be years out of date — see the Robuchon note (F-54)."
+  ],
+  "counts": {
+   "restaurants_with_instagram": 21,
+   "restaurants_total": 24,
+   "restaurants_without_verified_social": 3,
+   "activities_with_instagram": 5,
+   "activities_with_youtube": 5,
+   "activities_with_tiktok": 1,
+   "activities_total": 5
+  }
+ },
+ "restaurants": [
+  {
+   "id": "joel-robuchon",
+   "name": "Joël Robuchon",
+   "instagram": "https://www.instagram.com/joelrobuchon.lasvegas/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Account opened: bio links mgmgrand.com/en/restaurants/joel-robuchon-french-restaurant.html (this site's official link).",
+   "caveat": "Dormant: newest post 2020-08-07, and the bio still says 'Michelin 3-Star' — the pre-2010 status. The 2026 Guide gives TWO stars (F-54). Do not quote an account bio as a current award."
+  },
+  {
+   "id": "latelier-robuchon",
+   "name": "L'Atelier de Joël Robuchon",
+   "instagram": "https://www.instagram.com/latelierjoelrobuchonlv/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Account opened: title 'Latelierjoelrobuchonlv', posts tag @latelierdejoelrobuchonlv and #joelrobuchon #mgmgrand. It is the L'Atelier room's feed.",
+   "caveat": "Dormant: newest post shown 2021-11-21. The obvious alternate handle @latelierdejoelrobuchonlv returns HTTP 404, so this is the right one."
+  },
+  {
+   "id": "guy-savoy",
+   "name": "Restaurant Guy Savoy",
+   "instagram": "https://www.instagram.com/guysavoylasvegas/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Account opened: bio 'Guy Savoy's restaurant at @caesarspalace in Las Vegas', links guysavoylasvegas.com.",
+   "caveat": "Dormant: newest post shown 2023-05-15."
+  },
+  {
+   "id": "e-by-jose-andres",
+   "name": "é by José Andrés",
+   "instagram": "https://www.instagram.com/ebyjoseandres/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Account opened and verified-badged: bio 'é by José Andrés ... One MICHELIN Star'."
+  },
+  {
+   "id": "china-poblano",
+   "name": "China Poblano",
+   "instagram": "https://www.instagram.com/chinapoblano/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Account opened and verified-badged: bio references @chefjoseandres and @cosmopolitan_lv."
+  },
+  {
+   "id": "wing-lei",
+   "name": "Wing Lei",
+   "instagram": "",
+   "tiktok": "",
+   "status": "none_verified",
+   "evidence": "@winglei exists but is a private personal account ('Lei Wing', 659 followers, no venue link) — not this restaurant. The Wynn account is a hotel account. Left blank rather than guessed."
+  },
+  {
+   "id": "mott-32",
+   "name": "Mott 32",
+   "instagram": "https://www.instagram.com/mott32vegas/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Account opened: title 'Mott 32 Las Vegas', bio 'Michelin Guide 2026'."
+  },
+  {
+   "id": "cote",
+   "name": "COTE Korean Steakhouse",
+   "instagram": "https://www.instagram.com/cotekoreansteakhouse/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Account opened: bio lists 'NYC | Miami | Singapore | Vegas'.",
+   "caveat": "Brand account covering all COTE cities."
+  },
+  {
+   "id": "bouchon",
+   "name": "Bouchon Bistro",
+   "instagram": "https://www.instagram.com/bouchon_bistro/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Account opened: bio 'Chef Thomas Keller's casual dining French-inspired bistro with locations in Yountville, CA, Las Vegas, NV, and Coral Coral Gables, FL'; 2026 posts labelled 'Behind the scenes in Las Vegas'.",
+   "caveat": "Thomas Keller group account covering all Bouchon bistros, not a Las Vegas-only feed."
+  },
+  {
+   "id": "estiatorio-milos",
+   "name": "Estiatorio Milos",
+   "instagram": "https://www.instagram.com/miloslasvegas/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Account opened: title 'estiatorio Milos Las Vegas', bio '...at The Venetian, Las Vegas'.",
+   "caveat": "Venue-specific Las Vegas account; the group account @estiatoriomilos also exists."
+  },
+  {
+   "id": "gymkhana",
+   "name": "Gymkhana",
+   "instagram": "https://www.instagram.com/gymkhanalasvegas/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Account opened: bio 'From @gymkhanalondon ... Located at @arialv'."
+  },
+  {
+   "id": "michael-mina",
+   "name": "Michael Mina",
+   "instagram": "https://www.instagram.com/michaelminalv/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Account opened: bio 'Contemporary Coastal Cuisine Located in the Heart of the Bellagio'.",
+   "caveat": "Posts run to 2026-10, but Bellagio still lists the room as temporarily closed (F-23): an active feed is not proof it is open."
+  },
+  {
+   "id": "anima-by-edo",
+   "name": "Anima by EDO",
+   "instagram": "https://www.instagram.com/animabyedo/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Both the official site animabyedo.com ('@animabyedo / Follow on Instagram') and the account (bio links animabyedo.com)."
+  },
+  {
+   "id": "kabuto",
+   "name": "Kabuto",
+   "instagram": "https://www.instagram.com/kabutolv/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Both: kabutolv.com embeds this account's posts, and the account bio says 'Recommended by MICHELIN Guide 2026' and links kabutolv.com."
+  },
+  {
+   "id": "kame-omakase",
+   "name": "KAME Omakase",
+   "instagram": "https://www.instagram.com/kameomakase_lv/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Account opened and verified-badged: bio 'MICHELIN Guide Recommended 2026', '$500', 'Las Vegas | 5:30 & 8 PM', links sushikame.com.",
+   "caveat": "The short handle @kameomakase also exists but is a 178-follower stub with no posts; this is the active account."
+  },
+  {
+   "id": "lamaii",
+   "name": "Lamaii",
+   "instagram": "https://www.instagram.com/lamaiilv/",
+   "tiktok": "https://www.tiktok.com/@lamaiilv",
+   "status": "verified",
+   "evidence": "Account opened and verified-badged: bio 'Managed by Bia Hawang & Bon Atcharawan ... In the MICHELIN Guide 2026 Selection'.",
+   "caveat": "Posts are the Chinatown room, which is the Michelin-listed one."
+  },
+  {
+   "id": "partage",
+   "name": "Partage",
+   "instagram": "https://www.instagram.com/partagelv/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Account opened: bio '@michelinguide 2026 recommended', links partage.vegas."
+  },
+  {
+   "id": "sparrow-and-wolf",
+   "name": "Sparrow + Wolf",
+   "instagram": "https://www.instagram.com/sparrowandwolflv/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Account opened: bio '@chefbrianhoward ... @michelinguide selected'."
+  },
+  {
+   "id": "esthers-kitchen",
+   "name": "Esther's Kitchen",
+   "instagram": "https://www.instagram.com/estherskitchenlv/",
+   "tiktok": "https://www.tiktok.com/@estherskitchenlv",
+   "status": "verified",
+   "evidence": "Account opened: bio 'Seasonal Italian Soul Food in the Las Vegas Arts District from James Trees & co.'."
+  },
+  {
+   "id": "soulbelly-bbq",
+   "name": "SoulBelly BBQ",
+   "instagram": "https://www.instagram.com/soulbellybbqlv/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Both: soulbellybbq.com links this exact account, and its bio reads 'Michelin Recommended'.",
+   "caveat": "Feed covers the Main Street (Michelin-listed) room and the Express counter."
+  },
+  {
+   "id": "ping-pang-pong",
+   "name": "Ping Pang Pong",
+   "instagram": "",
+   "tiktok": "",
+   "status": "none_verified",
+   "evidence": "No account could be tied to the restaurant; searches surfaced a Facebook page and parent-property accounts only."
+  },
+  {
+   "id": "pho-ga-bac-bac",
+   "name": "Pho Ga Bac Bac",
+   "instagram": "https://www.instagram.com/phogabacbac702/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Account opened: bio '2025 & 2026 MICHELIN AWARD', 'OPEN 24/7', address 3775 Spring Mountain Rd, phone (702) 476-9623.",
+   "caveat": "The previous handle @bestchickenpho is an abandoned page whose only post (2026-11-22) says 'WE'VE MOVED! ... follow us @phogabacbac702'; this is the current account."
+  },
+  {
+   "id": "yen-viet-kitchen",
+   "name": "Yen Viet Kitchen",
+   "instagram": "",
+   "tiktok": "",
+   "status": "none_verified",
+   "evidence": "The official site publishes no social link and no account could be tied to the venue."
+  },
+  {
+   "id": "stubborn-seed",
+   "name": "Stubborn Seed",
+   "instagram": "https://www.instagram.com/stubborn_seed/",
+   "tiktok": "",
+   "status": "verified",
+   "evidence": "Account opened: bio 'Michelin ... Miami & Las Vegas @resortsworldlv'.",
+   "caveat": "Shared Miami/Las Vegas brand account; both feeds appear in one timeline."
+  }
+ ],
+ "activities": [
+  {
+   "id": "sphere",
+   "name": "Sphere Las Vegas (The Wizard of Oz / concerts)",
+   "instagram": "https://www.instagram.com/spherevegas/",
+   "tiktok": "",
+   "youtube": "https://www.youtube.com/@SphereVegas",
+   "status": "verified",
+   "evidence": "Instagram opened and verified-badged ('Sphere', 3.3M followers). YouTube channel opened; lists 'The Wizard of Oz at Sphere' playlists."
+  },
+  {
+   "id": "high-roller",
+   "name": "High Roller Observation Wheel",
+   "instagram": "https://www.instagram.com/highrollervegas/",
+   "tiktok": "",
+   "youtube": "https://www.youtube.com/watch?v=ltjDljV-tOA",
+   "status": "verified",
+   "evidence": "Account opened and verified-badged: 'The High Roller', 'Tallest Observation Wheel in North America', 75,555 followers.",
+   "caveat": "Official attraction account but dormant — newest post shown 2024-06. The similar handle @highrollerlasvegas is a private 26-follower account and is not used."
+  },
+  {
+   "id": "mob-museum",
+   "name": "The Mob Museum",
+   "instagram": "https://www.instagram.com/themobmuseum/",
+   "tiktok": "",
+   "youtube": "https://www.youtube.com/@TheMobMuseum",
+   "status": "verified",
+   "evidence": "Instagram opened and verified-badged (71,833 followers, bio links admission.themobmuseum.org). YouTube channel opened; lists 'Inside the Life' and 'About The Mob Museum' playlists."
+  },
+  {
+   "id": "neon-museum",
+   "name": "The Neon Museum",
+   "instagram": "https://www.instagram.com/theneonmuseumlasvegas/",
+   "tiktok": "https://www.tiktok.com/@neonmuseumlasvegas",
+   "youtube": "https://www.youtube.com/watch?v=Edn2Dz3IM9o",
+   "status": "official_page_link_only",
+   "evidence": "The TikTok and Instagram links are both printed in neonmuseum.org's own site navigation.",
+   "caveat": "TikTok returned HTTP 400 to this sandbox, so the TikTok page itself was not read (F-57). YouTube handle @neonmuseum opens but says 'This channel doesn't have any content', so no YouTube link is published."
+  },
+  {
+   "id": "fremont-street",
+   "name": "Fremont Street Experience",
+   "instagram": "https://www.instagram.com/fremontstreet/",
+   "tiktok": "",
+   "youtube": "https://www.youtube.com/watch?v=52YiWwDgli0",
+   "status": "verified",
+   "evidence": "Account opened and verified-badged: bio 'Official account of Fremont Street Experience and SlotZilla zipline in downtown #LasVegas'.",
+   "caveat": "YouTube handle @fremontstreetexperience opens but returns 'This channel doesn't have any content', so no YouTube link is published (F-57)."
+  }
+ ],
+ "rejected": [
+  {
+   "handle": "instagram.com/bestchickenpho",
+   "why": "Former Pho Ga Bac Bac account, now abandoned: its only visible post (2026-11-22) says 'WE'VE MOVED! ... follow us @phogabacbac702' and the bio says 'This page is no longer active'. The current account is used instead."
+  },
+  {
+   "handle": "instagram.com/atelierdejoelrobuchonlv",
+   "why": "Kept out of the L'Atelier row only after checking: this handle returns HTTP 404. The live feed is @latelierjoelrobuchonlv."
+  },
+  {
+   "handle": "instagram.com/winglei",
+   "why": "Private personal account ('Lei Wing'), not the Wynn restaurant."
+  },
+  {
+   "handle": "instagram.com/phogabacbac",
+   "why": "Private account with 1 follower and no venue link — adopting it would be a guess."
+  },
+  {
+   "handle": "instagram.com/kameomakase",
+   "why": "Exists but is a 178-follower stub with no posts; the active account is @kameomakase_lv."
+  },
+  {
+   "handle": "youtube.com/@neonmuseum",
+   "why": "Opens, but returns 'This channel doesn't have any content' — not published as a video source."
+  },
+  {
+   "handle": "youtube.com/@fremontstreetexperience",
+   "why": "Same: the channel exists but has no content."
+  },
+  {
+   "handle": "tiktok.com/*",
+   "why": "TikTok returned HTTP 400 to every request from this sandbox. The two TikTok links published come from the venues' own pages (Neon Museum footer) or from the other session's capture, and are labelled accordingly."
+  }
+ ]
+}

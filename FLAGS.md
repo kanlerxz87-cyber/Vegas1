@@ -3,6 +3,13 @@
 Every flag below is referenced from the site. A flag means **the cell is blank or the value is
 labelled**, never that a plausible number was filled in.
 
+The register is **not contiguous**: F-31 to F-38 were never used, and F-39 to F-46 live in
+`data/review-flags.json` (the 26 Nov 2026 audit) and render on `flagged.html`. Rows are added, never
+renumbered, so an ID quoted on the site or in a commit message always means the same thing.
+
+F-01 to F-53 are deliberately **one** markdown table: stray blank lines had split the register into four
+tables, so 11 rows rendered as loose text on GitHub instead of table rows (repaired 2026-11-27, T17).
+
 | ID | Where | What | Effect on the plan |
 |----|-------|------|--------------------|
 | **F-01** | Joël Robuchon | Creator videos say "3 Michelin stars". The 2026 Guide gives **2**. Two pre-2010-era videos are still circulating. | Do not quote three stars to the couple. |
@@ -31,18 +38,17 @@ labelled**, never that a plausible number was filled in.
 | **F-24** | Partage | Hours were blank because they live on `/contact`, not on `/restaurant` (which is only a booking widget): **Tue–Sat 5–9 PM**. | Now verified. Same page confirms a strict no-vegan / no-coeliac / no-dairy kitchen. |
 | **F-25** | Sparrow + Wolf | The official site publishes **no opening hours** anywhere on its front or menu page — only an OpenTable widget. | Hours left blank rather than taken from a reseller. Card-hold ($25/guest inside 24h) and 4-guest table cap recorded on the row. |
 | **F-26** | Sample-date banners | Several MGM pages carry a dated banner (e.g. *"open 4:00–8:00 PM Thursday 19 – Saturday 21 November"*) that refers to a **2026** date. | Carrying such a banner into a 2027 plan would be a silent error. Ignored, and called out on the affected rows. |
-
 | **F-27** | Hotel `Official` links | Superseded by the 26 Nov 2026 re-check, which opened every link this site publishes where the property would answer. Result: **18 of 32** official pages confirmed live (4 from the earlier pass, 14 opened on 26 Nov), **8 refuse automated access**, **5 were not opened**, and **1** lands on a parent property's page — see **F-49**, which carries the per-property list. The Booking.com price link on every card was fetched. | Cards now state which of the four states applies instead of a blanket 'may have moved'. One moved for real: `caesars.com/cromwell` → **The Vanderpump Hotel** (F-47). |
 | **F-28** | Desert Rose Resort | Its marketing domain `desertroseresort.com` returned **HTTP 500**, and the row had it in the wrong zone (`center-strip` although it sits one block east of the Strip at the Tropicana corner). | Zone corrected to `south-strip`; link repointed to the Shell Vacations operator page; recommendation restated as a 15–20 min walk to MGM Grand, not to the centre-Strip cluster. |
 | **F-29** | Hotel nightly and 7-night prices | The canonical 32-hotel comparison uses Booking.com snapshots, not official property booking engines. It therefore does not meet an official-property-source-only price standard. Independent official-engine samples conflict with the OTA-based March savings claim; rates are time-sensitive and some direct engines blocked automated reads. | The site now labels the OTA rates and removes the market-wide “cheapest week” claim. Use the [official-engine sample](docs/session-af795000/hotels.html) for its dated direct-booking links, and recheck exact room, resort fee, taxes, cancellation terms and dates with the property before booking. Do not treat either dataset as a universal cheapest-date result. |
 | **F-30** | Official hotel rates, refreshed 2026-11-26 | Direct-booking pages were re-fetched one day after the historical 2026-11-25 sample and produced changed/volatile output. Caesars' dated result shows Julius Deluxe 1 King at $201/night including resort fee, excluding taxes, but also reports a technical-difficulties banner. Wynn's dated result shows the Cyber offer at $677/night including resort fee, excluding taxes. Venetian returned a $6,170.43 taxed total for a Luxury King Suite for 2 adults, but its page simultaneously says it is showing suites designed for 4+ guests, so occupancy applicability is unclear. | These are changing live engine outputs, not stable quotes or independently confirmed 7-night totals. Treat the Venetian amount as unverified for a couple until the occupancy mismatch is resolved. Reopen direct links and confirm a named room, full stay total, tax, fee and cancellation terms before booking. |
-
 | **F-47** | The Cromwell (centre Strip) | Opened on 26 Nov 2026, the official page `caesars.com/cromwell` **301-redirects to `caesars.com/vanderpump-hotel`**, which presents the property as **The Vanderpump Hotel** — Lisa Vanderpump's boutique hotel, 188 rooms and 21 suites at 3595 Las Vegas Blvd South, 702-777-3777. Same building, new brand. | Row renamed to "The Vanderpump Hotel (formerly The Cromwell)". The $1,978 seven-night total was captured on 25 Nov 2026 under the Cromwell name, so it is **not bookable as printed** — re-quote under the new brand (S-15). |
 | **F-48** | 15 hotel price links | Those rows carry a **dated Booking.com search-results URL** (filtered by price and class) rather than the property's own quote page, so the link proves the search, not the room. The other 17 rows link to a `booking.com/hotel/us/…` page. | The card label reads "Price source — dated search list, not a room quote" on those 15 rows instead of "Price source ✓". No price was changed. |
 | **F-49** | Official links on 14 hotel rows | **8 refuse automated access** from this environment (Wynn, Encore, Vdara, Secret Suites, NoMad, Crockfords — which returns **HTTP 500** — W, Bluegreen Club 36), **5 were not opened** (The Signature, Waldorf Astoria, Cliffs at Peace Canyon, which carries no URL at all, Green Valley Ranch, Red Rock), and **1 opens but lands on the parent property's page** (Nobu at Caesars → the Caesars Palace rooms page). | Cards say "refuses automated access", "lands on the parent property's page" or "not fetched — may have moved", never a tick. Encoded as `official_verified: blocked / sibling / no` so the wording cannot drift from the state. |
-
 | **F-50** | Esther's Kitchen address | The MICHELIN press release lists **1131 S. Main St.**; `data/restaurants.json` carries **1130 S Casino Center Blvd**. The venue's own site was opened again on 26 Nov 2026 — the home page publishes no street address and `/hours-location` still errors — so neither version could be confirmed from the restaurant itself. | No address is shown in any table on this site and the venue phone is blank in the data, so nothing is being asserted to a traveller. Confirm on the venue's own contact page or by phone before printing a reservation card. |
 | **F-51** | Guide announcement date | Site copy and `data/restaurants.json` said the 2026 Southwest selection was announced **26 Aug 2026**; the michelin.com press release page is dated **31 Aug 2026**. | Corrected on 26 Nov 2026 — the MICHELIN page and the dataset meta note now say 31 August 2026 and cite the press release. No award, price or hours cell changed. |
+| **F-52** | Mob Museum Thursday hours | The dataset recorded Thursday museum hours as **9 AM–4 PM** (Sun–Wed & Fri–Sat 9 AM–9 PM). Re-fetched 2026-11-27, `themobmuseum.org` homepage now shows **Daily 9 AM–9 PM** for the museum (Underground 11 AM–11 PM, to midnight Fri–Sat). | Corrected to Daily 9–9. Thursday is no longer a short day — plan a full Thursday museum visit if wanted. Early-closure notices still apply (see row exceptions). |
+| **F-53** | TikTok coverage (restaurants + activities) | 2026-11-27 social sweep verified Instagram for **19/24** restaurants and **4/5** activities, and TikTok for only **2/24** restaurants (Lamaii, Esther's Kitchen) and **3/5** activities (Sphere, Mob Museum, Neon Museum). No official TikTok account was verified for the other 22 restaurants, High Roller, or Fremont Street — creator videos tagging those venues are not the venues' own accounts. | Blank TikTok cells mean **no official account verified**, not that none exists. Do not treat a creator's video as the venue's account. See Q-07. |
 
 ## Deliberate non-inclusions
 
@@ -50,6 +56,29 @@ labelled**, never that a plausible number was filled in.
 - **Formula 1 is not in this window.** The 2027 Las Vegas GP is 18–20 November 2027. It was checked precisely because it would otherwise wreck a Strip price.
 - **Cirque du Soleil** was listed by a reseller at $158.65 per person with no show name, no venue and no 2027 date — excluded.
 - **MGM Grand room price** could not be captured: Booking.com's own property page redirected to a generic Las Vegas search. No price is published for it rather than a guess.
+
+## Social + video verification pass of 27 Nov 2026 (F-54 to F-57)
+
+Task T17 (session `arena/c045ad05-vegas1`) opened every candidate Instagram account, YouTube channel and official
+venue page on **27 November 2026** to close F-19 / R-02, the largest open gap against the brief. A second session
+(`arena/c9eed9ad-vegas1` lineage, merged as T18) worked the same gap at the same time; the two passes **disagreed on
+five handles**, and every disagreement was settled by opening the account. The reconciled result — 21 of 24
+restaurants and 5 of 5 activities with a verified Instagram link — is recorded per row in `data/socials.json`, and
+the evidence column is rendered on `restaurants.html` and `activities.html` so a doubt can be checked in one click.
+Flag IDs F-58 onward belong to the T18 hotel/verification work; this pass uses only F-54 to F-57.
+
+| ID | Where | What | Effect on the plan |
+|----|-------|------|--------------------|
+| **F-54** | Joël Robuchon (Instagram) | The account `@joelrobuchon.lasvegas` is genuinely the restaurant's (its bio links the official MGM Grand page), but it is **dormant**: the newest post shown is dated **2020-08-07**, and the bio still reads **"Michelin 3-Star"** — the pre-2010 status. The 2026 Guide gives **two** stars, which the restaurant's own MGM page also states. | The link stays, because it is official and documents the room. But **never quote a venue's own bio as its current award**: this is the F-01 stale-three-star claim, now found on the restaurant's own account. Two other accounts in the set are also dormant (L'Atelier, last post 2021; Guy Savoy, last post 2023). |
+| **F-55** | Kabuto (wrong phone) | The row carried **725.205.1356**. `kabutolv.com` prints **(702) 676-1044** in its "Visit Us" block and its Instagram bio repeats it. | **Corrected to 702.676.1044** on 2026-11-27. 725 is not a Las Vegas area code, so the old number could not have worked. |
+| **F-56** | Pho Ga Bac Bac (moved account) | The handle captured earlier in the day, `@bestchickenpho`, is an **abandoned page**: its only visible post (2026-11-22) reads "WE'VE MOVED! ... follow us @phogabacbac702" and its bio says "This page is no longer active". The live account is **@phogabacbac702** (276 followers, bio gives 3775 Spring Mountain Rd, (702) 476-9623). | Row now points at the live account. A social link that resolves but is dead as a channel is the same failure as a dead link, and a 200-status check would not catch it. |
+| **F-57** | TikTok and empty YouTube channels | TikTok answered **HTTP 400 to every request** from this sandbox, so no TikTok page was ever read; the TikTok links published come from the venues' own pages or the other session's capture and are labelled as such. Separately, `youtube.com/@neonmuseum` and `youtube.com/@fremontstreetexperience` open but return **"This channel doesn't have any content"**, so no video link is published for the Neon Museum or Fremont Street. | Treat every TikTok link as an unconfirmed lead. Festival-style venue accounts often exist but stay empty; the site says so instead of linking a hollow channel. |
+
+**Handles checked and deliberately *not* adopted** (a look-alike would have put a stranger on the page):
+`@winglei` is a private personal account ("Lei Wing"); `@latelierdejoelrobuchonlv` returns HTTP 404 (the live feed is
+`@latelierjoelrobuchonlv`); `@kameomakase` is a 178-follower stub (the active account is `@kameomakase_lv`);
+`@phogabacbac` is private with 1 follower; `@highrollerlasvegas` is a private 26-follower account, while the real
+attraction account is **@highrollervegas** (verified-badged, 75,555 followers) and is the one published.
 
 ## Audit of 26 Nov 2026 (F-39 onward)
 
@@ -65,16 +94,29 @@ Items F-39 to F-46 come from the 26 November 2026 line-by-line audit (task T12).
 - **F-46** Repository irregularities (duplicate board IDs, stale counts, overlapping datasets, orphan page, failed branch run).
 
 
-## Strict-evidence integration — 27 November 2026 (T17)
+## Strict evidence display audit — 27 November 2026
+
+These supersede earlier recommendations where they conflict. Earlier flags and raw datasets are retained as audit history.
+
+| ID | Where | What | Effect on the plan |
+|----|-------|------|--------------------|
+| **F-58** | All hotel decision tables | Canonical prices are third-party snapshots, not verified official all-in seven-night offers for a named qualifying room and two adults. A working property URL verifies neither price nor room fit. | Official-only hotel decision cells left blank; alphabetical candidates replace unsupported ranking. No cheapest hotel, stay week or purchase date is established. Historical raw records retained, not endorsed. |
+| **F-59** | Hotel proximity and RTC model | Zone matrix values are estimates; bus-only hotel-to-restaurant journeys including walks, waiting, transfers and return service were not verified. Loop is not subway or bus. Model counts cannot establish real 24/24 reachability. | Remove model scores from hotel decision table and public transit matrix. Route counts blank pending itinerary-level evidence. Earlier saturation claims are superseded. |
+| **F-60** | RTC fares | Official RTC page checked 27 Nov lists $2 regular residential single ride and $1 reduced; inherited claim that Nevada local fares are $1 is misleading. Visitors must use Strip and All Access fares. | Transit page now displays visitor fares as totals for two adults, with official source and arithmetic basis. No future fare guarantee. |
+| **F-61** | Restaurant Guy Savoy | Official main menu fetched 27 Nov exposes individual dishes, not complete meal totals; $200–$580 was merely two dishes. Inherited $3,000 Krug total was not reproduced. | Dinner-for-two total blank. Menu link published; no meal size, courses, tax or wine inferred. |
+| **F-62** | Mob Museum | Official weekly table fetched 27 Nov lists museum daily 9 AM–9 PM, not every Thursday closing at 4 PM. Holiday early closure must not become weekly hours. | Weekly schedule corrected; early closures and 2027 exceptions require separate confirmation. |
+| **F-63** | High Roller | Official page fetched 27 Nov conflicts internally: opens 12:30 PM, ticket cards daytime 12–5 PM/anytime noon–close, FAQ daytime until 5:59 PM/anytime from 6 PM. | Complete hours blank; exact conflicts listed, published starting-price couple totals retain plus-tax/fee caveat. |
+
+## Strict-evidence integration — 27 November 2026 (T20)
 
 The following current flags supersede conflicting historical conclusions. Official URLs and detailed check results are in `data/verification-2026-11-27.json`; each is published on `flagged.html`.
 
 | ID | Where | Issue | Effect |
 |---|---|---|---|
-| **F-52** | Hotel/transit rankings | Zero-minute zone travel and fixed estimates do not prove door-to-door bus journeys. Loop is not a bus. | Withdraw universal one-hour assertion and twenty-minute substitution; counts/rank blank in primary views. |
-| **F-53** | Official hotel price evidence | Caesars/Flamingo exact-date pages show error banners with nightly prices; Wynn occupancy text ambiguous. No exact all-in seven-night checkout totals extracted. | Primary total fields blank; no cheapest-week or best-purchase-day claim. Rounded averages never expanded into exact quotes. |
-| **F-54** | Mob Museum schedule | Official weekly hours say daily 9 AM–9 PM; inherited Thursday early close generalized Thanksgiving. | Current view corrected; date-specific closures must remain date-specific. |
-| **F-55** | Social provenance | Historical YouTube leads were not all reviewed. Official-property channels are not restaurant videos. | Only social links observed on official pages published as source-linked social profiles; others blank/unverified. |
-| **F-56** | High Roller hours | Source opening badge and ticket text conflict (12:30 vs noon); anytime ticket descriptions conflict too. | Complete hours blank and contradiction explained; starting subtotals not dated 2027 quotes. |
-| **F-57** | Restaurant availability and source type | Guide listing does not prove opening; Mina temporarily closed. KAME inherited official URL was OpenTable. | No assumed reopening; use minimally-rendered official KAME site; fixed-menu total absent for Guy Savoy. |
-| **F-58** | Verification scope | Full external-link availability, checkout quotes, routes and private-use guarantees not verified. | Publish exact scope and blanks; schema/local-link checks not presented as full external verification. |
+| **F-64** | Hotel/transit rankings | Zero-minute zone travel and fixed estimates do not prove door-to-door bus journeys. Loop is not a bus. | Withdraw universal one-hour assertion and twenty-minute substitution; counts/rank blank in primary views. |
+| **F-65** | Official hotel price evidence | Caesars/Flamingo exact-date pages show error banners with nightly prices; Wynn occupancy text ambiguous. No exact all-in seven-night checkout totals extracted. | Primary total fields blank; no cheapest-week or best-purchase-day claim. Rounded averages never expanded into exact quotes. |
+| **F-66** | Mob Museum schedule | Official weekly hours say daily 9 AM–9 PM; inherited Thursday early close generalized Thanksgiving. | Current view corrected; date-specific closures must remain date-specific. |
+| **F-67** | Social provenance | Historical YouTube leads were not all reviewed. Official-property channels are not restaurant videos. | Only social links observed on official pages published as source-linked social profiles; others blank/unverified. |
+| **F-68** | High Roller hours | Source opening badge and ticket text conflict (12:30 vs noon); anytime ticket descriptions conflict too. | Complete hours blank and contradiction explained; starting subtotals not dated 2027 quotes. |
+| **F-69** | Restaurant availability and source type | Guide listing does not prove opening; Mina temporarily closed. KAME inherited official URL was OpenTable. | No assumed reopening; use minimally-rendered official KAME site; fixed-menu total absent for Guy Savoy. |
+| **F-70** | Verification scope | Full external-link availability, checkout quotes, routes and private-use guarantees not verified. | Publish exact scope and blanks; schema/local-link checks not presented as full external verification. |

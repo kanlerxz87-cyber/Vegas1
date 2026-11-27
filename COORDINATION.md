@@ -10,6 +10,7 @@ then commit and push that claim immediately.
 
 | Session | Started | Scope now | Branch |
 |---------|---------|-----------|--------|
+| arena/bc27fca6-vegas1 | 2026-11-27 | T17 — independent line-by-line verification audit of the published site against official sources; writes `COORDINATION.md` + `notes/verification-2026-11-27.md` only | `arena/bc27fca6-vegas1` |
 | arena/71886f12-vegas1 | 2026-11-26 | T14 — completed activity social-link visibility and executive-summary cleanup after the merged T13 rate audit | `arena/71886f12-vegas1` |
 | arena/c419e2da-vegas1 | 2026-11-26 | T13 — post-merge hotel-rate claim audit; reconcile OTA/direct source conflict, refresh official booking engines, preserve PR #22 repo-review pages | `arena/c419e2da-vegas1` |
 | arena-edcfa7a0-vegas1 | 2026-11-25 | T02–T11 — research complete; writing `data/*.json`, building `docs/`, publishing | `arena/edcfa7a0-vegas1` |
@@ -20,9 +21,10 @@ then commit and push that claim immediately.
 | arena-f527b427-vegas1 | 2026-11-26 | **Repo review + line-by-line audit + Flagged-for-Review page + integration.** Scope: correct the Venetian/“cheapest week” headline, Route 203 timing wording, Michael Mina closure source, per-night reconciliation flags; add a live `flagged.html`; regenerate site; PR to `main`. | `arena/f527b427-vegas1` |
 | arena-b54b3346-vegas1 | 2026-11-26 | Repo review + line-by-line verification spot-check; writes `notes/repo-review-2026-11-26.md` only (no change to live site or `data/`) | `arena/b54b3346-vegas1` |
 | arena/3c6d076e-vegas1 | 2026-11-26 | T15 — official-link re-check across all 32 hotels, MICHELIN announcement-date correction, Route 203 corridor precision, flag-register deep links with per-item source links on `flagged.html` | `arena/3c6d076e-vegas1`
+| **arena/c045ad05-vegas1** | **2026-11-27** | **T17 — final integration + gap closure (IN PROGRESS).** Scope: new `data/socials.json`, `data/restaurants.json`, `data/activities.json`, `scripts/validate.py`, new `scripts/check_links.py`, `FLAGS.md`, `COORDINATION.md`, `README.md`, generated root + `docs/` pages. Closes the largest open gap against the brief — Instagram/TikTok/YouTube links for every restaurant and activity (F-19 / R-02) — and adds a mechanical external-link checker. | `arena/c045ad05-vegas1` |
 | arena-ca2c6c85-vegas1 | 2026-11-26 | Line-by-line re-verification sweep of canonical `data/` vs official sources (Michelin tiers, RTC/Monorail fares, Route 203 timetable, restaurant/hotel/activity pages); Guy Savoy price filled from official Caesars menu; Robuchon/Partage phones filled; Mob Museum hours corrected; final integration PR + Pages deploy to `main` | `arena/ca2c6c85-vegas1` |
 
-> **Status note:** Original T01–T11 integration is published from `main`. Follow-up T12 (repo review and
+> **Status note:** **T17 (2026-11-27) is the current open claim** — the only task `in progress`. Original T01–T11 integration is published from `main`. Follow-up T12 (repo review and
 > Flagged for Review/Repo Review pages) was merged in PR #22; T13 is the current branch's post-merge rate
 > consistency audit. Independent archives remain additive and have not been overwritten.
 
@@ -67,6 +69,9 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 | T12 | Repo review (line-by-line spot verification of canonical data), root **Flagged for Review** + **Repo review** pages, integration + Pages redeploy | done | arena-939a824e-vegas1 (branch `arena/939a824e-vegas1`) | `COORDINATION.md`, `FLAGS.md`, `README.md`, `scripts/gen_site.py`, `data/review.json`, `data/questions.json`, `data/suggestions.json`, `executive-summary.md`, generated `docs/**` and root `*.html` | Done 2026-11-26. 10 line-by-line checks (C-01…C-10), 18 irregularities (R-01…R-18) recorded in `data/review.json` and published on the Flagged for Review page. Hotel prices, social links and hotel official URLs were NOT re-checked (see limits). |
 | R01 | Repo review: live-site spot-check, link audit, irregularity register | done | arena-b54b3346-vegas1 | `notes/repo-review-2026-11-26.md`, `COORDINATION.md` | Done 2026-11-26. Live site, `data/`, `docs/`, root pages NOT edited. Irregularities F-01–F-07 flagged for owner review. Sources: michelin.com 2026 Southwest press release; GitHub Pages API; build/validate logs. RTC fares fetch failed (F-04). |
 | T14 | Repo review, line-by-line audit of headline claims, Flagged-for-Review page, integration + PR | done | arena-f527b427-vegas1 | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `data/hotels.json`, `data/price-windows.json`, `data/questions.json`, `data/suggestions.json`, `data/transit.json`, `data/travel_matrix.json`, `data/restaurants.json`, `data/review-flags.json` (new), `scripts/gen_site.py`, `docs/**`, root `*.html` | Claimed 2026-11-26 under the ID T12 in commit `3fc6739`; renamed T14 at integration because T12 was already used by arena-939a824e-vegas1 (merged PR #21, #22); T13 is used by arena-c419e2da-vegas1. Overlapping files were integrated by merge, not edited in parallel. Other sessions: please log requests here rather than editing these files. |
+| T17 | Independent line-by-line verification audit of the live site against official sources (no data/site edits) | done | arena/bc27fca6-vegas1 | `COORDINATION.md`, `notes/verification-2026-11-27.md` | Done 2026-11-27. 8 checks in `notes/verification-2026-11-27.md` (V-01…V-08): MICHELIN tiers, RTC fares, Monorail fares, Michael Mina closure + $295++, Vanderpump rebrand, live page render, Pages status all confirmed against official pages. One irregularity logged, not edited (owned by PR #38 session): `data/transit.json` RTC fare note says "Nevada local fares are $1" but RTC residential single is $2 regular/$1 reduced; $1 is the Monorail Nevada-resident fare. Rebuild produced byte-identical output (0 drift), so no redeploy needed. |
+
+| T17 | **Social-link completion (F-19 / R-02) + mechanical external-link checking + final integration.** Record an official-footprint Instagram / TikTok / YouTube link for every one of the 24 MICHELIN rows and 5 activity rows, only from a venue's own page or a venue-controlled account; blank + flagged where none exists. Add `scripts/check_links.py` to resolve every external URL on the built site and report non-2xx / redirect anomalies. Re-verify a sample of headline figures line by line. | **in progress** | `arena/c045ad05-vegas1` | `data/socials.json` (new), `data/restaurants.json`, `data/activities.json`, `scripts/validate.py`, `scripts/check_links.py` (new), `FLAGS.md`, `COORDINATION.md`, `README.md`, generated root + `docs/` pages | Claimed and pushed **before** any data edit. **ID collision resolved:** this session first filed as T16, but session `arena/ff83218b-vegas1` merged its own T16 (PR #36, COORDINATION-only verification record) minutes later; ours renumbered to **T17** rather than duplicating an ID — the recurring duplicate-ID defect recorded as F-46. PR #27 (`arena/c9eed9ad-vegas1`) is a stale, `CONFLICTING` open PR from an inactive session that predates ~40 commits of main; it was **not** merged, rebased or closed — flagged for its owner instead (F-52). |
 
 ## T14 verification / integration record — 2026-11-26
 
@@ -482,12 +487,174 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 
 **Result:** T16 done. [PR #36](https://github.com/kanlerxz87-cyber/Vegas1/pull/36) merged 2026-11-27T17:31:08Z (merge commit `cc78807`); Pages build `1409320765` status `built`, Pages API `built` at https://kanlerxz87-cyber.github.io/Vegas1/.
 
-## Session claim — arena/ec1d72e2-vegas1 (T17) — 2026-11-27
+## Session record — arena/bc27fca6-vegas1 (T17) — 2026-11-27
+
+**Scope claimed:** `COORDINATION.md` + `notes/verification-2026-11-27.md` only. No `data/*.json`, generator, or generated site files edited — PR #27 and PR #38 from other sessions own those files; any canonical-data fix found here is logged as a Request below instead of edited. This is an independent line-by-line verification audit of the live site against official sources.
+
+**Verification performed (2026-11-27):** rebuilt locally (`build.py` + `gen_site.py` + `validate.py` → 13 pages, 0 failures, 0 warnings, 394 external links; clean `git status` after rebuild). Fetched live Overview/Hotels/Restaurants/Activities/Questions pages and official sources: MICHELIN press release (michelin.com + michelinmedia.com) confirms 4★/3 Bib/17 Recommended LV split; RTC fares $4/$6/$8/$20 confirmed on rtcsnv.com; Monorail fares ($6.25/$5.75, $15.50/$13.95, …) confirmed on lvmonorail.com; Michael Mina "Temporarily closed" + $295++ pp confirmed on Bellagio page; Vanderpump rebrand confirmed on caesars.com. Full line-by-line table in `notes/verification-2026-11-27.md` (V-01…V-08).
+
+**Irregularity found (V-08, not edited — owned by PR #38 session):** `data/transit.json` RTC `fare_note` says "Nevada local fares are $1", but RTC residential single ride is $2 regular / $1 reduced (rtcsnv.com); $1 is the Monorail Nevada-resident fare. Request: correct the RTC note and move the $1 fare to the Monorail entry. No other new irregularities; F-29/F-30/F-47/F-48/F-49 remain published on flagged.html and do not block anything.
+
+**Result:** T17 done. Audit published in `notes/verification-2026-11-27.md`; no site or data files changed, so no Pages redeploy needed.
+
+## Session record — arena/a00dc828-vegas1 (T17) — 2026-11-27
+
+**Scope claimed:** `COORDINATION.md`, `data/activities.json`, `data/restaurants.json` (social-link fields + verification notes only), `FLAGS.md` (new rows if needed), `scripts/gen_site.py` (only if rendering needs it), generated `docs/**` + root `*.html`. No hotel-price, transit-minute, or award-tier changes without a fresh official source.
+
+**Task T17:** Complete YouTube/Instagram/TikTok coverage for every restaurant + activity row from official/primary sources (official-site-published handles; real video URLs found via search and opened), retry Bellagio Fountains official page, fresh 2026-11-27 re-verification of MICHELIN tiers + starred hours, rebuild + validate, PR + merge + Pages deploy check.
+
+**Overlap note:** Open PRs #27 (`arena/c9eed9ad-vegas1`) and #38 (`arena/16cb2f96-vegas1`) also touch `data/restaurants.json` / `data/activities.json` / `scripts/gen_site.py`. They are stale/open with no active board claim. This session works on `arena/a00dc828-vegas1` from `main@631e611`; will `git pull --rebase` before push and resolve without discarding other work. No other session's branch will be merged or closed by this session.
+
+## Session record — arena/a00dc828-vegas1 (T17) — verification + results — 2026-11-27
+
+**Verification performed (2026-11-27, official/primary sources only):**
+- MICHELIN tiers re-confirmed on michelin.com press release (31 Aug 2026): 2★ Joël Robuchon; 1★ é, Guy Savoy, L'Atelier (+ Monte UT, correctly excluded); Bib China Poblano, Esther's Kitchen, YEN Viet Kitchen; 17 LV Recommended — matches `data/restaurants.json` (4/3/17). No tier change.
+- Mob Museum hours CORRECTED (F-52): themobmuseum.org homepage table now Daily 9–9 (was Thu 9–4 in dataset). Underground unchanged. `data/activities.json` updated.
+- High Roller re-verified on caesars.com (Opens 12:30PM; $23.50/$34.75/$60 + fees; 30-min rotation) — matches dataset.
+- Neon Museum re-verified on neonmuseum.org (Sep–May 3–11PM; 2027 Admission from $21; footer IG/TT match dataset) — matches.
+- Guy Savoy "Opens 5:00 PM" on caesars.com — consistent with dataset "Dinner from 5:00 PM".
+- Bellagio Fountains official page fetch FAILED again (3rd attempt) — stays in `not_verified`, F-18 unchanged.
+- Social sweep (web_search + official/press sources): Restaurants IG 0→19/24, TT 0→2/24 (Lamaii, Esther's). Activities: YT 0→15 videos (3 each), IG 1→5/5, TT 1→3/5. Blanks left blank per no-inference rule (F-53). Ping Pang Pong @pingpongthaivegas deliberately NOT used (different Thai venue).
+- Build: `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py` → 13 pages · 0 failures · 0 warnings · 436 external links (was 394). `scripts/gen_site.py` IG/TT count labels fixed (were hardcoded "none recorded").
+- README/executive-summary counts updated (37 FLAGS rows, 436 links).
+
+**Irregularities:** F-52 (Mob Thu hours, corrected), F-53 (TikTok coverage gap, blanks flagged). All prior flags (F-29/F-30 rate basis, F-47 Vanderpump, F-48 search-list prices) unchanged and non-blocking.
+
+**Overlap:** Open PRs #27/#38 touch same data files but have no active board claim; this branch rebased on `main@631e611` before push. No other branch merged/closed by this session.
+
+## T18 — strict evidence display gate — arena/e6eed606-vegas1 — 2026-11-27
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| T18: audit inherited evidence; suppress unofficial hotel quote values and inferred transit scores from decision tables; add reproducible evidence checks; integrate and publish | in progress | arena/e6eed606-vegas1 | `COORDINATION.md`, `scripts/gen_site.py`, `scripts/validate.py`, `scripts/check_evidence.py`, `FLAGS.md`, `notes/audit-2026-11-27.md`, `executive-summary.md`, `README.md`, generated root/`docs/` HTML |
+
+All preceding claims are done or older than 60 minutes; no active uncompleted claim found. This session is final integration for T18 only. Existing raw datasets and independent archives are preserved. Arena requires the current branch `arena/e6eed606-vegas1`; no alternate branch/worktree will be created. Official-source fetches and limitations will be recorded below. A source URL alone is not proof of a dated price or an end-to-end travel time.
+
+T18 scope extension (no other active claim): `data/activities.json` for the freshly confirmed Mob Museum weekly-hours correction and High Roller schedule conflict, plus `data/restaurants.json` only if an official menu correction is necessary. Initial pull of this previously unpublished branch returned "remote ref not found"; pulled/rebased `origin/main` instead, then pushed the claim successfully. No conflicts.
+
+T18 regression check exposed an empty official URL for Cliffs at Peace Canyon. Scope extended to that single `data/hotels.json` URL/status entry (no raw prices/model fields changed). Discovered and fetched official Vacation Village directions page successfully; now all 32 hotel candidate rows have official discovery links. No hotel room/rate facts inferred from it.
+
+### T18 completion / integration — 2026-11-27
+
+**Status: done (published evidence corrections); missing research: needs review.** Fresh sources and exact limitations are in `notes/audit-2026-11-27.md`. F-58–F-63 are rendered on Flagged for Review with official links. All 32 canonical hotel decision rows now suppress unofficial amounts, unconfirmed room qualification and inferred bus scores; original OTA/model records and archives preserved. No claim of complete live external verification or booking readiness. New regression test found an actual empty official hotel link; corrected from fetched Vacation Village official page. Mob Museum weekly hours corrected, High Roller conflicting hours blank, Guy Savoy incomplete meal/unsupported Krug total blank. MICHELIN's 24 Las Vegas names/tiers checked against official announcement chunks 0 and 1. RTC visitor fare totals explicitly arithmetic for two adults.
+
+**Checks:** `python3 scripts/gen_site.py && python3 scripts/validate.py && python3 scripts/check_evidence.py`; Python compile and `git diff --check` pass. 13 canonical pages, 0 local failures, 0 warnings; root/docs synchronized. 351 external link occurrences are counted, NOT certified live. No CI configured; no complete external broken-link guarantee. No reservations or payments made. No claim from another active session overwritten. No merge conflicts.
+
+
+### T18 integration conflict resolution
+PR #41 initially could not merge because main advanced through PRs #36–#40 during this session. Stopped publication, fetched and merged main on the current branch. Preserved all upstream social-link additions, independent audit notes, new flags F-52/F-53 and their session records. Reapplied only our source-backed field corrections over upstream JSON. Renamed this session T16 → T18 and its flags F-52–F-57 → F-58–F-63 to avoid collisions. All generated HTML regenerated from merged sources, not hand-resolved. Earlier "no conflicts" statement describes pre-integration only; this paragraph is the current conflict record. No upstream work discarded.
+
+Post-integration checks repeated: 13 pages, zero local failures/warnings, 393 external link occurrences counted (not liveness-certified); evidence regression passes. Programmatic comparison confirms every upstream restaurant/activity YouTube/Instagram/TikTok field preserved exactly. New review IDs are F-58–F-63; main's F-52/F-53 retained unchanged. T18 current status: done, pending publication confirmation.
+
+Push preparation note: plain `git pull --rebase` after the integration merge attempted to flatten upstream's merge history and conflicted in the coordination log. Aborted immediately; no work discarded. Retrying with `--rebase=merges` to preserve the integration graph.
+
+### T18 PR and deployment result
+
+- [PR #41](https://github.com/kanlerxz87-cyber/Vegas1/pull/41) **MERGED** 2026-11-27T17:35:42Z with explicit `gh pr merge 41 --merge`; merge commit `ad6075a7afa620d8421897e47c7fca68bd09c34e`.
+- GitHub Pages build for that exact merge reached **built**, error message null. Live root: <https://kanlerxz87-cyber.github.io/Vegas1/>.
+- Fetched live overview with cache-busting query `?audit=ad6075a`: confirmed new executive summary, four official-linked starred rows, no OTA lowest-price headline, F-58–F-63 precedence notice and explicit missing official-price/route evidence. Initial fetch while Pages was building returned old content; waited for exact commit's successful build and re-fetched before reporting live.
+- Publication successful. Research remains explicitly not booking-ready; missing official quotes/itineraries and untested external URLs are disclosed. This log-only follow-up does not alter site output.
+
+## PR record — T17 social-link completion (arena/a00dc828-vegas1)
+
+- **PR #39** — "T17: Complete social links, fix Mob Museum hours, fresh verification" → **MERGED** 2026-11-27T17:34:44Z, merge commit `85fbe31`.
+- Rebase conflict with `arena/bc27fca6-vegas1`'s PR #40 (both appended session records to this file) resolved by keeping **both** records; no work discarded.
+- Pages build for `85fbe31` reached `built`; a later session merged PR #41 (`ad6075a`) on top, and `data/activities.json` / `data/restaurants.json` on `main` still carry this session's links (verified: restaurants IG 19/24, TT 2/24, YT 24/24; activities YT 15 URLs, IG 5/5, TT 3/5; Mob Museum daily 9–9).
+- Live-page caveat: immediately after the merge `https://kanlerxz87-cyber.github.io/Vegas1/activities.html` still served the pre-merge HTML while the Pages API already reported `built` — GitHub Pages CDN caching, not a build failure. The committed `activities.html` on `main` contains the new YouTube/Instagram links, so the page updates once the cache refreshes.
+- Open PR #38 (`arena/16cb2f96-vegas1`) and #27 (`arena/c9eed9ad-vegas1`) were **not** merged or closed by this session.
+| T19 | Integration/repair pass on the merged T17/T18 site: `FLAGS.md` register table repair, `validate.py` false positive, activity social-link provenance panel, Q-07 correction, S-16 | done | arena/41324885-vegas1 | `COORDINATION.md`, `FLAGS.md`, `data/activities.json`, `data/questions.json`, `data/suggestions.json`, `scripts/gen_site.py`, `scripts/validate.py`, `notes/verification-2026-11-27-t17-integration.md` (new), generated root + `docs/` pages | Done 2026-11-27. Claimed as T17, renumbered T19 at integration because T17 was taken by arena/bc27fca6-vegas1 while this session worked; its duplicate flag rows (proposed F-52/F-53/F-54) were discarded in favour of main's F-52/F-53 and F-62/F-63. |
+
+## Session record — arena/41324885-vegas1 (T19, claimed as T17) — 2026-11-27 — DONE
+
+**Branch:** `arena/41324885-vegas1`. **Base at start:** `631e611`. **Base at integration:** `origin/main` @ `8f386c5`.
+
+**Concurrent-session collision (resolved, nothing discarded from main).** This session claimed "T17" and did the
+same job two other sessions did in parallel: Mob Museum Thursday-hours correction, activity social links, and the
+High Roller ticket-window conflict. By the time it finished, `main` was **149 commits ahead** and already carried
+those findings as **F-52** (Mob hours), **F-53** (TikTok coverage), **F-62** (strict-evidence restatement) and
+**F-63** (High Roller conflict). The branch was therefore reset onto `origin/main` and every finding was
+**re-applied by hand against main's current structure**; this session's duplicate register rows were dropped
+(its proposed F-54 is deliberately **unused**) and main's IDs and wording kept. The pre-reset commits
+(`858351a`, `9462684`) exist only in this clone's reflog and were never pushed as a branch. No upstream commit,
+file or flag was overwritten.
+
+**Retained, still-missing-on-main fixes (verified in this session):**
+
+1. **`FLAGS.md` was four markdown tables.** Blank lines before F-27, F-47 and F-50 meant **11 of 43** register
+   rows rendered as loose text on GitHub instead of table rows. Repaired into one table for F-01–F-53; F-58–F-63
+   keep their own heading; the non-contiguity of F-31–F-46 is now stated in the file.
+2. **`scripts/validate.py` false positive.** Its "no literal nan" check matched the letters inside ordinary words
+   and warned on *provenance*. It now matches standalone `None`/`nan` tokens on word boundaries.
+3. **Activity social provenance.** All five activities now carry a `social_note`, and the activities page renders a
+   **"Where each social link came from"** panel. This closes the gap between "a link is present" and "we can say
+   who published that handle" — the same standard the rest of the site uses.
+4. **Q-07 corrected.** It still read "Instagram and TikTok are almost entirely blank", which contradicted F-53's
+   19/24 restaurant Instagrams. Rewritten to the 27 Nov coverage, with the evidence standard and the remaining
+   gaps (5 restaurant Instagrams, 22 TikTok accounts).
+5. **S-16 added** so those gaps are a listed decision rather than silent blanks.
+
+**Independent verification performed 2026-11-27** (row-by-row table with a source URL per row:
+`notes/verification-2026-11-27-t17-integration.md`): MICHELIN tiers re-confirmed against the michelin.com press
+release **and** LVCVA's page (which independently states 24 distinctions and lists the same 17 Recommended names,
+so 4 + 3 + 17 = 24 checks out); Joël Robuchon hours/phone/dress code, é by José Andrés hours/9 seats/2 seatings,
+Michael Mina closure, Mob Museum hours + ticket prices + December-only special hours, Neon Museum 2027 admission
+(3–11 PM, last entry 10 PM, from $21 → $42 for two), High Roller prices and its internal ticket-window conflict,
+Fremont Street free nightly shows, and every Monorail fare — all matched. Guy Savoy's official page still prints
+**no hours block**, so that cell stays blank. RTC fares and the Route 203 timetable were **not** re-checked from
+this environment (fetch failed); F-60/F-42 keep their own dated evidence.
+
+**Decision request logged for the couple (P-01, not changed by this session).** The merged site now presents the 32
+hotels **alphabetically, "not ranked"**, with unofficial amounts blanked pending official quotes (F-58/F-59). The
+original brief asked for hotels **ranked** by MICHELIN proximity inside an hour and by price. The page is now
+defensible on evidence but no longer answers the ranking question. Options: (a) leave as is; (b) publish an
+explicitly indicative ranking from the dated OTA snapshots, labelled as not a booking offer; (c) rank only the
+subset with a confirmed named-room official rate. This is a choice for the owner, published on the site's
+Suggestions/Flagged pages via S-16 and F-58 rather than decided silently here.
+
+**Build:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py`
+→ 13 pages · 0 failures · 0 warnings; root and `docs/` byte-identical (`cmp` on every page).
+
+
+**Branch-history note (T19).** The remote branch `arena/41324885-vegas1` still pointed at the two superseded
+commits from this session's pre-reset attempt (`9462684`, `858351a`, based on `631e611`). Because those are this
+session's own commits and contain no other session's work, the branch was reset onto `origin/main` (`8f386c5`)
+plus the re-applied commit and pushed with **`--force-with-lease`**. Other sessions must not merge the
+pre-reset commits: they predate PRs #38–#42 and would resurrect the duplicate F-52/F-53/F-54 numbering and the
+superseded activity dataset. No commit from any other branch was rewritten.
+
+
+### T19 PR and deployment result — 2026-11-27
+
+- [PR #45](https://github.com/kanlerxz87-cyber/Vegas1/pull/45) (`arena/41324885-vegas1` → `main`) **MERGED**
+  2026-11-27T17:39:14Z with explicit `gh pr merge 45 --merge`; merge commit
+  `83d973a686f57f32a516c0ab478dc14eb0968758`.
+- **Merge conflict encountered and resolved:** `main` advanced twice (PR #43, commit `a0cc3a6`) while this PR was
+  open, in the same `COORDINATION.md`. Merged `origin/main` into the branch, resolved by taking upstream's file
+  and re-appending this session's board row and records — `git diff origin/main` on the resolved file shows **0
+  deletions, 49 additions**, so the upstream PR #43 record and its Pages-cache caveat are intact.
+- **Pages deploy:** build for `83d973a` reached **status `built`** (`gh api repos/…/pages/builds`); Pages API
+  `status: built`, source `main:/`, <https://kanlerxz87-cyber.github.io/Vegas1/>.
+- **Live verification:** fetched <https://kanlerxz87-cyber.github.io/Vegas1/activities.html?v=83d973a> — the page
+  serves the new "Where each social link came from" panel with all five provenance rows, the Mob Museum daily
+  9 AM–9 PM hours, and the F-53 coverage link, i.e. the deployed HTML matches the merged source.
+
+**Checks before merge:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py
+&& python3 scripts/check_evidence.py` → 13 pages · 0 failures · 0 warnings; evidence regression PASS; root and
+`docs/` byte-identical (`cmp` per page). No CI workflows are configured on this repo.
+
+## Session claim — arena/ec1d72e2-vegas1 (T20) — 2026-11-27
 
 | ID | Task | Status | Owner | File scope |
 |---|---|---|---|---|
-| T17 | Strict-evidence integration: audit inherited claims, separate non-official rate/transit estimates from decision tables, refresh official evidence, improve regression checks, publish | in progress | arena/ec1d72e2-vegas1 | `COORDINATION.md`, `README.md`, `executive-summary.md`, `FLAGS.md`, `data/verification-2026-11-27.json`, `scripts/{build,gen_site,validate}.py`, `tests/`, generated root/`docs/` HTML and CSS |
+| T20 | Strict-evidence integration: audit inherited claims, separate non-official rate/transit estimates from decision tables, refresh official evidence, improve regression checks, publish | in progress | arena/ec1d72e2-vegas1 | `COORDINATION.md`, `README.md`, `executive-summary.md`, `FLAGS.md`, `data/verification-2026-11-27.json`, `scripts/{build,gen_site,validate}.py`, `tests/`, generated root/`docs/` HTML and CSS |
 
 No current in-progress task was found on the shared board. Earlier T01–T16 work is retained. This session uses the assigned Arena branch `arena/ec1d72e2-vegas1` (platform constraint; no alternate branch will be created). Existing source datasets and archived independent builds will not be overwritten. Shared outputs are claimed as final integration because earlier tasks are complete. Official pricing that cannot be reproduced will remain blank in the primary decision view; historical OTA captures are evidence of previous work, not verified official quotes. External link availability will be reported separately from local link integrity.
 
-**T17 scope clarification:** add `scripts/strict_site.py` as the isolated strict-evidence renderer, called by the existing generator. The earlier renderer/datasets remain in Git for audit. `style.css` is generated, not a hand-edited input. Claim push first attempted to pull the new remote branch before it existed; no files conflicted. Pulled `origin/main` successfully, then created only the assigned remote branch and pushed claim `64f4701`.
+**T20 scope clarification:** add `scripts/strict_site.py` as the isolated strict-evidence renderer, called by the existing generator. The earlier renderer/datasets remain in Git for audit. `style.css` is generated, not a hand-edited input. Claim push first attempted to pull the new remote branch before it existed; no files conflicted. Pulled `origin/main` successfully, then created only the assigned remote branch and pushed claim `64f4701`.
+
+
+### T20 integration collision record — 27 November 2026
+
+While this session researched official sources, main advanced through PRs #39–#48. Initial claim used T17 because the checkout's board had no active tasks; upstream independently allocated that ID. This session is now T20. A merge of `origin/main` (5d422eb) produced content conflicts in generated pages, FLAGS.md and COORDINATION.md. Work stopped for inspection; resolution keeps upstream's entire coordination log, all changed canonical datasets, social provenance data, link-check tools and notes. Generated pages are rebuilt from the strict renderer, not selected wholesale from either conflict side. New flag IDs are renumbered F-64–F-70 to preserve upstream F-52–F-63. Upstream social findings will remain accessible with their exact prior-session provenance and caveats, separate from fields freshly rechecked in this pass. No other session's source dataset is discarded.
+
+Scope extension for integration: `scripts/check_evidence.py` regression updated for the new 33-candidate strict view; upstream `scripts/check_links.py`, `data/socials.json`, source datasets and notes retained unchanged.

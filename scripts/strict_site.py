@@ -86,10 +86,34 @@ Subtotals are not all-in checkout totals. No bookings or payments have been made
 they are not used to rank hotels. <a href="sources.html">Sources & verification scope</a> · <a href="repo-review.html">Repository audit</a></p></footer></body></html>'''
 
 
-def social(rec):
-    if not rec.get('social'):
-        return BLANK + '<br><small>Unverified; no handle guessed</small>'
-    return '<br>'.join(link(x['url'], x['label']) for x in rec['social']) + '<br><small>Linked by official site; content not independently audited</small>'
+def social(rec, id=None, category=None):
+    fresh = rec.get('social', [])
+    output = '<br>'.join(link(x['url'], x['label']) for x in fresh)
+    if not output:
+        output = BLANK + '<br><small>Not freshly confirmed in this integration</small>'
+    else:
+        output += '<br><small>Linked by official site; content not independently audited</small>'
+    # Preserve other sessions' reviewed accounts, with their actual provenance and
+    # uncertainty, rather than replacing their work with this pass's smaller sample.
+    prior = next((r for r in load('socials.json').get(category or '', []) if r['id'] == id), None)
+    if prior:
+        urls = {x['url'] for x in fresh}
+        leads = []
+        for platform in ['instagram', 'tiktok', 'youtube']:
+            url = prior.get(platform)
+            if not url or url in urls:
+                continue
+            # Prior ledger only documents specific YouTube evidence for Sphere and Mob.
+            # Its other video fields conflict with its caveats; do not promote them.
+            if platform == 'youtube' and id not in {'sphere', 'mob-museum'}:
+                continue
+            leads.append(link(url, platform.title() + ' — prior-session check'))
+        evidence = text(prior.get('evidence')) + '<br>' + text(prior.get('caveat'))
+        if leads:
+            output += ('<details><summary>Earlier session evidence (27 Nov; not refreshed here)</summary>'
+                       + '<br>'.join(leads) + '<p class="tiny">' + evidence + '</p>'
+                       + link(REPO+'data/socials.json', 'Original provenance record') + '</details>')
+    return output
 
 
 def prices(rec):
@@ -143,13 +167,14 @@ def hotels():
         room = text(h.get('room')) + '<br>' + text(h.get('bed'))
         bath = text(h.get('bathroom')) + '<br><small>Exclusive/private-use guarantee for dated room: unverified</small>'
         rows.append([text(h['name']), room, bath, text(h.get('amenities')), BLANK, BLANK,
-                     text(h['check']) + '<br><a href="flagged.html#F-53">Unverified decision fields</a>', link(h['source'])])
+                     text(h['check']) + '<br><a href="flagged.html#F-65">Unverified decision fields</a>', link(h['source'])])
     body=panel('No price or transit winner is verified', '''<p>The requested ranking needs a qualifying named room, private bathroom, a full seven-night total for two adults, and timed bus journeys for each restaurant.
 Those requirements are not met together by any captured quote. Properties below are <strong>alphabetical candidates, not a ranking</strong>.
 Missing totals and ≤60-minute counts are blank; historical star classifications, guest scores and zone-model counts are not promoted into this view.</p>
 <p>Bathroom descriptions are quoted only where actually read; they do not automatically prove exclusive private use for the requested rate.
 MGM Grand is added because Michelin explicitly locates two starred restaurants there; the Signature is a different candidate.</p>''')
     body+=table(['Hotel candidate','Named room / bed','Bathroom evidence','Amenities evidence','7-night total, 2 adults','Verified ≤60-min count','Verification / limitations','Official link'],rows,'33 candidates · total basis: 15–22 February 2027 · USD',ids=list(id for id,h in sorted(E['hotels'].items(),key=lambda kv:kv[1]['name'])))
+    body=body.replace('<table class="data responsive">', '<table id="official-hotel-decisions" class="data responsive">', 1)
     body+=panel('A valid location comparison: published host-property clusters', '''<p>Sorted by count within the named host property/complex, from Michelin’s published locations. This is a transparent research aid,
 <strong>not a substitute for your bus-within-one-hour ranking</strong>, and no zero-minute walking time is implied.</p>''' + table(['Host property / complex','Guide listings','Starred venues','Listed but not starred','Source'],[
         ['Venetian / Palazzo connected resort','4','0 in this selection','Bouchon, COTE, Estiatorio Milos, Mott 32',link(M)],
@@ -179,10 +204,10 @@ Blank means unverified. Current weekly schedules are not date-specific reservati
             if v.get('price_note'):price+='<br><small>'+esc(v['price_note'])+'</small>'
             rows.append([text(r['name'])+'<br><span class="badge">'+esc(v['award'])+'</span>',
                          text(v['location'])+'<br><small>'+esc(v['address'])+' (Michelin listing)</small>',
-                         text(v['days'])+'<br>'+text(v['hours']),text(v['exceptions']),price,social(v),source])
+                         text(v['days'])+'<br>'+text(v['hours']),text(v['exceptions']),price,social(v,r['id'],'restaurants'),source])
             ids.append(r['id'])
         body+=panel(title,table(['Restaurant / distinction','Published location','Open days / hours','Exceptions / gaps','Menu subtotal, 2 adults','Watch / social','Official evidence'],rows,title,ids))
-    body+=panel('Missing is not nonexistent', '<p>Where hours, prices or social links are blank, no reliable value was extracted from the official page in this pass. The <a href="sources.html">row-level evidence ledger</a> gives the check result for every venue. Older raw YouTube leads remain available for audit but were not verified as primary sources.</p>')
+    body+=panel('Missing is not nonexistent', '<p>Where hours, prices or social links are blank, no reliable value was extracted from the official page in this pass. The <a href="sources.html">row-level evidence ledger</a> gives the check result for every venue. Expandable prior-session accounts retain upstream provenance without claiming a new check. Older raw creator-video leads remain available for audit but were not verified as primary sources.</p>')
     return page('restaurants.html','Michelin dining, clearly distinguished','24 listings, restaurant-by-restaurant hours, couple subtotals and official evidence.',body)
 
 
@@ -191,7 +216,7 @@ def activities():
     for id,a in E['activities'].items():
         sources=link(a['source'])
         if a.get('menu_source'):sources+='<br>'+link(a['menu_source'],'Official tickets')
-        rows.append([text(a['name']),text(a['days'])+'<br>'+text(a['hours']),text(a['exceptions']),prices(a)+'<br><small>'+esc(a.get('price_note','Total for requested date unverified.'))+'</small>',social(a),sources])
+        rows.append([text(a['name']),text(a['days'])+'<br>'+text(a['hours']),text(a['exceptions']),prices(a)+'<br><small>'+esc(a.get('price_note','Total for requested date unverified.'))+'</small>',social(a,id,'activities'),sources])
     body=panel('Current information versus a 2027 ticket', '<p>Only Neon Museum explicitly labels the quoted admission product “2027”. Other published prices are current starting prices, not a locked 2027 checkout quote. Each displayed amount is a two-adult subtotal; processing fees and taxes are not guessed. No hotel-to-activity journey has been verified under 60 minutes.</p>')
     body+=table(['Activity','Days / hours','Exceptions / limitations','Subtotal, 2 adults','Watch / social','Official source'],rows,'Five activity candidates',list(E['activities']))
     return page('activities.html','Activities without the guesswork','Opening information, exceptions, two-adult subtotals and source-linked social profiles.',body)
@@ -225,7 +250,7 @@ It states a one-night room-and-tax deposit and a cancellation deadline 72 hours 
 <p><strong>Suggested action:</strong> evaluate the offer before 4 December only if Wynn fits the budget and a valid checkout quote/occupancy can be obtained.
 There is no evidence that this is the lowest price you will ever see. The page exposes rounded average-night rates but not an unambiguous final seven-night total; those averages are not multiplied into a purported exact total.</p>''' + link(E['hotels']['wynn']['source'],'Official dated Wynn offer & terms'))
     body+=panel('Quote acceptance checklist', '''<p>Same named room; two adults/one room; guaranteed queen-or-larger; exclusive bathroom; exact seven nights; currency; base total; mandatory resort fee; all taxes; total due; refundable/nonrefundable terms; deposit; loyalty eligibility; retrieval time.</p>
-<p>Neither a property home page, an OTA search list nor “$X/night” without a precise checkout breakdown clears that gate. See <a href="flagged.html#F-53">F-53</a>.</p>''')
+<p>Neither a property home page, an OTA search list nor “$X/night” without a precise checkout breakdown clears that gate. See <a href="flagged.html#F-65">F-65</a>.</p>''')
     return page('pricing.html','Dates & booking timing','Explicit date scenarios, a verified offer deadline, and no fabricated seven-night totals.',body)
 
 
@@ -239,7 +264,7 @@ QUESTIONS=[
 ('Q-07','Dietary restrictions, allergies or alcohol preferences?','Unknown','Not supplied. Partage excludes several diets; Kabuto raw-fish substitutions not accommodated.','Obtain venue dietary policy before a nonrefundable dining commitment. Do not infer suitability.',E['restaurants']['partage']['menu_source']),
 ('Q-08','Are 2027 dates and hours guaranteed?','No','Current weekly hours do not guarantee a 2027 reservation. Some show calendars need interactive loading.','Capture exact-date confirmation, closure notices and cancellation policy.',E['activities']['sphere']['source']),
 ('Q-09','How much walking or mobility support is needed?','Unknown','No walking tolerance or accessibility needs provided.','Record entrance-to-stop walks and accessible route/elevator information from operators.',RTC),
-('Q-10','Are all social links venue-specific and usable?','Partly answered','Only links observed on official pages are shown; property channels are explicitly labelled. Destinations not independently audited.','Check identity and content before promoting a video as a recommendation; leave absent handles blank.',E['activities']['neon-museum']['source']),
+('Q-10','Are all social links venue-specific and usable?','Partly answered','Fresh links come from official pages; expandable earlier-session accounts retain their provenance and caveats. Destinations not all rechecked here.','Check identity and content before promoting a video as a recommendation; leave absent handles blank.',E['activities']['neon-museum']['source']),
 ('Q-11','Can Michael Mina be included?','Unresolved','Michelin Recommended, but official page says temporarily closed. No 2027 reopening confirmed.','Require dated venue reopening/availability; do not count it as a bookable dinner.',E['restaurants']['michael-mina']['source']),
 ('Q-12','What flights, entry documents and airport transfer apply?','Unknown','Origin airport, passports, flight times and transfer budget not supplied; user location is not treated as departure proof.','Collect official airline/entry information once traveler-specific facts exist; do not assume eligibility.',RTC),
 ('Q-13','What does an official-link check prove?','Answered','A responding property page does not verify price, bed, bathroom, opening or booking availability.','Use field-specific evidence and leave other fields blank. See the per-row ledger.',M),
