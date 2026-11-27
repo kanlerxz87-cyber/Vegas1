@@ -9,7 +9,7 @@ A sourced planning dashboard for **two adults**, a **one–two week** trip withi
 - Preferred **15–18 February is three nights**, inconsistent with the requested length. **15–22 February** is a provisional seven-night comparison, not an approved change.
 - **33 hotel candidates** are shown alphabetically. No verified qualifying **all-in seven-night total**, cheapest hotel/week, optimal purchase day, or ≤60-minute bus ranking exists. Unsupported decision fields stay blank.
 - MICHELIN categories are separate: **4 starred venues, 3 Bib Gourmands, 17 Recommended**. Guide inclusion does not establish 2027 opening or reservations.
-- Fixed-menu food subtotals for **two** are confirmed from official menus for Partage ($260/$320/$420), Anima ($170), Stubborn Seed ($320) and Wing Lei ($397.76), China Poblano ($120), Kabuto ($260/$370) and SoulBelly ($80). These exclude unverified taxes, gratuities, drinks and future availability. À-la-carte dish prices do not establish a complete meal total.
+- Fixed-menu food subtotals for **two** are confirmed from official pages/PDFs for **12 of 24** venues: Partage ($260/$320/$420), Anima ($170), Stubborn Seed ($320), Wing Lei ($397.76), China Poblano ($120), Kabuto ($260/$370), SoulBelly ($80), Kame Omakase ($700/$1,000), Sparrow + Wolf ($298), COTE ($190/$450), Estiatorio Milos ($90 daily lunch) and Mott 32 ($76/$136 Mon–Fri lunch). These exclude unverified taxes, gratuities, drinks and future availability. À-la-carte dish prices do not establish a complete meal total.
 - No assumed meal counts, OTA hotel amounts, modeled travel scores or constructed full-trip budget are endorsed by the primary decision tables. Historical research is preserved, not silently rewritten.
 - Official observations, verification scope and manual-review links accompany each table row. Blank means **unverified**, not free or unavailable. **This is not booking-ready.**
 
@@ -18,7 +18,7 @@ A sourced planning dashboard for **two adults**, a **one–two week** trip withi
 | Path | Purpose |
 |---|---|
 | `docs/` and root `*.html`, `style.css` | Identical generated 16-page dashboard. Pages publishes `main:/`; both copies are generated together. Do not hand-edit. |
-| `data/verification-2026-11-27.json` | Field-level primary evidence overlay: 33 hotels, 24 restaurants, 6 activities; source links, caveats, EC-01–EC-07 flags. |
+| `data/verification-2026-11-27.json` | Field-level primary evidence overlay: 33 hotels, 24 restaurants, 6 activities; source links, caveats, EC-01–EC-08 flags. |
 | `data/{hotels,restaurants,activities,transit,price-windows}.json` | Preserved canonical research, including historical snapshots/estimates. Presence here does not make a value verified for the primary dashboard. |
 | `data/socials.json` | Earlier sessions' social-account provenance, shown with attribution and caveats, separate from fresh checks. |
 | `data/{questions,suggestions,review,review-flags}.json` | Prior question/suggestion backlogs and review logs, retained for audit. |
@@ -46,7 +46,7 @@ python3 scripts/check_evidence.py
 python3 -m unittest discover -s tests -v
 ```
 
-`.nojekyll` exists at root and in docs. The latest structural check reports **16 pages, 0 failures, 0 warnings, 526 external link occurrences**. Link occurrences are **not** a claim that 461 remote pages were reopened or are live. Tests check local correctness and evidence-display rules, not source truth or future availability.
+`.nojekyll` exists at root and in docs. The latest structural check reports **16 pages, 0 failures, 0 warnings, 564 external link occurrences**. Link occurrences are **not** a claim that remote pages remain live at reading time. Tests check local correctness and evidence-display rules, not source truth or future availability.
 
 ## Evidence policy and remaining research
 
