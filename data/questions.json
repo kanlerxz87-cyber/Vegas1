@@ -51,7 +51,7 @@
       "id": "Q-04",
       "question": "What does dinner for two cost at each Michelin restaurant?",
       "state": "open",
-      "answer": "Four venues print a real number on their official pages: Michael Mina ($295++ per person), Anima by EDO ($85 per person), KAME Omakase ($500 per person, from its own OpenTable description), and Guy Savoy (official à la carte dishes $100–$290 → $200–$580 for two; Krug Chef's Table 10-course $1,500/pp → $3,000 for two, per the Caesars menu effective 11.5.2026). All figures are before tax, gratuity and wine. Everything else leaves the cell blank. Note Michael Mina is currently marked Temporarily closed — see Q-11.",
+      "answer": "Three captured menu prices appear in the restaurant table (Michael Mina, Anima by EDO and KAME Omakase); Michael Mina was marked temporarily closed. Guy Savoy's official menu lists individual dishes at $100-$290 but a complete meal for two and the earlier Krug price were not reproduced and remain unverified (F-53). Recheck tax, gratuity, availability and current menus.",
       "problem": "Las Vegas fine-dining rooms publish menus without prices, and the ones that do publish (tasting menus) change them seasonally. Inventing a range would violate the no-inference rule; the Guy Savoy cell shows only arithmetic on printed official prices.",
       "substitution": "Blank cells plus a 'price on request' marker rather than an estimate.",
       "how_to_close": "Book a table on OpenTable for a dummy date and read the deposit or prepay amount, or phone the numbers listed in data/restaurants.json. 17 of the 24 venues now publish a phone number and can be called in one sitting.",

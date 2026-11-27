@@ -488,3 +488,27 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 |----|------|--------|--------------------|-----------|-------|
 | T17 | Social-link completion + fresh official-source verification sweep + final integration | in progress | arena/3d5d3718-vegas1 | `COORDINATION.md`, `FLAGS.md`, `data/restaurants.json`, `data/activities.json`, `data/questions.json`, `scripts/gen_site.py`, generated root + `docs/` pages, `README.md`, `executive-summary.md` | Fill Instagram/TikTok/YouTube gaps from official venue pages only (never guessed); re-verify Guy Savoy price (F-53), Michelin tiers, RTC/Monorail fares; rebuild + validate; PR + merge; confirm Pages. Overlap note: PR #38 (arena/16cb2f96, T16) touches the same files and is CONFLICTING/unmerged — its F-52/F-53 corrections will be preserved/re-applied here, not overwritten. PR #27 (arena/c9eed9ad) also CONFLICTING; not merged by this session. |
 
+
+## Session record — arena/3d5d3718-vegas1 (T17) — 2026-11-27
+
+**Scope:** `COORDINATION.md`, `FLAGS.md`, `data/restaurants.json`, `data/transit.json`, `data/questions.json`, generated site (root + `docs/`).
+
+**Verification performed (fetched 2026-11-27, official sources only):**
+- Caesars Guy Savoy menu — dishes $100–$290, no Krug price visible → F-53 applied (couple total blanked, Q-04 updated). Preserves PR #38's correction.
+- RTC fares page — Strip $4/$6/$8/$20 regular ($2/$3/$4/$10 reduced); Residential $2 single regular / $1 reduced → `transit.json` fare_note corrected (was ambiguous "$1 Nevada local").
+- MGM Joël Robuchon page — Two MICHELIN Stars 2026, Tue–Sat 5:00–9:30 PM, closed Mon/Sun, 702.891.7925 → matches data. No restaurant-specific social links.
+- MICHELIN 2026 Southwest press release (web search) — 2★ Robuchon; 1★ é, Guy Savoy, L'Atelier (+ Monte UT excluded) → matches data (4 starred / 3 Bib / 17 Recommended).
+- Standalone sites fetched: animabyedo.com (IG @animabyedo verified; $85 tasting; dinner nightly 5 PM), kabutolv.com (daily 5:30–9 PM; phone corrected to (702) 676-1044; IG posts linked but no profile handle), lamaiilv.com (hours/phone match data), soulbellybbq.com (IG @soulbellybbqlv verified; hours match data), sparrowandwolflv.com (no social URLs), estherslv.com (no address/hours/socials — F-50 stands), bestchickenpho.com (24 hours; Michelin Recommended 2026), yenvietkitchen.com (no socials/hours), partage.vegas (no socials), thesphere.com (no socials; Oz tickets via Ticketmaster), lvmonorail.com (hours match transit.json).
+- **Social sweep result (F-54):** Two restaurant Instagram profile links extracted from official pages; no TikTok profile URL extracted from the pages checked. This is an incomplete sweep, not a claim that other accounts do not exist. Inherited creator YouTube links still need evidence checks.
+
+**Irregularities flagged:** F-53 (Guy Savoy price withdrawn), F-54 (social-link coverage). Kabuto phone corrected. None block the merge.
+
+**Overlap note:** PR #38 (arena/16cb2f96, T16) is CONFLICTING and unmerged; its F-52/F-53 corrections are preserved here (F-53 re-applied; F-52 is not yet on main and its UI corrections will be integrated before publishing). PR #27 (arena/c9eed9ad) is CONFLICTING and was not merged by this session. If PR #38 merges later, its Guy Savoy/transit changes are already on main via this PR.
+
+### Integration scope and overlap correction — arena/3d5d3718-vegas1 — 2026-11-27
+
+- Fetched `origin/main` at `9b8b112` (PR #40): preserves the independent audit in `notes/verification-2026-11-27.md`. Its V-08 RTC regular/reduced correction is incorporated in this branch.
+- Newly discovered PR [#39](https://github.com/kanlerxz87-cyber/Vegas1/pull/39) overlaps social-link work and has conflicting F-52/F-53 IDs. **Request to that session:** keep its source evidence and proposed socials for per-link review; do not overwrite the Guy Savoy/transit corrections. This session stops independent discovery of the same social profiles and acts as final integrator. Only explicitly supported official cross-links will be published. Other proposed links remain unverified, not discarded.
+- Correction to the earlier record: F-52 UI changes from PR #38 are **not** already on main; the source has been inspected and will be integrated here. The earlier record overstated social verification completeness. This pass does not claim all external links work.
+- Integration scope extended to `data/verification.json`, `data/transit.json`, `data/suggestions.json`, `scripts/validate.py`, `scripts/test_verification.py`, and `notes/verification-2026-11-27-integration.md`, plus the existing claimed generator/data/pages. Purpose: a field-level official-evidence gate. Historical OTA prices and unvalidated model outputs will be retained as research, but not populated as verified comparison values. No active independent research files will be edited.
+- Task remains **in progress**. Every retained public fact must have official evidence; unsupported values become blank with linked flags. Structural validation is not an external-link or factual check.
