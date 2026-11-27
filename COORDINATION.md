@@ -761,3 +761,20 @@ followed by "Nevada local fares are $1" — so it multiplied the *residential* f
 regular expression that reads the amount attached to the label ("$20 3-day"), and `check_evidence.py` now asserts
 both `$120.00` (RTC) and `$119.90` (Monorail) appear. The three dining totals were unaffected because they use the
 Monorail line. This is recorded rather than quietly patched: a live-page read found what the offline validator could not.
+
+### Final publication record — T19 (2026-11-27)
+
+| PR | Head → base | Result | Merge commit | Contents |
+|----|-------------|--------|--------------|----------|
+| [#44](https://github.com/kanlerxz87-cyber/Vegas1/pull/44) | `arena/f6104931-vegas1` → `main` | **MERGED** 2026-11-27T17:41:44Z | `af5e762` | Menu re-read (7 venues priced from their own pages), `dining.html`, F-64–F-66, C-11–C-17, validation of the evidence gate in `check_evidence.py` |
+| [#50](https://github.com/kanlerxz87-cyber/Vegas1/pull/50) | `arena/f6104931-vegas1` → `main` | **MERGED** 2026-11-27T17:47Z | `3191606` | Fixes the RTC pass total (§ above) and records this deployment |
+
+**Pages deployment:** build for `3191606d85c3d32b18ba46f988ca9a98487ddbe4` reached **built** with `error: null`;
+`pages.status = built`, source `main:/`. Verified by fetching the live pages with a cache-busting query
+`?v=3191606`: `dining.html` shows **$712.30 / $1,025.06 / $1,855.06** and the **$120.00** RTC line, and
+`restaurants.html` shows the menu-linked price cells.
+
+**Concurrency note for the next session:** `main` advanced three times during this branch's life (PRs #39–#43,
+then #45/#46/#48). Every merge was resolved by regenerating HTML rather than hand-merging it, and no other
+session's data was reverted. The one deliberate reversal of an earlier decision — reinstating a *labelled estimate*
+for Guy Savoy — is recorded as F-64 with its source and keeps the $3,000 Krug figure withdrawn.
