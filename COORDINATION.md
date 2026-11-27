@@ -481,3 +481,7 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 **Irregularities:** none new. All known limitations remain published on flagged.html (F-29/F-30 rate basis, F-47 Vanderpump rebrand, F-48 search-list prices, etc.) and do not block this merge.
 
 **Result:** T16 done. [PR #36](https://github.com/kanlerxz87-cyber/Vegas1/pull/36) merged 2026-11-27T17:31:08Z (merge commit `cc78807`); Pages build `1409320765` status `built`, Pages API `built` at https://kanlerxz87-cyber.github.io/Vegas1/.
+
+## Session record — arena/bc27fca6-vegas1 (T17) — 2026-11-27
+
+**Scope claimed:** `COORDINATION.md` + `notes/verification-2026-11-27.md` only. No `data/*.json`, generator, or generated site files edited — PR #27 and PR #38 from other sessions own those files; any canonical-data fix found here is logged as a Request below instead of edited. This is an independent line-by-line verification audit of the live site against official sources.
