@@ -912,3 +912,32 @@ PR #59 final post-concurrency checks: 16 pages, 0 failures, 0 warnings, **515** 
 ### T-ec1d72e2 fifth concurrency integration — main 01c7107 / PR #57
 
 Kept all T20 source-file/legacy-generator fixes and F-68/F-69. Freshly reopened China Poblano menu ($60 pp), SoulBelly menu ($80 explicitly for two), Kabuto official `/reserve` redirect to Resy ($130/$185 pp, dated holiday exception and cancellation rules), and é brand site (Tue–Sun/two seatings). Added these source-backed subtotals to strict overlay; SoulBelly stored as an explicit for-two amount, not a fabricated per-person menu. é Sunday now explicitly disputed, not presumed closed; source conflict shown. Existing strict China Poblano and Milos clock hours already match the upstream corrections. Hotel URL checks stay as attributed upstream source observations, not fresh room verification. All prior data retained. Rebuild/regressions/browser smoke rerun before merging #59.
+
+
+### T17 CLOSED (arena/c045ad05-vegas1, 2026-11-27)
+
+All work of this task is merged to `main` and deployed. Nothing of mine is outstanding.
+
+| PR | Merge commit | What it delivered |
+|----|--------------|-------------------|
+| [#46](https://github.com/kanlerxz87-cyber/Vegas1/pull/46) | `5d422eb` | 21/24 restaurant + 5/5 activity Instagram links with per-row evidence; Kabuto phone corrected; provenance table; `check_links.py` |
+| #49 | `05b0361` | typo in published Bouchon evidence ("Coral Coral Gables") corrected |
+| #51 | `e70b268` | run-together sentences in the activities provenance cell fixed |
+| #54 | `18b16ec` | recovered evidence a merge had dropped; closed R-02; removed a live conflict marker committed to this file by PR #47 |
+| [#58](https://github.com/kanlerxz87-cyber/Vegas1/pull/58) | `db06f7f` | Fountains of Bellagio socials verified (property-level, labelled) → activities 6/6 IG, 6/6 YouTube |
+
+**Final state, re-read from the deployed site (`01c7107`):** 16 pages · 0 failures · 0 warnings · 21 of 24 restaurants
+and 6 of 6 activities carry an Instagram link · all 6 activities have a provenance row · `docs/` and root identical.
+
+**What this task learned that the next session should not re-learn:** a merge can silently delete another session's
+*evidence* while looking clean, and a green validator cannot see it — read the deployed page back, never just the build
+log. `data/socials.json` is the machine-readable record; keep it in step with `activities.json`/`restaurants.json`.
+
+### T20 PR & deployment result — arena/01ba2dd9-vegas1 (2026-11-27)
+
+- **[PR #57](https://github.com/kanlerxz87-cyber/Vegas1/pull/57)** (`arena/01ba2dd9-vegas1` → `main`) **MERGED** 2026-11-27T17:50:07Z via `gh pr merge 57 --merge`; merge commit `01c7107c875c9569bafe7e80703c0aef65b6a52f`.
+- **Pre-merge checks:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py && python3 scripts/check_evidence.py` → **16 pages · 0 failures · 0 warnings · 509 external links · `check_evidence.py` PASS**; root and `docs/` byte-identical.
+- **Pages deployment verified:** `gh api repos/kanlerxz87-cyber/Vegas1/pages/builds` confirmed build for `01c7107c875c9569bafe7e80703c0aef65b6a52f` reached **`status: built`** (`error: null`) at 2026-11-27T17:50:31Z (`https://kanlerxz87-cyber.github.io/Vegas1/`, source `main:/`).
+- **Live page verification (`?v=01c7107`):** fetched `suggestions.html` (`## 16 ways to improve this plan`, `S-02` 24 listings), `restaurants.html` (China Poblano `$120 (exact)` + Sun 10:00 PM, Milos Fri–Sat 11:00 PM, é F-68 conflict), and `flagged.html` (F-68 & F-69 live with official source links).
+
+T-ec1d72e2: publication retry integrated main 15143fa (PRs #62/#63) including attributed video-coverage notice and publication records. Canonical source data unchanged; strict views already differentiate fresh versus prior video checks. Rebuilt outputs; final checks: 16 pages, 0 failures/warnings, 526 external link occurrences; 12 regressions pass.
