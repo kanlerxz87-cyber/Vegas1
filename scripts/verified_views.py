@@ -273,7 +273,7 @@ The preferred 15–18 February window is only three nights. Starting the seven-n
 keeps the preferred arrival date without silently shortening the requested 1–2-week trip.
 A possible 14-night version is 15 February–1 March; it has not been priced.</p>
 <p><strong>This is a research dashboard, not a booking-ready recommendation.</strong> All entries are retained,
-but fully qualified hotel offers and dated bus itineraries are still missing. An official Hilton engine itemization is retained separately with missing terms. Primary cells are blank—not inferred
+but fully qualified hotel offers and dated bus itineraries are still missing. Official Resorts World Hilton ($2,200.15) and Crockfords ($3,346.42) engine itemizations are retained separately with missing terms, while Conrad is sold out 16–17 February. Primary cells are blank—not inferred
 from rounded nightly averages, third-party quotes, route maps or assumed walking/waiting times.</p>
 <p><a href="summary.html">Read the executive summary &amp; draft week</a> ·
 <a href="flagged.html">Flagged for Review</a> · <a href="questions.html">What still needs evidence</a></p>
@@ -328,7 +328,7 @@ The exact-date booking page returned a technical-error banner and no final taxed
 <li><strong>Wynn:</strong> the exact-date operator page describes Resort King bedding/bathroom; Wing Lei is listed at Wynn.
 Its average nightly Cyber price excludes tax and is not used as a final seven-night quote.</li>
 <li><strong>MGM Grand:</strong> the newly reopened MGM King page describes a king bed and marble-adorned bathroom; this is not a dated room allocation or rate. Bellagio, Cosmopolitan and Crockfords also now have separately sourced room descriptions.</li>
-<li><strong>Hilton at Resorts World:</strong> a separately named King room and described bathroom are checked. Its $2,200.15 engine itemization is an observation with incomplete terms, not a fully qualified offer; do not attach this price to Crockfords.</li>
+<li><strong>Hilton and Crockfords at Resorts World:</strong> separately named King rooms and described bathrooms are checked on both towers. Hilton’s $2,200.15 and Crockfords’ $3,346.42 engine itemizations are observations with incomplete terms, not fully qualified offers (Conrad is sold out 16–17 February); do not mix Hilton and Crockfords pricing.</li>
 <li><strong>Desert Rose and Cliffs at Peace Canyon:</strong> operator pages describe King-bed suites and kitchen/bath facilities.
 Neither has a verified door-to-door one-hour bus itinerary here; Cliffs is not presented as a convenient Strip alternative.</li>
 </ul><p>Property co-location comes from {guide}; room evidence is linked in the rows above. A named room description is not a reservation.</p>""")
@@ -406,12 +406,26 @@ Neither has a verified door-to-door one-hour bus itinerary here; Cliffs is not p
 
     # Pricing: quote evidence, not nightly-average extrapolation.
     qrows = []
-    for key, name in [("quote-rw", "Hilton at Resorts World · Deluxe One King (observation below)"), ("quote-caesars", "Caesars Palace · Julius Deluxe 1 King"), ("quote-wynn", "Wynn · Resort King"), ("quote-venetian", "The Venetian")]:
+    for key, name in [
+        ("quote-rw", "Hilton at Resorts World · Deluxe One King (itemized observation below)"),
+        ("quote-crockfords", "Crockfords Las Vegas · City View Superior One King (itemized observation below)"),
+        ("quote-conrad", "Conrad Las Vegas at Resorts World (sold out Tue 16 & Wed 17 Feb)"),
+        ("quote-caesars", "Caesars Palace · Julius Deluxe 1 King"),
+        ("quote-nobu", "Nobu Hotel Caesars Palace · Nobu Deluxe King"),
+        ("quote-vanderpump", "The Vanderpump Hotel (former Cromwell) · Vanderpump Room 1 King Roll-In"),
+        ("quote-flamingo", "Flamingo Las Vegas · Flamingo Room 2 Queens"),
+        ("quote-horseshoe", "Horseshoe Las Vegas · Resort Room 1 King"),
+        ("quote-linq", "The LINQ · Deluxe 1 Queen Mobility Roll-In"),
+        ("quote-wynn", "Wynn Las Vegas · Resort King"),
+        ("quote-encore", "Encore at Wynn Las Vegas · Encore Resort King"),
+        ("quote-fontainebleau", "Fontainebleau Las Vegas · Bleau Queen / Bleau King"),
+        ("quote-venetian", "The Venetian"),
+    ]:
         s = data["sources"][key]
         qrows.append(f'<tr><th scope="row">{esc(name)}</th><td>15–22 February 2027 · 7 nights · 2 adults</td><td>{blank()}</td><td>{esc(s["note"])}</td><td>{link(s["url"],"Official dated engine")}</td></tr>')
-    body = panel("No fully qualified hotel offers; one itemized observation", '<p id="cheapest-week">There is no verified cheapest hotel, stay window or future purchase date. '
+    body = panel("No fully qualified hotel offers; two itemized Resorts World observations", '<p id="cheapest-week">There is no verified cheapest hotel, stay window or future purchase date. '
                  'Historical Booking.com totals are not displayed as official price comparisons. The date range contains <strong>30 possible seven-night start dates</strong> '
-                 '(15 February–16 March, checkout by 23 March); the old four-window sample was not exhaustive. No unpriced week is labelled sold out.</p>' + legend())
+                 '(15 February–16 March, checkout by 23 March); the old four-window sample was not exhaustive. No unpriced week is labelled sold out (Conrad’s 16–17 February sold-out result comes directly from its exact-date engine).</p>' + legend())
     body += panel("Exact-date source checks · 27 November 2026", table(["Hotel / named room", "Requested stay", "Final official total · USD", "What the source returned / limitation", "Source"], qrows, "Read-only quote attempts; no checkout or booking submitted"))
     observation = H["hilton-resorts-world"]["fields"]["observed_total_7n"]
     parts = observation["itemized"]
@@ -429,6 +443,19 @@ Neither has a verified door-to-door one-hour bus itinerary here; Cliffs is not p
                   'The page also has a browser-unsupported warning and contradictory calendar fee labels; the room’s itemization—not calendar averages—is reproduced here. '
                   'No reservation/checkout was submitted; no cheapest-week or fully qualified booking recommendation follows.</p>' + table(
                       ["Line item", "Published USD amount", "Source"],itemrows,"Reproduced itemized operator observation; not inferred from a rounded nightly average"))
+    ck_obs = H["crockfords"]["fields"]["observed_total_7n"]
+    ck_parts = ck_obs["itemized"]
+    ck_rows = []
+    for i, amount in enumerate(ck_parts["room_nights"]):
+        dt = date.fromisoformat(ck_obs["check_in"]) + timedelta(days=i)
+        ck_rows.append(f'<tr><th scope="row">{dt.strftime("%a %d %b %Y")}</th><td>${Decimal(amount):,.2f}</td><td>{link(data["sources"]["quote-crockfords"]["url"],"Official itemization")}</td></tr>')
+    for key, label in [("room_tax","Room tax"),("resort_fees","Resort fees"),("resort_fee_tax","Resort-fee tax")]:
+        ck_rows.append(f'<tr><th scope="row">{label}</th><td>${Decimal(ck_parts[key]):,.2f}</td><td>{link(data["sources"]["quote-crockfords"]["url"],"Official itemization")}</td></tr>')
+    ck_rows.append(f'<tr><th scope="row">Operator-printed total</th><td>${Decimal(ck_obs["amount"]):,.2f}</td><td>{link(data["sources"]["quote-crockfords"]["url"],"Official itemization")}</td></tr>')
+    body += panel("Crockfords Las Vegas (Resorts World): $3,346.42 observed, not a qualified offer", '<p id="crockfords-observation">'
+                  '15–22 February 2027; seven nights; two adults; one City View Superior One King room (Two Queens prints $3,597.27; the sibling Conrad tower reports 16–17 February sold out). '
+                  '<strong>Promotion eligibility, deposit/cancellation terms and a complete private-use guarantee remain unverified</strong>; primary offer cells stay blank (<a href="flagged.html#F-80">F-80</a>).</p>' + table(
+                      ["Line item", "Published USD amount", "Source"], ck_rows, "Reproduced itemized Crockfords operator observation; not a qualified final offer"))
     body += panel("A verified booking-offer window, not proof of the best date", '<p>Wynn’s public Cyber offer terms on the exact-date engine say '
                   '<strong>book 20 November–4 December 2026</strong> for eligible stays <strong>22 November 2026–30 June 2027</strong>, one to 14 nights. '
                   'The page describes a 72-hour cancellation rule with a one-night room-and-tax penalty and a one-night deposit at booking. '
@@ -600,6 +627,8 @@ Neither has a verified door-to-door one-hour bus itinerary here; Cliffs is not p
     pages["sources.html"] = page("sources.html", "Sources", "Exact source pages, observation notes and an honest distinction between fetched and unchecked references.", body)
 
     counts = [("Restaurant rows covered", len(R), "michelin"), ("Hotel candidates covered", len(H), "quote-caesars"),
+              ("Hotel official sources fetched", sum(data["sources"][r["source"]]["result"] == "fetched" for r in H.values()), "h-crockfords"),
+              ("Hotel named-room descriptions verified", sum(value(r,"room") is not None for r in H.values()), "h-vdara"),
               ("Activity rows covered", len(A), "a-mob-museum"),
               ("Official all-in hotel totals verified", sum(value(r,"total_7n") is not None for r in H.values()), "quote-wynn"),
               ("Hotel bus-threshold counts verified", sum(value(r,"within_60_bus") is not None for r in H.values()), "rtc-trip"),

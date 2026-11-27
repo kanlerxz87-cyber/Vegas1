@@ -242,7 +242,7 @@
       "id": "Q-09",
       "question": "Do official hotel totals include every mandatory fee and tax?",
       "state": "open",
-      "answer": "No fully qualified final seven-night offer was established. Caesars shows an error banner plus tax-exclusive nightly amounts; Wynn shows tax-exclusive nightly averages; Venetian rendered no quote. Hilton Resorts World’s exact-date engine prints a fully itemized $2,200.15 total for 15–22 February, two adults, Deluxe One King, including listed room tax/resort fee/fee tax. That observation is reproduced separately, not promoted to a qualifying offer: promotion eligibility, deposit/cancellation and private-use guarantee remain unverified.",
+      "answer": "No fully qualified final seven-night offer was established. Caesars (Palace, Nobu, Vanderpump, Flamingo, Horseshoe, LINQ) shows an error banner plus tax-exclusive nightly amounts; Wynn, Encore and Fontainebleau show tax-exclusive nightly averages; Venetian rendered no quote; Conrad Las Vegas is sold out Tue 16 & Wed 17 Feb 2027. Resorts World’s exact-date engine prints fully itemized totals for Hilton Deluxe One King ($2,200.15; Queen $2,434.84) and Crockfords City View Superior One King ($3,346.42; Two Queens $3,597.27) including listed room tax, resort fees and resort-fee tax. Both observations are reproduced separately, not promoted to qualifying offers: promotion eligibility, deposit/cancellation and private-use guarantees remain unverified.",
       "problem": "Rounded averages and changing fee/tax bases cannot be promoted into exact final totals. The previous generic resort-fee/tax uplift was not a valid hotel-specific quote.",
       "substitution": "No unsupported number is substituted. The public field stays blank where official evidence is missing.",
       "how_to_close": "Read an itemized final stay total from an official quote without submitting a reservation. Record mandatory fees, tax, deposit and cancellation terms. Do not add a blanket tax rate or multiply rounded averages into an exact offer.",
@@ -250,7 +250,8 @@
         "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
         "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
         "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2027-02-15&children[]=0&departure_date=2027-02-22&view=calendar",
-        "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0"
+        "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0",
+        "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=CROCKFORDS&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0"
       ],
       "previous_pass_2026_11_27": {
         "id": "Q-09",
@@ -317,7 +318,7 @@
       "id": "Q-12",
       "question": "Which restaurant/activity details changed in this fresh official-source sweep?",
       "state": "answered",
-      "answer": "Corrections include China Poblano Sunday closing at 10 PM; Wing Lei’s open-day list including Friday/Saturday; Milos Friday/Saturday closing at 11 PM; Mob Museum recurring daily 9 AM–9 PM; Fremont Music Reels starting 6 PM; Neon’s 2027 ticket regime; and Kabuto’s printed phone 702-676-1044. Guy Savoy’s complete price was withdrawn. Completed T23 discoveries were independently reopened here: Yen Viet Kitchen’s operator-linked storefront prints Mon, Wed–Sun 10 AM–8:30 PM (Tue closed); KAME has explicit seatings/phone/cancellation rules on /contact-us/; four more fixed-menu/lunch subtotals are supported; four more hotels have named room descriptions; Neon’s early/late-arrival price rule starts January 1, 2027.",
+      "answer": "Corrections include China Poblano Sunday closing at 10 PM; Wing Lei’s open-day list including Friday/Saturday; Milos Friday/Saturday closing at 11 PM; Mob Museum recurring daily 9 AM–9 PM; Fremont Music Reels starting 6 PM; Neon’s 2027 ticket regime; and Kabuto’s printed phone 702-676-1044. Guy Savoy’s complete price was withdrawn. Completed T23 discoveries were independently reopened here: Yen Viet Kitchen’s operator-linked storefront prints Mon, Wed–Sun 10 AM–8:30 PM (Tue closed); KAME has explicit seatings/phone/cancellation rules on /contact-us/; four more fixed-menu/lunch subtotals are supported; four more hotels have named room descriptions; Neon’s early/late-arrival price rule starts January 1, 2027. In addition, Esther’s Kitchen’s /location/esthers-kitchen/ subpage resolves F-50/F-07 (1131 S. Main Street, 702-570-7864, Lunch Mon–Fri 11 AM–3 PM, Brunch Sat–Sun 10 AM–3 PM, Dinner daily 5 PM–11 PM, $15/person hold for 6+); Anima by EDO confirms nightly dinner and full-table tasting participation; and Stubborn Seed’s menu PDF adds the $390 Elevated (+$35 pp) tier alongside $320.",
       "problem": "Some fields remain unknown: a full Guy Savoy weekly schedule was not exposed, Sparrow + Wolf and other independent pages did not yield complete hours, and High Roller has contradictory blocks.",
       "substitution": "No unsupported number is substituted. The public field stays blank where official evidence is missing.",
       "how_to_close": "Corrections are complete for these observed fields. The verification page lists every remaining null and its source reference; never mark an entire row verified merely because one field was confirmed.",
@@ -331,7 +332,8 @@
         "https://kabutolv.com",
         "https://www.skiplinow.com/shop/514688a",
         "https://sushikame.com/contact-us/",
-        "https://neonmuseum.org/your-visit/"
+        "https://neonmuseum.org/your-visit/",
+        "https://www.estherslv.com/location/esthers-kitchen/"
       ],
       "previous_pass_2026_11_27": {
         "id": "Q-12",
@@ -350,7 +352,7 @@
       "id": "Q-13",
       "question": "Were all official hotel links and all external/social links checked live?",
       "state": "open",
-      "answer": "No exhaustive live check is claimed for every external/media link. The parallel T20 record attempted all original 32 hotel reference URLs (21 live, 10 refused, 1 sibling). This pass independently read the specific source pages in the live field manifest, including Hilton’s engine/room and T23’s new Crockfords, Bellagio, Cosmopolitan and MGM King pages. That adds room-specific evidence, not a repeat live-check guarantee for all hotel references, a final offer or bus route.",
+      "answer": "No exhaustive live check is claimed for every external/media link. In the live field manifest, 30 of 34 hotel candidates now have freshly read official property, room or exact-date engine pages (including Bluegreen Club 36’s canonical /resorts/nevada/bluegreen-club-36/ URL, The Reserve at Park MGM, Vdara Studio Suite, Signature Deluxe Suite, ARIA Deluxe, Encore, Fontainebleau, Nobu, Vanderpump, Four Seasons, Green Valley Ranch, Red Rock, Sahara, Hilton RW and Crockfords). Only 4 hotel candidates (Golden Nugget, Plaza, W Las Vegas, Waldorf Astoria) remain un-opened in this pass due to automated fetch blocks.",
       "problem": "A structurally valid href is not a successful remote fetch or field verification. A refusal by automated access is not necessarily a broken browser link.",
       "substitution": "No unsupported number is substituted. The public field stays blank where official evidence is missing.",
       "how_to_close": "Re-open each unchecked reference and record the response/redirect target, property identity and field evidence. Keep blocked/unavailable distinct. Do not claim zero broken external links from the local HTML validator.",

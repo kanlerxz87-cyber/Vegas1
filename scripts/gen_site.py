@@ -502,7 +502,7 @@ def build_dining():
   </tbody>
   </table>
   </div>
-  <p class="note">Useful comparison: the cheapest starred dinner on this site (Wing Lei, ${_dining("wing-lei","low"):,.2f}
+  <p class="note">Useful comparison: Chef Tam's tasting at Wing Lei (2026 MICHELIN Recommended, ${_dining("wing-lei","low"):,.2f}
   for two) is roughly the price of one to two hotel nights at the properties in the middle of the hotel table — check the
   official checkout total before assuming the room is the only large line.</p>
 </section>
