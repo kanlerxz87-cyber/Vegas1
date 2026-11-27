@@ -117,7 +117,7 @@ def page(active, title, subtitle, body, lead=""):
     <h1>{e(title)}</h1>
     <p class="sub">{subtitle}</p>
     {lead}
-    <p class="note"><strong>27 November evidence notice:</strong> Historical audit text and suggestions below may describe superseded OTA prices or model scores. They are not verified booking guidance. <a href="hotels.html">Current hotel evidence table</a> and <a href="flagged.html#F-58">F-58–F-63</a> take precedence. Restaurant/activity hours are observations, not confirmed 2027 schedules. Creator media links have not been fully re-opened in this pass.</p>
+    <p class="note"><strong>27 November evidence notice:</strong> Historical audit text and suggestions below may describe superseded OTA prices or model scores. They are not verified booking guidance. <a href="hotels.html">Current hotel evidence table</a> and <a href="flagged.html#F-58">F-58–F-63</a> take precedence. Restaurant/activity hours are observations, not confirmed 2027 schedules. Activity video links were each re-resolved through YouTube oEmbed on 27 Nov 2026 (F-67); restaurant creator videos were only spot-checked.</p>
   </div>
   {body}
 </main>
