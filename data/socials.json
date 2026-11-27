@@ -260,7 +260,7 @@
    "youtube": "https://www.youtube.com/@TheMobMuseum",
    "status": "verified",
    "evidence": "Instagram opened and verified-badged (71,833 followers, bio links admission.themobmuseum.org). YouTube channel opened; lists 'Inside the Life' and 'About The Mob Museum' playlists.",
-   "also_recorded": "Instagram is declared as the museum's own profile in the metadata of its official YouTube channel, whose declared website is themobmuseum.org; the museum's home page prints no social icons. The YouTube links are individual videos, not the channel. Re-checked 2026-11-27. Source: https://www.youtube.com/themobmuseum"
+   "also_recorded": "Instagram is declared as the museum's own profile in the metadata of its official YouTube channel, whose declared website is themobmuseum.org; the museum's home page prints no social icons. The YouTube links are the museum's own channel plus three individual videos, all resolved via oEmbed on 2026-11-27 (F-67). Re-checked 2026-11-27. Source: https://www.youtube.com/themobmuseum"
   },
   {
    "id": "neon-museum",

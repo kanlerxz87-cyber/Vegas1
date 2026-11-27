@@ -91,7 +91,7 @@
     "F-62"
    ],
    "notes": "A morning-arrival discount and an evening-arrival discount are offered online only on the Premier Pass. Social: IG/TikTok @themobmuseum per the museum's own press release (reprinted Nevada Business 2026-11-02). Hours re-verified 2026-11-27 on themobmuseum.org homepage table.",
-   "social_note": "Instagram is declared as the museum's own profile in the metadata of its official YouTube channel, whose declared website is themobmuseum.org; the museum's home page prints no social icons. The YouTube links are individual videos, not the channel. Re-checked 2026-11-27. Source: https://www.youtube.com/themobmuseum YouTube video IDs added 2026-11-27 after each resolved in YouTube's oEmbed endpoint: s34nVideos, Jaycation, The Unofficial Guides — creator media, not the venue's channel.",
+   "social_note": "Instagram is declared as the museum's own profile in the metadata of its official YouTube channel, whose declared website is themobmuseum.org; the museum's home page prints no social icons. The YouTube links are the museum's own channel plus three individual videos, all resolved via oEmbed on 2026-11-27 (F-67). Re-checked 2026-11-27. Source: https://www.youtube.com/themobmuseum YouTube video IDs added 2026-11-27 after each resolved in YouTube's oEmbed endpoint: s34nVideos, Jaycation, The Unofficial Guides — creator media, not the venue's channel.",
    "social_status": "verified",
    "social_evidence": "Instagram opened and verified-badged (71,833 followers, bio links admission.themobmuseum.org). YouTube channel opened; lists 'Inside the Life' and 'About The Mob Museum' playlists."
   },
