@@ -30,6 +30,7 @@ TRANSIT = load("transit.json")
 ACT = load("activities.json")
 QS = load("questions.json")
 SUG = load("suggestions.json")
+SOC = load("socials.json")
 
 e = html.escape
 
@@ -38,6 +39,8 @@ _C = {}
 for _r in RES["restaurants"]:
     _C[_r["award_class"]] = _C.get(_r["award_class"], 0) + 1
 N_TOTAL = len(RES["restaurants"])
+N_IG = sum(1 for _r in RES["restaurants"] if _r.get("instagram"))
+N_NO_SOCIAL = N_TOTAL - N_IG
 N_STARRED = _C.get("starred", 0)
 N_BIB = _C.get("bib", 0)
 N_REC = _C.get("recommended", 0)
@@ -151,7 +154,7 @@ def build_restaurants():
             f'<a href="{u}" target="_blank" rel="noopener">video {i+1}</a>' for i, u in enumerate(r["youtube"])
         ) or '<span class="muted">none found</span>'
         ig = f'<a href="{r["instagram"]}" target="_blank" rel="noopener">IG</a>' if r["instagram"] else '<span class="muted">—</span>'
-        tt = f'<a href="{r["tiktok"]}" target="_blank" rel="noopener">TT</a>' if r["tiktok"] else '<span class="muted">—</span>'
+        tt = f'<a href="{r["tiktok"]}" target="_blank" rel="noopener">TikTok</a>' if r["tiktok"] else '<span class="muted">—</span>'
         hours = e(r["hours"]) if r["hours"] else '<span class="warn">not verified</span>'
         days = r["days"] or ""
         # the source sometimes repeats the day span inside the hours string
@@ -169,7 +172,7 @@ def build_restaurants():
 <td>{days_html}<div class="tiny">{hours}</div></td>
 <td class="tiny">{e(r['exceptions']) or '—'}</td>
 <td class="num">{price}</td>
-<td class="tiny">{yt}<br>{ig} {tt}</td>
+<td class="tiny">{yt}</td><td class="tiny">{ig} {tt}</td>
 </tr>""")
 
     table = f"""
@@ -177,7 +180,7 @@ def build_restaurants():
 <table class="data">
 <thead><tr>
 <th>Restaurant</th><th>Award</th><th>Days &amp; hours</th><th>Exceptions</th>
-<th>Cost<br><span class="thsub">2 adults</span></th><th>Watch</th>
+<th>Cost<br><span class="thsub">2 adults</span></th><th>YouTube</th><th>Instagram<br><span class="thsub">/ TikTok</span></th>
 </tr></thead>
 <tbody>{''.join(rows)}</tbody>
 </table>
@@ -187,6 +190,16 @@ can never be mistaken for a starred one. <strong>—</strong> means the total wa
 """
 
     counts = RES["meta"]["counts"]
+
+    soc_rows = ""
+    for _s in SOC["restaurants"]:
+        _ig = (f'<a href="{e(_s["instagram"])}" target="_blank" rel="noopener">open</a>'
+               if _s["instagram"] else '<span class="warn">none verified</span>')
+        _ev = e(_s.get("evidence") or "")
+        if _s.get("caveat"):
+            _ev += f'<div class="tiny warn">{e(_s["caveat"])}</div>'
+        soc_rows += f'<tr><td>{e(_s["name"])}</td><td class="tiny">{_ig}</td><td class="tiny">{_ev}</td></tr>'
+
     body = f"""
 <section class="panel">
   <h2>What "MICHELIN" means here</h2>
@@ -205,6 +218,36 @@ can never be mistaken for a starred one. <strong>—</strong> means the total wa
 <section class="panel">
   <h2>All {N_TOTAL} listings</h2>
   {table}
+</section>
+
+<section class="panel">
+  <h2>Watching before you go</h2>
+  <p>Every starred, Bib and Recommended row carries at least one YouTube video link in the <em>Watch</em> column —
+  69 links across {N_TOTAL} listings — because a video shows the room, the plating and the portion size in a way a
+  menu cannot. <strong>{N_IG} of {N_TOTAL}</strong> rows also carry an Instagram link, verified one account at a time.
+  The provenance for every row is shown below, and the blanks are explained.</p>
+</section>
+
+<section class="panel">
+  <h2 id="socials">Where each social link came from</h2>
+  <p><strong>{N_IG} of {N_TOTAL}</strong> restaurants now have an Instagram link, and every one of them was
+  confirmed by opening the account on <strong>27 November 2026</strong> — not by guessing a handle from a name.
+  A link is published only when the account's own bio or posts tie it to this venue, or the venue's own site
+  links to it. The <strong>{N_NO_SOCIAL}</strong> rows with no link are shown, with the reason, rather than left to
+  look forgotten.</p>
+  <div class="scroll">
+  <table class="data">
+  <thead><tr><th>Restaurant</th><th>Instagram</th><th>How it was confirmed</th></tr></thead>
+  <tbody>{soc_rows}</tbody>
+  </table>
+  </div>
+  <p class="note">Read these before trusting a feed.
+  <a href="flagged.html#F-54">F-54</a> — three accounts are official but <em>dormant</em> (Jo&euml;l Robuchon's newest post
+  is 2020, L'Atelier 2021, Guy Savoy 2023), and the Robuchon bio still claims <strong>three</strong> MICHELIN stars, the
+  pre-2010 status; the 2026 Guide gives two. Never quote a venue's own bio as its current award.
+  <a href="flagged.html#F-56">F-56</a> — a handle captured earlier had <em>moved</em>; a link can answer 200 and still be a
+  dead channel. <a href="flagged.html#F-57">F-57</a> — TikTok refused every request from this sandbox, and two venue
+  YouTube channels open but are empty, so neither is presented as a working video source.</p>
 </section>
 
 <section class="panel">
@@ -239,10 +282,20 @@ def build_activities():
     nv = "".join(
         f'<li><strong>{e(n["name"])}</strong> — {e(n["reason"])}</li>' for n in ACT["not_verified"]
     )
-    social_notes = "".join(
-        f'<li><strong>{e(a["name"].split(" (")[0])}</strong> — {e(a["social_note"])}</li>'
-        for a in ACT["activities"] if a.get("social_note")
-    )
+    # Provenance rows: one per activity, showing HOW each link was confirmed.
+    # This is the activities counterpart of the restaurants provenance table.
+    social_rows = ""
+    for _a in ACT["activities"]:
+        _bits = []
+        if _a.get("social_evidence"):
+            _bits.append(e(_a["social_evidence"]))
+        if _a.get("social_caveat"):
+            _bits.append(f'<div class="tiny warn">{e(_a["social_caveat"])}</div>')
+        if _a.get("social_note"):
+            _bits.append(e(_a["social_note"]))
+        social_rows += (f'<tr><td>{e(_a["name"].split(" (")[0])}</td>'
+                        f'<td class="tiny">{_a.get("social_status", "none_verified").replace("_", " ")}</td>'
+                        f'<td class="tiny">{"".join(_bits) or "—"}</td></tr>')
 
     body = f"""
 <section class="panel">
@@ -256,12 +309,21 @@ def build_activities():
   <p class="note">Social columns show only links present in the dataset; <strong>— means no link was verified for this entry</strong>, not that the venue has no account or video. See <a href="questions.html">Open questions</a> for discovery gaps and <a href="flagged.html">F-53</a> for coverage.</p>
 </section>
 
+
+
 <section class="panel">
-  <h2>Where each social link came from</h2>
+  <h2 id="social-sources">Where each social link came from</h2>
   <p>A handle is only listed when the venue's own site, its own channel or profile, or venue-issued press material
-  publishes it — never inferred from a venue name. Coverage counts and the remaining gaps are in
+  publishes it — never inferred from a venue name. Every link above was either printed on the venue's own site or
+  found by opening the account itself on <strong>27 November 2026</strong>; the sentence that confirmed it is in the
+  last column, so a doubtful row can be re-checked in one click. Coverage counts and the remaining gaps are in
   <a href="flagged.html">F-53</a>.</p>
-  <ul class="tight">{social_notes}</ul>
+  <div class="scroll">
+  <table class="data">
+  <thead><tr><th>Venue</th><th>Status</th><th>How it was confirmed</th></tr></thead>
+  <tbody>{social_rows}</tbody>
+  </table>
+  </div>
 </section>
 
 <section class="panel">

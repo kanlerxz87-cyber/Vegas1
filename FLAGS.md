@@ -57,6 +57,29 @@ tables, so 11 rows rendered as loose text on GitHub instead of table rows (repai
 - **Cirque du Soleil** was listed by a reseller at $158.65 per person with no show name, no venue and no 2027 date — excluded.
 - **MGM Grand room price** could not be captured: Booking.com's own property page redirected to a generic Las Vegas search. No price is published for it rather than a guess.
 
+## Social + video verification pass of 27 Nov 2026 (F-54 to F-57)
+
+Task T17 (session `arena/c045ad05-vegas1`) opened every candidate Instagram account, YouTube channel and official
+venue page on **27 November 2026** to close F-19 / R-02, the largest open gap against the brief. A second session
+(`arena/c9eed9ad-vegas1` lineage, merged as T18) worked the same gap at the same time; the two passes **disagreed on
+five handles**, and every disagreement was settled by opening the account. The reconciled result — 21 of 24
+restaurants and 5 of 5 activities with a verified Instagram link — is recorded per row in `data/socials.json`, and
+the evidence column is rendered on `restaurants.html` and `activities.html` so a doubt can be checked in one click.
+Flag IDs F-58 onward belong to the T18 hotel/verification work; this pass uses only F-54 to F-57.
+
+| ID | Where | What | Effect on the plan |
+|----|-------|------|--------------------|
+| **F-54** | Joël Robuchon (Instagram) | The account `@joelrobuchon.lasvegas` is genuinely the restaurant's (its bio links the official MGM Grand page), but it is **dormant**: the newest post shown is dated **2020-08-07**, and the bio still reads **"Michelin 3-Star"** — the pre-2010 status. The 2026 Guide gives **two** stars, which the restaurant's own MGM page also states. | The link stays, because it is official and documents the room. But **never quote a venue's own bio as its current award**: this is the F-01 stale-three-star claim, now found on the restaurant's own account. Two other accounts in the set are also dormant (L'Atelier, last post 2021; Guy Savoy, last post 2023). |
+| **F-55** | Kabuto (wrong phone) | The row carried **725.205.1356**. `kabutolv.com` prints **(702) 676-1044** in its "Visit Us" block and its Instagram bio repeats it. | **Corrected to 702.676.1044** on 2026-11-27. 725 is not a Las Vegas area code, so the old number could not have worked. |
+| **F-56** | Pho Ga Bac Bac (moved account) | The handle captured earlier in the day, `@bestchickenpho`, is an **abandoned page**: its only visible post (2026-11-22) reads "WE'VE MOVED! ... follow us @phogabacbac702" and its bio says "This page is no longer active". The live account is **@phogabacbac702** (276 followers, bio gives 3775 Spring Mountain Rd, (702) 476-9623). | Row now points at the live account. A social link that resolves but is dead as a channel is the same failure as a dead link, and a 200-status check would not catch it. |
+| **F-57** | TikTok and empty YouTube channels | TikTok answered **HTTP 400 to every request** from this sandbox, so no TikTok page was ever read; the TikTok links published come from the venues' own pages or the other session's capture and are labelled as such. Separately, `youtube.com/@neonmuseum` and `youtube.com/@fremontstreetexperience` open but return **"This channel doesn't have any content"**, so no video link is published for the Neon Museum or Fremont Street. | Treat every TikTok link as an unconfirmed lead. Festival-style venue accounts often exist but stay empty; the site says so instead of linking a hollow channel. |
+
+**Handles checked and deliberately *not* adopted** (a look-alike would have put a stranger on the page):
+`@winglei` is a private personal account ("Lei Wing"); `@latelierdejoelrobuchonlv` returns HTTP 404 (the live feed is
+`@latelierjoelrobuchonlv`); `@kameomakase` is a 178-follower stub (the active account is `@kameomakase_lv`);
+`@phogabacbac` is private with 1 follower; `@highrollerlasvegas` is a private 26-follower account, while the real
+attraction account is **@highrollervegas** (verified-badged, 75,555 followers) and is the one published.
+
 ## Audit of 26 Nov 2026 (F-39 onward)
 
 Items F-39 to F-46 come from the 26 November 2026 line-by-line audit (task T12). They are kept in `data/review-flags.json`, with source links, and rendered on the site's **Flagged for review** page (`flagged.html`). Summary:
