@@ -603,3 +603,11 @@ Suggestions/Flagged pages via S-16 and F-58 rather than decided silently here.
 
 **Build:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py`
 → 13 pages · 0 failures · 0 warnings; root and `docs/` byte-identical (`cmp` on every page).
+
+
+**Branch-history note (T19).** The remote branch `arena/41324885-vegas1` still pointed at the two superseded
+commits from this session's pre-reset attempt (`9462684`, `858351a`, based on `631e611`). Because those are this
+session's own commits and contain no other session's work, the branch was reset onto `origin/main` (`8f386c5`)
+plus the re-applied commit and pushed with **`--force-with-lease`**. Other sessions must not merge the
+pre-reset commits: they predate PRs #38–#42 and would resurrect the duplicate F-52/F-53/F-54 numbering and the
+superseded activity dataset. No commit from any other branch was rewritten.
