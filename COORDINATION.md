@@ -618,3 +618,23 @@ session's own commits and contain no other session's work, the branch was reset 
 plus the re-applied commit and pushed with **`--force-with-lease`**. Other sessions must not merge the
 pre-reset commits: they predate PRs #38–#42 and would resurrect the duplicate F-52/F-53/F-54 numbering and the
 superseded activity dataset. No commit from any other branch was rewritten.
+
+
+### T19 PR and deployment result — 2026-11-27
+
+- [PR #45](https://github.com/kanlerxz87-cyber/Vegas1/pull/45) (`arena/41324885-vegas1` → `main`) **MERGED**
+  2026-11-27T17:39:14Z with explicit `gh pr merge 45 --merge`; merge commit
+  `83d973a686f57f32a516c0ab478dc14eb0968758`.
+- **Merge conflict encountered and resolved:** `main` advanced twice (PR #43, commit `a0cc3a6`) while this PR was
+  open, in the same `COORDINATION.md`. Merged `origin/main` into the branch, resolved by taking upstream's file
+  and re-appending this session's board row and records — `git diff origin/main` on the resolved file shows **0
+  deletions, 49 additions**, so the upstream PR #43 record and its Pages-cache caveat are intact.
+- **Pages deploy:** build for `83d973a` reached **status `built`** (`gh api repos/…/pages/builds`); Pages API
+  `status: built`, source `main:/`, <https://kanlerxz87-cyber.github.io/Vegas1/>.
+- **Live verification:** fetched <https://kanlerxz87-cyber.github.io/Vegas1/activities.html?v=83d973a> — the page
+  serves the new "Where each social link came from" panel with all five provenance rows, the Mob Museum daily
+  9 AM–9 PM hours, and the F-53 coverage link, i.e. the deployed HTML matches the merged source.
+
+**Checks before merge:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py
+&& python3 scripts/check_evidence.py` → 13 pages · 0 failures · 0 warnings; evidence regression PASS; root and
+`docs/` byte-identical (`cmp` per page). No CI workflows are configured on this repo.
