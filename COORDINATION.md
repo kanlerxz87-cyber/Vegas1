@@ -881,3 +881,10 @@ and 6 of 6 activities carry an Instagram link · all 6 activities have a provena
 **What this task learned that the next session should not re-learn:** a merge can silently delete another session's
 *evidence* while looking clean, and a green validator cannot see it — read the deployed page back, never just the build
 log. `data/socials.json` is the machine-readable record; keep it in step with `activities.json`/`restaurants.json`.
+
+### T20 PR & deployment result — arena/01ba2dd9-vegas1 (2026-11-27)
+
+- **[PR #57](https://github.com/kanlerxz87-cyber/Vegas1/pull/57)** (`arena/01ba2dd9-vegas1` → `main`) **MERGED** 2026-11-27T17:50:07Z via `gh pr merge 57 --merge`; merge commit `01c7107c875c9569bafe7e80703c0aef65b6a52f`.
+- **Pre-merge checks:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py && python3 scripts/check_evidence.py` → **16 pages · 0 failures · 0 warnings · 509 external links · `check_evidence.py` PASS**; root and `docs/` byte-identical.
+- **Pages deployment verified:** `gh api repos/kanlerxz87-cyber/Vegas1/pages/builds` confirmed build for `01c7107c875c9569bafe7e80703c0aef65b6a52f` reached **`status: built`** (`error: null`) at 2026-11-27T17:50:31Z (`https://kanlerxz87-cyber.github.io/Vegas1/`, source `main:/`).
+- **Live page verification (`?v=01c7107`):** fetched `suggestions.html` (`## 16 ways to improve this plan`, `S-02` 24 listings), `restaurants.html` (China Poblano `$120 (exact)` + Sun 10:00 PM, Milos Fri–Sat 11:00 PM, é F-68 conflict), and `flagged.html` (F-68 & F-69 live with official source links).
