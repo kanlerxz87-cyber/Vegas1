@@ -8,22 +8,24 @@ A sourced trip plan for **two adults**, seven nights, between **15 February and 
 
 | Path | What it is |
 |------|-----------|
-| `docs/` | The site source (13 top-level pages, plain HTML + one stylesheet, no framework, no CDN) |
+| `docs/` | The site source (15 top-level pages, plain HTML + one stylesheet, no framework, no CDN) |
 | `index.html`, `*.html`, `style.css` (repo root) | The **same generated site**, written to the root as well. GitHub Pages on this repo is pinned to `main:/` and the API refuses to repoint it to `/docs`, so the root copy is what visitors actually get. Both are produced by `scripts/gen_site.py` — never edit either by hand. |
-| `data/restaurants.json` | 24 MICHELIN listings with award tier, hours, exceptions, prices, official + YouTube links |
+| `data/restaurants.json` | 24 MICHELIN listings with award tier, hours, exceptions, cost for two (with basis + menu source), official + YouTube/Instagram links |
 | `data/hotels.json` | 32 hotels with dated 7-night totals, bed/bathroom fit, Michelin proximity counts |
 | `data/price-windows.json` | Dated Booking.com comparison; read with official-engine snapshots and F-29/F-30 because no universal cheapest week is established |
 | `data/transit.json` | Monorail / RTC bus / Vegas Loop fares and the zone-to-restaurant minute matrix |
 | `data/activities.json` | Five activity entries with official details/social links when verified; blank social links remain unverified |
-| `data/questions.json` | 13-question register: answered, interpreted, still open — each with how to close it |
-| `data/suggestions.json` | 13 decision improvements with honest trade-offs |
+| `data/questions.json` | 14-question register: answered, interpreted, still open — each with how to close it |
+| `data/suggestions.json` | 15 decision improvements with honest trade-offs |
 | `scripts/build.py` | Recomputes the Michelin proximity counts from the transit matrix; runs integrity checks |
 | `scripts/gen_site.py` | Renders `docs/` from the JSON. All counts derived, none typed by hand |
 | `scripts/validate.py` | Link and structure checks for the built site |
-| `FLAGS.md` | 37 register rows (F-01 to F-30, F-39 to F-46, plus F-47 to F-53 from the 26–27 Nov re-checks), including hotel rate basis/recency limitations |
+| `scripts/check_evidence.py` | Offline regression gate: no priced restaurant without a basis and menu source, no unofficial hotel number in a decision cell, no root/docs drift |
+| `dining.html` | Dining budget: three worked food/activity/transport totals for two adults, built at run time from `data/` (no hotel figure) |
+| `FLAGS.md` | 46 register rows (F-01–F-30, F-47–F-53, F-58–F-66), including hotel rate basis/recency limitations and the restaurant price-basis corrections |
 | `data/review-flags.json` | The 26 Nov 2026 audit register (F-39 to F-46) and confirmed items C-11 to C-13, each with source links. Rendered on `flagged.html` |
 | `executive-summary.md` | The one-page version |
-| `data/review.json` | Repo review: line-by-line checks, limits, and irregularities (2026-11-26) |
+| `data/review.json` | Repo review: 17 line-by-line checks (C-01–C-17), limits, and irregularities |
 | `docs/flagged.html`, `docs/repo-review.html` | **Flagged for Review** and **Repo review** pages (generated) |
 | `COORDINATION.md` | Multi-session task board, merge record and verification log |
 | `archive/` | The earlier session's build, preserved intact rather than overwritten |
@@ -73,11 +75,39 @@ total was captured under the Cromwell name and must be re-quoted before booking.
 Caesars) lands on the parent property's page — and it exposed F-48: 15 hotel totals came from a dated
 Booking.com **search list** rather than a property quote page, so those cards now say so.
 
+## Session supplement — 27 Nov 2026 (restaurant menus + dining budget)
+
+This pass re-read the venues' own menu pages and turned the results into a worked food budget.
+It was merged on top of the 27 Nov **evidence gate** (F-58–F-59) and keeps that gate intact:
+**no OTA hotel total is reintroduced anywhere, including on the new page.**
+
+1. **Two "unpublished" prices were actually published.** Partage had been recorded as printing no
+   price; its [`/menu` page](https://partage.vegas/menu) prints $130/$160/$210 per person (the
+   `/restaurant` page is only a booking widget). Wing Lei had been recorded as unpublished; the
+   [Wynn menu PDF](https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf)
+   prints Chef Tam's tasting at $198.88 per person. Both rows now show cost for two — $260/$320/$420
+   and $397.76 — with the menu linked (F-65).
+2. **Guy Savoy is an estimate, not a resurrected total.** F-61 correctly withdrew the mislabelled
+   "$200–$580" range and the unreproducible $3,000 Krug figure. The menu does print per-dish prices
+   (starters $100–$120, mains $160–$290, cheese $60), so the cell is now `≈$520–$940 (est.)` with the
+   assumption written next to it. The $3,000 figure stays withdrawn (F-64).
+3. **Two row corrections.** Anima by EDO's Monday special is $65 **total**, not $65 per person;
+   Esther's Kitchen opens for dinner seven days a week, though it publishes no clock times (F-66).
+4. **New page:** [dining.html](dining.html) — three worked totals for two adults, all read from `data/`
+   at build time: **$712.30** (two dinners), **$1,025.06** (one tasting menu), **$1,855.06**
+   (stars-heavy), each including the three paid activities and a Monorail pass each. The room is
+   deliberately excluded and the page says why; it also lists what to add once an official
+   checkout total exists.
+
+`scripts/check_evidence.py` now enforces the new state: every priced restaurant row must carry a
+`price_basis` and an https menu source, the withdrawn Krug figure may not be used as a price, and the
+budget page's arithmetic must match. All checks pass (15 pages, 0 failures, 0 warnings).
+
 ## Ground rules this project followed
 
 - **No inferred values.** Blank means unverified. Every blank is listed in `FLAGS.md` and on the
   Questions page with a route to close it.
-- **Every row cites a source.** 436 external links across 13 pages (counted by `scripts/validate.py` on the current build).
+- **Every row cites a source.** 460 external links across 15 pages (counted by `scripts/validate.py` on the current build).
 - **Sources and gaps are disclosed.** Hotel prices in the canonical 32-property table are Booking.com snapshots (not official property rates); this does not meet the strict official-rate-only requirement and is flagged as F-29. A dated direct-engine sample and 26 Nov refresh are linked from Sources & Flags; rates must be rechecked on the property's own engine.
 - **Estimates are labelled.** Only the transit minutes are estimates, and they say so everywhere.
 - **Flags are published.** Everything that did not verify cleanly is on `flagged.html`, with its sources.
