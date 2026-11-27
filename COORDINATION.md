@@ -481,3 +481,31 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 **Irregularities:** none new. All known limitations remain published on flagged.html (F-29/F-30 rate basis, F-47 Vanderpump rebrand, F-48 search-list prices, etc.) and do not block this merge.
 
 **Result:** T16 done. PR opened from `arena/ff83218b-vegas1` → `main`, merged without waiting for approval per brief; Pages deploy re-confirmed after merge.
+
+## Session record — arena/c7c75f9a-vegas1 (T17) — 2026-11-27
+
+**Claimed at:** 2026-11-27 (claim commit pushed immediately per rule 1).
+
+**Scope (non-overlapping, this session only):**
+`data/restaurants.json`, `data/activities.json`, `FLAGS.md`, `data/questions.json`,
+`scripts/gen_site.py`, `COORDINATION.md`, `README.md`, `executive-summary.md`, and the generated
+`docs/**` + root `*.html` produced by `scripts/gen_site.py`. No other session's data file is edited.
+
+**Task T17 — close the largest standing gaps against the brief:**
+
+1. **Social links (F-19 / R-02 / Q-07).** The brief asks for a YouTube, TikTok *or* Instagram link for
+   every restaurant and activity. The live site currently publishes YouTube only for restaurants and
+   one Instagram/TikTok pair for one activity. `data/michelin.json` already carries eight
+   Instagram handles and one TikTok handle that no page renders — each will be **re-fetched and
+   confirmed** before it is published, then any additional handle found on the venue's own site or
+   profile is added with its source. Nothing is guessed; a blank stays blank.
+2. **Cost for two (Q-04).** 21 of 24 venues still show no couple price. Official menu/pricing pages
+   will be fetched again; a price is only filled from the venue's own page (or its official
+   reservation platform), with the arithmetic shown. Everything else stays blank.
+3. **Flag + question updates** for the above (F-19 status, Q-04/Q-07 answers), rebuild, validate,
+   merge to `main`, confirm Pages.
+
+**Not in scope for this session:** hotel rates (F-29/F-30/F-44), transit minutes (F-20), the archived
+subsites, and PR #27 (`arena/c9eed9ad-vegas1`, still open and CONFLICTING — deliberately not touched).
+
+**Status:** `in progress`.
