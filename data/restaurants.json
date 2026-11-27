@@ -3,7 +3,7 @@
     "title": "Michelin Guide — Las Vegas, 2026 Southwest selection",
     "guide_year": 2026,
     "captured": "2026-11-25",
-    "important_note": "Las Vegas had NO Michelin Guide between 2010 and 2025. The 2026 Southwest selection (announced 31 Aug 2026 on michelin.com; the ceremony was held at Fontainebleau Las Vegas) is the first Las Vegas guide since 2009. Many older 'Michelin' claims online are stale.",
+    "important_note": "2026 Southwest selection. Awards were checked against the complete official Las Vegas subset. The two official press pages have different publication dates; the exact announcement/ceremony date is not inferred (F-71).",
     "counts": {
       "three_star": 0,
       "two_star": 1,
@@ -19,13 +19,15 @@
       "https://vegas.eater.com/restaurant-news/131551/2026-michelin-star-winners-las-vegas-nevada-restaurants",
       "https://lasvegasweekly.com/dining/2026/aug/27/michelin-guide-southwest-las-vegas-restaurants/"
     ],
-    "price_rule": "price_2adults is ONLY filled where an official or reservation-platform page states the price. Blank = not verified. '++' means plus tax and gratuity, as printed by the venue.",
-    "social_rule": "Only links captured from a search result that resolves to the named restaurant are listed. Instagram/TikTok handles are left blank rather than guessed — see FLAGS.md F-06.",
+    "price_rule": "Public cost-for-two cells require field-level official evidence and show explicit two-order menu-subtotal arithmetic. A subtotal is not a final taxed/tipped bill or a dated 2027 offer.",
+    "social_rule": "Only recorded official cross-links are published. Inherited creator discoveries are retained under audit_previous_values_2026_11_27, not promoted to verified or working social links.",
     "announcement_date": {
-      "value": "2026-08-31",
+      "value": "",
       "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s",
-      "note": "Corrected 2026-11-26; earlier copies of this dataset said 26 Aug 2026 (F-51)."
-    }
+      "note": "Unverified exact announcement date. Corporate publication date 31 Aug differs from Michelin North America Posted 26 Aug; F-71 supersedes the certainty of F-51.",
+      "previous_value_2026_11_27": "2026-08-31"
+    },
+    "published_verification": "Field-level evidence in data/verification.json is authoritative for the public views. Previous values are preserved for audit, not current offers. Row-level verified labels are not field-level or trip-date verification."
   },
   "restaurants": [
     {
@@ -37,30 +39,38 @@
       "location": "MGM Grand",
       "zone": "south-strip",
       "address": "3799 S Las Vegas Blvd, Las Vegas, NV 89109",
-      "days": "Tue–Sat",
-      "hours": "Tue–Sat 5:00 PM – 9:30 PM",
-      "exceptions": "Closed Sunday and Monday. No children under 6 in the reservation. Business formal dress code.",
+      "days": "Tuesday–Saturday",
+      "hours": "5:00 PM–9:30 PM",
+      "exceptions": "Closed Sunday/Monday. Business formal; see the venue page for its child-reservation policy.",
       "price_2adults": "",
       "price_note": "Menu prices are not published on the official page. Reserve and confirm.",
       "official_url": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html",
-      "youtube": [
-        "https://www.youtube.com/watch?v=ySJIDJ_F9EA",
-        "https://www.youtube.com/watch?v=LKaEVI19GGI",
-        "https://www.youtube.com/watch?v=hrIP8WJ17C8",
-        "https://www.youtube.com/watch?v=tzPxsGfW9h8",
-        "https://www.youtube.com/shorts/fzxEVmZeSHs",
-        "https://www.youtube.com/shorts/u6NsekDa4xA"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "702.891.7925",
-      "verified": "yes",
+      "verified": "field-level — see verification.json",
       "flags": [
         "F-01",
-        "F-22"
+        "F-22",
+        "F-73",
+        "F-70"
       ],
       "notes": "Two independent creator videos in this dataset claim three Michelin stars — that is the pre-2010 status. The 2026 Guide lists Joël Robuchon at TWO stars, which the restaurant's own page also states. NOTE: the same page carries a dated banner (\"open 4:00–8:00 PM Thu 19 – Sat 21 November\") that applies to a 2026 date, not to 2027 — do not carry it forward. Also the 2026 MICHELIN Service Award went to GM Sean Christopher, so award rows and staff awards must not be confused. Reservations number 702.891.7925 printed on the official MGM Grand page (verified 2026-11-26).",
-      "hours_source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html (\"Hours of operation\" block, retrieved 2026-11-25)"
+      "hours_source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html (\"Hours of operation\" block, retrieved 2026-11-25)",
+      "audit_previous_values_2026_11_27": {
+        "days": "Tue–Sat",
+        "hours": "Tue–Sat 5:00 PM – 9:30 PM",
+        "exceptions": "Closed Sunday and Monday. No children under 6 in the reservation. Business formal dress code.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=ySJIDJ_F9EA",
+          "https://www.youtube.com/watch?v=LKaEVI19GGI",
+          "https://www.youtube.com/watch?v=hrIP8WJ17C8",
+          "https://www.youtube.com/watch?v=tzPxsGfW9h8",
+          "https://www.youtube.com/shorts/fzxEVmZeSHs",
+          "https://www.youtube.com/shorts/u6NsekDa4xA"
+        ]
+      }
     },
     {
       "id": "latelier-robuchon",
@@ -71,22 +81,31 @@
       "location": "MGM Grand",
       "zone": "south-strip",
       "address": "3799 S Las Vegas Blvd, Las Vegas, NV 89109",
-      "days": "Mon, Thu–Sun",
-      "hours": "5:00 PM – 9:30 PM",
-      "exceptions": "Closed Tuesday and Wednesday. No guests under 6.",
+      "days": "Monday, Thursday–Sunday",
+      "hours": "5:00 PM–9:30 PM",
+      "exceptions": "Closed Tuesday/Wednesday. Business casual. The page asks that children 6 and under not be included in reservations.",
       "price_2adults": "",
       "price_note": "Not published officially. Reserve and confirm.",
       "official_url": "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html",
-      "youtube": [
-        "https://www.youtube.com/watch?v=AitbJIc_xMk",
-        "https://www.youtube.com/shorts/Ezet1Jyh7Fc"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "702.891.7358",
-      "verified": "yes",
-      "flags": [],
-      "notes": "Received a 2026 MICHELIN Service Award alongside its star. Reservations phone per the MGM page: 702.891.7925."
+      "verified": "field-level — see verification.json",
+      "flags": [
+        "F-73",
+        "F-70"
+      ],
+      "notes": "Received a 2026 MICHELIN Service Award alongside its star. Reservations phone per the MGM page: 702.891.7925.",
+      "audit_previous_values_2026_11_27": {
+        "days": "Mon, Thu–Sun",
+        "hours": "5:00 PM – 9:30 PM",
+        "exceptions": "Closed Tuesday and Wednesday. No guests under 6.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=AitbJIc_xMk",
+          "https://www.youtube.com/shorts/Ezet1Jyh7Fc"
+        ]
+      }
     },
     {
       "id": "guy-savoy",
@@ -97,25 +116,33 @@
       "location": "Caesars Palace",
       "zone": "center-strip",
       "address": "3570 S Las Vegas Blvd, Las Vegas, NV 89109",
-      "days": "See OpenTable",
-      "hours": "Dinner from 5:00 PM",
-      "exceptions": "Dinner only. 9-course Krug Chef's Table available.",
+      "days": "",
+      "hours": "",
+      "exceptions": "Nine-course Krug table described; no complete meal-for-two price reproduced. Formal dress.",
       "price_2adults": "",
-      "price_note": "Unverified complete meal total for two. Official Caesars menu (effective 11.5.2026) lists individual dishes at $100-$290; the previously recorded Krug Chef's Table price was not reproduced on the official menu when fetched 27 Nov 2026 (F-53). Individual dish prices are not complete meal totals. Ask the venue for current menu and final cost.",
+      "price_note": "Unverified complete meal total for two. Official Caesars menu (effective 11.5.2026) lists individual dishes at $100-$290; the previously recorded Krug Chef's Table price was not reproduced on the official menu when fetched 27 Nov 2026 (F-61). Individual dish prices are not complete meal totals. Ask the venue for current menu and final cost.",
       "official_url": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy",
-      "youtube": [
-        "https://www.youtube.com/watch?v=XbZI6IXdM0E",
-        "https://www.youtube.com/watch?v=n2_L9JthaTs",
-        "https://www.youtube.com/watch?v=u84pTFx9wqk"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "702.731.7286",
-      "verified": "yes",
+      "verified": "field-level — see verification.json",
       "flags": [
-        "F-53"
+        "F-61",
+        "F-73",
+        "F-70"
       ],
-      "notes": "OpenTable restaurant id 96775."
+      "notes": "OpenTable restaurant id 96775.",
+      "audit_previous_values_2026_11_27": {
+        "days": "See OpenTable",
+        "hours": "Dinner from 5:00 PM",
+        "exceptions": "Dinner only. 9-course Krug Chef's Table available.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=XbZI6IXdM0E",
+          "https://www.youtube.com/watch?v=n2_L9JthaTs",
+          "https://www.youtube.com/watch?v=u84pTFx9wqk"
+        ]
+      }
     },
     {
       "id": "e-by-jose-andres",
@@ -126,21 +153,30 @@
       "location": "The Cosmopolitan of Las Vegas",
       "zone": "center-strip",
       "address": "3708 S Las Vegas Blvd, Las Vegas, NV 89109",
-      "days": "Tuesday – Saturday",
-      "hours": "5:30 PM – 8:30 PM",
-      "exceptions": "Only 9 seats. Reservations open roughly 3 months ahead.",
+      "days": "Tuesday–Saturday",
+      "hours": "5:30 PM–8:30 PM",
+      "exceptions": "Closed Sunday/Monday. Nine seats, two seatings nightly. Online reservations up to three months in advance.",
       "price_2adults": "",
       "price_note": "Official page does not print the menu price. Book and confirm.",
       "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html",
-      "youtube": [
-        "https://www.youtube.com/watch?v=-bK5bxY1trQ"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "877.893.2003",
-      "verified": "yes",
-      "flags": [],
-      "notes": "Hardest reservation on this list — 9 covers a night."
+      "verified": "field-level — see verification.json",
+      "flags": [
+        "F-73",
+        "F-70"
+      ],
+      "notes": "Hardest reservation on this list — 9 covers a night.",
+      "audit_previous_values_2026_11_27": {
+        "days": "Tuesday – Saturday",
+        "hours": "5:30 PM – 8:30 PM",
+        "exceptions": "Only 9 seats. Reservations open roughly 3 months ahead.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=-bK5bxY1trQ"
+        ]
+      }
     },
     {
       "id": "china-poblano",
@@ -152,24 +188,32 @@
       "zone": "center-strip",
       "address": "3708 S Las Vegas Blvd, Las Vegas, NV 89109",
       "days": "Daily",
-      "hours": "Mon–Thu 11:00 AM – 10:00 PM; Fri 11:00 AM – 10:30 PM; Sat–Sun 10:00 AM – 10:30 PM",
+      "hours": "Mon–Thu 11 AM–10 PM; Fri 11 AM–10:30 PM; Sat 10 AM–10:30 PM; Sun 10 AM–10 PM",
       "exceptions": "",
       "price_2adults": "",
       "price_note": "Bib Gourmand indicates value pricing; Eater reports roughly $50 per person before tax and tip (secondary source — not an official menu price).",
       "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html",
-      "youtube": [
-        "https://www.youtube.com/watch?v=dAn1_aItxRg",
-        "https://www.youtube.com/watch?v=_ZP852xyOgU",
-        "https://www.youtube.com/watch?v=DCCZmWlr41Q"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
-      "phone": "",
-      "verified": "partial",
+      "phone": "702.698.7900",
+      "verified": "field-level — see verification.json",
       "flags": [
-        "F-05"
+        "F-05",
+        "F-73",
+        "F-72",
+        "F-70"
       ],
-      "notes": "Walk-in friendly; good low-cost anchor for a Michelin evening."
+      "notes": "Walk-in friendly; good low-cost anchor for a Michelin evening.",
+      "audit_previous_values_2026_11_27": {
+        "hours": "Mon–Thu 11:00 AM – 10:00 PM; Fri 11:00 AM – 10:30 PM; Sat–Sun 10:00 AM – 10:30 PM",
+        "phone": "",
+        "youtube": [
+          "https://www.youtube.com/watch?v=dAn1_aItxRg",
+          "https://www.youtube.com/watch?v=_ZP852xyOgU",
+          "https://www.youtube.com/watch?v=DCCZmWlr41Q"
+        ]
+      }
     },
     {
       "id": "wing-lei",
@@ -180,25 +224,34 @@
       "location": "Wynn Las Vegas",
       "zone": "north-strip",
       "address": "3131 S Las Vegas Blvd, Las Vegas, NV 89109",
-      "days": "Thu, Sun, Mon",
-      "hours": "5:30 PM – 9:30 PM (Fri–Sat until 10:00 PM)",
-      "exceptions": "Closed Tuesday and Wednesday. No guests under 5.",
+      "days": "Thursday–Monday",
+      "hours": "Thu/Sun/Mon 5:30 PM–9:30 PM; Fri/Sat 5:30 PM–10 PM",
+      "exceptions": "Closed Tuesday/Wednesday. Children under 5 not permitted. Business casual.",
       "price_2adults": "",
       "price_note": "Not published officially.",
       "official_url": "https://www.wynnlasvegas.com/dining/fine-dining/wing-lei",
-      "youtube": [
-        "https://www.youtube.com/watch?v=4FxhH-mpSAw",
-        "https://www.youtube.com/watch?v=ULpHBPnu2pM",
-        "https://www.youtube.com/watch?v=_zuTAlv8y5E"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "702.770.3388",
-      "verified": "partial",
+      "verified": "field-level — see verification.json",
       "flags": [
-        "F-03"
+        "F-03",
+        "F-73",
+        "F-72",
+        "F-70"
       ],
-      "notes": "Forbes Five-Star, but the 2026 MICHELIN Guide lists Wing Lei as Recommended, not starred. Creator videos claiming a Michelin star are referring to the pre-2010 guide."
+      "notes": "Forbes Five-Star, but the 2026 MICHELIN Guide lists Wing Lei as Recommended, not starred. Creator videos claiming a Michelin star are referring to the pre-2010 guide.",
+      "audit_previous_values_2026_11_27": {
+        "days": "Thu, Sun, Mon",
+        "hours": "5:30 PM – 9:30 PM (Fri–Sat until 10:00 PM)",
+        "exceptions": "Closed Tuesday and Wednesday. No guests under 5.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=4FxhH-mpSAw",
+          "https://www.youtube.com/watch?v=ULpHBPnu2pM",
+          "https://www.youtube.com/watch?v=_zuTAlv8y5E"
+        ]
+      }
     },
     {
       "id": "mott-32",
@@ -208,24 +261,32 @@
       "cuisine": "Cantonese",
       "location": "The Venetian Resort",
       "zone": "north-strip",
-      "address": "3325 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "address": "The Palazzo at The Venetian, 3325 S. Las Vegas Blvd., Las Vegas, NV 89109",
       "days": "Daily",
-      "hours": "Mon–Fri 11:00 AM – 2:30 PM and 5:00 PM – 10:00 PM; Sat–Sun 10:30 AM – 2:30 PM and 5:00 PM – 10:00 PM",
+      "hours": "Mon–Fri 11 AM–2:30 PM; Sat/Sun 10:30 AM–2:30 PM; dinner daily 5 PM–10 PM",
       "exceptions": "",
       "price_2adults": "",
       "price_note": "Not published officially. A creator video reports weekday lunch prix fixe at $38 and $68 per person (secondary — not verified).",
       "official_url": "https://www.venetianlasvegas.com/dining/restaurants/mott-32.html",
-      "youtube": [
-        "https://www.youtube.com/watch?v=Ou2wMyGupRs",
-        "https://www.youtube.com/watch?v=RsrEAq_MW5Q",
-        "https://www.youtube.com/watch?v=vjTOl3iNaME"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "702.607.3232",
-      "verified": "yes",
-      "flags": [],
-      "notes": ""
+      "verified": "field-level — see verification.json",
+      "flags": [
+        "F-73",
+        "F-70"
+      ],
+      "notes": "",
+      "audit_previous_values_2026_11_27": {
+        "hours": "Mon–Fri 11:00 AM – 2:30 PM and 5:00 PM – 10:00 PM; Sat–Sun 10:30 AM – 2:30 PM and 5:00 PM – 10:00 PM",
+        "youtube": [
+          "https://www.youtube.com/watch?v=Ou2wMyGupRs",
+          "https://www.youtube.com/watch?v=RsrEAq_MW5Q",
+          "https://www.youtube.com/watch?v=vjTOl3iNaME"
+        ],
+        "address": "3325 S Las Vegas Blvd, Las Vegas, NV 89109"
+      }
     },
     {
       "id": "cote",
@@ -235,24 +296,33 @@
       "cuisine": "Korean steakhouse",
       "location": "The Venetian Resort",
       "zone": "north-strip",
-      "address": "3325 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "address": "The Venetian, 3355 S. Las Vegas Blvd., Las Vegas, NV 89109",
       "days": "Daily",
-      "hours": "Sun–Thu 5:00 PM – 11:00 PM; Fri–Sat 4:30 PM – 12:00 AM",
-      "exceptions": "Magic Hour pricing Sun–Thu 5–6 PM and 10–11 PM.",
+      "hours": "Sun–Thu 5 PM–11 PM; Fri/Sat 4:30 PM–midnight",
+      "exceptions": "Magic Hour Sun–Thu 5–6 PM and 10–11 PM. Dated 2026 Thanksgiving hours are not carried into 2027.",
       "price_2adults": "",
       "price_note": "Not published officially; steakhouse pricing is highly order-dependent.",
       "official_url": "https://www.venetianlasvegas.com/dining/restaurants/cote.html",
-      "youtube": [
-        "https://www.youtube.com/watch?v=JT_trN5PhzA",
-        "https://www.youtube.com/watch?v=ktXgI_Zf3KA",
-        "https://www.youtube.com/watch?v=I7Vosr3O1-o"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "702.607.2683",
-      "verified": "yes",
-      "flags": [],
-      "notes": ""
+      "verified": "field-level — see verification.json",
+      "flags": [
+        "F-73",
+        "F-70"
+      ],
+      "notes": "",
+      "audit_previous_values_2026_11_27": {
+        "hours": "Sun–Thu 5:00 PM – 11:00 PM; Fri–Sat 4:30 PM – 12:00 AM",
+        "exceptions": "Magic Hour pricing Sun–Thu 5–6 PM and 10–11 PM.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=JT_trN5PhzA",
+          "https://www.youtube.com/watch?v=ktXgI_Zf3KA",
+          "https://www.youtube.com/watch?v=I7Vosr3O1-o"
+        ],
+        "address": "3325 S Las Vegas Blvd, Las Vegas, NV 89109"
+      }
     },
     {
       "id": "bouchon",
@@ -263,23 +333,32 @@
       "location": "The Venetian Resort (Venezia Tower)",
       "zone": "north-strip",
       "address": "3355 S Las Vegas Blvd, Las Vegas, NV 89109",
-      "days": "Daily",
-      "hours": "Dinner 5:00 PM – 10:00 PM; brunch Thu 8:00 AM – 1:00 PM, Fri–Sun 8:00 AM – 2:00 PM",
-      "exceptions": "Brunch days vary — confirm before booking.",
+      "days": "Daily dinner; brunch Thursday–Sunday",
+      "hours": "Dinner 5 PM–10 PM; brunch Thu 8 AM–1 PM, Fri–Sun 8 AM–2 PM",
+      "exceptions": "2026 Thanksgiving brunch exception is not a 2027 schedule.",
       "price_2adults": "",
       "price_note": "Not published officially.",
       "official_url": "https://www.venetianlasvegas.com/dining/restaurants/bouchon.html",
-      "youtube": [
-        "https://www.youtube.com/watch?v=H24RHIJJUb4",
-        "https://www.youtube.com/watch?v=OaW0aWaSza8",
-        "https://www.youtube.com/watch?v=juqdKegF7Wc"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "702.414.6200",
-      "verified": "yes",
-      "flags": [],
-      "notes": ""
+      "verified": "field-level — see verification.json",
+      "flags": [
+        "F-73",
+        "F-70"
+      ],
+      "notes": "",
+      "audit_previous_values_2026_11_27": {
+        "days": "Daily",
+        "hours": "Dinner 5:00 PM – 10:00 PM; brunch Thu 8:00 AM – 1:00 PM, Fri–Sun 8:00 AM – 2:00 PM",
+        "exceptions": "Brunch days vary — confirm before booking.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=H24RHIJJUb4",
+          "https://www.youtube.com/watch?v=OaW0aWaSza8",
+          "https://www.youtube.com/watch?v=juqdKegF7Wc"
+        ]
+      }
     },
     {
       "id": "estiatorio-milos",
@@ -289,23 +368,33 @@
       "cuisine": "Greek seafood",
       "location": "The Venetian Resort",
       "zone": "north-strip",
-      "address": "3355 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "address": "The Venetian, 3355 S. Las Vegas Blvd., Las Vegas, NV 89109",
       "days": "Daily",
-      "hours": "11:30 AM – 10:30 PM (Fri–Sat from 11:30 AM)",
-      "exceptions": "",
+      "hours": "Sun–Thu 11:30 AM–10:30 PM; Fri/Sat 11:30 AM–11 PM",
+      "exceptions": "Lunch 11:30 AM–3 PM; midday menu 3–5 PM; dinner from 5 PM.",
       "price_2adults": "",
       "price_note": "Not published officially. Creator videos reference a fixed-price lunch (secondary — not verified).",
       "official_url": "https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html",
-      "youtube": [
-        "https://www.youtube.com/watch?v=--MO3_LuErc",
-        "https://www.youtube.com/watch?v=ZUjnF3Mk-k4"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "702.414.1270",
-      "verified": "yes",
-      "flags": [],
-      "notes": ""
+      "verified": "field-level — see verification.json",
+      "flags": [
+        "F-73",
+        "F-72",
+        "F-70"
+      ],
+      "notes": "",
+      "audit_previous_values_2026_11_27": {
+        "hours": "11:30 AM – 10:30 PM (Fri–Sat from 11:30 AM)",
+        "exceptions": "",
+        "youtube": [
+          "https://www.youtube.com/watch?v=--MO3_LuErc",
+          "https://www.youtube.com/watch?v=ZUjnF3Mk-k4"
+        ],
+        "address": "3355 S Las Vegas Blvd, Las Vegas, NV 89109"
+      }
     },
     {
       "id": "gymkhana",
@@ -317,22 +406,32 @@
       "zone": "center-strip",
       "address": "3730 S Las Vegas Blvd, Las Vegas, NV 89158",
       "days": "Daily",
-      "hours": "5:00 PM – 10:00 PM (Fri–Sat until 10:30 PM)",
-      "exceptions": "Guests 6 and over only.",
+      "hours": "Sun–Thu 5 PM–10 PM; Fri/Sat 5 PM–10:30 PM",
+      "exceptions": "Ages 6+. No guests under 21 after 10 PM. Business casual; no tank tops, swimwear or open-toe shoes.",
       "price_2adults": "",
       "price_note": "Not published officially.",
       "official_url": "https://aria.mgmresorts.com/en/restaurants/gymkhana.html",
-      "youtube": [
-        "https://www.youtube.com/watch?v=S5zesg5kqgI",
-        "https://www.youtube.com/shorts/9FgESwABRtw",
-        "https://www.youtube.com/watch?v=zQku9r-bQ0U"
-      ],
-      "instagram": "",
+      "youtube": [],
+      "instagram": "https://www.instagram.com/gymkhanalasvegas",
       "tiktok": "",
-      "phone": "702.590.8544",
-      "verified": "yes",
-      "flags": [],
-      "notes": "First US outpost of the London restaurant."
+      "phone": "702.590.9520",
+      "verified": "field-level — see verification.json",
+      "flags": [
+        "F-73",
+        "F-70"
+      ],
+      "notes": "First US outpost of the London restaurant.",
+      "audit_previous_values_2026_11_27": {
+        "hours": "5:00 PM – 10:00 PM (Fri–Sat until 10:30 PM)",
+        "exceptions": "Guests 6 and over only.",
+        "phone": "702.590.8544",
+        "youtube": [
+          "https://www.youtube.com/watch?v=S5zesg5kqgI",
+          "https://www.youtube.com/shorts/9FgESwABRtw",
+          "https://www.youtube.com/watch?v=zQku9r-bQ0U"
+        ],
+        "instagram": ""
+      }
     },
     {
       "id": "michael-mina",
@@ -343,28 +442,37 @@
       "location": "Bellagio",
       "zone": "center-strip",
       "address": "3600 S Las Vegas Blvd, Las Vegas, NV 89109",
-      "days": "Closed — see note",
-      "hours": "",
-      "exceptions": "The Bellagio page's Hours of operation block reads \"Monday to Sunday: Closed\" and the restaurant is labelled Temporarily closed. Published seasonal closures on the same page: 22–30 Nov; 6–8, 13–15 and 20–22 Dec 2026.",
-      "price_2adults": "$590++",
+      "days": "Closed in current official hours block",
+      "hours": "Monday–Sunday: Closed",
+      "exceptions": "Temporarily closed on the official page. No February/March 2027 opening confirmation. Seasonal November/December notices are not trip-date hours.",
+      "price_2adults": "$590 menu subtotal for two; venue currently closed",
       "price_note": "10-course tasting menu at $295++ per person, from the official page. Two adults = $590 before tax and gratuity.",
       "official_url": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
-      "youtube": [
-        "https://www.youtube.com/watch?v=ibZkjuEJ9fk",
-        "https://www.youtube.com/watch?v=-54ReUZdWqk",
-        "https://www.youtube.com/watch?v=YlSqYgomMKU"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "702.693.7223",
-      "verified": "partial",
+      "verified": "field-level — see verification.json",
       "flags": [
         "F-02",
         "F-23",
-        "F-43"
+        "F-43",
+        "F-73",
+        "F-70"
       ],
       "notes": "SERIOUS: the restaurant's own page shows \"Temporarily closed\" for all seven days, so the $590++ tasting-menu figure on this row is a price for a service that is not currently running. This row must not be presented as a bookable option without a re-check. Reopen date is not published. Do not assume it reopens before Feb 2027. Re-checked 2026-11-26: Bellagio's own dining index (bellagio.mgmresorts.com/en/restaurants.html?filter=property,Bellagio_Las_Vegas) lists Michael Mina as 'Temporarily Closed' with a $$$$ seafood label. No reopen date is published (F-23, F-43).",
-      "hours_source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html (retrieved 2026-11-25)"
+      "hours_source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html (retrieved 2026-11-25)",
+      "audit_previous_values_2026_11_27": {
+        "days": "Closed — see note",
+        "hours": "",
+        "exceptions": "The Bellagio page's Hours of operation block reads \"Monday to Sunday: Closed\" and the restaurant is labelled Temporarily closed. Published seasonal closures on the same page: 22–30 Nov; 6–8, 13–15 and 20–22 Dec 2026.",
+        "price_2adults": "$590++",
+        "youtube": [
+          "https://www.youtube.com/watch?v=ibZkjuEJ9fk",
+          "https://www.youtube.com/watch?v=-54ReUZdWqk",
+          "https://www.youtube.com/watch?v=YlSqYgomMKU"
+        ]
+      }
     },
     {
       "id": "anima-by-edo",
@@ -375,25 +483,34 @@
       "location": "West Las Vegas (Russell Rd)",
       "zone": "west-far",
       "address": "9205 W Russell Rd #185, Las Vegas, NV 89148",
-      "days": "See official page",
-      "hours": "Dinner from 5:00 PM",
-      "exceptions": "Monday 'pasta + wine' menu at $65 per person.",
-      "price_2adults": "$170++",
+      "days": "",
+      "hours": "Dinner from 5 PM; closing time not confirmed",
+      "exceptions": "",
+      "price_2adults": "$170 tasting-menu subtotal for two",
       "price_note": "Tasting menu $85 per person, from the official page. Two adults = $170 before tax and gratuity.",
       "official_url": "https://animabyedo.com",
-      "youtube": [
-        "https://www.youtube.com/watch?v=KPJPmrv0A0A",
-        "https://www.youtube.com/watch?v=boq5AuG5LHw",
-        "https://www.youtube.com/shorts/u-tc2HVZCio"
-      ],
+      "youtube": [],
       "instagram": "https://www.instagram.com/animabyedo",
       "tiktok": "",
       "phone": "",
-      "verified": "yes",
+      "verified": "field-level — see verification.json",
       "flags": [
-        "F-08"
+        "F-08",
+        "F-73",
+        "F-70"
       ],
-      "notes": "Furthest west of any restaurant here — check the 60-minute transit estimate before making it a dinner plan."
+      "notes": "Furthest west of any restaurant here — check the 60-minute transit estimate before making it a dinner plan.",
+      "audit_previous_values_2026_11_27": {
+        "days": "See official page",
+        "hours": "Dinner from 5:00 PM",
+        "exceptions": "Monday 'pasta + wine' menu at $65 per person.",
+        "price_2adults": "$170++",
+        "youtube": [
+          "https://www.youtube.com/watch?v=KPJPmrv0A0A",
+          "https://www.youtube.com/watch?v=boq5AuG5LHw",
+          "https://www.youtube.com/shorts/u-tc2HVZCio"
+        ]
+      }
     },
     {
       "id": "kabuto",
@@ -405,21 +522,30 @@
       "zone": "chinatown",
       "address": "5040 W Spring Mountain Rd #4, Las Vegas, NV 89146",
       "days": "Daily",
-      "hours": "5:30 PM – 9:00 PM",
-      "exceptions": "Reservation only.",
+      "hours": "5:30 PM–9 PM",
+      "exceptions": "",
       "price_2adults": "",
       "price_note": "Official page does not print the price; reservation required.",
       "official_url": "https://kabutolv.com",
-      "youtube": [
-        "https://www.youtube.com/watch?v=xmmelYWKCoA",
-        "https://www.youtube.com/watch?v=fE_x8tbHsWQ"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "702.676.1044",
-      "verified": "yes",
-      "flags": [],
-      "notes": "Phone updated 27 Nov 2026 to (702) 676-1044 as printed on the official site footer; the prior 725.205.1356 number could not be confirmed on the official site."
+      "verified": "field-level — see verification.json",
+      "flags": [
+        "F-73",
+        "F-72",
+        "F-70"
+      ],
+      "notes": "Phone updated 27 Nov 2026 to (702) 676-1044 as printed on the official site footer; the prior 725.205.1356 number could not be confirmed on the official site.",
+      "audit_previous_values_2026_11_27": {
+        "hours": "5:30 PM – 9:00 PM",
+        "exceptions": "Reservation only.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=xmmelYWKCoA",
+          "https://www.youtube.com/watch?v=fE_x8tbHsWQ"
+        ]
+      }
     },
     {
       "id": "kame-omakase",
@@ -430,25 +556,32 @@
       "location": "Chinatown (Spring Mountain Rd)",
       "zone": "chinatown",
       "address": "3616 Spring Mountain Rd, Ste 103, Las Vegas, NV 89102",
-      "days": "See official page / OpenTable",
+      "days": "",
       "hours": "",
       "exceptions": "",
-      "price_2adults": "$1,000++",
-      "price_note": "Signature omakase $500 per person, stated in the restaurant's own OpenTable description. Two adults = $1,000 before tax and gratuity. The restaurant's own website (sushikame.com) is a JavaScript shell that returned no readable content.",
+      "price_2adults": "",
+      "price_note": "Unverified under the official-only standard: the $500 Signature Omakase was read on OpenTable, but a venue-to-platform authorization cross-link was not established in this audit. Complete cost for two stays blank.",
       "official_url": "https://www.opentable.com/r/kame-omakase-las-vegas",
-      "youtube": [
-        "https://www.youtube.com/watch?v=8-X8K0zXLsw",
-        "https://www.youtube.com/watch?v=p26Fuy-zc14",
-        "https://www.youtube.com/watch?v=67x2tVMtFaA"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "",
-      "verified": "partial",
+      "verified": "field-level — see verification.json",
       "flags": [
-        "F-04"
+        "F-04",
+        "F-73",
+        "F-70"
       ],
-      "notes": "OpenTable lists no availability for a sample date and no weekly service hours; bookings go through OpenTable only. $500 per person signature omakase. The MICHELIN Guide's own listing gives the days — the restaurant's booking page does not."
+      "notes": "OpenTable lists no availability for a sample date and no weekly service hours; bookings go through OpenTable only. $500 per person signature omakase. The MICHELIN Guide's own listing gives the days — the restaurant's booking page does not.",
+      "audit_previous_values_2026_11_27": {
+        "days": "See official page / OpenTable",
+        "price_2adults": "$1,000++",
+        "youtube": [
+          "https://www.youtube.com/watch?v=8-X8K0zXLsw",
+          "https://www.youtube.com/watch?v=p26Fuy-zc14",
+          "https://www.youtube.com/watch?v=67x2tVMtFaA"
+        ]
+      }
     },
     {
       "id": "lamaii",
@@ -460,22 +593,30 @@
       "zone": "chinatown",
       "address": "4480 Spring Mountain Rd #700, Las Vegas, NV 89102",
       "days": "Daily",
-      "hours": "Mon–Wed 11:00 AM – 12:00 AM; Thu–Sun 11:00 AM – 2:00 AM",
-      "exceptions": "Second location in Henderson (2645 St Rose Pkwy).",
+      "hours": "Mon–Wed 11 AM–midnight; Thu–Sun 11 AM–2 AM",
+      "exceptions": "",
       "price_2adults": "",
       "price_note": "Not published officially.",
       "official_url": "https://www.lamaiilv.com/chinatown/",
-      "youtube": [
-        "https://www.youtube.com/watch?v=8-UqkzAk238",
-        "https://www.youtube.com/watch?v=M2SJt2tzYxE",
-        "https://www.youtube.com/watch?v=d0vrM6S932c"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "702.238.0567",
-      "verified": "yes",
-      "flags": [],
-      "notes": "Open latest of any restaurant here — useful after a late show."
+      "verified": "field-level — see verification.json",
+      "flags": [
+        "F-73",
+        "F-70"
+      ],
+      "notes": "Open latest of any restaurant here — useful after a late show.",
+      "audit_previous_values_2026_11_27": {
+        "hours": "Mon–Wed 11:00 AM – 12:00 AM; Thu–Sun 11:00 AM – 2:00 AM",
+        "exceptions": "Second location in Henderson (2645 St Rose Pkwy).",
+        "youtube": [
+          "https://www.youtube.com/watch?v=8-UqkzAk238",
+          "https://www.youtube.com/watch?v=M2SJt2tzYxE",
+          "https://www.youtube.com/watch?v=d0vrM6S932c"
+        ]
+      }
     },
     {
       "id": "partage",
@@ -486,26 +627,35 @@
       "location": "Chinatown (Spring Mountain Rd)",
       "zone": "chinatown",
       "address": "3839 Spring Mountain Rd, Las Vegas, NV 89102",
-      "days": "Tue–Sat",
-      "hours": "Tue–Sat 5:00 PM – 9:00 PM",
-      "exceptions": "Closed Sunday and Monday. Prix fixe only (5, 7 or 9 courses). No dairy-free, vegan, vegetarian, coeliac, or onion/garlic-free menus — a real constraint, not a preference.",
+      "days": "Tuesday–Saturday",
+      "hours": "5 PM–9 PM",
+      "exceptions": "",
       "price_2adults": "",
       "price_note": "Official page confirms 5/7/9-course tasting menus but does not print prices.",
       "official_url": "https://partage.vegas/restaurant",
-      "youtube": [
-        "https://www.youtube.com/watch?v=ySz4llWtk7Y",
-        "https://www.youtube.com/watch?v=3rd8t0XjSic",
-        "https://www.youtube.com/watch?v=RKf3m7boJ1w"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
-      "phone": "702-582-5852",
-      "verified": "yes",
+      "phone": "702.582.5852",
+      "verified": "field-level — see verification.json",
       "flags": [
-        "F-24"
+        "F-24",
+        "F-73",
+        "F-70"
       ],
       "notes": "Hours and phone are on the Contact page, not the Restaurant page — the Restaurant page is a booking widget and shows no service times. Strict dietary policy: decide before booking. OpenTable id 1005940. Phone 702-582-5852.",
-      "hours_source": "https://partage.vegas/contact (\"We'll be open for the foreseeable future Tuesday to Saturday from 5 pm to 9 pm.\", retrieved 2026-11-25)"
+      "hours_source": "https://partage.vegas/contact (\"We'll be open for the foreseeable future Tuesday to Saturday from 5 pm to 9 pm.\", retrieved 2026-11-25)",
+      "audit_previous_values_2026_11_27": {
+        "days": "Tue–Sat",
+        "hours": "Tue–Sat 5:00 PM – 9:00 PM",
+        "exceptions": "Closed Sunday and Monday. Prix fixe only (5, 7 or 9 courses). No dairy-free, vegan, vegetarian, coeliac, or onion/garlic-free menus — a real constraint, not a preference.",
+        "phone": "702-582-5852",
+        "youtube": [
+          "https://www.youtube.com/watch?v=ySz4llWtk7Y",
+          "https://www.youtube.com/watch?v=3rd8t0XjSic",
+          "https://www.youtube.com/watch?v=RKf3m7boJ1w"
+        ]
+      }
     },
     {
       "id": "sparrow-and-wolf",
@@ -515,26 +665,34 @@
       "cuisine": "New American",
       "location": "Chinatown (Spring Mountain Rd)",
       "zone": "chinatown",
-      "address": "4480 Spring Mountain Rd, Las Vegas, NV 89102",
-      "days": "See official page / OpenTable",
+      "address": "4480 Spring Mountain Rd. #100, Las Vegas, NV 89102",
+      "days": "",
       "hours": "",
-      "exceptions": "Cancellations inside 24 hours are charged $25 per guest.",
+      "exceptions": "",
       "price_2adults": "",
       "price_note": "Not published officially.",
       "official_url": "https://sparrowandwolflv.com",
-      "youtube": [
-        "https://www.youtube.com/watch?v=GSKix7NMSek",
-        "https://www.youtube.com/watch?v=hkiPibouftc",
-        "https://www.youtube.com/watch?v=ZxbyjzWSTsg"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "702.790.2147",
-      "verified": "partial",
+      "verified": "field-level — see verification.json",
       "flags": [
-        "F-25"
+        "F-25",
+        "F-73",
+        "F-70"
       ],
-      "notes": "The official site does not publish opening hours anywhere on its front page or menu page; bookings are handled through OpenTable (rid 732187). Left blank rather than guessed. A card-hold policy applies: reservations cancelled inside 24 hours are charged $25 per guest, and tables are capped at 4 guests."
+      "notes": "The official site does not publish opening hours anywhere on its front page or menu page; bookings are handled through OpenTable (rid 732187). Left blank rather than guessed. A card-hold policy applies: reservations cancelled inside 24 hours are charged $25 per guest, and tables are capped at 4 guests.",
+      "audit_previous_values_2026_11_27": {
+        "days": "See official page / OpenTable",
+        "exceptions": "Cancellations inside 24 hours are charged $25 per guest.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=GSKix7NMSek",
+          "https://www.youtube.com/watch?v=hkiPibouftc",
+          "https://www.youtube.com/watch?v=ZxbyjzWSTsg"
+        ],
+        "address": "4480 Spring Mountain Rd, Las Vegas, NV 89102"
+      }
     },
     {
       "id": "esthers-kitchen",
@@ -544,27 +702,34 @@
       "cuisine": "Seasonal Italian",
       "location": "Arts District (Downtown)",
       "zone": "downtown-arts",
-      "address": "1130 S Casino Center Blvd, Las Vegas, NV 89104",
-      "days": "See official page",
+      "address": "",
+      "days": "",
       "hours": "",
       "exceptions": "",
       "price_2adults": "",
       "price_note": "Bib Gourmand value pricing; official site has no price list. A creator video itemises dishes (secondary — not verified).",
       "official_url": "https://www.estherslv.com/",
-      "youtube": [
-        "https://www.youtube.com/watch?v=Vw7ga_Ollbg",
-        "https://www.youtube.com/watch?v=kCOFqLw47TI",
-        "https://www.youtube.com/shorts/Pln4WLWFIpg"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "",
-      "verified": "partial",
+      "verified": "field-level — see verification.json",
       "flags": [
         "F-07",
-        "F-50"
+        "F-50",
+        "F-73",
+        "F-70"
       ],
-      "notes": "Hours were NOT obtainable: /hours-location returned an error and the home page carries no hours block. Brunch is its signature — call before planning. Address conflict recorded as F-50: the MICHELIN press release says 1131 S. Main St., this row says 1130 S Casino Center Blvd, and the venue's own pages publish neither."
+      "notes": "Hours were NOT obtainable: /hours-location returned an error and the home page carries no hours block. Brunch is its signature — call before planning. Address conflict recorded as F-50: the MICHELIN press release says 1131 S. Main St., this row says 1130 S Casino Center Blvd, and the venue's own pages publish neither.",
+      "audit_previous_values_2026_11_27": {
+        "days": "See official page",
+        "youtube": [
+          "https://www.youtube.com/watch?v=Vw7ga_Ollbg",
+          "https://www.youtube.com/watch?v=kCOFqLw47TI",
+          "https://www.youtube.com/shorts/Pln4WLWFIpg"
+        ],
+        "address": "1130 S Casino Center Blvd, Las Vegas, NV 89104"
+      }
     },
     {
       "id": "soulbelly-bbq",
@@ -575,23 +740,32 @@
       "location": "Arts District / Main St (Downtown)",
       "zone": "downtown-arts",
       "address": "1327 S Main St, Las Vegas, NV 89104",
-      "days": "Tue–Sun",
-      "hours": "Tue–Thu 11:00 AM – 9:00 PM; Fri–Sat 11:00 AM – 10:00 PM; Sun 11:00 AM – 9:00 PM",
-      "exceptions": "Closed Monday. Live music Fri–Sat 6–9 PM.",
+      "days": "Tuesday–Sunday",
+      "hours": "Tue–Thu/Sun 11 AM–9 PM; Fri/Sat 11 AM–10 PM",
+      "exceptions": "",
       "price_2adults": "",
       "price_note": "Not published officially.",
       "official_url": "https://soulbellybbq.com",
-      "youtube": [
-        "https://www.youtube.com/watch?v=4cH2Qn9Qcgg",
-        "https://www.youtube.com/watch?v=-XaQQIs2DjI",
-        "https://www.youtube.com/watch?v=hrC2w9akHRY"
-      ],
+      "youtube": [],
       "instagram": "https://www.instagram.com/soulbellybbqlv",
       "tiktok": "",
       "phone": "",
-      "verified": "yes",
-      "flags": [],
-      "notes": "Cheapest way to eat inside the Michelin list; pairs with Neon Museum (10 min apart)."
+      "verified": "field-level — see verification.json",
+      "flags": [
+        "F-73",
+        "F-70"
+      ],
+      "notes": "Cheapest way to eat inside the Michelin list; pairs with Neon Museum (10 min apart).",
+      "audit_previous_values_2026_11_27": {
+        "days": "Tue–Sun",
+        "hours": "Tue–Thu 11:00 AM – 9:00 PM; Fri–Sat 11:00 AM – 10:00 PM; Sun 11:00 AM – 9:00 PM",
+        "exceptions": "Closed Monday. Live music Fri–Sat 6–9 PM.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=4cH2Qn9Qcgg",
+          "https://www.youtube.com/watch?v=-XaQQIs2DjI",
+          "https://www.youtube.com/watch?v=hrC2w9akHRY"
+        ]
+      }
     },
     {
       "id": "ping-pang-pong",
@@ -603,22 +777,29 @@
       "zone": "west-near",
       "address": "4000 W Flamingo Rd, Las Vegas, NV 89103",
       "days": "Daily",
-      "hours": "10:00 AM – 3:00 AM",
+      "hours": "10 AM–3 AM",
       "exceptions": "",
       "price_2adults": "",
       "price_note": "Not published officially.",
       "official_url": "https://goldcoast.boydgaming.com/dine/gc-ping-pang-pong",
-      "youtube": [
-        "https://www.youtube.com/watch?v=WgKXQ7fuaDo",
-        "https://www.youtube.com/watch?v=priuV8t47qI",
-        "https://www.youtube.com/watch?v=rCb1-jVQoyU"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "702.247.8136",
-      "verified": "yes",
-      "flags": [],
-      "notes": "Open 17 hours a day — the only Michelin-listed kitchen available at 2 AM."
+      "verified": "field-level — see verification.json",
+      "flags": [
+        "F-73",
+        "F-70"
+      ],
+      "notes": "Open 17 hours a day — the only Michelin-listed kitchen available at 2 AM.",
+      "audit_previous_values_2026_11_27": {
+        "hours": "10:00 AM – 3:00 AM",
+        "youtube": [
+          "https://www.youtube.com/watch?v=WgKXQ7fuaDo",
+          "https://www.youtube.com/watch?v=priuV8t47qI",
+          "https://www.youtube.com/watch?v=rCb1-jVQoyU"
+        ]
+      }
     },
     {
       "id": "pho-ga-bac-bac",
@@ -635,16 +816,22 @@
       "price_2adults": "",
       "price_note": "Not published officially.",
       "official_url": "https://bestchickenpho.com",
-      "youtube": [
-        "https://www.youtube.com/watch?v=yGePVQiF6co",
-        "https://www.youtube.com/watch?v=kyvFhu94qPU"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "",
-      "verified": "yes",
-      "flags": [],
-      "notes": "24/7 — the safety net for a jet-lagged first night."
+      "verified": "field-level — see verification.json",
+      "flags": [
+        "F-73",
+        "F-70"
+      ],
+      "notes": "24/7 — the safety net for a jet-lagged first night.",
+      "audit_previous_values_2026_11_27": {
+        "youtube": [
+          "https://www.youtube.com/watch?v=yGePVQiF6co",
+          "https://www.youtube.com/watch?v=kyvFhu94qPU"
+        ]
+      }
     },
     {
       "id": "yen-viet-kitchen",
@@ -655,25 +842,31 @@
       "location": "West Las Vegas (S Decatur Blvd)",
       "zone": "west-near",
       "address": "3575 S Decatur Blvd #101, Las Vegas, NV 89103",
-      "days": "See official page",
+      "days": "",
       "hours": "",
       "exceptions": "",
       "price_2adults": "",
       "price_note": "Official site exposes a menu but no verified price list.",
       "official_url": "https://www.yenvietkitchen.com",
-      "youtube": [
-        "https://www.youtube.com/watch?v=Og3HVXgGzx4",
-        "https://www.youtube.com/watch?v=TUIWGzemN34",
-        "https://www.youtube.com/watch?v=YTbD8ykWVTI"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "",
-      "verified": "partial",
+      "verified": "field-level — see verification.json",
       "flags": [
-        "F-07"
+        "F-07",
+        "F-73",
+        "F-70"
       ],
-      "notes": ""
+      "notes": "",
+      "audit_previous_values_2026_11_27": {
+        "days": "See official page",
+        "youtube": [
+          "https://www.youtube.com/watch?v=Og3HVXgGzx4",
+          "https://www.youtube.com/watch?v=TUIWGzemN34",
+          "https://www.youtube.com/watch?v=YTbD8ykWVTI"
+        ]
+      }
     },
     {
       "id": "stubborn-seed",
@@ -685,22 +878,31 @@
       "zone": "north-strip",
       "address": "3000 S Las Vegas Blvd, Las Vegas, NV 89109",
       "days": "Daily",
-      "hours": "Dining room 5:00 PM – 10:00 PM; bar 4:00 PM – 10:00 PM",
-      "exceptions": "",
-      "price_2adults": "",
+      "hours": "Dining room 5 PM–10 PM; bar/lounge 4 PM–10 PM",
+      "exceptions": "Full-table tasting-menu participation; chef declines substitutions.",
+      "price_2adults": "$320 for two tasting menus",
       "price_note": "Not published officially.",
       "official_url": "https://rwlasvegas.com/dining/stubborn-seed/",
-      "youtube": [
-        "https://www.youtube.com/watch?v=GSBB8ZMtgwI",
-        "https://www.youtube.com/watch?v=-Xn6tasRmXA",
-        "https://www.youtube.com/watch?v=ndR0ipay-qQ"
-      ],
+      "youtube": [],
       "instagram": "",
       "tiktok": "",
       "phone": "702.676.8062",
-      "verified": "yes",
-      "flags": [],
-      "notes": ""
+      "verified": "field-level — see verification.json",
+      "flags": [
+        "F-73",
+        "F-70"
+      ],
+      "notes": "",
+      "audit_previous_values_2026_11_27": {
+        "hours": "Dining room 5:00 PM – 10:00 PM; bar 4:00 PM – 10:00 PM",
+        "exceptions": "",
+        "price_2adults": "",
+        "youtube": [
+          "https://www.youtube.com/watch?v=GSBB8ZMtgwI",
+          "https://www.youtube.com/watch?v=-Xn6tasRmXA",
+          "https://www.youtube.com/watch?v=ndR0ipay-qQ"
+        ]
+      }
     }
   ]
 }

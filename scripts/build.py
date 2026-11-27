@@ -1,19 +1,11 @@
 #!/usr/bin/env python3
 """
-build.py — computes the Michelin proximity scores and validates the dataset.
+build.py — checks research datasets and computes the legacy zone-model scores.
 
-Run from the repo root:  python3 scripts/build.py
-
-It rewrites exactly two fields in data/hotels.json:
-  michelin_within_60  — count of Michelin restaurants reachable in <= 60 min one-way
-  michelin_within_20  — count reachable in <= 20 min one-way (the ranking tiebreaker)
-
-Everything else in the JSON is authored by hand and never touched.
-
-Why this exists: the "within 1 hour" metric on its own returns 24/24 for every
-hotel in Las Vegas, so it cannot rank anything. The 20-minute column is the one
-that actually separates the field. Both are computed here from the single zone
-matrix in data/transit.json so the site cannot drift from the source of truth.
+These model scores are unvalidated assumptions, NOT official bus journeys and
+NOT a public hotel ranking. The public views use field-level evidence instead.
+Missing research values are allowed when explicitly unverified; contradictions
+and invalid evidence records fail. Run: python3 scripts/build.py
 """
 import json
 import sys
@@ -86,8 +78,6 @@ def main():
     for r in restaurants["restaurants"]:
         if not r["official_url"]:
             problems.append(f"{r['id']}: no official_url")
-        if not r["youtube"]:
-            problems.append(f"{r['id']}: no YouTube link")
 
     for h in hotels["hotels"]:
         if not h["prices"]:
@@ -96,9 +86,12 @@ def main():
     print(f"restaurants: {n_res}  award split: {award_counts}")
     print(f"hotels: {len(hotels['hotels'])}, rescored: {changed}")
     flat = {h['michelin_within_60'] for h in hotels['hotels']}
-    print(f"distinct '<=60 min' counts: {sorted(flat)}")
+    print(f"legacy MODEL ONLY '<=60 min' counts: {sorted(flat)} (not public journey evidence)")
     spread = sorted({h['michelin_within_20'] for h in hotels['hotels']}, reverse=True)
     print(f"distinct '<=20 min' counts: {spread}")
+
+    from verified_views import load_manifest, validate_manifest
+    problems.extend(validate_manifest(load_manifest()))
 
     if problems:
         print("\nPROBLEMS:")

@@ -5,8 +5,10 @@ gen_site.py — renders the static site in docs/ from the JSON in data/.
 Run after scripts/build.py:
     python3 scripts/build.py && python3 scripts/gen_site.py
 
-No framework, no CDN, no build step at deploy time. Everything is plain HTML +
-one stylesheet, so GitHub Pages serves docs/ directly from main.
+No framework, no CDN, no build step at deploy time. Public views are rendered
+by verified_views.py from field-level official evidence. Root + docs copies are
+identical; this repository publishes main:/, not docs/. Legacy view helpers
+remain for the historical flag register, not as fallback public comparisons.
 """
 import json
 import re
@@ -1205,6 +1207,25 @@ footer p{margin:0 0 8px;max-width:80ch}
   nav a{padding:6px 8px;font-size:.8rem}
   table.data{font-size:.82rem}
 }
+
+/* Evidence-gated views: keyboard-accessible scrolling and clear unknowns. */
+.skip-link{position:fixed;top:-100px;left:12px;z-index:100;background:var(--accent);color:#06110d;padding:10px 16px;border-radius:8px}
+.skip-link:focus{top:8px}
+a:focus-visible,summary:focus-visible,.scroll:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+caption{text-align:left;padding:10px 12px;color:var(--muted);font-size:.85rem}
+.unverified{color:var(--warn);font-weight:600}
+.source-links{font-size:.78rem;min-width:140px;overflow-wrap:anywhere}
+.source-links a{display:inline-block;margin-top:5px}
+.scroll{max-width:100%}
+table.data th[scope="row"]{text-align:left;min-width:150px;font-weight:600}
+table.data td{overflow-wrap:anywhere}
+main[id],section[id],article[id],tr[id],p[id]{scroll-margin-top:160px}
+@media(max-width:640px){
+ header.top{position:static}
+ .wrap{padding-left:12px;padding-right:12px}
+ .source-links{min-width:130px}
+ main[id],section[id],article[id],tr[id],p[id]{scroll-margin-top:12px}
+}
 """
 
 
@@ -1308,20 +1329,10 @@ def build_audit_sections():
 
 def main():
     DOCS.mkdir(exist_ok=True)
-    pages = {
-        "index.html": build_index(),
-        "hotels.html": build_hotels(),
-        "restaurants.html": build_restaurants(),
-        "activities.html": build_activities(),
-        "transit.html": build_transit(),
-        "questions.html": build_questions(),
-        "suggestions.html": build_suggestions(),
-        "flagged.html": build_flagged(),
-        "sources.html": build_sources(),
-        "repo-review.html": build_repo_review(),
-    }
-    for name, title, subtitle, links in ROUTES:
-        pages[name] = build_route(name, title, subtitle, links)
+    # Public views fail closed: old row-level labels and model/OTA values are
+    # historical research, never fallback values for a missing official field.
+    from verified_views import build_verified_pages
+    pages = build_verified_pages(page, build_flagged)
     # Publish to BOTH docs/ and the repo root. GitHub Pages on this repo is pinned
     # to main:/ (the API refuses to repoint it to /docs), so the root copy is what
     # visitors actually get. Writing both makes the deploy path independent of that

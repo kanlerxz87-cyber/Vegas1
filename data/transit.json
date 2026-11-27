@@ -4,13 +4,14 @@
     "answer": "Las Vegas has no subway or metro rail. The 'by subway or bus' constraint is therefore modelled on three systems that do not share a ticket: RTC transit buses (The Deuce / SDX / local routes), the Las Vegas Monorail, and the Boring Company Vegas Loop.",
     "honesty": "Every minute figure here is an ESTIMATE built from official station lists and route maps, rounded to 5 minutes. No official source publishes door-to-door travel times. These are planning estimates, not timetables.",
     "generated_by": "scripts/build.py recomputes michelin_within_60 and michelin_within_20 in data/hotels.json from this matrix — do not hand-edit those two fields.",
-    "route_203_correction": "An earlier version of this matrix recorded Chinatown / Spring Mountain Rd as reachable only by car or rideshare, with no RTC service. That was wrong. Route 203 runs the length of Spring Mountain Road and its official timetable carries a timed stop at Las Vegas Blvd. Weekday runs take about 10 to 17 minutes from Decatur to Las Vegas Blvd depending on the time of day (14 minutes is used as the midpoint). Because the Chinatown zone holds seven of the 24 MICHELIN listings, the correction raises the north Strip's short-trip counts and makes Wynn/Resorts World/SAHARA the best bases for that cluster. Timetable: https://rtcws.rtcsnv.com/routePDF/203.pdf"
+    "route_203_correction": "An earlier version of this matrix recorded Chinatown / Spring Mountain Rd as reachable only by car or rideshare, with no RTC service. That was wrong. Route 203 runs the length of Spring Mountain Road and its official timetable carries a timed stop at Las Vegas Blvd. Weekday runs take about 10 to 17 minutes from Decatur to Las Vegas Blvd depending on the time of day (14 minutes is used as the midpoint). Because the Chinatown zone holds seven of the 24 MICHELIN listings, the correction raises the north Strip's short-trip counts and makes Wynn/Resorts World/SAHARA the best bases for that cluster. Timetable: https://rtcws.rtcsnv.com/routePDF/203.pdf",
+    "published_rule": "The minutes matrix and model counts are historical unvalidated research; excluded from public verified rankings. See field-level evidence and blank bus-count cells in data/verification.json. The Monorail/Loop are optional non-bus modes, not substitutes for proof of bus journeys."
   },
   "systems": [
     {
       "id": "monorail",
       "name": "Las Vegas Monorail",
-      "fare_note": "Single ride $6.25 paper / $5.75 e-ticket. 1-day $15.50 / $13.95, 2-day $27, 3-day $33, 4-day $40, 5-day $48.25, 7-day $64 / $59.95.",
+      "fare_note": "$6.25 paper / $5.75 electronic single; 7-day $64 / $59.95 per person. Nevada-resident $1 local fare requires valid ID and has purchase restrictions; not a visitor fare. See official ticket page for other durations.",
       "hours": "Mon 7am–12am; Tue–Thu 7am–2am; Fri–Sun 7am–3am",
       "stations": [
         "MGM Grand",
@@ -61,7 +62,7 @@
     {
       "id": "loop",
       "name": "Vegas Loop (Boring Company)",
-      "fare_note": "Encore / Resorts World / Westgate $4.75 (day pass $13.25); Las Vegas Convention Center ↔ Strip $5; Fontainebleau $7.00; SAHARA $7.50; airport $12–14.",
+      "fare_note": "Operator examples: LVCC to Strip $5; LVCC to Thomas & Mack $8. Other trip fares are not verified; check operator ticketing. Loop is not an RTC bus or subway.",
       "stations": [
         "Resorts World",
         "Encore",

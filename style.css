@@ -144,3 +144,22 @@ footer p{margin:0 0 8px;max-width:80ch}
   nav a{padding:6px 8px;font-size:.8rem}
   table.data{font-size:.82rem}
 }
+
+/* Evidence-gated views: keyboard-accessible scrolling and clear unknowns. */
+.skip-link{position:fixed;top:-100px;left:12px;z-index:100;background:var(--accent);color:#06110d;padding:10px 16px;border-radius:8px}
+.skip-link:focus{top:8px}
+a:focus-visible,summary:focus-visible,.scroll:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+caption{text-align:left;padding:10px 12px;color:var(--muted);font-size:.85rem}
+.unverified{color:var(--warn);font-weight:600}
+.source-links{font-size:.78rem;min-width:140px;overflow-wrap:anywhere}
+.source-links a{display:inline-block;margin-top:5px}
+.scroll{max-width:100%}
+table.data th[scope="row"]{text-align:left;min-width:150px;font-weight:600}
+table.data td{overflow-wrap:anywhere}
+main[id],section[id],article[id],tr[id],p[id]{scroll-margin-top:160px}
+@media(max-width:640px){
+ header.top{position:static}
+ .wrap{padding-left:12px;padding-right:12px}
+ .source-links{min-width:130px}
+ main[id],section[id],article[id],tr[id],p[id]{scroll-margin-top:12px}
+}
