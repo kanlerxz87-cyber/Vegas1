@@ -317,6 +317,22 @@ can never be mistaken for a starred one. <strong>—</strong> means the total wa
 
 
 # ---------------------------------------------------------------- dining budget
+
+def _fare_pair(note, label):
+    """Dollar amounts attached to a fare label, in printed order.
+
+    Handles both '7-day $64 / $59.95' and '$20 3-day'. Parsing the raw note text
+    avoids retyping a fare in the generator, and survives the note being reworded
+    (an earlier split() on '3-day' silently returned the $1 residential fare).
+    """
+    amount = r"\$(\d[\d,]*(?:\.\d+)?)"
+    after = re.search(re.escape(label) + r"[^$]{0,12}" + amount + r"(?:\s*/\s*" + amount + r")?", note)
+    if after:
+        return [float(x.replace(",", "")) for x in after.groups() if x]
+    before = re.search(amount + r"\s*" + re.escape(label), note)
+    return [float(before.group(1).replace(",", ""))] if before else []
+
+
 def _first_usd(text):
     v = usd_values(text)
     return v[0] if v else None
@@ -351,12 +367,12 @@ def build_dining():
     act_total = hr[-1] + mob + neon
 
     monorail = next(x for x in TRANSIT["systems"] if x["id"] == "monorail")
-    mon_fares = usd_values(monorail["fare_note"].split("7-day")[1])
-    monorail_two = mon_fares[-1] * 2
+    mon_fares = _fare_pair(monorail["fare_note"], "7-day")
+    monorail_two = mon_fares[-1] * 2          # e-ticket price × 2 adults
 
     rtc = next(x for x in TRANSIT["systems"] if x["id"] == "rtc")
-    rtc_3day = usd_values(rtc["fare_note"].split("3-day")[1])[0]
-    rtc_two = rtc_3day * 3 * 2
+    rtc_3day = _fare_pair(rtc["fare_note"], "3-day")[-1]
+    rtc_two = rtc_3day * 3 * 2                # three 3-day passes each, no 7-day RTC pass
 
     scenarios = [
         {"name": "Two dinners", "picks": [("partage", "low"), ("esthers-kitchen", "mid")]},
