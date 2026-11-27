@@ -728,6 +728,20 @@ Checks repeated after the second merge: `build.py`, `gen_site.py`, `validate.py`
 `check_evidence.py` **PASS**; `check_links.py` reports Instagram blocks (expected — the platform refuses automated
 requests) and is not a pass/fail gate.
 
+### Third pass — post-merge rendering fix (arena/c045ad05-vegas1, 2026-11-27)
+
+After the #49 merge (commit `05b0361`), the live `activities.html` was read back from the deployed site and one
+rendering defect was found that no validator could catch: on the activities provenance table, this session's
+`social_evidence` and the T18 session's `social_note` were concatenated with **no separator**, producing text like
+"… 'The Wizard of Oz at Sphere' playlists.Instagram @spherevegas is the account …". Two independent sources of truth
+had been merged into one cell without a boundary.
+
+Fixed in `scripts/gen_site.py`: the note is now shown only when a row has no evidence of its own (they largely repeat
+each other), and multiple fragments are joined with an explicit `<br>` so two sentences can never run together.
+**No data value changed** — this was purely a rendering boundary. Re-verified: 15 pages, 0 failures, 0 warnings.
+
+---
+
 ### Post-merge live check — T19 follow-up (2026-11-27)
 
 [PR #44](https://github.com/kanlerxz87-cyber/Vegas1/pull/44) **MERGED** 2026-11-27T17:41:44Z, merge commit
