@@ -131,13 +131,31 @@
       "flags": [],
       "notes": "Free — the obvious way to keep a downtown evening cheap. SlotZilla zipline is a paid add-on on the same site. IG @fremontstreet is the official Fremont Street Experience account (verified 2026-11-27). TikTok: no official account verified — left blank, see F-53.",
       "social_note": "Instagram is the account whose own profile describes it as the 'Official account of Fremont Street Experience and SlotZilla zipline'; the venue's own site prints no social icons, so no TikTok is listed. Re-checked 2026-11-27. Source: https://www.instagram.com/fremontstreet/"
+    },
+    {
+      "id": "bellagio-fountains",
+      "name": "Fountains of Bellagio",
+      "zone": "center-strip",
+      "type": "Free outdoor water & music show",
+      "days": "Daily",
+      "hours": "Mon–Fri: every 30 min 3:00 PM–7:30 PM, every 15 min 8:00 PM–midnight · Sat, Sun & Holidays: every 30 min 12:00 PM–7:30 PM, every 15 min 8:00 PM–midnight",
+      "exceptions": "Schedule may vary. Outdoor display is subject to cancellation due to weather.",
+      "price_per_couple": "$0",
+      "price_note": "Official Bellagio page (verified 2026-11-27): 'absolutely free for any visitor to enjoy.' Resolves F-18.",
+      "official_url": "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html",
+      "booking_hint": "No ticket required — outdoor viewing along Las Vegas Blvd.",
+      "youtube": [
+        "https://www.youtube.com/watch?v=iNQpcDuE6e4"
+      ],
+      "instagram": "https://www.instagram.com/Bellagio/",
+      "tiktok": "",
+      "social_note": "Instagram @Bellagio verified from official property profile; YouTube show video verified; no dedicated official TikTok handle verified (left blank per F-53).",
+      "verified": "yes",
+      "flags": [],
+      "notes": "Verified live 2026-11-27 from bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html (resolves F-18)."
     }
   ],
   "not_verified": [
-    {
-      "name": "Bellagio Fountains",
-      "reason": "The official Bellagio page for the fountains returned a fetch error twice. Show times and the current schedule could not be confirmed, so no hours or links are published here. Free to watch; check https://www.bellagio.com/ on arrival."
-    },
     {
       "name": "Cirque du Soleil / other production shows",
       "reason": "Booking.com listed 'Cirque Du Soleil Admission' from $158.65 per person, but that is a reseller listing with no show name, no venue and no 2027 date. Not published as fact."
