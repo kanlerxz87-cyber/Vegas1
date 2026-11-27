@@ -20,7 +20,7 @@ A sourced trip plan for **two adults**, seven nights, between **15 February and 
 | `scripts/build.py` | Recomputes the Michelin proximity counts from the transit matrix; runs integrity checks |
 | `scripts/gen_site.py` | Renders `docs/` from the JSON. All counts derived, none typed by hand |
 | `scripts/validate.py` | Link and structure checks for the built site |
-| `FLAGS.md` | 33 register rows (F-01 to F-30, plus F-47 to F-49 from the 26 Nov link re-check), including hotel rate basis/recency limitations |
+| `FLAGS.md` | 37 register rows (F-01 to F-30, F-39 to F-46, plus F-47 to F-53 from the 26–27 Nov re-checks), including hotel rate basis/recency limitations |
 | `data/review-flags.json` | The 26 Nov 2026 audit register (F-39 to F-46) and confirmed items C-11 to C-13, each with source links. Rendered on `flagged.html` |
 | `executive-summary.md` | The one-page version |
 | `data/review.json` | Repo review: line-by-line checks, limits, and irregularities (2026-11-26) |
@@ -77,7 +77,7 @@ Booking.com **search list** rather than a property quote page, so those cards no
 
 - **No inferred values.** Blank means unverified. Every blank is listed in `FLAGS.md` and on the
   Questions page with a route to close it.
-- **Every row cites a source.** 394 external links across 13 pages (counted by `scripts/validate.py` on the current build).
+- **Every row cites a source.** 436 external links across 13 pages (counted by `scripts/validate.py` on the current build).
 - **Sources and gaps are disclosed.** Hotel prices in the canonical 32-property table are Booking.com snapshots (not official property rates); this does not meet the strict official-rate-only requirement and is flagged as F-29. A dated direct-engine sample and 26 Nov refresh are linked from Sources & Flags; rates must be rechecked on the property's own engine.
 - **Estimates are labelled.** Only the transit minutes are estimates, and they say so everywhere.
 - **Flags are published.** Everything that did not verify cleanly is on `flagged.html`, with its sources.

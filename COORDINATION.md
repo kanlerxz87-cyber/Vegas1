@@ -493,3 +493,28 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 **Irregularity found (V-08, not edited — owned by PR #38 session):** `data/transit.json` RTC `fare_note` says "Nevada local fares are $1", but RTC residential single ride is $2 regular / $1 reduced (rtcsnv.com); $1 is the Monorail Nevada-resident fare. Request: correct the RTC note and move the $1 fare to the Monorail entry. No other new irregularities; F-29/F-30/F-47/F-48/F-49 remain published on flagged.html and do not block anything.
 
 **Result:** T17 done. Audit published in `notes/verification-2026-11-27.md`; no site or data files changed, so no Pages redeploy needed.
+
+## Session record — arena/a00dc828-vegas1 (T17) — 2026-11-27
+
+**Scope claimed:** `COORDINATION.md`, `data/activities.json`, `data/restaurants.json` (social-link fields + verification notes only), `FLAGS.md` (new rows if needed), `scripts/gen_site.py` (only if rendering needs it), generated `docs/**` + root `*.html`. No hotel-price, transit-minute, or award-tier changes without a fresh official source.
+
+**Task T17:** Complete YouTube/Instagram/TikTok coverage for every restaurant + activity row from official/primary sources (official-site-published handles; real video URLs found via search and opened), retry Bellagio Fountains official page, fresh 2026-11-27 re-verification of MICHELIN tiers + starred hours, rebuild + validate, PR + merge + Pages deploy check.
+
+**Overlap note:** Open PRs #27 (`arena/c9eed9ad-vegas1`) and #38 (`arena/16cb2f96-vegas1`) also touch `data/restaurants.json` / `data/activities.json` / `scripts/gen_site.py`. They are stale/open with no active board claim. This session works on `arena/a00dc828-vegas1` from `main@631e611`; will `git pull --rebase` before push and resolve without discarding other work. No other session's branch will be merged or closed by this session.
+
+## Session record — arena/a00dc828-vegas1 (T17) — verification + results — 2026-11-27
+
+**Verification performed (2026-11-27, official/primary sources only):**
+- MICHELIN tiers re-confirmed on michelin.com press release (31 Aug 2026): 2★ Joël Robuchon; 1★ é, Guy Savoy, L'Atelier (+ Monte UT, correctly excluded); Bib China Poblano, Esther's Kitchen, YEN Viet Kitchen; 17 LV Recommended — matches `data/restaurants.json` (4/3/17). No tier change.
+- Mob Museum hours CORRECTED (F-52): themobmuseum.org homepage table now Daily 9–9 (was Thu 9–4 in dataset). Underground unchanged. `data/activities.json` updated.
+- High Roller re-verified on caesars.com (Opens 12:30PM; $23.50/$34.75/$60 + fees; 30-min rotation) — matches dataset.
+- Neon Museum re-verified on neonmuseum.org (Sep–May 3–11PM; 2027 Admission from $21; footer IG/TT match dataset) — matches.
+- Guy Savoy "Opens 5:00 PM" on caesars.com — consistent with dataset "Dinner from 5:00 PM".
+- Bellagio Fountains official page fetch FAILED again (3rd attempt) — stays in `not_verified`, F-18 unchanged.
+- Social sweep (web_search + official/press sources): Restaurants IG 0→19/24, TT 0→2/24 (Lamaii, Esther's). Activities: YT 0→15 videos (3 each), IG 1→5/5, TT 1→3/5. Blanks left blank per no-inference rule (F-53). Ping Pang Pong @pingpongthaivegas deliberately NOT used (different Thai venue).
+- Build: `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py` → 13 pages · 0 failures · 0 warnings · 436 external links (was 394). `scripts/gen_site.py` IG/TT count labels fixed (were hardcoded "none recorded").
+- README/executive-summary counts updated (37 FLAGS rows, 436 links).
+
+**Irregularities:** F-52 (Mob Thu hours, corrected), F-53 (TikTok coverage gap, blanks flagged). All prior flags (F-29/F-30 rate basis, F-47 Vanderpump, F-48 search-list prices) unchanged and non-blocking.
+
+**Overlap:** Open PRs #27/#38 touch same data files but have no active board claim; this branch rebased on `main@631e611` before push. No other branch merged/closed by this session.
