@@ -46,7 +46,7 @@ python3 scripts/check_evidence.py
 python3 -m unittest discover -s tests -v
 ```
 
-`.nojekyll` exists at root and in docs. The latest structural check reports **16 pages, 0 failures, 0 warnings, 506 external link occurrences**. Link occurrences are **not** a claim that 461 remote pages were reopened or are live. Tests check local correctness and evidence-display rules, not source truth or future availability.
+`.nojekyll` exists at root and in docs. The latest structural check reports **16 pages, 0 failures, 0 warnings, 505 external link occurrences**. Link occurrences are **not** a claim that 461 remote pages were reopened or are live. Tests check local correctness and evidence-display rules, not source truth or future availability.
 
 ## Evidence policy and remaining research
 
