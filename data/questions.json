@@ -105,7 +105,7 @@
       "question": "Are the opening hours current for the trip dates (February–March 2027)?",
       "state": "open",
       "answer": "Hours were captured on 2026-11-25 and are the venues' current published hours. Several are seasonal or reduced: Wing Lei and L'Atelier are closed two weekdays, SoulBelly closes Mondays, Michael Mina publishes block closures.",
-      "problem": "A February 2027 trip is roughly 3 months from the November 2026 capture date, and Las Vegas restaurants frequently adjust seasonal or holiday schedules.",
+      "problem": "A February 2027 trip is 15 months from the capture date, and Las Vegas restaurants change days and hours constantly.",
       "substitution": "The 'exceptions' column records every closure noticed, and every row links to the official page so hours can be re-checked in one click.",
       "how_to_close": "Re-check the four starred restaurants and Michael Mina two weeks before travel — these are the ones that will ruin an evening if they are dark.",
       "sources": []
@@ -161,7 +161,7 @@
       "id": "Q-13",
       "question": "Are the hotels' own websites still live at the URLs this site links to?",
       "state": "answered",
-      "answer": "Closed as far as this environment allows (finished 2026-11-27). All 32 hotel official URLs have now been checked: 21 of 32 are confirmed live by fetch (including Green Valley Ranch and Red Rock verified 2026-11-27), 10 refuse automated access (Wynn, Encore, Vdara, Secret Suites, NoMad, W, Bluegreen Club 36, Waldorf Astoria, The Signature at MGM Grand, and Crockfords which returned HTTP 500), 1 (Nobu at Caesars) opens but lands on the parent property's page, and 0 remain unopened (F-49).",
+      "answer": "Closed as far as this environment allows. 18 of 32 official pages are now confirmed live by fetch (4 from earlier sessions plus 14 opened on 26 Nov 2026: Cosmopolitan, ARIA, Bellagio, Palazzo, SAHARA, Four Seasons, Trump, Golden Nugget, Caesars Palace, Plaza, Fontainebleau, Horseshoe, Flamingo and the Cromwell). Two links moved: caesars.com/cromwell 301-redirects to a NEW brand (The Vanderpump Hotel — row renamed, F-47) and palazzo.com resolves to a page under venetianlasvegas.com. 8 properties refuse automated access (Wynn, Encore, Vdara, Secret Suites, NoMad, W, Bluegreen Club 36, and Crockfords which returns HTTP 500), so each is labelled as refused rather than given a checkmark. 5 were not opened, and 1 (Nobu at Caesars) opens but lands on the parent property's page (F-49).",
       "problem": "Hotel brand sites move constantly — MGM, Caesars, Marriott and Hilton have all reorganised property URLs. Linking a moved page is a small failure, but claiming it was verified when it was not is the failure the brief actually cares about.",
       "substitution": "Every card also shows the Booking.com link the price came from. Where that link is a dated search-results list rather than a property page (15 rows), the card says 'Price source — dated search list, not a room quote' (F-48), because the link proves the search, not the room.",
       "how_to_close": "The 10 refused rows can only be closed from a normal browser or by calling the property — this environment is blocked by their CDNs. That is an access limit, not a data gap; the label says so.",

@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "title": "Official booking-engine captures — 7 nights, 2 adults",
+    "captured": "2026-11-27",
+    "session": "arena/c7c75f9a-vegas1 (T17)",
+    "why": "The canonical hotel table uses Booking.com snapshots (F-29). This file records what the properties' OWN booking engines returned for the preferred dates, read directly from the engine on 27 Nov 2026. It is deliberately small and dated: it is a snapshot, not a quotable price.",
+    "window": "2027-02-15 to 2027-02-22 (the brief's preferred window, 7 nights)",
+    "guests": "2 adults, 1 room",
+    "tax_fee_basis": "As printed by each engine. Caesars and Wynn show a nightly rate that INCLUDES the resort fee but EXCLUDES tax. Resorts World shows a full itemised total that includes room tax, resort fee and resort-fee tax.",
+    "rule": "Only values visible on the engine's own page are recorded, with the exact URL. A blank means the engine did not return a readable result for this session. Nothing is extrapolated from another property or another date.",
+    "caveats": [
+      "These are live engine outputs captured at one moment. Rates move; the same page re-read the next day can differ (F-30).",
+      "Caesars displayed a 'technical difficulties' banner while still rendering room rates; the rates are shown but the banner is disclosed.",
+      "A 'room type assigned on arrival' rate does not guarantee the bed size the brief requires (F-11). Those rows are marked."
+    ]
+  },
+  "captures": [
+    {
+      "hotel": "Caesars Palace",
+      "room": "Julius Deluxe Room | 1 King | Non-Smoking",
+      "bed": "1 king",
+      "bed_guaranteed": true,
+      "nights": 7,
+      "nightly_incl_resort_fee_excl_tax": 214,
+      "resort_fee_note": "$55 daily resort fee included; tax excluded",
+      "stay_total_excl_tax": 1498,
+      "cheapest_room": {
+        "room": "Room Type Assigned on Arrival",
+        "nightly_incl_resort_fee_excl_tax": 209,
+        "bed_guaranteed": false
+      },
+      "source": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
+      "checked": "2026-11-27",
+      "notes": "Engine printed $159 room rate + $55 daily resort fee = $214/night, excluding tax. A 'technical difficulties' banner was also displayed. 7 x $214 = $1,498 before tax."
+    },
+    {
+      "hotel": "Wynn Las Vegas",
+      "room": "Wynn Resort King (640 sq ft, pillow-top king bed, marble bath)",
+      "bed": "1 king",
+      "bed_guaranteed": true,
+      "nights": 7,
+      "nightly_incl_resort_fee_excl_tax": 833,
+      "resort_fee_note": "$55 daily resort fee included; tax excluded",
+      "stay_total_excl_tax": 5831,
+      "public_offer": {
+        "name": "Wynn Cyber Exclusive + up to $300 resort credit",
+        "nightly_incl_resort_fee_excl_tax": 677,
+        "stay_total_excl_tax": 4739,
+        "book_by": "2026-12-04",
+        "stay_window": "2026-11-22 to 2027-06-30",
+        "cancellation": "Cancel 72 hours prior to arrival to avoid a one-night penalty"
+      },
+      "source": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
+      "checked": "2026-11-27",
+      "notes": "Flexible Getaway Rate $833/night incl. resort fee, excl. taxes; 7 x $833 = $5,831 before tax. The public Cyber Exclusive offer shows $677/night = $4,739 but must be booked by 4 Dec 2026."
+    },
+    {
+      "hotel": "Resorts World Las Vegas (Hilton tower)",
+      "room": "Deluxe Room - One King Bed (max 2 guests)",
+      "bed": "1 king",
+      "bed_guaranteed": true,
+      "nights": 7,
+      "nightly_incl_resort_fee_excl_tax": 277.21,
+      "stay_total_incl_tax_and_fees": 2200.15,
+      "itemised": {
+        "Mon 15 Feb 2027": 159.0,
+        "Tue 16 Feb 2027": 348.75,
+        "Wed 17 Feb 2027": 348.75,
+        "Thu 18 Feb 2027": 228.75,
+        "Fri 19 Feb 2027": 186.75,
+        "Sat 20 Feb 2027": 186.75,
+        "Sun 21 Feb 2027": 96.75,
+        "room_tax": 208.13,
+        "resort_fees": 385.0,
+        "resort_fee_tax": 51.52,
+        "total": 2200.15
+      },
+      "alt_room": {
+        "room": "Deluxe Room - Two Queen Beds (max 4 guests)",
+        "stay_total_incl_tax_and_fees": 2434.84,
+        "bed": "2 queens"
+      },
+      "source": "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0",
+      "checked": "2026-11-27",
+      "notes": "The engine printed a full itemised total including tax: $2,200.15 for the king room. This is the ONE property in this file whose total is directly comparable to a real checkout figure.",
+      "resort_fee_note": "$55/night resort fee + tax, room tax and resort-fee tax all INCLUDED in the $2,200.15 total"
+    }
+  ],
+  "what_this_does_not_establish": [
+    "It is NOT a market-wide 'cheapest week' answer. Three properties are covered on one date window.",
+    "It does NOT prove February is cheaper than March — no March window was re-read on these engines in this pass.",
+    "It does NOT reproduce the Booking.com totals in the canonical table; the sources and fee bases differ (F-29/F-44).",
+    "It cannot be compared with the Booking.com rows without adding the resort fee and 13.38% room tax to those rows."
+  ]
+}

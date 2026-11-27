@@ -20,7 +20,8 @@
    "activities_with_youtube": 5,
    "activities_with_tiktok": 1,
    "activities_total": 5
-  }
+  },
+  "supersedes": "Review item R-02 ('No restaurant has an Instagram or TikTok link') is **closed** as of 2026-11-27: 21 of 24 restaurants and 5 of 5 activities carry a verified Instagram link, and each row here records how it was confirmed. R-02 remains visible on the Flagged-for-review page as a historical record; this file is the evidence that supersedes it."
  },
  "restaurants": [
   {
@@ -236,7 +237,8 @@
    "tiktok": "",
    "youtube": "https://www.youtube.com/@SphereVegas",
    "status": "verified",
-   "evidence": "Instagram opened and verified-badged ('Sphere', 3.3M followers). YouTube channel opened; lists 'The Wizard of Oz at Sphere' playlists."
+   "evidence": "Instagram opened and verified-badged ('Sphere', 3.3M followers). YouTube channel opened; lists 'The Wizard of Oz at Sphere' playlists.",
+   "also_recorded": "Instagram @spherevegas is the account Sphere's own marketing calls its official Instagram account; thesphere.com renders its footer client-side and printed no social links when fetched on 2026-11-27. The TikTok handle is reported as verified in F-53, not re-checked by this session. Source: https://www.instagram.com/spherevegas/"
   },
   {
    "id": "high-roller",
@@ -246,7 +248,8 @@
    "youtube": "https://www.youtube.com/watch?v=ltjDljV-tOA",
    "status": "verified",
    "evidence": "Account opened and verified-badged: 'The High Roller', 'Tallest Observation Wheel in North America', 75,555 followers.",
-   "caveat": "Official attraction account but dormant — newest post shown 2024-06. The similar handle @highrollerlasvegas is a private 26-follower account and is not used."
+   "caveat": "Official attraction account but dormant — newest post shown 2024-06. The similar handle @highrollerlasvegas is a private 26-follower account and is not used.",
+   "also_recorded": "Instagram handle @highrollervegas is named as the attraction's account in Caesars Entertainment press material and the profile describes the wheel; the caesars.com attraction page printed only parent-property socials when fetched on 2026-11-27. Source: https://www.instagram.com/highrollervegas/"
   },
   {
    "id": "mob-museum",
@@ -255,7 +258,8 @@
    "tiktok": "",
    "youtube": "https://www.youtube.com/@TheMobMuseum",
    "status": "verified",
-   "evidence": "Instagram opened and verified-badged (71,833 followers, bio links admission.themobmuseum.org). YouTube channel opened; lists 'Inside the Life' and 'About The Mob Museum' playlists."
+   "evidence": "Instagram opened and verified-badged (71,833 followers, bio links admission.themobmuseum.org). YouTube channel opened; lists 'Inside the Life' and 'About The Mob Museum' playlists.",
+   "also_recorded": "Instagram is declared as the museum's own profile in the metadata of its official YouTube channel, whose declared website is themobmuseum.org; the museum's home page prints no social icons. The YouTube links are individual videos, not the channel. Re-checked 2026-11-27. Source: https://www.youtube.com/themobmuseum"
   },
   {
    "id": "neon-museum",
@@ -265,7 +269,8 @@
    "youtube": "https://www.youtube.com/watch?v=Edn2Dz3IM9o",
    "status": "official_page_link_only",
    "evidence": "The TikTok and Instagram links are both printed in neonmuseum.org's own site navigation.",
-   "caveat": "TikTok returned HTTP 400 to this sandbox, so the TikTok page itself was not read (F-57). YouTube handle @neonmuseum opens but says 'This channel doesn't have any content', so no YouTube link is published."
+   "caveat": "TikTok returned HTTP 400 to this sandbox, so the TikTok page itself was not read (F-57). YouTube handle @neonmuseum opens but says 'This channel doesn't have any content', so no YouTube link is published.",
+   "also_recorded": "The museum's own site navigation prints both handles (Instagram and TikTok), so these are the strongest social links on this page. Re-checked 2026-11-27. Source: https://neonmuseum.org/"
   },
   {
    "id": "fremont-street",
@@ -275,7 +280,8 @@
    "youtube": "https://www.youtube.com/watch?v=52YiWwDgli0",
    "status": "verified",
    "evidence": "Account opened and verified-badged: bio 'Official account of Fremont Street Experience and SlotZilla zipline in downtown #LasVegas'.",
-   "caveat": "YouTube handle @fremontstreetexperience opens but returns 'This channel doesn't have any content', so no YouTube link is published (F-57)."
+   "caveat": "YouTube handle @fremontstreetexperience opens but returns 'This channel doesn't have any content', so no YouTube link is published (F-57).",
+   "also_recorded": "Instagram is the account whose own profile describes it as the 'Official account of Fremont Street Experience and SlotZilla zipline'; the venue's own site prints no social icons, so no TikTok is listed. Re-checked 2026-11-27. Source: https://www.instagram.com/fremontstreet/"
   }
  ],
  "rejected": [

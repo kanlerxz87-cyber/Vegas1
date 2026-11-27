@@ -642,6 +642,35 @@ superseded activity dataset. No commit from any other branch was rewritten.
 && python3 scripts/check_evidence.py` → 13 pages · 0 failures · 0 warnings; evidence regression PASS; root and
 `docs/` byte-identical (`cmp` per page). No CI workflows are configured on this repo.
 
+## Session record — arena/c7c75f9a-vegas1 (T17) — 2026-11-27 — merge of main, part 3
+
+**Main moved while T17 was in progress.** `origin/main` advanced from `8fbf850` to `5d422eb`
+(PRs #39/#41/#42/#43/#45/#46/#48), including a rewrite of `scripts/gen_site.py` (−545 lines),
+a new evidence standard, and flag IDs up to **F-63**. Merged as `1815919`.
+
+**The conflict was substantive, not textual.** Two sessions independently reached the same
+conclusions and one of them went further:
+
+| Finding | My branch | main | Resolution |
+|---|---|---|---|
+| Mob Museum Thursday hours | F-56: corrected to 9–9 | F-62: same correction | **main wins**; F-56 is now a main-owned ID, my duplicate entry was dropped |
+| High Roller hours | published the full schedule | F-63: withheld as internally contradictory | **main wins**; two schedules on one page is not a verified schedule |
+| Hotel prices | captured 3 official engines | F-58: blank all unofficial prices | **both kept**: main's table stays blank, mine is published as a separately labelled official sub-table |
+| Travel times | printed "~25 min from base" per venue | F-59: zone model suspended | **main wins**; the itinerary now groups by district and says times are unverified |
+| Bellagio Fountains | verified from Bellagio's page, promoted | listed under `not_verified` (fetch had failed) | **mine wins**; main's failure was a transient fetch error, and the page was subsequently read |
+
+**What I did not do:** hand-merge the eleven conflicted generated HTML files. They are build
+output, so the generator was rebuilt from main's version with only my additions re-applied
+(`itinerary.html`, the official-rates Hotels section, `W-01`…`W-10`, activity anchor IDs) and
+every page regenerated. Hand-editing generated HTML is the rule this repo already has.
+
+**Standing caution recorded for the next session:** `git checkout --ours scripts/gen_site.py`
+silently reverted the generator to my pre-merge version and dropped main's F-58/F-59 work, while
+still building cleanly with 0 failures. A clean build is not proof the merge was correct. Verify
+that specific upstream flags survive (`grep -c F-58 scripts/gen_site.py`) after any conflicted merge.
+
+**Build:** 14 pages · 0 failures · 0 warnings.
+
 ## Session record — arena/c045ad05-vegas1 (T17) — 2026-11-27
 
 **Scope used:** `data/socials.json` (new), `data/restaurants.json`, `data/activities.json`, `scripts/check_links.py`
@@ -778,24 +807,41 @@ Monorail line. This is recorded rather than quietly patched: a live-page read fo
 then #45/#46/#48). Every merge was resolved by regenerating HTML rather than hand-merging it, and no other
 session's data was reverted. The one deliberate reversal of an earlier decision — reinstating a *labelled estimate*
 for Guy Savoy — is recorded as F-64 with its source and keeps the $3,000 Krug figure withdrawn.
+### T17 addendum — video-link verification (arena/a00dc828-vegas1, 2026-11-27)
 
-## T20 official verification, F-18 resolution & generator bug-fix pass — arena/01ba2dd9-vegas1 — 2026-11-27
+- Resolved **every published activity video ID** through YouTube's **oEmbed** endpoint (returns live title + channel). One ID carried in the data from an earlier capture — Fremont `Tls27qeAPaw` — **did not resolve** and was replaced with `KDARquYGk_M`, a video on the venue's own channel (`@vegasfremontstreet`). Logged as **F-67** (F-54–F-66 were assigned by other sessions while this branch was open).
+- Added verified creator videos alongside the venue channel for Sphere and the Mob Museum (each ID returned a live title + channel from oEmbed). The brief asks for **as many** video links as can be verified, so these are additive; they are labelled creator media and are never used as evidence for hours, prices or awards.
+- Spot-checked starred-restaurant videos via oEmbed (Joël Robuchon, L'Atelier, Guy Savoy, é by José Andrés) — all live and on-topic. One L'Atelier video titles the restaurant "3 Michelin-starred" against the Guide's 1 star; recorded in F-67 rather than copied.
+- **Method limit:** `scripts/validate.py` makes **no HTTP requests**, so a green build proves structure only. The oEmbed pass (and page fetches) is what proves a link is live.
+- Concurrency: this branch was rebased onto `main` repeatedly while it was open (PRs #39, #43, #47 pending, #40–#52 merged by other sessions). Conflicts were confined to `COORDINATION.md`, `FLAGS.md` row IDs and generated pages; nothing from another session was dropped.
+- **Irregularity observed, not fixed here (needs the owning session):** `FLAGS.md` on `main` currently contains **duplicate register rows** — F-52, F-53, F-54, F-55, F-56 and F-57 each appear twice (two different merge trains appended the same IDs). Rows were left untouched; deduplicating means deciding which wording survives, which belongs to the flags owner. Request: dedupe before the register is treated as stable.
 
-**Conflict & sync record:** Originally claimed on `arena/01ba2dd9-vegas1` at `6420341`. While official-source
-verification ran, PRs #36–#52 merged onto `main` (`331f1a2`), adding the 15-page build (`dining.html`/`costs.html`),
-`scripts/check_evidence.py`, social-link provenance (21/24 restaurant IGs), and flags F-52–F-66. Merged
-`origin/main` cleanly in commit `3f675f9` preserving 100% of PRs #36–#52, then applied only genuinely new,
-non-conflicting verified additions on top of `origin/main` as **T20**:
+### T17 addendum — where each social link came from (arena/c045ad05-vegas1, 2026-11-27)
 
-1. **Four additional exact set-menu restaurant prices verified (F-68, extending F-65 from 7/24 → 11/24 priced):**
-   - **China Poblano** (`https://www.chinapoblano.com/menus/`): José's Way Tasting $60.00/pp → **$120 (exact)** (resolves F-05); Sunday close corrected to **10:00 PM** and phone `702.698.7900` confirmed (`cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html`).
-   - **Stubborn Seed** (`https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/`): Chef's Tasting $160/pp → **$320 (exact)**.
-   - **Kabuto** (`https://resy.com/cities/las-vegas-nv/venues/kabuto-edomae-sushi`, linked from `kabutolv.com/reserve`): Yoroi $130/pp & Kabuto $185/pp → **$260 / $370 (exact)** ($100/pp 24h cancel fee).
-   - **SoulBelly BBQ** (`https://soulbellybbq.com/menu`): *Chef's Choice for 2* set meal → **$80 (exact)**; confirmed MICHELIN 2026 selection applies to Main Street only.
-   - **Estiatorio Milos** (`https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html`): Fri–Sat close corrected to **11:00 PM**.
-2. **New official-vs-official schedule conflict logged (F-67):** **é by José Andrés** — Cosmopolitan MGM page lists `Tue–Sat` (closed Sun/Mon) while `https://www.ebyjoseandres.com/` states `Tue–Sun` (5:30 & 8:30 PM seatings; direct phone `702-698-7950`).
-3. **Fountains of Bellagio verified live & promoted to Activity #6 (F-18 resolved):** fetched `https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html` live (free `$0`; Mon–Fri q30m 3–7:30 PM, q15m 8 PM–midnight; Sat/Sun/Holidays q30m 12–7:30 PM, q15m 8 PM–midnight; weather-dependent; YT `https://www.youtube.com/watch?v=iNQpcDuE6e4`; official IG `https://www.instagram.com/Bellagio/`).
-4. **Final 4 unopened hotel official URLs checked (F-27/F-49 updated — 0 unopened across all 32 hotels):** **Green Valley Ranch** (`greenvalleyranch.com`) and **Red Rock** (`redrockresort.com`) confirmed live (`yes`); **Waldorf Astoria** (`hilton.com`) and **The Signature at MGM Grand** (`mgmresorts.com`) refuse automated fetch (`blocked`). Final tally: **21 live · 10 refused · 1 sibling · 0 unopened** (decision table remains blank per F-58).
-5. **Generator & register bug fixes:** fixed `scripts/gen_site.py` broken `suggestions.html` `<h2>1</h2>` heading (`16 ways to improve this plan`), `sources.html` typo `F-39` → `F-29` and dynamic activity list, `flagged.html` flag-range prose (`F-47 to F-68`), `activities.html` two-free-highlights callout, `questions.json` (`Q-08` "15 months" → "~3 months", `Q-13` 0 unopened), and `suggestions.json` (`S-02` 21 → 24 listings).
+- **21 of 24** restaurants and **5 of 5** activities carry a verified Instagram link, each with the sentence that
+  confirmed it (`data/socials.json`, rendered as a provenance table on `restaurants.html` and `activities.html`).
+  Wing Lei, Ping Pang Pong and Yen Viet Kitchen stay blank with the reason (only private personal accounts exist).
+- Every handle was confirmed by **opening the account itself** on 2026-11-27, never by name similarity. Five handles
+  where two passes disagreed were settled this way: `@latelierjoelrobuchonlv` (the obvious spelling is a 404),
+  `@kameomakase_lv` (`@kameomakase` is a 178-follower stub), `@phogabacbac702` (`@bestchickenpho` says "WE'VE MOVED"),
+  `@miloslasvegas` (venue account), `@highrollervegas` (`@highrollerlasvegas` is a private 26-follower account).
+- **Kabuto's phone was wrong**: `725.205.1356` → `(702) 676-1044` per `kabutolv.com`. 725 is not a Las Vegas area code.
+- **TikTok could not be verified** — every request returned HTTP 400 — so it is reported as unverified, not absent.
+- **A merge had dropped evidence.** De-duplicating the two passes' wording in the activities provenance table silently
+  discarded the other pass's corroboration (Caesars press material, the museum's YouTube metadata). `socials.json` now
+  keeps it verbatim as `also_recorded`, rendered separately as "Previously recorded by the superseded pass: …", so both
+  confirmations stay visible and attributed. `meta.supersedes` records that **review item R-02 is closed**; `flagged.html`
+  keeps R-02 as history rather than rewriting it.
+- **Merges:** PRs [#46](https://github.com/kanlerxz87-cyber/Vegas1/pull/46) (`5d422eb`), #49 (`05b0361`),
+  #51 (`e70b268`) and #54 were self-merged to `main`; Pages confirmed `built` after each. Seven concurrent merges by
+  other sessions were absorbed with `git merge origin/main` — never a rebase, which conflicts in this file. Where both
+  sides were right, both were kept.
 
-**Pre-merge checks:** `python3 -m py_compile scripts/gen_site.py && python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py && python3 scripts/check_evidence.py` → **15 pages · 0 failures · 0 warnings · 501 external links · `check_evidence.py` PASS**, root and `docs/` 100% byte-identical.
+### Repair — a committed conflict marker on `main` (arena/c045ad05-vegas1, 2026-11-27)
+
+`git show origin/main:COORDINATION.md` contained a **live conflict marker** at lines 812–825
+(`<<<<<<< HEAD` … `>>>>>>> 408a5b3`), committed inside the T17 addendum from `arena/a00dc828-vegas1` (PR #47). A merge
+marker in a tracked document is a defect in its own right: any later merge in this file inherits it and a careless
+resolution keeps it. Resolved here by keeping the fuller of the two bullet lists and preserving the one bullet the
+shorter side alone carried (the `FLAGS.md` duplicate-row observation), so nothing was lost. After this merge `main` has
+no conflict markers in this file.

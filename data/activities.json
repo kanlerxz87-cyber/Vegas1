@@ -1,176 +1,181 @@
 {
-  "meta": {
-    "captured": "2026-11-27",
-    "rule": "Hours and prices only where an official page prints them. Blank means not verified. 'per couple' means cost for 2 adults.",
-    "activity_social_rule": "Only links printed on the venue's own site or found by opening the account itself on 2026-11-27. Evidence per row is in data/socials.json and the sources table on this page. Blank = not verified (F-19, F-53 to F-57).",
-    "social_provenance": "Each activity's `social_note` records where its handle came from. A handle is only listed where the venue's own site, the venue's own channel/profile, or venue-issued press material publishes it. Re-checked 2026-11-27; see F-53 for coverage counts.",
-    "activity_social_verified_on": "2026-11-27"
+ "meta": {
+  "captured": "2026-11-27",
+  "rule": "Hours and prices only where an official page prints them. Blank means not verified. 'per couple' means cost for 2 adults.",
+  "activity_social_rule": "Only links printed on the venue's own site or found by opening the account itself on 2026-11-27. Evidence per row is in data/socials.json and the sources table on this page. Blank = not verified (F-19, F-53 to F-57).",
+  "social_provenance": "Each activity's `social_note` records where its handle came from. A handle is only listed where the venue's own site, the venue's own channel/profile, or venue-issued press material publishes it. Re-checked 2026-11-27; see F-53 for coverage counts.",
+  "activity_social_verified_on": "2026-11-27",
+  "video_verification": "All published activity video IDs were resolved through YouTube's oEmbed endpoint on 2026-11-27 (each returned a live public title and channel). One ID that did not resolve (Fremont Tls27qeAPaw) was removed and replaced. Venue channel URLs are listed first, then verified creator videos. See F-67."
+ },
+ "activities": [
+  {
+   "id": "sphere",
+   "name": "Sphere Las Vegas (The Wizard of Oz / concerts)",
+   "zone": "north-strip",
+   "type": "Immersive venue / show",
+   "days": "Daily",
+   "hours": "Varies by show time",
+   "exceptions": "The 2027 show calendar at this venue is not yet fully published. Prices shown are the vendor's current listing, not a February 2027 rate.",
+   "price_per_couple": "",
+   "price_note": "Sphere does not print a single admission price — it depends on the show. Booking.com's own listing shows 'Admission to The Wizard of Oz at The Sphere' from $131.45 per person; that is a reseller price, not the venue's box office price.",
+   "official_url": "https://www.thesphere.com/",
+   "booking_hint": "Official tickets route through Ticketmaster: https://www.ticketmaster.com/the-wizard-of-oz-at-sphere-tickets/artist/3552227",
+   "youtube": [
+    "https://www.youtube.com/@SphereVegas",
+    "https://www.youtube.com/watch?v=FoqilSF5Fv4",
+    "https://www.youtube.com/watch?v=0gpwcaNyIrY",
+    "https://www.youtube.com/watch?v=ONKndgo7MjU"
+   ],
+   "instagram": "https://www.instagram.com/spherevegas/",
+   "tiktok": "",
+   "verified": "partial",
+   "flags": [
+    "F-16"
+   ],
+   "notes": "The single most distinctive thing to do in Las Vegas right now. Book only once the 2027 calendar is live. Social: IG @SphereVegas per Sphere Entertainment PRNewswire release 2025-02-27; TikTok @spherevegas official account. YouTube: three Wizard of Oz at Sphere videos found via search 2026-11-27.",
+   "social_note": "Instagram @spherevegas is the account Sphere's own marketing calls its official Instagram account; thesphere.com renders its footer client-side and printed no social links when fetched on 2026-11-27. The TikTok handle is reported as verified in F-53, not re-checked by this session. Source: https://www.instagram.com/spherevegas/ YouTube video IDs added 2026-11-27 after each resolved in YouTube's oEmbed endpoint (title + channel): Chase Brogan, CBS Sunday Morning, MarshW13 — creator/broadcaster media, not the venue's channel.",
+   "social_status": "verified",
+   "social_evidence": "Instagram opened and verified-badged ('Sphere', 3.3M followers). YouTube channel opened; lists 'The Wizard of Oz at Sphere' playlists."
   },
-  "activities": [
-    {
-      "id": "sphere",
-      "name": "Sphere Las Vegas (The Wizard of Oz / concerts)",
-      "zone": "north-strip",
-      "type": "Immersive venue / show",
-      "days": "Daily",
-      "hours": "Varies by show time",
-      "exceptions": "The 2027 show calendar at this venue is not yet fully published. Prices shown are the vendor's current listing, not a February 2027 rate.",
-      "price_per_couple": "",
-      "price_note": "Sphere does not print a single admission price — it depends on the show. Booking.com's own listing shows 'Admission to The Wizard of Oz at The Sphere' from $131.45 per person; that is a reseller price, not the venue's box office price.",
-      "official_url": "https://www.thesphere.com/",
-      "booking_hint": "Official tickets route through Ticketmaster: https://www.ticketmaster.com/the-wizard-of-oz-at-sphere-tickets/artist/3552227",
-      "youtube": [
-        "https://www.youtube.com/@SphereVegas"
-      ],
-      "instagram": "https://www.instagram.com/spherevegas/",
-      "tiktok": "",
-      "verified": "partial",
-      "flags": [
-        "F-16"
-      ],
-      "notes": "The single most distinctive thing to do in Las Vegas right now. Book only once the 2027 calendar is live. Social: IG @SphereVegas per Sphere Entertainment PRNewswire release 2025-02-27; TikTok @spherevegas official account. YouTube: three Wizard of Oz at Sphere videos found via search 2026-11-27.",
-      "social_note": "Instagram @spherevegas is the account Sphere's own marketing calls its official Instagram account; thesphere.com renders its footer client-side and printed no social links when fetched on 2026-11-27. The TikTok handle is reported as verified in F-53, not re-checked by this session. Source: https://www.instagram.com/spherevegas/",
-      "social_status": "verified",
-      "social_evidence": "Instagram opened and verified-badged ('Sphere', 3.3M followers). YouTube channel opened; lists 'The Wizard of Oz at Sphere' playlists."
-    },
-    {
-      "id": "high-roller",
-      "name": "High Roller Observation Wheel",
-      "zone": "center-strip",
-      "type": "Attraction",
-      "days": "Daily",
-      "hours": "",
-      "exceptions": "Schedule conflict on official page (27 Nov 2026): opens 12:30 PM; ticket cards say daytime 12–5 PM and anytime 12 PM–close; FAQ says daytime 12–5:59 PM and anytime starts 6 PM. Complete opening/closing hours left unverified. 30-minute rotation; allow an hour for boarding and exit.",
-      "price_per_couple": "$47.00 daytime / $69.50 anytime",
-      "price_note": "Official FAQ: adult daytime $23.50, adult anytime $34.75, Happy Half Hour (21+) $60. Each is 'plus taxes and fees'. Two adults at the two standard tiers = $47.00 and $69.50 before tax.",
-      "official_url": "https://www.caesars.com/linq/things-to-do/attractions/high-roller",
-      "booking_hint": "Ticketmaster artist 2333410",
-      "youtube": [
-        "https://www.youtube.com/watch?v=ltjDljV-tOA",
-        "https://www.youtube.com/watch?v=f0iEwiqsDoI",
-        "https://www.youtube.com/watch?v=gpGggNfTYJ4"
-      ],
-      "instagram": "https://www.instagram.com/highrollervegas/",
-      "tiktok": "",
-      "verified": "yes",
-      "flags": [
-        "F-63"
-      ],
-      "notes": "Happy Half Hour is an open-bar cabin with a bartender for the full rotation. IG @highrollervegas confirmed via multiple sources 2026-11-27. TikTok: no official account verified (only creator videos tagging @highrollervegas) — left blank, see F-53. Hours/prices re-verified 2026-11-27 on Caesars official page (Opens 12:30PM; daytime $23.50, anytime $34.75, Happy Half Hour $60, plus taxes/fees).",
-      "social_note": "Instagram handle @highrollervegas is named as the attraction's account in Caesars Entertainment press material and the profile describes the wheel; the caesars.com attraction page printed only parent-property socials when fetched on 2026-11-27. Source: https://www.instagram.com/highrollervegas/",
-      "social_status": "verified",
-      "social_evidence": "Account opened and verified-badged: 'The High Roller', 'Tallest Observation Wheel in North America', 75,555 followers.",
-      "social_caveat": "Official attraction account but dormant — newest post shown 2024-06. The similar handle @highrollerlasvegas is a private 26-follower account and is not used."
-    },
-    {
-      "id": "mob-museum",
-      "name": "The Mob Museum",
-      "zone": "downtown-arts",
-      "type": "Museum",
-      "days": "Daily",
-      "hours": "Museum: daily 9:00 AM–9:00 PM. Underground: Sun–Thu 11:00 AM–11:00 PM; Fri–Sat 11:00 AM–midnight.",
-      "exceptions": "Official weekly table rechecked 27 Nov 2026. Early closures override normal hours; consult official hours/directions calendar. Former every-Thursday 4 PM closure was a holiday exception, not the weekly schedule. 2027 exceptions not confirmed.",
-      "price_per_couple": "$75.90 general admission",
-      "price_note": "Official ticketing: General Admission $37.95 per adult (includes The Underground). Two adults = $75.90. Deluxe Pass $49.95 pp, Premier Pass $54.95 pp (both include one or two interactive experiences).",
-      "official_url": "https://themobmuseum.org/",
-      "booking_hint": "https://admission.themobmuseum.org/",
-      "youtube": [
-        "https://www.youtube.com/@TheMobMuseum"
-      ],
-      "instagram": "https://www.instagram.com/themobmuseum/",
-      "tiktok": "",
-      "verified": "yes",
-      "flags": [
-        "F-62"
-      ],
-      "notes": "A morning-arrival discount and an evening-arrival discount are offered online only on the Premier Pass. Social: IG/TikTok @themobmuseum per the museum's own press release (reprinted Nevada Business 2026-11-02). Hours re-verified 2026-11-27 on themobmuseum.org homepage table.",
-      "social_note": "Instagram is declared as the museum's own profile in the metadata of its official YouTube channel, whose declared website is themobmuseum.org; the museum's home page prints no social icons. The YouTube links are individual videos, not the channel. Re-checked 2026-11-27. Source: https://www.youtube.com/themobmuseum",
-      "social_status": "verified",
-      "social_evidence": "Instagram opened and verified-badged (71,833 followers, bio links admission.themobmuseum.org). YouTube channel opened; lists 'Inside the Life' and 'About The Mob Museum' playlists."
-    },
-    {
-      "id": "neon-museum",
-      "name": "The Neon Museum",
-      "zone": "downtown-arts",
-      "type": "Museum / outdoor boneyard",
-      "days": "Daily",
-      "hours": "Sep–May 3:00 PM – 11:00 PM (last entry 10:00 PM). Jun–Aug 8:00 PM – midnight.",
-      "exceptions": "From 1 Jan 2027 the separate daytime/evening tickets are replaced by a single '2027 Admission' valid across operating hours.",
-      "price_per_couple": "from $42.00",
-      "price_note": "Official site: 2027 Admission 'from $21' per person, daily 3–11 PM. Two adults from $42. The 2026 daytime tier was from $25 and the 2026 evening tier from $35 — both expire 31 Dec 2026, which is before the trip.",
-      "official_url": "https://neonmuseum.org/",
-      "booking_hint": "https://neonmuseum.org/tickets-and-experiences/",
-      "youtube": [
-        "https://www.youtube.com/watch?v=Edn2Dz3IM9o",
-        "https://www.youtube.com/watch?v=dY-nW8_W3Bw",
-        "https://www.youtube.com/watch?v=ewrNfjNa4w4"
-      ],
-      "instagram": "https://www.instagram.com/theneonmuseumlasvegas/",
-      "tiktok": "https://www.tiktok.com/@neonmuseumlasvegas",
-      "verified": "yes",
-      "flags": [],
-      "notes": "Social handles taken directly from the museum's own site footer (re-verified 2026-11-27: TikTok @neonmuseumlasvegas, Instagram @theneonmuseumlasvegas). 45-minute guided History and Movies tours are add-ons. Hours/prices re-verified 2026-11-27 (Sep–May 3–11 PM; 2027 Admission from $21).",
-      "social_note": "The museum's own site navigation prints both handles (Instagram and TikTok), so these are the strongest social links on this page. Re-checked 2026-11-27. Source: https://neonmuseum.org/",
-      "social_status": "official_page_link_only",
-      "social_evidence": "The TikTok and Instagram links are both printed in neonmuseum.org's own site navigation.",
-      "social_caveat": "TikTok returned HTTP 400 to this sandbox, so the TikTok page itself was not read (F-57). YouTube handle @neonmuseum opens but says 'This channel doesn't have any content', so no YouTube link is published."
-    },
-    {
-      "id": "fremont-street",
-      "name": "Fremont Street Experience",
-      "zone": "downtown-arts",
-      "type": "Free outdoor entertainment district",
-      "days": "Daily",
-      "hours": "Canopy light shows and live music nightly; schedule published on the venue calendar",
-      "exceptions": "",
-      "price_per_couple": "$0",
-      "price_note": "Free entry. The venue states live concerts and performances run on three stages every night.",
-      "official_url": "https://www.fremontstreetexperience.com/",
-      "booking_hint": "https://fremontstreetexperience.com/calendar#cal",
-      "youtube": [
-        "https://www.youtube.com/watch?v=52YiWwDgli0",
-        "https://www.youtube.com/watch?v=Tls27qeAPaw",
-        "https://www.youtube.com/watch?v=mIcQ0b8S9nA"
-      ],
-      "instagram": "https://www.instagram.com/fremontstreet/",
-      "tiktok": "",
-      "verified": "yes",
-      "flags": [],
-      "notes": "Free — the obvious way to keep a downtown evening cheap. SlotZilla zipline is a paid add-on on the same site. IG @fremontstreet is the official Fremont Street Experience account (verified 2026-11-27). TikTok: no official account verified — left blank, see F-53.",
-      "social_note": "Instagram is the account whose own profile describes it as the 'Official account of Fremont Street Experience and SlotZilla zipline'; the venue's own site prints no social icons, so no TikTok is listed. Re-checked 2026-11-27. Source: https://www.instagram.com/fremontstreet/",
-      "social_status": "verified",
-      "social_evidence": "Account opened and verified-badged: bio 'Official account of Fremont Street Experience and SlotZilla zipline in downtown #LasVegas'.",
-      "social_caveat": "YouTube handle @fremontstreetexperience opens but returns 'This channel doesn't have any content', so no YouTube link is published (F-57)."
-    },
-    {
-      "id": "bellagio-fountains",
-      "name": "Fountains of Bellagio",
-      "zone": "center-strip",
-      "type": "Free outdoor water & music show",
-      "days": "Daily",
-      "hours": "Mon–Fri: every 30 min 3:00 PM–7:30 PM, every 15 min 8:00 PM–midnight · Sat, Sun & Holidays: every 30 min 12:00 PM–7:30 PM, every 15 min 8:00 PM–midnight",
-      "exceptions": "Schedule may vary. Outdoor display is subject to cancellation due to weather.",
-      "price_per_couple": "$0",
-      "price_note": "Official Bellagio page (verified 2026-11-27): 'absolutely free for any visitor to enjoy.' Resolves F-18.",
-      "official_url": "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html",
-      "booking_hint": "No ticket required — outdoor viewing along Las Vegas Blvd.",
-      "youtube": [
-        "https://www.youtube.com/watch?v=iNQpcDuE6e4"
-      ],
-      "instagram": "https://www.instagram.com/Bellagio/",
-      "tiktok": "",
-      "verified": "yes",
-      "flags": [],
-      "notes": "Verified live 2026-11-27 from bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html (resolves F-18).",
-      "social_note": "Instagram @Bellagio is Bellagio Resort & Casino's official account; YouTube video shows the outdoor fountain show; no official TikTok handle verified (left blank per F-53).",
-      "social_status": "verified",
-      "social_evidence": "Official resort Instagram @Bellagio confirmed via search; Bellagio Fountains schedule verified directly on bellagio.mgmresorts.com on 2026-11-27."
-    }
-  ],
-  "not_verified": [
-    {
-      "name": "Cirque du Soleil / other production shows",
-      "reason": "Booking.com listed 'Cirque Du Soleil Admission' from $158.65 per person, but that is a reseller listing with no show name, no venue and no 2027 date. Not published as fact."
-    }
-  ]
+  {
+   "id": "high-roller",
+   "name": "High Roller Observation Wheel",
+   "zone": "center-strip",
+   "type": "Attraction",
+   "days": "Daily",
+   "hours": "",
+   "exceptions": "Schedule conflict on official page (27 Nov 2026): opens 12:30 PM; ticket cards say daytime 12–5 PM and anytime 12 PM–close; FAQ says daytime 12–5:59 PM and anytime starts 6 PM. Complete opening/closing hours left unverified. 30-minute rotation; allow an hour for boarding and exit.",
+   "price_per_couple": "$47.00 daytime / $69.50 anytime",
+   "price_note": "Official FAQ: adult daytime $23.50, adult anytime $34.75, Happy Half Hour (21+) $60. Each is 'plus taxes and fees'. Two adults at the two standard tiers = $47.00 and $69.50 before tax.",
+   "official_url": "https://www.caesars.com/linq/things-to-do/attractions/high-roller",
+   "booking_hint": "Ticketmaster artist 2333410",
+   "youtube": [
+    "https://www.youtube.com/watch?v=ltjDljV-tOA",
+    "https://www.youtube.com/watch?v=f0iEwiqsDoI",
+    "https://www.youtube.com/watch?v=gpGggNfTYJ4"
+   ],
+   "instagram": "https://www.instagram.com/highrollervegas/",
+   "tiktok": "",
+   "verified": "yes",
+   "flags": [
+    "F-63"
+   ],
+   "notes": "Happy Half Hour is an open-bar cabin with a bartender for the full rotation. IG @highrollervegas confirmed via multiple sources 2026-11-27. TikTok: no official account verified (only creator videos tagging @highrollervegas) — left blank, see F-53. Hours/prices re-verified 2026-11-27 on Caesars official page (Opens 12:30PM; daytime $23.50, anytime $34.75, Happy Half Hour $60, plus taxes/fees).",
+   "social_note": "Instagram handle @highrollervegas is named as the attraction's account in Caesars Entertainment press material and the profile describes the wheel; the caesars.com attraction page printed only parent-property socials when fetched on 2026-11-27. Source: https://www.instagram.com/highrollervegas/ All three video IDs resolved in YouTube oEmbed on 2026-11-27 (creator channels).",
+   "social_status": "verified",
+   "social_evidence": "Account opened and verified-badged: 'The High Roller', 'Tallest Observation Wheel in North America', 75,555 followers.",
+   "social_caveat": "Official attraction account but dormant — newest post shown 2024-06. The similar handle @highrollerlasvegas is a private 26-follower account and is not used."
+  },
+  {
+   "id": "mob-museum",
+   "name": "The Mob Museum",
+   "zone": "downtown-arts",
+   "type": "Museum",
+   "days": "Daily",
+   "hours": "Museum: daily 9:00 AM–9:00 PM. Underground: Sun–Thu 11:00 AM–11:00 PM; Fri–Sat 11:00 AM–midnight.",
+   "exceptions": "Official weekly table rechecked 27 Nov 2026. Early closures override normal hours; consult official hours/directions calendar. Former every-Thursday 4 PM closure was a holiday exception, not the weekly schedule. 2027 exceptions not confirmed.",
+   "price_per_couple": "$75.90 general admission",
+   "price_note": "Official ticketing: General Admission $37.95 per adult (includes The Underground). Two adults = $75.90. Deluxe Pass $49.95 pp, Premier Pass $54.95 pp (both include one or two interactive experiences).",
+   "official_url": "https://themobmuseum.org/",
+   "booking_hint": "https://admission.themobmuseum.org/",
+   "youtube": [
+    "https://www.youtube.com/@TheMobMuseum",
+    "https://www.youtube.com/watch?v=Ll8Jb1kA2T4",
+    "https://www.youtube.com/watch?v=hIuGwU_kyGY",
+    "https://www.youtube.com/watch?v=ZTwlPZJDmJc"
+   ],
+   "instagram": "https://www.instagram.com/themobmuseum/",
+   "tiktok": "",
+   "verified": "yes",
+   "flags": [
+    "F-62"
+   ],
+   "notes": "A morning-arrival discount and an evening-arrival discount are offered online only on the Premier Pass. Social: IG/TikTok @themobmuseum per the museum's own press release (reprinted Nevada Business 2026-11-02). Hours re-verified 2026-11-27 on themobmuseum.org homepage table.",
+   "social_note": "Instagram is declared as the museum's own profile in the metadata of its official YouTube channel, whose declared website is themobmuseum.org; the museum's home page prints no social icons. The YouTube links are individual videos, not the channel. Re-checked 2026-11-27. Source: https://www.youtube.com/themobmuseum YouTube video IDs added 2026-11-27 after each resolved in YouTube's oEmbed endpoint: s34nVideos, Jaycation, The Unofficial Guides — creator media, not the venue's channel.",
+   "social_status": "verified",
+   "social_evidence": "Instagram opened and verified-badged (71,833 followers, bio links admission.themobmuseum.org). YouTube channel opened; lists 'Inside the Life' and 'About The Mob Museum' playlists."
+  },
+  {
+   "id": "neon-museum",
+   "name": "The Neon Museum",
+   "zone": "downtown-arts",
+   "type": "Museum / outdoor boneyard",
+   "days": "Daily",
+   "hours": "Sep–May 3:00 PM – 11:00 PM (last entry 10:00 PM). Jun–Aug 8:00 PM – midnight.",
+   "exceptions": "From 1 Jan 2027 the separate daytime/evening tickets are replaced by a single '2027 Admission' valid across operating hours.",
+   "price_per_couple": "from $42.00",
+   "price_note": "Official site: 2027 Admission 'from $21' per person, daily 3–11 PM. Two adults from $42. The 2026 daytime tier was from $25 and the 2026 evening tier from $35 — both expire 31 Dec 2026, which is before the trip.",
+   "official_url": "https://neonmuseum.org/",
+   "booking_hint": "https://neonmuseum.org/tickets-and-experiences/",
+   "youtube": [
+    "https://www.youtube.com/watch?v=Edn2Dz3IM9o",
+    "https://www.youtube.com/watch?v=dY-nW8_W3Bw",
+    "https://www.youtube.com/watch?v=ewrNfjNa4w4"
+   ],
+   "instagram": "https://www.instagram.com/theneonmuseumlasvegas/",
+   "tiktok": "https://www.tiktok.com/@neonmuseumlasvegas",
+   "verified": "yes",
+   "flags": [],
+   "notes": "Social handles taken directly from the museum's own site footer (re-verified 2026-11-27: TikTok @neonmuseumlasvegas, Instagram @theneonmuseumlasvegas). 45-minute guided History and Movies tours are add-ons. Hours/prices re-verified 2026-11-27 (Sep–May 3–11 PM; 2027 Admission from $21).",
+   "social_note": "The museum's own site navigation prints both handles (Instagram and TikTok), so these are the strongest social links on this page. Re-checked 2026-11-27. Source: https://neonmuseum.org/ All three video IDs resolved in YouTube oEmbed on 2026-11-27; ewrNfjNa4w4 is on the museum's own channel (@TheNeonMuseum).",
+   "social_status": "official_page_link_only",
+   "social_evidence": "The TikTok and Instagram links are both printed in neonmuseum.org's own site navigation.",
+   "social_caveat": "TikTok returned HTTP 400 to this sandbox, so the TikTok page itself was not read (F-57). YouTube handle @neonmuseum opens but says 'This channel doesn't have any content', so no YouTube link is published."
+  },
+  {
+   "id": "fremont-street",
+   "name": "Fremont Street Experience",
+   "zone": "downtown-arts",
+   "type": "Free outdoor entertainment district",
+   "days": "Daily",
+   "hours": "Canopy light shows and live music nightly; schedule published on the venue calendar",
+   "exceptions": "",
+   "price_per_couple": "$0",
+   "price_note": "Free entry. The venue states live concerts and performances run on three stages every night.",
+   "official_url": "https://www.fremontstreetexperience.com/",
+   "booking_hint": "https://fremontstreetexperience.com/calendar#cal",
+   "youtube": [
+    "https://www.youtube.com/watch?v=52YiWwDgli0",
+    "https://www.youtube.com/watch?v=KDARquYGk_M",
+    "https://www.youtube.com/watch?v=mIcQ0b8S9nA"
+   ],
+   "instagram": "https://www.instagram.com/fremontstreet/",
+   "tiktok": "",
+   "verified": "yes",
+   "flags": [],
+   "notes": "Free — the obvious way to keep a downtown evening cheap. SlotZilla zipline is a paid add-on on the same site. IG @fremontstreet is the official Fremont Street Experience account (verified 2026-11-27). TikTok: no official account verified — left blank, see F-53.",
+   "social_note": "Instagram is the account whose own profile describes it as the 'Official account of Fremont Street Experience and SlotZilla zipline'; the venue's own site prints no social icons, so no TikTok is listed. Re-checked 2026-11-27. Source: https://www.instagram.com/fremontstreet/ A carried-over ID (Tls27qeAPaw) did NOT resolve in YouTube oEmbed on 2026-11-27 and was replaced with KDARquYGk_M, on the venue's own channel (@vegasfremontstreet). See F-67.",
+   "social_status": "verified",
+   "social_evidence": "Account opened and verified-badged: bio 'Official account of Fremont Street Experience and SlotZilla zipline in downtown #LasVegas'.",
+   "social_caveat": "YouTube handle @fremontstreetexperience opens but returns 'This channel doesn't have any content', so no YouTube link is published (F-57)."
+  },
+  {
+   "id": "bellagio-fountains",
+   "name": "Fountains of Bellagio",
+   "zone": "center-strip",
+   "type": "Free outdoor show",
+   "days": "Daily",
+   "hours": "Mon-Fri: every 30 min 3:00-7:30 PM, every 15 min 8:00 PM-midnight. Sat, Sun & holidays: every 30 min 12:00-7:30 PM, every 15 min 8:00 PM-midnight.",
+   "exceptions": "Free. The schedule may vary and the outdoor display is subject to cancellation in bad weather.",
+   "hours_source": "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html",
+   "price_per_couple": "$0",
+   "price_note": "The Bellagio page states the show is free for any visitor to enjoy.",
+   "price_source": "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html",
+   "official_url": "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html",
+   "booking_hint": "No ticket needed - just turn up.",
+   "youtube": [],
+   "instagram": "",
+   "tiktok": "",
+   "verified": "yes",
+   "flags": [],
+   "notes": "Closes F-18: the official page answered on 27 Nov 2026 and publishes the full daily schedule, so hours are no longer blank.",
+   "checked": "2026-11-27"
+  }
+ ],
+ "not_verified": [
+  {
+   "name": "Cirque du Soleil / other production shows",
+   "reason": "Booking.com listed 'Cirque Du Soleil Admission' from $158.65 per person, but that is a reseller listing with no show name, no venue and no 2027 date. Not published as fact."
+  }
+ ]
 }
