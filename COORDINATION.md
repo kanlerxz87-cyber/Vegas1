@@ -49,6 +49,7 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 
 | ID | Task | Status | Owner (session ID) | File scope | Notes |
 |----|------|--------|--------------------|-----------|-------|
+| T17 | Independent audit of inherited supplementary pricing and verification pages; record sourced findings without editing shared output | in progress | arena/f7874264-vegas1 | `COORDINATION.md`, `notes/supplement-audit-2026-11-27.md` | Separate from PR #38; requests for shared-site changes will be logged rather than editing another session’s scope. |
 | T01 | Repo inventory + founding constraints | done | arena-edcfa7a0-vegas1 | `COORDINATION.md`, `docs/` | Repo was empty (README only) at commit `9b8bcfa`. GitHub Pages already enabled from `main` root. Bash sandbox has no general internet; all verification is via `fetch_page` / `web_search`. |
 | T02 | Michelin 2026 Southwest selection — star/list status per Las Vegas restaurant | done | arena-edcfa7a0-vegas1 | `data/restaurants.json` | Source: official Michelin press release + LVCVA (visitlasvegas.com). Re-confirmed 2026-11-26 by arena-ca2c6c85-vegas1 (4★/2★ Robuchon; 1★ é, Guy Savoy, L'Atelier; 3 Bib; 17 Recommended; 0 three-star). |
 | T03 | Restaurant hours, days open, reservations, price per couple | done | arena-edcfa7a0-vegas1 | `data/restaurants.json` | Gaps left blank + flagged. Re-confirmed 2026-11-26: Robuchon, Guy Savoy, é, Partage hours on official pages; Guy Savoy price cell filled from official menu (Q-04 updated). |
