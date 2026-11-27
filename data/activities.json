@@ -4,7 +4,8 @@
   "rule": "Hours and prices only where an official page prints them. Blank means not verified. 'per couple' means cost for 2 adults.",
   "activity_social_rule": "Only links printed on the venue's own site or found by opening the account itself on 2026-11-27. Evidence per row is in data/socials.json and the sources table on this page. Blank = not verified (F-19, F-53 to F-57).",
   "social_provenance": "Each activity's `social_note` records where its handle came from. A handle is only listed where the venue's own site, the venue's own channel/profile, or venue-issued press material publishes it. Re-checked 2026-11-27; see F-53 for coverage counts.",
-  "activity_social_verified_on": "2026-11-27"
+  "activity_social_verified_on": "2026-11-27",
+  "video_verification": "All published activity video IDs were resolved through YouTube's oEmbed endpoint on 2026-11-27 (each returned a live public title and channel). One ID that did not resolve (Fremont Tls27qeAPaw) was removed and replaced. Venue channel URLs are listed first, then verified creator videos. See F-67."
  },
  "activities": [
   {
@@ -20,7 +21,10 @@
    "official_url": "https://www.thesphere.com/",
    "booking_hint": "Official tickets route through Ticketmaster: https://www.ticketmaster.com/the-wizard-of-oz-at-sphere-tickets/artist/3552227",
    "youtube": [
-    "https://www.youtube.com/@SphereVegas"
+    "https://www.youtube.com/@SphereVegas",
+    "https://www.youtube.com/watch?v=FoqilSF5Fv4",
+    "https://www.youtube.com/watch?v=0gpwcaNyIrY",
+    "https://www.youtube.com/watch?v=ONKndgo7MjU"
    ],
    "instagram": "https://www.instagram.com/spherevegas/",
    "tiktok": "",
@@ -29,7 +33,7 @@
     "F-16"
    ],
    "notes": "The single most distinctive thing to do in Las Vegas right now. Book only once the 2027 calendar is live. Social: IG @SphereVegas per Sphere Entertainment PRNewswire release 2025-02-27; TikTok @spherevegas official account. YouTube: three Wizard of Oz at Sphere videos found via search 2026-11-27.",
-   "social_note": "Instagram @spherevegas is the account Sphere's own marketing calls its official Instagram account; thesphere.com renders its footer client-side and printed no social links when fetched on 2026-11-27. The TikTok handle is reported as verified in F-53, not re-checked by this session. Source: https://www.instagram.com/spherevegas/",
+   "social_note": "Instagram @spherevegas is the account Sphere's own marketing calls its official Instagram account; thesphere.com renders its footer client-side and printed no social links when fetched on 2026-11-27. The TikTok handle is reported as verified in F-53, not re-checked by this session. Source: https://www.instagram.com/spherevegas/ YouTube video IDs added 2026-11-27 after each resolved in YouTube's oEmbed endpoint (title + channel): Chase Brogan, CBS Sunday Morning, MarshW13 — creator/broadcaster media, not the venue's channel.",
    "social_status": "verified",
    "social_evidence": "Instagram opened and verified-badged ('Sphere', 3.3M followers). YouTube channel opened; lists 'The Wizard of Oz at Sphere' playlists."
   },
@@ -57,7 +61,7 @@
     "F-63"
    ],
    "notes": "Happy Half Hour is an open-bar cabin with a bartender for the full rotation. IG @highrollervegas confirmed via multiple sources 2026-11-27. TikTok: no official account verified (only creator videos tagging @highrollervegas) — left blank, see F-53. Hours/prices re-verified 2026-11-27 on Caesars official page (Opens 12:30PM; daytime $23.50, anytime $34.75, Happy Half Hour $60, plus taxes/fees).",
-   "social_note": "Instagram handle @highrollervegas is named as the attraction's account in Caesars Entertainment press material and the profile describes the wheel; the caesars.com attraction page printed only parent-property socials when fetched on 2026-11-27. Source: https://www.instagram.com/highrollervegas/",
+   "social_note": "Instagram handle @highrollervegas is named as the attraction's account in Caesars Entertainment press material and the profile describes the wheel; the caesars.com attraction page printed only parent-property socials when fetched on 2026-11-27. Source: https://www.instagram.com/highrollervegas/ All three video IDs resolved in YouTube oEmbed on 2026-11-27 (creator channels).",
    "social_status": "verified",
    "social_evidence": "Account opened and verified-badged: 'The High Roller', 'Tallest Observation Wheel in North America', 75,555 followers.",
    "social_caveat": "Official attraction account but dormant — newest post shown 2024-06. The similar handle @highrollerlasvegas is a private 26-follower account and is not used."
@@ -75,7 +79,10 @@
    "official_url": "https://themobmuseum.org/",
    "booking_hint": "https://admission.themobmuseum.org/",
    "youtube": [
-    "https://www.youtube.com/@TheMobMuseum"
+    "https://www.youtube.com/@TheMobMuseum",
+    "https://www.youtube.com/watch?v=Ll8Jb1kA2T4",
+    "https://www.youtube.com/watch?v=hIuGwU_kyGY",
+    "https://www.youtube.com/watch?v=ZTwlPZJDmJc"
    ],
    "instagram": "https://www.instagram.com/themobmuseum/",
    "tiktok": "",
@@ -84,7 +91,7 @@
     "F-62"
    ],
    "notes": "A morning-arrival discount and an evening-arrival discount are offered online only on the Premier Pass. Social: IG/TikTok @themobmuseum per the museum's own press release (reprinted Nevada Business 2026-11-02). Hours re-verified 2026-11-27 on themobmuseum.org homepage table.",
-   "social_note": "Instagram is declared as the museum's own profile in the metadata of its official YouTube channel, whose declared website is themobmuseum.org; the museum's home page prints no social icons. The YouTube links are individual videos, not the channel. Re-checked 2026-11-27. Source: https://www.youtube.com/themobmuseum",
+   "social_note": "Instagram is declared as the museum's own profile in the metadata of its official YouTube channel, whose declared website is themobmuseum.org; the museum's home page prints no social icons. The YouTube links are the museum's own channel plus three individual videos, all resolved via oEmbed on 2026-11-27 (F-67). Re-checked 2026-11-27. Source: https://www.youtube.com/themobmuseum YouTube video IDs added 2026-11-27 after each resolved in YouTube's oEmbed endpoint: s34nVideos, Jaycation, The Unofficial Guides — creator media, not the venue's channel.",
    "social_status": "verified",
    "social_evidence": "Instagram opened and verified-badged (71,833 followers, bio links admission.themobmuseum.org). YouTube channel opened; lists 'Inside the Life' and 'About The Mob Museum' playlists."
   },
@@ -110,7 +117,7 @@
    "verified": "yes",
    "flags": [],
    "notes": "Social handles taken directly from the museum's own site footer (re-verified 2026-11-27: TikTok @neonmuseumlasvegas, Instagram @theneonmuseumlasvegas). 45-minute guided History and Movies tours are add-ons. Hours/prices re-verified 2026-11-27 (Sep–May 3–11 PM; 2027 Admission from $21).",
-   "social_note": "The museum's own site navigation prints both handles (Instagram and TikTok), so these are the strongest social links on this page. Re-checked 2026-11-27. Source: https://neonmuseum.org/",
+   "social_note": "The museum's own site navigation prints both handles (Instagram and TikTok), so these are the strongest social links on this page. Re-checked 2026-11-27. Source: https://neonmuseum.org/ All three video IDs resolved in YouTube oEmbed on 2026-11-27; ewrNfjNa4w4 is on the museum's own channel (@TheNeonMuseum).",
    "social_status": "official_page_link_only",
    "social_evidence": "The TikTok and Instagram links are both printed in neonmuseum.org's own site navigation.",
    "social_caveat": "TikTok returned HTTP 400 to this sandbox, so the TikTok page itself was not read (F-57). YouTube handle @neonmuseum opens but says 'This channel doesn't have any content', so no YouTube link is published."
@@ -129,7 +136,7 @@
    "booking_hint": "https://fremontstreetexperience.com/calendar#cal",
    "youtube": [
     "https://www.youtube.com/watch?v=52YiWwDgli0",
-    "https://www.youtube.com/watch?v=Tls27qeAPaw",
+    "https://www.youtube.com/watch?v=KDARquYGk_M",
     "https://www.youtube.com/watch?v=mIcQ0b8S9nA"
    ],
    "instagram": "https://www.instagram.com/fremontstreet/",
@@ -137,17 +144,41 @@
    "verified": "yes",
    "flags": [],
    "notes": "Free — the obvious way to keep a downtown evening cheap. SlotZilla zipline is a paid add-on on the same site. IG @fremontstreet is the official Fremont Street Experience account (verified 2026-11-27). TikTok: no official account verified — left blank, see F-53.",
-   "social_note": "Instagram is the account whose own profile describes it as the 'Official account of Fremont Street Experience and SlotZilla zipline'; the venue's own site prints no social icons, so no TikTok is listed. Re-checked 2026-11-27. Source: https://www.instagram.com/fremontstreet/",
+   "social_note": "Instagram is the account whose own profile describes it as the 'Official account of Fremont Street Experience and SlotZilla zipline'; the venue's own site prints no social icons, so no TikTok is listed. Re-checked 2026-11-27. Source: https://www.instagram.com/fremontstreet/ A carried-over ID (Tls27qeAPaw) did NOT resolve in YouTube oEmbed on 2026-11-27 and was replaced with KDARquYGk_M, on the venue's own channel (@vegasfremontstreet). See F-67.",
    "social_status": "verified",
    "social_evidence": "Account opened and verified-badged: bio 'Official account of Fremont Street Experience and SlotZilla zipline in downtown #LasVegas'.",
    "social_caveat": "YouTube handle @fremontstreetexperience opens but returns 'This channel doesn't have any content', so no YouTube link is published (F-57)."
+  },
+  {
+   "id": "bellagio-fountains",
+   "name": "Fountains of Bellagio",
+   "zone": "center-strip",
+   "type": "Free outdoor show",
+   "days": "Daily",
+   "hours": "Mon-Fri: every 30 min 3:00-7:30 PM, every 15 min 8:00 PM-midnight. Sat, Sun & holidays: every 30 min 12:00-7:30 PM, every 15 min 8:00 PM-midnight.",
+   "exceptions": "Free. The schedule may vary and the outdoor display is subject to cancellation in bad weather.",
+   "hours_source": "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html",
+   "price_per_couple": "$0",
+   "price_note": "The Bellagio page states the show is free for any visitor to enjoy.",
+   "price_source": "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html",
+   "official_url": "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html",
+   "booking_hint": "No ticket needed - just turn up.",
+   "youtube": [
+    "https://www.youtube.com/@BellagioLasVegas",
+    "https://www.youtube.com/watch?v=qp0SppysLnU"
+   ],
+   "instagram": "https://www.instagram.com/bellagio/",
+   "tiktok": "",
+   "verified": "yes",
+   "flags": [],
+   "notes": "Closes F-18: the official page answered on 27 Nov 2026 and publishes the full daily schedule, so hours are no longer blank.",
+   "checked": "2026-11-27",
+   "social_status": "property account, not show-specific",
+   "social_evidence": "Property account: '@bellagio', verified-badged, 489,257 followers, bio 'See the world in a new light and dance with the Fountains' — the fountains are named by the account itself, but this is the resort's feed, not a Fountains-of-Bellagio feed (no such account exists). YouTube @BellagioLasVegas is the property channel and carries '25th Anniversary – Fountains of Bellagio, Las Vegas'; opened 2026-11-27.",
+   "social_note": ""
   }
  ],
  "not_verified": [
-  {
-   "name": "Bellagio Fountains",
-   "reason": "The official Bellagio page for the fountains returned a fetch error twice. Show times and the current schedule could not be confirmed, so no hours or links are published here. Free to watch; check https://www.bellagio.com/ on arrival."
-  },
   {
    "name": "Cirque du Soleil / other production shows",
    "reason": "Booking.com listed 'Cirque Du Soleil Admission' from $158.65 per person, but that is a reseller listing with no show name, no venue and no 2027 date. Not published as fact."

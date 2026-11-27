@@ -57,6 +57,33 @@ if not (DOCS / "style.css").exists():
 if not (DOCS / ".nojekyll").exists():
     warns.append(".nojekyll missing — Pages may run Jekyll")
 
+# 7. Root/docs publication parity and all local links, including same-page anchors.
+from html.parser import HTMLParser
+from urllib.parse import urlsplit, unquote
+class Links(HTMLParser):
+    def __init__(self):
+        super().__init__(); self.ids=[]; self.hrefs=[]
+    def handle_starttag(self, tag, attrs):
+        attrs=dict(attrs)
+        if 'id' in attrs:self.ids.append(attrs['id'])
+        if tag=='a':self.hrefs.append(attrs.get('href',''))
+parsed={}
+for p in PAGES:
+    d=Links();d.feed(texts[p.name]);parsed[p.name]=d
+    if len(d.ids)!=len(set(d.ids)):fails.append(f'{p.name}: duplicate id')
+    if not (ROOT/p.name).exists() or p.read_bytes()!=(ROOT/p.name).read_bytes():
+        fails.append(f'{p.name}: root/docs publication drift')
+for name,d in parsed.items():
+    for href in d.hrefs:
+        u=urlsplit(href)
+        if u.scheme or u.netloc:continue
+        target=unquote(u.path) or name
+        if not (DOCS/target).is_file():fails.append(f'{name}: missing local target {href}')
+        elif u.fragment and target in parsed and unquote(u.fragment) not in parsed[target].ids:
+            fails.append(f'{name}: missing local anchor {href}')
+if (DOCS/'style.css').read_bytes()!=(ROOT/'style.css').read_bytes():
+    fails.append('style.css: root/docs drift')
+
 print()
 for w in warns:
     print("WARN:", w)

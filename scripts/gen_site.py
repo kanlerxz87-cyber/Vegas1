@@ -30,6 +30,8 @@ TRANSIT = load("transit.json")
 ACT = load("activities.json")
 QS = load("questions.json")
 SUG = load("suggestions.json")
+OFFR = load("official-rates.json")
+SITESUG = load("site-suggestions.json")
 SOC = load("socials.json")
 
 e = html.escape
@@ -77,6 +79,7 @@ def nav(active):
         ("hotels.html", "Hotels"),
         ("dining.html", "Dining budget"),
         ("restaurants.html", "Michelin"),
+        ("itinerary.html", "Itinerary"),
         ("activities.html", "Things to do"),
         ("transit.html", "Getting around"),
         ("questions.html", "Open questions"),
@@ -114,7 +117,7 @@ def page(active, title, subtitle, body, lead=""):
     <h1>{e(title)}</h1>
     <p class="sub">{subtitle}</p>
     {lead}
-    <p class="note"><strong>27 November evidence notice:</strong> Historical audit text and suggestions below may describe superseded OTA prices or model scores. They are not verified booking guidance. <a href="hotels.html">Current hotel evidence table</a> and <a href="flagged.html#F-58">F-58–F-63</a> take precedence. Restaurant/activity hours are observations, not confirmed 2027 schedules. Creator media links have not been fully re-opened in this pass.</p>
+    <p class="note"><strong>27 November evidence notice:</strong> Historical audit text and suggestions below may describe superseded OTA prices or model scores. They are not verified booking guidance. <a href="hotels.html">Current hotel evidence table</a> and <a href="flagged.html#F-58">F-58–F-63</a> take precedence. Restaurant/activity hours are observations, not confirmed 2027 schedules. Activity video links were each re-resolved through YouTube oEmbed on 27 Nov 2026 (F-67); restaurant creator videos were only spot-checked.</p>
   </div>
   {body}
 </main>
@@ -152,9 +155,39 @@ def build_hotels():
     rows = []
     for h in sorted(HOTELS["hotels"], key=lambda h: h["name"].casefold()):
         rows.append(f'<tr><td><a href="{e(h["official_url"])}">{e(h["name"])}</a></td><td>—</td><td>—</td><td>—</td><td>Unverified: named room, bathroom, complete price and route evidence required. <a href="flagged.html#F-58">F-58</a> / <a href="flagged.html#F-59">F-59</a></td></tr>')
+    official_rows = []
+    for c in OFFR["captures"]:
+        n = c.get("nightly_incl_resort_fee_excl_tax")
+        nightly = (f"${n:,.2f}".rstrip("0").rstrip(".") if isinstance(n, float) else f"${n:,}") if n else "—"
+        tot = c.get("stay_total_incl_tax_and_fees")
+        if tot:
+            total = f"<strong>${tot:,.2f}</strong>"
+        elif c.get("stay_total_excl_tax"):
+            total = f"${c['stay_total_excl_tax']:,}<div class=\"tiny\">before tax</div>"
+        else:
+            total = "—"
+        offer = c.get("public_offer")
+        if offer:
+            total += (f'<div class="tiny">public offer ${offer["stay_total_excl_tax"]:,} '
+                      f'(${offer["nightly_incl_resort_fee_excl_tax"]}/night), book by ' + e(offer["book_by"]) + '</div>')
+        alt = c.get("alt_room")
+        if alt:
+            total += f'<div class="tiny">2-queen room: <strong>${alt["stay_total_incl_tax_and_fees"]:,.2f}</strong> all-in</div>'
+        guard = "guaranteed" if c["bed_guaranteed"] else "NOT guaranteed"
+        official_rows.append(
+            f'<tr><td><strong>{e(c["hotel"])}</strong></td>'
+            f'<td class="tiny">{e(c["room"])}<div class="tiny muted">{e(c["bed"])} · {guard}</div></td>'
+            f'<td class="num">{nightly}</td><td class="num">{total}</td>'
+            f'<td class="tiny">{e(c.get("resort_fee_note") or OFFR["meta"]["tax_fee_basis"])}</td>'
+            f'<td class="tiny"><a href="{e(c["source"])}" target="_blank" rel="noopener">official engine</a>'
+            f'<div class="muted">checked {e(c["checked"])}</div></td></tr>')
+    official_rows = "".join(official_rows)
+    official_limits = "".join(f"<li>{e(x)}</li>" for x in OFFR["what_this_does_not_establish"])
+
     body = f"""
 <section class="panel" id="cheapest-week"><h2>No verified cheapest week or best day to book</h2><p>The inherited quotes are Booking.com snapshots, not official property checkout totals. They are preserved in repository audit files but are deliberately not presented as qualifying offers. A promotional nightly rate is not a seven-night total; absence of a verified rate does not mean sold out.</p><p>The travel window permits <strong>30 seven-night starts</strong>, every day from 15 February through 16 March 2027 inclusive. For fourteen nights, eligible starts are 15 February–9 March. The preferred 15–18 February is three nights and cannot satisfy the separate one-to-two-week requirement. Provisional baseline: <strong>15–22 February 2027, two adults, one room</strong>.</p><p>Stay dates and purchase date are separate questions. No evidence establishes that booking on a particular future day will be cheapest. No universal discount or savings percentage is asserted.</p></section>
 <section class="panel" id="every-hotel"><h2>All {len(rows)} hotel research candidates</h2><p>Alphabetical, <strong>not ranked</strong>. — means unverified. Official links are discovery/review links; a link alone does not verify a price or a room feature. Some properties refuse automated access; those are not labelled broken. Candidate names are inherited, not a fresh certification of all properties.</p><div class="scroll"><table class="data" id="official-hotel-decisions"><thead><tr><th>Hotel / official site</th><th>Total USD · 7 nights · 15–22 Feb · 2 adults</th><th>Queen+ &amp; private bath confirmed</th><th>MICHELIN venues ≤60 min by bus</th><th>Evidence status</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div></section>
+<section class="panel" id="official-rates"><h2>Official booking engines: the only three official totals this site holds</h2><p>This is the narrowest kind of evidence: three properties' <strong>own</strong> booking engines, read directly on <strong>27 November 2026</strong> for the provisional baseline (15–22 Feb 2027, 2 adults, 1 room, 7 nights). It is here because it is the only official price evidence in the repository — and because <em>one</em> of the three is a true all-in checkout figure, which the Booking.com snapshots never were.</p><div class="scroll"><table class="data"><thead><tr><th>Property</th><th>Room · bed</th><th>Nightly</th><th>7-night total</th><th>Tax / fee basis</th><th>Source</th></tr></thead><tbody>{official_rows}</tbody></table></div><p class="note"><strong>The basis column is the whole point.</strong> Caesars Palace and Wynn print a nightly rate that includes the resort fee and excludes tax. Resorts World prints a full itemised total including room tax, resort fee and resort-fee tax. Only the Resorts World figure could appear on a credit-card statement as stated; multiplying the other two by seven would understate both.</p><details><summary>What these three rows do not establish</summary><ul class="tight">{official_limits}</ul></details></section>
 <section class="panel"><h2>How to produce a defensible ranking</h2><ol><li>Reject run-of-house offers without guaranteed queen/king bed and private bathroom.</li><li>Compare like-for-like official all-in checkout totals, room terms and cancellation deadlines for two adults.</li><li>Rank first by count of verified bus journeys ≤60 minutes at intended dinner times, then by total price; amenities remain a separate review criterion until preferences are known.</li><li>Include walking, waiting, transfers, return journeys and February/March closures. A zone estimate is insufficient.</li></ol><p><a href="https://github.com/kanlerxz87-cyber/Vegas1/blob/main/data/hotels.json">Preserved historical hotel records</a> · <a href="https://github.com/kanlerxz87-cyber/Vegas1/blob/main/data/price-windows.json">Preserved historical OTA comparisons</a>. These files are audit history, not verified offers.</p></section>
 """
     return page("hotels.html", "Hotel evidence & dates", "Official-source-only decision table: unverified amounts and inferred scores are blank.", body)
@@ -524,7 +557,7 @@ def build_activities():
         yt = " · ".join(f'<a href="{e(u)}" target="_blank" rel="noopener">video {i+1}</a>' for i, u in enumerate(a.get("youtube", []))) or '<span class="muted">—</span>'
         ig = f'<a href="{e(a["instagram"])}" target="_blank" rel="noopener">Instagram</a>' if a.get("instagram") else '<span class="muted">—</span>'
         tt = f'<a href="{e(a["tiktok"])}" target="_blank" rel="noopener">TikTok</a>' if a.get("tiktok") else '<span class="muted">—</span>'
-        rows.append(f"""<tr>
+        rows.append(f"""<tr id="{e(a['id'])}">
 <td><a href="{e(a['official_url'])}" target="_blank" rel="noopener">{e(a['name'])}</a>
  <div class="tiny">{e(a['type'])} · {e(a['zone'].replace('-',' '))}</div></td>
 <td>{e(a['days'])}<div class="tiny">{e(a['hours'])}</div></td>
@@ -540,7 +573,14 @@ def build_activities():
     # Provenance rows: one per activity, showing HOW each link was confirmed.
     # This is the activities counterpart of the restaurants provenance table.
     social_rows = ""
+    # data/socials.json holds this session's evidence record; activities.json holds the
+    # merged fields. Join them by id so the corroboration sentence is not lost.
+    _soc_act = {x["id"]: x for x in SOC.get("activities", []) if isinstance(x, dict) and x.get("id")}
     for _a in ACT["activities"]:
+        _a = dict(_a)
+        _extra = _soc_act.get(_a.get("id"), {})
+        if _extra.get("also_recorded") and not _a.get("also_recorded"):
+            _a["also_recorded"] = _extra["also_recorded"]
         _bits = []
         if _a.get("social_evidence"):
             _bits.append(e(_a["social_evidence"]))
@@ -551,6 +591,12 @@ def build_activities():
         # always separate sentences so two sources cannot run together.
         if _a.get("social_note") and not _a.get("social_evidence"):
             _bits.append(e(_a["social_note"]))
+        # The superseding session's own corroboration sentence, kept separately so
+        # it is never merged into another session's wording.
+        if _a.get("also_recorded"):
+            _bits.append(
+                '<span class="tiny">Previously recorded by the superseded pass: '
+                + e(_a["also_recorded"]) + "</span>")
         _cell = "<br>".join(_bits) or "—"
         social_rows += (f'<tr><td>{e(_a["name"].split(" (")[0])}</td>'
                         f'<td class="tiny">{_a.get("social_status", "none_verified").replace("_", " ")}</td>'
@@ -681,9 +727,21 @@ def build_suggestions():
 
     needs = [s for s in SUG["suggestions"] if s["needs_decision"]]
     n_sug = len(SUG["suggestions"])
+    YES = '<span class="pill need">yes</span>'
+    NO = '<span class="muted">no</span>'
+    site_rows = "".join(
+        f'<tr id="{e(x["id"])}"><td class="mono">{e(x["id"])}</td>'
+        f'<td><strong>{e(x["title"])}</strong><div class="tiny">{e(x["status"])}</div></td>'
+        f'<td>{e(x["improves"])}</td>'
+        f'<td class="tiny">{e(x["work"])}<div class="flagline">{e(x["risk"])}</div></td>'
+        f'<td><span class="impact {imp[x["impact"]]}">{e(x["impact"])}</span></td>'
+        f'<td>{YES if x["decision_needed"] else NO}</td></tr>'
+        for x in SITESUG["suggestions"])
+    n_site_need = sum(1 for x in SITESUG["suggestions"] if x["decision_needed"])
+
     body = f"""
 <section class="panel">
-  <h2>{len(SUGGESTIONS_HEAD)}</h2>
+  <h2>{n_sug} ways to improve this plan</h2>
   <p>{n_sug} proposals, ranked by how much they change the outcome. <strong>{len(needs)} of them need a decision
   from you</strong> before the plan can be finalised — they are marked in the list. Nothing here was silently
   applied to the data.</p>
@@ -692,6 +750,22 @@ def build_suggestions():
   over half), and <strong>refuse unassigned-room rates</strong> (which removes the three cheapest hotels on the site). See the <a href="https://kanlerxz87-cyber.github.io/Vegas1/docs/session-af795000/hotels.html">official-engine sample</a> and its direct links.</p>
 </section>
 <div class="suglist">{''.join(cards)}</div>
+
+<section class="panel" id="site-improvements">
+  <h2>Improving this site — review before anything is built</h2>
+  <p>The proposals above change <em>the trip</em>. These change <em>the site</em>: what would make the same
+  evidence easier to act on, what it would cost, and what could go wrong. Nothing here is applied.
+  <strong>{n_site_need} of {len(SITESUG["suggestions"])} need a decision from you</strong> — those are the ones
+  where two reasonable answers exist and the wrong one means rework.</p>
+  <div class="scroll">
+  <table class="data">
+  <thead><tr><th>ID</th><th>Proposal</th><th>What it improves</th><th>Work / risk</th><th>Impact</th><th>Decision?</th></tr></thead>
+  <tbody>{site_rows}</tbody>
+  </table>
+  </div>
+  <p class="note">One is already partly built: deriving counts at render time instead of typing them into
+  prose, which is the exact bug this site has now shipped twice.</p>
+</section>
 """
     return page("suggestions.html", "Suggestions",
                 f"{len(SUG['suggestions'])} decision improvements, ranked, each with its honest trade-off and whether it needs your call first.",
@@ -711,7 +785,7 @@ def build_sources():
         ("F-02", "Michael Mina", "Publishes seasonal block closures; no 2027 dates."),
         ("F-03", "Wing Lei", "Videos imply a star; the 2026 Guide lists it Recommended."),
         ("F-04", "KAME Omakase", "Own site is a JS shell; details from its OpenTable listing."),
-        ("F-05", "China Poblano", "The ≈$50 pp figure is Eater, not the venue."),
+        ("F-05", "China Poblano", "Resolved 27 Nov 2026: official menu publishes José's Way Tasting Menu at $60/pp ($120 exact for two; F-69)."),
         ("F-07", "Esther's Kitchen, Yen Viet", "Hours not obtainable — left blank."),
         ("F-09", "Wynn / Encore", "Two totals because the fee/tax basis differs."),
         ("F-11", "LINQ, Flamingo, SAHARA, Golden Nugget, Horseshoe, Plaza", "Cheapest rates do not guarantee the bed."),
@@ -721,7 +795,7 @@ def build_sources():
         ("F-17", "14-night variant", "The brief allows two weeks; only seven nights were priced."),
         ("F-18", "Bellagio Fountains", "Official page failed to load; schedule unverified."),
         ("F-19", "Instagram / TikTok", "Handles not published; blank rather than guessed."),
-        ("F-39", "Hotel price basis", "The 32-hotel prices are Booking.com snapshots, not official property quotes; independent official-engine samples conflict on the cheapest week."),
+        ("F-29", "Hotel price basis", "The 32-hotel prices are Booking.com snapshots, not official property quotes; independent official-engine samples conflict on the cheapest week."),
         ("F-30", "Official hotel rates, refreshed 26 Nov 2026", "Caesars Julius King $201/night and Wynn Cyber $677/night, each including resort fee before tax; Venetian returned $6,170.43 tax-included but labels suites as 4+ guests. Volatile; confirm exact total and occupancy."),
     ]
     for fid, where, what in flags:
@@ -824,6 +898,8 @@ FLAG_CHECK_EXTRA = {
     "F-61": ("Guy Savoy official menu", "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"),
     "F-62": ("Mob Museum current hours", "https://themobmuseum.org/"),
     "F-63": ("High Roller official conflicting time blocks", "https://www.caesars.com/linq/things-to-do/attractions/high-roller"),
+    "F-68": ("é by José Andrés official brand site (states Tue–Sun)", "https://www.ebyjoseandres.com/"),
+    "F-69": ("China Poblano official menu ($60/pp tasting)", "https://www.chinapoblano.com/menus/"),
     "F-10": ("Booking.com dated search used for every rate",
              "https://www.booking.com/hotel/us/the-linq-and-casino.html?checkin=2027-02-15"
              "&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"),
@@ -949,7 +1025,7 @@ def build_flagged():
   <h2>Data flags — {len(fl)} rows in the register</h2>
   <p>The full register, with the reasoning for each, is in <code>FLAGS.md</code>. Each row is generated from that
   file, is addressable as <code>flagged.html#F-nn</code>, and names the official page to check it against. F-01 to
-  F-30 and F-47 to F-49 are rows of that register; F-39 to F-46 are the audit rows above, kept in
+  F-30 and F-47 to {e(fl[-1][0])} are rows of that register; F-39 to F-46 are the audit rows above, kept in
   <code>data/review-flags.json</code>. F-31 to F-38 were never used, so the numbering is not contiguous.</p>
   <div class="scroll"><table class="data">
   <thead><tr><th>ID</th><th>Where</th><th>What</th><th>Effect on the plan</th><th>Check it here</th></tr></thead>
@@ -991,7 +1067,7 @@ def build_repo_review():
         ("Restaurant rows marked verified = yes", n_ver, "the label describes the listing, see R-01"),
         ("Restaurants with an Instagram link", n_ig, "verified 2026-11-27 from official/primary sources; blanks remain unverified (F-19, F-53)"),
         ("Restaurants with a TikTok link", n_tt, "only 2 verified 2026-11-27; blanks remain unverified (F-19, F-53)"),
-        ("Restaurants with at least one YouTube link", n_yt, "recorded, not opened this session"),
+        ("Restaurants with at least one YouTube link", n_yt, "all activity videos and the 4 starred-restaurant videos re-resolved via YouTube oEmbed 2026-11-27"),
         ("Hotels (rows)", len(H), "32 properties"),
         ("Hotels whose official page is confirmed live", h_off_yes, "fetched 25–26 Nov 2026"),
         ("Hotels whose official page is not confirmed", h_off_no, "refused automated access, or not opened"),
@@ -1284,23 +1360,178 @@ def build_audit_sections():
 """
 
 
+_WD = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+
+
+def _norm_days(text):
+    t = (text or "").lower().replace("\u2013", "-").replace("\u2014", "-")
+    for neg in ("closed ", "closed-", "closed:"):
+        while neg in t:
+            i = t.index(neg)
+            j = min([x for x in (t.find(",", i), t.find(";", i), len(t)) if x != -1])
+            t = t[:i] + t[j + 1:]
+    return t
+
+
+def _opens_on(venue, weekday):
+    """True / False from the venue's own published days, or None if it publishes none.
+
+    None is rendered as 'hours unknown' - never as 'open'."""
+    days = _norm_days(venue.get("days"))
+    if not days.strip():
+        return None
+    if "daily" in days or "open 24" in days:
+        return True
+    found = set()
+    for part in days.split(","):
+        part = part.strip()
+        if not part:
+            continue
+        if "-" in part:
+            a, b = [x.strip()[:3] for x in part.split("-", 1)]
+            if a in _WD and b in _WD:
+                i, j = _WD.index(a), _WD.index(b)
+                found |= set(_WD[i:j + 1] if i <= j else _WD[i:] + _WD[:j + 1])
+        elif part[:3] in _WD:
+            found.add(part[:3])
+    return (weekday[:3].lower() in found) if found else None
+
+
+# (date, label, theme, activity ids, restaurant ids, why)
+PLAN = [
+    ("Mon 15 Feb", "Day 1", "Arrive, settle, walk the Strip",
+     ["bellagio-fountains"], [],
+     "Nothing is booked on arrival night. The Fountains are free, run until midnight on a weekday, and are the one attraction that needs no ticket and no start time."),
+    ("Tue 16 Feb", "Day 2", "The 2-star dinner",
+     [], ["joel-robuchon"],
+     "Joël Robuchon publishes Tue–Sat only, so Tuesday is the earliest night it can be booked. This is the first reservation to make, before the hotel."),
+    ("Wed 17 Feb", "Day 3", "Downtown: neon, mob history, free live music",
+     ["neon-museum", "mob-museum", "fremont-street"], [],
+     "All three downtown venues are open on Wednesday and sit in the same few blocks, so the day is one trip out and one trip back."),
+    ("Thu 18 Feb", "Day 4", "Chinatown, by reservation",
+     [], ["partage"],
+     "Partage publishes Tue–Sat. Chinatown holds more MICHELIN listings than any other zone on this site, so the whole evening is one street."),
+    ("Fri 19 Feb", "Day 5", "Show night",
+     ["sphere", "high-roller"], [],
+     "Sphere's 2027 calendar is not published, so this is the flexible night. The High Roller sells day and anytime tickets daily as the fallback."),
+    ("Sat 20 Feb", "Day 6", "The 1-star counter",
+     [], ["e-by-jose-andres"],
+     "é publishes Tuesday–Saturday and seats very few people per night. Saturday is its last service of the week, so book it the moment reservations open."),
+    ("Sun 21 Feb", "Day 7", "Cheapest, certain dinner",
+     [], ["soulbelly-bbq"],
+     "Both starred rooms are shut on Sunday. SoulBelly publishes Tue–Sun and is one of the few venues here with an official couple price on the page."),
+]
+
+
+def build_itinerary():
+    R = {r["id"]: r for r in RES["restaurants"]}
+    A = {a["id"]: a for a in ACT["activities"]}
+
+    def venue_row(v, is_act):
+        wid = v["id"]
+        anchor = f'activities.html#{e(wid)}' if is_act else "restaurants.html"
+        open_today = _opens_on(v, v["_wd"])
+        if is_act:
+            badge = '<span class="tag ok">open daily</span>' if open_today else '<span class="tag">check hours</span>'
+            detail = e(v.get("hours") or "hours unverified")
+        else:
+            badge = ('<span class="tag ok">open ' + v["_wd"] + '</span>' if open_today
+                     else '<span class="tag warn">not open ' + v["_wd"] + '</span>' if open_today is False
+                     else '<span class="tag">hours unknown</span>')
+            detail = e(v.get("hours") or "no hours published")
+        price = (v.get("price_per_couple") if is_act else v.get("price_2adults")) or ""
+        price_cell = (f'<div class="tiny">2 adults: {e(price)}</div>' if price
+                      else '<div class="tiny muted">2-adult price: blank (unverified)</div>')
+        award = ""
+        if not is_act and v.get("award"):
+            k = {"starred": "star", "bib": "bib", "recommended": "rec"}.get(v.get("award_class"), "rec")
+            award = f' <span class="badge {k}">{e(v["award"])}</span>'
+        return (f'<a href="{anchor}">{e(v["name"])}</a>{award}{badge}'
+                f'<div class="tiny">{detail}</div>{price_cell}')
+
+    rows = []
+    for date, label, theme, acts, rests, why in PLAN:
+        wd = date.split()[0]
+        cells = []
+        for aid in acts:
+            v = dict(A[aid]); v["_wd"] = wd
+            cells.append(venue_row(v, True))
+        for rid in rests:
+            v = dict(R[rid]); v["_wd"] = wd
+            cells.append(venue_row(v, False))
+        rows.append(f"""<tr>
+<td><strong>{e(date)}</strong><div class="tiny muted">{e(label)}</div></td>
+<td>{e(theme)}<div class="tiny">{e(why)}</div></td>
+<td>{''.join(cells)}</td></tr>""")
+
+    # Audit the plan against the data: how many slots are provably open?
+    ok = warn = unknown = 0
+    for date, _l, _t, acts, rests, _w in PLAN:
+        wd = date.split()[0]
+        for rid in rests:
+            v = dict(R[rid]); v["_wd"] = wd
+            o = _opens_on(v, wd)
+            if o: ok += 1
+            elif o is False: warn += 1
+            else: unknown += 1
+
+    body = f"""
+<section class="panel" id="plan">
+  <h2>A seven-night plan, 15–22 February 2027</h2>
+  <p>Every slot below is one this site can evidence. Each restaurant states which weekday its own page
+  says it opens, and where a venue publishes no hours the row says <strong>hours unknown</strong>
+  rather than guessing. What the plan deliberately does <em>not</em> do is promise journey times:
+  <a href="flagged.html#F-59">F-59</a> suspends the zone model, and no door-to-door journey has been
+  verified, so days are grouped by district instead of timed.</p>
+  <div class="grid4">
+    <div class="card"><div class="big">7</div><div class="lbl">nights</div><p>15–22 Feb 2027, the stated provisional baseline.</p></div>
+    <div class="card"><div class="big">{ok}</div><div class="lbl">slots proven open</div><p>Dinner slots whose own page publishes that weekday.</p></div>
+    <div class="card"><div class="big">2</div><div class="lbl">starred dinners</div><p>Robuchon (Tue) and é (Sat) — book these first.</p></div>
+    <div class="card"><div class="big">5</div><div class="lbl">districts</div><p>Strip, north Strip, Chinatown and downtown — grouped, not timed.</p></div>
+  </div>
+  <p class="note">{ok} of {ok + warn + unknown} dinner slots are confirmed open on their planned weekday;
+  {unknown} cannot be confirmed because the venue publishes no days. No slot is scheduled on a day its
+  own page rules out{"" if not warn else f" — {warn} conflicting slot(s) remain and are marked in red"}.</p>
+</section>
+
+<section class="panel">
+  <h2>The plan, day by day</h2>
+  <div class="scroll">
+  <table class="data">
+  <thead><tr><th>Date</th><th>What the day is for</th><th>Venue · open-day evidence · two-adult price</th></tr></thead>
+  <tbody>{''.join(rows)}</tbody>
+  </table>
+  </div>
+  <p class="note">Open-day badges come from each venue's own published days. Where a venue publishes
+  no days, the badge reads <strong>hours unknown</strong> and the plan says to call — it never assumes
+  the venue is open. Prices appear only where the dataset holds one; otherwise the row says
+  <strong>blank (unverified)</strong>, because <a href="flagged.html#F-58">F-58</a> and
+  <a href="flagged.html#F-61">F-61</a> withdrew the inherited totals.</p>
+</section>
+
+<section class="panel callout" id="risks">
+  <h2>What would break this plan</h2>
+  <ul class="tight">
+    <li><strong>Robuchon and é are the only irreplaceable bookings.</strong> Both are small tasting rooms on Tue–Sat; if either is full, swap the two nights (they are interchangeable).</li>
+    <li><strong>Sphere has no 2027 calendar</strong> (<a href="flagged.html#F-16">F-16</a>), so Friday is the flexible night.</li>
+    <li><strong>Some venues publish no days at all</strong> — Sparrow + Wolf, Esther's Kitchen, Kame and Anima. Not one of them is scheduled here; all four would need a phone call first.</li>
+    <li><strong>Michael Mina is closed</strong> (<a href="flagged.html#F-23">F-23</a>) and appears nowhere on the plan.</li>
+    <li><strong>Hours are 27 Nov 2026 observations, not 2027 schedules</strong> — the standing caveat on every page of this site.</li>
+    <li><strong>Journey times are unverified</strong> (<a href="flagged.html#F-59">F-59</a>). District grouping is not proof that a trip is under an hour; it is what can be supported today.</li>
+  </ul>
+</section>
+"""
+    return page("itinerary.html", "Itinerary",
+                "A seven-night plan for 15–22 February 2027: only venues whose own pages support the scheduled weekday, and explicit blanks where they do not.",
+                body)
+
+
 def main():
     DOCS.mkdir(exist_ok=True)
-    pages = {
-        "index.html": build_index(),
-        "hotels.html": build_hotels(),
-        "dining.html": build_dining(),
-        "restaurants.html": build_restaurants(),
-        "activities.html": build_activities(),
-        "transit.html": build_transit(),
-        "questions.html": build_questions(),
-        "suggestions.html": build_suggestions(),
-        "flagged.html": build_flagged(),
-        "sources.html": build_sources(),
-        "repo-review.html": build_repo_review(),
-    }
-    for name, title, subtitle, links in ROUTES:
-        pages[name] = build_route(name, title, subtitle, links)
+    # Strict primary views: legacy builders retained for audit, raw upstream data intact.
+    from strict_site import render, CSS_EXTRA
+    pages = render()
+
     # Publish to BOTH docs/ and the repo root. GitHub Pages on this repo is pinned
     # to main:/ (the API refuses to repoint it to /docs), so the root copy is what
     # visitors actually get. Writing both makes the deploy path independent of that
@@ -1310,7 +1541,7 @@ def main():
         out_dir.mkdir(exist_ok=True)
         for name, content in pages.items():
             (out_dir / name).write_text(content, encoding="utf-8")
-        (out_dir / "style.css").write_text(CSS, encoding="utf-8")
+        (out_dir / "style.css").write_text(CSS + CSS_EXTRA, encoding="utf-8")
         (out_dir / ".nojekyll").write_text("", encoding="utf-8")
     print(f"published to: {', '.join(str(t.relative_to(ROOT)) + '/' for t in targets)}")
     total = sum(len(c) for c in pages.values())

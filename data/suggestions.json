@@ -21,7 +21,7 @@
       "needs_decision": true,
       "status": "open",
       "body": "The brief says 1–2 weeks but the preferred dates 2027-02-15 → 2027-02-18 are three nights. Every hotel total on this site is for seven nights. If the real plan is three nights, the hotel line is roughly 43% of what is shown.",
-      "trade_off": "Three nights cannot cover 21 Michelin restaurants plus the museums — realistically it covers four or five restaurants. Seven nights is the shortest trip where the list is plausible.",
+      "trade_off": "Three nights cannot cover 24 Michelin listings plus the museums — realistically it covers four or five restaurants. Seven nights is the shortest trip where a broad Michelin itinerary is plausible.",
       "evidence": "data/questions.json Q-02"
     },
     {
