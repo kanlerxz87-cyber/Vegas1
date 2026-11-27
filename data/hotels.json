@@ -72,7 +72,8 @@
         "sibling": 1,
         "no": 5
       }
-    }
+    },
+    "publication_rule": "Historical OTA/model rows are audit inputs, not public evidence. data/verification.json gates every public field. Hilton Resorts World is an additional independently sourced official candidate, not a Crockfords price."
   },
   "hotels": [
     {
@@ -1197,6 +1198,60 @@
       "official_verified": "yes",
       "official_check": "Confirmed live 2026-11-27 via fetch_page (redrockresort.com).",
       "price_basis": "search-list"
+    },
+    {
+      "id": "hilton-resorts-world",
+      "name": "Hilton Las Vegas at Resorts World",
+      "tier": null,
+      "zone": null,
+      "stars": null,
+      "guest_score": null,
+      "reviews": null,
+      "room": "Hilton Deluxe Room — One King Bed",
+      "bed": "king",
+      "private_bath": null,
+      "resort_fee": "Included in itemized official total; see verification.json",
+      "prices": [],
+      "michelin_within_60": null,
+      "michelin_within_20": null,
+      "official_url": "https://www.rwlasvegas.com/stay/las-vegas-hilton/deluxe-room/",
+      "booking_url": "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0",
+      "verified": "field-level — see verification.json",
+      "flags": [
+        "F-59",
+        "F-70"
+      ],
+      "notes": "Net-new official candidate, not Crockfords. Itemized dated offer is in verification.json; no OTA history or assumed model inputs added. Cancellation/deposit terms not obtained.",
+      "official_verified": "yes",
+      "official_check": "2026-11-27 fetched official Deluxe-room page plus exact-date booking engine; field-level evidence recorded.",
+      "price_basis": "official-itemized-total"
+    },
+    {
+      "id": "mgm-grand",
+      "name": "MGM Grand",
+      "tier": null,
+      "zone": null,
+      "stars": null,
+      "guest_score": null,
+      "reviews": null,
+      "room": "",
+      "bed": "",
+      "private_bath": null,
+      "resort_fee": "",
+      "prices": [],
+      "michelin_within_60": null,
+      "michelin_within_20": null,
+      "official_url": "https://mgmgrand.mgmresorts.com/",
+      "booking_url": "",
+      "verified": "field-level — see verification.json",
+      "flags": [
+        "F-59",
+        "F-70"
+      ],
+      "notes": "Host hotel added by the peer strict-evidence integration; no qualifying room, total or journey established.",
+      "official_verified": "no",
+      "official_check": "Candidate from official MICHELIN host-property identification; hotel/booking page not fetched.",
+      "price_basis": "unverified"
     }
   ]
 }

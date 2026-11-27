@@ -28,7 +28,9 @@
     },
     "social_verified_on": "2026-11-27",
     "price_capture": "2026-11-27",
-    "price_note": "Restaurant prices were re-read from the venues' own menu pages on 2026-11-27. A fixed per-person price is doubled for two and labelled 'exact'; where only per-dish prices are published the cell is labelled 'est.' and the arithmetic is in price_note. Blank/'on request' means the official page printed no price. All figures are food only, before tax, gratuity and wine."
+    "price_note": "Restaurant prices were re-read from the venues' own menu pages on 2026-11-27. A fixed per-person price is doubled for two and labelled 'exact'; where only per-dish prices are published the cell is labelled 'est.' and the arithmetic is in price_note. Blank/'on request' means the official page printed no price. All figures are food only, before tax, gratuity and wine.",
+    "publication_rule": "Public fields are controlled by data/verification.json; historical row-level badges and prices are not official field evidence. Parallel research, social provenance, raw snapshots and audit history are retained.",
+    "published_verification": "data/verification.json is the live per-field authority. Historical price estimates, broad verified labels, social discoveries and publication-date interpretations in this dataset are retained for audit, not automatically endorsed."
   },
   "restaurants": [
     {
@@ -68,7 +70,20 @@
       "social_evidence": "Account opened: bio links mgmgrand.com/en/restaurants/joel-robuchon-french-restaurant.html (this site's official link).",
       "social_caveat": "Dormant: newest post 2020-08-07, and the bio still says 'Michelin 3-Star' — the pre-2010 status. The 2026 Guide gives TWO stars (F-54). Do not quote an account bio as a current award.",
       "price_basis": "not published on official page",
-      "price_source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html"
+      "price_source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html",
+      "audit_previous_values_2026_11_27": {
+        "days": "Tue–Sat",
+        "hours": "Tue–Sat 5:00 PM – 9:30 PM",
+        "exceptions": "Closed Sunday and Monday. No children under 6 in the reservation. Business formal dress code.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=ySJIDJ_F9EA",
+          "https://www.youtube.com/watch?v=LKaEVI19GGI",
+          "https://www.youtube.com/watch?v=hrIP8WJ17C8",
+          "https://www.youtube.com/watch?v=tzPxsGfW9h8",
+          "https://www.youtube.com/shorts/fzxEVmZeSHs",
+          "https://www.youtube.com/shorts/u6NsekDa4xA"
+        ]
+      }
     },
     {
       "id": "latelier-robuchon",
@@ -99,7 +114,16 @@
       "social_evidence": "Account opened: title 'Latelierjoelrobuchonlv', posts tag @latelierdejoelrobuchonlv and #joelrobuchon #mgmgrand. It is the L'Atelier room's feed.",
       "social_caveat": "Dormant: newest post shown 2021-11-21. The obvious alternate handle @latelierdejoelrobuchonlv returns HTTP 404, so this is the right one.",
       "price_basis": "not published on official page",
-      "price_source": "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html"
+      "price_source": "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html",
+      "audit_previous_values_2026_11_27": {
+        "days": "Mon, Thu–Sun",
+        "hours": "5:00 PM – 9:30 PM",
+        "exceptions": "Closed Tuesday and Wednesday. No guests under 6.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=AitbJIc_xMk",
+          "https://www.youtube.com/shorts/Ezet1Jyh7Fc"
+        ]
+      }
     },
     {
       "id": "guy-savoy",
@@ -133,7 +157,17 @@
       "social_evidence": "Account opened: bio 'Guy Savoy's restaurant at @caesarspalace in Las Vegas', links guysavoylasvegas.com.",
       "social_caveat": "Dormant: newest post shown 2023-05-15.",
       "price_basis": "estimated from published menu (per-dish prices × 2–3 dishes each)",
-      "price_source": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"
+      "price_source": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu",
+      "audit_previous_values_2026_11_27": {
+        "days": "See OpenTable",
+        "hours": "Dinner from 5:00 PM",
+        "exceptions": "Dinner only. 9-course Krug Chef's Table available.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=XbZI6IXdM0E",
+          "https://www.youtube.com/watch?v=n2_L9JthaTs",
+          "https://www.youtube.com/watch?v=u84pTFx9wqk"
+        ]
+      }
     },
     {
       "id": "e-by-jose-andres",
@@ -164,7 +198,15 @@
       "social_status": "verified",
       "social_evidence": "Account opened and verified-badged: bio 'é by José Andrés ... One MICHELIN Star'.",
       "price_basis": "not published on official page",
-      "price_source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html"
+      "price_source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html",
+      "audit_previous_values_2026_11_27": {
+        "days": "Tuesday – Saturday",
+        "hours": "5:30 PM – 8:30 PM",
+        "exceptions": "Only 9 seats. Reservations open roughly 3 months ahead.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=-bK5bxY1trQ"
+        ]
+      }
     },
     {
       "id": "china-poblano",
@@ -197,7 +239,16 @@
       "social_status": "verified",
       "social_evidence": "Account opened and verified-badged: bio references @chefjoseandres and @cosmopolitan_lv.",
       "price_basis": "published exact (José's Way Tasting Menu, $60/pp × 2)",
-      "price_source": "https://www.chinapoblano.com/menus/"
+      "price_source": "https://www.chinapoblano.com/menus/",
+      "audit_previous_values_2026_11_27": {
+        "hours": "Mon–Thu 11:00 AM – 10:00 PM; Fri 11:00 AM – 10:30 PM; Sat–Sun 10:00 AM – 10:30 PM",
+        "phone": "",
+        "youtube": [
+          "https://www.youtube.com/watch?v=dAn1_aItxRg",
+          "https://www.youtube.com/watch?v=_ZP852xyOgU",
+          "https://www.youtube.com/watch?v=DCCZmWlr41Q"
+        ]
+      }
     },
     {
       "id": "wing-lei",
@@ -230,7 +281,17 @@
       "social_status": "none_verified",
       "social_evidence": "@winglei exists but is a private personal account ('Lei Wing', 659 followers, no venue link) — not this restaurant. The Wynn account is a hotel account. Left blank rather than guessed.",
       "price_basis": "published exact (Chef Tam's tasting menu, per person × 2)",
-      "price_source": "https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf"
+      "price_source": "https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf",
+      "audit_previous_values_2026_11_27": {
+        "days": "Thu, Sun, Mon",
+        "hours": "5:30 PM – 9:30 PM (Fri–Sat until 10:00 PM)",
+        "exceptions": "Closed Tuesday and Wednesday. No guests under 5.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=4FxhH-mpSAw",
+          "https://www.youtube.com/watch?v=ULpHBPnu2pM",
+          "https://www.youtube.com/watch?v=_zuTAlv8y5E"
+        ]
+      }
     },
     {
       "id": "mott-32",
@@ -261,7 +322,16 @@
       "social_status": "verified",
       "social_evidence": "Account opened: title 'Mott 32 Las Vegas', bio 'Michelin Guide 2026'.",
       "price_basis": "not published on official page",
-      "price_source": "https://www.venetianlasvegas.com/dining/restaurants/mott-32.html"
+      "price_source": "https://www.venetianlasvegas.com/dining/restaurants/mott-32.html",
+      "audit_previous_values_2026_11_27": {
+        "hours": "Mon–Fri 11:00 AM – 2:30 PM and 5:00 PM – 10:00 PM; Sat–Sun 10:30 AM – 2:30 PM and 5:00 PM – 10:00 PM",
+        "youtube": [
+          "https://www.youtube.com/watch?v=Ou2wMyGupRs",
+          "https://www.youtube.com/watch?v=RsrEAq_MW5Q",
+          "https://www.youtube.com/watch?v=vjTOl3iNaME"
+        ],
+        "address": "3325 S Las Vegas Blvd, Las Vegas, NV 89109"
+      }
     },
     {
       "id": "cote",
@@ -293,7 +363,17 @@
       "social_evidence": "Account opened: bio lists 'NYC | Miami | Singapore | Vegas'.",
       "social_caveat": "Brand account covering all COTE cities.",
       "price_basis": "not published on official page",
-      "price_source": "https://www.venetianlasvegas.com/dining/restaurants/cote.html"
+      "price_source": "https://www.venetianlasvegas.com/dining/restaurants/cote.html",
+      "audit_previous_values_2026_11_27": {
+        "hours": "Sun–Thu 5:00 PM – 11:00 PM; Fri–Sat 4:30 PM – 12:00 AM",
+        "exceptions": "Magic Hour pricing Sun–Thu 5–6 PM and 10–11 PM.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=JT_trN5PhzA",
+          "https://www.youtube.com/watch?v=ktXgI_Zf3KA",
+          "https://www.youtube.com/watch?v=I7Vosr3O1-o"
+        ],
+        "address": "3325 S Las Vegas Blvd, Las Vegas, NV 89109"
+      }
     },
     {
       "id": "bouchon",
@@ -325,7 +405,17 @@
       "social_evidence": "Account opened: bio 'Chef Thomas Keller's casual dining French-inspired bistro with locations in Yountville, CA, Las Vegas, NV, and Coral Coral Gables, FL'; 2026 posts labelled 'Behind the scenes in Las Vegas'.",
       "social_caveat": "Thomas Keller group account covering all Bouchon bistros, not a Las Vegas-only feed.",
       "price_basis": "not published on official page",
-      "price_source": "https://www.venetianlasvegas.com/dining/restaurants/bouchon.html"
+      "price_source": "https://www.venetianlasvegas.com/dining/restaurants/bouchon.html",
+      "audit_previous_values_2026_11_27": {
+        "days": "Daily",
+        "hours": "Dinner 5:00 PM – 10:00 PM; brunch Thu 8:00 AM – 1:00 PM, Fri–Sun 8:00 AM – 2:00 PM",
+        "exceptions": "Brunch days vary — confirm before booking.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=H24RHIJJUb4",
+          "https://www.youtube.com/watch?v=OaW0aWaSza8",
+          "https://www.youtube.com/watch?v=juqdKegF7Wc"
+        ]
+      }
     },
     {
       "id": "estiatorio-milos",
@@ -356,7 +446,16 @@
       "social_evidence": "Account opened: title 'estiatorio Milos Las Vegas', bio '...at The Venetian, Las Vegas'.",
       "social_caveat": "Venue-specific Las Vegas account; the group account @estiatoriomilos also exists.",
       "price_basis": "not published on official page",
-      "price_source": "https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html"
+      "price_source": "https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html",
+      "audit_previous_values_2026_11_27": {
+        "hours": "11:30 AM – 10:30 PM (Fri–Sat from 11:30 AM)",
+        "exceptions": "",
+        "youtube": [
+          "https://www.youtube.com/watch?v=--MO3_LuErc",
+          "https://www.youtube.com/watch?v=ZUjnF3Mk-k4"
+        ],
+        "address": "3355 S Las Vegas Blvd, Las Vegas, NV 89109"
+      }
     },
     {
       "id": "gymkhana",
@@ -387,7 +486,18 @@
       "social_status": "verified",
       "social_evidence": "Account opened: bio 'From @gymkhanalondon ... Located at @arialv'.",
       "price_basis": "not published on official page",
-      "price_source": "https://aria.mgmresorts.com/en/restaurants/gymkhana.html"
+      "price_source": "https://aria.mgmresorts.com/en/restaurants/gymkhana.html",
+      "audit_previous_values_2026_11_27": {
+        "hours": "5:00 PM – 10:00 PM (Fri–Sat until 10:30 PM)",
+        "exceptions": "Guests 6 and over only.",
+        "phone": "702.590.8544",
+        "youtube": [
+          "https://www.youtube.com/watch?v=S5zesg5kqgI",
+          "https://www.youtube.com/shorts/9FgESwABRtw",
+          "https://www.youtube.com/watch?v=zQku9r-bQ0U"
+        ],
+        "instagram": ""
+      }
     },
     {
       "id": "michael-mina",
@@ -424,7 +534,18 @@
       "social_evidence": "Account opened: bio 'Contemporary Coastal Cuisine Located in the Heart of the Bellagio'.",
       "social_caveat": "Posts run to 2026-10, but Bellagio still lists the room as temporarily closed (F-23): an active feed is not proof it is open.",
       "price_basis": "published exact, but venue temporarily closed",
-      "price_source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html"
+      "price_source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
+      "audit_previous_values_2026_11_27": {
+        "days": "Closed — see note",
+        "hours": "",
+        "exceptions": "The Bellagio page's Hours of operation block reads \"Monday to Sunday: Closed\" and the restaurant is labelled Temporarily closed. Published seasonal closures on the same page: 22–30 Nov; 6–8, 13–15 and 20–22 Dec 2026.",
+        "price_2adults": "$590++",
+        "youtube": [
+          "https://www.youtube.com/watch?v=ibZkjuEJ9fk",
+          "https://www.youtube.com/watch?v=-54ReUZdWqk",
+          "https://www.youtube.com/watch?v=YlSqYgomMKU"
+        ]
+      }
     },
     {
       "id": "anima-by-edo",
@@ -457,7 +578,18 @@
       "social_status": "verified",
       "social_evidence": "Both the official site animabyedo.com ('@animabyedo / Follow on Instagram') and the account (bio links animabyedo.com).",
       "price_basis": "published exact (tasting menu, per person × 2)",
-      "price_source": "https://animabyedo.com"
+      "price_source": "https://animabyedo.com",
+      "audit_previous_values_2026_11_27": {
+        "days": "See official page",
+        "hours": "Dinner from 5:00 PM",
+        "exceptions": "Monday 'pasta + wine' menu at $65 per person.",
+        "price_2adults": "$170++",
+        "youtube": [
+          "https://www.youtube.com/watch?v=KPJPmrv0A0A",
+          "https://www.youtube.com/watch?v=boq5AuG5LHw",
+          "https://www.youtube.com/shorts/u-tc2HVZCio"
+        ]
+      }
     },
     {
       "id": "kabuto",
@@ -487,7 +619,15 @@
       "social_status": "verified",
       "social_evidence": "Both: kabutolv.com embeds this account's posts, and the account bio says 'Recommended by MICHELIN Guide 2026' and links kabutolv.com.",
       "price_basis": "published exact (Yoroi $130/pp & Kabuto $185/pp omakase × 2 via official Resy)",
-      "price_source": "https://resy.com/cities/las-vegas-nv/venues/kabuto-edomae-sushi"
+      "price_source": "https://resy.com/cities/las-vegas-nv/venues/kabuto-edomae-sushi",
+      "audit_previous_values_2026_11_27": {
+        "hours": "5:30 PM – 9:00 PM",
+        "exceptions": "Reservation only.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=xmmelYWKCoA",
+          "https://www.youtube.com/watch?v=fE_x8tbHsWQ"
+        ]
+      }
     },
     {
       "id": "kame-omakase",
@@ -521,7 +661,16 @@
       "social_evidence": "Account opened and verified-badged: bio 'MICHELIN Guide Recommended 2026', '$500', 'Las Vegas | 5:30 & 8 PM', links sushikame.com.",
       "social_caveat": "The short handle @kameomakase also exists but is a 178-follower stub with no posts; this is the active account.",
       "price_basis": "published on OpenTable listing (venue site is a JS shell)",
-      "price_source": "https://www.opentable.com/r/kame-omakase-las-vegas"
+      "price_source": "https://www.opentable.com/r/kame-omakase-las-vegas",
+      "audit_previous_values_2026_11_27": {
+        "days": "See official page / OpenTable",
+        "price_2adults": "$1,000++",
+        "youtube": [
+          "https://www.youtube.com/watch?v=8-X8K0zXLsw",
+          "https://www.youtube.com/watch?v=p26Fuy-zc14",
+          "https://www.youtube.com/watch?v=67x2tVMtFaA"
+        ]
+      }
     },
     {
       "id": "lamaii",
@@ -553,7 +702,16 @@
       "social_evidence": "Account opened and verified-badged: bio 'Managed by Bia Hawang & Bon Atcharawan ... In the MICHELIN Guide 2026 Selection'.",
       "social_caveat": "Posts are the Chinatown room, which is the Michelin-listed one.",
       "price_basis": "not published on official page",
-      "price_source": "https://www.lamaiilv.com/chinatown/"
+      "price_source": "https://www.lamaiilv.com/chinatown/",
+      "audit_previous_values_2026_11_27": {
+        "hours": "Mon–Wed 11:00 AM – 12:00 AM; Thu–Sun 11:00 AM – 2:00 AM",
+        "exceptions": "Second location in Henderson (2645 St Rose Pkwy).",
+        "youtube": [
+          "https://www.youtube.com/watch?v=8-UqkzAk238",
+          "https://www.youtube.com/watch?v=M2SJt2tzYxE",
+          "https://www.youtube.com/watch?v=d0vrM6S932c"
+        ]
+      }
     },
     {
       "id": "partage",
@@ -587,7 +745,18 @@
       "social_status": "verified",
       "social_evidence": "Account opened: bio '@michelinguide 2026 recommended', links partage.vegas.",
       "price_basis": "published exact (5/7/Signature tasting menus, per person × 2)",
-      "price_source": "https://partage.vegas/menu"
+      "price_source": "https://partage.vegas/menu",
+      "audit_previous_values_2026_11_27": {
+        "days": "Tue–Sat",
+        "hours": "Tue–Sat 5:00 PM – 9:00 PM",
+        "exceptions": "Closed Sunday and Monday. Prix fixe only (5, 7 or 9 courses). No dairy-free, vegan, vegetarian, coeliac, or onion/garlic-free menus — a real constraint, not a preference.",
+        "phone": "702-582-5852",
+        "youtube": [
+          "https://www.youtube.com/watch?v=ySz4llWtk7Y",
+          "https://www.youtube.com/watch?v=3rd8t0XjSic",
+          "https://www.youtube.com/watch?v=RKf3m7boJ1w"
+        ]
+      }
     },
     {
       "id": "sparrow-and-wolf",
@@ -620,7 +789,17 @@
       "social_status": "verified",
       "social_evidence": "Account opened: bio '@chefbrianhoward ... @michelinguide selected'.",
       "price_basis": "not published on official page",
-      "price_source": "https://sparrowandwolflv.com"
+      "price_source": "https://sparrowandwolflv.com",
+      "audit_previous_values_2026_11_27": {
+        "days": "See official page / OpenTable",
+        "exceptions": "Cancellations inside 24 hours are charged $25 per guest.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=GSKix7NMSek",
+          "https://www.youtube.com/watch?v=hkiPibouftc",
+          "https://www.youtube.com/watch?v=ZxbyjzWSTsg"
+        ],
+        "address": "4480 Spring Mountain Rd, Las Vegas, NV 89102"
+      }
     },
     {
       "id": "esthers-kitchen",
@@ -655,7 +834,16 @@
       "social_evidence": "Account opened: bio 'Seasonal Italian Soul Food in the Las Vegas Arts District from James Trees & co.'.",
       "price_basis": "estimated from published à-la-carte menu",
       "price_source": "https://www.estherslv.com/menus/",
-      "hours_source": "https://www.estherslv.com/menus/ (\"We serve dinner seven days a week. Lunch: Monday - Friday. Brunch: Saturday - Sunday\", retrieved 2026-11-27)"
+      "hours_source": "https://www.estherslv.com/menus/ (\"We serve dinner seven days a week. Lunch: Monday - Friday. Brunch: Saturday - Sunday\", retrieved 2026-11-27)",
+      "audit_previous_values_2026_11_27": {
+        "days": "See official page",
+        "youtube": [
+          "https://www.youtube.com/watch?v=Vw7ga_Ollbg",
+          "https://www.youtube.com/watch?v=kCOFqLw47TI",
+          "https://www.youtube.com/shorts/Pln4WLWFIpg"
+        ],
+        "address": "1130 S Casino Center Blvd, Las Vegas, NV 89104"
+      }
     },
     {
       "id": "soulbelly-bbq",
@@ -687,7 +875,17 @@
       "social_evidence": "Both: soulbellybbq.com links this exact account, and its bio reads 'Michelin Recommended'.",
       "social_caveat": "Feed covers the Main Street (Michelin-listed) room and the Express counter.",
       "price_basis": "published exact (Chef's Choice for 2 set meal)",
-      "price_source": "https://soulbellybbq.com/menu"
+      "price_source": "https://soulbellybbq.com/menu",
+      "audit_previous_values_2026_11_27": {
+        "days": "Tue–Sun",
+        "hours": "Tue–Thu 11:00 AM – 9:00 PM; Fri–Sat 11:00 AM – 10:00 PM; Sun 11:00 AM – 9:00 PM",
+        "exceptions": "Closed Monday. Live music Fri–Sat 6–9 PM.",
+        "youtube": [
+          "https://www.youtube.com/watch?v=4cH2Qn9Qcgg",
+          "https://www.youtube.com/watch?v=-XaQQIs2DjI",
+          "https://www.youtube.com/watch?v=hrC2w9akHRY"
+        ]
+      }
     },
     {
       "id": "ping-pang-pong",
@@ -718,7 +916,15 @@
       "social_status": "none_verified",
       "social_evidence": "No account could be tied to the restaurant; searches surfaced a Facebook page and parent-property accounts only.",
       "price_basis": "not published on official page",
-      "price_source": "https://goldcoast.boydgaming.com/dine/gc-ping-pang-pong"
+      "price_source": "https://goldcoast.boydgaming.com/dine/gc-ping-pang-pong",
+      "audit_previous_values_2026_11_27": {
+        "hours": "10:00 AM – 3:00 AM",
+        "youtube": [
+          "https://www.youtube.com/watch?v=WgKXQ7fuaDo",
+          "https://www.youtube.com/watch?v=priuV8t47qI",
+          "https://www.youtube.com/watch?v=rCb1-jVQoyU"
+        ]
+      }
     },
     {
       "id": "pho-ga-bac-bac",
@@ -749,7 +955,13 @@
       "social_evidence": "Account opened: bio '2025 & 2026 MICHELIN AWARD', 'OPEN 24/7', address 3775 Spring Mountain Rd, phone (702) 476-9623.",
       "social_caveat": "The previous handle @bestchickenpho is an abandoned page whose only post (2026-11-22) says 'WE'VE MOVED! ... follow us @phogabacbac702'; this is the current account.",
       "price_basis": "not published on official page",
-      "price_source": "https://bestchickenpho.com"
+      "price_source": "https://bestchickenpho.com",
+      "audit_previous_values_2026_11_27": {
+        "youtube": [
+          "https://www.youtube.com/watch?v=yGePVQiF6co",
+          "https://www.youtube.com/watch?v=kyvFhu94qPU"
+        ]
+      }
     },
     {
       "id": "yen-viet-kitchen",
@@ -782,7 +994,15 @@
       "social_status": "none_verified",
       "social_evidence": "The official site publishes no social link and no account could be tied to the venue.",
       "price_basis": "not published on official page",
-      "price_source": "https://www.yenvietkitchen.com"
+      "price_source": "https://www.yenvietkitchen.com",
+      "audit_previous_values_2026_11_27": {
+        "days": "See official page",
+        "youtube": [
+          "https://www.youtube.com/watch?v=Og3HVXgGzx4",
+          "https://www.youtube.com/watch?v=TUIWGzemN34",
+          "https://www.youtube.com/watch?v=YTbD8ykWVTI"
+        ]
+      }
     },
     {
       "id": "stubborn-seed",
@@ -814,7 +1034,17 @@
       "social_evidence": "Account opened: bio 'Michelin ... Miami & Las Vegas @resortsworldlv'.",
       "social_caveat": "Shared Miami/Las Vegas brand account; both feeds appear in one timeline.",
       "price_basis": "published exact (Chef's Tasting Menu, $160/pp × 2)",
-      "price_source": "https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/"
+      "price_source": "https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/",
+      "audit_previous_values_2026_11_27": {
+        "hours": "Dining room 5:00 PM – 10:00 PM; bar 4:00 PM – 10:00 PM",
+        "exceptions": "",
+        "price_2adults": "",
+        "youtube": [
+          "https://www.youtube.com/watch?v=GSBB8ZMtgwI",
+          "https://www.youtube.com/watch?v=-Xn6tasRmXA",
+          "https://www.youtube.com/watch?v=ndR0ipay-qQ"
+        ]
+      }
     }
   ]
 }

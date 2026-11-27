@@ -1038,5 +1038,8 @@
       "alternative": "Deluxe Room - Two Queen Beds: displayed total $2,434.84.",
       "limits": "Freshly reproduced upstream itemised engine observation, not a completed checkout. Private bathroom exclusivity, cancellation/deposit and promotion eligibility not extracted. Browser-unsupported notice present; calendar has conflicting fee-inclusion labels. Not a fully qualifying offer or cheapest-date proof."
     }
-  ]
+  ],
+  "meta": {
+    "publication_status": "Preserved peer audit snapshot. Current live field-level authority is data/verification.json; this dated file is not the active renderer input."
+  }
 }
