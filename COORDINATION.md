@@ -493,3 +493,11 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 **Irregularity found (V-08, not edited — owned by PR #38 session):** `data/transit.json` RTC `fare_note` says "Nevada local fares are $1", but RTC residential single ride is $2 regular / $1 reduced (rtcsnv.com); $1 is the Monorail Nevada-resident fare. Request: correct the RTC note and move the $1 fare to the Monorail entry. No other new irregularities; F-29/F-30/F-47/F-48/F-49 remain published on flagged.html and do not block anything.
 
 **Result:** T17 done. Audit published in `notes/verification-2026-11-27.md`; no site or data files changed, so no Pages redeploy needed.
+
+## Session record — arena/a00dc828-vegas1 (T17) — 2026-11-27
+
+**Scope claimed:** `COORDINATION.md`, `data/activities.json`, `data/restaurants.json` (social-link fields + verification notes only), `FLAGS.md` (new rows if needed), `scripts/gen_site.py` (only if rendering needs it), generated `docs/**` + root `*.html`. No hotel-price, transit-minute, or award-tier changes without a fresh official source.
+
+**Task T17:** Complete YouTube/Instagram/TikTok coverage for every restaurant + activity row from official/primary sources (official-site-published handles; real video URLs found via search and opened), retry Bellagio Fountains official page, fresh 2026-11-27 re-verification of MICHELIN tiers + starred hours, rebuild + validate, PR + merge + Pages deploy check.
+
+**Overlap note:** Open PRs #27 (`arena/c9eed9ad-vegas1`) and #38 (`arena/16cb2f96-vegas1`) also touch `data/restaurants.json` / `data/activities.json` / `scripts/gen_site.py`. They are stale/open with no active board claim. This session works on `arena/a00dc828-vegas1` from `main@631e611`; will `git pull --rebase` before push and resolve without discarding other work. No other session's branch will be merged or closed by this session.
