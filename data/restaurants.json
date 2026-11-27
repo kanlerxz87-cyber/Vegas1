@@ -25,7 +25,9 @@
       "value": "2026-08-31",
       "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s",
       "note": "Corrected 2026-11-26; earlier copies of this dataset said 26 Aug 2026 (F-51)."
-    }
+    },
+    "price_capture": "2026-11-27",
+    "price_note": "Prices were re-read from official menu pages on 2026-11-27. Where a venue publishes a fixed per-person price the cell is that price × 2 ('exact'); where only à-la-carte item prices are published the cell is labelled 'est.' and the method is in price_note. Blank/'on request' means the official page printed no price. All prices are before tax, gratuity and wine."
   },
   "restaurants": [
     {
@@ -60,7 +62,9 @@
         "F-22"
       ],
       "notes": "Two independent creator videos in this dataset claim three Michelin stars — that is the pre-2010 status. The 2026 Guide lists Joël Robuchon at TWO stars, which the restaurant's own page also states. NOTE: the same page carries a dated banner (\"open 4:00–8:00 PM Thu 19 – Sat 21 November\") that applies to a 2026 date, not to 2027 — do not carry it forward. Also the 2026 MICHELIN Service Award went to GM Sean Christopher, so award rows and staff awards must not be confused. Reservations number 702.891.7925 printed on the official MGM Grand page (verified 2026-11-26).",
-      "hours_source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html (\"Hours of operation\" block, retrieved 2026-11-25)"
+      "hours_source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html (\"Hours of operation\" block, retrieved 2026-11-25)",
+      "price_basis": "not published on official page",
+      "price_source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html"
     },
     {
       "id": "latelier-robuchon",
@@ -86,7 +90,9 @@
       "phone": "702.891.7358",
       "verified": "yes",
       "flags": [],
-      "notes": "Received a 2026 MICHELIN Service Award alongside its star. Reservations phone per the MGM page: 702.891.7925."
+      "notes": "Received a 2026 MICHELIN Service Award alongside its star. Reservations phone per the MGM page: 702.891.7925.",
+      "price_basis": "not published on official page",
+      "price_source": "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html"
     },
     {
       "id": "guy-savoy",
@@ -100,8 +106,8 @@
       "days": "See OpenTable",
       "hours": "Dinner from 5:00 PM",
       "exceptions": "Dinner only. 9-course Krug Chef's Table available.",
-      "price_2adults": "$200–$580 à la carte · $3,000 Krug Chef's Table",
-      "price_note": "VERIFIED from the official Caesars menu (effective 11.5.2026): à la carte dishes $100–$290 each → $200–$580 for two before tax, gratuity and wine; 9-course Krug Chef's Table $1,500/pp → $3,000 for two. Phone on the row is the restaurant's general line; the menu page lists 866-227-5938.",
+      "price_2adults": "≈$520–$940 (est.)",
+      "price_note": "Official à-la-carte menu (page headed 'Effective 11.5.2026'): starters $100–$120, mains $160–$290, cheese cart $60. The estimate assumes two to three dishes per person; no prix-fixe price is published on the official page. The previous cell value ($200–$580 'for two' plus a $3,000 Krug Chef's Table) was per person and could not be reproduced for the Krug figure — corrected and flagged F-52.",
       "official_url": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy",
       "youtube": [
         "https://www.youtube.com/watch?v=XbZI6IXdM0E",
@@ -113,7 +119,9 @@
       "phone": "702.731.7286",
       "verified": "yes",
       "flags": [],
-      "notes": "OpenTable restaurant id 96775."
+      "notes": "OpenTable restaurant id 96775.",
+      "price_basis": "estimated from published menu",
+      "price_source": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"
     },
     {
       "id": "e-by-jose-andres",
@@ -138,7 +146,9 @@
       "phone": "877.893.2003",
       "verified": "yes",
       "flags": [],
-      "notes": "Hardest reservation on this list — 9 covers a night."
+      "notes": "Hardest reservation on this list — 9 covers a night.",
+      "price_basis": "not published on official page",
+      "price_source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html"
     },
     {
       "id": "china-poblano",
@@ -167,7 +177,9 @@
       "flags": [
         "F-05"
       ],
-      "notes": "Walk-in friendly; good low-cost anchor for a Michelin evening."
+      "notes": "Walk-in friendly; good low-cost anchor for a Michelin evening.",
+      "price_basis": "not published on official page",
+      "price_source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html"
     },
     {
       "id": "wing-lei",
@@ -181,8 +193,8 @@
       "days": "Thu, Sun, Mon",
       "hours": "5:30 PM – 9:30 PM (Fri–Sat until 10:00 PM)",
       "exceptions": "Closed Tuesday and Wednesday. No guests under 5.",
-      "price_2adults": "",
-      "price_note": "Not published officially.",
+      "price_2adults": "$397.76 (exact)",
+      "price_note": "Official Wynn menu PDF: Chef Tam's Signature Tasting Menu $198.88 per person → $397.76 for two. À la carte $18.88–$321.88 per dish (Imperial Peking Duck $148.88). Wine journeys $128.88 / $208.88 per person. Captured 2026-11-27; re-check before booking.",
       "official_url": "https://www.wynnlasvegas.com/dining/fine-dining/wing-lei",
       "youtube": [
         "https://www.youtube.com/watch?v=4FxhH-mpSAw",
@@ -196,7 +208,9 @@
       "flags": [
         "F-03"
       ],
-      "notes": "Forbes Five-Star, but the 2026 MICHELIN Guide lists Wing Lei as Recommended, not starred. Creator videos claiming a Michelin star are referring to the pre-2010 guide."
+      "notes": "Forbes Five-Star, but the 2026 MICHELIN Guide lists Wing Lei as Recommended, not starred. Creator videos claiming a Michelin star are referring to the pre-2010 guide.",
+      "price_basis": "published exact (tasting menu, per person × 2)",
+      "price_source": "https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf"
     },
     {
       "id": "mott-32",
@@ -223,7 +237,9 @@
       "phone": "702.607.3232",
       "verified": "yes",
       "flags": [],
-      "notes": ""
+      "notes": "",
+      "price_basis": "not published on official page",
+      "price_source": "https://www.venetianlasvegas.com/dining/restaurants/mott-32.html"
     },
     {
       "id": "cote",
@@ -250,7 +266,9 @@
       "phone": "702.607.2683",
       "verified": "yes",
       "flags": [],
-      "notes": ""
+      "notes": "",
+      "price_basis": "not published on official page",
+      "price_source": "https://www.venetianlasvegas.com/dining/restaurants/cote.html"
     },
     {
       "id": "bouchon",
@@ -277,7 +295,9 @@
       "phone": "702.414.6200",
       "verified": "yes",
       "flags": [],
-      "notes": ""
+      "notes": "",
+      "price_basis": "not published on official page",
+      "price_source": "https://www.venetianlasvegas.com/dining/restaurants/bouchon.html"
     },
     {
       "id": "estiatorio-milos",
@@ -303,7 +323,9 @@
       "phone": "702.414.1270",
       "verified": "yes",
       "flags": [],
-      "notes": ""
+      "notes": "",
+      "price_basis": "not published on official page",
+      "price_source": "https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html"
     },
     {
       "id": "gymkhana",
@@ -330,7 +352,9 @@
       "phone": "702.590.8544",
       "verified": "yes",
       "flags": [],
-      "notes": "First US outpost of the London restaurant."
+      "notes": "First US outpost of the London restaurant.",
+      "price_basis": "not published on official page",
+      "price_source": "https://aria.mgmresorts.com/en/restaurants/gymkhana.html"
     },
     {
       "id": "michael-mina",
@@ -345,7 +369,7 @@
       "hours": "",
       "exceptions": "The Bellagio page's Hours of operation block reads \"Monday to Sunday: Closed\" and the restaurant is labelled Temporarily closed. Published seasonal closures on the same page: 22–30 Nov; 6–8, 13–15 and 20–22 Dec 2026.",
       "price_2adults": "$590++",
-      "price_note": "10-course tasting menu at $295++ per person, from the official page. Two adults = $590 before tax and gratuity.",
+      "price_note": "$295 per person, 10-course tasting → $590++ for two. The venue's own Bellagio page reads 'Monday to Sunday: Closed' and labels it Temporarily closed with no reopen date (F-23). Not a bookable dinner for a February 2027 trip.",
       "official_url": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
       "youtube": [
         "https://www.youtube.com/watch?v=ibZkjuEJ9fk",
@@ -362,7 +386,9 @@
         "F-43"
       ],
       "notes": "SERIOUS: the restaurant's own page shows \"Temporarily closed\" for all seven days, so the $590++ tasting-menu figure on this row is a price for a service that is not currently running. This row must not be presented as a bookable option without a re-check. Reopen date is not published. Do not assume it reopens before Feb 2027. Re-checked 2026-11-26: Bellagio's own dining index (bellagio.mgmresorts.com/en/restaurants.html?filter=property,Bellagio_Las_Vegas) lists Michael Mina as 'Temporarily Closed' with a $$$$ seafood label. No reopen date is published (F-23, F-43).",
-      "hours_source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html (retrieved 2026-11-25)"
+      "hours_source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html (retrieved 2026-11-25)",
+      "price_basis": "published exact, but venue temporarily closed",
+      "price_source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html"
     },
     {
       "id": "anima-by-edo",
@@ -373,11 +399,11 @@
       "location": "West Las Vegas (Russell Rd)",
       "zone": "west-far",
       "address": "9205 W Russell Rd #185, Las Vegas, NV 89148",
-      "days": "See official page",
+      "days": "Nightly",
       "hours": "Dinner from 5:00 PM",
-      "exceptions": "Monday 'pasta + wine' menu at $65 per person.",
-      "price_2adults": "$170++",
-      "price_note": "Tasting menu $85 per person, from the official page. Two adults = $170 before tax and gratuity.",
+      "exceptions": "Dinner nightly from 5 PM. Monday special: two handmade pasta dishes plus one bottle of wine for $65 total (not per person). Entire table must take the tasting menu if one guest does.",
+      "price_2adults": "$170 (exact)",
+      "price_note": "Official site: 'The Tasting Menu — Anima Experience — Per Person $85'. Two adults $170. The official page does not print a '++' service charge; tax and gratuity are still payable. Monday special: two pasta dishes plus a bottle of wine $65 (not a full dinner).",
       "official_url": "https://animabyedo.com",
       "youtube": [
         "https://www.youtube.com/watch?v=KPJPmrv0A0A",
@@ -391,7 +417,10 @@
       "flags": [
         "F-08"
       ],
-      "notes": "Furthest west of any restaurant here — check the 60-minute transit estimate before making it a dinner plan."
+      "notes": "Furthest west of any restaurant here — check the 60-minute transit estimate before making it a dinner plan.",
+      "price_basis": "published exact (tasting menu, per person × 2)",
+      "price_source": "https://animabyedo.com",
+      "hours_source": "https://animabyedo.com (\"Dinner. Served nightly · 5pm\", retrieved 2026-11-27)"
     },
     {
       "id": "kabuto",
@@ -417,7 +446,9 @@
       "phone": "725.205.1356",
       "verified": "yes",
       "flags": [],
-      "notes": ""
+      "notes": "",
+      "price_basis": "not published on official page",
+      "price_source": "https://kabutolv.com"
     },
     {
       "id": "kame-omakase",
@@ -432,7 +463,7 @@
       "hours": "",
       "exceptions": "",
       "price_2adults": "$1,000++",
-      "price_note": "Signature omakase $500 per person, stated in the restaurant's own OpenTable description. Two adults = $1,000 before tax and gratuity. The restaurant's own website (sushikame.com) is a JavaScript shell that returned no readable content.",
+      "price_note": "$500 per person signature omakase → $1,000 for two, per the venue's own OpenTable listing. Its official site (sushikame.com) is a JavaScript shell that prints no price (F-04).",
       "official_url": "https://www.opentable.com/r/kame-omakase-las-vegas",
       "youtube": [
         "https://www.youtube.com/watch?v=8-X8K0zXLsw",
@@ -446,7 +477,9 @@
       "flags": [
         "F-04"
       ],
-      "notes": "OpenTable lists no availability for a sample date and no weekly service hours; bookings go through OpenTable only. $500 per person signature omakase. The MICHELIN Guide's own listing gives the days — the restaurant's booking page does not."
+      "notes": "OpenTable lists no availability for a sample date and no weekly service hours; bookings go through OpenTable only. $500 per person signature omakase. The MICHELIN Guide's own listing gives the days — the restaurant's booking page does not.",
+      "price_basis": "published on OpenTable listing (venue site is a JS shell)",
+      "price_source": "https://www.opentable.com/r/kame-omakase-las-vegas"
     },
     {
       "id": "lamaii",
@@ -473,7 +506,10 @@
       "phone": "702.238.0567",
       "verified": "yes",
       "flags": [],
-      "notes": "Open latest of any restaurant here — useful after a late show."
+      "notes": "Open latest of any restaurant here — useful after a late show.",
+      "price_basis": "not published on official page",
+      "price_source": "https://www.lamaiilv.com/chinatown/",
+      "hours_source": "https://www.lamaiilv.com/chinatown/ (hours block, retrieved 2026-11-27)"
     },
     {
       "id": "partage",
@@ -487,8 +523,8 @@
       "days": "Tue–Sat",
       "hours": "Tue–Sat 5:00 PM – 9:00 PM",
       "exceptions": "Closed Sunday and Monday. Prix fixe only (5, 7 or 9 courses). No dairy-free, vegan, vegetarian, coeliac, or onion/garlic-free menus — a real constraint, not a preference.",
-      "price_2adults": "",
-      "price_note": "Official page confirms 5/7/9-course tasting menus but does not print prices.",
+      "price_2adults": "$260 / $320 / $420",
+      "price_note": "Official menu: 5 courses $130, 7 courses $160, Signature $210, per person. Two adults therefore $260 / $320 / $420 before wine, tax and gratuity. Wine pairings $60 / $84 / $108 per person; foie gras add-on +$33 per guest.",
       "official_url": "https://partage.vegas/restaurant",
       "youtube": [
         "https://www.youtube.com/watch?v=ySz4llWtk7Y",
@@ -503,7 +539,9 @@
         "F-24"
       ],
       "notes": "Hours and phone are on the Contact page, not the Restaurant page — the Restaurant page is a booking widget and shows no service times. Strict dietary policy: decide before booking. OpenTable id 1005940. Phone 702-582-5852.",
-      "hours_source": "https://partage.vegas/contact (\"We'll be open for the foreseeable future Tuesday to Saturday from 5 pm to 9 pm.\", retrieved 2026-11-25)"
+      "hours_source": "https://partage.vegas/contact (\"We'll be open for the foreseeable future Tuesday to Saturday from 5 pm to 9 pm.\", retrieved 2026-11-25)",
+      "price_basis": "published exact (tasting menu, per person × 2)",
+      "price_source": "https://partage.vegas/menu"
     },
     {
       "id": "sparrow-and-wolf",
@@ -532,7 +570,9 @@
       "flags": [
         "F-25"
       ],
-      "notes": "The official site does not publish opening hours anywhere on its front page or menu page; bookings are handled through OpenTable (rid 732187). Left blank rather than guessed. A card-hold policy applies: reservations cancelled inside 24 hours are charged $25 per guest, and tables are capped at 4 guests."
+      "notes": "The official site does not publish opening hours anywhere on its front page or menu page; bookings are handled through OpenTable (rid 732187). Left blank rather than guessed. A card-hold policy applies: reservations cancelled inside 24 hours are charged $25 per guest, and tables are capped at 4 guests.",
+      "price_basis": "not published on official page",
+      "price_source": "https://sparrowandwolflv.com"
     },
     {
       "id": "esthers-kitchen",
@@ -543,11 +583,11 @@
       "location": "Arts District (Downtown)",
       "zone": "downtown-arts",
       "address": "1130 S Casino Center Blvd, Las Vegas, NV 89104",
-      "days": "See official page",
+      "days": "Daily",
       "hours": "",
-      "exceptions": "",
-      "price_2adults": "",
-      "price_note": "Bib Gourmand value pricing; official site has no price list. A creator video itemises dishes (secondary — not verified).",
+      "exceptions": "Dinner served seven days a week; lunch Mon–Fri and brunch Sat–Sun. The site publishes no clock times, so start/finish times are left blank. Walk-ins and reservations via Resy.",
+      "price_2adults": "≈$130–$160 (est.)",
+      "price_note": "Official dinner menu: starters $15–$19, pasta $21–$28, entrées $29–$32. Three courses each therefore ≈$65–$79 per person, ≈$130–$158 for two. No fixed-price menu; estimate only, before drinks, tax and gratuity.",
       "official_url": "https://www.estherslv.com/",
       "youtube": [
         "https://www.youtube.com/watch?v=Vw7ga_Ollbg",
@@ -562,7 +602,10 @@
         "F-07",
         "F-50"
       ],
-      "notes": "Hours were NOT obtainable: /hours-location returned an error and the home page carries no hours block. Brunch is its signature — call before planning. Address conflict recorded as F-50: the MICHELIN press release says 1131 S. Main St., this row says 1130 S Casino Center Blvd, and the venue's own pages publish neither."
+      "notes": "Hours were NOT obtainable: /hours-location returned an error and the home page carries no hours block. Brunch is its signature — call before planning. Address conflict recorded as F-50: the MICHELIN press release says 1131 S. Main St., this row says 1130 S Casino Center Blvd, and the venue's own pages publish neither.",
+      "price_basis": "estimated from published menu",
+      "price_source": "https://www.estherslv.com/menus/",
+      "hours_source": "https://www.estherslv.com/menus/ (\"We serve dinner seven days a week. Lunch: Monday - Friday. Brunch: Saturday - Sunday\", retrieved 2026-11-27)"
     },
     {
       "id": "soulbelly-bbq",
@@ -584,12 +627,15 @@
         "https://www.youtube.com/watch?v=-XaQQIs2DjI",
         "https://www.youtube.com/watch?v=hrC2w9akHRY"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/soulbellybbqlv",
       "tiktok": "",
       "phone": "",
       "verified": "yes",
       "flags": [],
-      "notes": "Cheapest way to eat inside the Michelin list; pairs with Neon Museum (10 min apart)."
+      "notes": "Cheapest way to eat inside the Michelin list; pairs with Neon Museum (10 min apart).",
+      "price_basis": "not published on official page",
+      "price_source": "https://soulbellybbq.com",
+      "hours_source": "https://soulbellybbq.com (hours block, retrieved 2026-11-27)"
     },
     {
       "id": "ping-pang-pong",
@@ -616,7 +662,9 @@
       "phone": "702.247.8136",
       "verified": "yes",
       "flags": [],
-      "notes": "Open 17 hours a day — the only Michelin-listed kitchen available at 2 AM."
+      "notes": "Open 17 hours a day — the only Michelin-listed kitchen available at 2 AM.",
+      "price_basis": "not published on official page",
+      "price_source": "https://goldcoast.boydgaming.com/dine/gc-ping-pang-pong"
     },
     {
       "id": "pho-ga-bac-bac",
@@ -642,7 +690,9 @@
       "phone": "",
       "verified": "yes",
       "flags": [],
-      "notes": "24/7 — the safety net for a jet-lagged first night."
+      "notes": "24/7 — the safety net for a jet-lagged first night.",
+      "price_basis": "not published on official page",
+      "price_source": "https://bestchickenpho.com"
     },
     {
       "id": "yen-viet-kitchen",
@@ -671,7 +721,9 @@
       "flags": [
         "F-07"
       ],
-      "notes": ""
+      "notes": "",
+      "price_basis": "not published on official page",
+      "price_source": "https://www.yenvietkitchen.com"
     },
     {
       "id": "stubborn-seed",
@@ -698,7 +750,9 @@
       "phone": "702.676.8062",
       "verified": "yes",
       "flags": [],
-      "notes": ""
+      "notes": "",
+      "price_basis": "not published on official page",
+      "price_source": "https://rwlasvegas.com/dining/stubborn-seed/"
     }
   ]
 }

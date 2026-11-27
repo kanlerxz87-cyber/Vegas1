@@ -8,19 +8,20 @@ A sourced trip plan for **two adults**, seven nights, between **15 February and 
 
 | Path | What it is |
 |------|-----------|
-| `docs/` | The site source (13 top-level pages, plain HTML + one stylesheet, no framework, no CDN) |
+| `docs/` | The site source (14 top-level pages, plain HTML + one stylesheet, no framework, no CDN) |
 | `index.html`, `*.html`, `style.css` (repo root) | The **same generated site**, written to the root as well. GitHub Pages on this repo is pinned to `main:/` and the API refuses to repoint it to `/docs`, so the root copy is what visitors actually get. Both are produced by `scripts/gen_site.py` — never edit either by hand. |
-| `data/restaurants.json` | 24 MICHELIN listings with award tier, hours, exceptions, prices, official + YouTube links |
+| `data/restaurants.json` | 24 MICHELIN listings with award tier, hours, exceptions, cost for two (with basis + menu source), official + YouTube links |
 | `data/hotels.json` | 32 hotels with dated 7-night totals, bed/bathroom fit, Michelin proximity counts |
+| `costs.html` | Trip cost: three worked seven-night totals for two adults, assembled at build time from the same data (no hand-typed money) |
 | `data/price-windows.json` | Dated Booking.com comparison; read with official-engine snapshots and F-29/F-30 because no universal cheapest week is established |
 | `data/transit.json` | Monorail / RTC bus / Vegas Loop fares and the zone-to-restaurant minute matrix |
 | `data/activities.json` | Five activity entries with official details/social links when verified; blank social links remain unverified |
-| `data/questions.json` | 13-question register: answered, interpreted, still open — each with how to close it |
-| `data/suggestions.json` | 13 decision improvements with honest trade-offs |
+| `data/questions.json` | 14-question register: answered, interpreted, still open — each with how to close it |
+| `data/suggestions.json` | 15 decision improvements with honest trade-offs |
 | `scripts/build.py` | Recomputes the Michelin proximity counts from the transit matrix; runs integrity checks |
 | `scripts/gen_site.py` | Renders `docs/` from the JSON. All counts derived, none typed by hand |
 | `scripts/validate.py` | Link and structure checks for the built site |
-| `FLAGS.md` | 33 register rows (F-01 to F-30, plus F-47 to F-49 from the 26 Nov link re-check), including hotel rate basis/recency limitations |
+| `FLAGS.md` | 38 register rows (F-01 to F-30, plus F-47 to F-54), including hotel rate basis/recency limitations and the 27 Nov price-basis corrections |
 | `data/review-flags.json` | The 26 Nov 2026 audit register (F-39 to F-46) and confirmed items C-11 to C-13, each with source links. Rendered on `flagged.html` |
 | `executive-summary.md` | The one-page version |
 | `data/review.json` | Repo review: line-by-line checks, limits, and irregularities (2026-11-26) |
@@ -73,11 +74,34 @@ total was captured under the Cromwell name and must be re-quoted before booking.
 Caesars) lands on the parent property's page — and it exposed F-48: 15 hotel totals came from a dated
 Booking.com **search list** rather than a property quote page, so those cards now say so.
 
+## Session supplement — 27 Nov 2026 (restaurant pricing + trip cost)
+
+This pass re-read every restaurant's own menu page and built a **Trip cost** page from the result.
+Three things changed on the site:
+
+1. **A price-basis error was corrected.** The Guy Savoy cell showed `$200–$580 à la carte · $3,000 Krug Chef's
+   Table` under a *Cost for 2 adults* heading. The [official Caesars menu](https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu)
+   (headed "Effective 11.5.2026") prices those dishes **per person** — starters $100–$120, mains $160–$290,
+   cheese cart $60 — and prints no Krug Chef's Table price at all. The cell is now `≈$520–$940 (est.)` for two
+   with the arithmetic spelled out; the $3,000 figure was removed (F-52).
+2. **Six more venues were priced from their own menus.** Partage `$260 / $320 / $420` (5/7/Signature courses
+   at $130/$160/$210 per person) and Wing Lei `$397.76` (Chef Tam's tasting, $198.88 per person) are exact;
+   Esther's Kitchen `≈$130–$160` is an estimate from its printed à-la-carte prices. 7 of 24 venues now carry a
+   figure; the other 17 print none and stay blank (F-53). Anima's Monday special was also wrong — $65 total,
+   not $65 per person (F-54).
+3. **A cost page exists.** [costs.html](costs.html) totals a seven-night stay three ways — Value $1,837.30,
+   Recommended $2,605.06, Splurge $4,927.06 for two adults — including the room, the Michelin dinners, three paid
+   activities and a Monorail pass each. Every line is read from `data/` at build time and the exclusions
+   (tax, resort fees, airfare, tips, wine) are stated next to the total. It does not claim to be a quote.
+
+Still open and published as such: the remaining 17 restaurant prices (Q-04), Instagram/TikTok handles (Q-07,
+one restaurant verified from its own site), and any market-wide "cheapest week" (Q-06, F-29/F-30).
+
 ## Ground rules this project followed
 
 - **No inferred values.** Blank means unverified. Every blank is listed in `FLAGS.md` and on the
   Questions page with a route to close it.
-- **Every row cites a source.** 394 external links across 13 pages (counted by `scripts/validate.py` on the current build).
+- **Every row cites a source.** 439 external links across 14 pages (counted by `scripts/validate.py` on the current build).
 - **Sources and gaps are disclosed.** Hotel prices in the canonical 32-property table are Booking.com snapshots (not official property rates); this does not meet the strict official-rate-only requirement and is flagged as F-29. A dated direct-engine sample and 26 Nov refresh are linked from Sources & Flags; rates must be rechecked on the property's own engine.
 - **Estimates are labelled.** Only the transit minutes are estimates, and they say so everywhere.
 - **Flags are published.** Everything that did not verify cleanly is on `flagged.html`, with its sources.
