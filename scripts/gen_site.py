@@ -1511,9 +1511,9 @@ def build_itinerary():
         ("Sat 20 Feb", "Day 6", "The second starred room",
          [], ["e-by-jose-andres"], "center-strip",
          "e by Jose Andres has exactly two seatings a night and opens reservations three months out - 20 Feb falls inside that window if you book in late November 2026."),
-        ("Sun 21 Feb", "Day 7", "Slow last day, early night",
-         [], ["esthers-kitchen"], "downtown-arts",
-         "Esther's Kitchen serves dinner seven days a week and is the cheapest cooked-to-order kitchen in the guide. Robuchon and e are both shut today, so nothing is lost by leaving them off Sunday."),
+        ("Sun 21 Feb", "Day 7", "Slow last day, cheap and certain",
+         [], ["soulbelly-bbq"], "downtown-arts",
+         "Robuchon and e are both shut on Sunday, so this is the night to spend the least. SoulBelly BBQ is the cheapest priced dinner in the guide at $80 for two and publishes Sunday hours (11 AM - 9 PM). Esther's Kitchen, on the same street, publishes no hours at all - call before substituting it."),
     ]
 
     rows = []

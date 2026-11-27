@@ -91,7 +91,7 @@
       "title": "Stop re-deriving counts in prose",
       "improves": "Accuracy over time. This session found prose that said 'only three restaurants print a price' when it was four, and a footnote that would have gone stale the moment prices were added.",
       "work": "Compute every count from the JSON at build time (partly done this session for the price and social counts).",
-      "risk": "None of the risk sits with the reader — it is a refactor of the generator only.",
+      "risk": "No reader-facing risk — it is a refactor of the generator only.",
       "decision_needed": false,
       "impact": "medium",
       "status": "partly implemented"
