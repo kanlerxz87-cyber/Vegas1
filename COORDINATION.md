@@ -858,7 +858,7 @@ no conflict markers in this file.
 
 | ID | Task | Status | Owner | File scope |
 |---|---|---|---|---|
-| T-ec1d72e2 | Strict-evidence integration: audit inherited claims, separate non-official rate/transit estimates from decision tables, refresh official evidence, improve regression checks, publish | in progress | arena/ec1d72e2-vegas1 | `COORDINATION.md`, `README.md`, `executive-summary.md`, `FLAGS.md`, `data/verification-2026-11-27.json`, `scripts/{build,gen_site,validate}.py`, `tests/`, generated root/`docs/` HTML and CSS |
+| T-ec1d72e2 | Strict-evidence integration: audit inherited claims, separate non-official rate/transit estimates from decision tables, refresh official evidence, improve regression checks, publish | complete | arena/ec1d72e2-vegas1 | `COORDINATION.md`, `README.md`, `executive-summary.md`, `FLAGS.md`, `data/verification-2026-11-27.json`, `scripts/{build,gen_site,validate}.py`, `tests/`, generated root/`docs/` HTML and CSS |
 
 No current in-progress task was found on the shared board. Earlier T01–T16 work is retained. This session uses the assigned Arena branch `arena/ec1d72e2-vegas1` (platform constraint; no alternate branch will be created). Existing source datasets and archived independent builds will not be overwritten. Shared outputs are claimed as final integration because earlier tasks are complete. Official pricing that cannot be reproduced will remain blank in the primary decision view; historical OTA captures are evidence of previous work, not verified official quotes. External link availability will be reported separately from local link integrity.
 
@@ -941,3 +941,15 @@ log. `data/socials.json` is the machine-readable record; keep it in step with `a
 - **Live page verification (`?v=01c7107`):** fetched `suggestions.html` (`## 16 ways to improve this plan`, `S-02` 24 listings), `restaurants.html` (China Poblano `$120 (exact)` + Sun 10:00 PM, Milos Fri–Sat 11:00 PM, é F-68 conflict), and `flagged.html` (F-68 & F-69 live with official source links).
 
 T-ec1d72e2: publication retry integrated main 15143fa (PRs #62/#63) including attributed video-coverage notice and publication records. Canonical source data unchanged; strict views already differentiate fresh versus prior video checks. Rebuilt outputs; final checks: 16 pages, 0 failures/warnings, 526 external link occurrences; 12 regressions pass.
+
+
+## T-ec1d72e2 publication completion — 27 November 2026
+
+- **PR [#59](https://github.com/kanlerxz87-cyber/Vegas1/pull/59)** merged with `gh pr merge 59 --merge` at **2026-11-27T17:52:07Z**, merge commit **`3f02be5bebabec5bdbf39051b203218b1f633845`**.
+- GitHub Pages workflow **[46045143434](https://github.com/kanlerxz87-cyber/Vegas1/actions/runs/46045143434)** completed **success** (build/deploy/report jobs passed). Pages source remains `main:/`. Managed workflow emits a non-blocking Node 20 action-deprecation notice; no repository workflow was changed.
+- Live cache-busted fetches of **Overview**, **Dates & booking timing** and **Dining costs** at `?v=3f02be5` confirmed the strict dashboard, zero fully qualified offers, reproduced Resorts World **$2,200.15** observation with limitations, and all **seven** confirmed fixed-menu rows including China Poblano **$120**, Kabuto **$260/$370**, SoulBelly **$80** and Wing Lei **$397.76**. Deployment is confirmed, not merely requested.
+- Final local gates: **16 pages**, **0 failures**, **0 warnings**, **526 external-link occurrences**; **12 regression tests pass**. All 16 pages also passed Playwright at 375px and 1280px; screenshots inspected. Offline checks are not an exhaustive external-link audit.
+- Scope complete: source-linked category dashboard, strict blank policy, row-level evidence/flags, executive summary, proposed itinerary, review-only suggestions, questions/discovery actions, preserved upstream datasets/social provenance/archives, PR merge and live publication. No other session's PR was merged/closed. No payment/booking made.
+- Travel-research gaps remain published, not silently treated as resolved: qualifying room checkout/terms/private bathroom, market-wide cheapest dates or optimal purchase day, exact ≤60-minute bus itineraries, personal budget/diet/accessibility and future reservations. Those gaps do not block website publication; this is not a claim the trip is booking-ready.
+
+This documentation-only follow-up records the already confirmed merge/deployment; primary generated website bytes are unchanged from #59.
