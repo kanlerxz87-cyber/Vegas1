@@ -49,7 +49,7 @@
         "needs_decision": true,
         "status": "open",
         "body": "The brief says 1–2 weeks but the preferred dates 2027-02-15 → 2027-02-18 are three nights. Every hotel total on this site is for seven nights. If the real plan is three nights, the hotel line is roughly 43% of what is shown.",
-        "trade_off": "Three nights cannot cover 21 Michelin restaurants plus the museums — realistically it covers four or five restaurants. Seven nights is the shortest trip where the list is plausible.",
+        "trade_off": "Three nights cannot cover 24 Michelin listings plus the museums — realistically it covers four or five restaurants. Seven nights is the shortest trip where a broad Michelin itinerary is plausible.",
         "evidence": "data/questions.json Q-02"
       }
     },
@@ -256,7 +256,7 @@
       "impact": "low",
       "needs_decision": true,
       "status": "proposed — not implemented",
-      "body": "For future social-link additions, record the source-page cross-link, location identity and whether the social target was opened. Explicitly label parent-resort accounts.",
+      "body": "Future social additions should record exact operator cross-links or opened official-profile identity evidence, scope (venue/shared brand/parent resort), target response and capture date. PR #39 and later social research are preserved; unsupported discoveries remain separate from approved comparison fields.",
       "trade_off": "Some cells will remain blank; a plausible handle is not enough. PR #39’s additional discoveries still need per-link reconciliation.",
       "evidence": "Related official source observations and field gaps; this is advice, not a verified price or journey.",
       "sources": [
@@ -377,10 +377,25 @@
       "title": "Close the social-link gaps only from venue-controlled sources, and say where each handle came from",
       "impact": "low",
       "needs_decision": false,
-      "status": "recommended",
-      "body": "The brief asked for a YouTube, TikTok or Instagram link for every restaurant and activity. YouTube is covered for all 24 restaurants and all 5 activities. The remaining gaps after the 2026-11-27 sweep are 5 restaurant Instagram handles and 22 TikTok accounts (F-53). The safe route is the venue's own site footer, its own channel/profile metadata, or its OpenTable profile — the same standard now printed under the activities table. A handle that only appears in a search result is not evidence.",
-      "trade_off": "Roughly 24 page visits plus an hour of checking, and some venues genuinely have no account — the honest outcome may be a blank cell, not a link. Filling a cell with a reseller's or creator's account would look complete and be wrong.",
-      "evidence": "F-53 ; https://neonmuseum.org/ ; https://www.youtube.com/themobmuseum ; activities page 'Where each social link came from'"
+      "status": "partly implemented; remaining gaps proposed",
+      "body": "Field-specific social provenance is implemented. Twenty restaurant Instagram profiles are approved in this pass; four remain unverified under the stricter ownership standard. Prior venue/creator video and account research is retained with the original evidence and caveats on Flagged for Review; it is not silently discarded or declared freshly rechecked.",
+      "trade_off": "Visible gaps are more honest than a plausible but unconfirmed account. Shared brand, parent-property and dormant feeds need explicit labels; no account-bio award claim overrides MICHELIN.",
+      "evidence": "F-73; data/verification.json; data/socials.json and the attributed parallel oEmbed record.",
+      "previous_pass_2026_11_27": {
+        "id": "S-16",
+        "title": "Close the social-link gaps only from venue-controlled sources, and say where each handle came from",
+        "impact": "low",
+        "needs_decision": false,
+        "status": "recommended",
+        "body": "The brief asked for a YouTube, TikTok or Instagram link for every restaurant and activity. YouTube is covered for all 24 restaurants and all 5 activities. The remaining gaps after the 2026-11-27 sweep are 5 restaurant Instagram handles and 22 TikTok accounts (F-53). The safe route is the venue's own site footer, its own channel/profile metadata, or its OpenTable profile — the same standard now printed under the activities table. A handle that only appears in a search result is not evidence.",
+        "trade_off": "Roughly 24 page visits plus an hour of checking, and some venues genuinely have no account — the honest outcome may be a blank cell, not a link. Filling a cell with a reseller's or creator's account would look complete and be wrong.",
+        "evidence": "F-53 ; https://neonmuseum.org/ ; https://www.youtube.com/themobmuseum ; activities page 'Where each social link came from'"
+      },
+      "sources": [
+        "https://aria.mgmresorts.com/en/restaurants/gymkhana.html",
+        "https://neonmuseum.org/whats-on/all-day-admission/",
+        "https://www.instagram.com/kabutolv/"
+      ]
     }
   ]
 }

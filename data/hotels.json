@@ -765,8 +765,8 @@
         "F-40"
       ],
       "notes": "Non-gaming, no-smoking, centre-Strip. The February figure is a suite; the March figure is a standard room, so they are not comparable.",
-      "official_verified": "no",
-      "official_check": "not fetched — hilton.com was not opened this session; treated as unverified, not as refused",
+      "official_verified": "blocked",
+      "official_check": "Checked 2026-11-27 — hilton.com refuses automated fetch.",
       "price_basis": "property-page"
     },
     {
@@ -1129,8 +1129,8 @@
       "verified": "yes",
       "flags": [],
       "notes": "All-suite, non-gaming towers behind MGM Grand. Walking distance to Joël Robuchon and L'Atelier.",
-      "official_verified": "no",
-      "official_check": "not fetched — the MGM Resorts host refused every other request today, so this page was not opened",
+      "official_verified": "blocked",
+      "official_check": "Checked 2026-11-27 — mgmresorts.com refuses automated fetch.",
       "price_basis": "search-list"
     },
     {
@@ -1162,8 +1162,8 @@
         "F-14"
       ],
       "notes": "In Henderson, ~11 miles from the Strip. 9.1 guest score, but every dinner becomes a 30–40 minute trip.",
-      "official_verified": "no",
-      "official_check": "not fetched this session",
+      "official_verified": "yes",
+      "official_check": "Confirmed live 2026-11-27 via fetch_page (greenvalleyranch.com).",
       "price_basis": "search-list"
     },
     {
@@ -1195,8 +1195,8 @@
         "F-14"
       ],
       "notes": "Summerlin, ~17 miles northwest of the Strip. Excellent resort, wrong trip.",
-      "official_verified": "no",
-      "official_check": "not fetched this session",
+      "official_verified": "yes",
+      "official_check": "Confirmed live 2026-11-27 via fetch_page (redrockresort.com).",
       "price_basis": "search-list"
     },
     {
@@ -1209,7 +1209,7 @@
       "reviews": null,
       "room": "Hilton Deluxe Room — One King Bed",
       "bed": "king",
-      "private_bath": true,
+      "private_bath": null,
       "resort_fee": "Included in itemized official total; see verification.json",
       "prices": [],
       "michelin_within_60": null,
@@ -1225,6 +1225,33 @@
       "official_verified": "yes",
       "official_check": "2026-11-27 fetched official Deluxe-room page plus exact-date booking engine; field-level evidence recorded.",
       "price_basis": "official-itemized-total"
+    },
+    {
+      "id": "mgm-grand",
+      "name": "MGM Grand",
+      "tier": null,
+      "zone": null,
+      "stars": null,
+      "guest_score": null,
+      "reviews": null,
+      "room": "",
+      "bed": "",
+      "private_bath": null,
+      "resort_fee": "",
+      "prices": [],
+      "michelin_within_60": null,
+      "michelin_within_20": null,
+      "official_url": "https://mgmgrand.mgmresorts.com/",
+      "booking_url": "",
+      "verified": "field-level — see verification.json",
+      "flags": [
+        "F-59",
+        "F-70"
+      ],
+      "notes": "Host hotel added by the peer strict-evidence integration; no qualifying room, total or journey established.",
+      "official_verified": "no",
+      "official_check": "Candidate from official MICHELIN host-property identification; hotel/booking page not fetched.",
+      "price_basis": "unverified"
     }
   ]
 }

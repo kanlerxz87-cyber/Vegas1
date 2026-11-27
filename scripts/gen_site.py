@@ -96,13 +96,13 @@ def nav(active):
     ]
     out = []
     for href, label in items:
-        cls = ' class="on"' if href == active else ""
+        cls = ' class="on" aria-current="page"' if href == active else ""
         out.append(f'<a href="{href}"{cls}>{e(label)}</a>')
     return "".join(out)
 
 
 def page(active, title, subtitle, body, lead=""):
-    return f"""<!doctype html>
+    content = f"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -122,21 +122,23 @@ def page(active, title, subtitle, body, lead=""):
 <main class="wrap" id="main">
   <div class="pagehead">
     <h1>{e(title)}</h1>
-    <p class="sub">{subtitle}</p>
+    <p class="sub">{e(subtitle)}</p>
     {lead}
 
   </div>
   {body}
 </main>
 <footer class="wrap">
-  <p>Prices captured 25 Nov 2026 from Booking.com for exact date ranges, 2 adults, 1 room, USD; spot-checked 26 Nov 2026 (see <a href="flagged.html">Flagged for review</a>).
-  Every row links to its source. Blank means <strong>not verified</strong> — never estimated.</p>
-  <p>Las Vegas had no MICHELIN Guide between 2010 and 2025. All awards here are from the 2026
-  Southwest selection, the first since 2009.</p>
+  <p>Official field audit: 27 November 2026. USD; two adults unless a fare is explicitly per person.
+  A dash means <strong>unverified</strong>, not free, closed or sold out. Current hours/menu subtotals are not 2027 bookings.</p>
+  <p>Historical OTA captures, creator media and assumed transit models are not verified current offers.
+  See <a href="verification.html">field-level evidence</a> and <a href="flagged.html">Flagged for Review</a>.
+  Offline validation checks local structure and evidence records, not every remote URL or factual claim.</p>
 </footer>
 </body>
 </html>
 """
+    return "\n".join(line.rstrip() for line in content.splitlines()).rstrip() + "\n"
 
 
 # Official-source-only hotel display: raw OTA/model fields are audit inputs, not offers.
@@ -900,6 +902,7 @@ GENERIC_WORDS = {
 # flags that are not about one venue get one hand-picked official page, taken from the datasets
 # or from a page this session actually opened
 FLAG_CHECK_EXTRA = {
+    "F-51": ("Official MICHELIN publication", MICHELIN_SOURCE),
     "F-58": ("Official hotel discovery / room quotes", "https://www.caesars.com/book/"),
     "F-59": ("Official RTC route resources", "https://www.rtcsnv.com/ways-to-travel/"),
     "F-60": ("RTC official fare rules", RTC_SOURCE),
@@ -957,12 +960,13 @@ def _flag_check_links(fid, where):
         key = h["name"].lower().split(" (")[0]
         if _tok_hits(key, hay) or any(_tok_hits(t, hay) for t in _venue_tokens(h["name"])):
             add(h["name"], h.get("official_url") or h.get("booking_url"))
-    if fid in FLAG_CHECK_EXTRA:
-        label, url = FLAG_CHECK_EXTRA[fid]
+    base_fid = fid.split("-history-")[0]
+    if base_fid in FLAG_CHECK_EXTRA:
+        label, url = FLAG_CHECK_EXTRA[base_fid]
         if url not in seen:
             links.insert(0, (label, url))
     if not links:
-        return '<a href="sources.html">Sources page</a>'
+        return '<a href="https://github.com/kanlerxz87-cyber/Vegas1/blob/main/FLAGS.md" target="_blank" rel="noopener">Original repository finding (not independent venue verification)</a>'
     return "<br>".join(
         f'<a href="{e(u)}" target="_blank" rel="noopener">{e(n)}</a>' for n, u in links[:6]
     )
@@ -1008,7 +1012,7 @@ def build_flagged():
     f_rows = "".join(
         f'<tr id="{e(c[0])}"><td class="mono">{e(c[0])}</td><td>{_flag_cell(c[1])}</td>'
         f'<td>{_flag_cell(c[2])}</td><td>{_flag_cell(c[3])}</td>'
-        f'<td class="tiny">{_flag_check_links(c[0], c[1])}</td></tr>'
+        f'<td class="tiny">{_flag_check_links(c[0], c[1] + " " + c[2])}</td></tr>'
         for c in fl
     )
     r_rows = "".join(
@@ -1290,7 +1294,30 @@ main[id],section[id],article[id],tr[id],p[id]{scroll-margin-top:160px}
  main[id],section[id],article[id],tr[id],p[id]{scroll-margin-top:12px}
 }
 
-"""
+/* Data tables remain tables on desktop and become labelled records on phones. */
+.panel,.card,.qa,.sug{min-width:0;overflow-wrap:anywhere}
+table.data th[scope="row"]{white-space:normal;vertical-align:top;text-transform:none;letter-spacing:0;font-size:.88rem}
+@media(max-width:700px){
+ header .wrap{display:block}
+ .brand{margin:5px 0 10px}
+ nav{flex-wrap:nowrap;overflow-x:auto;max-width:100%;padding:2px 0 9px;-webkit-overflow-scrolling:touch}
+ nav a{flex:0 0 auto;white-space:nowrap}
+ .grid4{grid-template-columns:1fr 1fr}
+ .card .big{font-size:1.6rem;overflow-wrap:anywhere}
+ table.data[data-responsive="cards"]{min-width:0;display:block}
+ table.data[data-responsive="cards"] caption{display:block}
+ table.data[data-responsive="cards"] thead{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden}
+ table.data[data-responsive="cards"] tbody{display:block;padding:7px}
+ table.data[data-responsive="cards"] tbody tr{display:block;border:1px solid var(--line);border-radius:9px;margin-bottom:12px;overflow:hidden}
+ table.data[data-responsive="cards"] tbody th[scope="row"]{display:block;min-width:0;padding:12px;font-size:1rem}
+ table.data[data-responsive="cards"] tbody td{display:block;padding:8px 12px;min-width:0;white-space:normal}
+ table.data[data-responsive="cards"] tbody td:before{content:attr(data-label);display:block;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-size:.7rem;font-weight:600;margin-bottom:4px}
+ table.data[data-responsive="cards"] tbody tr:last-child{margin-bottom:0}
+ .source-links{min-width:0}
+}
+@media(max-width:360px){.grid4{grid-template-columns:1fr}}
+
+""".strip() + "\n"
 
 
 # ------------------------------------------------- supplementary routes

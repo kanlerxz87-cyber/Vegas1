@@ -29,7 +29,8 @@
     "social_verified_on": "2026-11-27",
     "price_capture": "2026-11-27",
     "price_note": "Restaurant prices were re-read from the venues' own menu pages on 2026-11-27. A fixed per-person price is doubled for two and labelled 'exact'; where only per-dish prices are published the cell is labelled 'est.' and the arithmetic is in price_note. Blank/'on request' means the official page printed no price. All figures are food only, before tax, gratuity and wine.",
-    "publication_rule": "Public fields are controlled by data/verification.json; historical row-level badges and prices are not official field evidence. Parallel research, social provenance, raw snapshots and audit history are retained."
+    "publication_rule": "Public fields are controlled by data/verification.json; historical row-level badges and prices are not official field evidence. Parallel research, social provenance, raw snapshots and audit history are retained.",
+    "published_verification": "data/verification.json is the live per-field authority. Historical price estimates, broad verified labels, social discoveries and publication-date interpretations in this dataset are retained for audit, not automatically endorsed."
   },
   "restaurants": [
     {
@@ -179,7 +180,7 @@
       "address": "3708 S Las Vegas Blvd, Las Vegas, NV 89109",
       "days": "Tuesday – Saturday",
       "hours": "5:30 PM – 8:30 PM",
-      "exceptions": "Only 9 seats. Reservations open roughly 3 months ahead.",
+      "exceptions": "Only 9 seats; two seatings nightly (5:30 PM & 8:30 PM). Reservations open roughly 3 months ahead. Official schedule conflict (F-68): Cosmopolitan's MGM page lists Tue–Sat (closed Sun/Mon) while ebyjoseandres.com says Tue–Sun.",
       "price_2adults": "",
       "price_note": "Official page does not print the menu price. Book and confirm.",
       "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html",
@@ -190,8 +191,10 @@
       "tiktok": "",
       "phone": "877.893.2003",
       "verified": "yes",
-      "flags": [],
-      "notes": "Hardest reservation on this list — 9 covers a night.",
+      "flags": [
+        "F-68"
+      ],
+      "notes": "Hardest reservation on this list — 9 covers a night. Direct phone on ebyjoseandres.com: 702-698-7950. Confirm Sunday availability (F-68).",
       "social_status": "verified",
       "social_evidence": "Account opened and verified-badged: bio 'é by José Andrés ... One MICHELIN Star'.",
       "price_basis": "not published on official page",
@@ -215,10 +218,10 @@
       "zone": "center-strip",
       "address": "3708 S Las Vegas Blvd, Las Vegas, NV 89109",
       "days": "Daily",
-      "hours": "Mon–Thu 11:00 AM – 10:00 PM; Fri 11:00 AM – 10:30 PM; Sat–Sun 10:00 AM – 10:30 PM",
+      "hours": "Mon–Thu 11:00 AM – 10:00 PM; Fri 11:00 AM – 10:30 PM; Sat 10:00 AM – 10:30 PM; Sun 10:00 AM – 10:00 PM",
       "exceptions": "",
-      "price_2adults": "",
-      "price_note": "Bib Gourmand indicates value pricing; Eater reports roughly $50 per person before tax and tip (secondary source — not an official menu price).",
+      "price_2adults": "$120 (exact)",
+      "price_note": "Official menu page (verified 2026-11-27) prints José's Way Tasting Menu at $60.00 per person → $120 for two before drinks, tax and gratuity. Resolves F-05 (see F-69).",
       "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html",
       "youtube": [
         "https://www.youtube.com/watch?v=dAn1_aItxRg",
@@ -227,7 +230,7 @@
       ],
       "instagram": "https://www.instagram.com/chinapoblano/",
       "tiktok": "",
-      "phone": "",
+      "phone": "702.698.7900",
       "verified": "partial",
       "flags": [
         "F-05"
@@ -235,8 +238,8 @@
       "notes": "Walk-in friendly; good low-cost anchor for a Michelin evening. Instagram verified 2026-11-27: https://www.instagram.com/chinapoblano/",
       "social_status": "verified",
       "social_evidence": "Account opened and verified-badged: bio references @chefjoseandres and @cosmopolitan_lv.",
-      "price_basis": "not published on official page",
-      "price_source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html",
+      "price_basis": "published exact (José's Way Tasting Menu, $60/pp × 2)",
+      "price_source": "https://www.chinapoblano.com/menus/",
       "audit_previous_values_2026_11_27": {
         "hours": "Mon–Thu 11:00 AM – 10:00 PM; Fri 11:00 AM – 10:30 PM; Sat–Sun 10:00 AM – 10:30 PM",
         "phone": "",
@@ -424,8 +427,8 @@
       "zone": "north-strip",
       "address": "3355 S Las Vegas Blvd, Las Vegas, NV 89109",
       "days": "Daily",
-      "hours": "11:30 AM – 10:30 PM (Fri–Sat from 11:30 AM)",
-      "exceptions": "",
+      "hours": "Sun–Thu 11:30 AM – 10:30 PM; Fri–Sat 11:30 AM – 11:00 PM",
+      "exceptions": "Lunch daily 11:30 AM – 3:00 PM; Midday Menu 3:00 PM – 5:00 PM; Dinner from 5:00 PM.",
       "price_2adults": "",
       "price_note": "Not published officially. Creator videos reference a fixed-price lunch (secondary — not verified).",
       "official_url": "https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html",
@@ -599,9 +602,9 @@
       "address": "5040 W Spring Mountain Rd #4, Las Vegas, NV 89146",
       "days": "Daily",
       "hours": "5:30 PM – 9:00 PM",
-      "exceptions": "Reservation only.",
-      "price_2adults": "",
-      "price_note": "Official page does not print the price; reservation required.",
+      "exceptions": "Reservation only (opens 30 days ahead via Resy). $100/person cancellation/no-show fee inside 24 hours.",
+      "price_2adults": "$260 / $370 (exact)",
+      "price_note": "Official Resy booking page linked from kabutolv.com/reserve (verified 2026-11-27) prints Yoroi 7-course at $130/pp ($260 for two) and Kabuto 8-course signature at $185/pp ($370 for two), before drinks, tax and gratuity. Holiday menu ($215/pp) runs Dec 18, 2026–Jan 10, 2027 (outside trip window) (F-69).",
       "official_url": "https://kabutolv.com",
       "youtube": [
         "https://www.youtube.com/watch?v=xmmelYWKCoA",
@@ -615,8 +618,8 @@
       "notes": " Instagram verified 2026-11-27: https://www.instagram.com/kabutolv/",
       "social_status": "verified",
       "social_evidence": "Both: kabutolv.com embeds this account's posts, and the account bio says 'Recommended by MICHELIN Guide 2026' and links kabutolv.com.",
-      "price_basis": "not published on official page",
-      "price_source": "https://kabutolv.com",
+      "price_basis": "published exact (Yoroi $130/pp & Kabuto $185/pp omakase × 2 via official Resy)",
+      "price_source": "https://resy.com/cities/las-vegas-nv/venues/kabuto-edomae-sushi",
       "audit_previous_values_2026_11_27": {
         "hours": "5:30 PM – 9:00 PM",
         "exceptions": "Reservation only.",
@@ -853,9 +856,9 @@
       "address": "1327 S Main St, Las Vegas, NV 89104",
       "days": "Tue–Sun",
       "hours": "Tue–Thu 11:00 AM – 9:00 PM; Fri–Sat 11:00 AM – 10:00 PM; Sun 11:00 AM – 9:00 PM",
-      "exceptions": "Closed Monday. Live music Fri–Sat 6–9 PM.",
-      "price_2adults": "",
-      "price_note": "Not published officially.",
+      "exceptions": "Closed Monday. Live music Fri–Sat 6–9 PM. Happy hour Tue–Fri 2–5 PM; reverse happy hour Fri–Sat 9–10 PM. MICHELIN 2026 selection applies to the Main Street location only (not Miracle Mile Express).",
+      "price_2adults": "$80 (exact)",
+      "price_note": "Official menu page (verified 2026-11-27) prints 'Chef's Choice for 2' (6 pit items & 6 sides) at $80 before drinks, tax and gratuity. À la carte 1-Meat Combo ($18, +$2.50 brisket) and sandwiches ($16–$21) also listed (F-69).",
       "official_url": "https://soulbellybbq.com",
       "youtube": [
         "https://www.youtube.com/watch?v=4cH2Qn9Qcgg",
@@ -871,8 +874,8 @@
       "social_status": "verified",
       "social_evidence": "Both: soulbellybbq.com links this exact account, and its bio reads 'Michelin Recommended'.",
       "social_caveat": "Feed covers the Main Street (Michelin-listed) room and the Express counter.",
-      "price_basis": "not published on official page",
-      "price_source": "https://soulbellybbq.com",
+      "price_basis": "published exact (Chef's Choice for 2 set meal)",
+      "price_source": "https://soulbellybbq.com/menu",
       "audit_previous_values_2026_11_27": {
         "days": "Tue–Sun",
         "hours": "Tue–Thu 11:00 AM – 9:00 PM; Fri–Sat 11:00 AM – 10:00 PM; Sun 11:00 AM – 9:00 PM",
@@ -1013,8 +1016,8 @@
       "days": "Daily",
       "hours": "Dining room 5:00 PM – 10:00 PM; bar 4:00 PM – 10:00 PM",
       "exceptions": "",
-      "price_2adults": "",
-      "price_note": "Not published officially.",
+      "price_2adults": "$320 (exact)",
+      "price_note": "Official tasting menu PDF (verified 2026-11-27) prints Chef's Tasting Menu at $160 per person → $320 for two (Elevated Tasting +$35/pp → $390; wine pairings $60/$70 pp), before drinks, tax and gratuity. Full table participation required (F-69).",
       "official_url": "https://rwlasvegas.com/dining/stubborn-seed/",
       "youtube": [
         "https://www.youtube.com/watch?v=GSBB8ZMtgwI",
@@ -1030,8 +1033,8 @@
       "social_status": "verified",
       "social_evidence": "Account opened: bio 'Michelin ... Miami & Las Vegas @resortsworldlv'.",
       "social_caveat": "Shared Miami/Las Vegas brand account; both feeds appear in one timeline.",
-      "price_basis": "not published on official page",
-      "price_source": "https://rwlasvegas.com/dining/stubborn-seed/",
+      "price_basis": "published exact (Chef's Tasting Menu, $160/pp × 2)",
+      "price_source": "https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/",
       "audit_previous_values_2026_11_27": {
         "hours": "Dining room 5:00 PM – 10:00 PM; bar 4:00 PM – 10:00 PM",
         "exceptions": "",

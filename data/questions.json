@@ -87,14 +87,18 @@
       "id": "Q-04",
       "question": "What can be stated about dinner for two without inventing a complete bill?",
       "state": "open",
-      "answer": "Official price evidence supports two-order menu subtotals for Michael Mina (currently closed), Anima by EDO and Stubborn Seed, with their arithmetic and exclusions recorded. Guy Savoy individual dishes do not establish a full dinner total; its earlier Krug price was not reproduced. KAME’s OpenTable price is a lead, not an approved official-only amount without an operator cross-link.",
+      "answer": "Official fixed-menu/set food subtotals for two are supported for Partage, Anima by EDO, Stubborn Seed, Wing Lei, China Poblano, Kabuto and SoulBelly BBQ. Michael Mina’s $590 printed menu subtotal is supported separately but the venue is currently temporarily closed. Guy Savoy’s individual dishes and KAME’s unqualified bio/OpenTable amount do not establish an approved complete meal total.",
       "problem": "Final tax, service/gratuity, drinks, supplements and trip-date menu/availability are unverified. A menu subtotal is not an all-in bill.",
       "substitution": "No unsupported number is substituted. The public field stays blank where official evidence is missing.",
       "how_to_close": "Use operator-linked menus and read-only official reservation details for the exact date. Record the full two-person bill basis and any mandatory charges; never place dummy bookings, deposits or payment authorizations to discover a price.",
       "sources": [
-        "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
-        "https://animabyedo.com",
+        "https://partage.vegas/menu",
+        "https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf",
+        "https://www.chinapoblano.com/menus/",
+        "https://www.kabutolv.com/s/kabuto-menu2026.pdf",
+        "https://soulbellybbq.com/menu",
         "https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/",
+        "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
         "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy"
       ],
       "previous_pass_2026_11_27": {
@@ -117,7 +121,7 @@
       "id": "Q-05",
       "question": "Is a private/in-room bathroom and queen-or-larger bed proved for each hotel offer?",
       "state": "open",
-      "answer": "Named-room descriptions were read for Caesars Palace, Venetian, Palazzo, Wynn, Desert Rose and Cliffs at Peace Canyon. These show specific King-bed rooms/suites and bathroom facilities; they are not dated room allocations. Other room-fit cells remain unverified.",
+      "answer": "Named-room descriptions were read for Caesars Palace, Venetian, Palazzo, Wynn, Desert Rose, Cliffs at Peace Canyon and Hilton at Resorts World. Specific King beds and described in-room bathroom facilities are supported where shown. A room description is not a trip-date allocation, exclusive-use guarantee or fully qualified offer. All 34 candidates retain explicit nulls for missing evidence.",
       "problem": "A property homepage, a building-level reference or an assigned-on-arrival rate cannot guarantee a specific bed, private room or bathroom for the offered rate.",
       "substitution": "No unsupported number is substituted. The public field stays blank where official evidence is missing.",
       "how_to_close": "Obtain a named-room official rate block for two adults and the exact dates, with bed/bath terms. Confirm the quoted inventory is the hotel’s own offer rather than an independently managed unit.",
@@ -127,7 +131,8 @@
         "https://www.venetianlasvegas.com/hotel/the-palazzo.html",
         "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
         "https://www.shellvacationsclubrentals.com/resorts/nevada/las-vegas/desert-rose-resort/rooms/one-bedroom",
-        "https://vacationvillageresorts.com/cliffs_peace_canyon/accommodations.html"
+        "https://vacationvillageresorts.com/cliffs_peace_canyon/accommodations.html",
+        "https://www.rwlasvegas.com/stay/las-vegas-hilton/deluxe-room/"
       ],
       "previous_pass_2026_11_27": {
         "id": "Q-05",
@@ -173,16 +178,17 @@
       "id": "Q-07",
       "question": "Which social links are verified from official venue cross-links?",
       "state": "open",
-      "answer": "Restaurant Instagram cross-links are recorded for Anima by EDO, SoulBelly BBQ and Gymkhana. High Roller’s page links The LINQ parent venue YouTube/Instagram, explicitly labelled as parent accounts; Neon’s own 2027 page links its Instagram and TikTok. Other cells stay blank unless a source is recorded. Inherited creator videos are preserved as unverified audit material, not working links in the current tables.",
-      "problem": "An apparent handle, search result, Wikidata entry or creator caption does not prove official ownership or that the linked content concerns the correct Las Vegas location. A venue cross-link does not guarantee the target currently loads.",
+      "answer": "Twenty restaurant Instagram profiles are approved from official-site cross-links or opened venue/brand profiles with recorded identity evidence. L’Atelier’s dormant profile exposed tags but no clear operator-domain/control evidence, so it remains unapproved; the research link is preserved. Shared brands, dormant feeds and The LINQ parent account/channel are labelled. Neon’s TikTok is an official-site cross-link, not a successfully opened target. Historical venue/creator videos and the parallel oEmbed check are preserved with attribution on Flagged for Review, not used as award, hour or price evidence.",
+      "problem": "A guessed handle, venue-like tags, a look-alike account or a creator title cannot establish operator control or current factual accuracy. The 2026 Guide—not a stale bio or another city’s branch—determines the award. Some targets show mixed error/content responses or automated-access limits.",
       "substitution": "No unsupported number is substituted. The public field stays blank where official evidence is missing.",
-      "how_to_close": "Record the exact official footer/press-page cross-link and then open the social target when access allows. Reconcile PR #39’s proposed links individually; retain unconfirmed discoveries separately rather than guessing.",
+      "how_to_close": "For each remaining gap, establish operator control through an official cross-link, matching official domain/location or other explicit primary identity evidence, then record target response and platform scope. Preserve unconfirmed discoveries as attributed research; do not fill a blank from a plausible username.",
       "sources": [
-        "https://animabyedo.com",
-        "https://soulbellybbq.com",
-        "https://aria.mgmresorts.com/en/restaurants/gymkhana.html",
-        "https://www.caesars.com/linq/things-to-do/attractions/high-roller",
-        "https://neonmuseum.org/whats-on/all-day-admission/"
+        "https://www.instagram.com/joelrobuchon.lasvegas/",
+        "https://www.instagram.com/cotekoreansteakhouse/",
+        "https://www.instagram.com/kabutolv/",
+        "https://www.instagram.com/latelierjoelrobuchonlv/",
+        "https://neonmuseum.org/whats-on/all-day-admission/",
+        "https://www.youtube.com/themobmuseum"
       ],
       "previous_pass_2026_11_27": {
         "id": "Q-07",
@@ -217,7 +223,7 @@
         "question": "Are the opening hours current for the trip dates (February–March 2027)?",
         "state": "open",
         "answer": "Hours were captured on 2026-11-25 and are the venues' current published hours. Several are seasonal or reduced: Wing Lei and L'Atelier are closed two weekdays, SoulBelly closes Mondays, Michael Mina publishes block closures.",
-        "problem": "A February 2027 trip is 15 months from the capture date, and Las Vegas restaurants change days and hours constantly.",
+        "problem": "A February 2027 trip is roughly 3 months from the November 2026 capture date, and Las Vegas restaurants frequently adjust seasonal or holiday schedules.",
         "substitution": "The 'exceptions' column records every closure noticed, and every row links to the official page so hours can be re-checked in one click.",
         "how_to_close": "Re-check the four starred restaurants and Michael Mina two weeks before travel — these are the ones that will ruin an evening if they are dark.",
         "sources": []
@@ -227,14 +233,15 @@
       "id": "Q-09",
       "question": "Do official hotel totals include every mandatory fee and tax?",
       "state": "open",
-      "answer": "No reliable official all-in seven-night total was obtained. Caesars’ exact-date engine returned a technical-error banner and nightly prices excluding tax. Wynn’s exact-date page showed averages including resort fee but excluding tax. Venetian rendered no quote.",
+      "answer": "No fully qualified final seven-night offer was established. Caesars shows an error banner plus tax-exclusive nightly amounts; Wynn shows tax-exclusive nightly averages; Venetian rendered no quote. Hilton Resorts World’s exact-date engine prints a fully itemized $2,200.15 total for 15–22 February, two adults, Deluxe One King, including listed room tax/resort fee/fee tax. That observation is reproduced separately, not promoted to a qualifying offer: promotion eligibility, deposit/cancellation and private-use guarantee remain unverified.",
       "problem": "Rounded averages and changing fee/tax bases cannot be promoted into exact final totals. The previous generic resort-fee/tax uplift was not a valid hotel-specific quote.",
       "substitution": "No unsupported number is substituted. The public field stays blank where official evidence is missing.",
       "how_to_close": "Read an itemized final stay total from an official quote without submitting a reservation. Record mandatory fees, tax, deposit and cancellation terms. Do not add a blanket tax rate or multiply rounded averages into an exact offer.",
       "sources": [
         "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
         "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
-        "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2027-02-15&children[]=0&departure_date=2027-02-22&view=calendar"
+        "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2027-02-15&children[]=0&departure_date=2027-02-22&view=calendar",
+        "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0"
       ],
       "previous_pass_2026_11_27": {
         "id": "Q-09",
@@ -331,7 +338,7 @@
       "id": "Q-13",
       "question": "Were all official hotel links and all external/social links checked live?",
       "state": "open",
-      "answer": "No. The earlier audit recorded mixed results across 32 hotel links, including CDN refusals and a parent-property landing page. This pass re-read the hotel/booking sources named in the field log and found an official Cliffs accommodation reference; all other inherited references are marked not rechecked. Social target pages and archived links were not exhaustively opened.",
+      "answer": "No exhaustive live check is claimed for every external/media link. The parallel T20 record reports all original 32 hotel reference URLs attempted (21 live, 10 refused, 1 sibling). This pass re-read the source pages named in the field manifest, including the new Hilton room/engine, but did not repeat all 32 reference checks. MGM Grand is an added host-hotel candidate, not a verified hotel/booking-page read. An unchecked or refused reference approves no room/rate fact.",
       "problem": "A structurally valid href is not a successful remote fetch or field verification. A refusal by automated access is not necessarily a broken browser link.",
       "substitution": "No unsupported number is substituted. The public field stays blank where official evidence is missing.",
       "how_to_close": "Re-open each unchecked reference and record the response/redirect target, property identity and field evidence. Keep blocked/unavailable distinct. Do not claim zero broken external links from the local HTML validator.",
@@ -339,13 +346,15 @@
         "https://vacationvillageresorts.com/cliffs_peace_canyon/accommodations.html",
         "https://www.caesars.com/caesars-palace/hotel",
         "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
-        "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2027-02-15&children[]=0&departure_date=2027-02-22&view=calendar"
+        "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2027-02-15&children[]=0&departure_date=2027-02-22&view=calendar",
+        "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/COORDINATION.md",
+        "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0"
       ],
       "previous_pass_2026_11_27": {
         "id": "Q-13",
         "question": "Are the hotels' own websites still live at the URLs this site links to?",
         "state": "answered",
-        "answer": "Closed as far as this environment allows. 18 of 32 official pages are now confirmed live by fetch (4 from earlier sessions plus 14 opened on 26 Nov 2026: Cosmopolitan, ARIA, Bellagio, Palazzo, SAHARA, Four Seasons, Trump, Golden Nugget, Caesars Palace, Plaza, Fontainebleau, Horseshoe, Flamingo and the Cromwell). Two links moved: caesars.com/cromwell 301-redirects to a NEW brand (The Vanderpump Hotel — row renamed, F-47) and palazzo.com resolves to a page under venetianlasvegas.com. 8 properties refuse automated access (Wynn, Encore, Vdara, Secret Suites, NoMad, W, Bluegreen Club 36, and Crockfords which returns HTTP 500), so each is labelled as refused rather than given a checkmark. 5 were not opened, and 1 (Nobu at Caesars) opens but lands on the parent property's page (F-49).",
+        "answer": "Closed as far as this environment allows (finished 2026-11-27). All 32 hotel official URLs have now been checked: 21 of 32 are confirmed live by fetch (including Green Valley Ranch and Red Rock verified 2026-11-27), 10 refuse automated access (Wynn, Encore, Vdara, Secret Suites, NoMad, W, Bluegreen Club 36, Waldorf Astoria, The Signature at MGM Grand, and Crockfords which returned HTTP 500), 1 (Nobu at Caesars) opens but lands on the parent property's page, and 0 remain unopened (F-49).",
         "problem": "Hotel brand sites move constantly — MGM, Caesars, Marriott and Hilton have all reorganised property URLs. Linking a moved page is a small failure, but claiming it was verified when it was not is the failure the brief actually cares about.",
         "substitution": "Every card also shows the Booking.com link the price came from. Where that link is a dated search-results list rather than a property page (15 rows), the card says 'Price source — dated search list, not a room quote' (F-48), because the link proves the search, not the room.",
         "how_to_close": "The 10 refused rows can only be closed from a normal browser or by calling the property — this environment is blocked by their CDNs. That is an access limit, not a data gap; the label says so.",
@@ -356,6 +365,16 @@
           "https://www.rwlasvegas.com/hotels/crockfords/"
         ]
       }
+    },
+    {
+      "id": "Q-14",
+      "question": "What personal preferences remain unknown without blocking publication?",
+      "state": "open",
+      "answer": "No total/ nightly hotel budget, number of tasting-menu dinners, dietary/allergy needs, walking limits, accessibility requirements or refundable-versus-prepaid preference was supplied in the available brief. No preference is invented. The dashboard and evidence register are usable without an immediate response.",
+      "problem": "A cheapest-looking room or restrictive menu may be unsuitable once those constraints are known; no purchase or personalized best-fit claim is justified yet.",
+      "substitution": "Keep options and clear evidence gaps rather than silently choose a price ceiling, diet, walking allowance or non-refundable rate.",
+      "how_to_close": "Record these constraints before any actual booking or final personalized ranking. Continue source verification and publication autonomously in the meantime; no form or manual approval is required for this release.",
+      "sources": []
     }
   ]
 }

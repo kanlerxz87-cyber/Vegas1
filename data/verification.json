@@ -5,7 +5,9 @@
     "policy": "Public comparison values come only from verified fields below. A fetched official page is not proof of every value on a row. Unknown values are null; historical research stays in its original datasets but is not silently promoted to evidence. Current hours/menu prices are not promises of February/March 2027 availability. No bookings, accounts, deposits or purchases were made.",
     "legacy_data": "hotels.json, restaurants.json, activities.json and transit.json retain earlier research. The public views use this field-level manifest, not their row-level verified labels.",
     "external_link_limit": "Sources marked fetched were read on their checked date; unchecked references are explicit. Parallel social research and creator media remain in canonical data/socials.json and audit history; they do not authorize unrelated fields. The offline validator does not prove external availability.",
-    "social_rule": "Publish only official-site cross-links or opened venue/brand profiles whose operator-domain/location/brand identity is recorded. Shared brand, parent-resort and dormant profiles are explicitly labelled. No award/price fact is inferred from a bio. Creator discoveries remain audit research, not official evidence."
+    "social_rule": "Publish only official-site cross-links or opened venue/brand profiles whose operator-domain/location/brand identity is recorded. Shared brand, parent-resort and dormant profiles are explicitly labelled. No award/price fact is inferred from a bio. Creator discoveries remain audit research, not official evidence.",
+    "qualified_offers": "Zero fully qualified final seven-night hotel offers. The Hilton Resorts World itemized $2,200.15 observation is retained separately with explicit missing terms; it is not a cheapest-market claim.",
+    "schema_version": 1
   },
   "sources": {
     "michelin": {
@@ -796,6 +798,13 @@
       "result": "fetched",
       "checked": "2026-11-27",
       "note": "Fetch returned a 401 banner plus usable museum-channel playlists/videos including “Witness It All at The Mob Museum” linking themobmuseum.org. Channel content identifies the operator. Not an assurance that every visitor can play all videos."
+    },
+    "h-mgm-grand": {
+      "url": "https://mgmgrand.mgmresorts.com/",
+      "authority": "official",
+      "result": "not_rechecked",
+      "checked": null,
+      "note": "Peer integration added MGM Grand as the host of Joël Robuchon/L’Atelier, from MICHELIN’s official selection. No hotel room/booking source was fetched; no room or price claims approved."
     }
   },
   "restaurants": {
@@ -4572,10 +4581,34 @@
           "note": ""
         },
         "total_7n": {
+          "value": null,
+          "source": "quote-rw",
+          "status": "unverified",
+          "note": "Operator prints $2,200.15 including listed mandatory taxes/fees, reproduced and itemized below. Promotion eligibility, private-use guarantee and cancellation/deposit terms remain unverified; not a complete qualifying offer."
+        },
+        "within_60_bus": {
+          "value": null,
+          "source": "hilton-rw-room",
+          "status": "unverified",
+          "note": "Unverified; no model or sibling-hotel value is substituted."
+        },
+        "within_20_bus": {
+          "value": null,
+          "source": "hilton-rw-room",
+          "status": "unverified",
+          "note": "Unverified; no model or sibling-hotel value is substituted."
+        },
+        "location": {
+          "value": "Resorts World · Hilton tower",
+          "source": "quote-rw",
+          "status": "verified",
+          "note": ""
+        },
+        "observed_total_7n": {
           "value": "$2,200.15 incl. room tax, resort fees and fee tax",
           "source": "quote-rw",
           "status": "verified",
-          "note": "Captured 27 Nov 2026 for 15–22 Feb 2027; 2 adults, 1 room, 7 nights, Deluxe One King, selectedRate DBF26. Itemized published total, not rounded-average extrapolation. Refund/deposit terms unverified; not a reservation or cheapest-market finding.",
+          "note": "Captured 27 Nov 2026 for 15–22 Feb 2027; 2 adults, 1 room, 7 nights, Deluxe One King, selectedRate DBF26. Itemized published total, not rounded-average extrapolation. Refund/deposit terms unverified; not a reservation or cheapest-market finding. Eligibility, cancellation/deposit and private-use guarantee are not complete; NOT promoted to a fully qualified final offer.",
           "amount": "2200.15",
           "currency": "USD",
           "check_in": "2027-02-15",
@@ -4600,24 +4633,64 @@
             "resort_fee_tax": "51.52"
           },
           "terms_status": "unverified"
+        }
+      },
+      "flags": [
+        "F-59",
+        "F-70"
+      ]
+    },
+    "mgm-grand": {
+      "name": "MGM Grand",
+      "source": "h-mgm-grand",
+      "fields": {
+        "room": {
+          "value": null,
+          "source": "h-mgm-grand",
+          "status": "unverified",
+          "note": "Host-hotel candidate only; no room, all-in offer or dated bus itinerary verified."
+        },
+        "bed": {
+          "value": null,
+          "source": "h-mgm-grand",
+          "status": "unverified",
+          "note": "Host-hotel candidate only; no room, all-in offer or dated bus itinerary verified."
+        },
+        "bathroom": {
+          "value": null,
+          "source": "h-mgm-grand",
+          "status": "unverified",
+          "note": "Host-hotel candidate only; no room, all-in offer or dated bus itinerary verified."
+        },
+        "amenities": {
+          "value": null,
+          "source": "h-mgm-grand",
+          "status": "unverified",
+          "note": "Host-hotel candidate only; no room, all-in offer or dated bus itinerary verified."
+        },
+        "total_7n": {
+          "value": null,
+          "source": "h-mgm-grand",
+          "status": "unverified",
+          "note": "Host-hotel candidate only; no room, all-in offer or dated bus itinerary verified."
         },
         "within_60_bus": {
           "value": null,
-          "source": "hilton-rw-room",
+          "source": "h-mgm-grand",
           "status": "unverified",
-          "note": "Unverified; no model or sibling-hotel value is substituted."
+          "note": "Host-hotel candidate only; no room, all-in offer or dated bus itinerary verified."
         },
         "within_20_bus": {
           "value": null,
-          "source": "hilton-rw-room",
+          "source": "h-mgm-grand",
           "status": "unverified",
-          "note": "Unverified; no model or sibling-hotel value is substituted."
+          "note": "Host-hotel candidate only; no room, all-in offer or dated bus itinerary verified."
         },
         "location": {
-          "value": "Resorts World · Hilton tower",
-          "source": "quote-rw",
-          "status": "verified",
-          "note": ""
+          "value": null,
+          "source": "h-mgm-grand",
+          "status": "unverified",
+          "note": "Host-hotel candidate only; no room, all-in offer or dated bus itinerary verified."
         }
       },
       "flags": [
@@ -4967,10 +5040,16 @@
           "note": ""
         },
         "fares_2adults": {
-          "value": "$8 single each / $12 two-hour each / $16 24-hour each / $40 three-day each",
+          "value": "$8 for two single-ride tickets; $12 for two 2-hour passes; $16 for two 24-hour passes; $40 for two 3-day passes",
           "source": "rtc-fares",
           "status": "verified",
           "note": "Two × the official regular Strip & All Access fare. This is one pass/ticket per adult, not a shared pass; fares may change before 2027."
+        },
+        "hours": {
+          "value": null,
+          "source": "rtc-fares",
+          "status": "unverified",
+          "note": "No complete official field was established in this pass."
         }
       },
       "flags": [
@@ -4999,6 +5078,12 @@
           "source": "rtc-fares",
           "status": "verified",
           "note": "Two × regular residential fares; route/product eligibility must be checked. No reduced-fare eligibility is assumed."
+        },
+        "hours": {
+          "value": null,
+          "source": "rtc-fares",
+          "status": "unverified",
+          "note": "No complete official field was established in this pass."
         }
       },
       "flags": [
@@ -5059,6 +5144,12 @@
           "source": "vegas-loop",
           "status": "unverified",
           "note": "Operator examples do not unambiguously specify a two-adult per-person/vehicle charging basis; no couple total is inferred."
+        },
+        "hours": {
+          "value": null,
+          "source": "vegas-loop",
+          "status": "unverified",
+          "note": "No complete official field was established in this pass."
         }
       },
       "flags": [
