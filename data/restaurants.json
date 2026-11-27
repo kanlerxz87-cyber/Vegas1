@@ -20,7 +20,7 @@
    "https://lasvegasweekly.com/dining/2026/aug/27/michelin-guide-southwest-las-vegas-restaurants/"
   ],
   "price_rule": "price_2adults is ONLY filled where an official or reservation-platform page states the price. Blank = not verified. '++' means plus tax and gratuity, as printed by the venue.",
-  "social_rule": "Instagram/TikTok links are published only where the venue's own official page links to the account, or the account itself was opened on 2026-11-27 and its bio/posts tie it to this venue. Every link and its evidence is recorded in data/socials.json and rendered in the 'Where each social link came from' table on this page. Blank = no account could be tied to the venue (F-19, F-54 to F-58).",
+  "social_rule": "Instagram/TikTok links are published only where the venue's own official page links to the account, or the account itself was opened on 2026-11-27 and its bio/posts tie it to this venue. The per-row evidence is in data/socials.json and in the \"Where each social link came from\" table on this page. Blank = no account could be tied to the venue (F-19, F-53 to F-57).",
   "announcement_date": {
    "value": "2026-08-31",
    "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s",
@@ -54,17 +54,17 @@
    ],
    "instagram": "https://www.instagram.com/joelrobuchon.lasvegas/",
    "tiktok": "",
-   "social_status": "verified",
-   "social_evidence": "Account opened: title 'Joël Robuchon Restaurant', 9,160 followers, bio links mgmgrand.com/en/restaurants/joel-robuchon-french-restaurant.html (the official page on this site).",
-   "social_caveat": "Dormant: newest post shown is dated 2020-08-07. Its bio still reads 'Michelin 3-Star' — that is the pre-2010 status; the 2026 Guide gives TWO stars (F-54).",
    "phone": "702.891.7925",
    "verified": "yes",
    "flags": [
     "F-01",
     "F-22"
    ],
-   "notes": "Two independent creator videos in this dataset claim three Michelin stars — that is the pre-2010 status. The 2026 Guide lists Joël Robuchon at TWO stars, which the restaurant's own page also states. NOTE: the same page carries a dated banner (\"open 4:00–8:00 PM Thu 19 – Sat 21 November\") that applies to a 2026 date, not to 2027 — do not carry it forward. Also the 2026 MICHELIN Service Award went to GM Sean Christopher, so award rows and staff awards must not be confused. Reservations number 702.891.7925 printed on the official MGM Grand page (verified 2026-11-26).",
-   "hours_source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html (\"Hours of operation\" block, retrieved 2026-11-25)"
+   "notes": "Two independent creator videos in this dataset claim three Michelin stars — that is the pre-2010 status. The 2026 Guide lists Joël Robuchon at TWO stars, which the restaurant's own page also states. NOTE: the same page carries a dated banner (\"open 4:00–8:00 PM Thu 19 – Sat 21 November\") that applies to a 2026 date, not to 2027 — do not carry it forward. Also the 2026 MICHELIN Service Award went to GM Sean Christopher, so award rows and staff awards must not be confused. Reservations number 702.891.7925 printed on the official MGM Grand page (verified 2026-11-26). Instagram verified 2026-11-27: https://www.instagram.com/joelrobuchon.lasvegas/",
+   "hours_source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html (\"Hours of operation\" block, retrieved 2026-11-25)",
+   "social_status": "verified",
+   "social_evidence": "Account opened: bio links mgmgrand.com/en/restaurants/joel-robuchon-french-restaurant.html (this site's official link).",
+   "social_caveat": "Dormant: newest post 2020-08-07, and the bio still says 'Michelin 3-Star' — the pre-2010 status. The 2026 Guide gives TWO stars (F-54). Do not quote an account bio as a current award."
   },
   {
    "id": "latelier-robuchon",
@@ -85,14 +85,15 @@
     "https://www.youtube.com/watch?v=AitbJIc_xMk",
     "https://www.youtube.com/shorts/Ezet1Jyh7Fc"
    ],
-   "instagram": "",
+   "instagram": "https://www.instagram.com/latelierjoelrobuchonlv/",
    "tiktok": "",
-   "social_status": "none_verified",
-   "social_evidence": "The @joelrobuchon.lasvegas account is titled 'Joël Robuchon Restaurant' and links the Restaurant de Joël Robuchon page, not L'Atelier's. Assigning it to L'Atelier would be a guess, so it is left blank.",
    "phone": "702.891.7358",
    "verified": "yes",
    "flags": [],
-   "notes": "Received a 2026 MICHELIN Service Award alongside its star. Reservations phone per the MGM page: 702.891.7925."
+   "notes": "Received a 2026 MICHELIN Service Award alongside its star. Reservations phone per the MGM page: 702.891.7925. Instagram verified 2026-11-27: https://www.instagram.com/latelierjoelrobuchonlv/",
+   "social_status": "verified",
+   "social_evidence": "Account opened: title 'Latelierjoelrobuchonlv', posts tag @latelierdejoelrobuchonlv and #joelrobuchon #mgmgrand. It is the L'Atelier room's feed.",
+   "social_caveat": "Dormant: newest post shown 2021-11-21. The obvious alternate handle @latelierdejoelrobuchonlv returns HTTP 404, so this is the right one."
   },
   {
    "id": "guy-savoy",
@@ -106,8 +107,8 @@
    "days": "See OpenTable",
    "hours": "Dinner from 5:00 PM",
    "exceptions": "Dinner only. 9-course Krug Chef's Table available.",
-   "price_2adults": "$200–$580 à la carte · $3,000 Krug Chef's Table",
-   "price_note": "VERIFIED from the official Caesars menu (effective 11.5.2026): à la carte dishes $100–$290 each → $200–$580 for two before tax, gratuity and wine; 9-course Krug Chef's Table $1,500/pp → $3,000 for two. Phone on the row is the restaurant's general line; the menu page lists 866-227-5938.",
+   "price_2adults": "",
+   "price_note": "27 Nov 2026: official main menu lists individual à-la-carte dishes, not a complete dinner-for-two total. Former $200–$580 range was two dishes, not a meal. Former $3,000 Krug total was not reproduced. F-61.",
    "official_url": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy",
    "youtube": [
     "https://www.youtube.com/watch?v=XbZI6IXdM0E",
@@ -116,13 +117,15 @@
    ],
    "instagram": "https://www.instagram.com/guysavoylasvegas/",
    "tiktok": "",
-   "social_status": "verified",
-   "social_evidence": "Account opened: title 'Guy Savoy Las Vegas', bio 'Guy Savoy's restaurant at @caesarspalace in Las Vegas', links guysavoylasvegas.com.",
-   "social_caveat": "Dormant: newest post shown is dated 2023-05-15.",
    "phone": "702.731.7286",
    "verified": "yes",
-   "flags": [],
-   "notes": "OpenTable restaurant id 96775."
+   "flags": [
+    "F-61"
+   ],
+   "notes": "OpenTable restaurant id 96775. Instagram verified 2026-11-27: https://www.instagram.com/guysavoylasvegas/",
+   "social_status": "verified",
+   "social_evidence": "Account opened: bio 'Guy Savoy's restaurant at @caesarspalace in Las Vegas', links guysavoylasvegas.com.",
+   "social_caveat": "Dormant: newest post shown 2023-05-15."
   },
   {
    "id": "e-by-jose-andres",
@@ -144,12 +147,12 @@
    ],
    "instagram": "https://www.instagram.com/ebyjoseandres/",
    "tiktok": "",
-   "social_status": "verified",
-   "social_evidence": "Account opened and verified-badged: title 'ebyjoseandres', bio 'é by José Andrés offers ... One MICHELIN Star'.",
    "phone": "877.893.2003",
    "verified": "yes",
    "flags": [],
-   "notes": "Hardest reservation on this list — 9 covers a night."
+   "notes": "Hardest reservation on this list — 9 covers a night.",
+   "social_status": "verified",
+   "social_evidence": "Account opened and verified-badged: bio 'é by José Andrés ... One MICHELIN Star'."
   },
   {
    "id": "china-poblano",
@@ -173,14 +176,14 @@
    ],
    "instagram": "https://www.instagram.com/chinapoblano/",
    "tiktok": "",
-   "social_status": "verified",
-   "social_evidence": "Account opened and verified-badged: bio '@chefjoseandres' celebration ... at @cosmopolitan_lv'.",
    "phone": "",
    "verified": "partial",
    "flags": [
     "F-05"
    ],
-   "notes": "Walk-in friendly; good low-cost anchor for a Michelin evening."
+   "notes": "Walk-in friendly; good low-cost anchor for a Michelin evening. Instagram verified 2026-11-27: https://www.instagram.com/chinapoblano/",
+   "social_status": "verified",
+   "social_evidence": "Account opened and verified-badged: bio references @chefjoseandres and @cosmopolitan_lv."
   },
   {
    "id": "wing-lei",
@@ -204,14 +207,14 @@
    ],
    "instagram": "",
    "tiktok": "",
-   "social_status": "none_verified",
-   "social_evidence": "@winglei exists but is a private personal account ('Lei Wing', 659 followers, no venue link) and is explicitly not this restaurant. The Wynn property account is a hotel account, not the restaurant's.",
    "phone": "702.770.3388",
    "verified": "partial",
    "flags": [
     "F-03"
    ],
-   "notes": "Forbes Five-Star, but the 2026 MICHELIN Guide lists Wing Lei as Recommended, not starred. Creator videos claiming a Michelin star are referring to the pre-2010 guide."
+   "notes": "Forbes Five-Star, but the 2026 MICHELIN Guide lists Wing Lei as Recommended, not starred. Creator videos claiming a Michelin star are referring to the pre-2010 guide.",
+   "social_status": "none_verified",
+   "social_evidence": "@winglei exists but is a private personal account ('Lei Wing', 659 followers, no venue link) — not this restaurant. The Wynn account is a hotel account. Left blank rather than guessed."
   },
   {
    "id": "mott-32",
@@ -235,12 +238,12 @@
    ],
    "instagram": "https://www.instagram.com/mott32vegas/",
    "tiktok": "",
-   "social_status": "verified",
-   "social_evidence": "Account opened: title 'Mott 32 Las Vegas', bio 'World-class destination for elevated Chinese cuisine ... Michelin Guide 2026'.",
    "phone": "702.607.3232",
    "verified": "yes",
    "flags": [],
-   "notes": ""
+   "notes": "",
+   "social_status": "verified",
+   "social_evidence": "Account opened: title 'Mott 32 Las Vegas', bio 'Michelin Guide 2026'."
   },
   {
    "id": "cote",
@@ -264,13 +267,13 @@
    ],
    "instagram": "https://www.instagram.com/cotekoreansteakhouse/",
    "tiktok": "",
-   "social_status": "verified",
-   "social_evidence": "Account opened: bio lists 'NYC | Miami | Singapore | Vegas'.",
-   "social_caveat": "Brand account covering all COTE cities, not a Las Vegas-only account.",
    "phone": "702.607.2683",
    "verified": "yes",
    "flags": [],
-   "notes": ""
+   "notes": " Instagram verified 2026-11-27: https://www.instagram.com/cotekoreansteakhouse/",
+   "social_status": "verified",
+   "social_evidence": "Account opened: bio lists 'NYC | Miami | Singapore | Vegas'.",
+   "social_caveat": "Brand account covering all COTE cities."
   },
   {
    "id": "bouchon",
@@ -292,14 +295,15 @@
     "https://www.youtube.com/watch?v=OaW0aWaSza8",
     "https://www.youtube.com/watch?v=juqdKegF7Wc"
    ],
-   "instagram": "",
+   "instagram": "https://www.instagram.com/bouchon_bistro/",
    "tiktok": "",
-   "social_status": "none_verified",
-   "social_evidence": "No Bouchon Las Vegas account could be tied to the venue; the Venetian restaurant page publishes no social link for it.",
    "phone": "702.414.6200",
    "verified": "yes",
    "flags": [],
-   "notes": ""
+   "notes": " Instagram verified 2026-11-27: https://www.instagram.com/bouchon_bistro/",
+   "social_status": "verified",
+   "social_evidence": "Account opened: bio 'Chef Thomas Keller's casual dining French-inspired bistro with locations in Yountville, CA, Las Vegas, NV, and Coral Coral Gables, FL'; 2026 posts labelled 'Behind the scenes in Las Vegas'.",
+   "social_caveat": "Thomas Keller group account covering all Bouchon bistros, not a Las Vegas-only feed."
   },
   {
    "id": "estiatorio-milos",
@@ -320,15 +324,15 @@
     "https://www.youtube.com/watch?v=--MO3_LuErc",
     "https://www.youtube.com/watch?v=ZUjnF3Mk-k4"
    ],
-   "instagram": "https://www.instagram.com/estiatoriomilos/",
+   "instagram": "https://www.instagram.com/miloslasvegas/",
    "tiktok": "",
-   "social_status": "verified",
-   "social_evidence": "Account opened and verified-badged: title 'estiatorio Milos', bio '12 restaurants worldwide'.",
-   "social_caveat": "Group account covering all 12 Milos restaurants.",
    "phone": "702.414.1270",
    "verified": "yes",
    "flags": [],
-   "notes": ""
+   "notes": " Instagram verified 2026-11-27: https://www.instagram.com/miloslasvegas/",
+   "social_status": "verified",
+   "social_evidence": "Account opened: title 'estiatorio Milos Las Vegas', bio '...at The Venetian, Las Vegas'.",
+   "social_caveat": "Venue-specific Las Vegas account; the group account @estiatoriomilos also exists."
   },
   {
    "id": "gymkhana",
@@ -352,12 +356,12 @@
    ],
    "instagram": "https://www.instagram.com/gymkhanalasvegas/",
    "tiktok": "",
-   "social_status": "verified",
-   "social_evidence": "Account opened: bio 'From @gymkhanalondon by @jks_restaurants ... Located at @arialv'.",
    "phone": "702.590.8544",
    "verified": "yes",
    "flags": [],
-   "notes": "First US outpost of the London restaurant."
+   "notes": "First US outpost of the London restaurant. Instagram verified 2026-11-27: https://www.instagram.com/gymkhanalasvegas/",
+   "social_status": "verified",
+   "social_evidence": "Account opened: bio 'From @gymkhanalondon ... Located at @arialv'."
   },
   {
    "id": "michael-mina",
@@ -381,9 +385,6 @@
    ],
    "instagram": "https://www.instagram.com/michaelminalv/",
    "tiktok": "",
-   "social_status": "verified",
-   "social_evidence": "Account opened: title 'MICHAEL MINA', bio 'Contemporary Coastal Cuisine Located in the Heart of the Bellagio'.",
-   "social_caveat": "Accounts posts through 2026-10; the venue itself is still listed as temporarily closed on Bellagio's own index (F-23). An active feed is not evidence the room is open.",
    "phone": "702.693.7223",
    "verified": "partial",
    "flags": [
@@ -391,8 +392,11 @@
     "F-23",
     "F-43"
    ],
-   "notes": "SERIOUS: the restaurant's own page shows \"Temporarily closed\" for all seven days, so the $590++ tasting-menu figure on this row is a price for a service that is not currently running. This row must not be presented as a bookable option without a re-check. Reopen date is not published. Do not assume it reopens before Feb 2027. Re-checked 2026-11-26: Bellagio's own dining index (bellagio.mgmresorts.com/en/restaurants.html?filter=property,Bellagio_Las_Vegas) lists Michael Mina as 'Temporarily Closed' with a $$$$ seafood label. No reopen date is published (F-23, F-43).",
-   "hours_source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html (retrieved 2026-11-25)"
+   "notes": "SERIOUS: the restaurant's own page shows \"Temporarily closed\" for all seven days, so the $590++ tasting-menu figure on this row is a price for a service that is not currently running. This row must not be presented as a bookable option without a re-check. Reopen date is not published. Do not assume it reopens before Feb 2027. Re-checked 2026-11-26: Bellagio's own dining index (bellagio.mgmresorts.com/en/restaurants.html?filter=property,Bellagio_Las_Vegas) lists Michael Mina as 'Temporarily Closed' with a $$$$ seafood label. No reopen date is published (F-23, F-43). Instagram verified 2026-11-27: https://www.instagram.com/michaelminalv/",
+   "hours_source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html (retrieved 2026-11-25)",
+   "social_status": "verified",
+   "social_evidence": "Account opened: bio 'Contemporary Coastal Cuisine Located in the Heart of the Bellagio'.",
+   "social_caveat": "Posts run to 2026-10, but Bellagio still lists the room as temporarily closed (F-23): an active feed is not proof it is open."
   },
   {
    "id": "anima-by-edo",
@@ -416,14 +420,14 @@
    ],
    "instagram": "https://www.instagram.com/animabyedo/",
    "tiktok": "",
-   "social_status": "verified",
-   "social_evidence": "Both: the official site animabyedo.com carries a '@animabyedo / Follow on Instagram' block, and the account opens and its bio links animabyedo.com.",
    "phone": "",
    "verified": "yes",
    "flags": [
     "F-08"
    ],
-   "notes": "Furthest west of any restaurant here — check the 60-minute transit estimate before making it a dinner plan."
+   "notes": "Furthest west of any restaurant here — check the 60-minute transit estimate before making it a dinner plan. Instagram verified 2026-11-27: https://www.instagram.com/animabyedo/",
+   "social_status": "verified",
+   "social_evidence": "Both the official site animabyedo.com ('@animabyedo / Follow on Instagram') and the account (bio links animabyedo.com)."
   },
   {
    "id": "kabuto",
@@ -446,12 +450,12 @@
    ],
    "instagram": "https://www.instagram.com/kabutolv/",
    "tiktok": "",
-   "social_status": "verified",
-   "social_evidence": "Both: the official site kabutolv.com embeds this account's posts (instagram.com/p/ links), and the account opens with bio 'Recommended by MICHELIN Guide 2026' and links kabutolv.com/reserve.",
    "phone": "702.676.1044",
    "verified": "yes",
    "flags": [],
-   "notes": ""
+   "notes": " Instagram verified 2026-11-27: https://www.instagram.com/kabutolv/",
+   "social_status": "verified",
+   "social_evidence": "Both: kabutolv.com embeds this account's posts, and the account bio says 'Recommended by MICHELIN Guide 2026' and links kabutolv.com."
   },
   {
    "id": "kame-omakase",
@@ -473,17 +477,17 @@
     "https://www.youtube.com/watch?v=p26Fuy-zc14",
     "https://www.youtube.com/watch?v=67x2tVMtFaA"
    ],
-   "instagram": "https://www.instagram.com/kameomakase/",
+   "instagram": "https://www.instagram.com/kameomakase_lv/",
    "tiktok": "",
-   "social_status": "verified",
-   "social_evidence": "Account opened: title 'Kame Omakse', bio 'Kame Omakase Las Vegas', links sushikame.com (the official site named on this site's row).",
-   "social_caveat": "178 followers and no posts displayed — a low-activity account. Note the official site itself is a JavaScript shell (F-04).",
    "phone": "",
    "verified": "partial",
    "flags": [
     "F-04"
    ],
-   "notes": "OpenTable lists no availability for a sample date and no weekly service hours; bookings go through OpenTable only. $500 per person signature omakase. The MICHELIN Guide's own listing gives the days — the restaurant's booking page does not."
+   "notes": "OpenTable lists no availability for a sample date and no weekly service hours; bookings go through OpenTable only. $500 per person signature omakase. The MICHELIN Guide's own listing gives the days — the restaurant's booking page does not. Instagram verified 2026-11-27: https://www.instagram.com/kameomakase_lv/",
+   "social_status": "verified",
+   "social_evidence": "Account opened and verified-badged: bio 'MICHELIN Guide Recommended 2026', '$500', 'Las Vegas | 5:30 & 8 PM', links sushikame.com.",
+   "social_caveat": "The short handle @kameomakase also exists but is a 178-follower stub with no posts; this is the active account."
   },
   {
    "id": "lamaii",
@@ -506,14 +510,14 @@
     "https://www.youtube.com/watch?v=d0vrM6S932c"
    ],
    "instagram": "https://www.instagram.com/lamaiilv/",
-   "tiktok": "",
-   "social_status": "verified",
-   "social_evidence": "Account opened and verified-badged: title 'LAMAII LAS VEGAS', bio 'Managed by Bia Hawang & Bon Atcharawan ... In the MICHELIN Guide 2026 Selection'; posts tag 'LAMAII CHINATOWN 4480 Spring Mountain Rd #700'.",
-   "social_caveat": "Posts are for the Chinatown room, which is the Michelin-listed one (the Henderson room is a second location).",
+   "tiktok": "https://www.tiktok.com/@lamaiilv",
    "phone": "702.238.0567",
    "verified": "yes",
    "flags": [],
-   "notes": "Open latest of any restaurant here — useful after a late show."
+   "notes": "Open latest of any restaurant here — useful after a late show. Instagram verified 2026-11-27: https://www.instagram.com/lamaiilv/ TikTok verified 2026-11-27: https://www.tiktok.com/@lamaiilv",
+   "social_status": "verified",
+   "social_evidence": "Account opened and verified-badged: bio 'Managed by Bia Hawang & Bon Atcharawan ... In the MICHELIN Guide 2026 Selection'.",
+   "social_caveat": "Posts are the Chinatown room, which is the Michelin-listed one."
   },
   {
    "id": "partage",
@@ -537,15 +541,15 @@
    ],
    "instagram": "https://www.instagram.com/partagelv/",
    "tiktok": "",
-   "social_status": "verified",
-   "social_evidence": "Account opened: title 'Partage | French Restaurant Las Vegas', bio '@michelinguide 2026 recommended', links partage.vegas.",
    "phone": "702-582-5852",
    "verified": "yes",
    "flags": [
     "F-24"
    ],
-   "notes": "Hours and phone are on the Contact page, not the Restaurant page — the Restaurant page is a booking widget and shows no service times. Strict dietary policy: decide before booking. OpenTable id 1005940. Phone 702-582-5852.",
-   "hours_source": "https://partage.vegas/contact (\"We'll be open for the foreseeable future Tuesday to Saturday from 5 pm to 9 pm.\", retrieved 2026-11-25)"
+   "notes": "Hours and phone are on the Contact page, not the Restaurant page — the Restaurant page is a booking widget and shows no service times. Strict dietary policy: decide before booking. OpenTable id 1005940. Phone 702-582-5852. Instagram verified 2026-11-27: https://www.instagram.com/partagelv/",
+   "hours_source": "https://partage.vegas/contact (\"We'll be open for the foreseeable future Tuesday to Saturday from 5 pm to 9 pm.\", retrieved 2026-11-25)",
+   "social_status": "verified",
+   "social_evidence": "Account opened: bio '@michelinguide 2026 recommended', links partage.vegas."
   },
   {
    "id": "sparrow-and-wolf",
@@ -569,14 +573,14 @@
    ],
    "instagram": "https://www.instagram.com/sparrowandwolflv/",
    "tiktok": "",
-   "social_status": "verified",
-   "social_evidence": "Account opened: title 'SPARROW + WOLF', bio '@chefbrianhoward ... @michelinguide selected'. The official site also has a 'Social Channels' block.",
    "phone": "702.790.2147",
    "verified": "partial",
    "flags": [
     "F-25"
    ],
-   "notes": "The official site does not publish opening hours anywhere on its front page or menu page; bookings are handled through OpenTable (rid 732187). Left blank rather than guessed. A card-hold policy applies: reservations cancelled inside 24 hours are charged $25 per guest, and tables are capped at 4 guests."
+   "notes": "The official site does not publish opening hours anywhere on its front page or menu page; bookings are handled through OpenTable (rid 732187). Left blank rather than guessed. A card-hold policy applies: reservations cancelled inside 24 hours are charged $25 per guest, and tables are capped at 4 guests. Instagram verified 2026-11-27: https://www.instagram.com/sparrowandwolflv/",
+   "social_status": "verified",
+   "social_evidence": "Account opened: bio '@chefbrianhoward ... @michelinguide selected'."
   },
   {
    "id": "esthers-kitchen",
@@ -599,16 +603,16 @@
     "https://www.youtube.com/shorts/Pln4WLWFIpg"
    ],
    "instagram": "https://www.instagram.com/estherskitchenlv/",
-   "tiktok": "",
-   "social_status": "verified",
-   "social_evidence": "Account opened: title 'Esther's Kitchen', bio 'Seasonal Italian Soul Food in the Las Vegas Arts District from James Trees & co.'; a 2026-10-28 post announces receipt of the MICHELIN medallion.",
+   "tiktok": "https://www.tiktok.com/@estherskitchenlv",
    "phone": "",
    "verified": "partial",
    "flags": [
     "F-07",
     "F-50"
    ],
-   "notes": "Hours were NOT obtainable: /hours-location returned an error and the home page carries no hours block. Brunch is its signature — call before planning. Address conflict recorded as F-50: the MICHELIN press release says 1131 S. Main St., this row says 1130 S Casino Center Blvd, and the venue's own pages publish neither."
+   "notes": "Hours were NOT obtainable: /hours-location returned an error and the home page carries no hours block. Brunch is its signature — call before planning. Address conflict recorded as F-50: the MICHELIN press release says 1131 S. Main St., this row says 1130 S Casino Center Blvd, and the venue's own pages publish neither. Instagram verified 2026-11-27: https://www.instagram.com/estherskitchenlv/ TikTok verified 2026-11-27: https://www.tiktok.com/@estherskitchenlv",
+   "social_status": "verified",
+   "social_evidence": "Account opened: bio 'Seasonal Italian Soul Food in the Las Vegas Arts District from James Trees & co.'."
   },
   {
    "id": "soulbelly-bbq",
@@ -632,13 +636,13 @@
    ],
    "instagram": "https://www.instagram.com/soulbellybbqlv/",
    "tiktok": "",
-   "social_status": "verified",
-   "social_evidence": "Both: soulbellybbq.com links this exact account from its photo wall, and the account opens with bio 'Michelin Recommended. Voted Best BBQ in Nevada!'",
-   "social_caveat": "Feed covers both the Main Street (Michelin-listed) room and the SoulBelly Express counter.",
    "phone": "",
    "verified": "yes",
    "flags": [],
-   "notes": "Cheapest way to eat inside the Michelin list; pairs with Neon Museum (10 min apart)."
+   "notes": "Cheapest way to eat inside the Michelin list; pairs with Neon Museum (10 min apart). Instagram verified 2026-11-27: https://www.instagram.com/soulbellybbqlv/",
+   "social_status": "verified",
+   "social_evidence": "Both: soulbellybbq.com links this exact account, and its bio reads 'Michelin Recommended'.",
+   "social_caveat": "Feed covers the Main Street (Michelin-listed) room and the Express counter."
   },
   {
    "id": "ping-pang-pong",
@@ -662,12 +666,12 @@
    ],
    "instagram": "",
    "tiktok": "",
-   "social_status": "none_verified",
-   "social_evidence": "No Instagram account could be tied to the restaurant. Searches surfaced a Facebook page and parent-property accounts only.",
    "phone": "702.247.8136",
    "verified": "yes",
    "flags": [],
-   "notes": "Open 17 hours a day — the only Michelin-listed kitchen available at 2 AM."
+   "notes": "Open 17 hours a day — the only Michelin-listed kitchen available at 2 AM.",
+   "social_status": "none_verified",
+   "social_evidence": "No account could be tied to the restaurant; searches surfaced a Facebook page and parent-property accounts only."
   },
   {
    "id": "pho-ga-bac-bac",
@@ -688,14 +692,15 @@
     "https://www.youtube.com/watch?v=yGePVQiF6co",
     "https://www.youtube.com/watch?v=kyvFhu94qPU"
    ],
-   "instagram": "",
+   "instagram": "https://www.instagram.com/phogabacbac702/",
    "tiktok": "",
-   "social_status": "none_verified",
-   "social_evidence": "@phogabacbac exists but is a private account with 1 follower and no venue link, so it is not adopted. The official site bestchickenpho.com publishes no social link.",
    "phone": "",
    "verified": "yes",
    "flags": [],
-   "notes": "24/7 — the safety net for a jet-lagged first night."
+   "notes": "24/7 — the safety net for a jet-lagged first night. Instagram verified 2026-11-27: https://www.instagram.com/bestchickenpho/",
+   "social_status": "verified",
+   "social_evidence": "Account opened: bio '2025 & 2026 MICHELIN AWARD', 'OPEN 24/7', address 3775 Spring Mountain Rd, phone (702) 476-9623.",
+   "social_caveat": "The previous handle @bestchickenpho is an abandoned page whose only post (2026-11-22) says 'WE'VE MOVED! ... follow us @phogabacbac702'; this is the current account."
   },
   {
    "id": "yen-viet-kitchen",
@@ -719,14 +724,14 @@
    ],
    "instagram": "",
    "tiktok": "",
-   "social_status": "none_verified",
-   "social_evidence": "The official site (a Google Sites page) publishes no social link and no account could be tied to the venue.",
    "phone": "",
    "verified": "partial",
    "flags": [
     "F-07"
    ],
-   "notes": ""
+   "notes": "",
+   "social_status": "none_verified",
+   "social_evidence": "The official site publishes no social link and no account could be tied to the venue."
   },
   {
    "id": "stubborn-seed",
@@ -748,14 +753,15 @@
     "https://www.youtube.com/watch?v=-Xn6tasRmXA",
     "https://www.youtube.com/watch?v=ndR0ipay-qQ"
    ],
-   "instagram": "",
+   "instagram": "https://www.instagram.com/stubborn_seed/",
    "tiktok": "",
-   "social_status": "none_verified",
-   "social_evidence": "@stubbornseed and @stubbornseedlv both return 404. The Resorts World dining page publishes no social link for the venue. Not guessed.",
    "phone": "702.676.8062",
    "verified": "yes",
    "flags": [],
-   "notes": ""
+   "notes": " Instagram verified 2026-11-27: https://www.instagram.com/stubborn_seed/",
+   "social_status": "verified",
+   "social_evidence": "Account opened: bio 'Michelin ... Miami & Las Vegas @resortsworldlv'.",
+   "social_caveat": "Shared Miami/Las Vegas brand account; both feeds appear in one timeline."
   }
  ]
 }

@@ -43,6 +43,8 @@ labelled**, never that a plausible number was filled in.
 
 | **F-50** | Esther's Kitchen address | The MICHELIN press release lists **1131 S. Main St.**; `data/restaurants.json` carries **1130 S Casino Center Blvd**. The venue's own site was opened again on 26 Nov 2026 — the home page publishes no street address and `/hours-location` still errors — so neither version could be confirmed from the restaurant itself. | No address is shown in any table on this site and the venue phone is blank in the data, so nothing is being asserted to a traveller. Confirm on the venue's own contact page or by phone before printing a reservation card. |
 | **F-51** | Guide announcement date | Site copy and `data/restaurants.json` said the 2026 Southwest selection was announced **26 Aug 2026**; the michelin.com press release page is dated **31 Aug 2026**. | Corrected on 26 Nov 2026 — the MICHELIN page and the dataset meta note now say 31 August 2026 and cite the press release. No award, price or hours cell changed. |
+| **F-52** | Mob Museum Thursday hours | The dataset recorded Thursday museum hours as **9 AM–4 PM** (Sun–Wed & Fri–Sat 9 AM–9 PM). Re-fetched 2026-11-27, `themobmuseum.org` homepage now shows **Daily 9 AM–9 PM** for the museum (Underground 11 AM–11 PM, to midnight Fri–Sat). | Corrected to Daily 9–9. Thursday is no longer a short day — plan a full Thursday museum visit if wanted. Early-closure notices still apply (see row exceptions). |
+| **F-53** | TikTok coverage (restaurants + activities) | 2026-11-27 social sweep verified Instagram for **19/24** restaurants and **4/5** activities, and TikTok for only **2/24** restaurants (Lamaii, Esther's Kitchen) and **3/5** activities (Sphere, Mob Museum, Neon Museum). No official TikTok account was verified for the other 22 restaurants, High Roller, or Fremont Street — creator videos tagging those venues are not the venues' own accounts. | Blank TikTok cells mean **no official account verified**, not that none exists. Do not treat a creator's video as the venue's account. See Q-07. |
 
 ## Deliberate non-inclusions
 
@@ -51,25 +53,28 @@ labelled**, never that a plausible number was filled in.
 - **Cirque du Soleil** was listed by a reseller at $158.65 per person with no show name, no venue and no 2027 date — excluded.
 - **MGM Grand room price** could not be captured: Booking.com's own property page redirected to a generic Las Vegas search. No price is published for it rather than a guess.
 
-## Social + video verification pass of 27 Nov 2026 (F-54 to F-58)
+## Social + video verification pass of 27 Nov 2026 (F-54 to F-57)
 
 Task T17 (session `arena/c045ad05-vegas1`) opened every candidate Instagram account, YouTube channel and official
-venue page on **27 November 2026** to close F-19 / R-02, the largest open gap against the brief. The per-row
-evidence is machine-readable in `data/socials.json` and rendered in the **"Where each social link came from"** table
-on `restaurants.html`. These five findings came out of that pass.
+venue page on **27 November 2026** to close F-19 / R-02, the largest open gap against the brief. A second session
+(`arena/c9eed9ad-vegas1` lineage, merged as T18) worked the same gap at the same time; the two passes **disagreed on
+five handles**, and every disagreement was settled by opening the account. The reconciled result — 21 of 24
+restaurants and 5 of 5 activities with a verified Instagram link — is recorded per row in `data/socials.json`, and
+the evidence column is rendered on `restaurants.html` and `activities.html` so a doubt can be checked in one click.
+Flag IDs F-58 onward belong to the T18 hotel/verification work; this pass uses only F-54 to F-57.
 
 | ID | Where | What | Effect on the plan |
 |----|-------|------|--------------------|
-| **F-54** | Joël Robuchon (Instagram) | The account `@joelrobuchon.lasvegas` is the restaurant's own (bio links the official MGM Grand page) but it is **dormant**: the newest post shown is dated **2020-08-07**, and the bio still reads **"Michelin 3-Star"**. The 2026 Guide gives **two** stars, which the restaurant's own MGM page also states. | The link is published because it is official, but **do not quote a restaurant's own bio as its current award** — this is the same stale-3-star claim as F-01, now found on the official account itself. |
-| **F-55** | Kabuto (wrong phone) | The row carried **725.205.1356**. The restaurant's own site `kabutolv.com` prints **(702) 676-1044** in its "Visit Us" block, and its Instagram bio repeats `(702) 676 - 1044`. | **Corrected to 702.676.1044** (2026-11-27). A 725 area code is not a Las Vegas code, so the old number would have failed. |
-| **F-56** | Neon Museum (TikTok) | `tiktok.com/@neonmuseumlasvegas` is printed in the museum's own site navigation, but **TikTok returned HTTP 400 to every request** from this sandbox, so the page was never read. | Link published, labelled as coming from the **museum's own footer, not from a page read**. One TikTok link exists on the whole site; treat it as a lead, not a confirmed live account. |
-| **F-57** | Mob Museum / Fremont Street (YouTube) | `youtube.com/@neonmuseum` and `youtube.com/@fremontstreetexperience` both open but return **"This channel doesn't have any content"**. Both venues' Instagram accounts were confirmed instead. | No video link is published for three of the five activities; only Sphere and the Mob Museum have a working channel. |
-| **F-58** | High Roller (no attraction account) | `@highrollerlasvegas` is a **private 26-follower account**, not the Caesars attraction. The nearest official account is `@thelinq`, the LINQ hotel's verified account, which posts about the wheel. | Left blank on the attraction row: a property account is not the attraction. Noted here so nobody "fixes" it by adopting the private account. |
+| **F-54** | Joël Robuchon (Instagram) | The account `@joelrobuchon.lasvegas` is genuinely the restaurant's (its bio links the official MGM Grand page), but it is **dormant**: the newest post shown is dated **2020-08-07**, and the bio still reads **"Michelin 3-Star"** — the pre-2010 status. The 2026 Guide gives **two** stars, which the restaurant's own MGM page also states. | The link stays, because it is official and documents the room. But **never quote a venue's own bio as its current award**: this is the F-01 stale-three-star claim, now found on the restaurant's own account. Two other accounts in the set are also dormant (L'Atelier, last post 2021; Guy Savoy, last post 2023). |
+| **F-55** | Kabuto (wrong phone) | The row carried **725.205.1356**. `kabutolv.com` prints **(702) 676-1044** in its "Visit Us" block and its Instagram bio repeats it. | **Corrected to 702.676.1044** on 2026-11-27. 725 is not a Las Vegas area code, so the old number could not have worked. |
+| **F-56** | Pho Ga Bac Bac (moved account) | The handle captured earlier in the day, `@bestchickenpho`, is an **abandoned page**: its only visible post (2026-11-22) reads "WE'VE MOVED! ... follow us @phogabacbac702" and its bio says "This page is no longer active". The live account is **@phogabacbac702** (276 followers, bio gives 3775 Spring Mountain Rd, (702) 476-9623). | Row now points at the live account. A social link that resolves but is dead as a channel is the same failure as a dead link, and a 200-status check would not catch it. |
+| **F-57** | TikTok and empty YouTube channels | TikTok answered **HTTP 400 to every request** from this sandbox, so no TikTok page was ever read; the TikTok links published come from the venues' own pages or the other session's capture and are labelled as such. Separately, `youtube.com/@neonmuseum` and `youtube.com/@fremontstreetexperience` open but return **"This channel doesn't have any content"**, so no video link is published for the Neon Museum or Fremont Street. | Treat every TikTok link as an unconfirmed lead. Festival-style venue accounts often exist but stay empty; the site says so instead of linking a hollow channel. |
 
-**Also recorded, not a flag:** `@winglei` is a private personal account ("Lei Wing"), `@phogabacbac` is a private
-1-follower account and `@stubbornseed` / `@stubbornseedlv` both 404 — so Wing Lei, Pho Ga Bac Bac and Stubborn Seed
-are the three rows where adopting a look-alike handle would have put a stranger's private account on the site. They
-are published blank, with the reason, in the provenance table.
+**Handles checked and deliberately *not* adopted** (a look-alike would have put a stranger on the page):
+`@winglei` is a private personal account ("Lei Wing"); `@latelierdejoelrobuchonlv` returns HTTP 404 (the live feed is
+`@latelierjoelrobuchonlv`); `@kameomakase` is a 178-follower stub (the active account is `@kameomakase_lv`);
+`@phogabacbac` is private with 1 follower; `@highrollerlasvegas` is a private 26-follower account, while the real
+attraction account is **@highrollervegas** (verified-badged, 75,555 followers) and is the one published.
 
 ## Audit of 26 Nov 2026 (F-39 onward)
 
@@ -84,3 +89,16 @@ Items F-39 to F-46 come from the 26 November 2026 line-by-line audit (task T12).
 - **F-45** Promotional and one-day-snapshot rates; re-capture within 60 days of travel.
 - **F-46** Repository irregularities (duplicate board IDs, stale counts, overlapping datasets, orphan page, failed branch run).
 
+
+## Strict evidence display audit — 27 November 2026
+
+These supersede earlier recommendations where they conflict. Earlier flags and raw datasets are retained as audit history.
+
+| ID | Where | What | Effect on the plan |
+|----|-------|------|--------------------|
+| **F-58** | All hotel decision tables | Canonical prices are third-party snapshots, not verified official all-in seven-night offers for a named qualifying room and two adults. A working property URL verifies neither price nor room fit. | Official-only hotel decision cells left blank; alphabetical candidates replace unsupported ranking. No cheapest hotel, stay week or purchase date is established. Historical raw records retained, not endorsed. |
+| **F-59** | Hotel proximity and RTC model | Zone matrix values are estimates; bus-only hotel-to-restaurant journeys including walks, waiting, transfers and return service were not verified. Loop is not subway or bus. Model counts cannot establish real 24/24 reachability. | Remove model scores from hotel decision table and public transit matrix. Route counts blank pending itinerary-level evidence. Earlier saturation claims are superseded. |
+| **F-60** | RTC fares | Official RTC page checked 27 Nov lists $2 regular residential single ride and $1 reduced; inherited claim that Nevada local fares are $1 is misleading. Visitors must use Strip and All Access fares. | Transit page now displays visitor fares as totals for two adults, with official source and arithmetic basis. No future fare guarantee. |
+| **F-61** | Restaurant Guy Savoy | Official main menu fetched 27 Nov exposes individual dishes, not complete meal totals; $200–$580 was merely two dishes. Inherited $3,000 Krug total was not reproduced. | Dinner-for-two total blank. Menu link published; no meal size, courses, tax or wine inferred. |
+| **F-62** | Mob Museum | Official weekly table fetched 27 Nov lists museum daily 9 AM–9 PM, not every Thursday closing at 4 PM. Holiday early closure must not become weekly hours. | Weekly schedule corrected; early closures and 2027 exceptions require separate confirmation. |
+| **F-63** | High Roller | Official page fetched 27 Nov conflicts internally: opens 12:30 PM, ticket cards daytime 12–5 PM/anytime noon–close, FAQ daytime until 5:59 PM/anytime from 6 PM. | Complete hours blank; exact conflicts listed, published starting-price couple totals retain plus-tax/fee caveat. |
