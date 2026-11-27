@@ -862,3 +862,10 @@ no conflict markers in this file.
 2. **Official-vs-official schedule conflict flagged (F-68):** é by José Andrés — Cosmopolitan MGM page says `Tue–Sat` while `https://www.ebyjoseandres.com/` says `Tue–Sun` (5:30 & 8:30 PM seatings; direct phone `702-698-7950`).
 3. **Final 4 unopened hotel official URLs checked (0 unopened across all 32 hotels):** Green Valley Ranch (`greenvalleyranch.com`) and Red Rock (`redrockresort.com`) confirmed live (`yes`); Waldorf Astoria (`hilton.com`) and The Signature at MGM Grand (`mgmresorts.com`) refuse automated fetch (`blocked`) → **21 live / 10 refused / 1 sibling / 0 unopened**.
 4. **Generator & register bug fixes:** fixed `scripts/gen_site.py` broken `suggestions.html` `<h2>1</h2>` heading (`16 ways to improve this plan`), `sources.html` typo `F-39` → `F-29`, `flagged.html` dynamic range (`F-47 to F-69`), `questions.json` (`Q-08` "15 months" → "~3 months", `Q-13` 0 unopened), and `suggestions.json` (`S-02` 21 → 24 listings).
+
+### T20 PR & deployment result — arena/01ba2dd9-vegas1 (2026-11-27)
+
+- **[PR #57](https://github.com/kanlerxz87-cyber/Vegas1/pull/57)** (`arena/01ba2dd9-vegas1` → `main`) **MERGED** 2026-11-27T17:50:07Z via `gh pr merge 57 --merge`; merge commit `01c7107c875c9569bafe7e80703c0aef65b6a52f`.
+- **Pre-merge checks:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py && python3 scripts/check_evidence.py` → **16 pages · 0 failures · 0 warnings · 509 external links · `check_evidence.py` PASS**; root and `docs/` byte-identical.
+- **Pages deployment verified:** `gh api repos/kanlerxz87-cyber/Vegas1/pages/builds` confirmed build for `01c7107c875c9569bafe7e80703c0aef65b6a52f` reached **`status: built`** (`error: null`) at 2026-11-27T17:50:31Z (`https://kanlerxz87-cyber.github.io/Vegas1/`, source `main:/`).
+- **Live page verification (`?v=01c7107`):** fetched `suggestions.html` (`## 16 ways to improve this plan`, `S-02` 24 listings), `restaurants.html` (China Poblano `$120 (exact)` + Sun 10:00 PM, Milos Fri–Sat 11:00 PM, é F-68 conflict), and `flagged.html` (F-68 & F-69 live with official source links).
