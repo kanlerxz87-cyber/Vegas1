@@ -4,13 +4,14 @@
     "session": "arena-939a824e-vegas1",
     "branch": "arena/939a824e-vegas1",
     "base_commit": "e4fb98e2a3d0cf55edd1ea29a7d905f53ffbad98",
-    "reviewed": "2026-11-26",
-    "method": "Each claim below was compared against the official page named in its source column, fetched in this session with fetch_page. Values that were not re-fetched are listed as Not checked, not as confirmed.",
+    "reviewed": "2026-11-26 (pass 1) · 2026-11-27 (pass 2, checks C-11 to C-17)",
+    "method": "Each claim below was compared against the official page named in its source column, fetched with fetch_page. Values that were not re-fetched are listed as Not checked, not as confirmed. Pass 1 (C-01–C-10) ran on 26 Nov 2026; pass 2 (C-11–C-17) re-read seven restaurant pages and menus on 27 Nov 2026.",
     "limits": [
       "Hotel booking-engine prices were NOT re-priced in this session. They remain Booking.com search snapshots captured 2026-11-25.",
       "YouTube, TikTok and Instagram links were NOT opened in this session.",
       "Hotel official_url links were NOT re-fetched in this session (only the Michelin, MGM, Wynn, Cosmopolitan and RTC pages above were).",
-      "Transit minutes are estimates. No official door-to-door time exists, so they cannot be verified."
+      "Transit minutes are estimates. No official door-to-door time exists, so they cannot be verified.",
+      "Restaurant menu prices were re-read for the seven venues in C-11 to C-17 only; the other 17 restaurant pages were not re-opened on 27 Nov 2026."
     ]
   },
   "checks": [
@@ -103,6 +104,69 @@
       "detail": "$6 / $8 / $20. The 'fare change proposed from 2027-01-31' noted by an earlier session was not on this page, so it remains unverified (not confirmed either way).",
       "source": "https://rtcws.rtcsnv.com/mobile/geoFares.html",
       "source_label": "RTC Transit — fares (official)"
+    },
+    {
+      "id": "C-11",
+      "item": "Restaurant Guy Savoy — à-la-carte prices and the 'Krug Chef's Table' figure",
+      "compared": "Official Caesars Palace main-menu page (headed 'Effective 11.5.2026'), read 2026-11-27.",
+      "result": "Corrected",
+      "detail": "The page lists individual dishes at $110, $120, $100, $160, $200, $290 and a $60 cheese cart — per person. The stored cell showed '$200–$580 à la carte' under a 'Cost for 2 adults' heading, and a '$3,000 Krug Chef's Table' that the page does not print at all. Cell now reads ≈$520–$940 (est.) for two with the method stated; the $3,000 figure was removed (F-52).",
+      "source": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu",
+      "source_label": "Caesars Palace — Restaurant Guy Savoy main menu (official)"
+    },
+    {
+      "id": "C-12",
+      "item": "Partage — cost for two",
+      "compared": "Official Partage menu page, read 2026-11-27.",
+      "result": "Gap closed",
+      "detail": "5 courses $130, 7 courses $160, Signature $210 per person → $260 / $320 / $420 for two, before wine, tax and gratuity. Wine pairings $60 / $84 / $108 per person; foie gras add-on +$33 per guest.",
+      "source": "https://partage.vegas/menu",
+      "source_label": "Partage — menus (official)"
+    },
+    {
+      "id": "C-13",
+      "item": "Wing Lei — cost for two",
+      "compared": "Official Wynn menu PDF linked from the Wing Lei page, read 2026-11-27.",
+      "result": "Gap closed",
+      "detail": "Chef Tam's Signature Tasting Menu $198.88 per person → $397.76 for two. À la carte $18.88–$321.88 per dish; Imperial Peking Duck $148.88; wine journeys $128.88 / $208.88 per person.",
+      "source": "https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf",
+      "source_label": "Wynn Las Vegas — Wing Lei main menu PDF (official)"
+    },
+    {
+      "id": "C-14",
+      "item": "Anima by EDO — tasting menu and the Monday special",
+      "compared": "Official Anima by EDO site, read 2026-11-27.",
+      "result": "Corrected",
+      "detail": "Tasting menu 'Per Person $85' → $170 for two, matching the stored figure. The stored exceptions line said the Monday special was '$65 per person'; the site says two pasta dishes plus one bottle of wine for $65 total (F-54).",
+      "source": "https://animabyedo.com",
+      "source_label": "Anima by EDO (official)"
+    },
+    {
+      "id": "C-15",
+      "item": "Esther's Kitchen — days open",
+      "compared": "Official Esther's Kitchen menus page, read 2026-11-27.",
+      "result": "Gap closed",
+      "detail": "'We serve dinner seven days a week. Lunch: Monday - Friday. Brunch: Saturday - Sunday.' Days now recorded as Daily; no clock times are published on the page, so the hours field stays blank and the row says 'times not published' (F-07).",
+      "source": "https://www.estherslv.com/menus/",
+      "source_label": "Esther's Kitchen — menus (official)"
+    },
+    {
+      "id": "C-16",
+      "item": "Michael Mina — closure and tasting-menu price",
+      "compared": "Official Bellagio page, read 2026-11-27.",
+      "result": "Confirmed",
+      "detail": "Page still labels the venue 'Temporarily closed', its hours block still reads 'Monday to Sunday: Closed', and it prints '$295++ Per Person' for the 10-course tasting. The stored $590++ for two is arithmetically right but not bookable (F-23).",
+      "source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
+      "source_label": "Bellagio — Michael Mina (official)"
+    },
+    {
+      "id": "C-17",
+      "item": "Social profiles — can any be verified from the venue itself?",
+      "compared": "Official venue sites read 2026-11-27 (SoulBelly BBQ, Kabuto, Partage, Esther's Kitchen, Lamaii, Yen Viet).",
+      "result": "Gap partly closed",
+      "detail": "SoulBelly BBQ's own site links instagram.com/soulbellybbqlv, so that handle is now recorded. Kabuto links individual Instagram posts but not a profile; the others print no social links. No handle was guessed (Q-07, F-19).",
+      "source": "https://soulbellybbq.com",
+      "source_label": "SoulBelly BBQ (official)"
     }
   ],
   "irregularities": [

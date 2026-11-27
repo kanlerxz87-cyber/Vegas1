@@ -20,7 +20,21 @@
       "sources": [
         "https://www.rtcsnv.com/ways-to-travel/how-to-ride/ridertc-app/",
         "https://www.rtcsnv.com/ways-to-travel/fares-passes/"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "Q-01",
+        "question": "Rank hotels by how many Michelin restaurants are within 1 hour by subway or bus.",
+        "state": "interpreted",
+        "answer": "Las Vegas has no subway or metro. Buses (RTC Deuce/SDX), the Monorail and the Vegas Loop were substituted, and separate fares were checked for each.",
+        "problem": "Because the Strip is ~4 miles long and Chinatown ~3 miles west of it, all 24 Michelin listings sit inside 60 minutes of every hotel in the dataset. The literal metric gives a flat 24/24 to all of them and ranks nothing.",
+        "substitution": "A second column — Michelin restaurants within a 20-minute one-way trip — is shown alongside the 60-minute figure and is used as the ranking tiebreaker.",
+        "how_to_close": "Nothing to close. It is a property of the city. If a stricter or looser threshold is preferred, the zone matrix in data/transit.json allows recomputation in one step.",
+        "sources": [
+          "https://www.lvmonorail.com/stations/",
+          "https://www.rtcsnv.com/ways-to-travel/fares-passes/",
+          "https://www.boringcompany.com/projects/las-vegas-loop"
+        ]
+      }
     },
     {
       "id": "Q-02",
@@ -30,7 +44,17 @@
       "problem": "The full preferred three-night span cannot contain a seven-night trip. Seven- and 14-night prices have not been obtained as final official totals; neither may be scaled into the other.",
       "substitution": "No unsupported number is substituted. The public field stays blank where official evidence is missing.",
       "how_to_close": "Continue all comparable hotel quote research on the stated seven-night basis. Keep the 14-night option separately unpriced until a full official quote is available; do not require manual input just to publish.",
-      "sources": []
+      "sources": [],
+      "previous_pass_2026_11_27": {
+        "id": "Q-02",
+        "question": "Trip length is 1–2 weeks, but the preferred window is 2027-02-15 → 2027-02-18.",
+        "state": "interpreted",
+        "answer": "2027-02-15 → 2027-02-18 is three nights. Pricing therefore uses the 7-night block starting on the preferred arrival date (2027-02-15 → 2027-02-22), which satisfies the stated 7-night basis and still starts on the requested date.",
+        "problem": "If the couple literally wants a 3-night trip, the 7-night totals on this site are about 2.3× too large, and the extra nights are pure cost.",
+        "substitution": "7-night totals are presented because that is the stated basis. A 14-night variant is NOT priced — see F-17.",
+        "how_to_close": "Ask the couple which they meant. If 3 nights, re-run the price capture with checkout 2027-02-18; every slug and window in data/hotels.json is ready for it.",
+        "sources": []
+      }
     },
     {
       "id": "Q-03",
@@ -43,7 +67,21 @@
       "sources": [
         "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s",
         "https://michelinmedia.com/pages/blog/detail/article/c0/a1480/"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "Q-03",
+        "question": "Which of the 24 Michelin restaurants are starred, and which are only listed?",
+        "state": "answered",
+        "answer": "Four are starred: Joël Robuchon (2★), L'Atelier Robuchon (1★), Guy Savoy (1★), é by José Andrés (1★). The other 20 listings carry no star: 3 are Bib Gourmand (China Poblano, Esther's Kitchen, Yen Viet Kitchen) and 17 are Recommended.",
+        "problem": "There are no three-star restaurants in Las Vegas, and no guide existed at all between 2010 and 2025 — so most online 'Michelin star' claims for Vegas are stale.",
+        "substitution": "Each restaurant row on the site shows the award class separately from the name, so nothing reads as 'starred' by accident.",
+        "how_to_close": "Closed. Cross-checked against the Michelin press release, LVCVA and Las Vegas Weekly.",
+        "sources": [
+          "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s",
+          "https://www.visitlasvegas.com/michelin-guide-restaurants/",
+          "https://lasvegasweekly.com/dining/2026/aug/27/michelin-guide-southwest-las-vegas-restaurants/"
+        ]
+      }
     },
     {
       "id": "Q-04",
@@ -58,7 +96,22 @@
         "https://animabyedo.com",
         "https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/",
         "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "Q-04",
+        "question": "What does dinner for two cost at each Michelin restaurant?",
+        "state": "open",
+        "answer": "Four venues print a real number on their official pages: Michael Mina ($295++ per person), Anima by EDO ($85 per person), KAME Omakase ($500 per person, from its own OpenTable description), and Guy Savoy (official à la carte dishes $100–$290 → $200–$580 for two; Krug Chef's Table 10-course $1,500/pp → $3,000 for two, per the Caesars menu effective 11.5.2026). All figures are before tax, gratuity and wine. Everything else leaves the cell blank. Note Michael Mina is currently marked Temporarily closed — see Q-11.",
+        "problem": "Las Vegas fine-dining rooms publish menus without prices, and the ones that do publish (tasting menus) change them seasonally. Inventing a range would violate the no-inference rule; the Guy Savoy cell shows only arithmetic on printed official prices.",
+        "substitution": "Blank cells plus a 'price on request' marker rather than an estimate.",
+        "how_to_close": "Book a table on OpenTable for a dummy date and read the deposit or prepay amount, or phone the numbers listed in data/restaurants.json. 17 of the 24 venues now publish a phone number and can be called in one sitting.",
+        "sources": [
+          "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
+          "https://animabyedo.com",
+          "https://www.opentable.com/r/kame-omakase-las-vegas",
+          "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"
+        ]
+      }
     },
     {
       "id": "Q-05",
@@ -75,7 +128,17 @@
         "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
         "https://www.shellvacationsclubrentals.com/resorts/nevada/las-vegas/desert-rose-resort/rooms/one-bedroom",
         "https://vacationvillageresorts.com/cliffs_peace_canyon/accommodations.html"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "Q-05",
+        "question": "Does each hotel room actually have a private bathroom and a queen-or-larger bed?",
+        "state": "open",
+        "answer": "Most do — every four- and five-star property in the dataset states a private bathroom and a king or queen bed in its rate block. Three exceptions are flagged: rooms sold as 'assigned on arrival' (LINQ, Flamingo, SAHARA, Golden Nugget) do not guarantee the bed type, and Bluegreen Club 36's private bathroom is not stated.",
+        "problem": "A promotional rate on an unassigned room is the cheapest thing on the site but does not meet the couple's bed requirement until check-in.",
+        "substitution": "Assigned-on-arrival rates are shown but flagged, never ranked as the default pick.",
+        "how_to_close": "Book a NAMED room class, not 'Run of House' / 'Room Type Assigned on Arrival'. On Booking.com that means opening the room-type list and picking a specific king or queen category.",
+        "sources": []
+      }
     },
     {
       "id": "Q-06",
@@ -89,7 +152,22 @@
         "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
         "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
         "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2027-02-15&children[]=0&departure_date=2027-02-22&view=calendar"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "Q-06",
+        "question": "Which week inside 2027-02-15 → 2027-03-23 is actually cheapest?",
+        "state": "open",
+        "answer": "No market-wide cheapest week is established. Booking.com snapshots show lower 8–15 March quotes for some measured large resorts; a separate sample of official property booking engines found 15–22 February cheapest at the properties checked. These snapshots differ in property coverage, room/rate terms, taxes and resort-fee treatment, and the Venetian direct result has an unclear 4+ guest-suite label. The Venetian figure from 25 Nov ($2,407 for 8–15 Mar vs $3,757 for 15–22 Feb) was withdrawn on 26 Nov: Booking.com's own Venetian page showed US$5,185.05 (15–22 Feb) and €4,472.36 (8–15 Mar), both including taxes and fees (F-39). The Palazzo and Cosmopolitan 25 Nov figures have not been re-checked (F-44).",
+        "problem": "The dated samples are not like-for-like and will change before the trip. A 26 Nov re-fetch showed changed official-engine rates within one day, and the Venetian direct result had a confusing 4+ guest label. The current evidence cannot show that one window is cheapest across all eligible hotels; see F-30.",
+        "substitution": "The site reports the Booking.com quote comparisons as third-party snapshots and flags the conflicting official-engine sample; it does not recommend moving away from the preferred dates based on these alone.",
+        "how_to_close": "Compare the exact 7-night dates, same named room, resort fee, taxes and cancellation terms directly on each hotel's official booking engine. Recheck close to purchase; no specific booking date is endorsed from this mixed-source snapshot.",
+        "sources": [
+          "https://kanlerxz87-cyber.github.io/Vegas1/docs/session-af795000/hotels.html",
+          "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
+          "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
+          "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2027-02-15&children[]=0&departure_date=2027-02-22&view=calendar"
+        ]
+      }
     },
     {
       "id": "Q-07",
@@ -105,7 +183,20 @@
         "https://aria.mgmresorts.com/en/restaurants/gymkhana.html",
         "https://www.caesars.com/linq/things-to-do/attractions/high-roller",
         "https://neonmuseum.org/whats-on/all-day-admission/"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "Q-07",
+        "question": "What are each restaurant's YouTube, TikTok and Instagram links?",
+        "state": "open",
+        "answer": "YouTube is recorded for every one of the 24 restaurants (69 links), and those video links were not opened, so whether each still plays is unverified. Instagram is now filled for 19 of the 24 restaurants and TikTok for 2 (Lamaii, Esther's Kitchen); for the five activities Instagram is filled for 4 of 5 and TikTok for 3 of 5. Those coverage counts come from the 2026-11-27 social sweep recorded in F-53, not from this session's own page visits.",
+        "problem": "Handles are not printed on most official pages, so a handle found nowhere but a search result is weak evidence: a wrong handle creates a dead or, worse, someone else's account. Creator videos that tag a venue are not the venue's account.",
+        "substitution": "Blank rather than guessed, and every filled activity cell now states where the handle came from (activities page, 'Where each social link came from'). The Neon Museum is the strongest case: it prints both its Instagram and TikTok in its own site navigation.",
+        "how_to_close": "Open each remaining restaurant's official page footer or its OpenTable profile and look for the venue's own link. 5 Instagram gaps and 22 TikTok gaps remain; TikTok is the hardest because many venues never created one. Anything not printed by the venue or its booking profile should stay blank (F-53).",
+        "sources": [
+          "https://neonmuseum.org/",
+          "https://www.youtube.com/themobmuseum"
+        ]
+      }
     },
     {
       "id": "Q-08",
@@ -120,7 +211,17 @@
         "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html",
         "https://www.caesars.com/linq/things-to-do/attractions/high-roller",
         "https://neonmuseum.org/whats-on/all-day-admission/"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "Q-08",
+        "question": "Are the opening hours current for the trip dates (February–March 2027)?",
+        "state": "open",
+        "answer": "Hours were captured on 2026-11-25 and are the venues' current published hours. Several are seasonal or reduced: Wing Lei and L'Atelier are closed two weekdays, SoulBelly closes Mondays, Michael Mina publishes block closures.",
+        "problem": "A February 2027 trip is 15 months from the capture date, and Las Vegas restaurants change days and hours constantly.",
+        "substitution": "The 'exceptions' column records every closure noticed, and every row links to the official page so hours can be re-checked in one click.",
+        "how_to_close": "Re-check the four starred restaurants and Michael Mina two weeks before travel — these are the ones that will ruin an evening if they are dark.",
+        "sources": []
+      }
     },
     {
       "id": "Q-09",
@@ -134,7 +235,17 @@
         "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
         "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
         "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2027-02-15&children[]=0&departure_date=2027-02-22&view=calendar"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "Q-09",
+        "question": "Do the hotel prices include resort fees and tax?",
+        "state": "open",
+        "answer": "Not consistently. Booking.com search totals generally exclude the resort fee and local tax; the Wynn property pages quote room plus $55/night resort fee but exclude 13.38% tax.",
+        "problem": "This is why Wynn shows $4,378 in one place and $5,828 in another for the same week. Comparing the two bases directly understates the Wynn group by roughly a third.",
+        "substitution": "Both figures are published side by side with the basis stated in the row, rather than picking one and hiding the other.",
+        "how_to_close": "Add the resort fee (typically $35–$55/night on the Strip) and 13.38% tax to every Booking.com total before comparing. That is roughly +$250 to +$390 per week on a mid-Strip room.",
+        "sources": []
+      }
     },
     {
       "id": "Q-10",
@@ -147,7 +258,20 @@
       "sources": [
         "https://www.visitlasvegas.com/",
         "https://www.rtcsnv.com/ways-to-travel/how-to-ride/ridertc-app/"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "Q-10",
+        "question": "Is there a convention, race or holiday in the chosen week that changes the price?",
+        "state": "answered",
+        "answer": "The Formula 1 Las Vegas Grand Prix is NOT in this window — the 2027 race is 18–20 November 2027, well outside 15 Feb–23 Mar. US Presidents' Day falls on 15 Feb 2027, the first day of the preferred window.",
+        "problem": "Presidents' Day is a long weekend and the February week is the most expensive of the four measured. The calendar fact is verified; the causal link to the price is not, so it is labelled a likely driver, not a proven one.",
+        "substitution": "Nothing changed — both facts are stated with that distinction.",
+        "how_to_close": "Check the Las Vegas Convention and Visitors Authority events calendar and the Las Vegas Motor Speedway schedule for the chosen week. NASCAR's spring race weekend is traditionally in early March.",
+        "sources": [
+          "https://f1experiences.com/2027-las-vegas-grand-prix",
+          "https://dord.racing/events/2027/f1-las-vegas-gp"
+        ]
+      }
     },
     {
       "id": "Q-11",
@@ -159,7 +283,19 @@
       "how_to_close": "Recheck the official page and exact-date reservation calendar. Exclude the venue from any committed dinner schedule until operating dates and availability are confirmed.",
       "sources": [
         "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "Q-11",
+        "question": "Is every MICHELIN-listed restaurant in the dataset actually open for a February 2027 trip?",
+        "state": "answered",
+        "answer": "One is not. Michael Mina at Bellagio publishes \"Monday to Sunday: Closed\" in its Hours of operation block and carries a \"Temporarily closed\" label on its own Bellagio page. Its $590++ tasting-menu price is still printed on that page, so a reader could easily mistake a dormant venue for an available one.",
+        "problem": "A price on a closed restaurant is worse than a blank: it looks bookable. Grouping this row with live venues would put a phantom dinner into a 7-night plan.",
+        "sources": [
+          "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html"
+        ],
+        "how_to_close": "Restaurant row kept, but with the closure stated on the row and flagged **F-23**. No reopen date is published, so no date is assumed.",
+        "substitution": ""
+      }
     },
     {
       "id": "Q-12",
@@ -177,7 +313,19 @@
         "https://fremontstreetexperience.com/the-canopy/",
         "https://neonmuseum.org/whats-on/all-day-admission/",
         "https://kabutolv.com"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "Q-12",
+        "question": "Do the published opening hours in this dataset survive a second check against the venues' own sites?",
+        "state": "answered",
+        "answer": "Five rows needed correction: Joël Robuchon (hours blank → Tue–Sat 5:00–9:30 PM), Partage (blank → Tue–Sat 5–9 PM, published on the Contact page only), Sparrow + Wolf (no hours published at all), KAME Omakase (no weekly hours on its booking page) and Michael Mina (closed). Nineteen of 24 rows now carry a verified hours string.",
+        "problem": "Two of the five were blank because the hours live on a secondary page — Partage on /contact, Robuchon in an \"Hours of operation\" detail block rather than the header. A single-page check misses both.",
+        "sources": [
+          "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html"
+        ],
+        "how_to_close": "All five corrected or explicitly left blank with the reason recorded. See FLAGS.md **F-22 to F-25**.",
+        "substitution": ""
+      }
     },
     {
       "id": "Q-13",
@@ -192,7 +340,22 @@
         "https://www.caesars.com/caesars-palace/hotel",
         "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
         "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2027-02-15&children[]=0&departure_date=2027-02-22&view=calendar"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "Q-13",
+        "question": "Are the hotels' own websites still live at the URLs this site links to?",
+        "state": "answered",
+        "answer": "Closed as far as this environment allows. 18 of 32 official pages are now confirmed live by fetch (4 from earlier sessions plus 14 opened on 26 Nov 2026: Cosmopolitan, ARIA, Bellagio, Palazzo, SAHARA, Four Seasons, Trump, Golden Nugget, Caesars Palace, Plaza, Fontainebleau, Horseshoe, Flamingo and the Cromwell). Two links moved: caesars.com/cromwell 301-redirects to a NEW brand (The Vanderpump Hotel — row renamed, F-47) and palazzo.com resolves to a page under venetianlasvegas.com. 8 properties refuse automated access (Wynn, Encore, Vdara, Secret Suites, NoMad, W, Bluegreen Club 36, and Crockfords which returns HTTP 500), so each is labelled as refused rather than given a checkmark. 5 were not opened, and 1 (Nobu at Caesars) opens but lands on the parent property's page (F-49).",
+        "problem": "Hotel brand sites move constantly — MGM, Caesars, Marriott and Hilton have all reorganised property URLs. Linking a moved page is a small failure, but claiming it was verified when it was not is the failure the brief actually cares about.",
+        "substitution": "Every card also shows the Booking.com link the price came from. Where that link is a dated search-results list rather than a property page (15 rows), the card says 'Price source — dated search list, not a room quote' (F-48), because the link proves the search, not the room.",
+        "how_to_close": "The 10 refused rows can only be closed from a normal browser or by calling the property — this environment is blocked by their CDNs. That is an access limit, not a data gap; the label says so.",
+        "sources": [
+          "https://www.caesars.com/vanderpump-hotel",
+          "https://www.venetianlasvegas.com/hotel/the-palazzo.html",
+          "https://www.fontainebleaulasvegas.com/",
+          "https://www.rwlasvegas.com/hotels/crockfords/"
+        ]
+      }
     }
   ]
 }

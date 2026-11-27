@@ -50,7 +50,10 @@ def main():
 
     changed = 0
     for h in hotels["hotels"]:
-        z = h["zone"]
+        z = h.get("zone")
+        if z is None:
+            # No model input for a new official-only candidate. Never invent it.
+            continue
         long_count = score(z, rzones, matrix, THRESHOLD_LONG)
         short_count = score(z, rzones, matrix, THRESHOLD_SHORT)
         if h.get("michelin_within_60") != long_count or h.get("michelin_within_20") != short_count:
@@ -79,15 +82,12 @@ def main():
         if not r["official_url"]:
             problems.append(f"{r['id']}: no official_url")
 
-    for h in hotels["hotels"]:
-        if not h["prices"]:
-            problems.append(f"{h['id']}: no price rows")
 
     print(f"restaurants: {n_res}  award split: {award_counts}")
     print(f"hotels: {len(hotels['hotels'])}, rescored: {changed}")
-    flat = {h['michelin_within_60'] for h in hotels['hotels']}
+    flat = {h['michelin_within_60'] for h in hotels['hotels'] if h.get('michelin_within_60') is not None}
     print(f"legacy MODEL ONLY '<=60 min' counts: {sorted(flat)} (not public journey evidence)")
-    spread = sorted({h['michelin_within_20'] for h in hotels['hotels']}, reverse=True)
+    spread = sorted({h['michelin_within_20'] for h in hotels['hotels'] if h.get('michelin_within_20') is not None}, reverse=True)
     print(f"distinct '<=20 min' counts: {spread}")
 
     from verified_views import load_manifest, validate_manifest

@@ -72,7 +72,8 @@
         "sibling": 1,
         "no": 5
       }
-    }
+    },
+    "publication_rule": "Historical OTA/model rows are audit inputs, not public evidence. data/verification.json gates every public field. Hilton Resorts World is an additional independently sourced official candidate, not a Crockfords price."
   },
   "hotels": [
     {
@@ -790,15 +791,15 @@
       ],
       "michelin_within_60": 24,
       "michelin_within_20": 0,
-      "official_url": "",
+      "official_url": "https://www.vacationvillageresorts.com/cliffs_peace_canyon/directions.html",
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5&order=price",
       "verified": "partial",
       "flags": [
         "F-14"
       ],
       "notes": "Off-Strip condo ~20 min drive from the Strip. Appeared in a five-star filter despite being a condominium complex — do not treat the star rating as reliable.",
-      "official_verified": "no",
-      "official_check": "no official URL in the dataset at all — nothing to fetch",
+      "official_verified": "yes",
+      "official_check": "Official Vacation Village directions page fetched 27 Nov 2026; confirms property identity only, not room qualification or a dated rate.",
       "price_basis": "search-list"
     },
     {
@@ -1197,6 +1198,33 @@
       "official_verified": "no",
       "official_check": "not fetched this session",
       "price_basis": "search-list"
+    },
+    {
+      "id": "hilton-resorts-world",
+      "name": "Hilton Las Vegas at Resorts World",
+      "tier": null,
+      "zone": null,
+      "stars": null,
+      "guest_score": null,
+      "reviews": null,
+      "room": "Hilton Deluxe Room — One King Bed",
+      "bed": "king",
+      "private_bath": true,
+      "resort_fee": "Included in itemized official total; see verification.json",
+      "prices": [],
+      "michelin_within_60": null,
+      "michelin_within_20": null,
+      "official_url": "https://www.rwlasvegas.com/stay/las-vegas-hilton/deluxe-room/",
+      "booking_url": "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0",
+      "verified": "field-level — see verification.json",
+      "flags": [
+        "F-59",
+        "F-70"
+      ],
+      "notes": "Net-new official candidate, not Crockfords. Itemized dated offer is in verification.json; no OTA history or assumed model inputs added. Cancellation/deposit terms not obtained.",
+      "official_verified": "yes",
+      "official_check": "2026-11-27 fetched official Deluxe-room page plus exact-date booking engine; field-level evidence recorded.",
+      "price_basis": "official-itemized-total"
     }
   ]
 }

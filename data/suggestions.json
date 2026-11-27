@@ -17,7 +17,17 @@
         "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
         "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
         "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2027-02-15&children[]=0&departure_date=2027-02-22&view=calendar"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "S-01",
+        "title": "Compare exact dates on the hotel's own booking engine before shifting the trip",
+        "impact": "high",
+        "needs_decision": false,
+        "status": "recommended",
+        "body": "Do not assume 8–15 March is cheaper overall. The 25 Nov Booking.com snapshots showed lower March quotes for The Venetian, Palazzo and Cosmopolitan. On 26 Nov the Venetian's figures were not reproduced on Booking.com's own page (F-39), and the Palazzo and Cosmopolitan figures have not been re-checked (F-44). A separate official-property-engine sample reports the preferred 15–22 February week as cheapest at the properties it checked. The samples differ by property coverage, room/rate terms and fee/tax basis. This evidence does not establish a market-wide cheapest week.",
+        "trade_off": "Keeping the preferred dates avoids changing plans based on a source conflict; checking exact dates and the same room/fee basis property by property may still identify a cheaper alternative. Recheck rates close to booking because the captures are dated 25 November 2026.",
+        "evidence": "Booking.com snapshot table: data/price-windows.json and data/hotels.json. Official-engine sample with per-property booking links: docs/session-af795000/hotels.html."
+      }
     },
     {
       "id": "S-02",
@@ -31,7 +41,17 @@
       "sources": [
         "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
         "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "S-02",
+        "title": "Decide whether this is a 3-night or a 7-night trip",
+        "impact": "high",
+        "needs_decision": true,
+        "status": "open",
+        "body": "The brief says 1–2 weeks but the preferred dates 2027-02-15 → 2027-02-18 are three nights. Every hotel total on this site is for seven nights. If the real plan is three nights, the hotel line is roughly 43% of what is shown.",
+        "trade_off": "Three nights cannot cover 21 Michelin restaurants plus the museums — realistically it covers four or five restaurants. Seven nights is the shortest trip where the list is plausible.",
+        "evidence": "data/questions.json Q-02"
+      }
     },
     {
       "id": "S-03",
@@ -46,7 +66,17 @@
         "https://www.caesars.com/caesars-palace/hotel",
         "https://www.venetianlasvegas.com/hotel/the-venetian.html",
         "https://www.venetianlasvegas.com/hotel/the-palazzo.html"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "S-03",
+        "title": "Refuse 'Room Type Assigned on Arrival' rates",
+        "impact": "medium",
+        "needs_decision": false,
+        "status": "recommended",
+        "body": "The three lowest Booking.com quote snapshots (LINQ $564, Flamingo $626, Horseshoe $717) are all unassigned-room promotions. These offers do not guarantee the queen-or-larger bed the couple asked for, and the quote totals are not official property rates.",
+        "trade_off": "A named king or two-queen room is necessary to verify bed fit. The price difference is not established here; check the named room on the property's official booking engine rather than adding an assumed uplift.",
+        "evidence": "data/hotels.json flags F-11 and F-29; official-engine examples are linked at docs/session-af795000/hotels.html"
+      }
     },
     {
       "id": "S-04",
@@ -62,7 +92,17 @@
         "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html",
         "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html",
         "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "S-04",
+        "title": "Book the four starred restaurants first, then build the trip around them",
+        "impact": "high",
+        "needs_decision": false,
+        "status": "recommended",
+        "body": "é by José Andrés has nine seats and opens bookings about three months out; Joël Robuchon, L'Atelier and Guy Savoy are dinner-only and dark on specific weekdays. Reservation order should be é → Robuchon → Guy Savoy → L'Atelier, then fill the unstarred list around whatever dates remain.",
+        "trade_off": "Locking the starred nights first means the hotels must be chosen afterwards — the reverse of how people normally book.",
+        "evidence": "data/restaurants.json"
+      }
     },
     {
       "id": "S-05",
@@ -76,7 +116,17 @@
       "sources": [
         "https://www.rtcsnv.com/ways-to-travel/fares-passes/",
         "https://www.lvmonorail.com/ticket-information/"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "S-05",
+        "title": "Use the Monorail 7-day pass, not single rides",
+        "impact": "medium",
+        "needs_decision": false,
+        "status": "recommended",
+        "body": "A single Monorail ride is $6.25 paper or $5.75 with an e-ticket; the 7-day pass is $64 paper or $59.95 electronic. Ten rides break even at paper prices. Over seven nights the pass is the cheaper and simpler option, and it covers MGM Grand ↔ SAHARA, which is exactly the Michelin corridor.",
+        "trade_off": "The Monorail does not reach Chinatown or downtown, so RTC buses are still needed for roughly half the restaurant list. The pass is not a substitute for bus fares.",
+        "evidence": "data/transit.json"
+      }
     },
     {
       "id": "S-06",
@@ -89,7 +139,17 @@
       "evidence": "Related official source observations and field gaps; this is advice, not a verified price or journey.",
       "sources": [
         "https://www.rtcsnv.com/ways-to-travel/how-to-ride/ridertc-app/"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "S-06",
+        "title": "Base the trip centre-Strip, not at the Venetian or the Wynn",
+        "impact": "medium",
+        "needs_decision": true,
+        "status": "open",
+        "body": "The Venetian complex holds four Michelin listings and the Wynn holds one, which makes the north Strip look like the obvious base. But the centre Strip is within 20 minutes of 15 Michelin restaurants — more than any other zone — and is reachable from both ends of the Monorail.",
+        "trade_off": "Choosing centre Strip (Cosmopolitan, ARIA, Bellagio, Vdara, Caesars) gives up the in-building convenience of four restaurants under one roof. Price comparisons should use identical dates, room classes, taxes and resort-fee basis from official property engines; the current OTA/direct samples are not comparable enough to establish a cost premium.",
+        "evidence": "data/transit.json, data/hotels.json"
+      }
     },
     {
       "id": "S-07",
@@ -103,7 +163,17 @@
       "sources": [
         "https://www.shellvacationsclubrentals.com/resorts/nevada/las-vegas/desert-rose-resort/rooms/one-bedroom",
         "https://vacationvillageresorts.com/cliffs_peace_canyon/accommodations.html"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "S-07",
+        "title": "Pair the museums with the downtown restaurants on one day",
+        "impact": "medium",
+        "needs_decision": false,
+        "status": "recommended",
+        "body": "The Mob Museum, the Neon Museum, Fremont Street, Esther's Kitchen and SoulBelly BBQ are all inside the downtown/Arts District zone — which is the only zone that is far from everything else. Doing them on a single day turns a 30-minute trip each way into one trip.",
+        "trade_off": "It consumes a whole evening, so a starred dinner cannot happen that night. Slot it on arrival day.",
+        "evidence": "data/transit.json, data/activities.json"
+      }
     },
     {
       "id": "S-08",
@@ -119,7 +189,17 @@
         "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
         "https://themobmuseum.org/plan-your-visit/purchase-tickets/tickets/",
         "https://neonmuseum.org/whats-on/all-day-admission/"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "S-08",
+        "title": "Budget resort fees and 13.38% tax explicitly",
+        "impact": "medium",
+        "needs_decision": false,
+        "status": "recommended",
+        "body": "The Booking.com totals this site quotes exclude the resort fee and the local room tax. On the Strip that is typically $35–$55 per night plus 13.38% — roughly $250–$390 extra on a seven-night stay, which is a whole tasting menu at Anima by EDO.",
+        "trade_off": "No downside; it is purely an accounting correction. The Wynn rows already show both bases side by side as a worked example.",
+        "evidence": "data/questions.json Q-09"
+      }
     },
     {
       "id": "S-09",
@@ -134,7 +214,17 @@
         "https://themobmuseum.org/",
         "https://neonmuseum.org/whats-on/all-day-admission/",
         "https://fremontstreetexperience.com/the-canopy/"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "S-09",
+        "title": "Treat Black Friday rates as a floor, not a forecast",
+        "impact": "low",
+        "needs_decision": false,
+        "status": "recommended",
+        "body": "Several of the cheapest totals captured on 2026-11-25 carry a 'Black Friday Deal' label — LINQ, Flamingo, Golden Nugget, Bluegreen, Cosmopolitan, Bellagio and Fontainebleau all show one. They expire long before 2027 and will not be reissued at the same depth.",
+        "trade_off": "Planning against the promotional number risks a 30–50% shock when the real 2027 rate appears. Use the non-promotional 'original price' figure as the conservative planning number where one is printed.",
+        "evidence": "data/hotels.json"
+      }
     },
     {
       "id": "S-10",
@@ -148,7 +238,17 @@
       "sources": [
         "https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/",
         "https://partage.vegas/restaurant"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "S-10",
+        "title": "Add a 14-night column if the couple really means two weeks",
+        "impact": "low",
+        "needs_decision": true,
+        "status": "not implemented",
+        "body": "The brief allows 1–2 weeks. Only 7-night blocks were priced. A 14-night stay across the same date range was not measured and is flagged F-17 rather than estimated, because doubling a 7-night total would ignore weekly rate breaks.",
+        "trade_off": "Costs two more search captures per property. Worth doing only if two weeks is a real option.",
+        "evidence": "FLAGS.md F-17"
+      }
     },
     {
       "id": "S-11",
@@ -163,7 +263,17 @@
         "https://aria.mgmresorts.com/en/restaurants/gymkhana.html",
         "https://www.caesars.com/linq/things-to-do/attractions/high-roller",
         "https://neonmuseum.org/whats-on/all-day-admission/"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "S-11",
+        "title": "Keep one cheap night for a jet-lagged arrival",
+        "impact": "low",
+        "needs_decision": false,
+        "status": "recommended",
+        "body": "Pho Ga Bac Bac is Michelin-listed, open 24 hours, and Ping Pang Pong is open 10am–3am. Both mean the first night does not need a reservation and does not need the couple to be sharp.",
+        "trade_off": "Neither is a special-occasion room. Treat them as logistics, not as the holiday.",
+        "evidence": "data/restaurants.json"
+      }
     },
     {
       "id": "S-12",
@@ -178,7 +288,17 @@
         "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
         "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
         "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2027-02-15&children[]=0&departure_date=2027-02-22&view=calendar"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "S-12",
+        "title": "Re-verify only what can actually change",
+        "impact": "medium",
+        "needs_decision": false,
+        "status": "recommended",
+        "body": "Hours and days are recorded for 19 of the 24 restaurants; 5 are blank (Michael Mina, KAME, Sparrow + Wolf, Esther's Kitchen, YEN Viet) and are flagged, not guessed. 17 rows are marked verified. The four starred rooms, Michael Mina (currently marked Temporarily closed) and Wing Lei are the ones whose closure would waste an evening, so re-check those six the week before travel rather than re-checking all 24.",
+        "trade_off": "Accepts that a minor venue may be dark on the night. Saves about an hour of checking.",
+        "evidence": "data/questions.json Q-08"
+      }
     },
     {
       "id": "S-13",
@@ -192,7 +312,17 @@
       "sources": [
         "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s",
         "https://www.rtcsnv.com/ways-to-travel/how-to-ride/ridertc-app/"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "S-13",
+        "title": "Spend ten minutes closing the 28 unverified hotel links",
+        "impact": "low",
+        "needs_decision": false,
+        "status": "implemented",
+        "body": "Four hotel official links were fetched and confirmed. The other 28 were written from the property's own domain but never opened, so the site labels them 'not fetched — may have moved'. That label is honest but it is also unfinished work. Opening 28 pages and fixing the dead ones would remove the caveat entirely. DONE 2026-11-26: 14 more links were opened and confirmed, the Cromwell row was renamed after its official page redirected to The Vanderpump Hotel, and the rows that refuse automated access are now labelled as refused rather than left ambiguous.",
+        "trade_off": "Ten minutes of clicking for no change to the plan's cost or ranking. The Booking.com price-source link on every card already works, so nothing is currently unreachable.",
+        "evidence": "FLAGS.md F-27, data/questions.json Q-13"
+      }
     },
     {
       "id": "S-14",
@@ -206,7 +336,17 @@
       "sources": [
         "https://www.caesars.com/caesars-palace/hotel",
         "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "S-14",
+        "title": "Book Caesars-family rooms direct, not on the assigned-rate this site quotes",
+        "impact": "medium",
+        "needs_decision": false,
+        "status": "recommended",
+        "body": "The official Caesars pages for Flamingo, Horseshoe and The Vanderpump were opened on 2026-11-26 and all of them sell NAMED room types with a stated bed (e.g. Horseshoe 'Resort Executive Suite | 1 King, 650 sq ft, soaking tub'). The cheap totals on those rows come from an assigned-on-arrival OTA rate (F-11). Booking direct trades a higher nightly number for a guaranteed bed.",
+        "trade_off": "Direct is usually $100–200/week more on these three, and it removes the F-11 risk entirely.",
+        "evidence": "https://www.caesars.com/horseshoe-las-vegas ; F-11, F-48"
+      }
     },
     {
       "id": "S-15",
@@ -220,7 +360,27 @@
       "sources": [
         "https://www.caesars.com/vanderpump-hotel",
         "https://www.mgmresorts.com/en/hotels/vdara.html"
-      ]
+      ],
+      "previous_pass_2026_11_27": {
+        "id": "S-15",
+        "title": "Re-quote the former Cromwell row before it is used in the ranking",
+        "impact": "low",
+        "needs_decision": false,
+        "status": "open",
+        "body": "The $1,978 seven-night total on that row was captured on 2026-11-25 under the name The Cromwell. On 2026-11-26 the property's official page presented it as The Vanderpump Hotel. Until it is re-quoted under the new brand the row is a Cromwell-era number on a Vanderpump property, and it sits at rank 7 on the Michelin-proximity table, above three cheaper centre-Strip options.",
+        "trade_off": "Costs one dated search. Until then the number should not be treated as bookable.",
+        "evidence": "https://www.caesars.com/vanderpump-hotel ; F-47"
+      }
+    },
+    {
+      "id": "S-16",
+      "title": "Close the social-link gaps only from venue-controlled sources, and say where each handle came from",
+      "impact": "low",
+      "needs_decision": false,
+      "status": "recommended",
+      "body": "The brief asked for a YouTube, TikTok or Instagram link for every restaurant and activity. YouTube is covered for all 24 restaurants and all 5 activities. The remaining gaps after the 2026-11-27 sweep are 5 restaurant Instagram handles and 22 TikTok accounts (F-53). The safe route is the venue's own site footer, its own channel/profile metadata, or its OpenTable profile — the same standard now printed under the activities table. A handle that only appears in a search result is not evidence.",
+      "trade_off": "Roughly 24 page visits plus an hour of checking, and some venues genuinely have no account — the honest outcome may be a blank cell, not a link. Filling a cell with a reseller's or creator's account would look complete and be wrong.",
+      "evidence": "F-53 ; https://neonmuseum.org/ ; https://www.youtube.com/themobmuseum ; activities page 'Where each social link came from'"
     }
   ]
 }

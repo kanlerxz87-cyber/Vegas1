@@ -4,7 +4,8 @@
     "session": "arena/3d5d3718-vegas1",
     "policy": "Public comparison values come only from verified fields below. A fetched official page is not proof of every value on a row. Unknown values are null; historical research stays in its original datasets but is not silently promoted to evidence. Current hours/menu prices are not promises of February/March 2027 availability. No bookings, accounts, deposits or purchases were made.",
     "legacy_data": "hotels.json, restaurants.json, activities.json and transit.json retain earlier research. The public views use this field-level manifest, not their row-level verified labels.",
-    "external_link_limit": "Source pages marked fetched were read with fetch_page on the checked date. Social targets, every hotel link and all archived external links were not exhaustively tested; a CDN refusal is not a confirmed broken URL."
+    "external_link_limit": "Sources marked fetched were read on their checked date; unchecked references are explicit. Parallel social research and creator media remain in canonical data/socials.json and audit history; they do not authorize unrelated fields. The offline validator does not prove external availability.",
+    "social_rule": "Publish only official-site cross-links or opened venue/brand profiles whose operator-domain/location/brand identity is recorded. Shared brand, parent-resort and dormant profiles are explicitly labelled. No award/price fact is inferred from a bio. Creator discoveries remain audit research, not official evidence."
   },
   "sources": {
     "michelin": {
@@ -538,6 +539,263 @@
       "result": "fetched",
       "checked": "2026-11-27",
       "note": "Operator page lists active stations and LVCC→Strip $5 / LVCC→Thomas & Mack $8 sample fares. Loop is not a subway or RTC bus service; no door-to-door journey is established."
+    },
+    "e-own": {
+      "url": "https://www.ebyjoseandres.com/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Venue site says Tue–Sun; MGM operator page says Tue–Sat. Both agree two seatings, 5:30/8:30 PM, nine seats. Direct phone 702-698-7950; tickets released three months in advance."
+    },
+    "partage-menu": {
+      "url": "https://partage.vegas/menu",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Two × $130 five-course / $160 seven-course / $210 Signature menus. Current seasonal food subtotal; wine/add-ons, tax and gratuity not included/established. Menu changes monthly; not a 2027 quote."
+    },
+    "wing-menu": {
+      "url": "https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Two × $198.88 Chef Tam’s Signature Tasting Menu. Food subtotal; optional wine journeys $128.88/$208.88 per person are separate. Tax, gratuity and 2027 availability not established. No rounding or assumptions about why prices end in .88."
+    },
+    "china-menu": {
+      "url": "https://www.chinapoblano.com/menus/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Two × $60 per-person José’s Way tasting menu. Current menu food subtotal; tax, gratuity, drinks and 2027 availability not established."
+    },
+    "kabuto-menu-page": {
+      "url": "https://www.kabutolv.com/menu",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Operator links KABUTO MENU PDF at /s/kabuto-menu2026.pdf."
+    },
+    "kabuto-menu": {
+      "url": "https://www.kabutolv.com/s/kabuto-menu2026.pdf",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Two × $130 Yoroi / $185 Kabuto. Operator-linked PDF redirects to Squarespace CDN. Food subtotal; sake pairings, tax/gratuity and trip-date availability not established. PDF metadata title says 2023 despite the 2026 filename; current operator link plus authorized booking page corroborates amounts."
+    },
+    "kabuto-resy": {
+      "url": "https://www.kabutolv.com/reserve",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Venue reserve URL redirects directly to its Resy page. Lists $130/$185 courses, 30-day reservation window, allergy/cancellation rules and a separately dated Dec 18–Jan 10 holiday menu. That holiday period does not cover this trip.",
+      "resolved_url": "https://resy.com/cities/las-vegas-nv/venues/kabuto-edomae-sushi?date=2026-11-27&seats=2"
+    },
+    "soul-menu": {
+      "url": "https://soulbellybbq.com/menu",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "One published Chef’s Choice for 2 set, $80; six pit items and six sides, no substitutions. Main Street location; food subtotal, not tax/tip/drinks or 2027 availability."
+    },
+    "a-bellagio-fountains": {
+      "url": "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Free for any visitor. Weekdays every 30 min 3–7:30 PM and 15 min 8 PM–midnight; weekends/holidays 30 min noon–7:30 PM and 15 min 8 PM–midnight. Schedule may vary; weather cancellations apply."
+    },
+    "quote-rw": {
+      "url": "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Official read-only shop page: 15–22 Feb 2027, 2 guests; Hilton Deluxe One King, max 2 guests, selectedRate DBF26 Up to 50% Off. Seven daily amounts plus room tax/resort fees/fee tax print Total $2200.15; Queen alternative $2434.84. Rate/deposit/cancellation terms not exposed; browser unsupported warning appears at footer. No booking or checkout was submitted.",
+      "resolved_url": "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&nights=7&adults=2&children=0&checkIn=02/15/2027&checkOut=02/22/2027&selectedRate=DBF26"
+    },
+    "hilton-rw-room": {
+      "url": "https://www.rwlasvegas.com/stay/las-vegas-hilton/deluxe-room/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Hilton Deluxe: 1 King or 2 Queens, 400 ft², intimate seating area and in-room bathroom with walk-in shower/LED vanity. LED Smart TV, safe, minibar with refrigerator compartment, iron and hairdryer. Exact-date engine selects One King separately."
+    },
+    "kame-booking": {
+      "url": "https://booking.sushikame.com/",
+      "authority": "official",
+      "result": "fetch_failed",
+      "checked": null,
+      "note": "Read-only fetch failed 27 Nov 2026. No menu, final price or date availability obtained."
+    },
+    "ig-joel-robuchon": {
+      "url": "https://www.instagram.com/joelrobuchon.lasvegas/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Profile bio links the official MGM Grand restaurant page. Latest visible post 2020; stale bio claims three stars. Link is historical venue media, not current award evidence (2026 Guide: two stars).",
+      "identity_basis": "Opened venue/brand profile and matched operator-domain, location or brand identity as detailed in note; not a username guess."
+    },
+    "ig-guy-savoy": {
+      "url": "https://www.instagram.com/guysavoylasvegas/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Profile explicitly names Guy Savoy at Caesars Palace and links guysavoylasvegas.com. Latest visible post 2023; hours/awards/prices must come from current official pages, not this dormant feed.",
+      "identity_basis": "Opened venue/brand profile and matched operator-domain, location or brand identity as detailed in note; not a username guess."
+    },
+    "ig-e-by-jose-andres": {
+      "url": "https://www.instagram.com/ebyjoseandres/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Verified-badged é profile names José Andrés and has current Las Vegas/Cosmopolitan posts. Opened and matched; does not resolve the two operator sites’ weekly-days conflict.",
+      "identity_basis": "Opened venue/brand profile and matched operator-domain, location or brand identity as detailed in note; not a username guess."
+    },
+    "ig-china-poblano": {
+      "url": "https://www.instagram.com/chinapoblano/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Verified-badged venue profile identifies José Andrés and The Cosmopolitan. Opened and matched; MICHELIN status is independently sourced from the Guide.",
+      "identity_basis": "Opened venue/brand profile and matched operator-domain, location or brand identity as detailed in note; not a username guess."
+    },
+    "ig-mott-32": {
+      "url": "https://www.instagram.com/mott32vegas/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Profile is titled Mott 32 Las Vegas and links its Mott 32 SevenRooms reservations; recent posts describe The Palazzo.",
+      "identity_basis": "Opened venue/brand profile and matched operator-domain, location or brand identity as detailed in note; not a username guess."
+    },
+    "ig-cote": {
+      "url": "https://www.instagram.com/cotekoreansteakhouse/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Shared official brand profile lists NYC, Miami, Singapore and Vegas; current posts specifically identify COTE Vegas. Not a Las Vegas-only account; its Michelin-star tagline is not the Las Vegas award.",
+      "identity_basis": "Opened venue/brand profile and matched operator-domain, location or brand identity as detailed in note; not a username guess."
+    },
+    "ig-bouchon": {
+      "url": "https://www.instagram.com/bouchon_bistro/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Shared Bouchon brand profile explicitly lists Las Vegas among its three locations, links Thomas Keller, and has current Las Vegas kitchen posts. Not a Vegas-only account.",
+      "identity_basis": "Opened venue/brand profile and matched operator-domain, location or brand identity as detailed in note; not a username guess."
+    },
+    "ig-estiatorio-milos": {
+      "url": "https://www.instagram.com/miloslasvegas/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Profile titled estiatorio Milos Las Vegas names The Venetian and links estiatoriomilos.com.",
+      "identity_basis": "Opened venue/brand profile and matched operator-domain, location or brand identity as detailed in note; not a username guess."
+    },
+    "ig-michael-mina": {
+      "url": "https://www.instagram.com/michaelminalv/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Profile bio identifies the Bellagio venue and links its SevenRooms reservations. Does not override the official Bellagio page’s temporary-closure warning.",
+      "identity_basis": "Opened venue/brand profile and matched operator-domain, location or brand identity as detailed in note; not a username guess."
+    },
+    "ig-kabuto": {
+      "url": "https://www.instagram.com/kabutolv/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Venue profile links kabutolv.com/reserve and prints matching phone (702)676-1044. Official website embeds the same account’s posts.",
+      "identity_basis": "Opened venue/brand profile and matched operator-domain, location or brand identity as detailed in note; not a username guess."
+    },
+    "ig-kame-omakase": {
+      "url": "https://www.instagram.com/kameomakase_lv/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Verified-badged Las Vegas profile links sushikame.com. Bio prints $500 and 5:30/8 PM but does not specify a complete priced menu/billing basis; the cost-for-two field remains unverified.",
+      "identity_basis": "Opened venue/brand profile and matched operator-domain, location or brand identity as detailed in note; not a username guess."
+    },
+    "ig-lamaii": {
+      "url": "https://www.instagram.com/lamaiilv/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Verified-badged profile identifies Las Vegas Chinatown, 4480 Spring Mountain #700, matching the official restaurant location.",
+      "identity_basis": "Opened venue/brand profile and matched operator-domain, location or brand identity as detailed in note; not a username guess."
+    },
+    "ig-partage": {
+      "url": "https://www.instagram.com/partagelv/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Profile identifies Modern French Fine Dining Las Vegas and links partage.vegas; current tasting-menu posts match the operator.",
+      "identity_basis": "Opened venue/brand profile and matched operator-domain, location or brand identity as detailed in note; not a username guess."
+    },
+    "ig-sparrow-and-wolf": {
+      "url": "https://www.instagram.com/sparrowandwolflv/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Profile names Sparrow + Wolf and chef Brian Howard with current restaurant-service/menu posts; location/identity also match the parallel canonical provenance record. Not an independent award source.",
+      "identity_basis": "Opened venue/brand profile and matched operator-domain, location or brand identity as detailed in note; not a username guess."
+    },
+    "ig-esthers-kitchen": {
+      "url": "https://www.instagram.com/estherskitchenlv/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Profile identifies James Trees’ Las Vegas Arts District restaurant; current recruitment post uses careers@estherslv.com, matching the operator domain. Not a priced-menu source.",
+      "identity_basis": "Opened venue/brand profile and matched operator-domain, location or brand identity as detailed in note; not a username guess."
+    },
+    "ig-pho-ga-bac-bac": {
+      "url": "https://www.instagram.com/phogabacbac702/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Profile prints matching official address 3775 Spring Mountain and phone 702-476-9623. Its award-language is not used as a MICHELIN tier; do not copy its unsupported 2025 award claim.",
+      "identity_basis": "Opened venue/brand profile and matched operator-domain, location or brand identity as detailed in note; not a username guess."
+    },
+    "ig-stubborn-seed": {
+      "url": "https://www.instagram.com/stubborn_seed/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Shared Miami/Las Vegas brand profile explicitly names Resorts World Las Vegas and has current Vegas posts. Its star/Green Star tagline is not the Las Vegas award (Recommended).",
+      "identity_basis": "Opened venue/brand profile and matched operator-domain, location or brand identity as detailed in note; not a username guess."
+    },
+    "ig-latelier-review": {
+      "url": "https://www.instagram.com/latelierjoelrobuchonlv/",
+      "authority": "unconfirmed_profile",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Dormant profile with 2021 posts names/tags MGM Grand and L’Atelier, but no badge or operator-domain/site cross-link was exposed. Preserved in canonical social research, not published as an approved official profile."
+    },
+    "ig-sphere": {
+      "url": "https://www.instagram.com/spherevegas/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Verified-badged Sphere profile names the Wizard of Oz attraction and has current Sphere Vegas venue posts; matched to the operator identity."
+    },
+    "ig-mob-museum": {
+      "url": "https://www.instagram.com/themobmuseum/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Verified-badged museum profile names the Las Vegas museum and links admission.themobmuseum.org, matching the operator admission domain."
+    },
+    "ig-fremont-street": {
+      "url": "https://www.instagram.com/fremontstreet/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Profile explicitly identifies itself as the official Fremont Street Experience and SlotZilla account, with current operator event posts; parallel provenance record independently matched it."
+    },
+    "yt-mob": {
+      "url": "https://www.youtube.com/themobmuseum",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Fetch returned a 401 banner plus usable museum-channel playlists/videos including “Witness It All at The Mob Museum” linking themobmuseum.org. Channel content identifies the operator. Not an assurance that every visitor can play all videos."
     }
   },
   "restaurants": {
@@ -594,10 +852,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "instagram": {
-          "value": null,
-          "source": "r-joel-robuchon",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "https://www.instagram.com/joelrobuchon.lasvegas/",
+          "source": "ig-joel-robuchon",
+          "status": "verified",
+          "note": "Profile bio links the official MGM Grand restaurant page. Latest visible post 2020; stale bio claims three stars. Link is historical venue media, not current award evidence (2026 Guide: two stars)."
         },
         "tiktok": {
           "value": null,
@@ -673,9 +931,9 @@
         },
         "instagram": {
           "value": null,
-          "source": "r-latelier-robuchon",
+          "source": "ig-latelier-review",
           "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "note": "Profile opened but operator control not established from exposed content; inherited discovery preserved in data/socials.json."
         },
         "tiktok": {
           "value": null,
@@ -748,10 +1006,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "instagram": {
-          "value": null,
-          "source": "r-guy-savoy",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "https://www.instagram.com/guysavoylasvegas/",
+          "source": "ig-guy-savoy",
+          "status": "verified",
+          "note": "Profile explicitly names Guy Savoy at Caesars Palace and links guysavoylasvegas.com. Latest visible post 2023; hours/awards/prices must come from current official pages, not this dormant feed."
         },
         "tiktok": {
           "value": null,
@@ -789,22 +1047,28 @@
           "note": "Matched to the MICHELIN address list, except explicit conflicts are withheld."
         },
         "days": {
-          "value": "Tuesday–Saturday",
-          "source": "r-e-by-jose-andres",
-          "status": "verified",
-          "note": ""
+          "value": null,
+          "source": "e-own",
+          "status": "unverified",
+          "note": "Official-vs-official conflict: own site Tue–Sun; MGM Tue–Sat. Confirm the exact date; neither schedule overrides the other.",
+          "also_sources": [
+            "r-e-by-jose-andres"
+          ]
         },
         "hours": {
-          "value": "5:30 PM–8:30 PM",
-          "source": "r-e-by-jose-andres",
+          "value": "Two seatings: 5:30 PM and 8:30 PM",
+          "source": "e-own",
           "status": "verified",
           "note": ""
         },
         "exceptions": {
-          "value": "Closed Sunday/Monday. Nine seats, two seatings nightly. Online reservations up to three months in advance.",
-          "source": "r-e-by-jose-andres",
+          "value": "Nine seats. Tickets released three months in advance. Open-day conflict (Tue–Sun vs Tue–Sat) must be resolved for a chosen date.",
+          "source": "e-own",
           "status": "verified",
-          "note": ""
+          "note": "",
+          "also_sources": [
+            "r-e-by-jose-andres"
+          ]
         },
         "price_2adults": {
           "value": null,
@@ -813,8 +1077,8 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "phone": {
-          "value": "877.893.2003",
-          "source": "r-e-by-jose-andres",
+          "value": "702.698.7950",
+          "source": "e-own",
           "status": "verified",
           "note": ""
         },
@@ -825,10 +1089,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "instagram": {
-          "value": null,
-          "source": "r-e-by-jose-andres",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "https://www.instagram.com/ebyjoseandres/",
+          "source": "ig-e-by-jose-andres",
+          "status": "verified",
+          "note": "Verified-badged é profile names José Andrés and has current Las Vegas/Cosmopolitan posts. Opened and matched; does not resolve the two operator sites’ weekly-days conflict."
         },
         "tiktok": {
           "value": null,
@@ -844,8 +1108,9 @@
         }
       },
       "flags": [
-        "F-73",
-        "F-70"
+        "F-68",
+        "F-70",
+        "F-73"
       ]
     },
     "china-poblano": {
@@ -883,10 +1148,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "price_2adults": {
-          "value": null,
-          "source": "r-china-poblano",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "$120 for two José’s Way menus",
+          "source": "china-menu",
+          "status": "verified",
+          "note": "Two × $60 per-person José’s Way tasting menu. Current menu food subtotal; tax, gratuity, drinks and 2027 availability not established."
         },
         "phone": {
           "value": "702.698.7900",
@@ -901,10 +1166,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "instagram": {
-          "value": null,
-          "source": "r-china-poblano",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "https://www.instagram.com/chinapoblano/",
+          "source": "ig-china-poblano",
+          "status": "verified",
+          "note": "Verified-badged venue profile identifies José Andrés and The Cosmopolitan. Opened and matched; MICHELIN status is independently sourced from the Guide."
         },
         "tiktok": {
           "value": null,
@@ -961,10 +1226,10 @@
           "note": ""
         },
         "price_2adults": {
-          "value": null,
-          "source": "r-wing-lei",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "$397.76 for two tasting menus",
+          "source": "wing-menu",
+          "status": "verified",
+          "note": "Two × $198.88 Chef Tam’s Signature Tasting Menu. Food subtotal; optional wine journeys $128.88/$208.88 per person are separate. Tax, gratuity and 2027 availability not established. No rounding or assumptions about why prices end in .88."
         },
         "phone": {
           "value": "702.770.3388",
@@ -1057,10 +1322,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "instagram": {
-          "value": null,
-          "source": "r-mott-32",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "https://www.instagram.com/mott32vegas/",
+          "source": "ig-mott-32",
+          "status": "verified",
+          "note": "Profile is titled Mott 32 Las Vegas and links its Mott 32 SevenRooms reservations; recent posts describe The Palazzo."
         },
         "tiktok": {
           "value": null,
@@ -1133,10 +1398,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "instagram": {
-          "value": null,
-          "source": "r-cote",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "https://www.instagram.com/cotekoreansteakhouse/",
+          "source": "ig-cote",
+          "status": "verified",
+          "note": "Shared official brand profile lists NYC, Miami, Singapore and Vegas; current posts specifically identify COTE Vegas. Not a Las Vegas-only account; its Michelin-star tagline is not the Las Vegas award."
         },
         "tiktok": {
           "value": null,
@@ -1209,10 +1474,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "instagram": {
-          "value": null,
-          "source": "r-bouchon",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "https://www.instagram.com/bouchon_bistro/",
+          "source": "ig-bouchon",
+          "status": "verified",
+          "note": "Shared Bouchon brand profile explicitly lists Las Vegas among its three locations, links Thomas Keller, and has current Las Vegas kitchen posts. Not a Vegas-only account."
         },
         "tiktok": {
           "value": null,
@@ -1285,10 +1550,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "instagram": {
-          "value": null,
-          "source": "r-estiatorio-milos",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "https://www.instagram.com/miloslasvegas/",
+          "source": "ig-estiatorio-milos",
+          "status": "verified",
+          "note": "Profile titled estiatorio Milos Las Vegas names The Venetian and links estiatoriomilos.com."
         },
         "tiktok": {
           "value": null,
@@ -1438,10 +1703,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "instagram": {
-          "value": null,
-          "source": "r-michael-mina",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "https://www.instagram.com/michaelminalv/",
+          "source": "ig-michael-mina",
+          "status": "verified",
+          "note": "Profile bio identifies the Bellagio venue and links its SevenRooms reservations. Does not override the official Bellagio page’s temporary-closure warning."
         },
         "tiktok": {
           "value": null,
@@ -1570,16 +1835,16 @@
           "note": ""
         },
         "exceptions": {
-          "value": null,
-          "source": "r-kabuto",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "Authorized booking page: reservations up to 30 days ahead; notify allergies 24 hours ahead (severe allergies cannot be accommodated); $100 per-person late-cancellation/no-show fee under its 24-hour policy. Dec 18–Jan 10 holiday-only $215 menu is outside this trip.",
+          "source": "kabuto-resy",
+          "status": "verified",
+          "note": ""
         },
         "price_2adults": {
-          "value": null,
-          "source": "r-kabuto",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "$260 Yoroi / $370 Kabuto, for two",
+          "source": "kabuto-menu",
+          "status": "verified",
+          "note": "Two × $130 Yoroi / $185 Kabuto. Operator-linked PDF redirects to Squarespace CDN. Food subtotal; sake pairings, tax/gratuity and trip-date availability not established. PDF metadata title says 2023 despite the 2026 filename; current operator link plus authorized booking page corroborates amounts."
         },
         "phone": {
           "value": "702.676.1044",
@@ -1594,10 +1859,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "instagram": {
-          "value": null,
-          "source": "r-kabuto",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "https://www.instagram.com/kabutolv/",
+          "source": "ig-kabuto",
+          "status": "verified",
+          "note": "Venue profile links kabutolv.com/reserve and prints matching phone (702)676-1044. Official website embeds the same account’s posts."
         },
         "tiktok": {
           "value": null,
@@ -1641,10 +1906,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "hours": {
-          "value": null,
-          "source": "r-kame-omakase",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "Bio advertises 5:30 PM & 8 PM seatings; weekly days unverified",
+          "source": "ig-kame-omakase",
+          "status": "verified",
+          "note": "Current official verified-badged venue profile, not a dated reservation or full weekly schedule."
         },
         "exceptions": {
           "value": null,
@@ -1671,10 +1936,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "instagram": {
-          "value": null,
-          "source": "r-kame-omakase",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "https://www.instagram.com/kameomakase_lv/",
+          "source": "ig-kame-omakase",
+          "status": "verified",
+          "note": "Verified-badged Las Vegas profile links sushikame.com. Bio prints $500 and 5:30/8 PM but does not specify a complete priced menu/billing basis; the cost-for-two field remains unverified."
         },
         "tiktok": {
           "value": null,
@@ -1748,10 +2013,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "instagram": {
-          "value": null,
-          "source": "r-lamaii",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "https://www.instagram.com/lamaiilv/",
+          "source": "ig-lamaii",
+          "status": "verified",
+          "note": "Verified-badged profile identifies Las Vegas Chinatown, 4480 Spring Mountain #700, matching the official restaurant location."
         },
         "tiktok": {
           "value": null,
@@ -1800,16 +2065,16 @@
           "note": ""
         },
         "exceptions": {
-          "value": null,
-          "source": "r-partage",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "Menu changes monthly; cannot accommodate vegan, dairy-free, celiac or garlic/onion-free diets. Additional 20% automatic gratuity printed for parties of six or more, not assumed for this couple.",
+          "source": "partage-menu",
+          "status": "verified",
+          "note": ""
         },
         "price_2adults": {
-          "value": null,
-          "source": "r-partage",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "$260 / $320 / $420 for two",
+          "source": "partage-menu",
+          "status": "verified",
+          "note": "Two × $130 five-course / $160 seven-course / $210 Signature menus. Current seasonal food subtotal; wine/add-ons, tax and gratuity not included/established. Menu changes monthly; not a 2027 quote."
         },
         "phone": {
           "value": "702.582.5852",
@@ -1824,10 +2089,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "instagram": {
-          "value": null,
-          "source": "r-partage",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "https://www.instagram.com/partagelv/",
+          "source": "ig-partage",
+          "status": "verified",
+          "note": "Profile identifies Modern French Fine Dining Las Vegas and links partage.vegas; current tasting-menu posts match the operator."
         },
         "tiktok": {
           "value": null,
@@ -1901,10 +2166,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "instagram": {
-          "value": null,
-          "source": "r-sparrow-and-wolf",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "https://www.instagram.com/sparrowandwolflv/",
+          "source": "ig-sparrow-and-wolf",
+          "status": "verified",
+          "note": "Profile names Sparrow + Wolf and chef Brian Howard with current restaurant-service/menu posts; location/identity also match the parallel canonical provenance record. Not an independent award source."
         },
         "tiktok": {
           "value": null,
@@ -1978,10 +2243,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "instagram": {
-          "value": null,
-          "source": "r-esthers-kitchen",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "https://www.instagram.com/estherskitchenlv/",
+          "source": "ig-esthers-kitchen",
+          "status": "verified",
+          "note": "Profile identifies James Trees’ Las Vegas Arts District restaurant; current recruitment post uses careers@estherslv.com, matching the operator domain. Not a priced-menu source."
         },
         "tiktok": {
           "value": null,
@@ -2032,16 +2297,16 @@
           "note": ""
         },
         "exceptions": {
-          "value": null,
-          "source": "r-soulbelly-bbq",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "Use the Main Street Arts District location for the MICHELIN listing, not Miracle Mile Express. Chef’s Choice set has no substitutions.",
+          "source": "soul-menu",
+          "status": "verified",
+          "note": ""
         },
         "price_2adults": {
-          "value": null,
-          "source": "r-soulbelly-bbq",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "$80 Chef’s Choice for 2",
+          "source": "soul-menu",
+          "status": "verified",
+          "note": "One published Chef’s Choice for 2 set, $80; six pit items and six sides, no substitutions. Main Street location; food subtotal, not tax/tip/drinks or 2027 availability."
         },
         "phone": {
           "value": null,
@@ -2208,10 +2473,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "instagram": {
-          "value": null,
-          "source": "r-pho-ga-bac-bac",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "https://www.instagram.com/phogabacbac702/",
+          "source": "ig-pho-ga-bac-bac",
+          "status": "verified",
+          "note": "Profile prints matching official address 3775 Spring Mountain and phone 702-476-9623. Its award-language is not used as a MICHELIN tier; do not copy its unsupported 2025 award claim."
         },
         "tiktok": {
           "value": null,
@@ -2361,10 +2626,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "instagram": {
-          "value": null,
-          "source": "r-stubborn-seed",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "https://www.instagram.com/stubborn_seed/",
+          "source": "ig-stubborn-seed",
+          "status": "verified",
+          "note": "Shared Miami/Las Vegas brand profile explicitly names Resorts World Las Vegas and has current Vegas posts. Its star/Green Star tagline is not the Las Vegas award (Recommended)."
         },
         "tiktok": {
           "value": null,
@@ -4277,6 +4542,88 @@
         "F-59",
         "F-70"
       ]
+    },
+    "hilton-resorts-world": {
+      "name": "Hilton Las Vegas at Resorts World",
+      "source": "hilton-rw-room",
+      "fields": {
+        "room": {
+          "value": "Hilton Deluxe Room — One King Bed",
+          "source": "quote-rw",
+          "status": "verified",
+          "note": ""
+        },
+        "bed": {
+          "value": "1 king (specific quoted room)",
+          "source": "quote-rw",
+          "status": "verified",
+          "note": ""
+        },
+        "bathroom": {
+          "value": "In-room bathroom: walk-in shower and LED vanity",
+          "source": "hilton-rw-room",
+          "status": "verified",
+          "note": ""
+        },
+        "amenities": {
+          "value": "400 ft²; seating area; LED Smart TV, safe, minibar/refrigerator compartment, iron and hairdryer",
+          "source": "hilton-rw-room",
+          "status": "verified",
+          "note": ""
+        },
+        "total_7n": {
+          "value": "$2,200.15 incl. room tax, resort fees and fee tax",
+          "source": "quote-rw",
+          "status": "verified",
+          "note": "Captured 27 Nov 2026 for 15–22 Feb 2027; 2 adults, 1 room, 7 nights, Deluxe One King, selectedRate DBF26. Itemized published total, not rounded-average extrapolation. Refund/deposit terms unverified; not a reservation or cheapest-market finding.",
+          "amount": "2200.15",
+          "currency": "USD",
+          "check_in": "2027-02-15",
+          "check_out": "2027-02-22",
+          "adults": 2,
+          "rooms": 1,
+          "nights": 7,
+          "room_name": "Deluxe Room - One King Bed",
+          "rate": "DBF26",
+          "itemized": {
+            "room_nights": [
+              "159.00",
+              "348.75",
+              "348.75",
+              "228.75",
+              "186.75",
+              "186.75",
+              "96.75"
+            ],
+            "room_tax": "208.13",
+            "resort_fees": "385.00",
+            "resort_fee_tax": "51.52"
+          },
+          "terms_status": "unverified"
+        },
+        "within_60_bus": {
+          "value": null,
+          "source": "hilton-rw-room",
+          "status": "unverified",
+          "note": "Unverified; no model or sibling-hotel value is substituted."
+        },
+        "within_20_bus": {
+          "value": null,
+          "source": "hilton-rw-room",
+          "status": "unverified",
+          "note": "Unverified; no model or sibling-hotel value is substituted."
+        },
+        "location": {
+          "value": "Resorts World · Hilton tower",
+          "source": "quote-rw",
+          "status": "verified",
+          "note": ""
+        }
+      },
+      "flags": [
+        "F-59",
+        "F-70"
+      ]
     }
   },
   "activities": {
@@ -4315,10 +4662,10 @@
           "note": "No field-specific official confirmation; exact trip-date availability is not established."
         },
         "instagram": {
-          "value": null,
-          "source": "a-sphere",
-          "status": "unverified",
-          "note": "No field-specific official confirmation; exact trip-date availability is not established."
+          "value": "https://www.instagram.com/spherevegas/",
+          "source": "ig-sphere",
+          "status": "verified",
+          "note": "Verified-badged Sphere profile names the Wizard of Oz attraction and has current Sphere Vegas venue posts; matched to the operator identity."
         },
         "tiktok": {
           "value": null,
@@ -4350,7 +4697,7 @@
           "note": "No field-specific official confirmation; exact trip-date availability is not established."
         },
         "exceptions": {
-          "value": "30-minute rotation. Official page says “opens 12:30 PM” but ticket windows say noon; full weekly closing schedule is unverified.",
+          "value": "30-minute rotation. Official page conflicts: opens 12:30 PM vs noon ticket windows, and anytime eligibility from noon vs 6 PM; complete hours stay unverified.",
           "source": "a-high-roller",
           "status": "verified",
           "note": ""
@@ -4417,16 +4764,18 @@
           "note": "2 × $37.95 current adult general admission. Final taxes/fees and February/March 2027 rate are not confirmed."
         },
         "youtube": {
-          "value": null,
-          "source": "a-mob-museum",
-          "status": "unverified",
-          "note": "No field-specific official confirmation; exact trip-date availability is not established."
+          "value": [
+            "https://www.youtube.com/themobmuseum"
+          ],
+          "source": "yt-mob",
+          "status": "verified",
+          "note": "Museum’s own channel. A mixed error/content response was disclosed in source notes; no claim of universal playback."
         },
         "instagram": {
-          "value": null,
-          "source": "a-mob-museum",
-          "status": "unverified",
-          "note": "No field-specific official confirmation; exact trip-date availability is not established."
+          "value": "https://www.instagram.com/themobmuseum/",
+          "source": "ig-mob-museum",
+          "status": "verified",
+          "note": "Verified-badged museum profile names the Las Vegas museum and links admission.themobmuseum.org, matching the operator admission domain."
         },
         "tiktok": {
           "value": null,
@@ -4452,7 +4801,7 @@
           "note": ""
         },
         "hours": {
-          "value": "September–May 3 PM–11 PM; last admission 10 PM",
+          "value": "2027 Admission: daily 3 PM–11 PM; last admission 10 PM",
           "source": "neon-2027",
           "status": "verified",
           "note": ""
@@ -4529,10 +4878,10 @@
           "note": "No field-specific official confirmation; exact trip-date availability is not established."
         },
         "instagram": {
-          "value": null,
-          "source": "a-fremont-street",
-          "status": "unverified",
-          "note": "No field-specific official confirmation; exact trip-date availability is not established."
+          "value": "https://www.instagram.com/fremontstreet/",
+          "source": "ig-fremont-street",
+          "status": "verified",
+          "note": "Profile explicitly identifies itself as the official Fremont Street Experience and SlotZilla account, with current operator event posts; parallel provenance record independently matched it."
         },
         "tiktok": {
           "value": null,
@@ -4545,6 +4894,58 @@
         "F-73",
         "F-72",
         "F-70"
+      ]
+    },
+    "bellagio-fountains": {
+      "name": "Fountains of Bellagio",
+      "source": "a-bellagio-fountains",
+      "fields": {
+        "days": {
+          "value": "Daily",
+          "source": "a-bellagio-fountains",
+          "status": "verified",
+          "note": ""
+        },
+        "hours": {
+          "value": "Mon–Fri: every 30 min 3–7:30 PM, every 15 min 8 PM–midnight; Sat/Sun/holidays: every 30 min noon–7:30 PM, every 15 min 8 PM–midnight",
+          "source": "a-bellagio-fountains",
+          "status": "verified",
+          "note": ""
+        },
+        "exceptions": {
+          "value": "Schedule may vary; outdoor display may be cancelled due to weather.",
+          "source": "a-bellagio-fountains",
+          "status": "verified",
+          "note": ""
+        },
+        "price_2adults": {
+          "value": "$0 for two; free public display",
+          "source": "a-bellagio-fountains",
+          "status": "verified",
+          "note": ""
+        },
+        "youtube": {
+          "value": null,
+          "source": "a-bellagio-fountains",
+          "status": "unverified",
+          "note": "No venue-specific account was verified; parent-resort accounts are not silently substituted."
+        },
+        "instagram": {
+          "value": null,
+          "source": "a-bellagio-fountains",
+          "status": "unverified",
+          "note": "No venue-specific account was verified; parent-resort accounts are not silently substituted."
+        },
+        "tiktok": {
+          "value": null,
+          "source": "a-bellagio-fountains",
+          "status": "unverified",
+          "note": "No venue-specific account was verified; parent-resort accounts are not silently substituted."
+        }
+      },
+      "flags": [
+        "F-72",
+        "F-73"
       ]
     }
   },
@@ -4564,6 +4965,12 @@
           "source": "rtc-fares",
           "status": "verified",
           "note": ""
+        },
+        "fares_2adults": {
+          "value": "$8 single each / $12 two-hour each / $16 24-hour each / $40 three-day each",
+          "source": "rtc-fares",
+          "status": "verified",
+          "note": "Two × the official regular Strip & All Access fare. This is one pass/ticket per adult, not a shared pass; fares may change before 2027."
         }
       },
       "flags": [
@@ -4586,6 +4993,12 @@
           "source": "rtc-fares",
           "status": "verified",
           "note": ""
+        },
+        "fares_2adults": {
+          "value": "$4 singles / $6 two-hour passes / $10 24-hour passes, for two eligible riders",
+          "source": "rtc-fares",
+          "status": "verified",
+          "note": "Two × regular residential fares; route/product eligibility must be checked. No reduced-fare eligibility is assumed."
         }
       },
       "flags": [
@@ -4613,6 +5026,12 @@
           "source": "monorail-fares",
           "status": "verified",
           "note": ""
+        },
+        "fares_2adults": {
+          "value": "$11.50 electronic singles / $119.90 electronic seven-day passes, for two",
+          "source": "monorail-fares",
+          "status": "verified",
+          "note": "Two × published electronic fares; each adult needs a ticket."
         }
       },
       "flags": [
@@ -4634,6 +5053,12 @@
           "source": "vegas-loop",
           "status": "verified",
           "note": ""
+        },
+        "fares_2adults": {
+          "value": null,
+          "source": "vegas-loop",
+          "status": "unverified",
+          "note": "Operator examples do not unambiguously specify a two-adult per-person/vehicle charging basis; no couple total is inferred."
         }
       },
       "flags": [
