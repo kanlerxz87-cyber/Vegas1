@@ -874,6 +874,7 @@ All work of this task is merged to `main` and deployed. Nothing of mine is outst
 | #51 | `e70b268` | run-together sentences in the activities provenance cell fixed |
 | #54 | `18b16ec` | recovered evidence a merge had dropped; closed R-02; removed a live conflict marker committed to this file by PR #47 |
 | [#58](https://github.com/kanlerxz87-cyber/Vegas1/pull/58) | `db06f7f` | Fountains of Bellagio socials verified (property-level, labelled) → activities 6/6 IG, 6/6 YouTube |
+| #61 | `7ebc953` | close-out record |
 
 **Final state, re-read from the deployed site (`01c7107`):** 16 pages · 0 failures · 0 warnings · 21 of 24 restaurants
 and 6 of 6 activities carry an Instagram link · all 6 activities have a provenance row · `docs/` and root identical.
@@ -881,3 +882,14 @@ and 6 of 6 activities carry an Instagram link · all 6 activities have a provena
 **What this task learned that the next session should not re-learn:** a merge can silently delete another session's
 *evidence* while looking clean, and a green validator cannot see it — read the deployed page back, never just the build
 log. `data/socials.json` is the machine-readable record; keep it in step with `activities.json`/`restaurants.json`.
+
+### Closing R-02 where it is actually read (arena/c045ad05-vegas1, 2026-11-27)
+
+R-02 was still published on `flagged.html` as an **open, high-severity** irregularity — "No restaurant has an Instagram
+or TikTok link" — while the same site's `restaurants.html` listed 21 verified handles and a provenance table. A reader
+who went to the page the brief says to trust for unresolved items was being told the opposite of what the site proves.
+
+`data/review.json` R-02 now carries severity **closed**, the resolution date, what was verified (21/24 restaurants,
+6/6 activities, three documented blanks), and the evidence link; the row is kept, not deleted, so the audit trail
+survives. The section heading now counts both totals — "18 found, **17 still open**" — because a bare "18" overstated
+how much remains. `_sev()` gained a `closed` style so resolved rows do not render as an unknown status.

@@ -1,318 +1,319 @@
 {
-  "meta": {
-    "title": "Repo review — line-by-line spot verification",
-    "session": "arena-939a824e-vegas1",
-    "branch": "arena/939a824e-vegas1",
-    "base_commit": "e4fb98e2a3d0cf55edd1ea29a7d905f53ffbad98",
-    "reviewed": "2026-11-26 (pass 1) · 2026-11-27 (pass 2, checks C-11 to C-17)",
-    "method": "Each claim below was compared against the official page named in its source column, fetched with fetch_page. Values that were not re-fetched are listed as Not checked, not as confirmed. Pass 1 (C-01–C-10) ran on 26 Nov 2026; pass 2 (C-11–C-17) re-read seven restaurant pages and menus on 27 Nov 2026.",
-    "limits": [
-      "Hotel booking-engine prices were NOT re-priced in this session. They remain Booking.com search snapshots captured 2026-11-25.",
-      "YouTube, TikTok and Instagram links were NOT opened in this session.",
-      "Hotel official_url links were NOT re-fetched in this session (only the Michelin, MGM, Wynn, Cosmopolitan and RTC pages above were).",
-      "Transit minutes are estimates. No official door-to-door time exists, so they cannot be verified.",
-      "Restaurant menu prices were re-read for the seven venues in C-11 to C-17 only; the other 17 restaurant pages were not re-opened on 27 Nov 2026."
-    ]
-  },
-  "checks": [
-    {
-      "id": "C-01",
-      "item": "2026 MICHELIN Guide Southwest — Las Vegas star and Bib tiers",
-      "compared": "Official press release names Joël Robuchon (2 stars), é by José Andrés, Guy Savoy and L'Atelier (1 star each), and China Poblano, Esther's Kitchen and YEN Viet Kitchen as Las Vegas Bib Gourmands. The visitlasvegas page lists 17 Recommended Las Vegas restaurants.",
-      "result": "Confirmed",
-      "detail": "Matches data/restaurants.json: 1 two-star, 3 one-star, 3 Bib Gourmand, 17 Recommended (24 total).",
-      "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s",
-      "source_label": "MICHELIN press release (Southwest 2026)"
-    },
-    {
-      "id": "C-02",
-      "item": "Date of the 2026 selection announcement",
-      "compared": "Official press release page is dated 31 Aug 2026 (its PDF filename carries 20260828). The site's data says the selection was announced 26 Aug 2026.",
-      "result": "Conflict",
-      "detail": "The 26 Aug date in data/restaurants.json (meta.important_note) does not appear on the official page, so it cannot be confirmed. Left unchanged and flagged as R-05.",
-      "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s",
-      "source_label": "MICHELIN press release (dated 31 Aug 2026)"
-    },
-    {
-      "id": "C-03",
-      "item": "Joël Robuchon — hours, days, dress code",
-      "compared": "MGM Grand page: Monday closed; Tuesday to Saturday 5:00 PM to 9:30 PM; Sunday closed; Business Formal; children under 6 not included in reservations.",
-      "result": "Confirmed",
-      "detail": "Matches data/restaurants.json (F-22).",
-      "source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html",
-      "source_label": "MGM Grand — Joël Robuchon"
-    },
-    {
-      "id": "C-04",
-      "item": "Joël Robuchon — reservation phone",
-      "compared": "MGM Grand page prints Reservations: 702.891.7925.",
-      "result": "Gap closed",
-      "detail": "The data field was blank. Filled from this official page in this session (one of the data changes made under T12, logged in COORDINATION.md).",
-      "source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html",
-      "source_label": "MGM Grand — Joël Robuchon"
-    },
-    {
-      "id": "C-05",
-      "item": "é by José Andrés — days and hours",
-      "compared": "Cosmopolitan page: Monday closed; Tuesday to Saturday 5:30 PM to 8:30 PM; Sunday closed; only two seatings nightly; reservations up to three months ahead.",
-      "result": "Confirmed",
-      "detail": "Matches data/restaurants.json. The archived subsite docs/session-48dbf0ae/ states Tue–Sun, which is wrong (see R-06).",
-      "source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html",
-      "source_label": "Cosmopolitan — é by José Andrés"
-    },
-    {
-      "id": "C-06",
-      "item": "Wing Lei — days, hours, Michelin status",
-      "compared": "Wynn page: Thursday, Sunday–Monday 5:30–9:30 PM; Friday and Saturday 5:30–10 PM; Tuesday and Wednesday closed; Forbes Travel Guide Five-Star. The page makes no Michelin star claim.",
-      "result": "Confirmed",
-      "detail": "Matches data/restaurants.json (listed as Recommended, not starred — see F-03).",
-      "source": "https://www.wynnlasvegas.com/dining/fine-dining/wing-lei",
-      "source_label": "Wynn Las Vegas — Wing Lei"
-    },
-    {
-      "id": "C-07",
-      "item": "RTC Strip / Downtown (Deuce, SDX) fares",
-      "compared": "Official RTC fares page: Strip/Downtown 2-Hour Pass $6, 24-Hour Pass $8, 3-Day Pass $20; residential single ride $2.",
-      "result": "Confirmed",
-      "detail": "Matches data/transit.json. No $35 7-day Strip pass appears on the official page.",
-      "source": "https://rtcws.rtcsnv.com/mobile/geoFares.html",
-      "source_label": "RTC Transit — fares (official)"
-    },
-    {
-      "id": "C-08",
-      "item": "Hotel 7-night totals (Booking.com snapshots)",
-      "compared": "Not re-priced in this session.",
-      "result": "Not checked",
-      "detail": "Remain snapshots from 2026-11-25. Recheck on the official booking engine for the exact dates before any decision.",
-      "source": "",
-      "source_label": ""
-    },
-    {
-      "id": "C-09",
-      "item": "YouTube, TikTok, Instagram links",
-      "compared": "Not opened in this session.",
-      "result": "Not checked",
-      "detail": "Links remain as recorded by earlier sessions.",
-      "source": "",
-      "source_label": ""
-    },
-    {
-      "id": "C-10",
-      "item": "RTC fares — official page used in place of rtcsnv.com/fares (which failed in the other review)",
-      "compared": "Official RTC mobile fares page, Strip/Downtown 2-Hour, 24-Hour and 3-Day passes.",
-      "result": "Confirmed",
-      "detail": "$6 / $8 / $20. The 'fare change proposed from 2027-01-31' noted by an earlier session was not on this page, so it remains unverified (not confirmed either way).",
-      "source": "https://rtcws.rtcsnv.com/mobile/geoFares.html",
-      "source_label": "RTC Transit — fares (official)"
-    },
-    {
-      "id": "C-11",
-      "item": "Restaurant Guy Savoy — à-la-carte prices and the 'Krug Chef's Table' figure",
-      "compared": "Official Caesars Palace main-menu page (headed 'Effective 11.5.2026'), read 2026-11-27.",
-      "result": "Corrected",
-      "detail": "The page lists individual dishes at $110, $120, $100, $160, $200, $290 and a $60 cheese cart — per person. The stored cell showed '$200–$580 à la carte' under a 'Cost for 2 adults' heading, and a '$3,000 Krug Chef's Table' that the page does not print at all. Cell now reads ≈$520–$940 (est.) for two with the method stated; the $3,000 figure was removed (F-52).",
-      "source": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu",
-      "source_label": "Caesars Palace — Restaurant Guy Savoy main menu (official)"
-    },
-    {
-      "id": "C-12",
-      "item": "Partage — cost for two",
-      "compared": "Official Partage menu page, read 2026-11-27.",
-      "result": "Gap closed",
-      "detail": "5 courses $130, 7 courses $160, Signature $210 per person → $260 / $320 / $420 for two, before wine, tax and gratuity. Wine pairings $60 / $84 / $108 per person; foie gras add-on +$33 per guest.",
-      "source": "https://partage.vegas/menu",
-      "source_label": "Partage — menus (official)"
-    },
-    {
-      "id": "C-13",
-      "item": "Wing Lei — cost for two",
-      "compared": "Official Wynn menu PDF linked from the Wing Lei page, read 2026-11-27.",
-      "result": "Gap closed",
-      "detail": "Chef Tam's Signature Tasting Menu $198.88 per person → $397.76 for two. À la carte $18.88–$321.88 per dish; Imperial Peking Duck $148.88; wine journeys $128.88 / $208.88 per person.",
-      "source": "https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf",
-      "source_label": "Wynn Las Vegas — Wing Lei main menu PDF (official)"
-    },
-    {
-      "id": "C-14",
-      "item": "Anima by EDO — tasting menu and the Monday special",
-      "compared": "Official Anima by EDO site, read 2026-11-27.",
-      "result": "Corrected",
-      "detail": "Tasting menu 'Per Person $85' → $170 for two, matching the stored figure. The stored exceptions line said the Monday special was '$65 per person'; the site says two pasta dishes plus one bottle of wine for $65 total (F-54).",
-      "source": "https://animabyedo.com",
-      "source_label": "Anima by EDO (official)"
-    },
-    {
-      "id": "C-15",
-      "item": "Esther's Kitchen — days open",
-      "compared": "Official Esther's Kitchen menus page, read 2026-11-27.",
-      "result": "Gap closed",
-      "detail": "'We serve dinner seven days a week. Lunch: Monday - Friday. Brunch: Saturday - Sunday.' Days now recorded as Daily; no clock times are published on the page, so the hours field stays blank and the row says 'times not published' (F-07).",
-      "source": "https://www.estherslv.com/menus/",
-      "source_label": "Esther's Kitchen — menus (official)"
-    },
-    {
-      "id": "C-16",
-      "item": "Michael Mina — closure and tasting-menu price",
-      "compared": "Official Bellagio page, read 2026-11-27.",
-      "result": "Confirmed",
-      "detail": "Page still labels the venue 'Temporarily closed', its hours block still reads 'Monday to Sunday: Closed', and it prints '$295++ Per Person' for the 10-course tasting. The stored $590++ for two is arithmetically right but not bookable (F-23).",
-      "source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
-      "source_label": "Bellagio — Michael Mina (official)"
-    },
-    {
-      "id": "C-17",
-      "item": "Social profiles — can any be verified from the venue itself?",
-      "compared": "Official venue sites read 2026-11-27 (SoulBelly BBQ, Kabuto, Partage, Esther's Kitchen, Lamaii, Yen Viet).",
-      "result": "Gap partly closed",
-      "detail": "SoulBelly BBQ's own site links instagram.com/soulbellybbqlv, so that handle is now recorded. Kabuto links individual Instagram posts but not a profile; the others print no social links. No handle was guessed (Q-07, F-19).",
-      "source": "https://soulbellybbq.com",
-      "source_label": "SoulBelly BBQ (official)"
-    }
-  ],
-  "irregularities": [
-    {
-      "id": "R-01",
-      "severity": "high",
-      "where": "data/restaurants.json, all 24 rows",
-      "issue": "Every row carries a 'verified' field, and 17 are set to 'yes'. Yet 21 of 24 rows have no couple price and 5 have no hours. The brief requires a couple price and hours for every restaurant, so the 'yes' label overstates how much is confirmed.",
-      "action": "Read 'verified' as 'the listing itself was confirmed', not 'every field is verified'. Blank fields remain blank and flagged.",
-      "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s"
-    },
-    {
-      "id": "R-02",
-      "severity": "high",
-      "where": "data/restaurants.json (instagram, tiktok fields)",
-      "issue": "No restaurant has an Instagram or TikTok link. The brief asks for a YouTube, TikTok or Instagram link for every entry where possible. The fields are blank by design (F-19), so the gap is open, not verified as nonexistent.",
-      "action": "Open item for the next session. Search official venue sites and their official social pages only.",
-      "source": "https://www.visitlasvegas.com/michelin-guide-restaurants/"
-    },
-    {
-      "id": "R-03",
-      "severity": "high",
-      "where": "data/hotels.json (verified, official_verified fields)",
-      "issue": "28 of 32 hotels were official_verified 'no', yet 29 rows carry verified 'yes'. Their prices come from Booking.com search results, not the property's own booking engine. The 'verified' label on those rows describes the search snapshot, not the room rate. Re-checked 2026-11-26: 18 of 32 official pages are now confirmed live by fetch, 8 refuse automated access, 5 were not opened and 1 lands on the parent property's page; 15 of the 32 price links are a dated search list rather than a room quote.",
-      "action": "Still treat every hotel price as an OTA snapshot until the property's own booking engine confirms it for the exact dates (Q-06). What changed on 2026-11-26: the link state is no longer ambiguous — each card says whether the official page was confirmed, refused automated access, was not opened, or lands on a sibling property's page, and search-list prices say so (F-48, F-49).",
-      "source": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price"
-    },
-    {
-      "id": "R-04",
-      "severity": "high",
-      "where": "data/hotels.json (michelin_within_60) and data/transit.json",
-      "issue": "michelin_within_60 is 24 for all 32 hotels, so it cannot rank anything. The site already discloses this (Q-01); the ranking uses the 20-minute column instead. That column depends entirely on estimated travel times, which have no official source.",
-      "action": "Decide whether a 20-minute estimated metric is acceptable before the ranking is used for a decision (Q-01).",
-      "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/data/transit.json"
-    },
-    {
-      "id": "R-05",
-      "severity": "medium",
-      "where": "data/restaurants.json (meta.important_note)",
-      "issue": "The data says the 2026 selection was announced 26 Aug 2026. The official press release page is dated 31 Aug 2026. The ceremony date is not stated on the official page, and the 26 Aug date could not be traced to an official source.",
-      "action": "Correct the date only after confirming the ceremony date from an official source. Not changed in this session.",
-      "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s"
-    },
-    {
-      "id": "R-06",
-      "severity": "medium",
-      "where": "docs/session-48dbf0ae/ and data/session-48dbf0ae-michelin.json (archived subsite)",
-      "issue": "The archived subsite says é by José Andrés is open Tue–Sun. The official Cosmopolitan page says Tuesday to Saturday, closed Sunday. The canonical data is correct. The archive is left as it was; this is a record of the conflict.",
-      "action": "Do not use the archived é hours. The canonical data (Tue–Sat) matches the official page.",
-      "source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html"
-    },
-    {
-      "id": "R-07",
-      "severity": "medium",
-      "where": "FLAGS.md, README.md, scripts/gen_site.py (flag counts)",
-      "issue": "Three different flag counts appear. FLAGS.md has 28 entries (F-01 to F-28). The README says 22. The Sources page is hard-coded to 20.",
-      "action": "Corrected: the README now says 28, and the Sources page derives the count from FLAGS.md.",
-      "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/FLAGS.md"
-    },
-    {
-      "id": "R-08",
-      "severity": "medium",
-      "where": "data/hotels.json (official_url, all 32 rows)",
-      "issue": "The hotel official_url links were not re-fetched this session. Earlier notes say 28 of 32 were not fetched (F-27).",
-      "action": "Open. Each link should be fetched and recorded before the site is relied on for a booking.",
-      "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/FLAGS.md"
-    },
-    {
-      "id": "R-09",
-      "severity": "medium",
-      "where": "data/restaurants.json (michael-mina) and F-02, F-23",
-      "issue": "Michael Mina at Bellagio is marked Temporarily closed and lists no hours, yet its $590++ price is still shown on the row (F-23).",
-      "action": "Do not offer this table as bookable. The price must be read as a historical menu price, not a 2027 price.",
-      "source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html"
-    },
-    {
-      "id": "R-10",
-      "severity": "low",
-      "where": "suggestions.html (generated), data/restaurants.json",
-      "issue": "The suggestions page says 17 of 24 restaurants have fully verified hours and days. The data has 5 blank-hour rows, so the count is 19 with hours, not 17. The 17 matches the number of rows marked verified.",
-      "action": "Corrected in data/suggestions.json, so the sentence now states 19 with hours, 5 blank, and 17 marked verified.",
-      "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s"
-    },
-    {
-      "id": "R-11",
-      "severity": "low",
-      "where": "COORDINATION.md (board)",
-      "issue": "Task ID T10 is used twice, for two different tasks. The board also records T1–T9 as claimed by several sessions, and the brief asked for session-<id>/<task> branch names. This platform allows only the session branch, so the names were not used.",
-      "action": "Tasks in this session are numbered T12 and claimed on the board. Duplicate T10 entries are left as history.",
-      "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/COORDINATION.md"
-    },
-    {
-      "id": "R-12",
-      "severity": "low",
-      "where": "COORDINATION.md (verification log)",
-      "issue": "The log says 280 external links. The validator counts 288 at the time of this review.",
-      "action": "Not edited in COORDINATION.md. The current validator reports 337 external links across 13 pages, after this session's two new pages were added.",
-      "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/scripts/validate.py"
-    },
-    {
-      "id": "R-13",
-      "severity": "medium",
-      "where": "Cheapest week (data/hotels.json vs docs/session-af795000/)",
-      "issue": "Canonical data says the 8–15 March week is the cheapest for large resorts, using Booking.com snapshots. The af795000 session says Feb 15–22 is the cheapest, using official booking engines for four properties. The two sources conflict for the same properties.",
-      "action": "Open question. Check each property's own booking engine for the exact dates before deciding (Q-06).",
-      "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/COORDINATION.md"
-    },
-    {
-      "id": "R-14",
-      "severity": "low",
-      "where": "data/restaurants.json (joel-robuchon.phone)",
-      "issue": "The phone field was blank although the official page prints a reservations number.",
-      "action": "Filled from the official page this session (C-04).",
-      "source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html"
-    },
-    {
-      "id": "R-15",
-      "severity": "high",
-      "where": "Homepage headline (index.html, gen_site.py), executive-summary.md, README.md",
-      "issue": "The February-vs-March headline said 'February is the expensive week' with no qualifier. Another session's review (notes/repo-review-2026-11-26.md, its F-01) found this contradicts official booking-engine checks for Caesars Palace and Flamingo, recorded in COORDINATION.md.",
-      "action": "Corrected in this session: all three places now say the cheapest week depends on the property and point to Q-06. Re-pricing the Venetian and Palazzo on their own engines is still open.",
-      "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/notes/repo-review-2026-11-26.md"
-    },
-    {
-      "id": "R-16",
-      "severity": "medium",
-      "where": "pages/flagged.html (unpublished)",
-      "issue": "The stale pages/flagged.html has 11 broken relative links and was never published (noted as F-02 in notes/repo-review-2026-11-26.md).",
-      "action": "Superseded: the working Flagged for Review page is now published at the root as flagged.html. The stale file is left in place, not published, and should be deleted at the owner's discretion.",
-      "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/pages/flagged.html"
-    },
-    {
-      "id": "R-17",
-      "severity": "low",
-      "where": "GitHub Actions (branch arena/48dbf0ae-vegas1)",
-      "issue": "A 'Publish site to GitHub Pages' run on archived branch arena/48dbf0ae-vegas1 failed (notes F-03). The Pages workflow on main has succeeded on every recent run.",
-      "action": "No effect on the live site (main:/). Delete or ignore the failed branch run when the branch is retired.",
-      "source": "https://github.com/kanlerxz87-cyber/Vegas1/actions"
-    },
-    {
-      "id": "R-18",
-      "severity": "low",
-      "where": "README.md, index.html (drift)",
-      "issue": "README and the live site drifted apart on the headline finding (notes F-07). Fixed for the headline in this session; other README wording was not re-checked.",
-      "action": "Regenerate README wording from the same source as the site at the next integration.",
-      "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/README.md"
-    }
+ "meta": {
+  "title": "Repo review — line-by-line spot verification",
+  "session": "arena-939a824e-vegas1",
+  "branch": "arena/939a824e-vegas1",
+  "base_commit": "e4fb98e2a3d0cf55edd1ea29a7d905f53ffbad98",
+  "reviewed": "2026-11-26 (pass 1) · 2026-11-27 (pass 2, checks C-11 to C-17)",
+  "method": "Each claim below was compared against the official page named in its source column, fetched with fetch_page. Values that were not re-fetched are listed as Not checked, not as confirmed. Pass 1 (C-01–C-10) ran on 26 Nov 2026; pass 2 (C-11–C-17) re-read seven restaurant pages and menus on 27 Nov 2026.",
+  "limits": [
+   "Hotel booking-engine prices were NOT re-priced in this session. They remain Booking.com search snapshots captured 2026-11-25.",
+   "YouTube, TikTok and Instagram links were NOT opened in this session.",
+   "Hotel official_url links were NOT re-fetched in this session (only the Michelin, MGM, Wynn, Cosmopolitan and RTC pages above were).",
+   "Transit minutes are estimates. No official door-to-door time exists, so they cannot be verified.",
+   "Restaurant menu prices were re-read for the seven venues in C-11 to C-17 only; the other 17 restaurant pages were not re-opened on 27 Nov 2026."
   ]
+ },
+ "checks": [
+  {
+   "id": "C-01",
+   "item": "2026 MICHELIN Guide Southwest — Las Vegas star and Bib tiers",
+   "compared": "Official press release names Joël Robuchon (2 stars), é by José Andrés, Guy Savoy and L'Atelier (1 star each), and China Poblano, Esther's Kitchen and YEN Viet Kitchen as Las Vegas Bib Gourmands. The visitlasvegas page lists 17 Recommended Las Vegas restaurants.",
+   "result": "Confirmed",
+   "detail": "Matches data/restaurants.json: 1 two-star, 3 one-star, 3 Bib Gourmand, 17 Recommended (24 total).",
+   "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s",
+   "source_label": "MICHELIN press release (Southwest 2026)"
+  },
+  {
+   "id": "C-02",
+   "item": "Date of the 2026 selection announcement",
+   "compared": "Official press release page is dated 31 Aug 2026 (its PDF filename carries 20260828). The site's data says the selection was announced 26 Aug 2026.",
+   "result": "Conflict",
+   "detail": "The 26 Aug date in data/restaurants.json (meta.important_note) does not appear on the official page, so it cannot be confirmed. Left unchanged and flagged as R-05.",
+   "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s",
+   "source_label": "MICHELIN press release (dated 31 Aug 2026)"
+  },
+  {
+   "id": "C-03",
+   "item": "Joël Robuchon — hours, days, dress code",
+   "compared": "MGM Grand page: Monday closed; Tuesday to Saturday 5:00 PM to 9:30 PM; Sunday closed; Business Formal; children under 6 not included in reservations.",
+   "result": "Confirmed",
+   "detail": "Matches data/restaurants.json (F-22).",
+   "source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html",
+   "source_label": "MGM Grand — Joël Robuchon"
+  },
+  {
+   "id": "C-04",
+   "item": "Joël Robuchon — reservation phone",
+   "compared": "MGM Grand page prints Reservations: 702.891.7925.",
+   "result": "Gap closed",
+   "detail": "The data field was blank. Filled from this official page in this session (one of the data changes made under T12, logged in COORDINATION.md).",
+   "source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html",
+   "source_label": "MGM Grand — Joël Robuchon"
+  },
+  {
+   "id": "C-05",
+   "item": "é by José Andrés — days and hours",
+   "compared": "Cosmopolitan page: Monday closed; Tuesday to Saturday 5:30 PM to 8:30 PM; Sunday closed; only two seatings nightly; reservations up to three months ahead.",
+   "result": "Confirmed",
+   "detail": "Matches data/restaurants.json. The archived subsite docs/session-48dbf0ae/ states Tue–Sun, which is wrong (see R-06).",
+   "source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html",
+   "source_label": "Cosmopolitan — é by José Andrés"
+  },
+  {
+   "id": "C-06",
+   "item": "Wing Lei — days, hours, Michelin status",
+   "compared": "Wynn page: Thursday, Sunday–Monday 5:30–9:30 PM; Friday and Saturday 5:30–10 PM; Tuesday and Wednesday closed; Forbes Travel Guide Five-Star. The page makes no Michelin star claim.",
+   "result": "Confirmed",
+   "detail": "Matches data/restaurants.json (listed as Recommended, not starred — see F-03).",
+   "source": "https://www.wynnlasvegas.com/dining/fine-dining/wing-lei",
+   "source_label": "Wynn Las Vegas — Wing Lei"
+  },
+  {
+   "id": "C-07",
+   "item": "RTC Strip / Downtown (Deuce, SDX) fares",
+   "compared": "Official RTC fares page: Strip/Downtown 2-Hour Pass $6, 24-Hour Pass $8, 3-Day Pass $20; residential single ride $2.",
+   "result": "Confirmed",
+   "detail": "Matches data/transit.json. No $35 7-day Strip pass appears on the official page.",
+   "source": "https://rtcws.rtcsnv.com/mobile/geoFares.html",
+   "source_label": "RTC Transit — fares (official)"
+  },
+  {
+   "id": "C-08",
+   "item": "Hotel 7-night totals (Booking.com snapshots)",
+   "compared": "Not re-priced in this session.",
+   "result": "Not checked",
+   "detail": "Remain snapshots from 2026-11-25. Recheck on the official booking engine for the exact dates before any decision.",
+   "source": "",
+   "source_label": ""
+  },
+  {
+   "id": "C-09",
+   "item": "YouTube, TikTok, Instagram links",
+   "compared": "Not opened in this session.",
+   "result": "Not checked",
+   "detail": "Links remain as recorded by earlier sessions.",
+   "source": "",
+   "source_label": ""
+  },
+  {
+   "id": "C-10",
+   "item": "RTC fares — official page used in place of rtcsnv.com/fares (which failed in the other review)",
+   "compared": "Official RTC mobile fares page, Strip/Downtown 2-Hour, 24-Hour and 3-Day passes.",
+   "result": "Confirmed",
+   "detail": "$6 / $8 / $20. The 'fare change proposed from 2027-01-31' noted by an earlier session was not on this page, so it remains unverified (not confirmed either way).",
+   "source": "https://rtcws.rtcsnv.com/mobile/geoFares.html",
+   "source_label": "RTC Transit — fares (official)"
+  },
+  {
+   "id": "C-11",
+   "item": "Restaurant Guy Savoy — à-la-carte prices and the 'Krug Chef's Table' figure",
+   "compared": "Official Caesars Palace main-menu page (headed 'Effective 11.5.2026'), read 2026-11-27.",
+   "result": "Corrected",
+   "detail": "The page lists individual dishes at $110, $120, $100, $160, $200, $290 and a $60 cheese cart — per person. The stored cell showed '$200–$580 à la carte' under a 'Cost for 2 adults' heading, and a '$3,000 Krug Chef's Table' that the page does not print at all. Cell now reads ≈$520–$940 (est.) for two with the method stated; the $3,000 figure was removed (F-52).",
+   "source": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu",
+   "source_label": "Caesars Palace — Restaurant Guy Savoy main menu (official)"
+  },
+  {
+   "id": "C-12",
+   "item": "Partage — cost for two",
+   "compared": "Official Partage menu page, read 2026-11-27.",
+   "result": "Gap closed",
+   "detail": "5 courses $130, 7 courses $160, Signature $210 per person → $260 / $320 / $420 for two, before wine, tax and gratuity. Wine pairings $60 / $84 / $108 per person; foie gras add-on +$33 per guest.",
+   "source": "https://partage.vegas/menu",
+   "source_label": "Partage — menus (official)"
+  },
+  {
+   "id": "C-13",
+   "item": "Wing Lei — cost for two",
+   "compared": "Official Wynn menu PDF linked from the Wing Lei page, read 2026-11-27.",
+   "result": "Gap closed",
+   "detail": "Chef Tam's Signature Tasting Menu $198.88 per person → $397.76 for two. À la carte $18.88–$321.88 per dish; Imperial Peking Duck $148.88; wine journeys $128.88 / $208.88 per person.",
+   "source": "https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf",
+   "source_label": "Wynn Las Vegas — Wing Lei main menu PDF (official)"
+  },
+  {
+   "id": "C-14",
+   "item": "Anima by EDO — tasting menu and the Monday special",
+   "compared": "Official Anima by EDO site, read 2026-11-27.",
+   "result": "Corrected",
+   "detail": "Tasting menu 'Per Person $85' → $170 for two, matching the stored figure. The stored exceptions line said the Monday special was '$65 per person'; the site says two pasta dishes plus one bottle of wine for $65 total (F-54).",
+   "source": "https://animabyedo.com",
+   "source_label": "Anima by EDO (official)"
+  },
+  {
+   "id": "C-15",
+   "item": "Esther's Kitchen — days open",
+   "compared": "Official Esther's Kitchen menus page, read 2026-11-27.",
+   "result": "Gap closed",
+   "detail": "'We serve dinner seven days a week. Lunch: Monday - Friday. Brunch: Saturday - Sunday.' Days now recorded as Daily; no clock times are published on the page, so the hours field stays blank and the row says 'times not published' (F-07).",
+   "source": "https://www.estherslv.com/menus/",
+   "source_label": "Esther's Kitchen — menus (official)"
+  },
+  {
+   "id": "C-16",
+   "item": "Michael Mina — closure and tasting-menu price",
+   "compared": "Official Bellagio page, read 2026-11-27.",
+   "result": "Confirmed",
+   "detail": "Page still labels the venue 'Temporarily closed', its hours block still reads 'Monday to Sunday: Closed', and it prints '$295++ Per Person' for the 10-course tasting. The stored $590++ for two is arithmetically right but not bookable (F-23).",
+   "source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
+   "source_label": "Bellagio — Michael Mina (official)"
+  },
+  {
+   "id": "C-17",
+   "item": "Social profiles — can any be verified from the venue itself?",
+   "compared": "Official venue sites read 2026-11-27 (SoulBelly BBQ, Kabuto, Partage, Esther's Kitchen, Lamaii, Yen Viet).",
+   "result": "Gap partly closed",
+   "detail": "SoulBelly BBQ's own site links instagram.com/soulbellybbqlv, so that handle is now recorded. Kabuto links individual Instagram posts but not a profile; the others print no social links. No handle was guessed (Q-07, F-19).",
+   "source": "https://soulbellybbq.com",
+   "source_label": "SoulBelly BBQ (official)"
+  }
+ ],
+ "irregularities": [
+  {
+   "id": "R-01",
+   "severity": "high",
+   "where": "data/restaurants.json, all 24 rows",
+   "issue": "Every row carries a 'verified' field, and 17 are set to 'yes'. Yet 21 of 24 rows have no couple price and 5 have no hours. The brief requires a couple price and hours for every restaurant, so the 'yes' label overstates how much is confirmed.",
+   "action": "Read 'verified' as 'the listing itself was confirmed', not 'every field is verified'. Blank fields remain blank and flagged.",
+   "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s"
+  },
+  {
+   "id": "R-02",
+   "severity": "closed",
+   "where": "data/restaurants.json (instagram, tiktok fields)",
+   "issue": "CLOSED 2026-11-27. When filed, no restaurant row carried an Instagram or TikTok link. Now verified: 21 of 24 restaurants and 6 of 6 activities carry an Instagram link, each with the sentence that confirmed it (data/socials.json, rendered as a provenance table on restaurants.html and activities.html). The three blanks — Wing Lei, Ping Pang Pong, Yen Viet Kitchen — stay blank because only private personal accounts exist.",
+   "action": "No action needed. Re-open only if a venue's handle changes; re-open the whole row if the guide's 2027 selection adds or drops venues. Evidence: data/socials.json (meta.supersedes).",
+   "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/data/socials.json",
+   "resolved": "2026-11-27"
+  },
+  {
+   "id": "R-03",
+   "severity": "high",
+   "where": "data/hotels.json (verified, official_verified fields)",
+   "issue": "28 of 32 hotels were official_verified 'no', yet 29 rows carry verified 'yes'. Their prices come from Booking.com search results, not the property's own booking engine. The 'verified' label on those rows describes the search snapshot, not the room rate. Re-checked 2026-11-26: 18 of 32 official pages are now confirmed live by fetch, 8 refuse automated access, 5 were not opened and 1 lands on the parent property's page; 15 of the 32 price links are a dated search list rather than a room quote.",
+   "action": "Still treat every hotel price as an OTA snapshot until the property's own booking engine confirms it for the exact dates (Q-06). What changed on 2026-11-26: the link state is no longer ambiguous — each card says whether the official page was confirmed, refused automated access, was not opened, or lands on a sibling property's page, and search-list prices say so (F-48, F-49).",
+   "source": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price"
+  },
+  {
+   "id": "R-04",
+   "severity": "high",
+   "where": "data/hotels.json (michelin_within_60) and data/transit.json",
+   "issue": "michelin_within_60 is 24 for all 32 hotels, so it cannot rank anything. The site already discloses this (Q-01); the ranking uses the 20-minute column instead. That column depends entirely on estimated travel times, which have no official source.",
+   "action": "Decide whether a 20-minute estimated metric is acceptable before the ranking is used for a decision (Q-01).",
+   "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/data/transit.json"
+  },
+  {
+   "id": "R-05",
+   "severity": "medium",
+   "where": "data/restaurants.json (meta.important_note)",
+   "issue": "The data says the 2026 selection was announced 26 Aug 2026. The official press release page is dated 31 Aug 2026. The ceremony date is not stated on the official page, and the 26 Aug date could not be traced to an official source.",
+   "action": "Correct the date only after confirming the ceremony date from an official source. Not changed in this session.",
+   "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s"
+  },
+  {
+   "id": "R-06",
+   "severity": "medium",
+   "where": "docs/session-48dbf0ae/ and data/session-48dbf0ae-michelin.json (archived subsite)",
+   "issue": "The archived subsite says é by José Andrés is open Tue–Sun. The official Cosmopolitan page says Tuesday to Saturday, closed Sunday. The canonical data is correct. The archive is left as it was; this is a record of the conflict.",
+   "action": "Do not use the archived é hours. The canonical data (Tue–Sat) matches the official page.",
+   "source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html"
+  },
+  {
+   "id": "R-07",
+   "severity": "medium",
+   "where": "FLAGS.md, README.md, scripts/gen_site.py (flag counts)",
+   "issue": "Three different flag counts appear. FLAGS.md has 28 entries (F-01 to F-28). The README says 22. The Sources page is hard-coded to 20.",
+   "action": "Corrected: the README now says 28, and the Sources page derives the count from FLAGS.md.",
+   "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/FLAGS.md"
+  },
+  {
+   "id": "R-08",
+   "severity": "medium",
+   "where": "data/hotels.json (official_url, all 32 rows)",
+   "issue": "The hotel official_url links were not re-fetched this session. Earlier notes say 28 of 32 were not fetched (F-27).",
+   "action": "Open. Each link should be fetched and recorded before the site is relied on for a booking.",
+   "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/FLAGS.md"
+  },
+  {
+   "id": "R-09",
+   "severity": "medium",
+   "where": "data/restaurants.json (michael-mina) and F-02, F-23",
+   "issue": "Michael Mina at Bellagio is marked Temporarily closed and lists no hours, yet its $590++ price is still shown on the row (F-23).",
+   "action": "Do not offer this table as bookable. The price must be read as a historical menu price, not a 2027 price.",
+   "source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html"
+  },
+  {
+   "id": "R-10",
+   "severity": "low",
+   "where": "suggestions.html (generated), data/restaurants.json",
+   "issue": "The suggestions page says 17 of 24 restaurants have fully verified hours and days. The data has 5 blank-hour rows, so the count is 19 with hours, not 17. The 17 matches the number of rows marked verified.",
+   "action": "Corrected in data/suggestions.json, so the sentence now states 19 with hours, 5 blank, and 17 marked verified.",
+   "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s"
+  },
+  {
+   "id": "R-11",
+   "severity": "low",
+   "where": "COORDINATION.md (board)",
+   "issue": "Task ID T10 is used twice, for two different tasks. The board also records T1–T9 as claimed by several sessions, and the brief asked for session-<id>/<task> branch names. This platform allows only the session branch, so the names were not used.",
+   "action": "Tasks in this session are numbered T12 and claimed on the board. Duplicate T10 entries are left as history.",
+   "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/COORDINATION.md"
+  },
+  {
+   "id": "R-12",
+   "severity": "low",
+   "where": "COORDINATION.md (verification log)",
+   "issue": "The log says 280 external links. The validator counts 288 at the time of this review.",
+   "action": "Not edited in COORDINATION.md. The current validator reports 337 external links across 13 pages, after this session's two new pages were added.",
+   "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/scripts/validate.py"
+  },
+  {
+   "id": "R-13",
+   "severity": "medium",
+   "where": "Cheapest week (data/hotels.json vs docs/session-af795000/)",
+   "issue": "Canonical data says the 8–15 March week is the cheapest for large resorts, using Booking.com snapshots. The af795000 session says Feb 15–22 is the cheapest, using official booking engines for four properties. The two sources conflict for the same properties.",
+   "action": "Open question. Check each property's own booking engine for the exact dates before deciding (Q-06).",
+   "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/COORDINATION.md"
+  },
+  {
+   "id": "R-14",
+   "severity": "low",
+   "where": "data/restaurants.json (joel-robuchon.phone)",
+   "issue": "The phone field was blank although the official page prints a reservations number.",
+   "action": "Filled from the official page this session (C-04).",
+   "source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html"
+  },
+  {
+   "id": "R-15",
+   "severity": "high",
+   "where": "Homepage headline (index.html, gen_site.py), executive-summary.md, README.md",
+   "issue": "The February-vs-March headline said 'February is the expensive week' with no qualifier. Another session's review (notes/repo-review-2026-11-26.md, its F-01) found this contradicts official booking-engine checks for Caesars Palace and Flamingo, recorded in COORDINATION.md.",
+   "action": "Corrected in this session: all three places now say the cheapest week depends on the property and point to Q-06. Re-pricing the Venetian and Palazzo on their own engines is still open.",
+   "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/notes/repo-review-2026-11-26.md"
+  },
+  {
+   "id": "R-16",
+   "severity": "medium",
+   "where": "pages/flagged.html (unpublished)",
+   "issue": "The stale pages/flagged.html has 11 broken relative links and was never published (noted as F-02 in notes/repo-review-2026-11-26.md).",
+   "action": "Superseded: the working Flagged for Review page is now published at the root as flagged.html. The stale file is left in place, not published, and should be deleted at the owner's discretion.",
+   "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/pages/flagged.html"
+  },
+  {
+   "id": "R-17",
+   "severity": "low",
+   "where": "GitHub Actions (branch arena/48dbf0ae-vegas1)",
+   "issue": "A 'Publish site to GitHub Pages' run on archived branch arena/48dbf0ae-vegas1 failed (notes F-03). The Pages workflow on main has succeeded on every recent run.",
+   "action": "No effect on the live site (main:/). Delete or ignore the failed branch run when the branch is retired.",
+   "source": "https://github.com/kanlerxz87-cyber/Vegas1/actions"
+  },
+  {
+   "id": "R-18",
+   "severity": "low",
+   "where": "README.md, index.html (drift)",
+   "issue": "README and the live site drifted apart on the headline finding (notes F-07). Fixed for the headline in this session; other README wording was not re-checked.",
+   "action": "Regenerate README wording from the same source as the site at the next integration.",
+   "source": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/README.md"
+  }
+ ]
 }

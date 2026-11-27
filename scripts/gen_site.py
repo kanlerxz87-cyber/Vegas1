@@ -981,7 +981,7 @@ def _flag_cell(text):
 
 
 def _sev(s):
-    cls = {"high": "bad", "medium": "warn", "low": "ok"}.get(s, "")
+    cls = {"high": "bad", "medium": "warn", "low": "ok", "closed": "ok"}.get(s, "")
     return f'<span class="tag {cls}">{e(s)}</span>'
 
 
@@ -1014,7 +1014,7 @@ def build_flagged():
 {build_audit_sections()}
 
 <section class="panel" id="repo-irregularities">
-  <h2>Repo irregularities ({len(REVIEW["irregularities"])})</h2>
+  <h2>Repo irregularities ({len(REVIEW["irregularities"])} found, {sum(1 for r in REVIEW["irregularities"] if r.get("severity") not in ("closed", "corrected"))} still open)</h2>
   <div class="scroll"><table class="data">
   <thead><tr><th>ID</th><th>Severity</th><th>Where</th><th>Issue</th><th>What to do</th><th>Source</th></tr></thead>
   <tbody>{r_rows}</tbody>
