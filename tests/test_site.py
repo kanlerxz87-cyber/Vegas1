@@ -157,5 +157,23 @@ class SiteTests(unittest.TestCase):
                 self.assertIn(site.text(r['also_recorded']),self.pages['activities.html'])
         self.assertIn('Earlier session evidence',self.pages['restaurants.html'])
 
+    def test_t23_primary_source_expansions_and_unique_flags(self):
+        import re
+        flag_ids=[]
+        for line in (ROOT/'FLAGS.md').read_text().splitlines():
+            m=re.match(r'\|\s*\*\*(F-\d+|EC-\d+)\*\*',line)
+            if m:flag_ids.append(m.group(1))
+        self.assertEqual(len(flag_ids),len(set(flag_ids)),'Duplicate flag IDs in FLAGS.md')
+        for n in range(52,79):self.assertIn(f'F-{n}',self.docs['flagged.html'].ids)
+        self.assertIn('EC-08',self.docs['flagged.html'].ids)
+        for amount in ['$700.00','$1,000.00','$298.00','$190.00','$450.00','$90.00','$76.00','$136.00']:
+            self.assertIn(amount,self.pages['dining.html'])
+            self.assertIn(amount,self.pages['restaurants.html'])
+        self.assertIn('10:00 AM–8:30 PM',self.pages['restaurants.html'])
+        self.assertIn('https://www.rwlasvegas.com/stay/crockfords-las-vegas/city-view-superior-room/',self.docs['hotels.html'].links)
+        self.assertNotIn('https://www.rwlasvegas.com/hotels/crockfords/',self.docs['hotels.html'].links)
+        self.assertIn('January 1, 2027',self.pages['activities.html'])
+        self.assertIn('$96.00',self.pages['transit.html'])
+
 
 if __name__=='__main__':unittest.main()

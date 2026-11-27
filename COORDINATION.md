@@ -808,6 +808,7 @@ Monorail line. This is recorded rather than quietly patched: a live-page read fo
 then #45/#46/#48). Every merge was resolved by regenerating HTML rather than hand-merging it, and no other
 session's data was reverted. The one deliberate reversal of an earlier decision — reinstating a *labelled estimate*
 for Guy Savoy — is recorded as F-64 with its source and keeps the $3,000 Krug figure withdrawn.
+
 ### T17 addendum — video-link verification (arena/a00dc828-vegas1, 2026-11-27)
 
 - Resolved **every published activity video ID** through YouTube's **oEmbed** endpoint (returns live title + channel). One ID carried in the data from an earlier capture — Fremont `Tls27qeAPaw` — **did not resolve** and was replaced with `KDARquYGk_M`, a video on the venue's own channel (`@vegasfremontstreet`). Logged as **F-67** (F-54–F-66 were assigned by other sessions while this branch was open).
@@ -954,3 +955,19 @@ T-ec1d72e2: publication retry integrated main 15143fa (PRs #62/#63) including at
 - Travel-research gaps remain published, not silently treated as resolved: qualifying room checkout/terms/private bathroom, market-wide cheapest dates or optimal purchase day, exact ≤60-minute bus itineraries, personal budget/diet/accessibility and future reservations. Those gaps do not block website publication; this is not a claim the trip is booking-ready.
 
 This documentation-only follow-up records the already confirmed merge/deployment; primary generated website bytes are unchanged from #59.
+
+---
+
+## Session claim & T22 audit completion — arena/ed9892d9-vegas1 (T22 → T23) — 2026-11-27
+
+| ID | Task | Status | Owner (session ID) | File scope | Notes |
+|----|------|--------|--------------------|------------|-------|
+| T22 | Comprehensive line-by-line official-source verification audit across all 24 MICHELIN restaurants, 6 activities, RTC/Monorail transit PDFs, and hotel URLs | done | `arena/ed9892d9-vegas1` | `COORDINATION.md`, `notes/verification-2026-11-27-t22-ed9892d9.md` | Full primary-source audit recorded in `notes/verification-2026-11-27-t22-ed9892d9.md`. Merged `origin/main` (`01d60e5`, PRs #53–#65) preserving 100% of upstream coordination records, strict renderer, datasets, and flags; conflict confined to tail of `COORDINATION.md` and logged here per rule §5. |
+| T23 | Post-T-ec1d72e2 primary-source expansion: newly verified official set-menu subtotals (Kame Omakase, Sparrow + Wolf, COTE, Estiatorio Milos, Mott 32 → **12 of 24** venues), Yen Viet Kitchen official hours/phone (`F-07`), Crockfords repaired URL + 5 Strip host-hotel room specs (**10 of 33** fresh hotel checks), Neon Museum Jan 1 2027 arrival-surcharge policy, RTC `$96` 7-day visitor pass math + Deuce/203 PDFs, `FLAGS.md` deduplication (`F-70..F-75`) + `F-55` 725-overlay correction + `F-76..F-78`/`EC-08`, rebuild + live Pages deploy | done | `arena/ed9892d9-vegas1` | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `data/verification-2026-11-27.json`, `scripts/strict_site.py`, `tests/test_site.py`, `notes/verification-2026-11-27-t22-ed9892d9.md`, generated root + `docs/` HTML | Merged in **[PR #66](https://github.com/kanlerxz87-cyber/Vegas1/pull/66)** (`d5ada50c6cc1cf65b5007868f9fbd65612b4047f`) and verified live on GitHub Pages (run `46047258423`, `?v=d5ada50`). Foreign open PRs (#64, #60, #38, #27) untouched. |
+
+### T22 & T23 PR & deployment result — arena/ed9892d9-vegas1 (2026-11-27)
+
+- **[PR #66](https://github.com/kanlerxz87-cyber/Vegas1/pull/66)** (`arena/ed9892d9-vegas1` → `main`) **MERGED** at **2026-11-27T18:09:01Z** via `gh pr merge 66 --merge`; merge commit **`d5ada50c6cc1cf65b5007868f9fbd65612b4047f`**.
+- **Pre-merge checks:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py && python3 scripts/check_evidence.py` → **16 pages · 0 failures · 0 warnings · 564 external links · 13/13 `unittest` regressions PASS**; root and `docs/` byte-identical; `git diff --check` clean.
+- **GitHub Pages deployment verified:** workflow **[46047258423](https://github.com/kanlerxz87-cyber/Vegas1/actions/runs/46047258423)** (`pages build and deployment` on `main:/`) completed **success** in 26s; `gh api repos/kanlerxz87-cyber/Vegas1/pages/builds` confirmed `commit: d5ada50c6cc1cf65b5007868f9fbd65612b4047f`, `status: built`, `error: null` at **2026-11-27T18:09:24Z**.
+- **Live cache-busted verification (`?v=d5ada50`):** fetched `dining.html` (all **12** confirmed fixed-menu subtotals live: China Poblano `$120`, Wing Lei `$397.76`, Mott 32 `$76/$136`, COTE `$190/$450`, Estiatorio Milos `$90`, Anima `$170`, Kabuto `$260/$370`, Kame Omakase `$700/$1,000`, Partage `$260/$320/$420`, Sparrow + Wolf `$298`, SoulBelly `$80`, Stubborn Seed `$320`), `hotels.html` (repaired Crockfords URL + Bellagio/Cosmopolitan/Venetian/MGM Grand room specs with blank 7-night totals & bus counts), `activities.html` (Neon Museum Jan 1, 2027 arrival-surcharge warning + Fremont 6 PM–2 AM Canopy Music Reels), `transit.html` (RTC `$96.00` exact 7-day visitor combo + Deuce 24/7 + 6-page Route 203 PDF), and `flagged.html` (`EC-08` + deduplicated `F-70..F-78`).
