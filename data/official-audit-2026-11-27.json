@@ -1,0 +1,495 @@
+{
+  "meta": {
+    "title": "Firsthand Official-Source Verification & Site Defect Audit — 2026-11-27",
+    "date": "2026-11-27",
+    "session": "arena/9077f7b3-vegas1",
+    "task": "T20",
+    "baseline_commit_audited": "044c45e",
+    "method": "Every entry below was fetched and read firsthand via fetch_page on 2026-11-27 against official venue, hotel, transit-agency, or MICHELIN Guide pages. Where two official pages disagree, both values and both URLs are recorded rather than reconciled by guesswork."
+  },
+  "michelin_2026_selection": {
+    "status": "confirmed",
+    "ceremony_and_release_date": "2026-08-31",
+    "ceremony_venue": "Fontainebleau Las Vegas",
+    "counts": {
+      "three_star": 0,
+      "two_star": 1,
+      "one_star": 3,
+      "bib_gourmand": 3,
+      "recommended": 17,
+      "total_las_vegas": 24,
+      "total_southwest_region": 64
+    },
+    "special_award_las_vegas": {
+      "award": "MICHELIN Outstanding Service Award",
+      "recipient": "Sean Christopher (General Manager, Joël Robuchon)"
+    },
+    "sources": [
+      "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s",
+      "https://www.visitlasvegas.com/michelin-guide-restaurants/"
+    ]
+  },
+  "restaurant_official_verifications": [
+    {
+      "id": "esthers-kitchen",
+      "name": "Esther's Kitchen",
+      "resolves_flags": ["F-07", "F-50", "F-66"],
+      "address_verified": "1131 S. Main Street, Las Vegas, NV 89104",
+      "previous_stale_address_in_repo": "1130 S Casino Center Blvd, Las Vegas, NV 89104",
+      "phone_verified": "702-570-7864",
+      "days_verified": "Daily",
+      "hours_verified": "Lunch Mon–Fri 11:00 AM–3:00 PM; Brunch Sat–Sun 10:00 AM–3:00 PM; Dinner daily 5:00 PM–11:00 PM",
+      "exceptions_verified": "Parties of 6 or more require a $15 per person credit card hold.",
+      "source": "https://www.estherslv.com/location/esthers-kitchen/"
+    },
+    {
+      "id": "yen-viet-kitchen",
+      "name": "Yen Viet Kitchen",
+      "updates_flags": ["F-07"],
+      "address_verified": "3575 S. Decatur Blvd., Ste. 101, Las Vegas, NV 89103",
+      "phone_verified": "702-293-4949",
+      "days_verified": "Mon, Wed–Sun",
+      "hours_verified": "10:00 AM–8:30 PM (venue online ordering) / 10:00 AM–9:00 PM (MICHELIN Guide); closed Tuesday",
+      "conflict_note": "Both the MICHELIN Guide listing and the restaurant's own Skipli online-ordering portal linked from yenvietkitchen.com confirm Tuesday closure and 10:00 AM opening, but disagree by 30 minutes on close (8:30 PM online ordering vs 9:00 PM MICHELIN Guide).",
+      "sources": [
+        "https://www.yenvietkitchen.com/",
+        "https://www.skiplinow.com/shop/514688a",
+        "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/yen-viet-kitchen"
+      ]
+    },
+    {
+      "id": "kame-omakase",
+      "name": "KAME Omakase",
+      "updates_flags": ["F-04"],
+      "address_verified": "3616 W. Spring Mountain Rd., Ste. 103, Las Vegas, NV 89102",
+      "phone_verified": "702-771-0122",
+      "days_verified": "Daily",
+      "hours_verified": "5:30 PM–7:30 PM & 8:00 PM–10:00 PM (two dinner seatings)",
+      "sources": [
+        "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/kame-omakase",
+        "https://sushikame.com/"
+      ]
+    },
+    {
+      "id": "sparrow-and-wolf",
+      "name": "Sparrow + Wolf",
+      "updates_flags": ["F-25"],
+      "address_verified": "4480 Spring Mountain Rd., #100, Las Vegas, NV 89102",
+      "phone_verified": "702-790-2147",
+      "days_verified": "Daily (per MICHELIN Guide; venue homepage prints no hours block)",
+      "hours_verified": "5:00 PM–10:00 PM (MICHELIN Guide; tasting menu last call 9:30 PM on venue menu)",
+      "price_2adults_verified": "$298++ (exact)",
+      "price_basis": "published exact (Chef's Tasting Menu $149 per person × 2; auto-gratuity added)",
+      "price_source": "https://sparrowandwolflv.com/menu/",
+      "sources": [
+        "https://sparrowandwolflv.com/menu/",
+        "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/sparrow-wolf"
+      ]
+    },
+    {
+      "id": "guy-savoy",
+      "name": "Restaurant Guy Savoy",
+      "days_verified": "Tue–Sat (MICHELIN Guide; confirm on OpenTable)",
+      "hours_verified": "5:00 PM–9:00 PM Tue–Sat per MICHELIN Guide (caesars.com prints Dinner from 5:00/5:30 PM)",
+      "sources": [
+        "https://guide.michelin.com/us/en/nevada/las-vegas_2935077/restaurant/guy-savoy-las-vegas",
+        "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"
+      ]
+    },
+    {
+      "id": "wing-lei",
+      "name": "Wing Lei",
+      "bug_fixed": "days field read 'Thu, Sun, Mon', omitting Fri–Sat even though hours read '5:30 PM – 9:30 PM (Fri–Sat until 10:00 PM)' and exceptions read 'Closed Tuesday and Wednesday'. Corrected to 'Thu–Mon'.",
+      "days_verified": "Thu–Mon",
+      "hours_verified": "Thu, Sun–Mon 5:30 PM–9:30 PM; Fri–Sat 5:30 PM–10:00 PM",
+      "price_2adults_verified": "$397.76 (exact)",
+      "price_source": "https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf"
+    },
+    {
+      "id": "bouchon",
+      "name": "Bouchon Bistro",
+      "price_2adults_verified": "≈$116–$186 (est.)",
+      "price_basis": "estimated from published Spring 2026 dinner menu PDF (shared starter $24–$36 + two mains $39–$105)",
+      "price_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/bouchon/dinner-menu.pdf"
+    },
+    {
+      "id": "cote",
+      "name": "COTE Korean Steakhouse",
+      "price_2adults_verified": "$190 (exact)",
+      "price_basis": "published exact (Feast of USDA Prime $95 per person × 2; full table participation)",
+      "price_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/cote/menu.pdf"
+    },
+    {
+      "id": "kabuto",
+      "name": "Kabuto",
+      "price_2adults_verified": "$260 / $370 (exact)",
+      "price_basis": "published exact (Yoroi $130 pp / Kabuto Premium $185 pp omakase × 2)",
+      "price_source": "https://www.kabutolv.com/s/kabuto-menu2026.pdf"
+    },
+    {
+      "id": "soulbelly-bbq",
+      "name": "SoulBelly BBQ",
+      "price_2adults_verified": "$80 (exact)",
+      "price_basis": "published exact ('Chef's Choice for 2' platter $80 on official menu; or 2 × $18 1-Meat Combo = $36)",
+      "price_source": "https://soulbellybbq.com/menu"
+    },
+    {
+      "id": "stubborn-seed",
+      "name": "Stubborn Seed",
+      "price_2adults_verified": "$320 / $390 (exact)",
+      "price_basis": "published exact (Tasting Menu $160 pp / Elevated $195 pp × 2; full table participation)",
+      "price_source": "https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/"
+    }
+  ],
+  "hotel_official_room_and_link_verifications": [
+    {
+      "id": "nobu-caesars",
+      "previous_status": "sibling",
+      "new_status": "yes",
+      "official_url_verified": "https://www.caesars.com/nobu-caesars-palace/hotel",
+      "qualifying_rooms": "NOBU Deluxe King (350 sq ft, 1 King, stone walk-in shower); NOBU Deluxe 2 Queens (350 sq ft, 2 Queens)"
+    },
+    {
+      "id": "vdara",
+      "previous_status": "blocked",
+      "new_status": "yes",
+      "official_url_verified": "https://vdara.mgmresorts.com/en/hotel.html",
+      "qualifying_rooms": "Studio (582 sq ft, 1 King + pullout queen sofa bed, walk-in shower & soaking tub); Studio Two Queen (582 sq ft, 2 Queens)",
+      "room_detail_url": "https://vdara.mgmresorts.com/en/hotel/studio-suite.html"
+    },
+    {
+      "id": "mgm-signature",
+      "previous_status": "no",
+      "new_status": "yes",
+      "official_url_verified": "https://signaturemgmgrand.mgmresorts.com/en/hotel.html",
+      "qualifying_rooms": "Deluxe Suite (550 sq ft, 1 King + 1 Queen sofa bed, kitchenette, marble/granite bath w/ whirlpool spa tub & separate shower)",
+      "room_detail_url": "https://signaturemgmgrand.mgmresorts.com/en/hotel/deluxe-suite.html"
+    },
+    {
+      "id": "nomad-reserve",
+      "previous_status": "blocked",
+      "new_status": "yes",
+      "official_url_verified": "https://thereserveatparkmgm.mgmresorts.com/en/hotel.html",
+      "qualifying_rooms": "Classic King (406 sq ft, 1 King); Classic Two Queen (406 sq ft, 2 Queens, walk-in Carrara marble shower); 293 rooms total"
+    },
+    {
+      "id": "bellagio",
+      "previous_status": "yes",
+      "new_status": "yes",
+      "official_url_verified": "https://bellagio.mgmresorts.com/en/hotel.html",
+      "qualifying_rooms": "Premier King (510 sq ft, 1 King, marble bath w/ dual sinks & frameless shower); Premier Two Queen (510 sq ft, 2 Queens)",
+      "room_detail_url": "https://bellagio.mgmresorts.com/en/hotel/premier-king.html"
+    },
+    {
+      "id": "cosmopolitan",
+      "previous_status": "yes",
+      "new_status": "yes",
+      "official_url_verified": "https://cosmopolitanlasvegas.mgmresorts.com/en/hotel.html",
+      "qualifying_rooms": "City Room Queen (460 sq ft, 2 Queens, large marble bath); Terrace Studio King (730 sq ft, 1 King)",
+      "room_detail_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/hotel/city-room.html"
+    },
+    {
+      "id": "aria",
+      "previous_status": "yes",
+      "new_status": "yes",
+      "official_url_verified": "https://aria.mgmresorts.com/en/hotel.html",
+      "qualifying_rooms": "Deluxe King Room (520 sq ft, 1 King, 1 Full Bathroom w/ private water closet, shower & soaking tub); Deluxe Two Queen Room (520 sq ft)",
+      "room_detail_url": "https://aria.mgmresorts.com/en/hotel/deluxe-room.html"
+    },
+    {
+      "id": "wynn",
+      "previous_status": "blocked",
+      "new_status": "yes",
+      "official_url_verified": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658",
+      "qualifying_rooms": "Wynn Resort King (640 sq ft, 1 King Wynn Dream Bed, marble bath w/ soaking tub, glass shower & separate water closet); Wynn Resort Two Queens"
+    },
+    {
+      "id": "encore",
+      "previous_status": "blocked",
+      "new_status": "yes",
+      "official_url_verified": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68668",
+      "qualifying_rooms": "Encore Resort King (745 sq ft, 1 King Wynn Dream Bed, oversized marble bath w/ separate shower & water closet); Encore Resort Two Queens"
+    },
+    {
+      "id": "crockfords",
+      "previous_status": "blocked",
+      "new_status": "yes",
+      "official_url_verified": "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=CROCKFORDS",
+      "qualifying_rooms": "City View Superior Room - One King Bed (Max 2); City View Superior Room - Two Queen Beds (Max 4)"
+    },
+    {
+      "id": "fontainebleau",
+      "previous_status": "yes",
+      "new_status": "yes",
+      "official_url_verified": "https://www.fontainebleaulasvegas.com/rooms-and-suites/all-accommodations/bleau-rooms/",
+      "qualifying_rooms": "Bleau King (488 sq ft, 1 King, marble bath); Bleau Queen (494 sq ft, 2 Queens, marble bath)"
+    },
+    {
+      "id": "palazzo",
+      "previous_status": "yes",
+      "new_status": "yes",
+      "official_url_verified": "https://www.venetianlasvegas.com/hotel/the-palazzo.html",
+      "qualifying_rooms": "Luxury King Suite (720 sq ft, 1 King, oversized bath); Luxury Two Queen Suite (720 sq ft, 2 Queens, oversized bath)"
+    },
+    {
+      "id": "four-seasons",
+      "previous_status": "yes",
+      "new_status": "yes",
+      "official_url_verified": "https://www.fourseasons.com/lasvegas/accommodations/",
+      "qualifying_rooms": "Superior Room (500 sq ft, 1 King); Strip View Room (500 sq ft, 1 King or 2 Queens); Deluxe Room (550 sq ft, 1 King or 2 Queens)"
+    },
+    {
+      "id": "bluegreen-club-36",
+      "previous_status": "blocked",
+      "new_status": "yes",
+      "official_url_verified": "https://www.bluegreenvacations.com/resorts/nevada/bluegreen-club-36/",
+      "broken_urls_found": [
+        "https://www.shellvacationsclubrentals.com/resorts/nevada/the-club-at-36 (returns 404 Not Found | Shell Vacations Hospitality)"
+      ],
+      "qualifying_rooms": "1 Bedroom Standard Villa (480–486 sq ft, gallery includes 1 Bedroom Standard Bath); 1 Bedroom Deluxe Villa (704–710 sq ft); shuttle every 30 min 10 AM–11 PM to Planet Hollywood (no runs 12:00, 12:30, 7:00, 7:30 PM)"
+    },
+    {
+      "id": "green-valley-ranch",
+      "previous_status": "no",
+      "new_status": "yes",
+      "official_url_verified": "https://www.greenvalleyranch.com/stay/resort-king/",
+      "qualifying_rooms": "Resort King (495 sq ft, 1 King, dual-vanity marble bath, free parking)"
+    },
+    {
+      "id": "red-rock",
+      "previous_status": "no",
+      "new_status": "yes",
+      "official_url_verified": "https://www.redrockresort.com/stay/rooms/luxury-king/",
+      "qualifying_rooms": "Luxury King (515 sq ft, 1 King, marble bath w/ soaking tub & dual-sink vanity, free parking & valet)"
+    }
+  ],
+  "official_booking_engine_rates_2027_02_15_to_2027_02_22": [
+    {
+      "hotel": "The LINQ Hotel + Experience",
+      "room": "Deluxe Room | 1 Queen | Mobility Roll-In (350 sq ft)",
+      "bed": "1 queen",
+      "bed_guaranteed": true,
+      "nightly_incl_resort_fee_excl_tax": 77,
+      "stay_total_excl_tax": 539,
+      "resort_fee_note": "$49.95 daily resort fee included ($56.63 w/ tax); room tax excluded. Caution: Deluxe Room | 2 Doubles is also $77/night and FAILS the Queen+ bed requirement.",
+      "cheapest_unassigned_nightly": 74,
+      "source": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=ilv&numberOfAdults=2&numberOfRooms=1"
+    },
+    {
+      "hotel": "Flamingo Las Vegas",
+      "room": "Flamingo Room | 2 Queens (350 sq ft)",
+      "bed": "2 queens",
+      "bed_guaranteed": true,
+      "nightly_incl_resort_fee_excl_tax": 83,
+      "stay_total_excl_tax": 581,
+      "resort_fee_note": "$49.95 daily resort fee included ($56.63 w/ tax); room tax excluded.",
+      "cheapest_unassigned_nightly": 74,
+      "source": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=flv&numberOfAdults=2&numberOfRooms=1"
+    },
+    {
+      "hotel": "Horseshoe Las Vegas",
+      "room": "Resort Room | 1 King (450 sq ft)",
+      "bed": "1 king",
+      "bed_guaranteed": true,
+      "nightly_incl_resort_fee_excl_tax": 116,
+      "stay_total_excl_tax": 812,
+      "resort_fee_note": "$49.95 daily resort fee included ($56.63 w/ tax); room tax excluded.",
+      "cheapest_unassigned_nightly": 110,
+      "source": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=blv&numberOfAdults=2&numberOfRooms=1"
+    },
+    {
+      "hotel": "Caesars Palace",
+      "room": "Julius Deluxe Room | 1 King | Non-Smoking (360+ sq ft)",
+      "bed": "1 king",
+      "bed_guaranteed": true,
+      "nightly_incl_resort_fee_excl_tax": 214,
+      "stay_total_excl_tax": 1498,
+      "resort_fee_note": "$54.95 daily resort fee included ($62.30 w/ tax); room tax excluded.",
+      "cheapest_unassigned_nightly": 209,
+      "source": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1"
+    },
+    {
+      "hotel": "Nobu Hotel at Caesars Palace",
+      "room": "NOBU Deluxe King (350 sq ft)",
+      "bed": "1 king",
+      "bed_guaranteed": true,
+      "nightly_incl_resort_fee_excl_tax": 225,
+      "stay_total_excl_tax": 1575,
+      "resort_fee_note": "$54.95 daily resort fee included ($62.30 w/ tax); room tax excluded. NOBU Deluxe 2 Queens is $244/night ($1,708 before tax).",
+      "source": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=cl1&numberOfAdults=2&numberOfRooms=1"
+    },
+    {
+      "hotel": "The Vanderpump Hotel (formerly The Cromwell)",
+      "room": "Vanderpump Room | 1 King | Mobility Roll-In (360 sq ft)",
+      "bed": "1 king",
+      "bed_guaranteed": true,
+      "nightly_incl_resort_fee_excl_tax": 244,
+      "stay_total_excl_tax": 1708,
+      "resort_fee_note": "$54.95 daily resort fee included ($62.30 w/ tax); room tax excluded. 2 Queens Mobility Roll-In is $250/night ($1,750 before tax). First official post-rebrand quote (resolves S-15).",
+      "cheapest_unassigned_nightly": 233,
+      "source": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=dlv&numberOfAdults=2&numberOfRooms=1"
+    },
+    {
+      "hotel": "Resorts World Las Vegas (Hilton tower)",
+      "room": "Deluxe Room - One King Bed (max 2 guests)",
+      "bed": "1 king",
+      "bed_guaranteed": true,
+      "nightly_incl_resort_fee_excl_tax": 277.21,
+      "stay_total_incl_tax_and_fees": 2200.15,
+      "resort_fee_note": "ALL-IN total: includes $1,555.50 room subtotal + $208.13 room tax + $385.00 resort fees ($55/nt) + $51.52 resort-fee tax. Two-Queen room $2,434.84 all-in. Note: Conrad tower is sold out Feb 16–17, 2027.",
+      "source": "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0"
+    },
+    {
+      "hotel": "Crockfords Las Vegas (Resorts World)",
+      "room": "City View Superior Room - One King Bed (max 2 guests)",
+      "bed": "1 king",
+      "bed_guaranteed": true,
+      "nightly_incl_resort_fee_excl_tax": 421.64,
+      "stay_total_incl_tax_and_fees": 3346.42,
+      "resort_fee_note": "ALL-IN total: includes $2,566.50 room subtotal + $343.40 room tax + $385.00 resort fees ($55/nt) + $51.52 resort-fee tax. Two-Queen room $3,597.27 all-in.",
+      "source": "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=CROCKFORDS&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0"
+    },
+    {
+      "hotel": "Fontainebleau Las Vegas",
+      "room": "Bleau Queen (494 sq ft, 2 queens)",
+      "bed": "2 queens",
+      "bed_guaranteed": true,
+      "nightly_incl_resort_fee_excl_tax": 681.14,
+      "stay_total_excl_tax": 4767.98,
+      "public_offer": {
+        "name": "Bleau Friday Sale (up to 30% off + $50 daily dining credit)",
+        "nightly_incl_resort_fee_excl_tax": 493.3,
+        "stay_total_excl_tax": 3453.1,
+        "book_by": "2026-12-02"
+      },
+      "resort_fee_note": "$55 daily resort fee included; tax excluded. Bleau King Mountain Great View (488 sq ft) is $694.00/night Flexible ($4,858.00 before tax).",
+      "source": "https://reserve.fontainebleaulasvegas.com/ibe/shop.aspx?hotelID=17704&selectedTower=BGP&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0"
+    },
+    {
+      "hotel": "Encore at Wynn Las Vegas",
+      "room": "Encore Resort King (745 sq ft, pillow-top king bed, marble bath)",
+      "bed": "1 king",
+      "bed_guaranteed": true,
+      "nightly_incl_resort_fee_excl_tax": 733,
+      "stay_total_excl_tax": 5131,
+      "public_offer": {
+        "name": "Wynn Cyber Exclusive + up to $300 resort credit",
+        "nightly_incl_resort_fee_excl_tax": 597,
+        "stay_total_excl_tax": 4179,
+        "book_by": "2026-12-04"
+      },
+      "resort_fee_note": "$55 daily resort fee included; tax excluded. 105 sq ft larger and $80–$100/night cheaper than Wynn Resort King on the same week.",
+      "source": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68668&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0"
+    },
+    {
+      "hotel": "Wynn Las Vegas",
+      "room": "Wynn Resort King (640 sq ft, pillow-top king bed, marble bath)",
+      "bed": "1 king",
+      "bed_guaranteed": true,
+      "nightly_incl_resort_fee_excl_tax": 833,
+      "stay_total_excl_tax": 5831,
+      "public_offer": {
+        "name": "Wynn Cyber Exclusive + up to $300 resort credit",
+        "nightly_incl_resort_fee_excl_tax": 677,
+        "stay_total_excl_tax": 4739,
+        "book_by": "2026-12-04"
+      },
+      "resort_fee_note": "$55 daily resort fee included; tax excluded.",
+      "source": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0"
+    }
+  ],
+  "transit_and_activity_verifications": {
+    "rtc_fares": {
+      "strip_all_access": "$4 single ride, $6 2-hour, $8 24-hour, $20 3-day (all routes valid)",
+      "residential_regular": "$2 single, $3 2-hour, $5 24-hour, $20 7-day, $34 15-day, $65 30-day ($1 single is Reduced fare only, not regular local fare)",
+      "source": "https://www.rtcsnv.com/ways-to-travel/fares-passes/"
+    },
+    "rtc_deuce": {
+      "hours": "24/7 daily; approx. every 10–15 min 7:00 AM–1:00 AM and every 20 min 1:00 AM–7:00 AM",
+      "tvms": "Cash only at ticket vending machines",
+      "source": "https://rtcws.rtcsnv.com/routePDF/deuce.pdf"
+    },
+    "rtc_route_203": {
+      "corridor": "Spring Mountain / Desert Inn / Lamb (serves all 6 Spring Mountain Rd MICHELIN venues + Decatur timepoint)",
+      "decatur_to_lv_blvd_minutes": "Weekday EB 10–17 min, WB 8–13 min; Saturday EB 9–15 min, WB 8–12 min; Sunday EB 9–14 min, WB 8–11 min",
+      "source": "https://rtcws.rtcsnv.com/routePDF/203.pdf"
+    },
+    "rtc_route_202": {
+      "corridor": "Flamingo 24/7 (serves Caesars/Flamingo/Horseshoe/Vanderpump at LV Blvd, Gold Coast for Ping Pang Pong, Palms/Palms Place, and Decatur near Yen Viet Kitchen)",
+      "decatur_to_lv_blvd_minutes": "Weekday EB 10–14 min",
+      "source": "https://rtcws.rtcsnv.com/routePDF/202.pdf"
+    },
+    "monorail": {
+      "stations": ["MGM Grand", "Horseshoe/Paris", "Flamingo/Caesars Palace", "Harrah's/The LINQ", "Boingo Station at LVCC", "Westgate", "SAHARA"],
+      "frequency": "Every 4–8 minutes",
+      "hours": "Mon 7:00 AM–midnight; Tue–Thu 7:00 AM–2:00 AM; Fri–Sun 7:00 AM–3:00 AM",
+      "fares_full_vs_eticket": "1-ride $6.25/$5.75; 1-day $15.50/$13.95; 2-day $27/$24.45; 3-day $33/$30.85; 4-day $40/$38.10; 5-day $48.25/$45.85; 7-day $64/$59.95; NV resident $1 single at customer service booths",
+      "sources": [
+        "https://www.lvmonorail.com/ticket-information/",
+        "https://www.lvmonorail.com/stations/"
+      ]
+    },
+    "vegas_loop": {
+      "active_stations_count": 14,
+      "active_stations_listed": [
+        "LVCC South", "LVCC West", "LVCC Central", "LVCC Central Plaza", "LVCC Riviera",
+        "Resorts World", "Encore", "Westgate", "Fontainebleau", "Sahara",
+        "Airport T1", "Airport T3", "Turnberry Towers"
+      ],
+      "published_trip_fares": "LVCC → Las Vegas Strip $5; LVCC → Thomas & Mack Center $8",
+      "caveat": "Point-to-point Tesla tunnel system, NOT a subway or RTC bus; stale 5-station / $4.50-$6 description in data/transit.json updated to match official Nov 2026 station list.",
+      "sources": [
+        "https://www.boringcompany.com/projects/las-vegas-loop",
+        "https://vegasloop.com/"
+      ]
+    },
+    "fremont_canopy_schedule": {
+      "hours_verified": "Music Reels on The Canopy: Mon–Sun top of the hour 6:00 PM–2:00 AM",
+      "source": "https://fremontstreetexperience.com/the-canopy/"
+    }
+  },
+  "site_and_repo_defects_found_on_044c45e": [
+    {
+      "id": "D-01",
+      "severity": "high",
+      "where": "scripts/gen_site.py:640 -> suggestions.html",
+      "defect": "Renders `<h2>1</h2>` because `len(SUGGESTIONS_HEAD)` evaluates the length of a 1-item list instead of `SUGGESTIONS_HEAD[0]`."
+    },
+    {
+      "id": "D-02",
+      "severity": "high",
+      "where": "scripts/gen_site.py:444 -> dining.html",
+      "defect": "Calls Wing Lei 'the cheapest starred dinner on this site ($397.76 for two)', directly violating F-03 (Wing Lei is Recommended, NOT starred)."
+    },
+    {
+      "id": "D-03",
+      "severity": "high",
+      "where": "FLAGS.md:53-79 -> flagged.html",
+      "defect": "Six duplicate flag IDs (`F-52`..`F-57`) from concurrent PR merges produce duplicate HTML `id` attributes on `flagged.html` and raw loose text in `FLAGS.md`."
+    },
+    {
+      "id": "D-04",
+      "severity": "high",
+      "where": "data/restaurants.json:222 -> restaurants.html & itinerary.html",
+      "defect": "`wing-lei.days` reads `'Thu, Sun, Mon'`, omitting Friday and Saturday even though Wing Lei is open Thu–Mon (until 10:00 PM Fri–Sat)."
+    },
+    {
+      "id": "D-05",
+      "severity": "medium",
+      "where": "data/hotels.json -> hotels.html & sources.html",
+      "defect": "Nine hotel `official_url` entries remained `blocked`, `sibling`, or `no` despite live property subdomains/pages answering 200 OK; `caesars-palace.notes` falsely claimed Caesars is the 'only property with a starred restaurant under its own roof' (MGM Grand has 2★ Joël Robuchon + 1★ L'Atelier; Cosmopolitan has 1★ é); `official_link_check` tally conflicted with its own array lengths."
+    },
+    {
+      "id": "D-06",
+      "severity": "medium",
+      "where": "data/restaurants.json & itinerary.html",
+      "defect": "`esthers-kitchen` retained stale address `1130 S Casino Center Blvd` and blank hours/phone despite `estherslv.com/location/esthers-kitchen/` publishing `1131 S. Main Street`, `702-570-7864`, and full Lunch/Brunch/Dinner hours; 6 menu-verified restaurant prices in `scripts/t17_apply_verified.py` were lost during PR #53 merge, leaving `itinerary.html` Day 7 claiming SoulBelly has an official couple price next to a blank price badge."
+    },
+    {
+      "id": "D-07",
+      "severity": "low",
+      "where": "data/restaurants.json:308,754 & data/transit.json",
+      "defect": "`bouchon.social_evidence` still had `'Coral Coral Gables'`; `pho-ga-bac-bac.notes` still cited abandoned `@bestchickenpho`; `transit.json` had stale $1 local-fare text, stale 5-station Vegas Loop list, missing `Yen Viet Kitchen` in `west-near` zone restaurants, and inverted 34-min vs 20/25-min Chinatown bus estimates."
+    }
+  ]
+}
