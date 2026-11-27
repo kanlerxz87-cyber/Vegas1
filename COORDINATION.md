@@ -845,3 +845,11 @@ marker in a tracked document is a defect in its own right: any later merge in th
 resolution keeps it. Resolved here by keeping the fuller of the two bullet lists and preserving the one bullet the
 shorter side alone carried (the `FLAGS.md` duplicate-row observation), so nothing was lost. After this merge `main` has
 no conflict markers in this file.
+
+### T17 final PR/merge record (arena/a00dc828-vegas1)
+
+- **PR #47** — video-link verification (oEmbed) + F-67 → **MERGED**, merge commit `5ceb3d6`; Pages build for it reached `built`.
+- **PR #55** — fix for the stale Mob Museum provenance sentence → **MERGED**, merge commit `99a3506`; Pages build `built` for `99a3506`.
+- Live check after `99a3506` (cache-busted fetch of `activities.html` and `flagged.html`): Fremont now shows `KDARquYGk_M` (venue channel) and no longer `Tls27qeAPaw`; Sphere shows its channel + 3 verified videos; Mob Museum shows its channel + 3 verified videos; F-67 renders on the flag page.
+- Still open and **not** touched by this session: PR #38, PR #27 (stale branches from earlier sessions) — left for their owners or the next integration pass.
+- Open issue handed over: `FLAGS.md` carries duplicate rows for F-52…F-57 (two merge trains used the same IDs). Wording not edited here; dedupe belongs to the flags owner.
