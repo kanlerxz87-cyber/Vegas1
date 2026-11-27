@@ -6,8 +6,7 @@
       "open": "Not confirmed. The tables leave the cell blank and this page says so.",
       "interpreted": "The question as asked does not map onto Las Vegas, so a stated substitution was made and disclosed."
     },
-    "last_pass": "2026-11-25 restaurant hours verification (added Q-11–Q-12)",
-    "last_updated": "2026-11-27"
+    "last_pass": "2026-11-25 restaurant hours verification (added Q-11–Q-12)"
   },
   "questions": [
     {
@@ -52,18 +51,15 @@
       "id": "Q-04",
       "question": "What does dinner for two cost at each Michelin restaurant?",
       "state": "open",
-      "answer": "7 of the 24 venues published a price on their own site or menu PDF when re-read on 27 Nov 2026. Fixed per-person prices (doubled for two adults): Partage 5/7/Signature courses $130/$160/$210 → $260/$320/$420; Wing Lei Chef Tam's tasting $198.88 → $397.76; Anima by EDO $85 → $170; Michael Mina $295 → $590++ (venue temporarily closed, F-23); KAME Omakase $500 → $1,000 (OpenTable listing, F-04). Per-dish menus only: Guy Savoy starters $100–$120 and mains $160–$290 → ≈$520–$940 estimated for two, and Esther's Kitchen starters $15–$19, pasta $21–$28, entrées $29–$32 → ≈$130–$160 estimated for two. All figures are food only, before tax, gratuity and wine. The other 17, including two of the four starred rooms, print nothing.",
-      "problem": "Las Vegas fine-dining rooms publish menus without prices. Where only per-dish prices exist, a total depends on how many dishes a couple orders, so the cell is an estimate with the assumption written next to it — not a venue quote. The previous cell had Guy Savoy's per-person range under a 'for two' heading; corrected (F-52).",
-      "substitution": "Blank 'on request' cells for the 17 venues that print no price, 'exact' labels where the venue publishes a fixed menu price, and 'est.' with the stated method where only per-dish prices exist (F-53).",
-      "how_to_close": "Phone the 17 blanks (17 of 24 publish a number) or start a reservation on OpenTable and read the prepay/deposit amount. Re-read the two per-dish menus after New Year, since menus change seasonally.",
+      "answer": "Four venues print a real number on their official pages: Michael Mina ($295++ per person), Anima by EDO ($85 per person), KAME Omakase ($500 per person, from its own OpenTable description), and Guy Savoy (official à la carte dishes $100–$290 → $200–$580 for two; Krug Chef's Table 10-course $1,500/pp → $3,000 for two, per the Caesars menu effective 11.5.2026). All figures are before tax, gratuity and wine. Everything else leaves the cell blank. Note Michael Mina is currently marked Temporarily closed — see Q-11.",
+      "problem": "Las Vegas fine-dining rooms publish menus without prices, and the ones that do publish (tasting menus) change them seasonally. Inventing a range would violate the no-inference rule; the Guy Savoy cell shows only arithmetic on printed official prices.",
+      "substitution": "Blank cells plus a 'price on request' marker rather than an estimate.",
+      "how_to_close": "Book a table on OpenTable for a dummy date and read the deposit or prepay amount, or phone the numbers listed in data/restaurants.json. 17 of the 24 venues now publish a phone number and can be called in one sitting.",
       "sources": [
-        "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu",
-        "https://partage.vegas/menu",
-        "https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf",
-        "https://animabyedo.com",
-        "https://www.estherslv.com/menus/",
         "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
-        "https://www.opentable.com/r/kame-omakase-las-vegas"
+        "https://animabyedo.com",
+        "https://www.opentable.com/r/kame-omakase-las-vegas",
+        "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"
       ]
     },
     {
@@ -95,12 +91,13 @@
       "id": "Q-07",
       "question": "What are each restaurant's YouTube, TikTok and Instagram links?",
       "state": "open",
-      "answer": "YouTube is recorded for every one of the 24 restaurants, 69 links in total; those links were not opened during the review, so 'working' is still unverified. Instagram is verified for exactly one restaurant — SoulBelly BBQ, whose own site links instagram.com/soulbellybbqlv — plus the Neon Museum among the activities. TikTok remains blank everywhere.",
-      "problem": "Handles were not printed on most official restaurant pages; several official sites link only individual Instagram posts, not a profile, and guessing a handle would create a dead or wrong link.",
-      "substitution": "Blank rather than guessed. A link was added only where the venue's own page linked its own profile.",
-      "how_to_close": "Open each restaurant's official page footer and its OpenTable profile; record only handles that the venue itself links. That is 23 short page visits.",
+      "answer": "YouTube is recorded for every one of the 24 restaurants (69 links), and those video links were not opened, so whether each still plays is unverified. Instagram is now filled for 19 of the 24 restaurants and TikTok for 2 (Lamaii, Esther's Kitchen); for the five activities Instagram is filled for 4 of 5 and TikTok for 3 of 5. Those coverage counts come from the 2026-11-27 social sweep recorded in F-53, not from this session's own page visits.",
+      "problem": "Handles are not printed on most official pages, so a handle found nowhere but a search result is weak evidence: a wrong handle creates a dead or, worse, someone else's account. Creator videos that tag a venue are not the venue's account.",
+      "substitution": "Blank rather than guessed, and every filled activity cell now states where the handle came from (activities page, 'Where each social link came from'). The Neon Museum is the strongest case: it prints both its Instagram and TikTok in its own site navigation.",
+      "how_to_close": "Open each remaining restaurant's official page footer or its OpenTable profile and look for the venue's own link. 5 Instagram gaps and 22 TikTok gaps remain; TikTok is the hardest because many venues never created one. Anything not printed by the venue or its booking profile should stay blank (F-53).",
       "sources": [
-        "https://soulbellybbq.com"
+        "https://neonmuseum.org/",
+        "https://www.youtube.com/themobmuseum"
       ]
     },
     {
@@ -173,18 +170,6 @@
         "https://www.venetianlasvegas.com/hotel/the-palazzo.html",
         "https://www.fontainebleaulasvegas.com/",
         "https://www.rwlasvegas.com/hotels/crockfords/"
-      ]
-    },
-    {
-      "id": "Q-14",
-      "question": "What does the whole seven-night trip cost, and which line dominates?",
-      "state": "open",
-      "answer": "A worked total is now on the Trip cost page, built only from captured figures: Value ≈$1,837, Recommended ≈$2,625, Splurge ≈$4,927 for two adults sharing a room for seven nights, including three paid activities and a seven-day Monorail pass each. The room is the largest line in every scenario; three Michelin dinners add roughly what three extra hotel nights cost.",
-      "problem": "No total on that page includes Nevada room tax, resort fees that the capture did not carry, airfare, gratuity or wine, and the hotel totals are Booking.com snapshots rather than property quotes (F-29/F-48). A total presented as final would be wrong by hundreds of dollars.",
-      "substitution": "Show the three totals as 'as captured', list every excluded cost beside them, and keep the arithmetic visible so any single line can be replaced once a real quote is in hand.",
-      "how_to_close": "Re-quote the chosen hotel on its own engine for the exact dates, add the resort fee and tax, then add airfare, tips and wine. The moment those four numbers exist the total becomes a real budget.",
-      "sources": [
-        "https://kanlerxz87-cyber.github.io/Vegas1/costs.html"
       ]
     }
   ]
