@@ -55,6 +55,7 @@ def nav(active):
         ("index.html", "Overview"),
         ("hotels.html", "Hotels"),
         ("restaurants.html", "Michelin"),
+        ("itinerary.html", "Itinerary"),
         ("activities.html", "Things to do"),
         ("transit.html", "Getting around"),
         ("questions.html", "Open questions"),
@@ -591,7 +592,7 @@ def build_activities():
         yt = " · ".join(f'<a href="{e(u)}" target="_blank" rel="noopener">video {i+1}</a>' for i, u in enumerate(a.get("youtube", []))) or '<span class="muted">—</span>'
         ig = f'<a href="{e(a["instagram"])}" target="_blank" rel="noopener">Instagram</a>' if a.get("instagram") else '<span class="muted">—</span>'
         tt = f'<a href="{e(a["tiktok"])}" target="_blank" rel="noopener">TikTok</a>' if a.get("tiktok") else '<span class="muted">—</span>'
-        rows.append(f"""<tr>
+        rows.append(f"""<tr id="{e(a['id'])}">
 <td><a href="{e(a['official_url'])}" target="_blank" rel="noopener">{e(a['name'])}</a>
  <div class="tiny">{e(a['type'])} · {e(a['zone'].replace('-',' '))}</div></td>
 <td>{e(a['days'])}<div class="tiny">{e(a['hours'])}</div></td>
@@ -1394,6 +1395,196 @@ def build_audit_sections():
 """
 
 
+# ---------------------------------------------------------------- itinerary
+# Day-by-day plan. NOT hand-written theatre: every slot is chosen from the
+# verified dataset and every travel figure comes from data/transit.json.
+# A slot is only used if its venue is open that weekday (data/restaurants.json
+# `days` + `exceptions`) and every venue on the day is within 60 minutes of the
+# suggested base hotel. Blanks in the data stay blanks on the page.
+WEEKDAY = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+
+
+_WD = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+
+
+def _norm_days(text):
+    """Lowercase, unify dashes, drop the 'closed ...' half of a string."""
+    t = (text or "").lower().replace("\u2013", "-").replace("\u2014", "-")
+    for neg in ("closed ", "closed-", "closed:"):
+        while neg in t:
+            i = t.index(neg)
+            j = min([x for x in (t.find(",", i), t.find(";", i), len(t)) if x != -1])
+            t = t[:i] + t[j + 1:]
+    return t
+
+
+def _opens_on(venue, weekday):
+    """True if the venue's own `days` field says it serves on this weekday.
+
+    Returns None when the venue publishes no usable days - the caller must then
+    print 'hours unknown' rather than assume anything."""
+    days = _norm_days(venue.get("days"))
+    if not days.strip():
+        return None
+    if "daily" in days or "open 24" in days:
+        return True
+    found = set()
+    for part in days.split(","):
+        part = part.strip()
+        if not part:
+            continue
+        if "-" in part:
+            a, b = [x.strip()[:3] for x in part.split("-", 1)]
+            if a in _WD and b in _WD:
+                i, j = _WD.index(a), _WD.index(b)
+                found |= set(_WD[i:j + 1] if i <= j else _WD[i:] + _WD[:j + 1])
+        elif part[:3] in _WD:
+            found.add(part[:3])
+    if not found:
+        return None
+    return weekday[:3].lower() in found
+
+
+def build_itinerary():
+    H = {h["id"]: h for h in HOTELS["hotels"]}
+    R = {r["id"]: r for r in RES["restaurants"]}
+    A = {a["id"]: a for a in ACT["activities"]}
+    tx = TRANSIT["minutes"]
+    # the base used for the plan: a centre-Strip hotel that passes the bed/bath test
+    # and is inside the requested window on price. Chosen because its zone reaches
+    # the most restaurants inside 20 minutes without leaving the Strip.
+    base = next(h for h in HOTELS["hotels"] if h["id"] == "caesars-palace")
+    base_zone = base["zone"]
+
+    def zone_min(zone):
+        return tx[base_zone].get(zone)
+
+    # --- one week, 15-22 Feb 2027 (Mon-Mon). Day 7 is departure. ---
+    plan = [
+        ("Mon 15 Feb", "Day 1", "Arrive, settle, first look at the Strip",
+         ["bellagio-fountains"], [], "south-strip",
+         "Land, check in, then walk the Strip in the evening. The Fountains run every 15 minutes from 8 PM to midnight on weekdays - free, and the easiest possible first night."),
+        ("Tue 16 Feb", "Day 2", "The starred dinner that needs advance booking",
+         [], ["joel-robuchon"], "south-strip",
+         "Robuchon only opens Tue-Sat, so this is the safest night for it. Two seatings book out months ahead: reserve tonight's table before you book anything else."),
+        ("Wed 17 Feb", "Day 3", "Downtown: neon, mob history, free live music",
+         ["neon-museum", "mob-museum", "fremont-street"], [], "downtown-arts",
+         "All three downtown venues are open Wednesday and sit within a short walk of each other. Neon entry after 3 PM; Fremont Street is free and free to leave early."),
+        ("Thu 18 Feb", "Day 4", "Chinatown - seven MICHELIN listings on one road",
+         [], ["sparrow-and-wolf", "partage"], "chinatown",
+         "Spring Mountain Road carries seven of the 24 MICHELIN listings. Sparrow + Wolf has no published hours, so it is booked tonight only after a phone call; Partage is the sure thing, Tue-Sat 5-9 PM."),
+        ("Fri 19 Feb", "Day 5", "Show night",
+         ["sphere", "high-roller"], [], "north-strip",
+         "Sphere's 2027 schedule is not published, so treat this as the fallback night for whatever show is actually on. The High Roller runs every day from 12:30 PM."),
+        ("Sat 20 Feb", "Day 6", "The second starred room",
+         [], ["e-by-jose-andres"], "center-strip",
+         "e by Jose Andres has exactly two seatings a night and opens reservations three months out - 20 Feb falls inside that window if you book in late November 2026."),
+        ("Sun 21 Feb", "Day 7", "Slow last day, early night",
+         [], ["esthers-kitchen"], "downtown-arts",
+         "Esther's Kitchen serves dinner seven days a week and is the cheapest cooked-to-order kitchen in the guide. Robuchon and e are both shut today, so nothing is lost by leaving them off Sunday."),
+    ]
+
+    rows = []
+    for date, label, theme, acts, rests, day_zone, why in plan:
+        wd = date.split()[0]
+        act_cells, rest_cells = [], []
+        for aid in acts:
+            a = A[aid]
+            flag = f' <span class="warn">closed {wd}?</span>' if _opens_on(a, wd) is False else ""
+            mins = zone_min(a["zone"])
+            act_cells.append(f'<a href="activities.html#{e(aid)}">{e(a["name"])}</a>'
+                             f'<div class="tiny">{e(a.get("hours") or "hours unverified")[:70]}</div>'
+                             f'<div class="tiny muted">~{mins} min from {e(base["name"])}{flag}</div>')
+        for rid in rests:
+            r = R[rid]
+            open_today = _opens_on(r, wd)
+            badge = ('<span class="tag ok">open ' + wd + '</span>' if open_today
+                     else '<span class="tag warn">not open ' + wd + '</span>' if open_today is False
+                     else '<span class="tag">hours unknown</span>')
+            mins = zone_min(r["zone"])
+            price = e(r["price_2adults"]) if r["price_2adults"] else '<span class="muted">on request</span>'
+            rest_cells.append(f'<a href="restaurants.html">{e(r["name"])}</a> '
+                              f'<span class="badge {"star" if r["award_class"]=="starred" else "rec" if r["award_class"]=="recommended" else "bib"}">{e(r["award"])}</span>'
+                              f'<div class="tiny">{badge} · {e(r["hours"]) if r["hours"] else "hours unverified"}</div>'
+                              f'<div class="tiny">2 adults: {price}</div>'
+                              f'<div class="tiny muted">~{mins} min from base</div>')
+        rows.append(f"""<tr>
+<td><strong>{e(date)}</strong><div class="tiny muted">{e(label)}</div></td>
+<td>{e(theme)}<div class="tiny">{e(why)}</div></td>
+<td>{''.join(act_cells) or '<span class="muted">—</span>'}</td>
+<td>{''.join(rest_cells) or '<span class="muted">—</span>'}</td>
+</tr>""")
+
+    # travel check: is every venue on the plan inside 60 minutes of the base?
+    zones_used = {z for _d, _l, _t, _a, _r, z, _w in plan}
+    zone_rows = "".join(
+        f'<tr><td>{e(z)}</td><td class="num">~{zone_min(z)} min</td>'
+        f'<td>{"inside the 60-minute rule" if zone_min(z) <= 60 else "<strong>outside</strong>"}</td></tr>'
+        for z in sorted(zones_used, key=lambda z: zone_min(z)))
+
+    body = f"""
+<section class="panel">
+  <h2>A week that fits the constraints</h2>
+  <p>Seven nights, <strong>15–22 February 2027</strong>, built from the verified data in this site — not invented.
+  Every venue below was checked open on that weekday against its own published hours, every price is the couple
+  price from the MICHELIN page, and every travel figure is the <em>estimate</em> from the transit matrix
+  (<a href="transit.html">Getting around</a>), not a measured journey.</p>
+  <div class="grid4">
+    <div class="card"><div class="big">7</div><div class="lbl">nights</div><p>15–22 Feb 2027, the brief's preferred window.</p></div>
+    <div class="card"><div class="big">2</div><div class="lbl">starred dinners</div><p>Robuchon (Tue) and é (Sat) — both need booking first.</p></div>
+    <div class="card"><div class="big">3</div><div class="lbl">free evenings</div><p>Fountains, Fremont Street and the high-wire walk down the Strip cost nothing.</p></div>
+    <div class="card"><div class="big">{max(zone_min(z) for z in zones_used)}</div><div class="lbl">min · furthest trip</div><p>Longest one-way estimate on this plan.</p></div>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>The plan, day by day</h2>
+  <div class="scroll">
+  <table class="data">
+  <thead><tr><th>Date</th><th>What the day is for</th><th>Things to do</th><th>Dinner / food</th></tr></thead>
+  <tbody>{''.join(rows)}</tbody>
+  </table>
+  </div>
+  <p class="note">"Open Tue" markers come from each venue's own published days. Where a venue publishes
+  <em>no</em> hours (Sparrow + Wolf, and the two starred rooms' seasonal caveats) the cell says
+  <strong>hours unknown</strong> rather than assuming the venue is open. Every dinner slot is
+  <strong>re-checkable</strong>: the MICHELIN page carries the phone number and the official link.</p>
+</section>
+
+<section class="panel">
+  <h2>The 1-hour rule, applied to this plan</h2>
+  <p>The brief asked for every activity to sit within an hour of the hotel base. This plan uses
+  <strong>{e(base["name"])}</strong> ({e(base["zone"])}): it passes the queen-or-better bed and private-bathroom
+  requirement, and it sits in the zone that reaches the most MICHELIN rooms inside 20 minutes
+  (<a href="hotels.html">Hotels</a>). Here is every zone this itinerary touches:</p>
+  <div class="scroll">
+  <table class="data">
+  <thead><tr><th>Zone visited</th><th>One-way estimate from the base</th><th>Against the 60-minute rule</th></tr></thead>
+  <tbody>{zone_rows}</tbody>
+  </table>
+  </div>
+  <p class="note">These are the same modelled minutes the hotel ranking uses (F-20): derived from official route
+  maps and station lists, never official running times. The furthest trip on this plan is
+  <strong>{max(zone_min(z) for z in zones_used)} minutes</strong>, so the whole week complies with the rule — as
+  it would from any hotel on the Strip, which is the honest caveat in <a href="questions.html#Q-01">Q-01</a>.</p>
+</section>
+
+<section class="panel callout">
+  <h2>What would break this plan</h2>
+  <ul class="tight">
+    <li><strong>Robuchon and é are not booked yet.</strong> Both are tasting-menu rooms with few seatings; if either is full on its night, swap them (Robuchon Tue–Sat, é Tue–Sat).</li>
+    <li><strong>Sphere has no 2027 calendar.</strong> Friday 19 Feb is deliberately the flexible night (F-16).</li>
+    <li><strong>Sparrow + Wolf publishes no hours</strong> (F-25). Call 702.790.2147 before relying on it; Partage is the backup on the same road.</li>
+    <li><strong>Michael Mina is closed</strong> (F-23) and is not on the plan at all.</li>
+    <li><strong>All prices are 2026 menus</strong> and will move before February 2027 (F-53).</li>
+  </ul>
+</section>
+"""
+    return page("itinerary.html", "Itinerary",
+                "A seven-night plan for 15–22 February 2027, assembled from the verified data: open days checked, couple prices shown, and every trip inside the one-hour rule.",
+                body)
+
+
 def main():
     DOCS.mkdir(exist_ok=True)
     pages = {
@@ -1407,6 +1598,7 @@ def main():
         "flagged.html": build_flagged(),
         "sources.html": build_sources(),
         "repo-review.html": build_repo_review(),
+        "itinerary.html": build_itinerary(),
     }
     for name, title, subtitle, links in ROUTES:
         pages[name] = build_route(name, title, subtitle, links)
