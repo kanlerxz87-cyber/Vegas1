@@ -6,7 +6,7 @@
       "open": "Not confirmed. The tables leave the cell blank and this page says so.",
       "interpreted": "The question as asked does not map onto Las Vegas, so a stated substitution was made and disclosed."
     },
-    "last_pass": "2026-11-25 restaurant hours verification (added Q-11–Q-12)"
+    "last_pass": "2026-11-27 official restaurant prices/socials, activity socials & hotel official-link sweep (T16)"
   },
   "questions": [
     {
@@ -51,15 +51,21 @@
       "id": "Q-04",
       "question": "What does dinner for two cost at each Michelin restaurant?",
       "state": "open",
-      "answer": "Four venues print a real number on their official pages: Michael Mina ($295++ per person), Anima by EDO ($85 per person), KAME Omakase ($500 per person, from its own OpenTable description), and Guy Savoy (official à la carte dishes $100–$290 → $200–$580 for two; Krug Chef's Table 10-course $1,500/pp → $3,000 for two, per the Caesars menu effective 11.5.2026). All figures are before tax, gratuity and wine. Everything else leaves the cell blank. Note Michael Mina is currently marked Temporarily closed — see Q-11.",
+      "answer": "Ten of 24 venues now carry verified official or official-reservation-platform prices (updated 2026-11-27): Restaurant Guy Savoy ($200–$580 à la carte / $3,000 Krug Chef's Table), China Poblano ($120++ José's Way tasting), Partage ($260–$420++ 5/7/9-course tasting), Stubborn Seed ($320++ Chef's Tasting), Kabuto ($260–$370++ Yoroi/Kabuto omakase via Resy), Anima by EDO ($170++ tasting; Monday Pasta+Wine $65 total), Esther's Kitchen ($42–$64++ two mains/pastas), SoulBelly BBQ ($36–$80++ combos / Chef's Choice for 2), KAME Omakase ($1,000++ via OpenTable), and Michael Mina ($590++ — currently Temporarily closed, see Q-11). All figures exclude tax, gratuity and drinks; the remaining 14 venues do not publish menu prices officially and stay blank.",
       "problem": "Las Vegas fine-dining rooms publish menus without prices, and the ones that do publish (tasting menus) change them seasonally. Inventing a range would violate the no-inference rule; the Guy Savoy cell shows only arithmetic on printed official prices.",
       "substitution": "Blank cells plus a 'price on request' marker rather than an estimate.",
-      "how_to_close": "Book a table on OpenTable for a dummy date and read the deposit or prepay amount, or phone the numbers listed in data/restaurants.json. 17 of the 24 venues now publish a phone number and can be called in one sitting.",
+      "how_to_close": "For the remaining 14 venues (including Joël Robuchon, L'Atelier and é by José Andrés), check OpenTable/SevenRooms prepay or deposit screens for a sample date or phone the numbers listed in data/restaurants.json (19 of 24 venues now carry a phone number).",
       "sources": [
-        "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
+        "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu",
+        "https://www.chinapoblano.com/menus/",
+        "https://partage.vegas/menu",
+        "https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/",
+        "https://resy.com/cities/las-vegas-nv/venues/kabuto-edomae-sushi",
         "https://animabyedo.com",
+        "https://www.estherslv.com/menus/",
+        "https://soulbellybbq.com/menu",
         "https://www.opentable.com/r/kame-omakase-las-vegas",
-        "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"
+        "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html"
       ]
     },
     {
@@ -91,18 +97,18 @@
       "id": "Q-07",
       "question": "What are each restaurant's YouTube, TikTok and Instagram links?",
       "state": "open",
-      "answer": "YouTube is recorded for every one of the 24 restaurants, 69 links in total. The links were not opened in the 2026-11-26 review, so 'working' is not verified. Instagram and TikTok are almost entirely blank.",
-      "problem": "Handles were not printed on most official restaurant pages, and guessing a handle would create a dead or, worse, wrong link.",
-      "substitution": "Blank rather than guessed. The Neon Museum is the only venue with confirmed Instagram and TikTok, taken from its own site footer.",
-      "how_to_close": "Open each restaurant's official page footer or its OpenTable profile — most link their own socials there. That is 24 short page visits.",
+      "answer": "Updated 2026-11-27: YouTube is recorded for all 24 restaurants (69 links) and all 6 activities. Verified official Instagram accounts are now recorded for 18 of 24 restaurants and 5 of 6 activities; TikTok links are recorded for 3 restaurants (including Lamaii's official account) and 4 of 6 activities. The remaining 6 restaurants and unconfirmed TikTok profiles stay blank rather than guessed (F-19).",
+      "problem": "Six restaurants (Wing Lei, Michael Mina, Ping Pang Pong, Pho Ga Bac Bac, Yen Viet Kitchen, Stubborn Seed) and several venues on TikTok do not have a confirmed standalone Las Vegas handle in official footers or search results.",
+      "substitution": "Blank rather than guessed wherever a dedicated official profile could not be confirmed.",
+      "how_to_close": "Open the remaining 6 venues' reservation/resort pages in a standard browser to check if a dedicated Vegas handle has been launched, or follow the parent resort's official social account.",
       "sources": []
     },
     {
       "id": "Q-08",
       "question": "Are the opening hours current for the trip dates (February–March 2027)?",
       "state": "open",
-      "answer": "Hours were captured on 2026-11-25 and are the venues' current published hours. Several are seasonal or reduced: Wing Lei and L'Atelier are closed two weekdays, SoulBelly closes Mondays, Michael Mina publishes block closures.",
-      "problem": "A February 2027 trip is 15 months from the capture date, and Las Vegas restaurants change days and hours constantly.",
+      "answer": "Hours were captured 2026-11-25 to 2026-11-27 from official pages. Several are seasonal or dark on specific days: Wing Lei and L'Atelier close two weekdays, Joël Robuchon and Partage close Sun–Mon, SoulBelly closes Mondays, Michael Mina is Temporarily closed, and é by José Andrés has an official-vs-official Sunday conflict (F-53).",
+      "problem": "A February 2027 trip is roughly 3 months from the November 2026 capture date, and Las Vegas restaurants frequently adjust seasonal or holiday schedules.",
       "substitution": "The 'exceptions' column records every closure noticed, and every row links to the official page so hours can be re-checked in one click.",
       "how_to_close": "Re-check the four starred restaurants and Michael Mina two weeks before travel — these are the ones that will ruin an evening if they are dark.",
       "sources": []
@@ -158,10 +164,10 @@
       "id": "Q-13",
       "question": "Are the hotels' own websites still live at the URLs this site links to?",
       "state": "answered",
-      "answer": "Closed as far as this environment allows. 18 of 32 official pages are now confirmed live by fetch (4 from earlier sessions plus 14 opened on 26 Nov 2026: Cosmopolitan, ARIA, Bellagio, Palazzo, SAHARA, Four Seasons, Trump, Golden Nugget, Caesars Palace, Plaza, Fontainebleau, Horseshoe, Flamingo and the Cromwell). Two links moved: caesars.com/cromwell 301-redirects to a NEW brand (The Vanderpump Hotel — row renamed, F-47) and palazzo.com resolves to a page under venetianlasvegas.com. 8 properties refuse automated access (Wynn, Encore, Vdara, Secret Suites, NoMad, W, Bluegreen Club 36, and Crockfords which returns HTTP 500), so each is labelled as refused rather than given a checkmark. 5 were not opened, and 1 (Nobu at Caesars) opens but lands on the parent property's page (F-49).",
+      "answer": "Closed as far as this environment allows (finished 2026-11-27). All 32 hotel official URLs have now been checked: 21 of 32 are confirmed live by fetch (including Green Valley Ranch, Red Rock, and The Cliffs at Peace Canyon at thecliffs.net, verified 2026-11-27), 10 refuse automated access (Wynn, Encore, Vdara, Secret Suites, NoMad, W, Bluegreen Club 36, Waldorf Astoria, The Signature at MGM Grand, and Crockfords which returned HTTP 500), 1 (Nobu at Caesars) opens but lands on the parent property's page, and 0 remain unopened (F-49). Two links moved: caesars.com/cromwell 301-redirects to The Vanderpump Hotel (F-47) and palazzo.com resolves under venetianlasvegas.com.",
       "problem": "Hotel brand sites move constantly — MGM, Caesars, Marriott and Hilton have all reorganised property URLs. Linking a moved page is a small failure, but claiming it was verified when it was not is the failure the brief actually cares about.",
       "substitution": "Every card also shows the Booking.com link the price came from. Where that link is a dated search-results list rather than a property page (15 rows), the card says 'Price source — dated search list, not a room quote' (F-48), because the link proves the search, not the room.",
-      "how_to_close": "The 10 refused rows can only be closed from a normal browser or by calling the property — this environment is blocked by their CDNs. That is an access limit, not a data gap; the label says so.",
+      "how_to_close": "The 10 refused rows can only be opened from a standard browser or by calling the property — this environment is blocked by their CDNs. That is an access limit, not an unopened link.",
       "sources": [
         "https://www.caesars.com/vanderpump-hotel",
         "https://www.venetianlasvegas.com/hotel/the-palazzo.html",

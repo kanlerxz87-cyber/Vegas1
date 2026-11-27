@@ -764,8 +764,8 @@
         "F-40"
       ],
       "notes": "Non-gaming, no-smoking, centre-Strip. The February figure is a suite; the March figure is a standard room, so they are not comparable.",
-      "official_verified": "no",
-      "official_check": "not fetched — hilton.com was not opened this session; treated as unverified, not as refused",
+      "official_verified": "blocked",
+      "official_check": "Checked 2026-11-27 — hilton.com refuses automated fetch.",
       "price_basis": "property-page"
     },
     {
@@ -790,16 +790,17 @@
       ],
       "michelin_within_60": 24,
       "michelin_within_20": 0,
-      "official_url": "",
+      "official_url": "https://www.thecliffs.net/",
       "booking_url": "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5&order=price",
       "verified": "partial",
       "flags": [
         "F-14"
       ],
       "notes": "Off-Strip condo ~20 min drive from the Strip. Appeared in a five-star filter despite being a condominium complex — do not treat the star rating as reliable.",
-      "official_verified": "no",
-      "official_check": "no official URL in the dataset at all — nothing to fetch",
-      "price_basis": "search-list"
+      "official_verified": "yes",
+      "official_check": "Confirmed live 2026-11-27 via fetch_page (thecliffs.net; address confirmed on /contact).",
+      "price_basis": "search-list",
+      "address": "4550 S Grand Canyon Dr, Las Vegas, NV 89147"
     },
     {
       "id": "desert-rose",
@@ -1128,8 +1129,8 @@
       "verified": "yes",
       "flags": [],
       "notes": "All-suite, non-gaming towers behind MGM Grand. Walking distance to Joël Robuchon and L'Atelier.",
-      "official_verified": "no",
-      "official_check": "not fetched — the MGM Resorts host refused every other request today, so this page was not opened",
+      "official_verified": "blocked",
+      "official_check": "Checked 2026-11-27 — mgmresorts.com refuses automated fetch.",
       "price_basis": "search-list"
     },
     {
@@ -1161,8 +1162,8 @@
         "F-14"
       ],
       "notes": "In Henderson, ~11 miles from the Strip. 9.1 guest score, but every dinner becomes a 30–40 minute trip.",
-      "official_verified": "no",
-      "official_check": "not fetched this session",
+      "official_verified": "yes",
+      "official_check": "Confirmed live 2026-11-27 via fetch_page (greenvalleyranch.com).",
       "price_basis": "search-list"
     },
     {
@@ -1194,8 +1195,8 @@
         "F-14"
       ],
       "notes": "Summerlin, ~17 miles northwest of the Strip. Excellent resort, wrong trip.",
-      "official_verified": "no",
-      "official_check": "not fetched this session",
+      "official_verified": "yes",
+      "official_check": "Confirmed live 2026-11-27 via fetch_page (redrockresort.com).",
       "price_basis": "search-list"
     }
   ]

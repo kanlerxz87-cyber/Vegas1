@@ -21,7 +21,7 @@
       "needs_decision": true,
       "status": "open",
       "body": "The brief says 1–2 weeks but the preferred dates 2027-02-15 → 2027-02-18 are three nights. Every hotel total on this site is for seven nights. If the real plan is three nights, the hotel line is roughly 43% of what is shown.",
-      "trade_off": "Three nights cannot cover 21 Michelin restaurants plus the museums — realistically it covers four or five restaurants. Seven nights is the shortest trip where the list is plausible.",
+      "trade_off": "Three nights cannot cover 24 Michelin listings plus the museums — realistically it covers four or five restaurants. Seven nights is the shortest trip where a broad Michelin itinerary is plausible.",
       "evidence": "data/questions.json Q-02"
     },
     {
@@ -120,7 +120,7 @@
       "impact": "medium",
       "needs_decision": false,
       "status": "recommended",
-      "body": "Hours and days are recorded for 19 of the 24 restaurants; 5 are blank (Michael Mina, KAME, Sparrow + Wolf, Esther's Kitchen, YEN Viet) and are flagged, not guessed. 17 rows are marked verified. The four starred rooms, Michael Mina (currently marked Temporarily closed) and Wing Lei are the ones whose closure would waste an evening, so re-check those six the week before travel rather than re-checking all 24.",
+      "body": "Hours and days are recorded for 19 of the 24 restaurants (plus Esther's Kitchen's 7-day dinner / Mon–Fri lunch / Sat–Sun brunch schedule without clock times); 5 remain blank on clock hours (Michael Mina, KAME, Sparrow + Wolf, Esther's Kitchen, YEN Viet) and are flagged, not guessed. The four starred rooms (including é by José Andrés's Sunday conflict F-53), Michael Mina (currently Temporarily closed) and Wing Lei are the ones whose closure would waste an evening, so re-check those six two weeks before travel.",
       "trade_off": "Accepts that a minor venue may be dark on the night. Saves about an hour of checking.",
       "evidence": "data/questions.json Q-08"
     },

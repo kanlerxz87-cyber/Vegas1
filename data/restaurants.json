@@ -20,7 +20,7 @@
       "https://lasvegasweekly.com/dining/2026/aug/27/michelin-guide-southwest-las-vegas-restaurants/"
     ],
     "price_rule": "price_2adults is ONLY filled where an official or reservation-platform page states the price. Blank = not verified. '++' means plus tax and gratuity, as printed by the venue.",
-    "social_rule": "Only links captured from a search result that resolves to the named restaurant are listed. Instagram/TikTok handles are left blank rather than guessed — see FLAGS.md F-06.",
+    "social_rule": "Only links verified from official venue pages or verified search results resolving to the named Las Vegas restaurant are listed. Blank means not verified — see FLAGS.md F-19. Updated 2026-11-27.",
     "announcement_date": {
       "value": "2026-08-31",
       "source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s",
@@ -51,7 +51,7 @@
         "https://www.youtube.com/shorts/fzxEVmZeSHs",
         "https://www.youtube.com/shorts/u6NsekDa4xA"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/joelrobuchon.lasvegas/",
       "tiktok": "",
       "phone": "702.891.7925",
       "verified": "yes",
@@ -81,7 +81,7 @@
         "https://www.youtube.com/watch?v=AitbJIc_xMk",
         "https://www.youtube.com/shorts/Ezet1Jyh7Fc"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/joelrobuchon.lasvegas/",
       "tiktok": "",
       "phone": "702.891.7358",
       "verified": "yes",
@@ -108,7 +108,7 @@
         "https://www.youtube.com/watch?v=n2_L9JthaTs",
         "https://www.youtube.com/watch?v=u84pTFx9wqk"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/guysavoylasvegas/",
       "tiktok": "",
       "phone": "702.731.7286",
       "verified": "yes",
@@ -126,19 +126,21 @@
       "address": "3708 S Las Vegas Blvd, Las Vegas, NV 89109",
       "days": "Tuesday – Saturday",
       "hours": "5:30 PM – 8:30 PM",
-      "exceptions": "Only 9 seats. Reservations open roughly 3 months ahead.",
+      "exceptions": "Only 9 seats; two seatings nightly (5:30 PM & 8:30 PM). Reservations open 3 months ahead. Schedule conflict (F-53): Cosmopolitan's page says Tue–Sat (closed Sun/Mon) while ebyjoseandres.com says Tue–Sun.",
       "price_2adults": "",
       "price_note": "Official page does not print the menu price. Book and confirm.",
       "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html",
       "youtube": [
         "https://www.youtube.com/watch?v=-bK5bxY1trQ"
       ],
-      "instagram": "",
-      "tiktok": "",
+      "instagram": "https://www.instagram.com/ebyjoseandres/",
+      "tiktok": "https://www.tiktok.com/@eatmelasvegas/video/7262930577538649390",
       "phone": "877.893.2003",
       "verified": "yes",
-      "flags": [],
-      "notes": "Hardest reservation on this list — 9 covers a night."
+      "flags": [
+        "F-53"
+      ],
+      "notes": "Hardest reservation on this list — 9 covers per seating. Direct line on ebyjoseandres.com: 702-698-7950 (Cosmopolitan reservations: 877.893.2003). Confirm Sunday availability before planning (F-53)."
     },
     {
       "id": "china-poblano",
@@ -150,20 +152,20 @@
       "zone": "center-strip",
       "address": "3708 S Las Vegas Blvd, Las Vegas, NV 89109",
       "days": "Daily",
-      "hours": "Mon–Thu 11:00 AM – 10:00 PM; Fri 11:00 AM – 10:30 PM; Sat–Sun 10:00 AM – 10:30 PM",
-      "exceptions": "",
-      "price_2adults": "",
-      "price_note": "Bib Gourmand indicates value pricing; Eater reports roughly $50 per person before tax and tip (secondary source — not an official menu price).",
+      "hours": "Mon–Thu 11:00 AM – 10:00 PM; Fri 11:00 AM – 10:30 PM; Sat 10:00 AM – 10:30 PM; Sun 10:00 AM – 10:00 PM",
+      "exceptions": "Cocktail Hour Mon–Thu 4:00 PM – 6:00 PM.",
+      "price_2adults": "$120++ (José's Way tasting)",
+      "price_note": "VERIFIED 2026-11-27 from official menu (https://www.chinapoblano.com/menus/): José's Way Tasting Menu is $60.00 per person → $120++ for two before tax, gratuity and drinks.",
       "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html",
       "youtube": [
         "https://www.youtube.com/watch?v=dAn1_aItxRg",
         "https://www.youtube.com/watch?v=_ZP852xyOgU",
         "https://www.youtube.com/watch?v=DCCZmWlr41Q"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/chinapoblano/",
       "tiktok": "",
-      "phone": "",
-      "verified": "partial",
+      "phone": "702.698.7900",
+      "verified": "yes",
       "flags": [
         "F-05"
       ],
@@ -218,8 +220,8 @@
         "https://www.youtube.com/watch?v=RsrEAq_MW5Q",
         "https://www.youtube.com/watch?v=vjTOl3iNaME"
       ],
-      "instagram": "",
-      "tiktok": "",
+      "instagram": "https://www.instagram.com/mott32vegas/",
+      "tiktok": "https://www.tiktok.com/@dongkyuverymuch/video/7541523604798786871",
       "phone": "702.607.3232",
       "verified": "yes",
       "flags": [],
@@ -245,7 +247,7 @@
         "https://www.youtube.com/watch?v=ktXgI_Zf3KA",
         "https://www.youtube.com/watch?v=I7Vosr3O1-o"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/cotekoreansteakhouse/",
       "tiktok": "",
       "phone": "702.607.2683",
       "verified": "yes",
@@ -272,7 +274,7 @@
         "https://www.youtube.com/watch?v=OaW0aWaSza8",
         "https://www.youtube.com/watch?v=juqdKegF7Wc"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/bouchon_bistro/",
       "tiktok": "",
       "phone": "702.414.6200",
       "verified": "yes",
@@ -289,8 +291,8 @@
       "zone": "north-strip",
       "address": "3355 S Las Vegas Blvd, Las Vegas, NV 89109",
       "days": "Daily",
-      "hours": "11:30 AM – 10:30 PM (Fri–Sat from 11:30 AM)",
-      "exceptions": "",
+      "hours": "Sun–Thu 11:30 AM – 10:30 PM; Fri–Sat 11:30 AM – 11:00 PM",
+      "exceptions": "Lunch daily 11:30 AM – 3:00 PM; Midday Menu 3:00 PM – 5:00 PM; Dinner from 5:00 PM.",
       "price_2adults": "",
       "price_note": "Not published officially. Creator videos reference a fixed-price lunch (secondary — not verified).",
       "official_url": "https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html",
@@ -298,7 +300,7 @@
         "https://www.youtube.com/watch?v=--MO3_LuErc",
         "https://www.youtube.com/watch?v=ZUjnF3Mk-k4"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/estiatoriomilos/",
       "tiktok": "",
       "phone": "702.414.1270",
       "verified": "yes",
@@ -325,7 +327,7 @@
         "https://www.youtube.com/shorts/9FgESwABRtw",
         "https://www.youtube.com/watch?v=zQku9r-bQ0U"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/gymkhanalasvegas/",
       "tiktok": "",
       "phone": "702.590.8544",
       "verified": "yes",
@@ -373,9 +375,9 @@
       "location": "West Las Vegas (Russell Rd)",
       "zone": "west-far",
       "address": "9205 W Russell Rd #185, Las Vegas, NV 89148",
-      "days": "See official page",
-      "hours": "Dinner from 5:00 PM",
-      "exceptions": "Monday 'pasta + wine' menu at $65 per person.",
+      "days": "Daily",
+      "hours": "Dinner nightly from 5:00 PM",
+      "exceptions": "Monday Pasta & Wine Night: two handmade pasta dishes + one select bottle of wine for $65 total (confirmed on animabyedo.com 2026-11-27).",
       "price_2adults": "$170++",
       "price_note": "Tasting menu $85 per person, from the official page. Two adults = $170 before tax and gratuity.",
       "official_url": "https://animabyedo.com",
@@ -384,9 +386,9 @@
         "https://www.youtube.com/watch?v=boq5AuG5LHw",
         "https://www.youtube.com/shorts/u-tc2HVZCio"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/animabyedo/",
       "tiktok": "",
-      "phone": "",
+      "phone": "702.202.4291",
       "verified": "yes",
       "flags": [
         "F-08"
@@ -404,15 +406,15 @@
       "address": "5040 W Spring Mountain Rd #4, Las Vegas, NV 89146",
       "days": "Daily",
       "hours": "5:30 PM – 9:00 PM",
-      "exceptions": "Reservation only.",
-      "price_2adults": "",
-      "price_note": "Official page does not print the price; reservation required.",
+      "exceptions": "Reservation only (opens 30 days ahead via Resy). $100/person cancellation/no-show fee inside 24 hours.",
+      "price_2adults": "$260–$370++ (omakase)",
+      "price_note": "VERIFIED 2026-11-27 from official Resy booking page (linked from kabutolv.com/reserve): Yoroi 7-course $130/pp ($260++ for two); Kabuto 8-course signature $185/pp ($370++ for two). Holiday menu only Dec 18, 2026–Jan 10, 2027 ($215/pp, outside Feb–Mar 2027 window).",
       "official_url": "https://kabutolv.com",
       "youtube": [
         "https://www.youtube.com/watch?v=xmmelYWKCoA",
         "https://www.youtube.com/watch?v=fE_x8tbHsWQ"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/kabutolv/",
       "tiktok": "",
       "phone": "725.205.1356",
       "verified": "yes",
@@ -439,7 +441,7 @@
         "https://www.youtube.com/watch?v=p26Fuy-zc14",
         "https://www.youtube.com/watch?v=67x2tVMtFaA"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/kameomakase_lv/",
       "tiktok": "",
       "phone": "",
       "verified": "partial",
@@ -468,8 +470,8 @@
         "https://www.youtube.com/watch?v=M2SJt2tzYxE",
         "https://www.youtube.com/watch?v=d0vrM6S932c"
       ],
-      "instagram": "",
-      "tiktok": "",
+      "instagram": "https://www.instagram.com/lamaiilv/",
+      "tiktok": "https://www.tiktok.com/@lamaiilv",
       "phone": "702.238.0567",
       "verified": "yes",
       "flags": [],
@@ -487,15 +489,15 @@
       "days": "Tue–Sat",
       "hours": "Tue–Sat 5:00 PM – 9:00 PM",
       "exceptions": "Closed Sunday and Monday. Prix fixe only (5, 7 or 9 courses). No dairy-free, vegan, vegetarian, coeliac, or onion/garlic-free menus — a real constraint, not a preference.",
-      "price_2adults": "",
-      "price_note": "Official page confirms 5/7/9-course tasting menus but does not print prices.",
+      "price_2adults": "$260–$420++ (tasting)",
+      "price_note": "VERIFIED 2026-11-27 from official menu (https://partage.vegas/menu): 5 courses $130/pp ($260++ for two), 7 courses $160/pp ($320++ for two), Signature 9 courses $210/pp ($420++ for two). Optional wine pairings $60/$84/$108 pp.",
       "official_url": "https://partage.vegas/restaurant",
       "youtube": [
         "https://www.youtube.com/watch?v=ySz4llWtk7Y",
         "https://www.youtube.com/watch?v=3rd8t0XjSic",
         "https://www.youtube.com/watch?v=RKf3m7boJ1w"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/partagelv/",
       "tiktok": "",
       "phone": "702-582-5852",
       "verified": "yes",
@@ -525,7 +527,7 @@
         "https://www.youtube.com/watch?v=hkiPibouftc",
         "https://www.youtube.com/watch?v=ZxbyjzWSTsg"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/sparrowandwolflv/",
       "tiktok": "",
       "phone": "702.790.2147",
       "verified": "partial",
@@ -543,18 +545,18 @@
       "location": "Arts District (Downtown)",
       "zone": "downtown-arts",
       "address": "1130 S Casino Center Blvd, Las Vegas, NV 89104",
-      "days": "See official page",
+      "days": "Daily (dinner); Mon–Fri lunch; Sat–Sun brunch",
       "hours": "",
       "exceptions": "",
-      "price_2adults": "",
-      "price_note": "Bib Gourmand value pricing; official site has no price list. A creator video itemises dishes (secondary — not verified).",
+      "price_2adults": "$42–$64++ (two mains/pastas)",
+      "price_note": "VERIFIED 2026-11-27 from official menu (https://www.estherslv.com/menus/): Sourdough pizzas $21–$27, housemade pastas $21–$28, seasonal entrees $29–$32 → two mains/pastas $42–$64 before bread ($12–$25), starters ($15–$18), drinks, tax and gratuity.",
       "official_url": "https://www.estherslv.com/",
       "youtube": [
         "https://www.youtube.com/watch?v=Vw7ga_Ollbg",
         "https://www.youtube.com/watch?v=kCOFqLw47TI",
         "https://www.youtube.com/shorts/Pln4WLWFIpg"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/estherskitchenlv/",
       "tiktok": "",
       "phone": "",
       "verified": "partial",
@@ -562,7 +564,7 @@
         "F-07",
         "F-50"
       ],
-      "notes": "Hours were NOT obtainable: /hours-location returned an error and the home page carries no hours block. Brunch is its signature — call before planning. Address conflict recorded as F-50: the MICHELIN press release says 1131 S. Main St., this row says 1130 S Casino Center Blvd, and the venue's own pages publish neither."
+      "notes": "Official /menus/ page (fetched 2026-11-27) confirms dinner 7 days a week, lunch Mon–Fri, brunch Sat–Sun, and prints menu prices; exact opening/closing clock times remain blank because /hours-location still errors (F-07). Address conflict recorded as F-50: MICHELIN press release says 1131 S. Main St., this row says 1130 S Casino Center Blvd."
     },
     {
       "id": "soulbelly-bbq",
@@ -575,16 +577,16 @@
       "address": "1327 S Main St, Las Vegas, NV 89104",
       "days": "Tue–Sun",
       "hours": "Tue–Thu 11:00 AM – 9:00 PM; Fri–Sat 11:00 AM – 10:00 PM; Sun 11:00 AM – 9:00 PM",
-      "exceptions": "Closed Monday. Live music Fri–Sat 6–9 PM.",
-      "price_2adults": "",
-      "price_note": "Not published officially.",
+      "exceptions": "Closed Monday. Live music Fri–Sat 6–9 PM. Happy hour Tue–Fri 2–5 PM; reverse happy hour Fri–Sat 9–10 PM. MICHELIN 2026 selection applies to the Main Street location only (not Miracle Mile Express).",
+      "price_2adults": "$36–$80++ (combos / Chef's Choice for 2)",
+      "price_note": "VERIFIED 2026-11-27 from official menu (https://soulbellybbq.com/menu): 1 Meat Combo $18/pp ($36 for two; +$2.50 brisket), sandwiches $16–$21, and 'Chef's Choice for 2' (6 pit items & 6 sides) $80 before drinks, tax and gratuity.",
       "official_url": "https://soulbellybbq.com",
       "youtube": [
         "https://www.youtube.com/watch?v=4cH2Qn9Qcgg",
         "https://www.youtube.com/watch?v=-XaQQIs2DjI",
         "https://www.youtube.com/watch?v=hrC2w9akHRY"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/soulbellybbqlv/",
       "tiktok": "",
       "phone": "",
       "verified": "yes",
@@ -685,8 +687,8 @@
       "days": "Daily",
       "hours": "Dining room 5:00 PM – 10:00 PM; bar 4:00 PM – 10:00 PM",
       "exceptions": "",
-      "price_2adults": "",
-      "price_note": "Not published officially.",
+      "price_2adults": "$320++ (tasting menu)",
+      "price_note": "VERIFIED 2026-11-27 from official tasting menu PDF (https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/): Chef's Tasting Menu $160 per person → $320++ for two (Elevated Tasting +$35/pp → $390++; wine pairing $60/$70 pp). Full table participation required.",
       "official_url": "https://rwlasvegas.com/dining/stubborn-seed/",
       "youtube": [
         "https://www.youtube.com/watch?v=GSBB8ZMtgwI",
