@@ -530,11 +530,15 @@ def build_activities():
             _bits.append(e(_a["social_evidence"]))
         if _a.get("social_caveat"):
             _bits.append(f'<div class="tiny warn">{e(_a["social_caveat"])}</div>')
-        if _a.get("social_note"):
+        # The other session's social_note often repeats what social_evidence
+        # already says; keep it only when there is no evidence for the row, and
+        # always separate sentences so two sources cannot run together.
+        if _a.get("social_note") and not _a.get("social_evidence"):
             _bits.append(e(_a["social_note"]))
+        _cell = "<br>".join(_bits) or "—"
         social_rows += (f'<tr><td>{e(_a["name"].split(" (")[0])}</td>'
                         f'<td class="tiny">{_a.get("social_status", "none_verified").replace("_", " ")}</td>'
-                        f'<td class="tiny">{"".join(_bits) or "—"}</td></tr>')
+                        f'<td class="tiny">{_cell}</td></tr>')
 
     body = f"""
 <section class="panel">
