@@ -1,24 +1,56 @@
 # Las Vegas 2027 — Executive summary
 
-**Updated 27 November 2026 · Two adults · [Dashboard](https://kanlerxz87-cyber.github.io/Vegas1/)**
+**Two adults · Updated 27 November 2026 · [Live dashboard](https://kanlerxz87-cyber.github.io/Vegas1/)**
 
-## Decision status
+## Bottom line
 
-**Not booking-ready.** The dashboard separates confirmed official observations from missing evidence; it does not manufacture a cheapest hotel, week, purchase day or trip total.
+The dashboard is usable for comparing **evidence and options**, but the trip is **not booking-ready**. No verified cheapest hotel, stay week, future purchase day or one-hour bus ranking can be established from the evidence obtained. Unknown cells are blank and linked to review/discovery actions.
 
-- **Dates:** the permitted window is 15 February–23 March 2027. Preferred 15–18 February is only **three nights**, not one–two weeks. The working comparison is 15–22 February (seven nights); 15 February–1 March is a fourteen-night alternative. Neither changes the user's preference or represents a booking.
-- **Hotels:** **33 alphabetical candidates**, including MGM Grand. No qualifying official **all-in seven-night checkout total** is established. Named room evidence is displayed only where confirmed; unsupported bed/private-bath guarantees and totals remain blank. Historical OTA prices and modeled transit rankings are retained in source history, not promoted to decision values. [Hotel evidence](https://kanlerxz87-cyber.github.io/Vegas1/hotels.html).
-- **MICHELIN:** the official 2026 announcement identifies **four starred venues** (Joël Robuchon two stars; é, Guy Savoy and L'Atelier one each), **three Bib Gourmands** and **seventeen Recommended**. These are separate categories, not 24 starred restaurants. Inclusion does not confirm 2027 opening or availability. [Restaurant table and official sources](https://kanlerxz87-cyber.github.io/Vegas1/restaurants.html).
-- **Confirmed fixed-menu food subtotals for two (12 of 24 venues):** Partage **$260 / $320 / $420**, Anima by EDO **$170**, Stubborn Seed **$320**, Wing Lei **$397.76**, China Poblano **$120**, Kabuto **$260 / $370**, SoulBelly **$80**, Kame Omakase **$700 / $1,000**, Sparrow + Wolf **$298**, COTE **$190 / $450**, Estiatorio Milos **$90** (daily 3-course lunch), Mott 32 **$76 / $136** (Mon–Fri lunch sets). These are arithmetic from published per-person menus, **not all-in quotes** or guarantees for 2027. Tax, gratuity, drinks, supplements and reservation availability are not established. Guy Savoy per-dish prices do not establish a complete meal; assumed dish counts and unbookable Michael Mina amounts are not endorsed. [Dining costs](https://kanlerxz87-cyber.github.io/Vegas1/dining.html).
-- **Activities:** Mob Museum, Neon Museum, High Roller, Sphere, Fremont Street and Bellagio Fountains have separate official evidence and exceptions. Mob Museum's normal published hours are daily 9 AM–9 PM, subject to exceptions; a one-off Thursday closure is not its weekly schedule. Neon Museum's Visit FAQ notes that **starting January 1, 2027**, arriving earlier or later than your selected ticket time may carry a higher ticket-price difference payable before entry. High Roller hours remain blank because official time blocks conflict. Current/from prices do not confirm trip-date tickets.
-- **Transport:** no verified door-to-door hotel-to-restaurant journey matrix establishes the ≤60-minute bus criterion. Zone-model estimates cannot prove it. RTC visitor fares ($4 / $6 / $8 / $20; exact 7-day visitor combo = 2 × $20 3-Day + 1 × $8 24-Hour = **$48/person / $96/couple** across all routes) must not be confused with resident fares ($20 7-Day is Residential only); Loop is not subway or bus. Transit passes alone are not a full trip budget. [Transport](https://kanlerxz87-cyber.github.io/Vegas1/transit.html).
-- **New official engine observation:** Resorts World Hilton, Deluxe One King, 15–22 February 2027, two adults: **$2,200.15** including the displayed room tax, resort fees and resort-fee tax; Two Queens **$2,434.84**. Freshly reproduced from its [official engine](https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0). Private-bathroom exclusivity, cancellation/deposit and offer eligibility remain unverified, so it is not a fully qualifying checkout or a cheapest-hotel finding.
-- **Booking timing:** exact engine observations are retained with occupancy/error/fee caveats. No like-for-like comparison across all eligible dates, and no evidence of an optimal purchase day, exists. An advertised promotion deadline is not proof of the best booking time. [Price evidence](https://kanlerxz87-cyber.github.io/Vegas1/pricing.html).
+### Dates
 
-## What remains unresolved
+- Permitted period: **15 February–23 March 2027**.
+- Preferred **15–18 February is three nights**, not one–two weeks.
+- Disclosed working comparison: **15–22 February, seven nights**. A 14-night alternative is **15 February–1 March**, separately unpriced. Neither is a reservation or an approved change to the preference.
+- There are **30 eligible seven-night arrival dates**, 15 February–16 March inclusive, with checkout by 23 March. The earlier four-window sample cannot establish a market-wide cheapest week.
 
-Obtain official checkout totals for named queen-or-larger/private-bath rooms, two adults, matching dates and cancellation terms, with every mandatory tax/fee; compare eligible stays consistently; check dinner-time bus itineraries; confirm 2027 venue schedules and availability. Budget, diet and accessibility preferences are not invented. Optional improvements stay in the [Suggestions backlog](https://kanlerxz87-cyber.github.io/Vegas1/suggestions.html); [Questions](https://kanlerxz87-cyber.github.io/Vegas1/questions.html) records answers, gaps and discovery actions.
+### Hotels and transport
 
-[Flagged for Review](https://kanlerxz87-cyber.github.io/Vegas1/flagged.html) retains prior findings (with colliding duplicate IDs cleanly separated into **F-70–F-75**), new primary-source catches (**F-76–F-78**), and strict review flags **EC-01–EC-08**. Earlier sessions' social-account evidence remains visibly attributed, separate from fresh checks. No exhaustive social-content or external-link liveness claim is made. No bookings or payments have been made.
+[34 hotel candidates](https://kanlerxz87-cyber.github.io/Vegas1/hotels.html) are alphabetical rather than given an unsupported price/transit rank. Named king/queen-room and described bathroom/amenity evidence is recorded for Caesars Palace, Venetian, Palazzo, Wynn, Desert Rose, Cliffs at Peace Canyon, Hilton at Resorts World, Crockfords, Bellagio, Cosmopolitan and MGM Grand. A room description alone is not an exclusive-use guarantee or dated allocation. MGM Grand’s named MGM King room now has independently reproduced bed/bath/amenity evidence, without invented dated rates or Queen-room claims from that King-only page.
 
-Machine-readable field evidence: [`data/verification-2026-11-27.json`](data/verification-2026-11-27.json). Canonical historical datasets, independent subsites and prior review logs are retained for audit, even where they describe superseded estimates.
+**Hilton Resorts World official-engine observation:** Deluxe One King, 15–22 February, two adults, **$2,200.15** including listed room tax, resort fees and fee tax; Two Queens **$2,434.84**. The seven nightly amounts and tax/fee lines reconcile exactly. **Promotion eligibility, cancellation/deposit and complete private-use terms remain unverified**; the primary final-offer cell stays blank. This is Hilton inventory, **not Crockfords**, and is not a cheapest-hotel finding. [Itemization and exact official URL](https://kanlerxz87-cyber.github.io/Vegas1/pricing.html#itemized-observation).
+
+There is no subway. RTC buses are the relevant mode for the requested bus constraint; Monorail and Vegas Loop are separately identified optional modes, not substitutes for proof. **No complete dated hotel-to-dinner bus itinerary was obtained**. The old zone model, including its universal 24/24 result and 20-minute tiebreaker, is not a verified journey or ranking. Current RTC visitor products sum to **$96 for two** when each buys two 3-Day passes plus one 24-Hour pass; confirm activation/expiry and actual travel span rather than assume a seven-night stay is covered. The Deuce currently publishes 24/7 operation; that is not every RTC route’s schedule or a 2027 guarantee. [Fares for two and route-evidence gaps](https://kanlerxz87-cyber.github.io/Vegas1/transit.html).
+
+### Dining
+
+The [official MICHELIN 2026 Las Vegas selection](https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s) has:
+
+- **Four starred restaurants:** Joël Robuchon **two stars**; L'Atelier, Guy Savoy and é **one each**.
+- **Three Bib Gourmands:** China Poblano, Esther's Kitchen and YEN Viet Kitchen.
+- **Seventeen Recommended** listings. Recommended and Bib do not mean a star.
+
+Supported **food subtotals for two**, not final bills: Partage **$260 / $320 / $420**; Anima **$170**; Stubborn Seed **$320**; Wing Lei **$397.76**; China Poblano **$120**; Kabuto **$260 / $370**; SoulBelly's explicitly for-two set **$80**; COTE **$190 / $450**; Sparrow + Wolf **$298**; Mott 32 **$76 / $136** for weekday lunch; Estiatorio Milos **$90** for two base three-course lunch menus. Lunch prices must not be used as dinner costs. [Menu arithmetic, exact official sources and exclusions](https://kanlerxz87-cyber.github.io/Vegas1/dining.html).
+
+Michael Mina's printed **$590** menu subtotal is supported, but its official page currently says **temporarily closed**; February reopening is not established. It is not a committed dinner option. Guy Savoy's per-dish prices do not establish a complete meal, and no assumed dish-count spend is endorsed. KAME’s newly reopened official `/contact-us/` page prints **$350 Omakase / $500 Signature Omakase**, seatings and booking/cancellation rules. The menu charging unit is not explicit in the retrieved text, so its strict two-adult subtotal remains blank; prior peer $700/$1,000 arithmetic is retained as an attributed observation, not silently adopted (FV-08).
+
+Published weekly hours are current observations, not 2027 reservations. é's own site says **Tue–Sun**, while MGM says **Tue–Sat**; Sunday is disputed, not presumed closed or available. [All restaurant fields, socials and flags](https://kanlerxz87-cyber.github.io/Vegas1/restaurants.html).
+
+### Activities and a draft week
+
+Six activity entries cover Sphere, High Roller, Mob Museum, Neon Museum, Fremont Street and Bellagio Fountains. Mob Museum currently publishes **daily 9 AM–9 PM**; a dated Thursday early close must not become a weekly rule. Neon has a specific **2027 Admission** page and warns that **from January 1, 2027** arrival outside the chosen time may require paying a higher ticket-price difference before entry. Fremont's Music Reels currently start at **6 PM**. High Roller's complete hours remain blank because its official blocks conflict. [Current schedules and admission for two](https://kanlerxz87-cyber.github.io/Vegas1/activities.html).
+
+The [draft itinerary](https://kanlerxz87-cyber.github.io/Vegas1/itinerary.html) groups possible dining/activities by property or district for 15–22 February. It assumes no journey times, seats, tickets or trip-date opening. Choose or split downtown visits rather than assume they fit one afternoon.
+
+### Booking timing and remaining work
+
+Wynn's checked public Cyber terms advertise a **20 November–4 December 2026** booking window for eligible **22 November 2026–30 June 2027** stays. That deadline is an offer observation, **not proof that now is the cheapest purchase date**. Its rounded, tax-exclusive average rates are not expanded into exact stay totals. [Official quote-attempt log and terms](https://kanlerxz87-cyber.github.io/Vegas1/pricing.html).
+
+Before any purchase: obtain qualifying official hotel offers, verify dated outward/return bus journeys, confirm venue availability, and record budget, dietary/allergy, walking/accessibility and cancellation preferences. No such preferences are invented and no immediate form/manual input is required to use or publish this site.
+
+[Questions](https://kanlerxz87-cyber.github.io/Vegas1/questions.html) records known answers, missing information and discovery steps. [Suggestions](https://kanlerxz87-cyber.github.io/Vegas1/suggestions.html) preserves 16 trip and 10 site-improvement proposals; optional decisions are not silently implemented. [Flagged for Review](https://kanlerxz87-cyber.github.io/Vegas1/flagged.html) retains historical findings and attributed media research as well as current gaps.
+
+## Verification scope
+
+The live authority is [`data/verification.json`](data/verification.json): a source/checked state for each approved field and explicit nulls elsewhere. Historical raw datasets, the peer audit overlay, social records and independent subsites are preserved, not automatically reverified. Twenty restaurant Instagram profiles are supported; shared brands, parent-property and dormant accounts are labelled. No current award is inferred from media captions or bios.
+
+Local gates pass: **16 generated pages, zero structural failures/warnings, 21 regression tests**. All pages passed browser smoke checks at 375px and 1280px. These checks do **not** certify every external URL, all historical research or future availability. No booking, account creation, deposit or purchase was made.

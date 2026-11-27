@@ -7,3 +7,6 @@ __pycache__/
 
 # build scratch
 site/
+
+# Local evidence/build/browser scratch; never part of the published source
+.cache/

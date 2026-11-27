@@ -1,3 +1,5 @@
+# Historical peer renderer retained for attribution; NOT the live publisher.
+# Current authority: data/verification.json + scripts/verified_views.py.
 """Primary decision views. Never promote inherited snapshots/model outputs to verified facts.
 
 The original generator functions and raw source datasets are retained for audit;
