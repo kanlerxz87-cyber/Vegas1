@@ -131,14 +131,14 @@ class SiteTests(unittest.TestCase):
         self.assertIsNotNone(site.value(self.E["hotels"]["venetian"], "bed"))
         self.assertIsNotNone(site.value(self.E["hotels"]["hilton-resorts-world"], "bathroom"))
         self.assertIsNone(site.value(self.E["hotels"]["nobu-caesars"], "bed"))
-        self.assertIsNone(site.value(self.E["hotels"]["mgm-grand"], "room"))
+        self.assertIn("MGM King", site.value(self.E["hotels"]["mgm-grand"], "room"))
         self.assertIsNone(site.value(self.E["hotels"]["crockfords"], "total_7n"))
 
     def test_no_assumed_meal_or_trip_total(self):
         for rid in ("guy-savoy", "kame-omakase", "esthers-kitchen"):
             self.assertIsNone(site.value(self.E["restaurants"][rid], "price_2adults"))
             row = next(r for r in self.docs["restaurants.html"].rows if r["key"] == "restaurants/" + rid)
-            self.assertEqual(row["cells"][4], "—")
+            self.assertTrue(row["cells"][4].startswith("—"))
         for name in ("restaurants.html", "dining.html", "costs.html", "hotels.html", "index.html"):
             for forbidden in ("$3,000", "$520", "$1,855.06", "$564", "$4,739", "$5,831"):
                 self.assertNotIn(forbidden, self.pages[name], (name, forbidden))
@@ -225,7 +225,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn(x["id"], self.docs["flagged.html"].ids)
         self.assertIn("Original provenance / caveat", self.pages["flagged.html"])
         self.assertIn("oEmbed", self.pages["flagged.html"])
-        self.assertIn("F-54-history-2", self.docs["flagged.html"].ids)
+        self.assertIn("FV-05", self.docs["flagged.html"].ids)
         for n in range(58, 75):
             self.assertIn(f"F-{n}", self.docs["flagged.html"].ids)
 
@@ -282,6 +282,34 @@ class SiteTests(unittest.TestCase):
         self.assertEqual((ROOT / "docs/style.css").read_text(), gen_site.CSS)
         self.assertTrue((ROOT / ".nojekyll").is_file())
         self.assertTrue((ROOT / "docs/.nojekyll").is_file())
+
+    def test_t23_primary_source_expansions_and_unique_flags(self):
+        import re
+        flag_ids=[]
+        for line in (ROOT/'FLAGS.md').read_text().splitlines():
+            m=re.match(r'\|\s*\*\*(F-\d+|FV-\d+|EC-\d+)\*\*',line)
+            if m:flag_ids.append(m.group(1))
+        self.assertEqual(len(flag_ids),len(set(flag_ids)),'Duplicate flag IDs in FLAGS.md')
+        for n in range(52,79):self.assertIn(f'F-{n}',self.docs['flagged.html'].ids)
+        self.assertIn('EC-08',self.docs['flagged.html'].ids)
+        for amount in ['$298.00','$190.00','$450.00','$90.00','$76.00','$136.00']:
+            self.assertIn(amount,self.pages['dining.html'])
+            self.assertIn(amount,self.pages['restaurants.html'])
+        self.assertIn('10:00 AM–8:30 PM',self.pages['restaurants.html'])
+        self.assertIn('https://www.rwlasvegas.com/stay/crockfords-las-vegas/city-view-superior-room/',self.docs['hotels.html'].links)
+        self.assertNotIn('https://www.rwlasvegas.com/hotels/crockfords/',self.docs['hotels.html'].links)
+        self.assertIn('January 1, 2027',self.pages['activities.html'])
+        self.assertIn('$96.00',self.pages['transit.html'])
+        for n in range(1, 9):self.assertIn(f'FV-{n:02}',self.docs['flagged.html'].ids)
+        self.assertIsNone(site.value(self.E['restaurants']['kame-omakase'], 'price_2adults'))
+        self.assertIn('$350 Omakase / $500 Signature',self.pages['dining.html'])
+        self.assertIn('charging unit not expressly stated', self.pages['dining.html'])
+        self.assertIn('not a dinner total',self.pages['restaurants.html'])
+        self.assertIn('activation/expiry',self.pages['transit.html'])
+        c=self.E['transit']['rtc']['fields']['fares_2adults']['calculation']
+        amount=c['adults']*(c['three_day_passes_per_adult']*Decimal(c['three_day_price']) + c['day_passes_per_adult']*Decimal(c['day_price']))
+        self.assertEqual(amount, Decimal(c['product_sum']))
+        self.assertIn('Deuce only',site.value(self.E['transit']['rtc'],'hours'))
 
 
 if __name__ == "__main__":

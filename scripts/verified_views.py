@@ -27,6 +27,7 @@ LABELS = {
     "within_60_bus": "verified ≤60-minute bus count",
     "within_20_bus": "verified ≤20-minute bus count", "fares": "per-person fares", "fares_2adults": "fares for two",
     "observed_total_7n": "itemized hotel-engine observation (not a qualified offer)",
+    "menu_observation": "advertised menu amounts (charging unit unverified)",
 }
 REQUIRED = {
     "restaurants": ("award", "days", "hours", "exceptions", "price_2adults", "youtube", "instagram", "tiktok"),
@@ -314,7 +315,7 @@ excluded/unknown charges. Michael Mina is currently marked temporarily closed; 2
     body = panel("No verified price/transit ranking yet", '<p>The requested order needs comparable official all-in totals for the same dates and named room, '
                  'plus timed <strong>bus</strong> journeys including walks, waiting, transfers and the return trip. Those inputs have not been obtained. '
                  'This table is alphabetical, <strong>not a best-hotel ranking</strong>. The prior 24/24 model and its 20-minute tiebreaker have been withdrawn from the verified comparison. '
-                 '<a href="flagged.html#F-70">F-70</a>.</p>' + legend())
+                 '<a href="flagged.html#FV-01">FV-01</a>.</p>' + legend())
     body += panel("Every hotel candidate", table(
         ["Candidate (alphabetical)", "Location", "Named room", "Bed", "Described in-room bathroom", "Amenities", "MICHELIN ≤60 min by bus", "Official all-in 7 nights · 15–22 Feb · USD", "Official references"],
         hrows, f"{len(H)} hotel candidates; dashes indicate unverified fields", "official-hotel-decisions"))
@@ -326,7 +327,7 @@ Mott 32, COTE, Bouchon and Milos are in the same resort complex in the official 
 The exact-date booking page returned a technical-error banner and no final taxed total.</li>
 <li><strong>Wynn:</strong> the exact-date operator page describes Resort King bedding/bathroom; Wing Lei is listed at Wynn.
 Its average nightly Cyber price excludes tax and is not used as a final seven-night quote.</li>
-<li><strong>MGM Grand:</strong> retained as the host of the two Robuchon restaurants; no qualifying room or rate is assumed.</li>
+<li><strong>MGM Grand:</strong> the newly reopened MGM King page describes a king bed and marble-adorned bathroom; this is not a dated room allocation or rate. Bellagio, Cosmopolitan and Crockfords also now have separately sourced room descriptions.</li>
 <li><strong>Hilton at Resorts World:</strong> a separately named King room and described bathroom are checked. Its $2,200.15 engine itemization is an observation with incomplete terms, not a fully qualified offer; do not attach this price to Crockfords.</li>
 <li><strong>Desert Rose and Cliffs at Peace Canyon:</strong> operator pages describe King-bed suites and kitchen/bath facilities.
 Neither has a verified door-to-door one-hour bus itinerary here; Cliffs is not presented as a convenient Strip alternative.</li>
@@ -339,17 +340,18 @@ Neither has a verified door-to-door one-hour bus itinerary here; Cliffs is not p
     rrows = []
     order = {"2 stars": 0, "1 star": 1, "Bib Gourmand": 2, "Recommended": 3}
     for rid, r in sorted(R.items(), key=lambda kv: (order[value(kv[1], "award")], kv[1]["name"])):
+        menu_note = ('<details class="tiny"><summary>Advertised amount, unit unverified</summary>' + cell(r, "menu_observation", True) + "</details>") if value(r, "menu_observation") else ""
         tier = "star" if value(r, "award") in ("1 star", "2 stars") else ("bib" if value(r, "award") == "Bib Gourmand" else "rec")
         rrows.append(f'<tr id="{esc(rid)}" data-row="restaurants/{esc(rid)}"><th scope="row">{link(data["sources"][r["source"]]["url"],r["name"])}'
                      f'<div class="tiny">{cell(r,"location")}</div>{review_link("restaurants",rid)}</th>'
                      f'<td><span class="badge {tier}">{cell(r,"award")}</span></td>'
                      f'<td>{cell(r,"days")}<div class="tiny">{cell(r,"hours")}</div></td>'
-                     f'<td class="tiny">{cell(r,"exceptions")}</td><td>{cell(r,"price_2adults",True)}</td>'
+                     f'<td class="tiny">{cell(r,"exceptions")}</td><td>{cell(r,"price_2adults",True)}{menu_note}</td>'
                      f'<td>{social(r,"youtube")}</td><td>{social(r,"instagram")}</td><td>{social(r,"tiktok")}</td>'
                      f'<td>{references(data,r)}</td></tr>')
     body = panel("2026 guide status, not historic stars", f'<p>{guide}. The Las Vegas rows contain {len(starred)} starred restaurants '
                  f'({awards["2 stars"]} two-star, {awards["1 star"]} one-star), {awards["Bib Gourmand"]} Bib Gourmand and {awards["Recommended"]} Recommended. '
-                 'The two official press pages have different publication dates; no exact ceremony date is inferred (<a href="flagged.html#F-71">F-71</a>).</p>' + legend())
+                 'The two official press pages have different publication dates; no exact ceremony date is inferred (<a href="flagged.html#FV-02">FV-02</a>).</p>' + legend())
     body += panel("All MICHELIN listings", table(["Restaurant / location", "2026 award", "Published days & hours", "Exceptions", "Menu subtotal · 2 adults · USD", "YouTube", "Instagram", "TikTok", "Official evidence"], rrows, "MICHELIN restaurants: stars, Bib Gourmand and Recommended", "restaurant-list"))
     crows = []
     for label, ids in cluster_definitions():
@@ -358,10 +360,10 @@ Neither has a verified door-to-door one-hour bus itinerary here; Cliffs is not p
     body += panel("Dining clusters — co-location, not travel-time estimates", '<p>These groupings use the official property names/addresses. '
                  'They do not establish walking or bus times and are not substituted for the requested one-hour hotel ranking.</p>' + table(
                      ["Property / address group", "Listings", "Address / award source"], crows, "All 24 listings grouped by published location", "clusters"))
-    body += panel("How to read the dinner budget", '<p id="costs"><strong>All amounts shown are for two menu orders, not per-person prices.</strong> '
+    body += panel("How to read the menu budget", '<p id="costs"><strong>Approved subtotals are for two menu orders, not per-person prices.</strong> '
                  'Where the venue prints a menu price, multiplying by two is labelled arithmetic—not an all-in quote. Taxes, tips/service, drinks, '
                  'supplements and trip-date availability must not be silently added or assumed included. Guy Savoy individual dish prices are not complete dinners; its total stays blank. '
-                 'KAME’s earlier price was captured on OpenTable without an operator authorization cross-link in this audit, so it is not promoted to an official-only price. '
+                 'Lunch-only sets at Mott 32 and Milos must not be used as dinner costs. KAME’s own contact page now exposes $350/$500 menu offerings, seatings and cancellation terms, but no explicit menu charging unit; its two-adult subtotal stays blank (FV-08). '
                  'Michael Mina’s menu is visible but the venue is currently marked temporarily closed. <a href="questions.html#Q-04">Q-04</a>.</p>')
     pages["restaurants.html"] = page("restaurants.html", "MICHELIN restaurants", "24 Las Vegas listings · awards separated clearly · current official facts, not inferred 2027 availability", body)
 
@@ -374,7 +376,7 @@ Neither has a verified door-to-door one-hour bus itinerary here; Cliffs is not p
     body = panel(f"{len(A)} activity options", legend() + table(["Activity", "Published days & hours", "Exceptions / scope", "2 adults · USD", "YouTube", "Instagram", "TikTok", "Official evidence"], arows, "Activities with official opening/admission evidence", "activity-list"))
     body += panel("Scheduling and ticket cautions", '<p>Mob Museum’s current museum hours are <strong>9 AM–9 PM every day</strong>; the previous Thursday 4 PM closing was a dated exception, not a weekly rule. '
                   'Neon’s <strong>2027 Admission</strong> has replaced the earlier 2026 day/evening split. High Roller’s page conflicts internally on opening/ticket eligibility, so its complete hours are blank. '
-                  'Fremont’s current Music Reels schedule starts at <strong>6 PM</strong>. These corrections and their sources are in <a href="flagged.html#F-72">F-72</a>.</p>')
+                  'Fremont’s current Music Reels schedule starts at <strong>6 PM</strong>. These corrections and their sources are in <a href="flagged.html#FV-03">FV-03</a>.</p>')
     body += panel("Not silently added", '<p>The Fountains of Bellagio are now included with a freshly read operator schedule. The Conservatory remains only in the historical discovery-gap register: '
                   'a complete official seasonal schedule was not established for it in this integration. No extra show, paid tour or 2027 Sphere ticket has been invented.</p>')
     pages["activities.html"] = page("activities.html", "Things to do", "Official published schedules, starting costs for two, and explicit social-link gaps.", body)
@@ -544,7 +546,7 @@ Neither has a verified door-to-door one-hour bus itinerary here; Cliffs is not p
     old_flags = legacy_flagged()
     banner = panel("Current policy supersedes historical price and model claims", '<p>The 25–27 November audit tables below are retained as historical findings; current field approvals and gaps above take precedence. '
                    'They may quote superseded figures or describe the older UI; those are not current booking offers. '
-                   'The live comparisons now use the strict official-field gate (F-70). '
+                   'The live comparisons now use the strict official-field gate (FV-01). '
                    'Unverified values are blank even if an older note says they were “shown as captured”. '
                    'Flags are published without blocking deployment of a structurally valid site.</p>')
     banner += panel("Current missing-information register", table(["Entry", "Missing / unverified", "Review / next evidence", "Official reference"], gap_rows, "Every entry with missing required evidence"), "current-gaps")
@@ -556,7 +558,7 @@ Neither has a verified door-to-door one-hour bus itinerary here; Cliffs is not p
         peer_rows.append(f'<tr id="{esc(check["id"])}"><th scope="row">{esc(check["id"])} · {esc(check["title"])}</th><td>{esc(check["finding"])}</td><td>{" · ".join(link(u,"Original official reference") for u in check["sources"])}</td></tr>')
     peer_section = panel("Preserved peer strict-evidence audit", '<p>Attributed earlier integration, not a new source fetch. Its scope statements are historical; '
                          'the live field manifest and the itemized observation on <a href="pricing.html">Pricing</a> give the current boundary.</p>' + table(
-                             ["Check", "Recorded finding", "Sources"],peer_rows,"Peer integration checks EC-01–EC-07"))
+                             ["Check", "Recorded finding", "Sources"],peer_rows,f"Peer integration checks EC-01–EC-{len(peer['checks']):02}"))
     media_rows = []
     provenance = json.loads((ROOT / "data/socials.json").read_text())
     for group in ("restaurants","activities"):
@@ -621,9 +623,17 @@ Neither has a verified door-to-door one-hour bus itinerary here; Cliffs is not p
             menu_rows.append(f'<tr id="menu-{esc(rid)}"><th scope="row">{esc(r["name"])}</th><td>{cell(r,"price_2adults",True)}</td><td>{references(data,r)}</td></tr>')
     body = panel("Known menu subtotals, not a complete dinner/week budget", '<p>Only fixed published menu/set amounts are shown. '
                  'No assumed 2–3-dish meal, blanket tax/gratuity uplift or unpriced dinner becomes a verified bill. '
-                 'Michael Mina’s printed menu is retained with its current closure warning; exclude it from a committed schedule until reopening is confirmed. '
+                 'Mott 32 and Milos amounts are specifically lunch sets, not dinner totals. Michael Mina’s printed menu is retained with its current closure warning; exclude it from a committed schedule until reopening is confirmed. '
                  'Hotel totals and missing meals are not silently added as zero.</p>' + legend() + table(
                      ["Restaurant", "Two-adult food subtotal and basis", "Official menu / evidence"],menu_rows,"Supported published menu/set subtotals for two"))
+    observations = []
+    for rid, r in R.items():
+        if value(r, "menu_observation"):
+            observations.append(f'<tr><th scope="row">{esc(r["name"])}</th><td>{cell(r,"menu_observation",True)}</td><td>{references(data,r)}</td></tr>')
+    if observations:
+        body += panel("Advertised menu observations — not verified two-adult subtotals", '<p>A readable menu amount still needs a clear unit before arithmetic becomes a couple price. '
+                      'These observations are preserved instead of erased or silently multiplied. The prior peer arithmetic remains attributed on <a href="flagged.html#FV-08">Flagged for Review</a>.</p>' + table(
+                          ["Restaurant", "Printed menu amount / limit", "Official source"], observations, "Menu observations with unresolved charging basis"))
     pages["dining.html"] = page("dining.html","Dining costs","Food subtotals for two, with menu arithmetic, exclusions and a clear boundary around unknown bills.",body)
     body = panel("Cost basis — do not add incompatible numbers", '<p>A fully costed trip is still unverified. The hotel observation, menu amounts, starting activity admission and per-person transport fares '
                  'are different bases, not a single reliable trip total. No exchange rate, unknown fee, tip, daily food allowance, flight or insurance amount is invented.</p>'

@@ -1,10 +1,12 @@
 # COORDINATION.md — Shared Task Board
 
 **Repo:** kanlerxz87-cyber/Vegas1
-**Last updated:** 2026-11-26
+**Last updated:** 2026-11-27
 **Purpose:** multi-session coordination so parallel agents never edit the same files.
 Read this file *before* starting any task. Claim a task by writing your session ID below,
 then commit and push that claim immediately.
+
+> **Current integration status (27 Nov, 18:19 UTC):** `arena/3d5d3718-vegas1` has integrated completed work through `main@2169909` (PR #67). Implementation/source observations and 21 local regressions are done; its integration PR/Pages publication is the only remaining task of this session. Earlier “current/open” declarations below are historical append-only records. Detailed scopes, source limits and handoffs are in the latest sections. No foreign open PR is claimed.
 
 ## Session log
 
@@ -854,6 +856,7 @@ Monorail line. This is recorded rather than quietly patched: a live-page read fo
 then #45/#46/#48). Every merge was resolved by regenerating HTML rather than hand-merging it, and no other
 session's data was reverted. The one deliberate reversal of an earlier decision — reinstating a *labelled estimate*
 for Guy Savoy — is recorded as F-64 with its source and keeps the $3,000 Krug figure withdrawn.
+
 ### T17 addendum — video-link verification (arena/a00dc828-vegas1, 2026-11-27)
 
 - Resolved **every published activity video ID** through YouTube's **oEmbed** endpoint (returns live title + channel). One ID carried in the data from an earlier capture — Fremont `Tls27qeAPaw` — **did not resolve** and was replaced with `KDARquYGk_M`, a video on the venue's own channel (`@vegasfremontstreet`). Logged as **F-67** (F-54–F-66 were assigned by other sessions while this branch was open).
@@ -1028,3 +1031,33 @@ The Hilton **$2,200.15** itemization is kept as an official **observed total**, 
 - `README.md`, executive summary, 14 questions and 16 trip + 10 site proposals refreshed with current evidence and explicit discovery gaps. Complete read-only source observations/limits: `notes/verification-2026-11-27-integration.md`.
 
 Implementation/source observations are **done; publication pending**. Remaining travel-research facts are **needs review**, not falsely closed and not deployment blockers. No foreign PR/branch is modified, no purchase/reservation made, no manual approval/input requested. Next: finish this reconciliation commit, same-branch guarded pull/push, open this branch's integration PR, merge, verify Pages and live content.
+
+---
+
+## Session claim & T22 audit completion — arena/ed9892d9-vegas1 (T22 → T23) — 2026-11-27
+
+| ID | Task | Status | Owner (session ID) | File scope | Notes |
+|----|------|--------|--------------------|------------|-------|
+| T22 | Comprehensive line-by-line official-source verification audit across all 24 MICHELIN restaurants, 6 activities, RTC/Monorail transit PDFs, and hotel URLs | done | `arena/ed9892d9-vegas1` | `COORDINATION.md`, `notes/verification-2026-11-27-t22-ed9892d9.md` | Full primary-source audit recorded in `notes/verification-2026-11-27-t22-ed9892d9.md`. Merged `origin/main` (`01d60e5`, PRs #53–#65) preserving 100% of upstream coordination records, strict renderer, datasets, and flags; conflict confined to tail of `COORDINATION.md` and logged here per rule §5. |
+| T23 | Post-T-ec1d72e2 primary-source expansion: newly verified official set-menu subtotals (Kame Omakase, Sparrow + Wolf, COTE, Estiatorio Milos, Mott 32 → **12 of 24** venues), Yen Viet Kitchen official hours/phone (`F-07`), Crockfords repaired URL + 5 Strip host-hotel room specs (**10 of 33** fresh hotel checks), Neon Museum Jan 1 2027 arrival-surcharge policy, RTC `$96` 7-day visitor pass math + Deuce/203 PDFs, `FLAGS.md` deduplication (`F-70..F-75`) + `F-55` 725-overlay correction + `F-76..F-78`/`EC-08`, rebuild + live Pages deploy | done | `arena/ed9892d9-vegas1` | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `data/verification-2026-11-27.json`, `scripts/strict_site.py`, `tests/test_site.py`, `notes/verification-2026-11-27-t22-ed9892d9.md`, generated root + `docs/` HTML | Merged in **[PR #66](https://github.com/kanlerxz87-cyber/Vegas1/pull/66)** (`d5ada50c6cc1cf65b5007868f9fbd65612b4047f`) and verified live on GitHub Pages (run `46047258423`, `?v=d5ada50`). Foreign open PRs (#64, #60, #38, #27) untouched. |
+
+### T22 & T23 PR & deployment result — arena/ed9892d9-vegas1 (2026-11-27)
+
+- **[PR #66](https://github.com/kanlerxz87-cyber/Vegas1/pull/66)** (`arena/ed9892d9-vegas1` → `main`) **MERGED** at **2026-11-27T18:09:01Z** via `gh pr merge 66 --merge`; merge commit **`d5ada50c6cc1cf65b5007868f9fbd65612b4047f`**.
+- **Pre-merge checks:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py && python3 scripts/check_evidence.py` → **16 pages · 0 failures · 0 warnings · 564 external links · 13/13 `unittest` regressions PASS**; root and `docs/` byte-identical; `git diff --check` clean.
+- **GitHub Pages deployment verified:** workflow **[46047258423](https://github.com/kanlerxz87-cyber/Vegas1/actions/runs/46047258423)** (`pages build and deployment` on `main:/`) completed **success** in 26s; `gh api repos/kanlerxz87-cyber/Vegas1/pages/builds` confirmed `commit: d5ada50c6cc1cf65b5007868f9fbd65612b4047f`, `status: built`, `error: null` at **2026-11-27T18:09:24Z**.
+- **Live cache-busted verification (`?v=d5ada50`):** fetched `dining.html` (all **12** confirmed fixed-menu subtotals live: China Poblano `$120`, Wing Lei `$397.76`, Mott 32 `$76/$136`, COTE `$190/$450`, Estiatorio Milos `$90`, Anima `$170`, Kabuto `$260/$370`, Kame Omakase `$700/$1,000`, Partage `$260/$320/$420`, Sparrow + Wolf `$298`, SoulBelly `$80`, Stubborn Seed `$320`), `hotels.html` (repaired Crockfords URL + Bellagio/Cosmopolitan/Venetian/MGM Grand room specs with blank 7-night totals & bus counts), `activities.html` (Neon Museum Jan 1, 2027 arrival-surcharge warning + Fremont 6 PM–2 AM Canopy Music Reels), `transit.html` (RTC `$96.00` exact 7-day visitor combo + Deuce 24/7 + 6-page Route 203 PDF), and `flagged.html` (`EC-08` + deduplicated `F-70..F-78`).
+
+### Third concurrency reconciliation — arena/3d5d3718-vegas1 / main 2169909
+
+Main advanced through completed **T22/T23, PR #66/#67**, before this branch's PR was opened. Stopped on the merge conflicts. Kept both append-only board tails, T23’s full audit note and dated evidence/previous-renderer changes; primary output is regenerated rather than selected from a conflict side. No foreign open PR is touched. The assigned branch remains unchanged.
+
+Independently reopened T23 discoveries before approving live fields: **COTE $95/$225 pp**, **Sparrow + Wolf $149 pp**, **Mott 32 $38/$68 pp weekday lunch**, **Milos $45 base lunch menu**, Yen Viet’s exact operator-linked storefront/weekly hours, **Crockfords/Bellagio/Cosmopolitan/MGM King** room descriptions, Venetian’s clearly separated suite variants, Neon’s **January 1, 2027** early/late-arrival price rule, RTC visitor fares and Deuce PDF. Route 203’s first retrieved chunk was read here; the peer’s full-PDF check remains separately attributed, not misrepresented as this pass’s read scope.
+
+**Qualification differences are explicit, not erased:** KAME’s `/contact-us/` prints `$350 Omakase / $500 Signature Omakase` plus seatings/card hold/`$500 per guest` cancellation fee, but the retrieved menu price unit is not explicitly per person. The strict two-adult subtotal remains null; advertised menu observations, known seatings and terms are shown. T23’s `$700/$1,000` arithmetic remains in its attributed check. RTC’s **$96** sum is preserved as product arithmetic, not a guarantee that pass activation/expiry covers a seven-night stay or all 2027 journeys. See **FV-08**. No inferred purchase or all-in bill.
+
+**Identifier collision resolved before publication:** T23 published F-70–F-78, colliding with this branch’s independently reserved F-70–F-74. Upstream IDs remain unchanged. This branch’s findings are now **FV-01–FV-05**; its supplemental prior-local F-59/F-61 wording is **FV-06/FV-07**, and new qualification limits are **FV-08**. All register IDs are unique, neither definition silently wins. Earlier allocations in this log are historical; current field/renderer links use the FV namespace. T23’s 725-area-code retraction is retained; no unsupported explanation of .88 prices is promoted to current fact.
+
+Updated live-render tests retain T23’s source/amount/hours/unique-ID checks, with the KAME-unit limit explicitly tested instead of requiring a value this pass could not substantiate. Current local suite **21 tests passes**, schema **34/24/6**, all **16 routes** generated with **0 failures / 0 warnings**. Documentation/registers refreshed for the new fields; fully qualified hotel offers, cheapest dates and bus rankings remain unverified. Final browser/PR/publication gates are rerun after this merge.
+
+Final post-T23 browser rerun: **all 16 pages × 375px/1280px = 32 checks passed**, with HTTP 200, no page errors/document overflow, one H1, labelled cells and working disclosures. Final local structural check: **16 pages, 0 failures, 0 warnings, 1,309 external-link occurrences** (not HTTP certifications). Regression suite: **21 passed**. Preparing the assigned branch’s PR without waiting for manual review.

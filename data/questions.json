@@ -87,7 +87,7 @@
       "id": "Q-04",
       "question": "What can be stated about dinner for two without inventing a complete bill?",
       "state": "open",
-      "answer": "Official fixed-menu/set food subtotals for two are supported for Partage, Anima by EDO, Stubborn Seed, Wing Lei, China Poblano, Kabuto and SoulBelly BBQ. Michael Mina’s $590 printed menu subtotal is supported separately but the venue is currently temporarily closed. Guy Savoy’s individual dishes and KAME’s unqualified bio/OpenTable amount do not establish an approved complete meal total.",
+      "answer": "Official fixed-menu/set food subtotals for two are supported for Partage, Anima by EDO, Stubborn Seed, Wing Lei, China Poblano, Kabuto, SoulBelly BBQ, COTE, Sparrow + Wolf, Mott 32 weekday lunch and Estiatorio Milos daily lunch. Michael Mina’s $590 printed subtotal is supported separately but the venue is currently temporarily closed. Guy Savoy’s dishes do not establish a meal. KAME’s own contact page now prints $350/$500 menu offerings, but the extracted amounts do not explicitly state a per-person unit, so its two-adult subtotal stays blank; the menu observation is shown separately (FV-08).",
       "problem": "Final tax, service/gratuity, drinks, supplements and trip-date menu/availability are unverified. A menu subtotal is not an all-in bill.",
       "substitution": "No unsupported number is substituted. The public field stays blank where official evidence is missing.",
       "how_to_close": "Use operator-linked menus and read-only official reservation details for the exact date. Record the full two-person bill basis and any mandatory charges; never place dummy bookings, deposits or payment authorizations to discover a price.",
@@ -99,7 +99,12 @@
         "https://soulbellybbq.com/menu",
         "https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/",
         "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
-        "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy"
+        "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/cote/menu.pdf",
+        "https://sparrowandwolflv.com/wp-content/uploads/2026/09/SW-Chefs-Tasting-Menu-9326.pdf",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/mott-32/lunch-menu.pdf",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/estiatorio-milos/lunch-menu.pdf",
+        "https://sushikame.com/contact-us/"
       ],
       "previous_pass_2026_11_27": {
         "id": "Q-04",
@@ -121,7 +126,7 @@
       "id": "Q-05",
       "question": "Is a private/in-room bathroom and queen-or-larger bed proved for each hotel offer?",
       "state": "open",
-      "answer": "Named-room descriptions were read for Caesars Palace, Venetian, Palazzo, Wynn, Desert Rose, Cliffs at Peace Canyon and Hilton at Resorts World. Specific King beds and described in-room bathroom facilities are supported where shown. A room description is not a trip-date allocation, exclusive-use guarantee or fully qualified offer. All 34 candidates retain explicit nulls for missing evidence.",
+      "answer": "Named-room descriptions were read for 11 candidates: Caesars Palace, Venetian, Palazzo, Wynn, Desert Rose, Cliffs at Peace Canyon, Hilton at Resorts World, Crockfords, Bellagio, Cosmopolitan and MGM Grand. Specific King/Queen beds and described in-room bathroom facilities are supported only for the named variants. A room description is not a trip-date allocation, exclusive-use guarantee or qualified offer. All 34 candidates retain explicit nulls for missing evidence.",
       "problem": "A property homepage, a building-level reference or an assigned-on-arrival rate cannot guarantee a specific bed, private room or bathroom for the offered rate.",
       "substitution": "No unsupported number is substituted. The public field stays blank where official evidence is missing.",
       "how_to_close": "Obtain a named-room official rate block for two adults and the exact dates, with bed/bath terms. Confirm the quoted inventory is the hotel’s own offer rather than an independently managed unit.",
@@ -132,7 +137,11 @@
         "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
         "https://www.shellvacationsclubrentals.com/resorts/nevada/las-vegas/desert-rose-resort/rooms/one-bedroom",
         "https://vacationvillageresorts.com/cliffs_peace_canyon/accommodations.html",
-        "https://www.rwlasvegas.com/stay/las-vegas-hilton/deluxe-room/"
+        "https://www.rwlasvegas.com/stay/las-vegas-hilton/deluxe-room/",
+        "https://www.rwlasvegas.com/stay/crockfords-las-vegas/city-view-superior-room/",
+        "https://bellagio.mgmresorts.com/en/hotel/resort-queen-room-fountain-view.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/hotel/city-room.html",
+        "https://mgmgrand.mgmresorts.com/en/hotel/mgm-king.html"
       ],
       "previous_pass_2026_11_27": {
         "id": "Q-05",
@@ -308,7 +317,7 @@
       "id": "Q-12",
       "question": "Which restaurant/activity details changed in this fresh official-source sweep?",
       "state": "answered",
-      "answer": "Corrections include China Poblano Sunday closing at 10 PM; Wing Lei’s open-day list including Friday/Saturday; Milos Friday/Saturday closing at 11 PM; Mob Museum recurring daily 9 AM–9 PM; Fremont Music Reels starting 6 PM; Neon’s 2027 ticket regime; and Kabuto’s printed phone 702-676-1044. Guy Savoy’s complete price was withdrawn.",
+      "answer": "Corrections include China Poblano Sunday closing at 10 PM; Wing Lei’s open-day list including Friday/Saturday; Milos Friday/Saturday closing at 11 PM; Mob Museum recurring daily 9 AM–9 PM; Fremont Music Reels starting 6 PM; Neon’s 2027 ticket regime; and Kabuto’s printed phone 702-676-1044. Guy Savoy’s complete price was withdrawn. Completed T23 discoveries were independently reopened here: Yen Viet Kitchen’s operator-linked storefront prints Mon, Wed–Sun 10 AM–8:30 PM (Tue closed); KAME has explicit seatings/phone/cancellation rules on /contact-us/; four more fixed-menu/lunch subtotals are supported; four more hotels have named room descriptions; Neon’s early/late-arrival price rule starts January 1, 2027.",
       "problem": "Some fields remain unknown: a full Guy Savoy weekly schedule was not exposed, Sparrow + Wolf and other independent pages did not yield complete hours, and High Roller has contradictory blocks.",
       "substitution": "No unsupported number is substituted. The public field stays blank where official evidence is missing.",
       "how_to_close": "Corrections are complete for these observed fields. The verification page lists every remaining null and its source reference; never mark an entire row verified merely because one field was confirmed.",
@@ -319,7 +328,10 @@
         "https://themobmuseum.org/",
         "https://fremontstreetexperience.com/the-canopy/",
         "https://neonmuseum.org/whats-on/all-day-admission/",
-        "https://kabutolv.com"
+        "https://kabutolv.com",
+        "https://www.skiplinow.com/shop/514688a",
+        "https://sushikame.com/contact-us/",
+        "https://neonmuseum.org/your-visit/"
       ],
       "previous_pass_2026_11_27": {
         "id": "Q-12",
@@ -338,7 +350,7 @@
       "id": "Q-13",
       "question": "Were all official hotel links and all external/social links checked live?",
       "state": "open",
-      "answer": "No exhaustive live check is claimed for every external/media link. The parallel T20 record reports all original 32 hotel reference URLs attempted (21 live, 10 refused, 1 sibling). This pass re-read the source pages named in the field manifest, including the new Hilton room/engine, but did not repeat all 32 reference checks. MGM Grand is an added host-hotel candidate, not a verified hotel/booking-page read. An unchecked or refused reference approves no room/rate fact.",
+      "answer": "No exhaustive live check is claimed for every external/media link. The parallel T20 record attempted all original 32 hotel reference URLs (21 live, 10 refused, 1 sibling). This pass independently read the specific source pages in the live field manifest, including Hilton’s engine/room and T23’s new Crockfords, Bellagio, Cosmopolitan and MGM King pages. That adds room-specific evidence, not a repeat live-check guarantee for all hotel references, a final offer or bus route.",
       "problem": "A structurally valid href is not a successful remote fetch or field verification. A refusal by automated access is not necessarily a broken browser link.",
       "substitution": "No unsupported number is substituted. The public field stays blank where official evidence is missing.",
       "how_to_close": "Re-open each unchecked reference and record the response/redirect target, property identity and field evidence. Keep blocked/unavailable distinct. Do not claim zero broken external links from the local HTML validator.",
@@ -348,7 +360,9 @@
         "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
         "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2027-02-15&children[]=0&departure_date=2027-02-22&view=calendar",
         "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/COORDINATION.md",
-        "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0"
+        "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0",
+        "https://mgmgrand.mgmresorts.com/en/hotel/mgm-king.html",
+        "https://www.rwlasvegas.com/stay/crockfords-las-vegas/city-view-superior-room/"
       ],
       "previous_pass_2026_11_27": {
         "id": "Q-13",

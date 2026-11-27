@@ -976,7 +976,7 @@ def _flag_register():
     rows = []
     occurrences = {}
     for line in FLAGS_MD.read_text(encoding="utf-8").splitlines():
-        if line.startswith("| **F-"):
+        if re.match(r"^\| \*\*(?:F-|FV-)", line):
             cells = [c.strip().replace("**", "") for c in line.strip().strip("|").split("|")]
             if len(cells) == 4:
                 fid = cells[0]

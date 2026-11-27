@@ -380,7 +380,7 @@
       "status": "partly implemented; remaining gaps proposed",
       "body": "Field-specific social provenance is implemented. Twenty restaurant Instagram profiles are approved in this pass; four remain unverified under the stricter ownership standard. Prior venue/creator video and account research is retained with the original evidence and caveats on Flagged for Review; it is not silently discarded or declared freshly rechecked.",
       "trade_off": "Visible gaps are more honest than a plausible but unconfirmed account. Shared brand, parent-property and dormant feeds need explicit labels; no account-bio award claim overrides MICHELIN.",
-      "evidence": "F-73; data/verification.json; data/socials.json and the attributed parallel oEmbed record.",
+      "evidence": "FV-04; data/verification.json; data/socials.json and the attributed parallel oEmbed record.",
       "previous_pass_2026_11_27": {
         "id": "S-16",
         "title": "Close the social-link gaps only from venue-controlled sources, and say where each handle came from",

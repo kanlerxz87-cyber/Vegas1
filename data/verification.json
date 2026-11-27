@@ -7,7 +7,8 @@
     "external_link_limit": "Sources marked fetched were read on their checked date; unchecked references are explicit. Parallel social research and creator media remain in canonical data/socials.json and audit history; they do not authorize unrelated fields. The offline validator does not prove external availability.",
     "social_rule": "Publish only official-site cross-links or opened venue/brand profiles whose operator-domain/location/brand identity is recorded. Shared brand, parent-resort and dormant profiles are explicitly labelled. No award/price fact is inferred from a bio. Creator discoveries remain audit research, not official evidence.",
     "qualified_offers": "Zero fully qualified final seven-night hotel offers. The Hilton Resorts World itemized $2,200.15 observation is retained separately with explicit missing terms; it is not a cheapest-market claim.",
-    "schema_version": 1
+    "schema_version": 1,
+    "integration_note": "Includes independently re-opened T23/PR #66 discoveries. KAME advertised menu amounts are retained as observations, with strict couple price blank because the extracted menu unit is not explicit; original peer arithmetic survives with attribution. Current source ledger, not the dated peer snapshot, remains authoritative."
   },
   "sources": {
     "michelin": {
@@ -183,7 +184,7 @@
       "authority": "official",
       "result": "fetched",
       "checked": "2026-11-27",
-      "note": "Venue page read for this audit; only explicitly recorded fields are approved."
+      "note": "Reopened yenvietkitchen.com, which redirects to www and links the exact Skipli storefront via Google redirect URLs. This authorizes the ordering storefront; Google review stars are not MICHELIN awards."
     },
     "r-stubborn-seed": {
       "url": "https://rwlasvegas.com/dining/stubborn-seed/",
@@ -242,11 +243,11 @@
       "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
     },
     "h-crockfords": {
-      "url": "https://www.rwlasvegas.com/hotels/crockfords/",
+      "url": "https://www.rwlasvegas.com/stay/crockfords-las-vegas/city-view-superior-room/",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Named room description independently reopened. City View Superior Room (550 sq ft); One king or two queens (named room variants); Ensuite bathroom with double vanity and separate water closet. No dated offer/private-use/occupancy guarantee or bus itinerary follows. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
     },
     "h-vdara": {
       "url": "https://www.mgmresorts.com/en/hotels/vdara.html",
@@ -270,11 +271,11 @@
       "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
     },
     "h-bellagio": {
-      "url": "https://www.bellagio.com/",
+      "url": "https://bellagio.mgmresorts.com/en/hotel/resort-queen-room-fountain-view.html",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Named room description independently reopened. Fountain View Two Queen (510 sq ft); 2 queen beds; Upgraded dual-sink bathroom vanity; frameless shower enclosure. No dated offer/private-use/occupancy guarantee or bus itinerary follows. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
     },
     "h-fontainebleau": {
       "url": "https://www.fontainebleaulasvegas.com/",
@@ -284,11 +285,11 @@
       "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
     },
     "h-cosmopolitan": {
-      "url": "https://www.cosmopolitanlasvegas.com/",
+      "url": "https://cosmopolitanlasvegas.mgmresorts.com/en/hotel/city-room.html",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Named room description independently reopened. City Room Queen (460 sq ft); 2 queen beds; Large, luxurious bathroom described with the room. No dated offer/private-use/occupancy guarantee or bus itinerary follows. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
     },
     "h-venetian": {
       "url": "https://www.venetianlasvegas.com/hotel/the-venetian.html",
@@ -800,11 +801,88 @@
       "note": "Fetch returned a 401 banner plus usable museum-channel playlists/videos including “Witness It All at The Mob Museum” linking themobmuseum.org. Channel content identifies the operator. Not an assurance that every visitor can play all videos."
     },
     "h-mgm-grand": {
-      "url": "https://mgmgrand.mgmresorts.com/",
+      "url": "https://mgmgrand.mgmresorts.com/en/hotel/mgm-king.html",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Peer integration added MGM Grand as the host of Joël Robuchon/L’Atelier, from MICHELIN’s official selection. No hotel room/booking source was fetched; no room or price claims approved."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Named room description independently reopened. MGM King (446 sq ft); 1 king bed; Carrera marble-adorned bathroom; oversized backlit vanity mirror. No dated offer/private-use/occupancy guarantee or bus itinerary follows. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
+    },
+    "kame-contact": {
+      "url": "https://sushikame.com/contact-us/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Official page prints $350 Omakase/$500 Signature Omakase, two nightly seatings 5:30–7:30 and 8–10 PM, phone, 10-minute arrival lead, card hold and $500 per-guest fee for cancellation/no-show inside 48 hours. Menu unit is not explicitly printed in the extracted text; no two-adult amount approved. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
+    },
+    "mott-lunch": {
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/mott-32/lunch-menu.pdf",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "2 × $38 Mott Express / $68 Mott Exclusive per-person prices. Mon–Fri lunch only; not a dinner total. Tea, supplements/dessert where extra, drinks, tax, tip and 2027 availability excluded. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
+    },
+    "cote-menu": {
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/cote/menu.pdf",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "2 × $95 Feast of USDA Prime / $225 Steak Omakase per person. Feast requires full-table participation. Wine, supplements, tax, tip and 2027 availability excluded; supersedes historical 88.88/228.88 figures. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
+    },
+    "milos-lunch": {
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/estiatorio-milos/lunch-menu.pdf",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "2 × the printed $45 base lunch menu (one first/second/dessert selection each). Daily lunch 11:30 AM–3 PM from venue page; not dinner. Supplements (including some dessert choices), sides, drinks, tax, tip and 2027 availability excluded. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
+    },
+    "sparrow-tasting": {
+      "url": "https://sparrowandwolflv.com/wp-content/uploads/2026/09/SW-Chefs-Tasting-Menu-9326.pdf",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "2 × $149 per person. All guests at the table participate; automatic gratuity added (rate not printed); tasting last call 9:30 PM; inform venue of allergies. Optional $78 pp wine pairing, supplements, tax and 2027 availability excluded. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
+    },
+    "sparrow-menu-page": {
+      "url": "https://sparrowandwolflv.com/menu/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Current main menu links the 2026/09 PDF and also prints $149 pp/$78 pairing, full-table/automatic-gratuity/9:30 PM last-call rules. Older 2023 image/accordion content is also present, so it must not be blended into the current menu. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
+    },
+    "yen-storefront": {
+      "url": "https://www.skiplinow.com/shop/514688a",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Operator website yenvietkitchen.com links this exact storefront through its Google Sites ORDER ONLINE/VIEW MENU link. Business hours Mon, Wed–Sun 10 AM–8:30 PM, Tuesday closed; address and phone agree. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
+    },
+    "h-venetian-loft": {
+      "url": "https://www.venetianlasvegas.com/hotel/the-venetian.html",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Official suite overview reopened. Separately names 650 sq ft New Luxury Loft King (1 king) and New Luxury Loft Two Queen (2 queens) with oversized bathrooms/living room; do not confuse them with the distinct 750 sq ft Newly Remodeled Luxury Two Queen. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
+    },
+    "neon-visit": {
+      "url": "https://neonmuseum.org/your-visit/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Official FAQ states starting January 1, 2027, earlier/later admission than selected time may have a higher ticket price with an additional charge payable before entry. Outdoor weather/camera policy also reproduced. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
+    },
+    "deuce-pdf": {
+      "url": "https://rtcws.rtcsnv.com/routePDF/deuce.pdf",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Complete two-page current route PDF fetched: Deuce 24/7, approximately every 10–15 minutes 7 AM–1 AM/every 20 minutes 1–7 AM; traffic/construction can delay it. Printed F1 diversion dates 17–25 Nov 2026 are outside the trip and not a 2027 service guarantee. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
+    },
+    "203-pdf": {
+      "url": "https://rtcws.rtcsnv.com/routePDF/203.pdf",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "First chunk of six-chunk operator timetable/map retrieval read in this pass. It describes route 203 Spring Mountain/Desert Inn/Lamb and explicit timepoints; not a hotel-door-to-dinner itinerary. Full PDF source remains available; peer T23 full-read scope retained separately. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
     }
   },
   "restaurants": {
@@ -882,8 +960,8 @@
       "flags": [
         "F-01",
         "F-22",
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01"
       ]
     },
     "latelier-robuchon": {
@@ -958,8 +1036,8 @@
         }
       },
       "flags": [
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01"
       ]
     },
     "guy-savoy": {
@@ -1035,8 +1113,8 @@
       },
       "flags": [
         "F-61",
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01"
       ]
     },
     "e-by-jose-andres": {
@@ -1118,8 +1196,8 @@
       },
       "flags": [
         "F-68",
-        "F-70",
-        "F-73"
+        "FV-01",
+        "FV-04"
       ]
     },
     "china-poblano": {
@@ -1195,9 +1273,9 @@
       },
       "flags": [
         "F-05",
-        "F-73",
-        "F-72",
-        "F-70"
+        "FV-04",
+        "FV-03",
+        "FV-01"
       ]
     },
     "wing-lei": {
@@ -1273,9 +1351,9 @@
       },
       "flags": [
         "F-03",
-        "F-73",
-        "F-72",
-        "F-70"
+        "FV-04",
+        "FV-03",
+        "FV-01"
       ]
     },
     "mott-32": {
@@ -1307,16 +1385,22 @@
           "note": ""
         },
         "exceptions": {
-          "value": null,
+          "value": "Fixed-menu subtotals refer to Mon–Fri lunch 11 AM–2:30 PM only, not dinner or weekend brunch; Peking Duck is a pre-order product recommended for 3–4 guests.",
           "source": "r-mott-32",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "status": "verified",
+          "note": "Lunch set prices and supplements are in the linked PDF.",
+          "also_sources": [
+            "mott-lunch"
+          ]
         },
         "price_2adults": {
-          "value": null,
-          "source": "r-mott-32",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "$76.00 / $136.00 for two weekday lunch sets",
+          "source": "mott-lunch",
+          "status": "verified",
+          "note": "2 × $38 Mott Express / $68 Mott Exclusive per-person prices. Mon–Fri lunch only; not a dinner total. Tea, supplements/dessert where extra, drinks, tax, tip and 2027 availability excluded.",
+          "also_sources": [
+            "r-mott-32"
+          ]
         },
         "phone": {
           "value": "702.607.3232",
@@ -1350,8 +1434,9 @@
         }
       },
       "flags": [
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01",
+        "F-77"
       ]
     },
     "cote": {
@@ -1383,16 +1468,23 @@
           "note": ""
         },
         "exceptions": {
-          "value": "Magic Hour Sun–Thu 5–6 PM and 10–11 PM. Dated 2026 Thanksgiving hours are not carried into 2027.",
-          "source": "r-cote",
+          "value": "Feast of USDA Prime requires table-wide participation. Host-property MICHELIN wording must not be used to change Las Vegas’s Recommended tier.",
+          "source": "cote-menu",
           "status": "verified",
-          "note": ""
+          "note": "T23 recorded a One MICHELIN Star badge discrepancy (F-76). Michelin’s Las Vegas selection remains the award authority; the badge’s intended branch/scope is not inferred.",
+          "also_sources": [
+            "r-cote",
+            "michelin"
+          ]
         },
         "price_2adults": {
-          "value": null,
-          "source": "r-cote",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "$190.00 / $450.00 for two fixed menus",
+          "source": "cote-menu",
+          "status": "verified",
+          "note": "2 × $95 Feast of USDA Prime / $225 Steak Omakase per person. Feast requires full-table participation. Wine, supplements, tax, tip and 2027 availability excluded; supersedes historical 88.88/228.88 figures.",
+          "also_sources": [
+            "r-cote"
+          ]
         },
         "phone": {
           "value": "702.607.2683",
@@ -1426,8 +1518,9 @@
         }
       },
       "flags": [
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01",
+        "F-76"
       ]
     },
     "bouchon": {
@@ -1502,8 +1595,8 @@
         }
       },
       "flags": [
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01"
       ]
     },
     "estiatorio-milos": {
@@ -1535,16 +1628,22 @@
           "note": ""
         },
         "exceptions": {
-          "value": "Lunch 11:30 AM–3 PM; midday menu 3–5 PM; dinner from 5 PM.",
+          "value": "Base $45 three-course lunch menu applies to daily 11:30 AM–3 PM lunch; supplements extra; dinner is a separate menu.",
           "source": "r-estiatorio-milos",
           "status": "verified",
-          "note": ""
+          "note": "Weekly schedule and lunch service window reopened; no future availability guaranteed.",
+          "also_sources": [
+            "milos-lunch"
+          ]
         },
         "price_2adults": {
-          "value": null,
-          "source": "r-estiatorio-milos",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "$90.00 for two base three-course lunch menus",
+          "source": "milos-lunch",
+          "status": "verified",
+          "note": "2 × the printed $45 base lunch menu (one first/second/dessert selection each). Daily lunch 11:30 AM–3 PM from venue page; not dinner. Supplements (including some dessert choices), sides, drinks, tax, tip and 2027 availability excluded.",
+          "also_sources": [
+            "r-estiatorio-milos"
+          ]
         },
         "phone": {
           "value": "702.414.1270",
@@ -1578,9 +1677,10 @@
         }
       },
       "flags": [
-        "F-73",
-        "F-72",
-        "F-70"
+        "FV-04",
+        "FV-03",
+        "FV-01",
+        "F-77"
       ]
     },
     "gymkhana": {
@@ -1655,8 +1755,8 @@
         }
       },
       "flags": [
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01"
       ]
     },
     "michael-mina": {
@@ -1734,8 +1834,8 @@
         "F-02",
         "F-23",
         "F-43",
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01"
       ]
     },
     "anima-by-edo": {
@@ -1811,8 +1911,8 @@
       },
       "flags": [
         "F-08",
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01"
       ]
     },
     "kabuto": {
@@ -1887,9 +1987,9 @@
         }
       },
       "flags": [
-        "F-73",
-        "F-72",
-        "F-70"
+        "FV-04",
+        "FV-03",
+        "FV-01"
       ]
     },
     "kame-omakase": {
@@ -1910,33 +2010,33 @@
         },
         "days": {
           "value": null,
-          "source": "r-kame-omakase",
+          "source": "kame-contact",
           "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "note": "Page says two seatings nightly, but no full weekly service/closed-day calendar is printed. Do not infer all seven days."
         },
         "hours": {
-          "value": "Bio advertises 5:30 PM & 8 PM seatings; weekly days unverified",
-          "source": "ig-kame-omakase",
+          "value": "Two seatings nightly: 5:30–7:30 PM; 8–10 PM",
+          "source": "kame-contact",
           "status": "verified",
-          "note": "Current official verified-badged venue profile, not a dated reservation or full weekly schedule."
+          "note": "Named seatings, not an exact 2027 reservation. Closed weekdays are not specified."
         },
         "exceptions": {
-          "value": null,
-          "source": "r-kame-omakase",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "Arrive 10 minutes before seating; valid card held without charge at booking; modifications/cancellation at least 48 hours ahead, otherwise $500 per guest/no-show. Reservations described as SevenRooms-managed.",
+          "source": "kame-contact",
+          "status": "verified",
+          "note": "No reservation, card or payment was submitted."
         },
         "price_2adults": {
           "value": null,
-          "source": "r-kame-omakase",
+          "source": "kame-contact",
           "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "note": "Official menu amounts are now reproduced separately, but an explicit per-person/unit basis was not printed in the extracted source. Do not infer a $700/$1,000 couple bill; see FV-08."
         },
         "phone": {
-          "value": null,
-          "source": "r-kame-omakase",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "702-771-0122",
+          "source": "kame-contact",
+          "status": "verified",
+          "note": ""
         },
         "youtube": {
           "value": null,
@@ -1948,7 +2048,7 @@
           "value": "https://www.instagram.com/kameomakase_lv/",
           "source": "ig-kame-omakase",
           "status": "verified",
-          "note": "Verified-badged Las Vegas profile links sushikame.com. Bio prints $500 and 5:30/8 PM but does not specify a complete priced menu/billing basis; the cost-for-two field remains unverified."
+          "note": "Verified-badged Las Vegas profile links sushikame.com. Bio prints $500 and 5:30/8 PM but does not specify a complete priced menu/billing basis; the cost-for-two field remains unverified. Official contact-page menu observations are now separately recorded; social bio alone does not prove the charging unit."
         },
         "tiktok": {
           "value": null,
@@ -1961,12 +2061,20 @@
           "source": "michelin",
           "status": "verified",
           "note": ""
+        },
+        "menu_observation": {
+          "value": "$350 Omakase / $500 Signature Omakase; charging unit not expressly stated",
+          "source": "kame-contact",
+          "status": "verified",
+          "note": "Official menu offerings, not the earlier bio/OpenTable figure. Per-person basis and 2027 applicability are not explicit; no multiplication into a verified couple total. FV-08."
         }
       },
       "flags": [
         "F-04",
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01",
+        "F-77",
+        "FV-08"
       ]
     },
     "lamaii": {
@@ -2041,8 +2149,8 @@
         }
       },
       "flags": [
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01"
       ]
     },
     "partage": {
@@ -2118,8 +2226,8 @@
       },
       "flags": [
         "F-24",
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01"
       ]
     },
     "sparrow-and-wolf": {
@@ -2151,16 +2259,22 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "exceptions": {
-          "value": null,
-          "source": "r-sparrow-and-wolf",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "Whole table must participate in tasting; automatic gratuity (rate not printed); tasting last call 9:30 PM; disclose allergies/aversions.",
+          "source": "sparrow-tasting",
+          "status": "verified",
+          "note": "Weekly clock hours remain unverified; last tasting order is not a closing time.",
+          "also_sources": [
+            "sparrow-menu-page"
+          ]
         },
         "price_2adults": {
-          "value": null,
-          "source": "r-sparrow-and-wolf",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "$298.00 tasting-menu subtotal for two",
+          "source": "sparrow-tasting",
+          "status": "verified",
+          "note": "2 × $149 per person. All guests at the table participate; automatic gratuity added (rate not printed); tasting last call 9:30 PM; inform venue of allergies. Optional $78 pp wine pairing, supplements, tax and 2027 availability excluded.",
+          "also_sources": [
+            "r-sparrow-and-wolf"
+          ]
         },
         "phone": {
           "value": "702.790.2147",
@@ -2195,8 +2309,9 @@
       },
       "flags": [
         "F-25",
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01",
+        "F-77"
       ]
     },
     "esthers-kitchen": {
@@ -2273,8 +2388,8 @@
       "flags": [
         "F-07",
         "F-50",
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01"
       ]
     },
     "soulbelly-bbq": {
@@ -2349,8 +2464,8 @@
         }
       },
       "flags": [
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01"
       ]
     },
     "ping-pang-pong": {
@@ -2425,8 +2540,8 @@
         }
       },
       "flags": [
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01"
       ]
     },
     "pho-ga-bac-bac": {
@@ -2501,8 +2616,8 @@
         }
       },
       "flags": [
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01"
       ]
     },
     "yen-viet-kitchen": {
@@ -2522,22 +2637,31 @@
           "note": "Matched to the MICHELIN address list, except explicit conflicts are withheld."
         },
         "days": {
-          "value": null,
-          "source": "r-yen-viet-kitchen",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "Mon, Wed–Sun",
+          "source": "yen-storefront",
+          "status": "verified",
+          "note": "",
+          "also_sources": [
+            "r-yen-viet-kitchen"
+          ]
         },
         "hours": {
-          "value": null,
-          "source": "r-yen-viet-kitchen",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "10:00 AM–8:30 PM",
+          "source": "yen-storefront",
+          "status": "verified",
+          "note": "Current business hours, not dated 2027 availability.",
+          "also_sources": [
+            "r-yen-viet-kitchen"
+          ]
         },
         "exceptions": {
-          "value": null,
-          "source": "r-yen-viet-kitchen",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "Closed Tuesday; schedule and phone from the operator-linked Skipli storefront.",
+          "source": "yen-storefront",
+          "status": "verified",
+          "note": "",
+          "also_sources": [
+            "r-yen-viet-kitchen"
+          ]
         },
         "price_2adults": {
           "value": null,
@@ -2546,10 +2670,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "phone": {
-          "value": null,
-          "source": "r-yen-viet-kitchen",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "702-293-4949",
+          "source": "yen-storefront",
+          "status": "verified",
+          "note": ""
         },
         "youtube": {
           "value": null,
@@ -2578,8 +2702,9 @@
       },
       "flags": [
         "F-07",
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01",
+        "F-77"
       ]
     },
     "stubborn-seed": {
@@ -2654,8 +2779,8 @@
         }
       },
       "flags": [
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01"
       ]
     }
   },
@@ -2717,7 +2842,7 @@
         "F-40",
         "F-49",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "caesars-palace": {
@@ -2775,7 +2900,7 @@
       },
       "flags": [
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "trump-international": {
@@ -2833,7 +2958,7 @@
       },
       "flags": [
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "cromwell": {
@@ -2892,7 +3017,7 @@
       "flags": [
         "F-47",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "w-las-vegas": {
@@ -2950,7 +3075,7 @@
       },
       "flags": [
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "crockfords": {
@@ -2958,28 +3083,28 @@
       "source": "h-crockfords",
       "fields": {
         "room": {
-          "value": null,
+          "value": "City View Superior Room (550 sq ft)",
           "source": "h-crockfords",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published named-room description only; not a trip-date allocation or fully qualified offer."
         },
         "bed": {
-          "value": null,
+          "value": "One king or two queens (named room variants)",
           "source": "h-crockfords",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published named-room description only; not a trip-date allocation or fully qualified offer."
         },
         "bathroom": {
-          "value": null,
+          "value": "Ensuite bathroom with double vanity and separate water closet",
           "source": "h-crockfords",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published named-room description only; not a trip-date allocation or fully qualified offer."
         },
         "amenities": {
-          "value": null,
+          "value": "550 sq ft; Byredo amenities; 24-hour Ambassador service; private lobby; Nespresso; one-touch drapes/lights",
           "source": "h-crockfords",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published named-room description only; not a trip-date allocation or fully qualified offer."
         },
         "location": {
           "value": null,
@@ -2991,24 +3116,25 @@
           "value": null,
           "source": "h-crockfords",
           "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "note": "Room evidence does not establish a final seven-night offer or dated door-to-door bus journey."
         },
         "within_60_bus": {
           "value": null,
           "source": "h-crockfords",
           "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "note": "Room evidence does not establish a final seven-night offer or dated door-to-door bus journey."
         },
         "within_20_bus": {
           "value": null,
           "source": "h-crockfords",
           "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "note": "Room evidence does not establish a final seven-night offer or dated door-to-door bus journey."
         }
       },
       "flags": [
         "F-59",
-        "F-70"
+        "FV-01",
+        "F-78"
       ]
     },
     "vdara": {
@@ -3066,7 +3192,7 @@
       },
       "flags": [
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "four-seasons": {
@@ -3124,7 +3250,7 @@
       },
       "flags": [
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "nomad-reserve": {
@@ -3182,7 +3308,7 @@
       },
       "flags": [
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "bellagio": {
@@ -3190,28 +3316,28 @@
       "source": "h-bellagio",
       "fields": {
         "room": {
-          "value": null,
+          "value": "Fountain View Two Queen (510 sq ft)",
           "source": "h-bellagio",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published named-room description only; not a trip-date allocation or fully qualified offer."
         },
         "bed": {
-          "value": null,
+          "value": "2 queen beds",
           "source": "h-bellagio",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published named-room description only; not a trip-date allocation or fully qualified offer."
         },
         "bathroom": {
-          "value": null,
+          "value": "Upgraded dual-sink bathroom vanity; frameless shower enclosure",
           "source": "h-bellagio",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published named-room description only; not a trip-date allocation or fully qualified offer."
         },
         "amenities": {
-          "value": null,
+          "value": "510 sq ft; 55-inch HDTV; in-room dining; safe; charging outlets",
           "source": "h-bellagio",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published named-room description only; not a trip-date allocation or fully qualified offer."
         },
         "location": {
           "value": null,
@@ -3223,26 +3349,27 @@
           "value": null,
           "source": "h-bellagio",
           "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "note": "Room evidence does not establish a final seven-night offer or dated door-to-door bus journey."
         },
         "within_60_bus": {
           "value": null,
           "source": "h-bellagio",
           "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "note": "Room evidence does not establish a final seven-night offer or dated door-to-door bus journey."
         },
         "within_20_bus": {
           "value": null,
           "source": "h-bellagio",
           "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "note": "Room evidence does not establish a final seven-night offer or dated door-to-door bus journey."
         }
       },
       "flags": [
         "F-13",
         "F-40",
         "F-59",
-        "F-70"
+        "FV-01",
+        "F-78"
       ]
     },
     "fontainebleau": {
@@ -3301,7 +3428,7 @@
       "flags": [
         "F-06",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "cosmopolitan": {
@@ -3309,28 +3436,28 @@
       "source": "h-cosmopolitan",
       "fields": {
         "room": {
-          "value": null,
+          "value": "City Room Queen (460 sq ft)",
           "source": "h-cosmopolitan",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published named-room description only; not a trip-date allocation or fully qualified offer."
         },
         "bed": {
-          "value": null,
+          "value": "2 queen beds",
           "source": "h-cosmopolitan",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published named-room description only; not a trip-date allocation or fully qualified offer."
         },
         "bathroom": {
-          "value": null,
+          "value": "Large, luxurious bathroom described with the room",
           "source": "h-cosmopolitan",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published named-room description only; not a trip-date allocation or fully qualified offer."
         },
         "amenities": {
-          "value": null,
+          "value": "460 sq ft; room page lists maximum four guests",
           "source": "h-cosmopolitan",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published named-room description only; not a trip-date allocation or fully qualified offer."
         },
         "location": {
           "value": null,
@@ -3342,25 +3469,26 @@
           "value": null,
           "source": "h-cosmopolitan",
           "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "note": "Room evidence does not establish a final seven-night offer or dated door-to-door bus journey."
         },
         "within_60_bus": {
           "value": null,
           "source": "h-cosmopolitan",
           "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "note": "Room evidence does not establish a final seven-night offer or dated door-to-door bus journey."
         },
         "within_20_bus": {
           "value": null,
           "source": "h-cosmopolitan",
           "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "note": "Room evidence does not establish a final seven-night offer or dated door-to-door bus journey."
         }
       },
       "flags": [
         "F-40",
         "F-59",
-        "F-70"
+        "FV-01",
+        "F-78"
       ]
     },
     "venetian": {
@@ -3368,28 +3496,28 @@
       "source": "h-venetian",
       "fields": {
         "room": {
-          "value": "Newly Remodeled Luxury King Suite",
-          "source": "h-venetian",
+          "value": "New Luxury Loft King Suite / New Luxury Loft Two Queen Suite",
+          "source": "h-venetian-loft",
           "status": "verified",
-          "note": ""
+          "note": "Named variants, not a trip-date allocation or private-use/offer guarantee."
         },
         "bed": {
-          "value": "1 king",
-          "source": "h-venetian",
+          "value": "1 king / 2 queens, according to named variant",
+          "source": "h-venetian-loft",
           "status": "verified",
-          "note": ""
+          "note": "Named variants, not a trip-date allocation or private-use/offer guarantee."
         },
         "bathroom": {
-          "value": "Oversized suite bathroom",
-          "source": "h-venetian",
+          "value": "Oversized bathroom; overview includes dual-sink vanity/glass-shower images",
+          "source": "h-venetian-loft",
           "status": "verified",
-          "note": ""
+          "note": "Named variants, not a trip-date allocation or private-use/offer guarantee."
         },
         "amenities": {
-          "value": "650 sq ft; living room",
-          "source": "h-venetian",
+          "value": "650 sq ft for the named New Luxury Loft variants; living room",
+          "source": "h-venetian-loft",
           "status": "verified",
-          "note": ""
+          "note": "Named variants, not a trip-date allocation or private-use/offer guarantee."
         },
         "location": {
           "value": null,
@@ -3419,7 +3547,7 @@
       "flags": [
         "F-39",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "aria": {
@@ -3478,7 +3606,7 @@
       "flags": [
         "F-40",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "palazzo": {
@@ -3537,7 +3665,7 @@
       "flags": [
         "F-40",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "encore": {
@@ -3598,7 +3726,7 @@
         "F-40",
         "F-49",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "wynn": {
@@ -3658,7 +3786,7 @@
         "F-09",
         "F-40",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "secret-suites-vdara": {
@@ -3717,7 +3845,7 @@
       "flags": [
         "F-49",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "waldorf-astoria": {
@@ -3777,7 +3905,7 @@
         "F-13",
         "F-40",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "cirrus-cliffs": {
@@ -3836,7 +3964,7 @@
       "flags": [
         "F-14",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "desert-rose": {
@@ -3894,7 +4022,7 @@
       },
       "flags": [
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "golden-nugget": {
@@ -3954,7 +4082,7 @@
         "F-11",
         "F-40",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "horseshoe": {
@@ -4014,7 +4142,7 @@
         "F-11",
         "F-40",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "flamingo": {
@@ -4074,7 +4202,7 @@
         "F-11",
         "F-40",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "linq": {
@@ -4134,7 +4262,7 @@
         "F-11",
         "F-40",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "sahara": {
@@ -4194,7 +4322,7 @@
         "F-11",
         "F-40",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "plaza": {
@@ -4254,7 +4382,7 @@
         "F-11",
         "F-40",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "palms-place": {
@@ -4314,7 +4442,7 @@
         "F-40",
         "F-41",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "bluegreen-club-36": {
@@ -4373,7 +4501,7 @@
       "flags": [
         "F-15",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "mgm-signature": {
@@ -4431,7 +4559,7 @@
       },
       "flags": [
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "green-valley-ranch": {
@@ -4490,7 +4618,7 @@
       "flags": [
         "F-14",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "red-rock": {
@@ -4549,7 +4677,7 @@
       "flags": [
         "F-14",
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "hilton-resorts-world": {
@@ -4637,7 +4765,7 @@
       },
       "flags": [
         "F-59",
-        "F-70"
+        "FV-01"
       ]
     },
     "mgm-grand": {
@@ -4645,46 +4773,46 @@
       "source": "h-mgm-grand",
       "fields": {
         "room": {
-          "value": null,
+          "value": "MGM King (446 sq ft)",
           "source": "h-mgm-grand",
-          "status": "unverified",
-          "note": "Host-hotel candidate only; no room, all-in offer or dated bus itinerary verified."
+          "status": "verified",
+          "note": "Published named-room description only; not a trip-date allocation or fully qualified offer."
         },
         "bed": {
-          "value": null,
+          "value": "1 king bed",
           "source": "h-mgm-grand",
-          "status": "unverified",
-          "note": "Host-hotel candidate only; no room, all-in offer or dated bus itinerary verified."
+          "status": "verified",
+          "note": "Published named-room description only; not a trip-date allocation or fully qualified offer."
         },
         "bathroom": {
-          "value": null,
+          "value": "Carrera marble-adorned bathroom; oversized backlit vanity mirror",
           "source": "h-mgm-grand",
-          "status": "unverified",
-          "note": "Host-hotel candidate only; no room, all-in offer or dated bus itinerary verified."
+          "status": "verified",
+          "note": "Published named-room description only; not a trip-date allocation or fully qualified offer."
         },
         "amenities": {
-          "value": null,
+          "value": "446 sq ft; 55-inch HDTV; personal mini-fridge; laptop-sized safe; glass-top desk",
           "source": "h-mgm-grand",
-          "status": "unverified",
-          "note": "Host-hotel candidate only; no room, all-in offer or dated bus itinerary verified."
+          "status": "verified",
+          "note": "Published named-room description only; not a trip-date allocation or fully qualified offer."
         },
         "total_7n": {
           "value": null,
           "source": "h-mgm-grand",
           "status": "unverified",
-          "note": "Host-hotel candidate only; no room, all-in offer or dated bus itinerary verified."
+          "note": "Room evidence does not establish a final seven-night offer or dated door-to-door bus journey."
         },
         "within_60_bus": {
           "value": null,
           "source": "h-mgm-grand",
           "status": "unverified",
-          "note": "Host-hotel candidate only; no room, all-in offer or dated bus itinerary verified."
+          "note": "Room evidence does not establish a final seven-night offer or dated door-to-door bus journey."
         },
         "within_20_bus": {
           "value": null,
           "source": "h-mgm-grand",
           "status": "unverified",
-          "note": "Host-hotel candidate only; no room, all-in offer or dated bus itinerary verified."
+          "note": "Room evidence does not establish a final seven-night offer or dated door-to-door bus journey."
         },
         "location": {
           "value": null,
@@ -4695,7 +4823,8 @@
       },
       "flags": [
         "F-59",
-        "F-70"
+        "FV-01",
+        "F-78"
       ]
     }
   },
@@ -4749,8 +4878,8 @@
       },
       "flags": [
         "F-16",
-        "F-73",
-        "F-70"
+        "FV-04",
+        "FV-01"
       ]
     },
     "high-roller": {
@@ -4803,9 +4932,9 @@
         }
       },
       "flags": [
-        "F-73",
-        "F-72",
-        "F-70"
+        "FV-04",
+        "FV-03",
+        "FV-01"
       ]
     },
     "mob-museum": {
@@ -4858,9 +4987,9 @@
         }
       },
       "flags": [
-        "F-73",
-        "F-72",
-        "F-70"
+        "FV-04",
+        "FV-03",
+        "FV-01"
       ]
     },
     "neon-museum": {
@@ -4880,10 +5009,13 @@
           "note": ""
         },
         "exceptions": {
-          "value": "Outdoor, uncovered. Weather may affect availability. Personal photos only by phone/tablet during regular visits; processing fee applies.",
-          "source": "neon-2027",
+          "value": "Starting January 1, 2027, arrival earlier or later than the selected ticket time may require a higher-price difference before entry. Outdoor/weather-sensitive; personal phone/tablet photos only; processing fee applies.",
+          "source": "neon-visit",
           "status": "verified",
-          "note": ""
+          "note": "",
+          "also_sources": [
+            "neon-2027"
+          ]
         },
         "price_2adults": {
           "value": "From $42 for two, plus processing fee",
@@ -4911,9 +5043,10 @@
         }
       },
       "flags": [
-        "F-73",
-        "F-72",
-        "F-70"
+        "FV-04",
+        "FV-03",
+        "FV-01",
+        "F-78"
       ]
     },
     "fremont-street": {
@@ -4964,9 +5097,9 @@
         }
       },
       "flags": [
-        "F-73",
-        "F-72",
-        "F-70"
+        "FV-04",
+        "FV-03",
+        "FV-01"
       ]
     },
     "bellagio-fountains": {
@@ -5017,8 +5150,8 @@
         }
       },
       "flags": [
-        "F-72",
-        "F-73"
+        "FV-03",
+        "FV-04"
       ]
     }
   },
@@ -5034,27 +5167,41 @@
           "note": ""
         },
         "exceptions": {
-          "value": "Reduced fares require eligibility; not assumed for this couple. Planning a trip is not proof a one-hour threshold is met.",
+          "value": "Reduced fares require eligibility; not assumed for this couple. Planning a trip is not proof a one-hour threshold is met. No dedicated seven-day Visitor product shown; $20 seven-day appears under Residential, not the visitor default.",
           "source": "rtc-fares",
           "status": "verified",
-          "note": ""
+          "note": "",
+          "also_sources": [
+            "203-pdf",
+            "deuce-pdf"
+          ]
         },
         "fares_2adults": {
-          "value": "$8 for two single-ride tickets; $12 for two 2-hour passes; $16 for two 24-hour passes; $40 for two 3-day passes",
+          "value": "$8 for two single-ride tickets; $12 for two 2-hour passes; $16 for two 24-hour passes; $40 for two 3-day passes; $96.00 product sum for two adults, each buying two 3-Day passes plus one 24-Hour pass",
           "source": "rtc-fares",
           "status": "verified",
-          "note": "Two × the official regular Strip & All Access fare. This is one pass/ticket per adult, not a shared pass; fares may change before 2027."
+          "note": "Two × the official regular Strip & All Access fare. This is one pass/ticket per adult, not a shared pass; fares may change before 2027. Product arithmetic: 2 adults × (2 × $20 + $8) = $96.00, compared with $120 for six 3-Day passes. Not a Visitor 7-Day product or guarantee of coverage: verify activation/expiry, duration and 2027 fares against actual journeys. A seven-night stay can span more than 168 hours.",
+          "calculation": {
+            "adults": 2,
+            "three_day_passes_per_adult": 2,
+            "three_day_price": "20.00",
+            "day_passes_per_adult": 1,
+            "day_price": "8.00",
+            "product_sum": "96.00"
+          }
         },
         "hours": {
-          "value": null,
-          "source": "rtc-fares",
-          "status": "unverified",
-          "note": "No complete official field was established in this pass."
+          "value": "Deuce only: published 24/7; approx every 10–15 min 7 AM–1 AM / 20 min 1–7 AM",
+          "source": "deuce-pdf",
+          "status": "verified",
+          "note": "Not the schedule of every RTC route. Frequency is approximate; traffic/construction and future service changes apply."
         }
       },
       "flags": [
         "F-59",
-        "F-70"
+        "FV-01",
+        "F-78",
+        "FV-08"
       ]
     },
     "rtc-residential": {
