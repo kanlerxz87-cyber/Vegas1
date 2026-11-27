@@ -91,11 +91,14 @@
       "id": "Q-07",
       "question": "What are each restaurant's YouTube, TikTok and Instagram links?",
       "state": "open",
-      "answer": "YouTube is recorded for every one of the 24 restaurants, 69 links in total. The links were not opened in the 2026-11-26 review, so 'working' is not verified. Instagram and TikTok are almost entirely blank.",
-      "problem": "Handles were not printed on most official restaurant pages, and guessing a handle would create a dead or, worse, wrong link.",
-      "substitution": "Blank rather than guessed. The Neon Museum is the only venue with confirmed Instagram and TikTok, taken from its own site footer.",
-      "how_to_close": "Open each restaurant's official page footer or its OpenTable profile — most link their own socials there. That is 24 short page visits.",
-      "sources": []
+      "answer": "YouTube is recorded for every one of the 24 restaurants (69 links), and those video links were not opened, so whether each still plays is unverified. Instagram is now filled for 19 of the 24 restaurants and TikTok for 2 (Lamaii, Esther's Kitchen); for the five activities Instagram is filled for 4 of 5 and TikTok for 3 of 5. Those coverage counts come from the 2026-11-27 social sweep recorded in F-53, not from this session's own page visits.",
+      "problem": "Handles are not printed on most official pages, so a handle found nowhere but a search result is weak evidence: a wrong handle creates a dead or, worse, someone else's account. Creator videos that tag a venue are not the venue's account.",
+      "substitution": "Blank rather than guessed, and every filled activity cell now states where the handle came from (activities page, 'Where each social link came from'). The Neon Museum is the strongest case: it prints both its Instagram and TikTok in its own site navigation.",
+      "how_to_close": "Open each remaining restaurant's official page footer or its OpenTable profile and look for the venue's own link. 5 Instagram gaps and 22 TikTok gaps remain; TikTok is the hardest because many venues never created one. Anything not printed by the venue or its booking profile should stay blank (F-53).",
+      "sources": [
+        "https://neonmuseum.org/",
+        "https://www.youtube.com/themobmuseum"
+      ]
     },
     {
       "id": "Q-08",

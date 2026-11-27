@@ -239,6 +239,10 @@ def build_activities():
     nv = "".join(
         f'<li><strong>{e(n["name"])}</strong> — {e(n["reason"])}</li>' for n in ACT["not_verified"]
     )
+    social_notes = "".join(
+        f'<li><strong>{e(a["name"].split(" (")[0])}</strong> — {e(a["social_note"])}</li>'
+        for a in ACT["activities"] if a.get("social_note")
+    )
 
     body = f"""
 <section class="panel">
@@ -249,7 +253,15 @@ def build_activities():
   <tbody>{''.join(rows)}</tbody>
   </table>
   </div>
-  <p class="note">Social columns show only links present in the dataset; <strong>— means no link was verified for this entry</strong>, not that the venue has no account or video. See <a href="questions.html">Open questions</a> for discovery gaps.</p>
+  <p class="note">Social columns show only links present in the dataset; <strong>— means no link was verified for this entry</strong>, not that the venue has no account or video. See <a href="questions.html">Open questions</a> for discovery gaps and <a href="flagged.html">F-53</a> for coverage.</p>
+</section>
+
+<section class="panel">
+  <h2>Where each social link came from</h2>
+  <p>A handle is only listed when the venue's own site, its own channel or profile, or venue-issued press material
+  publishes it — never inferred from a venue name. Coverage counts and the remaining gaps are in
+  <a href="flagged.html">F-53</a>.</p>
+  <ul class="tight">{social_notes}</ul>
 </section>
 
 <section class="panel">
@@ -361,7 +373,7 @@ def build_suggestions():
 <div class="suglist">{''.join(cards)}</div>
 """
     return page("suggestions.html", "Suggestions",
-                "Twelve decision improvements, ranked, each with its honest trade-off and whether it needs your call first.",
+                f"{len(SUG['suggestions'])} decision improvements, ranked, each with its honest trade-off and whether it needs your call first.",
                 body)
 
 

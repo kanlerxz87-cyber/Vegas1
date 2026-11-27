@@ -551,3 +551,55 @@ Push preparation note: plain `git pull --rebase` after the integration merge att
 - GitHub Pages build for that exact merge reached **built**, error message null. Live root: <https://kanlerxz87-cyber.github.io/Vegas1/>.
 - Fetched live overview with cache-busting query `?audit=ad6075a`: confirmed new executive summary, four official-linked starred rows, no OTA lowest-price headline, F-58–F-63 precedence notice and explicit missing official-price/route evidence. Initial fetch while Pages was building returned old content; waited for exact commit's successful build and re-fetched before reporting live.
 - Publication successful. Research remains explicitly not booking-ready; missing official quotes/itineraries and untested external URLs are disclosed. This log-only follow-up does not alter site output.
+| T19 | Integration/repair pass on the merged T17/T18 site: `FLAGS.md` register table repair, `validate.py` false positive, activity social-link provenance panel, Q-07 correction, S-16 | done | arena/41324885-vegas1 | `COORDINATION.md`, `FLAGS.md`, `data/activities.json`, `data/questions.json`, `data/suggestions.json`, `scripts/gen_site.py`, `scripts/validate.py`, `notes/verification-2026-11-27-t17-integration.md` (new), generated root + `docs/` pages | Done 2026-11-27. Claimed as T17, renumbered T19 at integration because T17 was taken by arena/bc27fca6-vegas1 while this session worked; its duplicate flag rows (proposed F-52/F-53/F-54) were discarded in favour of main's F-52/F-53 and F-62/F-63. |
+
+
+## Session record — arena/41324885-vegas1 (T19, claimed as T17) — 2026-11-27 — DONE
+
+**Branch:** `arena/41324885-vegas1`. **Base at start:** `631e611`. **Base at integration:** `origin/main` @ `8f386c5`.
+
+**Concurrent-session collision (resolved, nothing discarded from main).** This session claimed "T17" and did the
+same job two other sessions did in parallel: Mob Museum Thursday-hours correction, activity social links, and the
+High Roller ticket-window conflict. By the time it finished, `main` was **149 commits ahead** and already carried
+those findings as **F-52** (Mob hours), **F-53** (TikTok coverage), **F-62** (strict-evidence restatement) and
+**F-63** (High Roller conflict). The branch was therefore reset onto `origin/main` and every finding was
+**re-applied by hand against main's current structure**; this session's duplicate register rows were dropped
+(its proposed F-54 is deliberately **unused**) and main's IDs and wording kept. The pre-reset commits
+(`858351a`, `9462684`) exist only in this clone's reflog and were never pushed as a branch. No upstream commit,
+file or flag was overwritten.
+
+**Retained, still-missing-on-main fixes (verified in this session):**
+
+1. **`FLAGS.md` was four markdown tables.** Blank lines before F-27, F-47 and F-50 meant **11 of 43** register
+   rows rendered as loose text on GitHub instead of table rows. Repaired into one table for F-01–F-53; F-58–F-63
+   keep their own heading; the non-contiguity of F-31–F-46 is now stated in the file.
+2. **`scripts/validate.py` false positive.** Its "no literal nan" check matched the letters inside ordinary words
+   and warned on *provenance*. It now matches standalone `None`/`nan` tokens on word boundaries.
+3. **Activity social provenance.** All five activities now carry a `social_note`, and the activities page renders a
+   **"Where each social link came from"** panel. This closes the gap between "a link is present" and "we can say
+   who published that handle" — the same standard the rest of the site uses.
+4. **Q-07 corrected.** It still read "Instagram and TikTok are almost entirely blank", which contradicted F-53's
+   19/24 restaurant Instagrams. Rewritten to the 27 Nov coverage, with the evidence standard and the remaining
+   gaps (5 restaurant Instagrams, 22 TikTok accounts).
+5. **S-16 added** so those gaps are a listed decision rather than silent blanks.
+
+**Independent verification performed 2026-11-27** (row-by-row table with a source URL per row:
+`notes/verification-2026-11-27-t17-integration.md`): MICHELIN tiers re-confirmed against the michelin.com press
+release **and** LVCVA's page (which independently states 24 distinctions and lists the same 17 Recommended names,
+so 4 + 3 + 17 = 24 checks out); Joël Robuchon hours/phone/dress code, é by José Andrés hours/9 seats/2 seatings,
+Michael Mina closure, Mob Museum hours + ticket prices + December-only special hours, Neon Museum 2027 admission
+(3–11 PM, last entry 10 PM, from $21 → $42 for two), High Roller prices and its internal ticket-window conflict,
+Fremont Street free nightly shows, and every Monorail fare — all matched. Guy Savoy's official page still prints
+**no hours block**, so that cell stays blank. RTC fares and the Route 203 timetable were **not** re-checked from
+this environment (fetch failed); F-60/F-42 keep their own dated evidence.
+
+**Decision request logged for the couple (P-01, not changed by this session).** The merged site now presents the 32
+hotels **alphabetically, "not ranked"**, with unofficial amounts blanked pending official quotes (F-58/F-59). The
+original brief asked for hotels **ranked** by MICHELIN proximity inside an hour and by price. The page is now
+defensible on evidence but no longer answers the ranking question. Options: (a) leave as is; (b) publish an
+explicitly indicative ranking from the dated OTA snapshots, labelled as not a booking offer; (c) rank only the
+subset with a confirmed named-room official rate. This is a choice for the owner, published on the site's
+Suggestions/Flagged pages via S-16 and F-58 rather than decided silently here.
+
+**Build:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py`
+→ 13 pages · 0 failures · 0 warnings; root and `docs/` byte-identical (`cmp` on every page).
