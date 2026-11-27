@@ -1112,3 +1112,8 @@ Cleanly merged `origin/main@5680c91` (preserving 100% of T22/T23, `FV-01`–`FV-
 3. **Transit & QA Gates:**
    - Added RTC Route 202 Flamingo 24/7 PDF (`202-pdf`) and Vegas Loop's 14 active stations (`boringcompany.com/projects/las-vegas-loop`).
    - All local gates green: `build.py` (`34/24/6`), `gen_site.py` + `validate.py` (`16 pages · 0 failures · 0 warnings`), `check_evidence.py` (`22/22` tests OK), `validate_session_6851cc7e.py` (PASS), and `git diff --check` clean. Foreign open PRs (`#27`, `#38`, `#60`, `#64`) left untouched.
+
+### T-9077f7b3 PR & live deployment verification — arena/9077f7b3-vegas1 (2026-11-27)
+- **[PR #72](https://github.com/kanlerxz87-cyber/Vegas1/pull/72)** (`arena/9077f7b3-vegas1` → `main`) **MERGED** at **2026-11-27T18:39:51Z** via `gh pr merge 72 --merge`; merge commit **`2292be1d5f5612356af0dba30aebe1cfd5da6c28`**.
+- **GitHub Pages deployment verified:** [Actions run 46051146804](https://github.com/kanlerxz87-cyber/Vegas1/actions/runs/46051146804) succeeded and `gh api repos/kanlerxz87-cyber/Vegas1/pages/builds` confirmed `commit: 2292be1d5f5612356af0dba30aebe1cfd5da6c28`, `status: built`, `error.message: null` at **2026-11-27T18:40:20Z**.
+- **Cache-busted live read-back confirmed (`?v=2292be1`):** fetched `index.html`, `pricing.html`, `restaurants.html`, `hotels.html`, and `repo-review.html` directly from `https://kanlerxz87-cyber.github.io/Vegas1/` and verified Esther's Kitchen's resolved address/hours/phone (`F-79`), Crockfords' `$3,346.42` itemized observation + Conrad's Feb 16–17 sold-out check + all 13 exact-date engine checks (`F-80`), and `30/34` fetched hotel official sources (`29/34` named-room descriptions, `F-81`) live on GitHub Pages. Foreign open PRs (`#27`, `#38`, `#60`, `#64`) untouched.
