@@ -16,10 +16,11 @@
    "restaurants_with_instagram": 21,
    "restaurants_total": 24,
    "restaurants_without_verified_social": 3,
-   "activities_with_instagram": 5,
-   "activities_with_youtube": 5,
+   "activities_with_instagram": 6,
+   "activities_with_youtube": 6,
    "activities_with_tiktok": 1,
-   "activities_total": 5
+   "activities_total": 6,
+   "note": "counts recomputed 2026-11-27 after the Fountains of Bellagio row (added by another session) gained a property-level Instagram and YouTube channel"
   },
   "supersedes": "Review item R-02 ('No restaurant has an Instagram or TikTok link') is **closed** as of 2026-11-27: 21 of 24 restaurants and 5 of 5 activities carry a verified Instagram link, and each row here records how it was confirmed. R-02 remains visible on the Flagged-for-review page as a historical record; this file is the evidence that supersedes it."
  },
@@ -282,6 +283,15 @@
    "evidence": "Account opened and verified-badged: bio 'Official account of Fremont Street Experience and SlotZilla zipline in downtown #LasVegas'.",
    "caveat": "YouTube handle @fremontstreetexperience opens but returns 'This channel doesn't have any content', so no YouTube link is published (F-57).",
    "also_recorded": "Instagram is the account whose own profile describes it as the 'Official account of Fremont Street Experience and SlotZilla zipline'; the venue's own site prints no social icons, so no TikTok is listed. Re-checked 2026-11-27. Source: https://www.instagram.com/fremontstreet/"
+  },
+  {
+   "id": "bellagio-fountains",
+   "name": "Fountains of Bellagio",
+   "instagram": "https://www.instagram.com/bellagio/",
+   "tiktok": "",
+   "youtube_channel": "https://www.youtube.com/@BellagioLasVegas",
+   "status": "property account, not show-specific",
+   "evidence": "Property account: '@bellagio', verified-badged, 489,257 followers, bio 'See the world in a new light and dance with the Fountains' — the fountains are named by the account itself, but this is the resort's feed, not a Fountains-of-Bellagio feed (no such account exists). YouTube @BellagioLasVegas is the property channel and carries '25th Anniversary – Fountains of Bellagio, Las Vegas'; opened 2026-11-27."
   }
  ],
  "rejected": [

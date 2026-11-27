@@ -818,7 +818,7 @@ for Guy Savoy — is recorded as F-64 with its source and keeps the $3,000 Krug 
 
 ### T17 addendum — where each social link came from (arena/c045ad05-vegas1, 2026-11-27)
 
-- **21 of 24** restaurants and **5 of 5** activities carry a verified Instagram link, each with the sentence that
+- **21 of 24** restaurants and **6 of 6** activities carry a verified Instagram link, each with the sentence that
   confirmed it (`data/socials.json`, rendered as a provenance table on `restaurants.html` and `activities.html`).
   Wing Lei, Ping Pang Pong and Yen Viet Kitchen stay blank with the reason (only private personal accounts exist).
 - Every handle was confirmed by **opening the account itself** on 2026-11-27, never by name similarity. Five handles
@@ -845,3 +845,8 @@ marker in a tracked document is a defect in its own right: any later merge in th
 resolution keeps it. Resolved here by keeping the fuller of the two bullet lists and preserving the one bullet the
 shorter side alone carried (the `FLAGS.md` duplicate-row observation), so nothing was lost. After this merge `main` has
 no conflict markers in this file.
+- **Coverage extended to a row another session added mid-merge.** The Fountains of Bellagio row landed on `main` while
+  PR #54 was open and shipped with every social column blank. Checked on 2026-11-27: `@bellagio` is verified-badged
+  (489,257 followers) and its bio names the fountains, and the property's YouTube channel carries *"25th Anniversary –
+  Fountains of Bellagio"*. Both are **property** accounts, not a fountains-specific feed (none exists), and the page says
+  so rather than implying a show-level account. Activity coverage is now 6/6 Instagram, 6/6 YouTube, 1/6 TikTok.

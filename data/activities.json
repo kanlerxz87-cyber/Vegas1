@@ -163,13 +163,19 @@
    "price_source": "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html",
    "official_url": "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html",
    "booking_hint": "No ticket needed - just turn up.",
-   "youtube": [],
-   "instagram": "",
+   "youtube": [
+    "https://www.youtube.com/@BellagioLasVegas",
+    "https://www.youtube.com/watch?v=qp0SppysLnU"
+   ],
+   "instagram": "https://www.instagram.com/bellagio/",
    "tiktok": "",
    "verified": "yes",
    "flags": [],
    "notes": "Closes F-18: the official page answered on 27 Nov 2026 and publishes the full daily schedule, so hours are no longer blank.",
-   "checked": "2026-11-27"
+   "checked": "2026-11-27",
+   "social_status": "property account, not show-specific",
+   "social_evidence": "Property account: '@bellagio', verified-badged, 489,257 followers, bio 'See the world in a new light and dance with the Fountains' — the fountains are named by the account itself, but this is the resort's feed, not a Fountains-of-Bellagio feed (no such account exists). YouTube @BellagioLasVegas is the property channel and carries '25th Anniversary – Fountains of Bellagio, Las Vegas'; opened 2026-11-27.",
+   "social_note": ""
   }
  ],
  "not_verified": [
