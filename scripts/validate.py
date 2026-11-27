@@ -22,10 +22,15 @@ for p in PAGES:
         fails.append(f"{p.name}: missing viewport")
     if src.count("<nav>") != 1:
         fails.append(f"{p.name}: nav count {src.count('<nav>')}")
-    # 3. table rows must not contain unescaped stray braces from f-strings
-    for bad in ("{{", "}}", "None", "nan"):
+    # 3. table rows must not contain unescaped stray braces from f-strings, nor
+    #    a leaked Python repr. Word boundaries matter: the substring "nan" is
+    #    inside ordinary words such as "provenance", so a plain `in` test gives
+    #    false warnings that train the reader to ignore the check.
+    for bad in ("{{", "}}"):
         if bad in src:
             warns.append(f"{p.name}: contains literal {bad!r}")
+    for m in re.finditer(r"\b(nan|None|inf)\b", src):
+        warns.append(f"{p.name}: contains literal {m.group(1)!r} near {src[max(0,m.start()-30):m.end()+10]!r}")
     # 4. count links
     ext = len(re.findall(r'href="https?://', src))
     print(f"{p.name:20} {len(src):>7} bytes  {ext:>4} external links")

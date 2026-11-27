@@ -51,6 +51,26 @@ labelled**, never that a plausible number was filled in.
 - **Cirque du Soleil** was listed by a reseller at $158.65 per person with no show name, no venue and no 2027 date — excluded.
 - **MGM Grand room price** could not be captured: Booking.com's own property page redirected to a generic Las Vegas search. No price is published for it rather than a guess.
 
+## Social + video verification pass of 27 Nov 2026 (F-54 to F-58)
+
+Task T17 (session `arena/c045ad05-vegas1`) opened every candidate Instagram account, YouTube channel and official
+venue page on **27 November 2026** to close F-19 / R-02, the largest open gap against the brief. The per-row
+evidence is machine-readable in `data/socials.json` and rendered in the **"Where each social link came from"** table
+on `restaurants.html`. These five findings came out of that pass.
+
+| ID | Where | What | Effect on the plan |
+|----|-------|------|--------------------|
+| **F-54** | Joël Robuchon (Instagram) | The account `@joelrobuchon.lasvegas` is the restaurant's own (bio links the official MGM Grand page) but it is **dormant**: the newest post shown is dated **2020-08-07**, and the bio still reads **"Michelin 3-Star"**. The 2026 Guide gives **two** stars, which the restaurant's own MGM page also states. | The link is published because it is official, but **do not quote a restaurant's own bio as its current award** — this is the same stale-3-star claim as F-01, now found on the official account itself. |
+| **F-55** | Kabuto (wrong phone) | The row carried **725.205.1356**. The restaurant's own site `kabutolv.com` prints **(702) 676-1044** in its "Visit Us" block, and its Instagram bio repeats `(702) 676 - 1044`. | **Corrected to 702.676.1044** (2026-11-27). A 725 area code is not a Las Vegas code, so the old number would have failed. |
+| **F-56** | Neon Museum (TikTok) | `tiktok.com/@neonmuseumlasvegas` is printed in the museum's own site navigation, but **TikTok returned HTTP 400 to every request** from this sandbox, so the page was never read. | Link published, labelled as coming from the **museum's own footer, not from a page read**. One TikTok link exists on the whole site; treat it as a lead, not a confirmed live account. |
+| **F-57** | Mob Museum / Fremont Street (YouTube) | `youtube.com/@neonmuseum` and `youtube.com/@fremontstreetexperience` both open but return **"This channel doesn't have any content"**. Both venues' Instagram accounts were confirmed instead. | No video link is published for three of the five activities; only Sphere and the Mob Museum have a working channel. |
+| **F-58** | High Roller (no attraction account) | `@highrollerlasvegas` is a **private 26-follower account**, not the Caesars attraction. The nearest official account is `@thelinq`, the LINQ hotel's verified account, which posts about the wheel. | Left blank on the attraction row: a property account is not the attraction. Noted here so nobody "fixes" it by adopting the private account. |
+
+**Also recorded, not a flag:** `@winglei` is a private personal account ("Lei Wing"), `@phogabacbac` is a private
+1-follower account and `@stubbornseed` / `@stubbornseedlv` both 404 — so Wing Lei, Pho Ga Bac Bac and Stubborn Seed
+are the three rows where adopting a look-alike handle would have put a stranger's private account on the site. They
+are published blank, with the reason, in the provenance table.
+
 ## Audit of 26 Nov 2026 (F-39 onward)
 
 Items F-39 to F-46 come from the 26 November 2026 line-by-line audit (task T12). They are kept in `data/review-flags.json`, with source links, and rendered on the site's **Flagged for review** page (`flagged.html`). Summary:

@@ -30,6 +30,7 @@ TRANSIT = load("transit.json")
 ACT = load("activities.json")
 QS = load("questions.json")
 SUG = load("suggestions.json")
+SOC = load("socials.json")
 
 e = html.escape
 
@@ -38,6 +39,8 @@ _C = {}
 for _r in RES["restaurants"]:
     _C[_r["award_class"]] = _C.get(_r["award_class"], 0) + 1
 N_TOTAL = len(RES["restaurants"])
+N_IG = sum(1 for _r in RES["restaurants"] if _r.get("instagram"))
+N_NO_SOCIAL = N_TOTAL - N_IG
 N_STARRED = _C.get("starred", 0)
 N_BIB = _C.get("bib", 0)
 N_REC = _C.get("recommended", 0)
@@ -455,6 +458,16 @@ a missing entry and it is not an average. Only three restaurants print a real pe
 """
 
     counts = RES["meta"]["counts"]
+
+    soc_rows = ""
+    for _s in SOC["restaurants"]:
+        _ig = (f'<a href="{e(_s["instagram"])}" target="_blank" rel="noopener">open</a>'
+               if _s["instagram"] else '<span class="warn">none verified</span>')
+        _ev = e(_s.get("evidence") or "")
+        if _s.get("caveat"):
+            _ev += f'<div class="tiny warn">{e(_s["caveat"])}</div>'
+        soc_rows += f'<tr><td>{e(_s["name"])}</td><td class="tiny">{_ig}</td><td class="tiny">{_ev}</td></tr>'
+
     body = f"""
 <section class="panel">
   <h2>What "MICHELIN" means here</h2>
@@ -473,6 +486,35 @@ a missing entry and it is not an average. Only three restaurants print a real pe
 <section class="panel">
   <h2>All {N_TOTAL} listings</h2>
   {table}
+</section>
+
+<section class="panel">
+  <h2>Watching before you go</h2>
+  <p>Every starred, Bib and Recommended row carries at least one YouTube video link in the <em>Watch</em> column —
+  69 links across {N_TOTAL} listings — because a video shows the room, the plating and the portion size in a way a
+  menu cannot. <strong>{N_IG} of {N_TOTAL}</strong> rows also carry an Instagram link, verified one account at a time.
+  The provenance for every row is shown below, and the blanks are explained.</p>
+</section>
+
+<section class="panel">
+  <h2 id="socials">Where each social link came from</h2>
+  <p><strong>{N_IG} of {N_TOTAL}</strong> restaurants now have an Instagram link, and every one of them was
+  confirmed by opening the account on <strong>27 November 2026</strong> — not by guessing a handle from a name.
+  A link is published only when the account's own bio or posts tie it to this venue, or the venue's own site
+  links to it. The <strong>{N_NO_SOCIAL}</strong> rows with no link are shown, with the reason, rather than left to
+  look forgotten.</p>
+  <div class="scroll">
+  <table class="data">
+  <thead><tr><th>Restaurant</th><th>Instagram</th><th>How it was confirmed</th></tr></thead>
+  <tbody>{soc_rows}</tbody>
+  </table>
+  </div>
+  <p class="note">Two caveats worth reading before trusting a feed:
+  <a href="flagged.html#F-54">F-54</a> — the Jo&euml;l Robuchon account is <em>dormant</em> (newest post 2020) and its
+  bio still claims <strong>three</strong> MICHELIN stars, the pre-2010 status; the 2026 Guide gives two. Do not quote a
+  restaurant's own bio as its current award. <a href="flagged.html#F-56">F-56</a> — TikTok refused every request from
+  this sandbox, so the single TikTok link on this site is the one the venue itself prints in its own footer.
+  <a href="flagged.html#F-57">F-57</a> — two venue YouTube channels open but are empty, so no video is published for them.</p>
 </section>
 
 <section class="panel">
