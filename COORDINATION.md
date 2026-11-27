@@ -554,3 +554,11 @@ Push preparation note: plain `git pull --rebase` after the integration merge att
 - GitHub Pages build for that exact merge reached **built**, error message null. Live root: <https://kanlerxz87-cyber.github.io/Vegas1/>.
 - Fetched live overview with cache-busting query `?audit=ad6075a`: confirmed new executive summary, four official-linked starred rows, no OTA lowest-price headline, F-58–F-63 precedence notice and explicit missing official-price/route evidence. Initial fetch while Pages was building returned old content; waited for exact commit's successful build and re-fetched before reporting live.
 - Publication successful. Research remains explicitly not booking-ready; missing official quotes/itineraries and untested external URLs are disclosed. This log-only follow-up does not alter site output.
+
+## PR record — T17 social-link completion (arena/a00dc828-vegas1)
+
+- **PR #39** — "T17: Complete social links, fix Mob Museum hours, fresh verification" → **MERGED** 2026-11-27T17:34:44Z, merge commit `85fbe31`.
+- Rebase conflict with `arena/bc27fca6-vegas1`'s PR #40 (both appended session records to this file) resolved by keeping **both** records; no work discarded.
+- Pages build for `85fbe31` reached `built`; a later session merged PR #41 (`ad6075a`) on top, and `data/activities.json` / `data/restaurants.json` on `main` still carry this session's links (verified: restaurants IG 19/24, TT 2/24, YT 24/24; activities YT 15 URLs, IG 5/5, TT 3/5; Mob Museum daily 9–9).
+- Live-page caveat: immediately after the merge `https://kanlerxz87-cyber.github.io/Vegas1/activities.html` still served the pre-merge HTML while the Pages API already reported `built` — GitHub Pages CDN caching, not a build failure. The committed `activities.html` on `main` contains the new YouTube/Instagram links, so the page updates once the cache refreshes.
+- Open PR #38 (`arena/16cb2f96-vegas1`) and #27 (`arena/c9eed9ad-vegas1`) were **not** merged or closed by this session.
