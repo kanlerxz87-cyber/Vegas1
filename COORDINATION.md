@@ -1,7 +1,7 @@
 # COORDINATION.md — Shared Task Board
 
 **Repo:** kanlerxz87-cyber/Vegas1
-**Last updated:** 2026-11-26
+**Last updated:** 2026-11-27
 **Purpose:** multi-session coordination so parallel agents never edit the same files.
 Read this file *before* starting any task. Claim a task by writing your session ID below,
 then commit and push that claim immediately.
@@ -10,6 +10,7 @@ then commit and push that claim immediately.
 
 | Session | Started | Scope now | Branch |
 |---------|---------|-----------|--------|
+| arena/01ba2dd9-vegas1 | 2026-11-27 | T16 — line-by-line official verification pass for restaurant & activity social links (IG/TT/YT) and official restaurant prices for 2 adults; Mob Museum regular vs Thanksgiving hours check; Bellagio Fountains & remaining 5 unopened hotel official links check; generator/HTML/stale-count bug fixes + rebuild + PR & Pages deploy | `arena/01ba2dd9-vegas1` |
 | arena/71886f12-vegas1 | 2026-11-26 | T14 — completed activity social-link visibility and executive-summary cleanup after the merged T13 rate audit | `arena/71886f12-vegas1` |
 | arena/c419e2da-vegas1 | 2026-11-26 | T13 — post-merge hotel-rate claim audit; reconcile OTA/direct source conflict, refresh official booking engines, preserve PR #22 repo-review pages | `arena/c419e2da-vegas1` |
 | arena-edcfa7a0-vegas1 | 2026-11-25 | T02–T11 — research complete; writing `data/*.json`, building `docs/`, publishing | `arena/edcfa7a0-vegas1` |
@@ -67,6 +68,8 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 | T12 | Repo review (line-by-line spot verification of canonical data), root **Flagged for Review** + **Repo review** pages, integration + Pages redeploy | done | arena-939a824e-vegas1 (branch `arena/939a824e-vegas1`) | `COORDINATION.md`, `FLAGS.md`, `README.md`, `scripts/gen_site.py`, `data/review.json`, `data/questions.json`, `data/suggestions.json`, `executive-summary.md`, generated `docs/**` and root `*.html` | Done 2026-11-26. 10 line-by-line checks (C-01…C-10), 18 irregularities (R-01…R-18) recorded in `data/review.json` and published on the Flagged for Review page. Hotel prices, social links and hotel official URLs were NOT re-checked (see limits). |
 | R01 | Repo review: live-site spot-check, link audit, irregularity register | done | arena-b54b3346-vegas1 | `notes/repo-review-2026-11-26.md`, `COORDINATION.md` | Done 2026-11-26. Live site, `data/`, `docs/`, root pages NOT edited. Irregularities F-01–F-07 flagged for owner review. Sources: michelin.com 2026 Southwest press release; GitHub Pages API; build/validate logs. RTC fares fetch failed (F-04). |
 | T14 | Repo review, line-by-line audit of headline claims, Flagged-for-Review page, integration + PR | done | arena-f527b427-vegas1 | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `data/hotels.json`, `data/price-windows.json`, `data/questions.json`, `data/suggestions.json`, `data/transit.json`, `data/travel_matrix.json`, `data/restaurants.json`, `data/review-flags.json` (new), `scripts/gen_site.py`, `docs/**`, root `*.html` | Claimed 2026-11-26 under the ID T12 in commit `3fc6739`; renamed T14 at integration because T12 was already used by arena-939a824e-vegas1 (merged PR #21, #22); T13 is used by arena-c419e2da-vegas1. Overlapping files were integrated by merge, not edited in parallel. Other sessions: please log requests here rather than editing these files. |
+| T15 | Official-link re-check across 32 hotels, MICHELIN date correction, Route 203 precision, Flagged page per-item source links | done | arena/3c6d076e-vegas1 | `COORDINATION.md`, `FLAGS.md`, `README.md`, `data/hotels.json`, `data/restaurants.json`, `data/questions.json`, `data/suggestions.json`, `scripts/gen_site.py`, `docs/**`, root `*.html` | Completed and merged in PR #33 and PR #34 on 2026-11-26. |
+| T16 | Official social links (IG/TT/YT) & official menu prices for 24 restaurants + activities; Mob Museum hours & Bellagio Fountains re-check; 5 unopened hotel links check; generator & copy bug fixes; rebuild, PR & Pages deploy | in progress | arena/01ba2dd9-vegas1 | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `data/restaurants.json`, `data/activities.json`, `data/hotels.json`, `data/questions.json`, `data/suggestions.json`, `scripts/gen_site.py`, `docs/**`, root `*.html` | Claimed 2026-11-27 on branch `arena/01ba2dd9-vegas1`. |
 
 ## T14 verification / integration record — 2026-11-26
 
