@@ -10,17 +10,18 @@ A sourced trip plan for **two adults**, seven nights, between **15 February and 
 |------|-----------|
 | `docs/` | The site source (13 top-level pages, plain HTML + one stylesheet, no framework, no CDN) |
 | `index.html`, `*.html`, `style.css` (repo root) | The **same generated site**, written to the root as well. GitHub Pages on this repo is pinned to `main:/` and the API refuses to repoint it to `/docs`, so the root copy is what visitors actually get. Both are produced by `scripts/gen_site.py` — never edit either by hand. |
-| `data/restaurants.json` | 24 MICHELIN listings with award tier, hours, exceptions, prices, official + YouTube links |
-| `data/hotels.json` | 32 hotels with dated 7-night totals, bed/bathroom fit, Michelin proximity counts |
-| `data/price-windows.json` | Dated Booking.com comparison; read with official-engine snapshots and F-29/F-30 because no universal cheapest week is established |
-| `data/transit.json` | Monorail / RTC bus / Vegas Loop fares and the zone-to-restaurant minute matrix |
-| `data/activities.json` | Five activity entries with official details/social links when verified; blank social links remain unverified |
+| `data/restaurants.json` | 24 MICHELIN listings with award tier, hours, exceptions, 8 verified set-menu couple prices (à la carte blank per F-61), official + YouTube (24/24) + Instagram (21/24) + TikTok (2/24) links |
+| `data/hotels.json` | 32 hotels with official discovery URLs (all 32 checked: 21 live, 10 refused, 1 sibling, 0 unopened; decision prices/reachability blank per F-58/F-59) |
+| `data/price-windows.json` | Dated Booking.com comparison; read with official-engine snapshots and F-29/F-30/F-58 because no universal cheapest week is established |
+| `data/transit.json` | Monorail / RTC bus / Vegas Loop fares and historical zone-to-restaurant estimate matrix (superseded per F-59/F-60) |
+| `data/activities.json` | Six verified activity entries (including Fountains of Bellagio, F-18 resolved) with official details/social links when verified (6/6 YT, 5/6 IG, 3/6 TT); blank social links remain unverified (F-53) |
 | `data/questions.json` | 13-question register: answered, interpreted, still open — each with how to close it |
-| `data/suggestions.json` | 13 decision improvements with honest trade-offs |
+| `data/suggestions.json` | 16 decision improvements with honest trade-offs |
 | `scripts/build.py` | Recomputes the Michelin proximity counts from the transit matrix; runs integrity checks |
 | `scripts/gen_site.py` | Renders `docs/` from the JSON. All counts derived, none typed by hand |
 | `scripts/validate.py` | Link and structure checks for the built site |
-| `FLAGS.md` | 37 register rows (F-01 to F-30, F-39 to F-46, plus F-47 to F-53 from the 26–27 Nov re-checks), including hotel rate basis/recency limitations |
+| `scripts/check_evidence.py` | Offline strict-evidence display regression checks (32 hotel rows, blank unsupported cells, F-58–F-63, root/docs parity) |
+| `FLAGS.md` | 44 register rows (F-01 to F-30, F-47 to F-53, F-58 to F-64), plus F-39 to F-46 in `data/review-flags.json` |
 | `data/review-flags.json` | The 26 Nov 2026 audit register (F-39 to F-46) and confirmed items C-11 to C-13, each with source links. Rendered on `flagged.html` |
 | `executive-summary.md` | The one-page version |
 | `data/review.json` | Repo review: line-by-line checks, limits, and irregularities (2026-11-26) |

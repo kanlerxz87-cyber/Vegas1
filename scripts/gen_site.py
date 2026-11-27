@@ -271,10 +271,11 @@ def build_activities():
 </section>
 
 <section class="panel callout">
-  <h2>The one free thing</h2>
-  <p>The <strong>Fremont Street Experience</strong> runs live music on three stages every night under the canopy,
-  and entry is free. Put it on the same day as the Mob Museum and the Neon Museum — all three are downtown,
-  but travel times from each hotel remain unverified; do not assume a 25–30 minute journey.</p>
+  <h2>Two free highlights</h2>
+  <p>The <strong>Fountains of Bellagio</strong> (centre Strip, verified 27 Nov 2026: free shows every 15–30 minutes,
+  weather permitting) and the <strong>Fremont Street Experience</strong> (free live music on three stages every night
+  under the canopy) both cost $0. Put Fremont Street on the same day as the Mob Museum and the Neon Museum — all three
+  are downtown, though travel times from each hotel remain unverified; do not assume a 25–30 minute journey.</p>
 </section>
 """
     return page("activities.html", "Things to do",
@@ -362,7 +363,7 @@ def build_suggestions():
     n_sug = len(SUG["suggestions"])
     body = f"""
 <section class="panel">
-  <h2>{len(SUGGESTIONS_HEAD)}</h2>
+  <h2>{n_sug} ways to improve this plan</h2>
   <p>{n_sug} proposals, ranked by how much they change the outcome. <strong>{len(needs)} of them need a decision
   from you</strong> before the plan can be finalised — they are marked in the list. Nothing here was silently
   applied to the data.</p>
@@ -373,11 +374,8 @@ def build_suggestions():
 <div class="suglist">{''.join(cards)}</div>
 """
     return page("suggestions.html", "Suggestions",
-                f"{len(SUG['suggestions'])} decision improvements, ranked, each with its honest trade-off and whether it needs your call first.",
+                f"{n_sug} decision improvements, ranked, each with its honest trade-off and whether it needs your call first.",
                 body)
-
-
-SUGGESTIONS_HEAD = [f"{len(SUG['suggestions'])} ways to improve this plan"]
 
 
 # ---------------------------------------------------------------- sources
@@ -390,7 +388,7 @@ def build_sources():
         ("F-02", "Michael Mina", "Publishes seasonal block closures; no 2027 dates."),
         ("F-03", "Wing Lei", "Videos imply a star; the 2026 Guide lists it Recommended."),
         ("F-04", "KAME Omakase", "Own site is a JS shell; details from its OpenTable listing."),
-        ("F-05", "China Poblano", "The ≈$50 pp figure is Eater, not the venue."),
+        ("F-05", "China Poblano", "Resolved 27 Nov 2026: official menu publishes José's Way Tasting Menu at $60/pp ($120++ for two)."),
         ("F-07", "Esther's Kitchen, Yen Viet", "Hours not obtainable — left blank."),
         ("F-09", "Wynn / Encore", "Two totals because the fee/tax basis differs."),
         ("F-11", "LINQ, Flamingo, SAHARA, Golden Nugget, Horseshoe, Plaza", "Cheapest rates do not guarantee the bed."),
@@ -398,10 +396,11 @@ def build_sources():
         ("F-13", "Bellagio, Waldorf", "Totals across weeks are for different room classes."),
         ("F-15", "Bluegreen Club 36", "Queen bed stated; private bathroom not stated."),
         ("F-17", "14-night variant", "The brief allows two weeks; only seven nights were priced."),
-        ("F-18", "Bellagio Fountains", "Official page failed to load; schedule unverified."),
-        ("F-19", "Instagram / TikTok", "Handles not published; blank rather than guessed."),
-        ("F-39", "Hotel price basis", "The 32-hotel prices are Booking.com snapshots, not official property quotes; independent official-engine samples conflict on the cheapest week."),
+        ("F-18", "Bellagio Fountains", "Resolved 27 Nov 2026: official schedule verified live and promoted to activities.html."),
+        ("F-19", "Instagram / TikTok", "21/24 restaurants and 5/6 activities carry verified official Instagram; unverified cells stay blank (see F-53)."),
+        ("F-29", "Hotel price basis", "The 32-hotel prices are Booking.com snapshots, not official property quotes; independent official-engine samples conflict on the cheapest week."),
         ("F-30", "Official hotel rates, refreshed 26 Nov 2026", "Caesars Julius King $201/night and Wynn Cyber $677/night, each including resort fee before tax; Venetian returned $6,170.43 tax-included but labels suites as 4+ guests. Volatile; confirm exact total and occupancy."),
+        ("F-64", "é by José Andrés", "Official schedule conflict: Cosmopolitan says Tue–Sat while ebyjoseandres.com says Tue–Sun."),
     ]
     for fid, where, what in flags:
         flag_rows.append(f'<tr><td class="mono">{fid}</td><td>{e(where)}</td><td>{e(what)}</td></tr>')
@@ -426,13 +425,8 @@ def build_sources():
         ("RTC Transit — fares and passes", "https://www.rtcsnv.com/ways-to-travel/fares-passes/"),
         ("Boring Company — Vegas Loop", "https://www.boringcompany.com/projects/las-vegas-loop"),
     ])
-    groups.setdefault("Activities — official pages", []).extend([
-        ("Sphere", "https://www.thesphere.com/"),
-        ("High Roller", "https://www.caesars.com/linq/things-to-do/attractions/high-roller"),
-        ("The Mob Museum", "https://themobmuseum.org/"),
-        ("The Neon Museum", "https://neonmuseum.org/"),
-        ("Fremont Street Experience", "https://www.fremontstreetexperience.com/"),
-    ])
+    for a in ACT["activities"]:
+        groups.setdefault("Activities — official pages", []).append((a["name"], a["official_url"]))
     groups.setdefault("Pricing", []).extend([
         ("Booking.com — Las Vegas, 5★ resorts, 15–22 Feb 2027", "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price"),
         ("Booking.com — same search, 8–15 Mar 2027", "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-03-08&checkout=2027-03-15&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price"),
@@ -503,6 +497,7 @@ FLAG_CHECK_EXTRA = {
     "F-61": ("Guy Savoy official menu", "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"),
     "F-62": ("Mob Museum current hours", "https://themobmuseum.org/"),
     "F-63": ("High Roller official conflicting time blocks", "https://www.caesars.com/linq/things-to-do/attractions/high-roller"),
+    "F-64": ("é by José Andrés official brand site (states Tue–Sun)", "https://www.ebyjoseandres.com/"),
     "F-10": ("Booking.com dated search used for every rate",
              "https://www.booking.com/hotel/us/the-linq-and-casino.html?checkin=2027-02-15"
              "&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"),
@@ -628,8 +623,8 @@ def build_flagged():
   <h2>Data flags — {len(fl)} rows in the register</h2>
   <p>The full register, with the reasoning for each, is in <code>FLAGS.md</code>. Each row is generated from that
   file, is addressable as <code>flagged.html#F-nn</code>, and names the official page to check it against. F-01 to
-  F-30 and F-47 to F-49 are rows of that register; F-39 to F-46 are the audit rows above, kept in
-  <code>data/review-flags.json</code>. F-31 to F-38 were never used, so the numbering is not contiguous.</p>
+  F-30, F-47 to F-53, and F-58 to {e(fl[-1][0])} are rows of that register; F-39 to F-46 are the audit rows above, kept in
+  <code>data/review-flags.json</code>. F-31 to F-38 and F-54 to F-57 were never used, so the numbering is not contiguous.</p>
   <div class="scroll"><table class="data">
   <thead><tr><th>ID</th><th>Where</th><th>What</th><th>Effect on the plan</th><th>Check it here</th></tr></thead>
   <tbody>{f_rows}</tbody>
@@ -665,17 +660,19 @@ def build_repo_review():
     h_same = sum(1 for x in H if x.get("michelin_within_60") == N_TOTAL)
     counts = [
         ("Michelin rows (restaurants)", N_TOTAL, "all listed with a 2026 tier"),
-        ("Restaurants with no couple price", n_price, "blank — not verified"),
-        ("Restaurants with no hours recorded", n_hours, "blank — not verified"),
+        ("Restaurants with verified set-menu couple price", N_TOTAL - n_price, "published tasting/omakase/for-2 totals; à la carte kept blank (F-61)"),
+        ("Restaurants with no couple price", n_price, "blank — no fixed couple total published officially"),
+        ("Restaurants with no clock hours recorded", n_hours, "blank — not verified"),
         ("Restaurant rows marked verified = yes", n_ver, "the label describes the listing, see R-01"),
-        ("Restaurants with an Instagram link", n_ig, "verified 2026-11-27 from official/primary sources; blanks remain unverified (F-19, F-53)"),
-        ("Restaurants with a TikTok link", n_tt, "only 2 verified 2026-11-27; blanks remain unverified (F-19, F-53)"),
-        ("Restaurants with at least one YouTube link", n_yt, "recorded, not opened this session"),
-        ("Hotels (rows)", len(H), "32 properties"),
-        ("Hotels whose official page is confirmed live", h_off_yes, "fetched 25–26 Nov 2026"),
-        ("Hotels whose official page is not confirmed", h_off_no, "refused automated access, or not opened"),
+        ("Restaurants with an Instagram link", n_ig, f"{n_ig} of {N_TOTAL} verified 2026-11-27 from official/primary sources; blanks remain unverified (F-19, F-53)"),
+        ("Restaurants with a TikTok link", n_tt, f"only {n_tt} official accounts verified 2026-11-27; blanks remain unverified (F-19, F-53)"),
+        ("Restaurants with at least one YouTube link", n_yt, f"{n_yt} of {N_TOTAL} recorded"),
+        ("Verified activities", len(ACT["activities"]), "including Fountains of Bellagio (F-18 resolved 2026-11-27)"),
+        ("Hotels (rows)", len(H), f"{len(H)} properties"),
+        ("Hotels whose official page is confirmed live", h_off_yes, "fetched 25–27 Nov 2026"),
+        ("Hotels whose official page is not confirmed", h_off_no, "refused automated access or sibling redirect (0 unopened; see F-49)"),
         ("Hotel rows marked verified = yes", h_ver_yes, "label reflects the search snapshot, see R-03"),
-        ("Hotels where Michelin within 60 min = all 24", h_same, "the literal metric cannot rank, see R-04"),
+        ("Hotels where Michelin within 60 min = all 24", h_same, "the literal metric cannot rank, see R-04 / F-59"),
     ]
     count_rows = "".join(
         f'<tr><td>{e(a)}</td><td class="num">{b}</td><td>{e(c)}</td></tr>' for a, b, c in counts
