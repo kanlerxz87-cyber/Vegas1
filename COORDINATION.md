@@ -509,3 +509,46 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 subsites, and PR #27 (`arena/c9eed9ad-vegas1`, still open and CONFLICTING — deliberately not touched).
 
 **Status:** `in progress`.
+
+### T17 progress — 2026-11-27 (part 2: activities pass complete, rate capture, itinerary)
+
+**Activities verification pass — COMPLETE and committed (`b0d1fe0`).**
+All six activity rows were re-read from their official pages on 2026-11-27 and now carry
+`hours_source`, `price_source`, `instagram` and `checked`. Mob Museum Thursday hours were corrected
+(9–9, not 9–4 — F-56). **Bellagio Fountains** was added as a sixth activity, which closes **F-18**.
+F-57 opened (High Roller's own Instagram is dormant; @thelinq posts for the wheel). Q-10 appended.
+Instagram verified for 4 of 6 activities; Bellagio Fountains publishes none on its official page, so
+that cell stays blank rather than pointing at a fan account.
+
+**Official booking-engine rate capture — `data/official-rates.json` (`af4ae51`).**
+The canonical 32-hotel table is a Booking.com snapshot (F-29), which does not satisfy the brief's
+"official verified pricing". Three properties' **own engines** were read on 2026-11-27 for the
+preferred window (15–22 Feb 2027, 2 adults, 1 room):
+
+| Property | Room | Nightly | 7 nights | Basis |
+|---|---|---|---|---|
+| Caesars Palace | Julius Deluxe, 1 King | $214 | $1,498 before tax | incl. $55 resort fee, excl. tax |
+| Wynn Las Vegas | Wynn Resort King | $833 ($677 Cyber offer) | $5,831 ($4,739) before tax | incl. resort fee, excl. tax |
+| Resorts World (Hilton) | Deluxe, 1 King | $277.21 | **$2,200.15 all-in** | incl. room tax + resort fees + fee tax |
+
+Only Resorts World printed an all-in checkout figure; the other two are pre-tax and the page says so
+per row. Three engines refused automated access (Venetian, Treasure Island, Sahara) — recorded as
+dead ends, not as blanks implying unavailability. Caesars Palace is also the base for the new
+itinerary, so its rate double-serves as the plan's cost.
+
+**New Itinerary page (`c064b23`, `a6754f9`).** The brief asked for a designed 1–2 week vacation; the
+site had tables but no plan. `itinerary.html` builds a 7-night day-by-day schedule from the verified
+data only: every dinner slot is tested against the venue's own published `days` (Robuchon Tue–Sat, é
+Tue–Sat, SoulBelly Tue–Sun, Partage Tue–Sat), venues that publish no hours render as
+**"hours unknown"** rather than being assumed open, and every venue's one-way transit estimate is
+printed with a 1-hour compliance table. A self-correction is recorded: Day 7 originally claimed
+Esther's Kitchen "serves dinner seven days a week and is the cheapest", which its own data does not
+support — replaced with SoulBelly BBQ ($80 for two, published Sunday hours).
+
+**Site-improvement list — `W-01`…`W-10` (`7dfbf7a`).** The Suggestions page previously held only trip
+advice. Ten proposals about the site itself are now listed separately with work, risk and a
+"needs your decision" column, because the brief asks for improvements to be reviewable **before**
+implementation. `W-09` (derive counts at build time instead of typing them in prose) is marked
+partly implemented — it is exactly the class of bug found twice in this session.
+
+**Build state:** 14 pages · 0 failures · 0 warnings · 467 external links.
