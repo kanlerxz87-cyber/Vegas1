@@ -807,3 +807,19 @@ Monorail line. This is recorded rather than quietly patched: a live-page read fo
 then #45/#46/#48). Every merge was resolved by regenerating HTML rather than hand-merging it, and no other
 session's data was reverted. The one deliberate reversal of an earlier decision — reinstating a *labelled estimate*
 for Guy Savoy — is recorded as F-64 with its source and keeps the $3,000 Krug figure withdrawn.
+### T17 addendum — video-link verification (arena/a00dc828-vegas1, 2026-11-27)
+
+<<<<<<< HEAD
+- Resolved **every published activity video ID** through YouTube's **oEmbed** endpoint (returns live title + channel). One ID carried in the data from an earlier capture — Fremont `Tls27qeAPaw` — **did not resolve** and was replaced with `KDARquYGk_M`, a video on the venue's own channel (`@vegasfremontstreet`). Logged as **F-67**.
+- Added verified creator videos alongside the venue channel for Sphere and the Mob Museum (each ID returned a live title + channel). The brief asks for **as many** verified video links as possible, so these are additive; they are labelled creator media and never used as evidence for hours, prices or awards.
+- Spot-checked starred-restaurant videos via oEmbed (Joël Robuchon, L'Atelier, Guy Savoy, é by José Andrés) — live and on-topic. One L'Atelier video titles the restaurant "3 Michelin-starred" against the Guide's 1 star; recorded in F-67 rather than copied.
+- **Method limit:** `scripts/validate.py` makes **no HTTP requests**; a green build proves structure only. The oEmbed pass is what proves video links are live.
+- **Irregularity observed, not fixed here (needs the owning session):** `FLAGS.md` on `main` currently contains **duplicate register rows** — F-52, F-53, F-54, F-55, F-56 and F-57 each appear twice (two different merge trains appended the same IDs). Rows were left untouched; deduplicating means deciding which wording survives, which belongs to the flags owner. Request: dedupe before the register is treated as stable.
+- Concurrency: this branch was rebased onto `main` repeatedly while open (PRs #40–#53 merged by other sessions). Conflicts were confined to this file, the flag register and generated pages; nothing from another session was dropped.
+=======
+- Resolved **every published activity video ID** through YouTube's **oEmbed** endpoint (returns live title + channel). One ID carried in the data from an earlier capture — Fremont `Tls27qeAPaw` — **did not resolve** and was replaced with `KDARquYGk_M`, a video on the venue's own channel (`@vegasfremontstreet`). Logged as **F-67** (F-54–F-66 were assigned by other sessions while this branch was open).
+- Added verified creator videos alongside the venue channel for Sphere and the Mob Museum (each ID returned a live title + channel from oEmbed). The brief asks for **as many** video links as can be verified, so these are additive; they are labelled creator media and are never used as evidence for hours, prices or awards.
+- Spot-checked starred-restaurant videos via oEmbed (Joël Robuchon, L'Atelier, Guy Savoy, é by José Andrés) — all live and on-topic. One L'Atelier video titles the restaurant "3 Michelin-starred" against the Guide's 1 star; recorded in F-67 rather than copied.
+- **Method limit:** `scripts/validate.py` makes **no HTTP requests**, so a green build proves structure only. The oEmbed pass (and page fetches) is what proves a link is live.
+- Concurrency: this branch was rebased onto `main` repeatedly while it was open (PRs #39, #43, #47 pending, #40–#52 merged by other sessions). Conflicts were confined to `COORDINATION.md`, `FLAGS.md` row IDs and generated pages; nothing from another session was dropped.
+>>>>>>> 408a5b3 (T17: reset COORDINATION record to main plus one addendum (no duplicated history))
