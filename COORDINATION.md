@@ -470,7 +470,7 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 
 | ID | Task | Status | Owner | File scope | Notes |
 |---|---|---|---|---|---|
-| T16 | Integration audit: validate current site, examine decision-critical unverified claims, correct/flag issues, publish if safe | in progress | arena/16cb2f96-vegas1 | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `data/*.json`, `scripts/*.py`, generated root and `docs/` pages | Current Arena branch is fixed; acting as integration session. Prior tasks are done or needs review. Will preserve other work. |
+| T16 | Integration audit: validate current site, examine decision-critical unverified claims, correct/flag issues, publish if safe | needs review | arena/16cb2f96-vegas1 | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `data/*.json`, `scripts/*.py`, generated root and `docs/` pages | Current Arena branch is fixed; acting as integration session. Prior tasks are done or needs review. Will preserve other work. |
 
 ### T16 findings and verification — 2026-11-27
 
@@ -480,3 +480,5 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 - Re-fetched [RTC fares](https://www.rtcsnv.com/ways-to-travel/fares-passes/): $1 residential single is reduced fare, $2 is regular; corrected ambiguous wording.
 - Build and validator passed; validator checks local HTML links and cross-page anchors, not live external links or factual accuracy. This was a targeted audit, **not** a line-by-line re-verification of every historic entry. Official hotel quotes, complete bus itineraries, live social links, 14-night pricing and other gaps remain flagged; historical evidence is not a substitute for re-quoting.
 - Task status: **needs review**. Prior archived datasets retain historical claims and are not re-verified by this session. Site is useful research, not a fully verified booking recommendation.
+
+- PR [#38](https://github.com/kanlerxz87-cyber/Vegas1/pull/38) opened. **Not merged**: the requested comprehensive line-by-line combined-data verification and external-link check have not been completed; the merge preconditions therefore have not been met. The existing main-branch Pages site remains deployed, but it does not yet include this PR’s corrections.
