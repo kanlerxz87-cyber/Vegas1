@@ -10,7 +10,7 @@ then commit and push that claim immediately.
 
 | Session | Started | Scope now | Branch |
 |---------|---------|-----------|--------|
-| arena/f6104931-vegas1 | 2026-11-27 | T17 — repo review + restaurant price re-read (7 venues) + Trip cost page + integration | `arena/f6104931-vegas1` |
+| arena/bc27fca6-vegas1 | 2026-11-27 | T17 — independent line-by-line verification audit of the published site against official sources; writes `COORDINATION.md` + `notes/verification-2026-11-27.md` only | `arena/bc27fca6-vegas1` |
 | arena/71886f12-vegas1 | 2026-11-26 | T14 — completed activity social-link visibility and executive-summary cleanup after the merged T13 rate audit | `arena/71886f12-vegas1` |
 | arena/c419e2da-vegas1 | 2026-11-26 | T13 — post-merge hotel-rate claim audit; reconcile OTA/direct source conflict, refresh official booking engines, preserve PR #22 repo-review pages | `arena/c419e2da-vegas1` |
 | arena-edcfa7a0-vegas1 | 2026-11-25 | T02–T11 — research complete; writing `data/*.json`, building `docs/`, publishing | `arena/edcfa7a0-vegas1` |
@@ -49,7 +49,6 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 
 | ID | Task | Status | Owner (session ID) | File scope | Notes |
 |----|------|--------|--------------------|-----------|-------|
-| T17 | Repository review, restaurant cost-for-two (Q-04) and social-profile (Q-07) work, Trip cost page; integration + Pages republish | done | arena/f6104931-vegas1 | `COORDINATION.md`, `FLAGS.md`, `data/restaurants.json`, `data/questions.json`, `scripts/gen_site.py`, generated `docs/**` + root `*.html` | Done 2026-11-27 on `main` @ `631e611`. PR #44. Did not touch the conflicting open PRs #27 / #38. 17 line-by-line checks (C-11…C-17 added), 3 new flags (F-52…F-54), 1 new page (`costs.html`). |
 | T01 | Repo inventory + founding constraints | done | arena-edcfa7a0-vegas1 | `COORDINATION.md`, `docs/` | Repo was empty (README only) at commit `9b8bcfa`. GitHub Pages already enabled from `main` root. Bash sandbox has no general internet; all verification is via `fetch_page` / `web_search`. |
 | T02 | Michelin 2026 Southwest selection — star/list status per Las Vegas restaurant | done | arena-edcfa7a0-vegas1 | `data/restaurants.json` | Source: official Michelin press release + LVCVA (visitlasvegas.com). Re-confirmed 2026-11-26 by arena-ca2c6c85-vegas1 (4★/2★ Robuchon; 1★ é, Guy Savoy, L'Atelier; 3 Bib; 17 Recommended; 0 three-star). |
 | T03 | Restaurant hours, days open, reservations, price per couple | done | arena-edcfa7a0-vegas1 | `data/restaurants.json` | Gaps left blank + flagged. Re-confirmed 2026-11-26: Robuchon, Guy Savoy, é, Partage hours on official pages; Guy Savoy price cell filled from official menu (Q-04 updated). |
@@ -69,6 +68,8 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 | T12 | Repo review (line-by-line spot verification of canonical data), root **Flagged for Review** + **Repo review** pages, integration + Pages redeploy | done | arena-939a824e-vegas1 (branch `arena/939a824e-vegas1`) | `COORDINATION.md`, `FLAGS.md`, `README.md`, `scripts/gen_site.py`, `data/review.json`, `data/questions.json`, `data/suggestions.json`, `executive-summary.md`, generated `docs/**` and root `*.html` | Done 2026-11-26. 10 line-by-line checks (C-01…C-10), 18 irregularities (R-01…R-18) recorded in `data/review.json` and published on the Flagged for Review page. Hotel prices, social links and hotel official URLs were NOT re-checked (see limits). |
 | R01 | Repo review: live-site spot-check, link audit, irregularity register | done | arena-b54b3346-vegas1 | `notes/repo-review-2026-11-26.md`, `COORDINATION.md` | Done 2026-11-26. Live site, `data/`, `docs/`, root pages NOT edited. Irregularities F-01–F-07 flagged for owner review. Sources: michelin.com 2026 Southwest press release; GitHub Pages API; build/validate logs. RTC fares fetch failed (F-04). |
 | T14 | Repo review, line-by-line audit of headline claims, Flagged-for-Review page, integration + PR | done | arena-f527b427-vegas1 | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `data/hotels.json`, `data/price-windows.json`, `data/questions.json`, `data/suggestions.json`, `data/transit.json`, `data/travel_matrix.json`, `data/restaurants.json`, `data/review-flags.json` (new), `scripts/gen_site.py`, `docs/**`, root `*.html` | Claimed 2026-11-26 under the ID T12 in commit `3fc6739`; renamed T14 at integration because T12 was already used by arena-939a824e-vegas1 (merged PR #21, #22); T13 is used by arena-c419e2da-vegas1. Overlapping files were integrated by merge, not edited in parallel. Other sessions: please log requests here rather than editing these files. |
+| T17 | Independent line-by-line verification audit of the live site against official sources (no data/site edits) | done | arena/bc27fca6-vegas1 | `COORDINATION.md`, `notes/verification-2026-11-27.md` | Done 2026-11-27. 8 checks in `notes/verification-2026-11-27.md` (V-01…V-08): MICHELIN tiers, RTC fares, Monorail fares, Michael Mina closure + $295++, Vanderpump rebrand, live page render, Pages status all confirmed against official pages. One irregularity logged, not edited (owned by PR #38 session): `data/transit.json` RTC fare note says "Nevada local fares are $1" but RTC residential single is $2 regular/$1 reduced; $1 is the Monorail Nevada-resident fare. Rebuild produced byte-identical output (0 drift), so no redeploy needed. |
+| T19 | Restaurant menu re-read: cost-for-two completion (Q-04), dining budget page, evidence-gate-compatible integration | done | arena/f6104931-vegas1 | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `data/restaurants.json`, `data/questions.json`, `data/review.json`, `scripts/{gen_site,check_evidence}.py`, generated `docs/**` + root `*.html` | Claimed as T17 on 2026-11-27; renumbered **T19** at integration because T17/T18 were taken by concurrent sessions. PR #44. Adds F-64–F-66, C-11–C-17, `dining.html`. No hotel price is used anywhere on the new page. |
 
 ## T14 verification / integration record — 2026-11-26
 
@@ -484,44 +485,129 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 
 **Result:** T16 done. [PR #36](https://github.com/kanlerxz87-cyber/Vegas1/pull/36) merged 2026-11-27T17:31:08Z (merge commit `cc78807`); Pages build `1409320765` status `built`, Pages API `built` at https://kanlerxz87-cyber.github.io/Vegas1/.
 
-## Session record — arena/f6104931-vegas1 (T17) — 2026-11-27
+## Session record — arena/bc27fca6-vegas1 (T17) — 2026-11-27
 
-**Scope claimed:** `COORDINATION.md`, `FLAGS.md`, `data/restaurants.json`, `data/questions.json`, `data/review.json`,
-`scripts/gen_site.py`, generated `docs/**` + root `*.html`, `README.md`, `executive-summary.md`.
+**Scope claimed:** `COORDINATION.md` + `notes/verification-2026-11-27.md` only. No `data/*.json`, generator, or generated site files edited — PR #27 and PR #38 from other sessions own those files; any canonical-data fix found here is logged as a Request below instead of edited. This is an independent line-by-line verification audit of the live site against official sources.
 
-**Why this task:** Q-04 (what dinner for two costs) and Q-07 (social links) were still open, and the restaurant
-price column was visibly inconsistent with the page's own summary. Re-reading the venues' menus was the only way
-to close any of it without guessing.
+**Verification performed (2026-11-27):** rebuilt locally (`build.py` + `gen_site.py` + `validate.py` → 13 pages, 0 failures, 0 warnings, 394 external links; clean `git status` after rebuild). Fetched live Overview/Hotels/Restaurants/Activities/Questions pages and official sources: MICHELIN press release (michelin.com + michelinmedia.com) confirms 4★/3 Bib/17 Recommended LV split; RTC fares $4/$6/$8/$20 confirmed on rtcsnv.com; Monorail fares ($6.25/$5.75, $15.50/$13.95, …) confirmed on lvmonorail.com; Michael Mina "Temporarily closed" + $295++ pp confirmed on Bellagio page; Vanderpump rebrand confirmed on caesars.com. Full line-by-line table in `notes/verification-2026-11-27.md` (V-01…V-08).
 
-**Line-by-line verification performed (2026-11-27, `fetch_page` against the venue's own page):**
+**Irregularity found (V-08, not edited — owned by PR #38 session):** `data/transit.json` RTC `fare_note` says "Nevada local fares are $1", but RTC residential single ride is $2 regular / $1 reduced (rtcsnv.com); $1 is the Monorail Nevada-resident fare. Request: correct the RTC note and move the $1 fare to the Monorail entry. No other new irregularities; F-29/F-30/F-47/F-48/F-49 remain published on flagged.html and do not block anything.
 
-| Check | Item | Result | Source |
-|-------|------|--------|--------|
-| C-11 | Guy Savoy à-la-carte prices are **per person**; no Krug Chef's Table price is printed | **Corrected** — cell was showing a per-person range under "cost for 2 adults"; $3,000 figure removed (F-52) | https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu |
-| C-12 | Partage 5/7/Signature tasting \$130/\$160/\$210 per person | Gap closed — \$260/\$320/\$420 for two | https://partage.vegas/menu |
-| C-13 | Wing Lei Chef Tam's tasting \$198.88 per person | Gap closed — \$397.76 for two | https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf |
-| C-14 | Anima by EDO tasting \$85 per person; Monday special is \$65 **total** | Corrected (F-54) | https://animabyedo.com |
-| C-15 | Esther's Kitchen: dinner seven days a week; lunch Mon–Fri; brunch Sat–Sun; no clock times published | Gap closed (days only), hours stay blank | https://www.estherslv.com/menus/ |
-| C-16 | Michael Mina still "Temporarily closed", \$295++ per person | Confirmed (F-23 stands) | https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html |
-| C-17 | SoulBelly BBQ Instagram is linked from its own site | Gap partly closed (1 of 24) | https://soulbellybbq.com |
+**Result:** T17 done. Audit published in `notes/verification-2026-11-27.md`; no site or data files changed, so no Pages redeploy needed.
 
-Also re-read and matched without change: Lamaii hours (Mon–Wed 11:00–00:00, Thu–Sun 11:00–02:00) and SoulBelly hours
-(Tue–Thu 11–9, Fri–Sat 11–10, Sun 11–9); Joël Robuchon (Tue–Sat 5:00–9:30, closed Sun/Mon), é by José Andrés
-(Tue–Sat 5:30–8:30, closed Sun/Mon) and Wing Lei hours all still match the stored rows.
+## Session record — arena/a00dc828-vegas1 (T17) — 2026-11-27
 
-**What was added:** `costs.html` — three seven-night totals for two adults assembled at build time from
-`data/` only — Value \$1,837.30, Recommended \$2,605.06, Splurge \$4,927.06 — with every excluded cost
-(tax, resort fees, airfare, tips, wine) named beside the total. `data/review.json` now carries C-11…C-17;
-`FLAGS.md` carries F-52 (price basis), F-53 (7 of 24 venues publish a price) and F-54 (three row corrections).
+**Scope claimed:** `COORDINATION.md`, `data/activities.json`, `data/restaurants.json` (social-link fields + verification notes only), `FLAGS.md` (new rows if needed), `scripts/gen_site.py` (only if rendering needs it), generated `docs/**` + root `*.html`. No hotel-price, transit-minute, or award-tier changes without a fresh official source.
 
-**What was deliberately not done:** no price was invented for the 17 venues that publish none; no Instagram or
-TikTok handle was guessed (only SoulBelly's own linked profile was added); the \$3,000 Krug figure was removed
-rather than re-sourced; no universal cheapest-week claim was re-introduced (Q-06 stays open).
+**Task T17:** Complete YouTube/Instagram/TikTok coverage for every restaurant + activity row from official/primary sources (official-site-published handles; real video URLs found via search and opened), retry Bellagio Fountains official page, fresh 2026-11-27 re-verification of MICHELIN tiers + starred hours, rebuild + validate, PR + merge + Pages deploy check.
 
-**Build / QA:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py`
-→ **14 pages · 0 failures · 0 warnings · 439 external links**; root and `docs/` byte-identical; `git diff --check` clean.
-Cost-page arithmetic re-checked by hand against the stored menu prices before commit.
+**Overlap note:** Open PRs #27 (`arena/c9eed9ad-vegas1`) and #38 (`arena/16cb2f96-vegas1`) also touch `data/restaurants.json` / `data/activities.json` / `scripts/gen_site.py`. They are stale/open with no active board claim. This session works on `arena/a00dc828-vegas1` from `main@631e611`; will `git pull --rebase` before push and resolve without discarding other work. No other session's branch will be merged or closed by this session.
 
-**Irregularities found and published:** F-52, F-53, F-54 (none blocking; all on `flagged.html` with sources).
+## Session record — arena/a00dc828-vegas1 (T17) — verification + results — 2026-11-27
+
+**Verification performed (2026-11-27, official/primary sources only):**
+- MICHELIN tiers re-confirmed on michelin.com press release (31 Aug 2026): 2★ Joël Robuchon; 1★ é, Guy Savoy, L'Atelier (+ Monte UT, correctly excluded); Bib China Poblano, Esther's Kitchen, YEN Viet Kitchen; 17 LV Recommended — matches `data/restaurants.json` (4/3/17). No tier change.
+- Mob Museum hours CORRECTED (F-52): themobmuseum.org homepage table now Daily 9–9 (was Thu 9–4 in dataset). Underground unchanged. `data/activities.json` updated.
+- High Roller re-verified on caesars.com (Opens 12:30PM; $23.50/$34.75/$60 + fees; 30-min rotation) — matches dataset.
+- Neon Museum re-verified on neonmuseum.org (Sep–May 3–11PM; 2027 Admission from $21; footer IG/TT match dataset) — matches.
+- Guy Savoy "Opens 5:00 PM" on caesars.com — consistent with dataset "Dinner from 5:00 PM".
+- Bellagio Fountains official page fetch FAILED again (3rd attempt) — stays in `not_verified`, F-18 unchanged.
+- Social sweep (web_search + official/press sources): Restaurants IG 0→19/24, TT 0→2/24 (Lamaii, Esther's). Activities: YT 0→15 videos (3 each), IG 1→5/5, TT 1→3/5. Blanks left blank per no-inference rule (F-53). Ping Pang Pong @pingpongthaivegas deliberately NOT used (different Thai venue).
+- Build: `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py` → 13 pages · 0 failures · 0 warnings · 436 external links (was 394). `scripts/gen_site.py` IG/TT count labels fixed (were hardcoded "none recorded").
+- README/executive-summary counts updated (37 FLAGS rows, 436 links).
+
+**Irregularities:** F-52 (Mob Thu hours, corrected), F-53 (TikTok coverage gap, blanks flagged). All prior flags (F-29/F-30 rate basis, F-47 Vanderpump, F-48 search-list prices) unchanged and non-blocking.
+
+**Overlap:** Open PRs #27/#38 touch same data files but have no active board claim; this branch rebased on `main@631e611` before push. No other branch merged/closed by this session.
+
+## T18 — strict evidence display gate — arena/e6eed606-vegas1 — 2026-11-27
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| T18: audit inherited evidence; suppress unofficial hotel quote values and inferred transit scores from decision tables; add reproducible evidence checks; integrate and publish | in progress | arena/e6eed606-vegas1 | `COORDINATION.md`, `scripts/gen_site.py`, `scripts/validate.py`, `scripts/check_evidence.py`, `FLAGS.md`, `notes/audit-2026-11-27.md`, `executive-summary.md`, `README.md`, generated root/`docs/` HTML |
+
+All preceding claims are done or older than 60 minutes; no active uncompleted claim found. This session is final integration for T18 only. Existing raw datasets and independent archives are preserved. Arena requires the current branch `arena/e6eed606-vegas1`; no alternate branch/worktree will be created. Official-source fetches and limitations will be recorded below. A source URL alone is not proof of a dated price or an end-to-end travel time.
+
+T18 scope extension (no other active claim): `data/activities.json` for the freshly confirmed Mob Museum weekly-hours correction and High Roller schedule conflict, plus `data/restaurants.json` only if an official menu correction is necessary. Initial pull of this previously unpublished branch returned "remote ref not found"; pulled/rebased `origin/main` instead, then pushed the claim successfully. No conflicts.
+
+T18 regression check exposed an empty official URL for Cliffs at Peace Canyon. Scope extended to that single `data/hotels.json` URL/status entry (no raw prices/model fields changed). Discovered and fetched official Vacation Village directions page successfully; now all 32 hotel candidate rows have official discovery links. No hotel room/rate facts inferred from it.
+
+### T18 completion / integration — 2026-11-27
+
+**Status: done (published evidence corrections); missing research: needs review.** Fresh sources and exact limitations are in `notes/audit-2026-11-27.md`. F-58–F-63 are rendered on Flagged for Review with official links. All 32 canonical hotel decision rows now suppress unofficial amounts, unconfirmed room qualification and inferred bus scores; original OTA/model records and archives preserved. No claim of complete live external verification or booking readiness. New regression test found an actual empty official hotel link; corrected from fetched Vacation Village official page. Mob Museum weekly hours corrected, High Roller conflicting hours blank, Guy Savoy incomplete meal/unsupported Krug total blank. MICHELIN's 24 Las Vegas names/tiers checked against official announcement chunks 0 and 1. RTC visitor fare totals explicitly arithmetic for two adults.
+
+**Checks:** `python3 scripts/gen_site.py && python3 scripts/validate.py && python3 scripts/check_evidence.py`; Python compile and `git diff --check` pass. 13 canonical pages, 0 local failures, 0 warnings; root/docs synchronized. 351 external link occurrences are counted, NOT certified live. No CI configured; no complete external broken-link guarantee. No reservations or payments made. No claim from another active session overwritten. No merge conflicts.
+
+
+### T18 integration conflict resolution
+PR #41 initially could not merge because main advanced through PRs #36–#40 during this session. Stopped publication, fetched and merged main on the current branch. Preserved all upstream social-link additions, independent audit notes, new flags F-52/F-53 and their session records. Reapplied only our source-backed field corrections over upstream JSON. Renamed this session T16 → T18 and its flags F-52–F-57 → F-58–F-63 to avoid collisions. All generated HTML regenerated from merged sources, not hand-resolved. Earlier "no conflicts" statement describes pre-integration only; this paragraph is the current conflict record. No upstream work discarded.
+
+Post-integration checks repeated: 13 pages, zero local failures/warnings, 393 external link occurrences counted (not liveness-certified); evidence regression passes. Programmatic comparison confirms every upstream restaurant/activity YouTube/Instagram/TikTok field preserved exactly. New review IDs are F-58–F-63; main's F-52/F-53 retained unchanged. T18 current status: done, pending publication confirmation.
+
+Push preparation note: plain `git pull --rebase` after the integration merge attempted to flatten upstream's merge history and conflicted in the coordination log. Aborted immediately; no work discarded. Retrying with `--rebase=merges` to preserve the integration graph.
+
+### T18 PR and deployment result
+
+- [PR #41](https://github.com/kanlerxz87-cyber/Vegas1/pull/41) **MERGED** 2026-11-27T17:35:42Z with explicit `gh pr merge 41 --merge`; merge commit `ad6075a7afa620d8421897e47c7fca68bd09c34e`.
+- GitHub Pages build for that exact merge reached **built**, error message null. Live root: <https://kanlerxz87-cyber.github.io/Vegas1/>.
+- Fetched live overview with cache-busting query `?audit=ad6075a`: confirmed new executive summary, four official-linked starred rows, no OTA lowest-price headline, F-58–F-63 precedence notice and explicit missing official-price/route evidence. Initial fetch while Pages was building returned old content; waited for exact commit's successful build and re-fetched before reporting live.
+- Publication successful. Research remains explicitly not booking-ready; missing official quotes/itineraries and untested external URLs are disclosed. This log-only follow-up does not alter site output.
+
+## PR record — T17 social-link completion (arena/a00dc828-vegas1)
+
+- **PR #39** — "T17: Complete social links, fix Mob Museum hours, fresh verification" → **MERGED** 2026-11-27T17:34:44Z, merge commit `85fbe31`.
+- Rebase conflict with `arena/bc27fca6-vegas1`'s PR #40 (both appended session records to this file) resolved by keeping **both** records; no work discarded.
+- Pages build for `85fbe31` reached `built`; a later session merged PR #41 (`ad6075a`) on top, and `data/activities.json` / `data/restaurants.json` on `main` still carry this session's links (verified: restaurants IG 19/24, TT 2/24, YT 24/24; activities YT 15 URLs, IG 5/5, TT 3/5; Mob Museum daily 9–9).
+- Live-page caveat: immediately after the merge `https://kanlerxz87-cyber.github.io/Vegas1/activities.html` still served the pre-merge HTML while the Pages API already reported `built` — GitHub Pages CDN caching, not a build failure. The committed `activities.html` on `main` contains the new YouTube/Instagram links, so the page updates once the cache refreshes.
+- Open PR #38 (`arena/16cb2f96-vegas1`) and #27 (`arena/c9eed9ad-vegas1`) were **not** merged or closed by this session.
+
+## Session record — arena/f6104931-vegas1 (T19) — 2026-11-27
+
+**Task number:** claimed as **T17** at 17:33Z; during integration `main` had already used T17 (twice) and T18, so the
+board row here is **T19**. Flag IDs were re-allocated from F-52–F-54 to **F-64–F-66** for the same reason.
+
+**Merge conflict — how it was resolved (no work discarded).** While this branch was open, `main` advanced through
+PRs #39–#43. `git merge origin/main` conflicted in 30+ files. Resolution:
+
+- Every **generated** page (`*.html`, `docs/*.html`) was taken from `main` and then **regenerated** by
+  `scripts/gen_site.py`; no generated HTML was hand-merged.
+- `scripts/gen_site.py` was taken from `main` and this session's three additions re-applied on top: the
+  `dining.html` builder, the nav entry, and the priced-cell basis/source rendering.
+- All upstream data was kept: the 19 restaurant Instagram links, 2 TikTok links, the Mob Museum/High Roller
+  corrections, the hotel evidence gate, F-52/F-53 and F-58–F-63, and both audit notes.
+- **Adopted upstream's evidence gate.** The page originally built here totalled *hotel + dining* from Booking.com
+  snapshots. Since `main` now suppresses unofficial hotel totals (F-58/F-59), publishing that page would have
+  re-introduced exactly what the gate removed. It was rebuilt as `dining.html` — food, activities and transport
+  only — and it states on the page that the room is excluded and why. `scripts/check_evidence.py` asserts the page
+  contains no hotel figure.
+- Guy Savoy is the one deliberate reversal of an upstream decision, recorded and justified rather than silent:
+  F-61 blanked the cell; F-64 reinstates a **labelled estimate** from per-dish prices and the $3,000 Krug figure
+  remains withdrawn. The upstream regression test that asserted `price_2adults == ''` was **updated, not deleted**,
+  to require a basis + menu URL for every priced row.
+
+**Verification performed 2026-11-27** (venue pages fetched with `fetch_page`; results recorded as C-11–C-17 in
+`data/review.json`):
+
+| ID | Item | Result | Source |
+|----|------|--------|--------|
+| C-11 | Guy Savoy à-la-carte prices are per person; no Krug price printed | Corrected → `≈$520–$940 (est.)`, $3,000 withdrawn (F-64) | https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu |
+| C-12 | Partage 5/7/Signature $130/$160/$210 pp | Gap closed → $260/$320/$420 for two | https://partage.vegas/menu |
+| C-13 | Wing Lei Chef Tam's tasting $198.88 pp | Gap closed → $397.76 for two | https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf |
+| C-14 | Anima by EDO $85 pp; Monday special $65 total | Corrected (F-66) | https://animabyedo.com |
+| C-15 | Esther's Kitchen dinner 7 days; lunch Mon–Fri; brunch Sat–Sun; no clock times | Days filled, hours stay blank | https://www.estherslv.com/menus/ |
+| C-16 | Michael Mina still temporarily closed, $295++ pp | Confirmed (F-23 stands) | https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html |
+| C-17 | SoulBelly BBQ Instagram linked from its own site | Gap partly closed (already on main from T17) | https://soulbellybbq.com |
+
+Also re-read and unchanged: Joël Robuchon (Tue–Sat 5:00–9:30), é by José Andrés (Tue–Sat 5:30–8:30), Wing Lei hours,
+Lamaii hours, SoulBelly hours.
+
+**Build / QA:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py &&
+python3 scripts/check_evidence.py` → **15 pages · 0 failures · 0 warnings · 460 external link occurrences**;
+`check_evidence` PASS; root and `docs/` byte-identical; `git diff --check` clean. The dining totals were
+re-checked by hand against the stored menu prices: $405.00/$717.76/$1,547.76 food + $187.40 activities +
+$119.90 transit = **$712.30 / $1,025.06 / $1,855.06**.
+
+**Still open, by design:** 17 restaurant prices (Q-04), Instagram/TikTok for most venues (Q-07), any market-wide
+cheapest week (Q-06), and every official hotel checkout total (F-58).
 
 **PR:** [#44](https://github.com/kanlerxz87-cyber/Vegas1/pull/44) → `main`.

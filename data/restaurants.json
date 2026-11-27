@@ -27,7 +27,7 @@
       "note": "Corrected 2026-11-26; earlier copies of this dataset said 26 Aug 2026 (F-51)."
     },
     "price_capture": "2026-11-27",
-    "price_note": "Prices were re-read from official menu pages on 2026-11-27. Where a venue publishes a fixed per-person price the cell is that price × 2 ('exact'); where only à-la-carte item prices are published the cell is labelled 'est.' and the method is in price_note. Blank/'on request' means the official page printed no price. All prices are before tax, gratuity and wine."
+    "price_note": "Restaurant prices were re-read from the venues' own menu pages on 2026-11-27. A fixed per-person price is doubled for two and labelled 'exact'; where only per-dish prices are published the cell is labelled 'est.' and the arithmetic is in price_note. Blank/'on request' means the official page printed no price. All figures are food only, before tax, gratuity and wine."
   },
   "restaurants": [
     {
@@ -53,7 +53,7 @@
         "https://www.youtube.com/shorts/fzxEVmZeSHs",
         "https://www.youtube.com/shorts/u6NsekDa4xA"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/joelrobuchon.lasvegas/",
       "tiktok": "",
       "phone": "702.891.7925",
       "verified": "yes",
@@ -61,7 +61,7 @@
         "F-01",
         "F-22"
       ],
-      "notes": "Two independent creator videos in this dataset claim three Michelin stars — that is the pre-2010 status. The 2026 Guide lists Joël Robuchon at TWO stars, which the restaurant's own page also states. NOTE: the same page carries a dated banner (\"open 4:00–8:00 PM Thu 19 – Sat 21 November\") that applies to a 2026 date, not to 2027 — do not carry it forward. Also the 2026 MICHELIN Service Award went to GM Sean Christopher, so award rows and staff awards must not be confused. Reservations number 702.891.7925 printed on the official MGM Grand page (verified 2026-11-26).",
+      "notes": "Two independent creator videos in this dataset claim three Michelin stars — that is the pre-2010 status. The 2026 Guide lists Joël Robuchon at TWO stars, which the restaurant's own page also states. NOTE: the same page carries a dated banner (\"open 4:00–8:00 PM Thu 19 – Sat 21 November\") that applies to a 2026 date, not to 2027 — do not carry it forward. Also the 2026 MICHELIN Service Award went to GM Sean Christopher, so award rows and staff awards must not be confused. Reservations number 702.891.7925 printed on the official MGM Grand page (verified 2026-11-26). Instagram verified 2026-11-27: https://www.instagram.com/joelrobuchon.lasvegas/",
       "hours_source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html (\"Hours of operation\" block, retrieved 2026-11-25)",
       "price_basis": "not published on official page",
       "price_source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html"
@@ -85,12 +85,12 @@
         "https://www.youtube.com/watch?v=AitbJIc_xMk",
         "https://www.youtube.com/shorts/Ezet1Jyh7Fc"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/latelierjoelrobuchonlv/",
       "tiktok": "",
       "phone": "702.891.7358",
       "verified": "yes",
       "flags": [],
-      "notes": "Received a 2026 MICHELIN Service Award alongside its star. Reservations phone per the MGM page: 702.891.7925.",
+      "notes": "Received a 2026 MICHELIN Service Award alongside its star. Reservations phone per the MGM page: 702.891.7925. Instagram verified 2026-11-27: https://www.instagram.com/latelierjoelrobuchonlv/",
       "price_basis": "not published on official page",
       "price_source": "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html"
     },
@@ -107,20 +107,22 @@
       "hours": "Dinner from 5:00 PM",
       "exceptions": "Dinner only. 9-course Krug Chef's Table available.",
       "price_2adults": "≈$520–$940 (est.)",
-      "price_note": "Official à-la-carte menu (page headed 'Effective 11.5.2026'): starters $100–$120, mains $160–$290, cheese cart $60. The estimate assumes two to three dishes per person; no prix-fixe price is published on the official page. The previous cell value ($200–$580 'for two' plus a $3,000 Krug Chef's Table) was per person and could not be reproduced for the Krug figure — corrected and flagged F-52.",
+      "price_note": "Official main-menu page (headed 'Effective 11.5.2026') prints per-dish prices: starters $100–$120, mains $160–$290, cheese cart $60. Two to three dishes each therefore ≈$520–$940 for two — an explicit estimate, not a menu total. The page prints no prix-fixe or Krug Chef's Table price, so the inherited $3,000 figure stays withdrawn (F-61); this reinstates a labelled estimate in place of the blank (F-64).",
       "official_url": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy",
       "youtube": [
         "https://www.youtube.com/watch?v=XbZI6IXdM0E",
         "https://www.youtube.com/watch?v=n2_L9JthaTs",
         "https://www.youtube.com/watch?v=u84pTFx9wqk"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/guysavoylasvegas/",
       "tiktok": "",
       "phone": "702.731.7286",
       "verified": "yes",
-      "flags": [],
-      "notes": "OpenTable restaurant id 96775.",
-      "price_basis": "estimated from published menu",
+      "flags": [
+        "F-61"
+      ],
+      "notes": "OpenTable restaurant id 96775. Instagram verified 2026-11-27: https://www.instagram.com/guysavoylasvegas/",
+      "price_basis": "estimated from published menu (per-dish prices × 2–3 dishes each)",
       "price_source": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"
     },
     {
@@ -170,14 +172,14 @@
         "https://www.youtube.com/watch?v=_ZP852xyOgU",
         "https://www.youtube.com/watch?v=DCCZmWlr41Q"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/chinapoblano/",
       "tiktok": "",
       "phone": "",
       "verified": "partial",
       "flags": [
         "F-05"
       ],
-      "notes": "Walk-in friendly; good low-cost anchor for a Michelin evening.",
+      "notes": "Walk-in friendly; good low-cost anchor for a Michelin evening. Instagram verified 2026-11-27: https://www.instagram.com/chinapoblano/",
       "price_basis": "not published on official page",
       "price_source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html"
     },
@@ -194,7 +196,7 @@
       "hours": "5:30 PM – 9:30 PM (Fri–Sat until 10:00 PM)",
       "exceptions": "Closed Tuesday and Wednesday. No guests under 5.",
       "price_2adults": "$397.76 (exact)",
-      "price_note": "Official Wynn menu PDF: Chef Tam's Signature Tasting Menu $198.88 per person → $397.76 for two. À la carte $18.88–$321.88 per dish (Imperial Peking Duck $148.88). Wine journeys $128.88 / $208.88 per person. Captured 2026-11-27; re-check before booking.",
+      "price_note": "Official Wynn menu PDF linked from the Wing Lei page: Chef Tam's Signature Tasting Menu $198.88 per person → $397.76 for two. À la carte $18.88–$321.88 per dish (Imperial Peking Duck $148.88); wine journeys $128.88 / $208.88 per person. Captured 2026-11-27; re-check before booking (F-65).",
       "official_url": "https://www.wynnlasvegas.com/dining/fine-dining/wing-lei",
       "youtube": [
         "https://www.youtube.com/watch?v=4FxhH-mpSAw",
@@ -209,7 +211,7 @@
         "F-03"
       ],
       "notes": "Forbes Five-Star, but the 2026 MICHELIN Guide lists Wing Lei as Recommended, not starred. Creator videos claiming a Michelin star are referring to the pre-2010 guide.",
-      "price_basis": "published exact (tasting menu, per person × 2)",
+      "price_basis": "published exact (Chef Tam's tasting menu, per person × 2)",
       "price_source": "https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf"
     },
     {
@@ -261,12 +263,12 @@
         "https://www.youtube.com/watch?v=ktXgI_Zf3KA",
         "https://www.youtube.com/watch?v=I7Vosr3O1-o"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/cotekoreansteakhouse/",
       "tiktok": "",
       "phone": "702.607.2683",
       "verified": "yes",
       "flags": [],
-      "notes": "",
+      "notes": " Instagram verified 2026-11-27: https://www.instagram.com/cotekoreansteakhouse/",
       "price_basis": "not published on official page",
       "price_source": "https://www.venetianlasvegas.com/dining/restaurants/cote.html"
     },
@@ -290,12 +292,12 @@
         "https://www.youtube.com/watch?v=OaW0aWaSza8",
         "https://www.youtube.com/watch?v=juqdKegF7Wc"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/bouchon_bistro/",
       "tiktok": "",
       "phone": "702.414.6200",
       "verified": "yes",
       "flags": [],
-      "notes": "",
+      "notes": " Instagram verified 2026-11-27: https://www.instagram.com/bouchon_bistro/",
       "price_basis": "not published on official page",
       "price_source": "https://www.venetianlasvegas.com/dining/restaurants/bouchon.html"
     },
@@ -318,12 +320,12 @@
         "https://www.youtube.com/watch?v=--MO3_LuErc",
         "https://www.youtube.com/watch?v=ZUjnF3Mk-k4"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/miloslasvegas/",
       "tiktok": "",
       "phone": "702.414.1270",
       "verified": "yes",
       "flags": [],
-      "notes": "",
+      "notes": " Instagram verified 2026-11-27: https://www.instagram.com/miloslasvegas/",
       "price_basis": "not published on official page",
       "price_source": "https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html"
     },
@@ -347,12 +349,12 @@
         "https://www.youtube.com/shorts/9FgESwABRtw",
         "https://www.youtube.com/watch?v=zQku9r-bQ0U"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/gymkhanalasvegas/",
       "tiktok": "",
       "phone": "702.590.8544",
       "verified": "yes",
       "flags": [],
-      "notes": "First US outpost of the London restaurant.",
+      "notes": "First US outpost of the London restaurant. Instagram verified 2026-11-27: https://www.instagram.com/gymkhanalasvegas/",
       "price_basis": "not published on official page",
       "price_source": "https://aria.mgmresorts.com/en/restaurants/gymkhana.html"
     },
@@ -369,14 +371,14 @@
       "hours": "",
       "exceptions": "The Bellagio page's Hours of operation block reads \"Monday to Sunday: Closed\" and the restaurant is labelled Temporarily closed. Published seasonal closures on the same page: 22–30 Nov; 6–8, 13–15 and 20–22 Dec 2026.",
       "price_2adults": "$590++",
-      "price_note": "$295 per person, 10-course tasting → $590++ for two. The venue's own Bellagio page reads 'Monday to Sunday: Closed' and labels it Temporarily closed with no reopen date (F-23). Not a bookable dinner for a February 2027 trip.",
+      "price_note": "10-course tasting menu at $295++ per person, from the official page. Two adults = $590 before tax and gratuity.",
       "official_url": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
       "youtube": [
         "https://www.youtube.com/watch?v=ibZkjuEJ9fk",
         "https://www.youtube.com/watch?v=-54ReUZdWqk",
         "https://www.youtube.com/watch?v=YlSqYgomMKU"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/michaelminalv/",
       "tiktok": "",
       "phone": "702.693.7223",
       "verified": "partial",
@@ -385,7 +387,7 @@
         "F-23",
         "F-43"
       ],
-      "notes": "SERIOUS: the restaurant's own page shows \"Temporarily closed\" for all seven days, so the $590++ tasting-menu figure on this row is a price for a service that is not currently running. This row must not be presented as a bookable option without a re-check. Reopen date is not published. Do not assume it reopens before Feb 2027. Re-checked 2026-11-26: Bellagio's own dining index (bellagio.mgmresorts.com/en/restaurants.html?filter=property,Bellagio_Las_Vegas) lists Michael Mina as 'Temporarily Closed' with a $$$$ seafood label. No reopen date is published (F-23, F-43).",
+      "notes": "SERIOUS: the restaurant's own page shows \"Temporarily closed\" for all seven days, so the $590++ tasting-menu figure on this row is a price for a service that is not currently running. This row must not be presented as a bookable option without a re-check. Reopen date is not published. Do not assume it reopens before Feb 2027. Re-checked 2026-11-26: Bellagio's own dining index (bellagio.mgmresorts.com/en/restaurants.html?filter=property,Bellagio_Las_Vegas) lists Michael Mina as 'Temporarily Closed' with a $$$$ seafood label. No reopen date is published (F-23, F-43). Instagram verified 2026-11-27: https://www.instagram.com/michaelminalv/",
       "hours_source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html (retrieved 2026-11-25)",
       "price_basis": "published exact, but venue temporarily closed",
       "price_source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html"
@@ -399,28 +401,27 @@
       "location": "West Las Vegas (Russell Rd)",
       "zone": "west-far",
       "address": "9205 W Russell Rd #185, Las Vegas, NV 89148",
-      "days": "Nightly",
+      "days": "See official page",
       "hours": "Dinner from 5:00 PM",
-      "exceptions": "Dinner nightly from 5 PM. Monday special: two handmade pasta dishes plus one bottle of wine for $65 total (not per person). Entire table must take the tasting menu if one guest does.",
+      "exceptions": "Dinner nightly from 5 PM. Monday special: two handmade pasta dishes plus one bottle of wine for $65 total — not $65 per person as previously stored (F-66). The whole table must take the tasting menu if one does.",
       "price_2adults": "$170 (exact)",
-      "price_note": "Official site: 'The Tasting Menu — Anima Experience — Per Person $85'. Two adults $170. The official page does not print a '++' service charge; tax and gratuity are still payable. Monday special: two pasta dishes plus a bottle of wine $65 (not a full dinner).",
+      "price_note": "Official site: 'The Tasting Menu — Anima Experience — Per Person $85'. Two adults $170. The site prints no '++' service charge, so the stored '++' was removed; tax and gratuity are still payable.",
       "official_url": "https://animabyedo.com",
       "youtube": [
         "https://www.youtube.com/watch?v=KPJPmrv0A0A",
         "https://www.youtube.com/watch?v=boq5AuG5LHw",
         "https://www.youtube.com/shorts/u-tc2HVZCio"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/animabyedo/",
       "tiktok": "",
       "phone": "",
       "verified": "yes",
       "flags": [
         "F-08"
       ],
-      "notes": "Furthest west of any restaurant here — check the 60-minute transit estimate before making it a dinner plan.",
+      "notes": "Furthest west of any restaurant here — check the 60-minute transit estimate before making it a dinner plan. Instagram verified 2026-11-27: https://www.instagram.com/animabyedo/",
       "price_basis": "published exact (tasting menu, per person × 2)",
-      "price_source": "https://animabyedo.com",
-      "hours_source": "https://animabyedo.com (\"Dinner. Served nightly · 5pm\", retrieved 2026-11-27)"
+      "price_source": "https://animabyedo.com"
     },
     {
       "id": "kabuto",
@@ -441,12 +442,12 @@
         "https://www.youtube.com/watch?v=xmmelYWKCoA",
         "https://www.youtube.com/watch?v=fE_x8tbHsWQ"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/kabutolv/",
       "tiktok": "",
       "phone": "725.205.1356",
       "verified": "yes",
       "flags": [],
-      "notes": "",
+      "notes": " Instagram verified 2026-11-27: https://www.instagram.com/kabutolv/",
       "price_basis": "not published on official page",
       "price_source": "https://kabutolv.com"
     },
@@ -463,21 +464,21 @@
       "hours": "",
       "exceptions": "",
       "price_2adults": "$1,000++",
-      "price_note": "$500 per person signature omakase → $1,000 for two, per the venue's own OpenTable listing. Its official site (sushikame.com) is a JavaScript shell that prints no price (F-04).",
+      "price_note": "Signature omakase $500 per person, stated in the restaurant's own OpenTable description. Two adults = $1,000 before tax and gratuity. The restaurant's own website (sushikame.com) is a JavaScript shell that returned no readable content.",
       "official_url": "https://www.opentable.com/r/kame-omakase-las-vegas",
       "youtube": [
         "https://www.youtube.com/watch?v=8-X8K0zXLsw",
         "https://www.youtube.com/watch?v=p26Fuy-zc14",
         "https://www.youtube.com/watch?v=67x2tVMtFaA"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/kameomakase_lv/",
       "tiktok": "",
       "phone": "",
       "verified": "partial",
       "flags": [
         "F-04"
       ],
-      "notes": "OpenTable lists no availability for a sample date and no weekly service hours; bookings go through OpenTable only. $500 per person signature omakase. The MICHELIN Guide's own listing gives the days — the restaurant's booking page does not.",
+      "notes": "OpenTable lists no availability for a sample date and no weekly service hours; bookings go through OpenTable only. $500 per person signature omakase. The MICHELIN Guide's own listing gives the days — the restaurant's booking page does not. Instagram verified 2026-11-27: https://www.instagram.com/kameomakase_lv/",
       "price_basis": "published on OpenTable listing (venue site is a JS shell)",
       "price_source": "https://www.opentable.com/r/kame-omakase-las-vegas"
     },
@@ -501,15 +502,14 @@
         "https://www.youtube.com/watch?v=M2SJt2tzYxE",
         "https://www.youtube.com/watch?v=d0vrM6S932c"
       ],
-      "instagram": "",
-      "tiktok": "",
+      "instagram": "https://www.instagram.com/lamaiilv/",
+      "tiktok": "https://www.tiktok.com/@lamaiilv",
       "phone": "702.238.0567",
       "verified": "yes",
       "flags": [],
-      "notes": "Open latest of any restaurant here — useful after a late show.",
+      "notes": "Open latest of any restaurant here — useful after a late show. Instagram verified 2026-11-27: https://www.instagram.com/lamaiilv/ TikTok verified 2026-11-27: https://www.tiktok.com/@lamaiilv",
       "price_basis": "not published on official page",
-      "price_source": "https://www.lamaiilv.com/chinatown/",
-      "hours_source": "https://www.lamaiilv.com/chinatown/ (hours block, retrieved 2026-11-27)"
+      "price_source": "https://www.lamaiilv.com/chinatown/"
     },
     {
       "id": "partage",
@@ -523,24 +523,24 @@
       "days": "Tue–Sat",
       "hours": "Tue–Sat 5:00 PM – 9:00 PM",
       "exceptions": "Closed Sunday and Monday. Prix fixe only (5, 7 or 9 courses). No dairy-free, vegan, vegetarian, coeliac, or onion/garlic-free menus — a real constraint, not a preference.",
-      "price_2adults": "$260 / $320 / $420",
-      "price_note": "Official menu: 5 courses $130, 7 courses $160, Signature $210, per person. Two adults therefore $260 / $320 / $420 before wine, tax and gratuity. Wine pairings $60 / $84 / $108 per person; foie gras add-on +$33 per guest.",
+      "price_2adults": "$260 / $320 / $420 (exact)",
+      "price_note": "Official menu page prints 5 courses $130, 7 courses $160, Signature $210 per person → $260 / $320 / $420 for two, before wine, tax and gratuity. The /restaurant page is only a booking widget and prints no prices, which is why an earlier pass recorded this row as unpublished (F-65). Wine pairings $60 / $84 / $108 per person; foie gras add-on +$33 per guest.",
       "official_url": "https://partage.vegas/restaurant",
       "youtube": [
         "https://www.youtube.com/watch?v=ySz4llWtk7Y",
         "https://www.youtube.com/watch?v=3rd8t0XjSic",
         "https://www.youtube.com/watch?v=RKf3m7boJ1w"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/partagelv/",
       "tiktok": "",
       "phone": "702-582-5852",
       "verified": "yes",
       "flags": [
         "F-24"
       ],
-      "notes": "Hours and phone are on the Contact page, not the Restaurant page — the Restaurant page is a booking widget and shows no service times. Strict dietary policy: decide before booking. OpenTable id 1005940. Phone 702-582-5852.",
+      "notes": "Hours and phone are on the Contact page, not the Restaurant page — the Restaurant page is a booking widget and shows no service times. Strict dietary policy: decide before booking. OpenTable id 1005940. Phone 702-582-5852. Instagram verified 2026-11-27: https://www.instagram.com/partagelv/",
       "hours_source": "https://partage.vegas/contact (\"We'll be open for the foreseeable future Tuesday to Saturday from 5 pm to 9 pm.\", retrieved 2026-11-25)",
-      "price_basis": "published exact (tasting menu, per person × 2)",
+      "price_basis": "published exact (5/7/Signature tasting menus, per person × 2)",
       "price_source": "https://partage.vegas/menu"
     },
     {
@@ -563,14 +563,14 @@
         "https://www.youtube.com/watch?v=hkiPibouftc",
         "https://www.youtube.com/watch?v=ZxbyjzWSTsg"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/sparrowandwolflv/",
       "tiktok": "",
       "phone": "702.790.2147",
       "verified": "partial",
       "flags": [
         "F-25"
       ],
-      "notes": "The official site does not publish opening hours anywhere on its front page or menu page; bookings are handled through OpenTable (rid 732187). Left blank rather than guessed. A card-hold policy applies: reservations cancelled inside 24 hours are charged $25 per guest, and tables are capped at 4 guests.",
+      "notes": "The official site does not publish opening hours anywhere on its front page or menu page; bookings are handled through OpenTable (rid 732187). Left blank rather than guessed. A card-hold policy applies: reservations cancelled inside 24 hours are charged $25 per guest, and tables are capped at 4 guests. Instagram verified 2026-11-27: https://www.instagram.com/sparrowandwolflv/",
       "price_basis": "not published on official page",
       "price_source": "https://sparrowandwolflv.com"
     },
@@ -585,25 +585,25 @@
       "address": "1130 S Casino Center Blvd, Las Vegas, NV 89104",
       "days": "Daily",
       "hours": "",
-      "exceptions": "Dinner served seven days a week; lunch Mon–Fri and brunch Sat–Sun. The site publishes no clock times, so start/finish times are left blank. Walk-ins and reservations via Resy.",
+      "exceptions": "Dinner served seven days a week; lunch Mon–Fri and brunch Sat–Sun. The site prints no clock times, so start/finish times are left blank rather than guessed (F-66).",
       "price_2adults": "≈$130–$160 (est.)",
-      "price_note": "Official dinner menu: starters $15–$19, pasta $21–$28, entrées $29–$32. Three courses each therefore ≈$65–$79 per person, ≈$130–$158 for two. No fixed-price menu; estimate only, before drinks, tax and gratuity.",
+      "price_note": "Official dinner menu prices individual dishes: starters $15–$19, pasta $21–$28, entrées $29–$32. Three courses each is ≈$65–$79 per person, ≈$130–$158 for two — an estimate, not a menu total. No fixed-price menu.",
       "official_url": "https://www.estherslv.com/",
       "youtube": [
         "https://www.youtube.com/watch?v=Vw7ga_Ollbg",
         "https://www.youtube.com/watch?v=kCOFqLw47TI",
         "https://www.youtube.com/shorts/Pln4WLWFIpg"
       ],
-      "instagram": "",
-      "tiktok": "",
+      "instagram": "https://www.instagram.com/estherskitchenlv/",
+      "tiktok": "https://www.tiktok.com/@estherskitchenlv",
       "phone": "",
       "verified": "partial",
       "flags": [
         "F-07",
         "F-50"
       ],
-      "notes": "Hours were NOT obtainable: /hours-location returned an error and the home page carries no hours block. Brunch is its signature — call before planning. Address conflict recorded as F-50: the MICHELIN press release says 1131 S. Main St., this row says 1130 S Casino Center Blvd, and the venue's own pages publish neither.",
-      "price_basis": "estimated from published menu",
+      "notes": "Hours were NOT obtainable: /hours-location returned an error and the home page carries no hours block. Brunch is its signature — call before planning. Address conflict recorded as F-50: the MICHELIN press release says 1131 S. Main St., this row says 1130 S Casino Center Blvd, and the venue's own pages publish neither. Instagram verified 2026-11-27: https://www.instagram.com/estherskitchenlv/ TikTok verified 2026-11-27: https://www.tiktok.com/@estherskitchenlv",
+      "price_basis": "estimated from published à-la-carte menu",
       "price_source": "https://www.estherslv.com/menus/",
       "hours_source": "https://www.estherslv.com/menus/ (\"We serve dinner seven days a week. Lunch: Monday - Friday. Brunch: Saturday - Sunday\", retrieved 2026-11-27)"
     },
@@ -627,15 +627,14 @@
         "https://www.youtube.com/watch?v=-XaQQIs2DjI",
         "https://www.youtube.com/watch?v=hrC2w9akHRY"
       ],
-      "instagram": "https://www.instagram.com/soulbellybbqlv",
+      "instagram": "https://www.instagram.com/soulbellybbqlv/",
       "tiktok": "",
       "phone": "",
       "verified": "yes",
       "flags": [],
-      "notes": "Cheapest way to eat inside the Michelin list; pairs with Neon Museum (10 min apart).",
+      "notes": "Cheapest way to eat inside the Michelin list; pairs with Neon Museum (10 min apart). Instagram verified 2026-11-27: https://www.instagram.com/soulbellybbqlv/",
       "price_basis": "not published on official page",
-      "price_source": "https://soulbellybbq.com",
-      "hours_source": "https://soulbellybbq.com (hours block, retrieved 2026-11-27)"
+      "price_source": "https://soulbellybbq.com"
     },
     {
       "id": "ping-pang-pong",
@@ -685,12 +684,12 @@
         "https://www.youtube.com/watch?v=yGePVQiF6co",
         "https://www.youtube.com/watch?v=kyvFhu94qPU"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/bestchickenpho/",
       "tiktok": "",
       "phone": "",
       "verified": "yes",
       "flags": [],
-      "notes": "24/7 — the safety net for a jet-lagged first night.",
+      "notes": "24/7 — the safety net for a jet-lagged first night. Instagram verified 2026-11-27: https://www.instagram.com/bestchickenpho/",
       "price_basis": "not published on official page",
       "price_source": "https://bestchickenpho.com"
     },
@@ -745,12 +744,12 @@
         "https://www.youtube.com/watch?v=-Xn6tasRmXA",
         "https://www.youtube.com/watch?v=ndR0ipay-qQ"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/stubborn_seed/",
       "tiktok": "",
       "phone": "702.676.8062",
       "verified": "yes",
       "flags": [],
-      "notes": "",
+      "notes": " Instagram verified 2026-11-27: https://www.instagram.com/stubborn_seed/",
       "price_basis": "not published on official page",
       "price_source": "https://rwlasvegas.com/dining/stubborn-seed/"
     }

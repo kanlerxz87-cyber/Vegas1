@@ -50,10 +50,10 @@ _NUM = re.compile(r"\d[\d,]*(?:\.\d+)?")
 
 
 def usd_values(text):
-    """Every dollar figure printed in a price string, as floats, in order.
+    """Every dollar figure printed in a price string, in order.
 
-    Used to total published prices without retyping them: '$260 / $320 / $420'
-    -> [260.0, 320.0, 420.0]; '≈$520–$940 (est.)' -> [520.0, 940.0].
+    Lets the budget page total published prices instead of retyping them:
+    '$260 / $320 / $420' -> [260.0, 320.0, 420.0]; '≈$520–$940 (est.)' -> [520.0, 940.0].
     """
     out = []
     for m in _NUM.finditer(text or ""):
@@ -72,7 +72,7 @@ def nav(active):
     items = [
         ("index.html", "Overview"),
         ("hotels.html", "Hotels"),
-        ("costs.html", "Trip cost"),
+        ("dining.html", "Dining budget"),
         ("restaurants.html", "Michelin"),
         ("activities.html", "Things to do"),
         ("transit.html", "Getting around"),
@@ -111,13 +111,12 @@ def page(active, title, subtitle, body, lead=""):
     <h1>{e(title)}</h1>
     <p class="sub">{subtitle}</p>
     {lead}
+    <p class="note"><strong>27 November evidence notice:</strong> Historical audit text and suggestions below may describe superseded OTA prices or model scores. They are not verified booking guidance. <a href="hotels.html">Current hotel evidence table</a> and <a href="flagged.html#F-58">F-58–F-63</a> take precedence. Restaurant/activity hours are observations, not confirmed 2027 schedules. Creator media links have not been fully re-opened in this pass.</p>
   </div>
   {body}
 </main>
 <footer class="wrap">
-  <p>Hotel prices captured 25 Nov 2026 from Booking.com for exact date ranges, 2 adults, 1 room, USD; spot-checked 26 Nov 2026.
-  Restaurant prices re-read from the venues' own menus on 27 Nov 2026. See <a href="flagged.html">Flagged for review</a>.
-  Every row links to its source. Blank means <strong>not verified</strong> — never invented, and labelled <em>est.</em> where arithmetic on published prices was needed.</p>
+  <p>Evidence gate updated 27 Nov 2026. Hotel decision cells omit unofficial quotes and inferred travel scores. Other records are historical observations from 25–27 Nov, not guaranteed 2027 availability. Blank means <strong>not verified</strong>. <a href="flagged.html">Flagged for Review</a>.</p>
   <p>Las Vegas had no MICHELIN Guide between 2010 and 2025. All awards here are from the 2026
   Southwest selection, the first since 2009.</p>
 </footer>
@@ -126,544 +125,36 @@ def page(active, title, subtitle, body, lead=""):
 """
 
 
-# ---------------------------------------------------------------- figures
-def first_total(h):
-    """First captured 7-night total; inf when withdrawn or missing, so it sorts last."""
-    for p in h["prices"]:
-        if p.get("total_7n") is not None:
-            return p["total_7n"]
-    return float("inf")
-
-
-def luxury_rows():
-    """Hotels ranked: 20-min Michelin count desc, then 7-night price asc."""
-    hs = [h for h in HOTELS["hotels"] if h["tier"] != "off-strip"]
-    return sorted(hs, key=lambda h: (-h["michelin_within_20"], first_total(h)))
-
-
-def w1(h):
-    for p in h["prices"]:
-        if p["window"].startswith("2027-02-15"):
-            return p["total_7n"]
-    return None
-
+# Official-source-only hotel display: raw OTA/model fields are audit inputs, not offers.
+MICHELIN_SOURCE = RES["meta"]["sources"][0]
+RTC_SOURCE = "https://www.rtcsnv.com/ways-to-travel/fares-passes/"
 
 # ---------------------------------------------------------------- index
 def build_index():
-    starred = [r for r in RES["restaurants"] if r["award_class"] == "starred"]
-    bib = [r for r in RES["restaurants"] if r["award_class"] == "bib"]
-    rec = [r for r in RES["restaurants"] if r["award_class"] == "recommended"]
-
-    # headline numbers
-    n_hotels = len(HOTELS["hotels"])
-    cheapest = min((h for h in HOTELS["hotels"] if w1(h) is not None), key=lambda h: w1(h))
-
-    cards = [
-        (str(N_TOTAL), "MICHELIN listings", f"{N_STARRED} starred · {N_BIB} Bib Gourmand · {N_REC} Recommended.<br>No three-star restaurant exists in Las Vegas."),
-        ("0", "subway lines", "Las Vegas has no metro. Buses, Monorail and the Vegas Loop were modelled instead — <a href='questions.html'>Q-01</a>."),
-        (money(w1(cheapest)), "lowest OTA quote", f"{e(cheapest['name'])} — a Booking.com snapshot with an <em>unassigned room</em>, not a confirmed official-property rate. See Hotels and Flags."),
-        ("Unproven", "saving from moving a week", "The 36% figure was <em>withdrawn</em> after a live check did not reproduce it (F-39). <a href='questions.html#Q-06'>Q-06</a>."),
-        (f"{sum(1 for r in RES['restaurants'] if r['price_2adults'])} / {N_TOTAL}", "restaurants publish a price", f"Re-read from the venues' own menus on 27 Nov 2026; two cells are labelled estimates. <a href='costs.html'>See the worked trip total</a>."),
-    ]
-    card_html = "".join(
-        f'<div class="card"><div class="big">{v}</div><div class="lbl">{e(k)}</div><p>{t}</p></div>'
-        for v, k, t in cards
-    )
-
-    star_lis = "".join(
-        f'<li><strong>{e(r["name"])}</strong> — {e(r["award"])} · {e(r["location"])}</li>' for r in starred
-    )
-    rest_count = len(bib) + len(rec)
-
+    stars = "".join(f'<tr><td>{e(r["name"])}</td><td>{e(r["award"])}</td><td>{e(r["location"])}</td><td><a href="{e(MICHELIN_SOURCE)}">MICHELIN</a></td></tr>' for r in RES["restaurants"] if r["award_class"] == "starred")
     body = f"""
-<section class="panel">
-  <h2>What this is</h2>
-  <p>Two adults, seven nights in Las Vegas, sometime between <strong>15 February and 23 March 2027</strong>.
-  The brief asked for hotels ranked by price, location and how many MICHELIN restaurants are within an hour
-  by public transport — and for every number to be traceable to a source.</p>
-  <p>Hotel, transit and MICHELIN venue details were captured from official pages on
-  <strong>25 November 2026</strong>; restaurant menu prices were re-read on <strong>27 November 2026</strong>.
-  A worked seven-night budget for two adults — built line by line from those figures — is on the
-  <a href="costs.html">Trip cost</a> page. The main hotel-rate comparison is an explicitly labelled <strong>Booking.com snapshot</strong>, not a hotel-issued quote; a separate sample of official property engines conflicts for some date comparisons. Where a value could not be confirmed from its stated source it is blank and written up on the <a href="flagged.html">Flagged for review</a> page, with the official link to check it against. Transit times are labelled estimates, not official running times.</p>
-</section>
-
-<section class="grid4">{card_html}</section>
-
-<section class="panel">
-  <h2>The four starred restaurants</h2>
-  <p>These are the only starred rooms in the city, and all four are on the Strip:</p>
-  <ul class="tight">{star_lis}</ul>
-  <p>The other <strong>{rest_count}</strong> listings — {N_BIB} Bib Gourmand and {N_REC} Recommended — are all in the
-  <a href="restaurants.html">MICHELIN page</a>, each labelled with which of the three tiers it sits in.</p>
-</section>
-
-<section class="panel">
-  <h2 id="three-things">Four things that change the answer</h2>
-  <ol class="tight">
-    <li><strong>The 7-night basis collides with the requested dates.</strong> The preferred window
-    2027-02-15 → 2027-02-18 is three nights, not seven. Seven-night totals starting on 15 Feb are used
-    so the figures match the brief — <a href="questions.html">Q-02</a>.</li>
-    <li><strong>The "within 1 hour" ranking does not rank anything.</strong> Every hotel in Las Vegas is within
-    an hour of all {N_TOTAL} restaurants, so the metric returns {N_TOTAL}/{N_TOTAL} for all {n_hotels} properties. A
-    <em>20-minute</em> column was added and is what actually separates them — <a href="questions.html">Q-01</a>.</li>
-    <li><strong>One ranked hotel no longer exists under the name this site priced.</strong> The official page for
-    The Cromwell now redirects to <strong>The Vanderpump Hotel</strong>, so that row's $1,978 total is a
-    Cromwell-era number and must be re-quoted before it is used — <a href="flagged.html#F-47">F-47</a>.</li>
-    <li><strong>The cheapest week is not settled across sources.</strong> The 25 Nov Booking.com snapshots showed lower March quotes for some large resorts, but the Venetian figure was withdrawn on 26 Nov (<a href="flagged.html">F-39</a>). A separate 25 Nov sample of official booking engines found the preferred 15–22 February week cheapest at properties checked. The samples are not like-for-like. Compare exact dates and named-room terms at the hotel's own booking engine before moving dates — <a href="questions.html#Q-06">Q-06</a>.</li>
-  </ol>
-</section>
-
-<section class="panel callout">
-  <h2>If you read only one row</h2>
-  <p><strong>Desert Rose Resort is a value candidate, not a confirmed best buy.</strong> The displayed $922 seven-night
-  figure is a Booking.com snapshot, not an official property rate. Its room/bed and bathroom fit are described on the
-  hotel's official page, but the total must be rechecked with the property before it can support a final decision.
-  It is a low-rise condo hotel with no casino, one block off the Strip — see the <a href="hotels.html">hotel page</a>,
-  source flags, and the <a href="https://kanlerxz87-cyber.github.io/Vegas1/docs/session-af795000/hotels.html">official-engine sample</a>.</p>
-</section>
+<section class="panel callout"><h2>Executive summary · 27 November 2026</h2>
+<p><strong>Research plan, not a booking-ready recommendation.</strong> Two adults, private bathroom, queen-or-larger bed. Your outer window is 15 February–23 March 2027. The preferred 15–18 February is only three nights; <strong>15–22 February 2027</strong> is the provisional seven-night comparison, not a decision made on your behalf. A fourteen-night alternative is 15 February–1 March.</p>
+<p>No official, checkout-complete seven-night hotel offer has been established in the canonical dataset. Accordingly hotel totals, room-fit assertions and ≤60-minute reachability counts are blank, not inferred. There is <strong>no verified cheapest hotel, cheapest stay week, or best purchase date</strong>. See <a href="flagged.html#F-58">F-58</a> and <a href="flagged.html#F-59">F-59</a>.</p></section>
+<section class="grid4"><div class="card"><div class="big">{N_TOTAL}</div><p>2026 MICHELIN listings: {N_STARRED} starred, {N_BIB} Bib Gourmand, {N_REC} Recommended. <a href="{e(MICHELIN_SOURCE)}">Official selection</a>.</p></div><div class="card"><div class="big">32</div><p>Hotel research candidates, alphabetical rather than an unsupported ranking.</p></div><div class="card"><div class="big">30</div><p>Possible seven-night arrival dates, 15 February–16 March inclusive. All checkout by 23 March.</p></div><div class="card"><div class="big">Pending</div><p>All-in accommodation and trip budget. No prices are extrapolated from nightly promotions.</p></div></section>
+<section class="panel"><h2>The four starred restaurants</h2><div class="scroll"><table class="data"><thead><tr><th>Restaurant</th><th>2026 award</th><th>Property</th><th>Official source</th></tr></thead><tbody>{stars}</tbody></table></div><p>Rechecked against MICHELIN's 31 August 2026 announcement on 27 November. Guide status is not proof of February 2027 opening or availability. <a href="restaurants.html">All restaurants, costs, hours and media</a>.</p></section>
+<section class="panel" id="three-things"><h2>Best next path — proposed, not booked</h2><ol class="tight"><li>Keep 15–22 February as the baseline; compare all eligible seven-night starts and price fourteen nights independently.</li><li>Compare MGM Grand for its two starred restaurants, Cosmopolitan for é and China Poblano, and Caesars Palace for Guy Savoy. These are same-property relationships in <a href="{e(MICHELIN_SOURCE)}">MICHELIN's address list</a>, not claims about hotel price, bed fit or bus journey length.</li><li>Require a named queen/king room, private bathroom, two-adult occupancy, seven-night total including mandatory fees/taxes, cancellation terms and timestamp from each hotel's official checkout.</li><li>Validate each selected bus journey at the actual dinner time, including walks, waits, transfers and return service. Do not count Vegas Loop as subway or bus.</li><li>Reserve nothing until accommodation and dinner availability are established. No payment or reservation has been made.</li></ol></section>
+<section class="panel"><h2>Review paths</h2><p><a href="questions.html">Questions and missing information</a> · <a href="suggestions.html">Suggestions awaiting review</a> · <a href="flagged.html">Flagged for Review</a> · <a href="repo-review.html">Inherited audit records</a></p><p>Existing source-linked restaurant/activity records remain available. They are historical observations, not promises of future hours or prices. Social links are previews, not evidence of awards, hours or rates.</p></section>
 """
-    return page("index.html", "Las Vegas, seven nights, 2027",
-                "A sourced plan for two adults between 15 Feb and 23 Mar 2027 — hotels, MICHELIN restaurants, transit and what could not be verified.",
-                body)
+    return page("index.html", "Las Vegas trip planning", "A source-linked decision dashboard for two adults · February–March 2027", body)
 
 
 # ---------------------------------------------------------------- hotels
 def build_hotels():
-    # ---- ranked table
     rows = []
-    for i, h in enumerate(luxury_rows(), 1):
-        price = money(w1(h))
-        bed = e(h["bed"])
-        if "not guaranteed" in h["bed"]:
-            bed = f'<span class="warn">{e(h["bed"])}</span>'
-        rows.append(f"""<tr>
-<td class="rank">{i}</td>
-<td><a href="{e(h['official_url'])}" target="_blank" rel="noopener">{e(h['name'])}</a>
-    <div class="tiny">{e(h['zone'].replace('-', ' '))}</div></td>
-<td class="num">{h['stars']}★</td>
-<td class="num">{h['guest_score'] or '—'}</td>
-<td class="num strong">{h['michelin_within_20']}</td>
-<td class="num muted">{h['michelin_within_60']}</td>
-<td>{bed}</td>
-<td class="num">{price}</td>
-</tr>""")
-
-    rank_table = f"""
-<div class="scroll">
-<table class="data">
-<thead><tr>
-<th>#</th><th>Hotel</th><th>Class</th><th>Guest</th>
-<th title="MICHELIN restaurants within a 20-minute one-way trip">≤20 min</th>
-<th title="MICHELIN restaurants within 60 minutes — the figure the brief asked for">≤60 min</th>
-<th>Bed</th><th>Booking.com quote<br><span class="thsub">7 nights · 15–22 Feb</span></th>
-</tr></thead>
-<tbody>{''.join(rows)}</tbody>
-</table>
-</div>
-<p class="note">Sorted by MICHELIN proximity inside 20 minutes, then by the dated Booking.com quote (not an official property rate). The ≤60 min column is the
-brief's literal metric and is <strong>24 for every property</strong> — it cannot rank anything, which is why the
-20-minute column drives the order. Both are recomputed by <code>scripts/build.py</code> from one zone matrix.</p>
-"""
-
-    # ---- price comparison across windows
-    prow = []
-    for row in PRICE["matrix"]:
-        cells = []
-        vals = [row["W1"], row["W2"], row["W3"], row["W4"]]
-        known = [v for v in vals if v]
-        low = min(known) if known else None
-        for v in vals:
-            if v is None:
-                cells.append('<td class="num muted">—</td>')
-            elif v == low and len(known) > 1:
-                cells.append(f'<td class="num best">{money(v)}</td>')
-            else:
-                cells.append(f'<td class="num">{money(v)}</td>')
-        prow.append(
-            f'<tr><td>{e(row["hotel"])}</td>' + "".join(cells) +
-            f'<td class="tiny">{e(row["room_note"])}</td></tr>'
-        )
-
-    window_table = f"""
-<div class="scroll">
-<table class="data">
-<thead><tr><th>Hotel</th>
-<th>15–22 Feb</th><th>1–8 Mar</th><th>8–15 Mar</th><th>15–22 Mar</th><th>Room note</th>
-</tr></thead>
-<tbody>{''.join(prow)}</tbody>
-</table>
-</div>
-"""
-
-    # ---- like-for-like week comparison: only hotels measured in 2+ windows
-    cmp_rows = []
-    for row in PRICE["matrix"]:
-        pairs = [(k, row[k]) for k in ("W1", "W2", "W3", "W4") if row.get(k)]
-        if len(pairs) < 2:
-            continue
-        lo_k, lo_v = min(pairs, key=lambda kv: kv[1])
-        hi_k, hi_v = max(pairs, key=lambda kv: kv[1])
-        delta = lo_v - hi_v
-        pct = round(100 * delta / hi_v)
-        cells = "".join(
-            f'<td class="num{" best" if row.get(k) else " muted"}">{money(row[k]) if row.get(k) else "—"}</td>'
-            for k in ("W1", "W2", "W3", "W4")
-        )
-        room = row["room_note"]
-        mismatch = "different room class" in room.lower()
-        warn_note = " — <span class='warn'>not like for like</span>" if mismatch else ""
-        sign = "−" if pct < 0 else "+"
-        cmp_rows.append(
-            f'<tr><td>{e(row["hotel"])}</td>{cells}'
-            f'<td class="num strong">{sign}{abs(pct)}%</td>'
-            f'<td class="tiny">{e(room)}{warn_note}</td></tr>'
-        )
-
-    # ---- full property cards
-    cards = []
-    for h in sorted(HOTELS["hotels"], key=lambda x: (-x["michelin_within_20"], first_total(x))):
-        plist = "".join(
-            f'<tr><td>{e(p["window"])}</td><td class="num">{money(p["total_7n"])}</td>'
-            f'<td class="num muted">{money(p["per_night"])}</td>'
-            f'<td class="tiny">{e(p["note"])}</td></tr>'
-            for p in h["prices"]
-        )
-        ov = h.get("official_verified")
-        if ov == "yes":
-            unverified = ""
-        elif ov == "blocked":
-            unverified = '&nbsp;<span class="tinymuted">(opened 26 Nov 2026 — the site refuses automated access)</span>'
-        elif ov == "sibling":
-            unverified = (
-                '&nbsp;<span class="tinymuted">(this URL lands on the parent property’s page, '
-                "not this property's own)</span>"
-            )
-        else:
-            unverified = '&nbsp;<span class="tinymuted">(not fetched — may have moved)</span>'
-        ps_label = (
-            "Price source — dated search list, not a room quote"
-            if h.get("price_basis") == "search-list"
-            else "Price source ✓"
-        )
-        flags = ""
-        if h["flags"]:
-            fl = " · ".join(f'<a href="flagged.html#{f}">{f}</a>' for f in h["flags"])
-            flags = f'<p class="flagline">⚑ {fl}</p>'
-        cards.append(f"""
-<article class="hotel">
-  <h3>{e(h['name'])} <span class="pill">{e(h['tier'])}</span></h3>
-  <p class="meta">{e(h['zone'].replace('-',' '))} · {h['stars']}★ · guest score {h['guest_score'] or '—'}
-  · {h['michelin_within_20']} MICHELIN within 20 min · resort fee: {e(h['resort_fee'])}</p>
-  <table class="data slim">
-    <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
-    <tbody>{plist}</tbody>
-  </table>
-  <p class="tiny">Bed: {e(h['bed'])} · private bathroom: {'yes' if h['private_bath'] else 'not stated'}
-   {('· ' + e(h['address'])) if h.get('address') else ''}</p>
-  <p>{e(h['notes'])}</p>
-  {flags}
-  <p class="links">
-    <a href="{e(h['official_url'])}" target="_blank" rel="noopener">Official</a>{unverified}
-    <a href="{e(h['booking_url'])}" target="_blank" rel="noopener">{ps_label}</a>
-  </p>
-</article>""")
-
+    for h in sorted(HOTELS["hotels"], key=lambda h: h["name"].casefold()):
+        rows.append(f'<tr><td><a href="{e(h["official_url"])}">{e(h["name"])}</a></td><td>—</td><td>—</td><td>—</td><td>Unverified: named room, bathroom, complete price and route evidence required. <a href="flagged.html#F-58">F-58</a> / <a href="flagged.html#F-59">F-59</a></td></tr>')
     body = f"""
-<section class="panel">
-  <h2 id="cheapest-week">Which week had the lower Booking.com quote — selected pairs only</h2>
-  <p>Only properties measured in more than one Booking.com date window are shown. Where room classes match, each comparison is within the same hotel; these third-party snapshots do not establish official rates or a market-wide cheapest week:</p>
-  <div class="scroll">
-  <table class="data">
-  <thead><tr><th>Hotel</th><th>15–22 Feb</th><th>1–8 Mar</th><th>8–15 Mar</th><th>15–22 Mar</th><th>Best vs worst</th><th>Room note</th></tr></thead>
-  <tbody>{''.join(cmp_rows)}</tbody>
-  </table>
-  </div>
-  <p class="note"><strong>Not settled.</strong> The 25 Nov captures suggested 8–15 March is cheaper for the big resorts.
-  On 26 Nov, Booking.com's own Venetian page showed the same 60 m² suite at US$5,185 for 15–22 Feb and €4,472 for
-  8–15 Mar, both including taxes and fees, so the stored Venetian figures are withdrawn (F-39). The other rows
-  are not reproduced (F-44). Presidents' Day (15 Feb 2027) is a verified calendar fact; whether it moves prices is not
-  established. See <a href="questions.html#Q-06">Q-06</a> for how to close it.</p> Compare the exact named room, fees, taxes, cancellation terms and dates on each property's own booking page before booking.</p>
-</section>
-
-<section class="panel">
-  <h2>Every measured week</h2>
-  <div class="scroll">
-  <table class="data">
-  <thead><tr><th>Hotel</th><th>15–22 Feb</th><th>1–8 Mar</th><th>8–15 Mar</th><th>15–22 Mar</th><th>Room note</th></tr></thead>
-  <tbody>{''.join(prow)}</tbody>
-  </table>
-  </div>
-  <p class="note">A dash means <em>not measured</em>, not "sold out". Only properties that appeared in a captured
-  result block are listed.</p>
-</section>
-
-<section class="panel">
-  <h2>Hotels ranked</h2>
-  {rank_table}
-</section>
-
-<section class="panel">
-  <h2 id="every-hotel">Every hotel — dated Booking.com quote snapshots</h2>
-  <p>These are third-party Booking.com search totals, generally excluding resort fees and local tax; they are not official property-engine quotes. The <a href="https://kanlerxz87-cyber.github.io/Vegas1/docs/session-af795000/hotels.html">separate official-engine sample</a> covers only selected properties/dates and has a different fee/tax basis. Do not combine these datasets or read them as a verified market-wide rate ranking.</p>
-  <p class="note"><strong>Link honesty, after the 26 Nov 2026 re-check:</strong> <strong>18 of the 32</strong>
-  "Official" links were opened and returned the property's own page; <strong>8 refused automated access</strong>
-  from this environment (Crockfords returned HTTP 500) and are marked <em>refuses automated access</em> —
-  refused, not broken; <strong>5 were not opened</strong> and keep <em>not fetched — may have moved</em>. One link (Nobu at Caesars) opens but lands on the parent property's page.
-  A "Price source" link is the Booking.com URL the number came from; where that URL is a dated search-results list
-  rather than the property's own quote page, the card says so — the link then proves the search, not the room.</p>
-  <div class="hotels">{''.join(cards)}</div>
-</section>
-
-<section class="panel callout">
-  <h2>Lowest Booking.com quotes: bed and source caveats</h2>
-  <p>The LINQ ($564), Flamingo ($626) and Horseshoe ($717) headline the third-party snapshot, but each lowest rate is a
-  <strong>"room type assigned on arrival"</strong> promotion. The bed is not guaranteed at booking, so these rates do not
-  establish the requested queen-or-larger room fit. Named-room direct rates need to be checked on each property's
-  official booking engine; no $100–$200 uplift is assumed. The separate official-engine sample includes some named-room
-  alternatives and direct links, but does not establish a universal cheapest hotel.</p>
-</section>
+<section class="panel" id="cheapest-week"><h2>No verified cheapest week or best day to book</h2><p>The inherited quotes are Booking.com snapshots, not official property checkout totals. They are preserved in repository audit files but are deliberately not presented as qualifying offers. A promotional nightly rate is not a seven-night total; absence of a verified rate does not mean sold out.</p><p>The travel window permits <strong>30 seven-night starts</strong>, every day from 15 February through 16 March 2027 inclusive. For fourteen nights, eligible starts are 15 February–9 March. The preferred 15–18 February is three nights and cannot satisfy the separate one-to-two-week requirement. Provisional baseline: <strong>15–22 February 2027, two adults, one room</strong>.</p><p>Stay dates and purchase date are separate questions. No evidence establishes that booking on a particular future day will be cheapest. No universal discount or savings percentage is asserted.</p></section>
+<section class="panel" id="every-hotel"><h2>All {len(rows)} hotel research candidates</h2><p>Alphabetical, <strong>not ranked</strong>. — means unverified. Official links are discovery/review links; a link alone does not verify a price or a room feature. Some properties refuse automated access; those are not labelled broken. Candidate names are inherited, not a fresh certification of all properties.</p><div class="scroll"><table class="data" id="official-hotel-decisions"><thead><tr><th>Hotel / official site</th><th>Total USD · 7 nights · 15–22 Feb · 2 adults</th><th>Queen+ &amp; private bath confirmed</th><th>MICHELIN venues ≤60 min by bus</th><th>Evidence status</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div></section>
+<section class="panel"><h2>How to produce a defensible ranking</h2><ol><li>Reject run-of-house offers without guaranteed queen/king bed and private bathroom.</li><li>Compare like-for-like official all-in checkout totals, room terms and cancellation deadlines for two adults.</li><li>Rank first by count of verified bus journeys ≤60 minutes at intended dinner times, then by total price; amenities remain a separate review criterion until preferences are known.</li><li>Include walking, waiting, transfers, return journeys and February/March closures. A zone estimate is insufficient.</li></ol><p><a href="https://github.com/kanlerxz87-cyber/Vegas1/blob/main/data/hotels.json">Preserved historical hotel records</a> · <a href="https://github.com/kanlerxz87-cyber/Vegas1/blob/main/data/price-windows.json">Preserved historical OTA comparisons</a>. These files are audit history, not verified offers.</p></section>
 """
-    return page("hotels.html", "Hotels",
-                f"{len(HOTELS['hotels'])} properties with dated Booking.com 7-night quote snapshots (not official hotel rates), room-fit flags, and a separate official-engine sample.",
-                body)
-
-
-# ---------------------------------------------------------------- trip cost
-def _hotel(hid):
-    return next(h for h in HOTELS["hotels"] if h["id"] == hid)
-
-
-def _first_usd(text):
-    v = usd_values(text)
-    return v[0] if v else None
-
-
-def _dining(rid, mode):
-    """Cost for two from the stored price cell. mode: low | mid | high."""
-    r = next(x for x in RES["restaurants"] if x["id"] == rid)
-    v = usd_values(r["price_2adults"])
-    if not v:
-        return None
-    if mode == "low":
-        return v[0]
-    if mode == "high":
-        return v[-1]
-    # three or more stored options mean the venue publishes a menu ladder
-    # (e.g. Partage 320 for the 7-course), so take the middle option rather
-    # than inventing an average that is not on the menu.
-    if len(v) >= 3:
-        return sorted(v)[len(v) // 2]
-    return (v[0] + v[-1]) / 2
-
-
-def build_costs():
-    """A worked 7-night budget for two adults, built only from figures already stored.
-
-    Every component is read from data/ at build time; nothing in this page is typed by hand.
-    """
-    acts = {a["id"]: a for a in ACT["activities"]}
-    hr = usd_values(acts["high-roller"]["price_per_couple"])      # daytime, anytime
-    mob = _first_usd(acts["mob-museum"]["price_per_couple"])
-    neon = _first_usd(acts["neon-museum"]["price_per_couple"])
-    act_total = hr[-1] + mob + neon
-
-    monorail = next(x for x in TRANSIT["systems"] if x["id"] == "monorail")
-    mon_fares = usd_values(monorail["fare_note"].split("7-day")[1])   # paper, e-ticket
-    monorail_two = mon_fares[-1] * 2
-
-    rtc = next(x for x in TRANSIT["systems"] if x["id"] == "rtc")
-    rtc_3day = usd_values(rtc["fare_note"].split("3-day")[1])[0]
-    rtc_two_week = rtc_3day * 3 * 2        # three 3-day passes each, no 7-day RTC pass verified
-
-    scenarios = [
-        {
-            "name": "Value",
-            "hotel": "nobu-caesars",
-            "why": "Cheapest centre-Strip room whose own description guarantees a king bed and a private bathroom (Desert Rose and Palms Place are cheaper but further out).",
-            "dining": [("partage", "low"), ("esthers-kitchen", "mid")],
-        },
-        {
-            "name": "Recommended",
-            "hotel": "caesars-palace",
-            "why": "Centre-Strip, king bed in a named room, and the largest cluster of walkable listings.",
-            "dining": [("wing-lei", "low"), ("partage", "mid")],
-        },
-        {
-            "name": "Splurge",
-            "hotel": "bellagio",
-            "why": "MICHELIN Guide hotel at the centre of the Strip; the captured total is for the room class shown, which changes by window (F-13).",
-            "dining": [("guy-savoy", "mid"), ("wing-lei", "low"), ("partage", "high")],
-        },
-    ]
-
-    comp_rows = []
-    totals = {}
-    for sc in scenarios:
-        h = _hotel(sc["hotel"])
-        hotel_total = w1(h)
-        dining_lines = []
-        dining_total = 0.0
-        for rid, mode in sc["dining"]:
-            r = next(x for x in RES["restaurants"] if x["id"] == rid)
-            amt = _dining(rid, mode)
-            dining_total += amt
-            dining_lines.append(
-                f'<a href="{e(r["official_url"])}" target="_blank" rel="noopener">{e(r["name"])}</a> '
-                f'<span class="muted">${amt:,.0f}</span>')
-        total = hotel_total + dining_total + act_total + monorail_two
-        totals[sc["name"]] = total
-        comp_rows.append({
-            "sc": sc, "h": h, "hotel_total": hotel_total,
-            "dining_lines": dining_lines, "dining_total": dining_total, "total": total,
-        })
-
-    # one column per scenario
-    head = "".join(f'<th>{e(c["sc"]["name"])}</th>' for c in comp_rows)
-
-    def row(label, cells, note=""):
-        tds = "".join(f'<td>{c}</td>' for c in cells)
-        n = f'<div class="tiny">{note}</div>' if note else ""
-        return f'<tr><th class="rowhead">{label}{n}</th>{tds}</tr>'
-
-    hotel_cells = []
-    for c in comp_rows:
-        h = c["h"]
-        hotel_cells.append(
-            f'<a href="{e(h["official_url"])}" target="_blank" rel="noopener">{e(h["name"])}</a>'
-            f'<div class="tiny">{e(c["sc"]["why"])}</div>'
-            f'<div class="tiny">{e(h["bed"])} · private bath: {e(str(h["private_bath"]).lower())}'
-            f' · {e(h.get("price_basis", ""))} quote · {e(h.get("room", ""))}</div>'
-            f'<div class="num strong">${c["hotel_total"]:,.0f}</div>')
-    dining_cells = [f'{"<br>".join(c["dining_lines"])}<div class="num strong">${c["dining_total"]:,.0f}</div>'
-                    for c in comp_rows]
-    act_cell = (f'High Roller anytime ${hr[-1]:,.2f} + Mob Museum ${mob:,.2f} + '
-                f'Neon Museum from ${neon:,.2f}<div class="num strong">${act_total:,.2f}</div>')
-    transit_cell = (f'2 × Monorail 7-day e-ticket (${mon_fares[-1]:,.2f} each)'
-                    f'<div class="num strong">${monorail_two:,.2f}</div>')
-    total_cells = [f'<div class="num best" style="font-size:1.15rem">${c["total"]:,.2f}</div>'
-                   for c in comp_rows]
-
-    matrix = f"""
-  <div class="scroll">
-  <table class="data matrix">
-  <thead><tr><th class="rowhead">Cost line (2 adults, 7 nights)</th>{head}</tr></thead>
-  <tbody>
-  {row("Hotel", hotel_cells, "15–22 Feb 2027, captured Booking.com total")}
-  {row("Michelin dinners", dining_cells, "food only · before tax, tip and wine")}
-  {row("Activities", [act_cell]*3, "the three paid venues this site verifies")}
-  {row("Getting around", [transit_cell]*3, "unlimited Strip + Downtown")}
-  {row("Total, as captured", total_cells, "excludes tax, resort fees, airfare, tips")}
-  </tbody>
-  </table>
-  </div>
-"""
-
-    # per-hotel date sensitivity from every captured window
-    win_rows = []
-    for c in comp_rows:
-        h = c["h"]
-        cells = []
-        for p_ in h["prices"]:
-            if p_.get("total_7n") is None:
-                cells.append('<span class="muted">withdrawn</span>')
-            else:
-                cells.append(f'${p_["total_7n"]:,.0f}<div class="tiny">{e(p_["window"])}</div>')
-        win_rows.append(f'<tr><th class="rowhead">{e(h["name"])}</th>{"".join(f"<td>{x}</td>" for x in cells)}</tr>')
-
-    act_rows = "".join(
-        f'<tr><td><a href="{e(a["official_url"])}" target="_blank" rel="noopener">{e(a["name"])}</a></td>'
-        f'<td class="num">{e(a["price_per_couple"]) or "—"}</td>'
-        f'<td class="tiny">{e(a["price_note"])}</td></tr>'
-        for a in ACT["activities"])
-
-    body = f"""
-<section class="panel callout">
-  <h2>What seven nights actually adds up to</h2>
-  <p>This page turns the verified pieces into three totals so the choice is about money rather than
-  adjectives. Every number is read from the same data files the other pages use, at build time —
-  nothing here is typed by hand, and each line links to the page where its source lives.</p>
-  <p><strong>These totals are arithmetic on captured snapshots, not quotes.</strong> They exclude Nevada
-  room tax, resort fees where the capture did not include them, airfare, gratuities and wine.
-  See <a href="flagged.html#F-29">F-29</a>, <a href="flagged.html#F-30">F-30</a> and
-  <a href="flagged.html#F-48">F-48</a> before treating any total as bookable.</p>
-</section>
-
-<section class="panel">
-  <h2>Three ways to spend it</h2>
-  {matrix}
-  <p class="note">Hotel column shows the property's own captured seven-night total for 15–22 Feb 2027.
-  The bed and bathroom fields are copied from the hotel data, so a property that does not guarantee the
-  bed the brief asks for can never appear here — that is why the three cheapest hotels in the city
-  (LINQ, Flamingo, Horseshoe) are absent. <strong>Value</strong> uses the
-  cheapest qualifying room; see <a href="hotels.html">Hotels</a> for the full 32.</p>
-</section>
-
-<section class="panel">
-  <h2>If the dates move, so does the room</h2>
-  <p>The same property at every window this project captured. Blank weeks were never sampled;
-  <span class="muted">withdrawn</span> means the figure was retracted after a re-check.</p>
-  <div class="scroll">
-  <table class="data matrix">
-  <thead><tr><th class="rowhead">Hotel</th><th>Captured windows</th></tr></thead>
-  <tbody>{"".join(win_rows)}</tbody>
-  </table>
-  </div>
-  <p class="note">The Feb window contains US Presidents' Day (15 Feb 2027). The holiday is a fact;
-  the claim that it <em>causes</em> the higher rate is not verified by any source this project used.
-  Direct engines re-priced within a single day on 26 Nov 2026, which is why no universal
-  "cheapest week" is asserted — <a href="questions.html#Q-06">Q-06</a> stays open on purpose.</p>
-</section>
-
-<section class="panel">
-  <h2>Activities, priced for two</h2>
-  <div class="scroll">
-  <table class="data">
-  <thead><tr><th>Venue</th><th>2 adults</th><th>Basis</th></tr></thead>
-  <tbody>{act_rows}</tbody>
-  </table>
-  </div>
-  <p class="note">The three paid venues in the totals above are the High Roller (anytime, ${hr[-1]:,.2f}),
-  the Mob Museum (${mob:,.2f}) and the Neon Museum (from ${neon:,.2f}). Fremont Street is free and is
-  therefore excluded from the arithmetic. The Sphere publishes no single price, so it is left out of
-  every total rather than estimated (<a href="flagged.html#F-16">F-16</a>).</p>
-</section>
-
-<section class="panel">
-  <h2>Getting around: which pass to buy</h2>
-  <div class="scroll">
-  <table class="data slim">
-  <thead><tr><th>Option</th><th>For two, seven nights</th><th>Basis</th></tr></thead>
-  <tbody>
-  <tr><td>Monorail 7-day e-ticket × 2</td><td class="num">${monorail_two:,.2f}</td>
-      <td class="tiny"><a href="{e(monorail["fare_url"])}" target="_blank" rel="noopener">official fares</a> ·
-      {e(monorail["fare_note"])}</td></tr>
-  <tr><td>RTC 3-day pass × 3 each (covers 9 days)</td><td class="num">${rtc_two_week:,.2f}</td>
-      <td class="tiny"><a href="{e(rtc["official_url"])}" target="_blank" rel="noopener">official fares</a> ·
-      {e(rtc["fare_note"])}</td></tr>
-  </tbody>
-  </table>
-  </div>
-  <p class="note">The monorail does not reach the airport or downtown; the RTC Deuce does and runs 24 hours,
-  which is why the RTC pass is the better fit for a plan that includes Fremont Street and Chinatown.
-  No seven-day RTC pass was verified — the arithmetic above stacks three-day passes.</p>
-</section>
-
-<section class="panel">
-  <h2>Three moves that change the total most</h2>
-  <ol class="tight">
-    <li><strong>Hotel week.</strong> The spread between the cheapest and dearest captured week for the same
-      property is larger than any dinner on this site. Re-quote your exact dates on the property's own engine.</li>
-    <li><strong>One starred dinner.</strong> Adding a second Guy Savoy or Wing Lei night is roughly
-      ${_dining("wing-lei", "low"):,.0f}–${_dining("guy-savoy", "high"):,.0f} for two — comparable to
-      three nights in the Value hotel.</li>
-    <li><strong>Room class.</strong> Several captured totals are for different room classes at the same hotel,
-      so a "$300 cheaper" week can simply be a smaller room (<a href="flagged.html#F-13">F-13</a>).</li>
-  </ol>
-</section>
-"""
-    return page("costs.html", "Trip cost",
-                "A worked seven-night budget for two adults, assembled only from figures this project already verified.",
-                body)
+    return page("hotels.html", "Hotel evidence & dates", "Official-source-only decision table: unverified amounts and inferred scores are blank.", body)
 
 
 # ---------------------------------------------------------------- restaurants
@@ -681,12 +172,7 @@ def build_restaurants():
         ) or '<span class="muted">none found</span>'
         ig = f'<a href="{r["instagram"]}" target="_blank" rel="noopener">IG</a>' if r["instagram"] else '<span class="muted">—</span>'
         tt = f'<a href="{r["tiktok"]}" target="_blank" rel="noopener">TT</a>' if r["tiktok"] else '<span class="muted">—</span>'
-        if r["hours"]:
-            hours = e(r["hours"])
-        elif r["days"] and r["days"] not in ("See official page",):
-            hours = '<span class="muted">times not published</span>'
-        else:
-            hours = '<span class="warn">not verified</span>'
+        hours = e(r["hours"]) if r["hours"] else '<span class="warn">not verified</span>'
         days = r["days"] or ""
         # the source sometimes repeats the day span inside the hours string
         # (e.g. days="Tue-Sat", hours="Tue-Sat 5:00 PM - 9:30 PM") - print it once
@@ -723,16 +209,13 @@ def build_restaurants():
 </table>
 </div>
 <p class="note">Award labels are the 2026 MICHELIN Guide's three tiers, shown separately so an unstarred listing
-can never be mistaken for a starred one. <strong>"On request"</strong> means the venue published no price when its own menu
-page was read on 27 November 2026 — it is not a missing entry and it is not an average. Where a cell is labelled
-<strong>exact</strong> it is the venue's own fixed price doubled for two people; where it is labelled <strong>est.</strong>
-the venue publishes only per-dish prices and the arithmetic is spelled out in the row's note. Every priced cell links
-to the menu page it came from.</p>
+can never be mistaken for a starred one. <strong>—</strong> means the total was not verified; it does not imply a venue has no published prices. Published figures are not necessarily a complete meal or final bill; consult the per-row basis below.</p>
 """
 
     priced = [r for r in rs if r["price_2adults"]]
     n_priced = len(priced)
     n_est = sum(1 for r in priced if r.get("price_basis", "").startswith("estimated"))
+    n_closed = sum(1 for r in priced if "closed" in r.get("price_basis", ""))
     cost_rows = []
     for r in priced:
         src = r.get("price_source") or r["official_url"]
@@ -744,22 +227,21 @@ to the menu page it came from.</p>
             f'<td class="tiny">{e(r.get("price_basis", ""))}</td>'
             f'<td class="tiny"><a href="{e(src)}" target="_blank" rel="noopener">venue menu</a></td></tr>')
     cost_panel = f"""
-  <p><strong>{n_priced} of {N_TOTAL}</strong> venues printed a price when their own menu page was read on
-  27 November 2026: {n_priced - n_est} state a fixed per-person price (doubled here for two adults) and
-  {n_est} publish only per-dish prices, so their figure is an <em>estimate</em> with the method shown.
-  The other {N_TOTAL - n_priced} print no price at all and are left blank rather than averaged
-  (<a href="flagged.html#F-53">F-53</a>).</p>
+  <p><strong>{n_priced} of {N_TOTAL}</strong> venues printed a price on their own site or menu PDF when re-read on
+  27 November 2026: {n_priced - n_est - n_closed} state a fixed per-person price (doubled here for two adults),
+  {n_est} publish only per-dish prices so their figure is an <em>estimate</em> with the method shown, and
+  {n_closed} states a price for a venue that is temporarily closed. The other {N_TOTAL - n_priced} print no price
+  at all and are left blank rather than averaged (<a href="flagged.html#F-65">F-65</a>).</p>
   <div class="scroll">
   <table class="data slim">
   <thead><tr><th>Restaurant</th><th>Cost for two</th><th>Basis</th><th>Source</th></tr></thead>
   <tbody>{''.join(cost_rows)}</tbody>
   </table>
   </div>
-  <p class="note">All figures are food only, before tax, gratuity and wine, for two adults. The two starred
-  rooms that still print nothing — Jo&#xEB;l Robuchon and &#xE9; by Jos&#xE9; Andr&#xE9;s — are the two most
-  likely to be the largest line in the budget after the room, so reserve before booking the hotel
-  (<a href="suggestions.html">S-04</a>). A worked trip total using these numbers is on the
-  <a href="costs.html">Trip cost</a> page.</p>
+  <p class="note">Food only, before tax, gratuity and wine, for two adults. A worked food-and-activity total is on the
+  <a href="dining.html">Dining budget</a> page. The two starred rooms that still print nothing — Jo&#xEB;l Robuchon and
+  &#xE9; by Jos&#xE9; Andr&#xE9;s — are the likeliest to be the largest line after the room, so reserve before
+  booking anything (<a href="suggestions.html">S-04</a>).</p>
 """
     counts = RES["meta"]["counts"]
     body = f"""
@@ -788,6 +270,191 @@ to the menu page it came from.</p>
 """
     return page("restaurants.html", "MICHELIN restaurants",
                 f"All {counts['total']} Las Vegas listings from the 2026 guide, each labelled starred, Bib Gourmand or Recommended.",
+                body)
+
+
+# ---------------------------------------------------------------- dining budget
+def _first_usd(text):
+    v = usd_values(text)
+    return v[0] if v else None
+
+
+def _dining(rid, mode):
+    """Cost for two from the stored price cell. mode: low | mid | high."""
+    r = next(x for x in RES["restaurants"] if x["id"] == rid)
+    v = usd_values(r["price_2adults"])
+    if not v:
+        return None
+    if mode == "low":
+        return v[0]
+    if mode == "high":
+        return v[-1]
+    if len(v) >= 3:            # a menu ladder, e.g. Partage $260/$320/$420
+        return sorted(v)[len(v) // 2]
+    return (v[0] + v[-1]) / 2
+
+
+def build_dining():
+    """Food, activities and transport for two adults — the room is deliberately excluded.
+
+    Every component is read from data/ at build time. Hotel totals are not used: no
+    official, checkout-complete seven-night quote exists in the canonical dataset (F-58),
+    so adding one here would re-introduce a number the evidence gate removed.
+    """
+    acts = {a["id"]: a for a in ACT["activities"]}
+    hr = usd_values(acts["high-roller"]["price_per_couple"])
+    mob = _first_usd(acts["mob-museum"]["price_per_couple"])
+    neon = _first_usd(acts["neon-museum"]["price_per_couple"])
+    act_total = hr[-1] + mob + neon
+
+    monorail = next(x for x in TRANSIT["systems"] if x["id"] == "monorail")
+    mon_fares = usd_values(monorail["fare_note"].split("7-day")[1])
+    monorail_two = mon_fares[-1] * 2
+
+    rtc = next(x for x in TRANSIT["systems"] if x["id"] == "rtc")
+    rtc_3day = usd_values(rtc["fare_note"].split("3-day")[1])[0]
+    rtc_two = rtc_3day * 3 * 2
+
+    scenarios = [
+        {"name": "Two dinners", "picks": [("partage", "low"), ("esthers-kitchen", "mid")]},
+        {"name": "One tasting menu", "picks": [("wing-lei", "low"), ("partage", "mid")]},
+        {"name": "Stars-heavy", "picks": [("guy-savoy", "mid"), ("wing-lei", "low"), ("partage", "high")]},
+    ]
+
+    comps = []
+    for sc in scenarios:
+        lines, total = [], 0.0
+        for rid, mode in sc["picks"]:
+            r = next(x for x in RES["restaurants"] if x["id"] == rid)
+            amt = _dining(rid, mode)
+            total += amt
+            lines.append(f'<a href="{e(r["official_url"])}" target="_blank" rel="noopener">{e(r["name"])}</a> '
+                         f'<span class="muted">${amt:,.2f}</span>')
+        comps.append({"sc": sc, "lines": lines, "food": total,
+                      "total": total + act_total + monorail_two})
+
+    head = "".join(f'<th>{e(c["sc"]["name"])}</th>' for c in comps)
+
+    def row(label, cells, note=""):
+        n = f'<div class="tiny">{note}</div>' if note else ""
+        return (f'<tr><th class="rowhead">{label}{n}</th>'
+                + "".join(f"<td>{c}</td>" for c in cells) + "</tr>")
+
+    food_cells = [f'{"<br>".join(c["lines"])}<div class="num strong">${c["food"]:,.2f}</div>' for c in comps]
+    act_cell = (f'High Roller anytime ${hr[-1]:,.2f} + Mob Museum ${mob:,.2f} + '
+                f'Neon Museum from ${neon:,.2f}<div class="num strong">${act_total:,.2f}</div>')
+    transit_cell = (f'2 × Monorail 7-day e-ticket (${mon_fares[-1]:,.2f} each)'
+                    f'<div class="num strong">${monorail_two:,.2f}</div>')
+    total_cells = [f'<div class="num best" style="font-size:1.15rem">${c["total"]:,.2f}</div>' for c in comps]
+
+    matrix = f"""
+  <div class="scroll">
+  <table class="data matrix">
+  <thead><tr><th class="rowhead">Cost line (2 adults)</th>{head}</tr></thead>
+  <tbody>
+  {row("Michelin dinners", food_cells, "food only · before tax, tip and wine")}
+  {row("Activities", [act_cell]*len(comps), "the three paid venues this site verifies")}
+  {row("Getting around", [transit_cell]*len(comps), "unlimited Strip + Downtown")}
+  {row("Food, sights and transport", total_cells, "excludes the room, tax, tips and wine")}
+  </tbody>
+  </table>
+  </div>
+"""
+
+    act_rows = "".join(
+        f'<tr><td><a href="{e(a["official_url"])}" target="_blank" rel="noopener">{e(a["name"])}</a></td>'
+        f'<td class="num">{e(a["price_per_couple"]) or "—"}</td>'
+        f'<td class="tiny">{e(a["price_note"])}</td></tr>'
+        for a in ACT["activities"])
+
+    body = f"""
+<section class="panel callout">
+  <h2>What the food, sights and transport add up to</h2>
+  <p>Three worked totals for two adults, assembled at build time from the venue prices on this site.
+  <strong>No hotel figure is used.</strong> No official, checkout-complete seven-night accommodation quote exists in
+  this dataset (<a href="flagged.html#F-58">F-58</a>), so adding an OTA snapshot here would put back a number the
+  evidence gate deliberately removed. Add your own official room total to the line below once you have it.</p>
+  <p><strong>These totals are arithmetic on published prices, not quotes.</strong> They exclude Nevada room tax,
+  resort fees, airfare, gratuity and wine.</p>
+</section>
+
+<section class="panel">
+  <h2>Three ways to eat</h2>
+  {matrix}
+  <p class="note">Each dinner is the venue's own published price doubled for two (or, where only per-dish prices
+  exist, the labelled estimate from the <a href="restaurants.html#costs">restaurant table</a>). Partage appears at
+  its 5-course price in the first column, 7-course in the second and Signature in the third — the venue publishes
+  all three. Michael Mina is excluded from every column because it is temporarily closed
+  (<a href="flagged.html#F-23">F-23</a>).</p>
+</section>
+
+<section class="panel">
+  <h2>What one more dinner costs</h2>
+  <div class="scroll">
+  <table class="data slim">
+  <thead><tr><th>Add one dinner for two</th><th>Marginal cost</th><th>Source</th></tr></thead>
+  <tbody>
+  <tr><td>Partage, 5 courses</td><td class="num">${_dining("partage","low"):,.2f}</td><td class="tiny"><a href="{e(next(x for x in RES["restaurants"] if x["id"]=="partage")["price_source"])}">official menu</a></td></tr>
+  <tr><td>Wing Lei, Chef Tam's tasting</td><td class="num">${_dining("wing-lei","low"):,.2f}</td><td class="tiny"><a href="{e(next(x for x in RES["restaurants"] if x["id"]=="wing-lei")["price_source"])}">official menu</a></td></tr>
+  <tr><td>Guy Savoy, à la carte (estimate)</td><td class="num">≈${_dining("guy-savoy","low"):,.0f}–${_dining("guy-savoy","high"):,.0f}</td><td class="tiny"><a href="{e(next(x for x in RES["restaurants"] if x["id"]=="guy-savoy")["price_source"])}">official menu</a></td></tr>
+  </tbody>
+  </table>
+  </div>
+  <p class="note">Useful comparison: the cheapest starred dinner on this site (Wing Lei, ${_dining("wing-lei","low"):,.2f}
+  for two) is roughly the price of one to two hotel nights at the properties in the middle of the hotel table — check the
+  official checkout total before assuming the room is the only large line.</p>
+</section>
+
+<section class="panel">
+  <h2>Activities, priced for two</h2>
+  <div class="scroll">
+  <table class="data">
+  <thead><tr><th>Venue</th><th>2 adults</th><th>Basis</th></tr></thead>
+  <tbody>{act_rows}</tbody>
+  </table>
+  </div>
+  <p class="note">The three paid venues in the totals are the High Roller (anytime, ${hr[-1]:,.2f}), the Mob Museum
+  (${mob:,.2f}) and the Neon Museum (from ${neon:,.2f}). Fremont Street is free, so it adds nothing. The Sphere
+  publishes no single price and is left out of every total rather than estimated
+  (<a href="flagged.html#F-16">F-16</a>).</p>
+</section>
+
+<section class="panel">
+  <h2>Getting around: which pass to buy</h2>
+  <div class="scroll">
+  <table class="data slim">
+  <thead><tr><th>Option</th><th>For two</th><th>Basis</th></tr></thead>
+  <tbody>
+  <tr><td>Monorail 7-day e-ticket × 2</td><td class="num">${monorail_two:,.2f}</td>
+      <td class="tiny"><a href="{e(monorail["fare_url"])}" target="_blank" rel="noopener">official fares</a> ·
+      {e(monorail["fare_note"])}</td></tr>
+  <tr><td>RTC 3-day pass × 3 each (covers 9 days)</td><td class="num">${rtc_two:,.2f}</td>
+      <td class="tiny"><a href="{e(rtc["official_url"])}" target="_blank" rel="noopener">official fares</a> ·
+      {e(rtc["fare_note"])}</td></tr>
+  </tbody>
+  </table>
+  </div>
+  <p class="note">The monorail does not reach the airport or downtown; the RTC Deuce does and runs 24 hours, which
+  matters if Fremont Street and Chinatown are in the plan. No seven-day RTC pass was verified — the arithmetic
+  above stacks three-day passes.</p>
+</section>
+
+<section class="panel">
+  <h2>To turn this into a trip total</h2>
+  <ol class="tight">
+    <li><strong>Add the room.</strong> Use the property's own checkout for the exact dates: named room, two adults,
+      seven nights, mandatory resort fee and taxes, cancellation terms, timestamp
+      (<a href="hotels.html">Hotels</a>, <a href="flagged.html#F-58">F-58</a>).</li>
+    <li><strong>Add airfare</strong> and airport transfers — neither is in this dataset.</li>
+    <li><strong>Add gratuity and wine.</strong> Partage's published wine pairings are $60–$108 per person; the other
+      venues publish no pairing price, so none is estimated.</li>
+    <li><strong>Keep the nights flexible until the room is quoted.</strong> No universal cheapest week is established
+      (<a href="questions.html#Q-06">Q-06</a>).</li>
+  </ol>
+</section>
+"""
+    return page("dining.html", "Dining budget",
+                "What the Michelin dinners, the three paid activities and a transit pass add up to for two adults — before the room.",
                 body)
 
 
@@ -834,7 +501,7 @@ def build_activities():
   <h2>The one free thing</h2>
   <p>The <strong>Fremont Street Experience</strong> runs live music on three stages every night under the canopy,
   and entry is free. Put it on the same day as the Mob Museum and the Neon Museum — all three are downtown,
-  and downtown is the one zone that is a 25–30 minute trip from everywhere else.</p>
+  but travel times from each hotel remain unverified; do not assume a 25–30 minute journey.</p>
 </section>
 """
     return page("activities.html", "Things to do",
@@ -844,102 +511,18 @@ def build_activities():
 
 # ---------------------------------------------------------------- transit
 def build_transit():
-    sys_rows = []
-    for s in TRANSIT["systems"]:
-        stations = ", ".join(s.get("stations", []))
-        sys_rows.append(f"""<tr>
-<td><a href="{e(s['official_url'])}" target="_blank" rel="noopener">{e(s['name'])}</a>
- <div class="tiny">{e(s.get('hours', ''))}</div></td>
-<td class="tiny">{e(s['fare_note'])}</td>
-<td class="tiny">{e(s['note'])}</td>
-</tr>""")
-
-    zones = [z["id"] for z in TRANSIT["zones"]]
-    labels = {z["id"]: z["label"] for z in TRANSIT["zones"]}
-    head = "".join(f'<th class="vert">{e(labels[z])}</th>' for z in zones)
-    mrows = []
-    for z in zones:
-        cells = []
-        for z2 in zones:
-            v = TRANSIT["minutes"][z][z2]
-            k = "zero" if v == 0 else ("near" if v <= 20 else "far")
-            cells.append(f'<td class="num {k}">{v}</td>')
-        mrows.append(f'<tr><th class="rowhead">{e(labels[z])}</th>{"".join(cells)}</tr>')
-
-    center20 = max(
-        (h["michelin_within_20"] for h in HOTELS["hotels"] if h["zone"] == "center-strip"),
-        default=0,
-    )
     body = f"""
-<section class="panel">
-  <h2>There is no subway in Las Vegas</h2>
-  <p>The brief asked for restaurants within an hour <em>by subway or bus</em>. Las Vegas has no metro or light rail,
-  so three separate systems were modelled instead — and they do not share a ticket:</p>
-  <div class="scroll">
-  <table class="data">
-  <thead><tr><th>System</th><th>Fares</th><th>Reach</th></tr></thead>
-  <tbody>{''.join(sys_rows)}</tbody>
-  </table>
-  </div>
-  <p class="note">Fares are the operators' own published prices. The Monorail 7-day pass ($59.95 electronic) pays for
-  itself at ten single rides and covers the exact Strip stretch the starred restaurants sit on.</p>
-</section>
-
-<section class="panel">
-  <h2>Correction: Chinatown is reachable by bus</h2>
-  <p>An earlier version of this matrix recorded Chinatown / Spring Mountain Rd as reachable only by car or
-  rideshare. <strong>That was wrong.</strong> RTC <strong>Route 203</strong> runs the length of Spring Mountain Road,
-  and its published timetable carries a timed stop at <strong>Las Vegas Blvd</strong> — the north end of the Strip,
-  where Wynn, Encore, Resorts World and SAHARA are.</p>
-  <p>This matters more than any other single number on this site, because <strong>seven of the 24 MICHELIN listings
-  sit within a few blocks of that one corridor</strong>: Partage, Kabuto, KAME Omakase, Lamaii, Sparrow + Wolf
-  and Pho Ga Bac Bac on Spring Mountain Road itself, plus Yen Viet Kitchen at 3575 S. Decatur Blvd — a published
-  Route 203 timepoint. Nearly a third of the guide is on a road that turns out to have a bus.</p>
-  <p>The sampled timetable runs give <strong>Decatur to Las Vegas Blvd in about 8–17 minutes, depending on direction, day and time</strong> (weekday eastbound 10–17; Saturday westbound 8–9) (14 is the model midpoint; F-42). Adding a walk to the
-  stop, a platform wait and a walk at the far end puts the north Strip at about <strong>34 minutes</strong> from
-  Chinatown door to door — comfortably inside the brief's one-hour limit, from a hotel with no Monorail station.</p>
-  <p>This is the <strong>only published travel time in the whole model</strong>. Every other minute figure here is an
-  estimate built from station lists and route maps, and is labelled as one. Verify the timetable yourself:
-  <a href="https://rtcws.rtcsnv.com/routePDF/203.pdf" target="_blank" rel="noopener">RTC Route 203 timetable (PDF)</a>.</p>
-</section>
-
-<section class="panel">
-  <h2 id="matrix">Estimated one-way minutes between zones</h2>
-  <p><strong>These are estimates, not timetables.</strong> No official source publishes door-to-door times; these are
-  built from the official station lists and route maps and rounded to five minutes.</p>
-  <div class="scroll">
-  <table class="data matrix">
-  <thead><tr><th></th>{head}</tr></thead>
-  <tbody>{''.join(mrows)}</tbody>
-  </table>
-  </div>
-</section>
-
-<section class="panel">
-  <h2>Why the 60-minute ranking failed, and what was done instead</h2>
-  <p>The brief asked to rank hotels by how many MICHELIN restaurants fall within an hour. Run literally, that
-  number is <strong>24 out of 24 for every single hotel</strong> in the dataset — including the ones in Henderson
-  and Summerlin. The Strip is about four miles long and Chinatown is about three miles west of it, so an hour
-  covers the entire city.</p>
-  <p>A metric that returns the same value for all {len(HOTELS['hotels'])} properties cannot rank them. So a
-  <strong>20-minute</strong> column was added, and that one does separate the field:</p>
-  <div class="grid4">
-    <div class="card"><div class="big">24</div><div class="lbl">West of the Strip</div><p>Palms Place reaches everything in 20 minutes — the western hotels sit between Chinatown and the Strip.</p></div>
-    <div class="card"><div class="big">23</div><div class="lbl">North Strip</div><p>Venetian, Palazzo, Wynn, Encore, SAHARA, Resorts World.</p></div>
-    <div class="card"><div class="big">{center20}</div><div class="lbl">Centre Strip</div><p>The densest restaurant zone — more starred rooms, fewer Chinatown minutes.</p></div>
-    <div class="card"><div class="big">0</div><div class="lbl">Off-Strip</div><p>Henderson and Summerlin: correct resorts, 11–17 miles from dinner.</p></div>
-  </div>
-  <p class="note">This substitution is a material change to the brief and is raised openly as
-  <a href="questions.html">Q-01</a>. The whole matrix lives in one file, so a different threshold can be
-  recomputed in a single step.</p>
-</section>
+<section class="panel" id="matrix"><h2>Journey-time ranking suspended</h2><p>The inherited matrix is a zone-level estimate, not an official hotel-to-restaurant itinerary. Its saturation at 24/24 does not establish that every restaurant is reachable from every hotel within an hour. Verified counts are blank on the Hotels page. Monorail is a separate mode; Vegas Loop is not a subway or RTC bus. No Loop ride is counted as satisfying your bus/subway constraint.</p><p>For each actual journey, collect hotel entrance, restaurant entrance, service date/time, walk segments, wait, transfer, in-vehicle time and last return service. <a href="https://www.rtcsnv.com/ways-to-travel/">Official RTC journey resources</a>. No complete journeys were verified in this pass.</p></section>
+<section class="panel"><h2>RTC visitor fares · checked 27 November 2026</h2><p>These are published current pass prices, not February 2027 guarantees. All passes are valid on all routes. Visitors must use Strip and All Access fares. Two-adult totals below are arithmetic (2 × the printed adult price), not a trip-wide transport budget.</p><div class="scroll"><table class="data"><thead><tr><th>Pass</th><th>Total for 2 adults · USD</th><th>Basis</th><th>Official source</th></tr></thead><tbody>
+<tr><td>Single ride</td><td>$8</td><td>2 × $4</td><td><a href="{RTC_SOURCE}">RTC</a></td></tr>
+<tr><td>2 hours</td><td>$12</td><td>2 × $6</td><td><a href="{RTC_SOURCE}">RTC</a></td></tr>
+<tr><td>24 hours</td><td>$16</td><td>2 × $8</td><td><a href="{RTC_SOURCE}">RTC</a></td></tr>
+<tr><td>3 days</td><td>$40</td><td>2 × $20</td><td><a href="{RTC_SOURCE}">RTC</a></td></tr>
+</tbody></table></div><p>RTC describes normal Deuce frequency as approximately every 15 minutes. That is not door-to-door travel time. The inherited statement that Nevada local fares are $1 is incorrect for regular adults: RTC lists residential regular single rides at $2 and reduced fares at $1; visitor fare rules are separate. <a href="flagged.html#F-60">F-60</a>.</p></section>
 """
-    return page("transit.html", "Getting around",
-                "No subway, three separate systems, and the reason the 'within one hour' ranking had to be tightened to twenty minutes.",
-                body)
+    return page("transit.html", "Getting around", "Published visitor fares and explicit gaps in journey evidence.", body)
 
 
-# ---------------------------------------------------------------- questions
 def build_questions():
     state_cls = {"answered": "ok", "open": "bad", "interpreted": "warn"}
     cards = []
@@ -1141,6 +724,12 @@ GENERIC_WORDS = {
 # flags that are not about one venue get one hand-picked official page, taken from the datasets
 # or from a page this session actually opened
 FLAG_CHECK_EXTRA = {
+    "F-58": ("Official hotel discovery / room quotes", "https://www.caesars.com/book/"),
+    "F-59": ("Official RTC route resources", "https://www.rtcsnv.com/ways-to-travel/"),
+    "F-60": ("RTC official fare rules", RTC_SOURCE),
+    "F-61": ("Guy Savoy official menu", "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"),
+    "F-62": ("Mob Museum current hours", "https://themobmuseum.org/"),
+    "F-63": ("High Roller official conflicting time blocks", "https://www.caesars.com/linq/things-to-do/attractions/high-roller"),
     "F-10": ("Booking.com dated search used for every rate",
              "https://www.booking.com/hotel/us/the-linq-and-casino.html?checkin=2027-02-15"
              "&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"),
@@ -1306,8 +895,8 @@ def build_repo_review():
         ("Restaurants with no couple price", n_price, "blank — not verified"),
         ("Restaurants with no hours recorded", n_hours, "blank — not verified"),
         ("Restaurant rows marked verified = yes", n_ver, "the label describes the listing, see R-01"),
-        ("Restaurants with an Instagram link", n_ig, "recorded only where the venue's own site links it; the rest are blank (F-19)"),
-        ("Restaurants with a TikTok link", n_tt, "none verified — blank rather than guessed (F-19)"),
+        ("Restaurants with an Instagram link", n_ig, "verified 2026-11-27 from official/primary sources; blanks remain unverified (F-19, F-53)"),
+        ("Restaurants with a TikTok link", n_tt, "only 2 verified 2026-11-27; blanks remain unverified (F-19, F-53)"),
         ("Restaurants with at least one YouTube link", n_yt, "recorded, not opened this session"),
         ("Hotels (rows)", len(H), "32 properties"),
         ("Hotels whose official page is confirmed live", h_off_yes, "fetched 25–26 Nov 2026"),
@@ -1510,8 +1099,8 @@ ROUTES = [
         "Pricing",
         "Every price this plan uses, gathered in one place: hotels across all four measured weeks, restaurant totals for two, and the costs that sit outside the room rate.",
         [
-            ("Selected Booking.com date comparisons (not a market-wide result)", "hotels.html#cheapest-week"),
-            ("Every hotel, with both price bases", "hotels.html#every-hotel"),
+            ("Official price evidence and eligible dates", "hotels.html#cheapest-week"),
+            ("Hotel candidates and missing evidence", "hotels.html#every-hotel"),
             ("What dinner for two actually costs", "restaurants.html#costs"),
             ("Budget resort fees and 13.38% tax", "suggestions.html#S-08"),
             ("How the prices were captured (method)", "sources.html"),
@@ -1535,7 +1124,7 @@ ROUTES = [
         "The one-page version: what to book, what to avoid, and the three findings that change the shape of the trip.",
         [
             ("Overview and the three findings", "index.html"),
-            ("Hotels ranked, and the three cheapest traps", "hotels.html"),
+            ("Hotel evidence: no unsupported ranking", "hotels.html"),
             ("The four starred restaurants", "restaurants.html"),
             ("Suggestions ranked by impact", "suggestions.html"),
         ],
@@ -1606,7 +1195,7 @@ def main():
     pages = {
         "index.html": build_index(),
         "hotels.html": build_hotels(),
-        "costs.html": build_costs(),
+        "dining.html": build_dining(),
         "restaurants.html": build_restaurants(),
         "activities.html": build_activities(),
         "transit.html": build_transit(),
