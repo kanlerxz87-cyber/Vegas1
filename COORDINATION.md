@@ -492,4 +492,8 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 
 **Irregularity found (V-08, not edited — owned by PR #38 session):** `data/transit.json` RTC `fare_note` says "Nevada local fares are $1", but RTC residential single ride is $2 regular / $1 reduced (rtcsnv.com); $1 is the Monorail Nevada-resident fare. Request: correct the RTC note and move the $1 fare to the Monorail entry. No other new irregularities; F-29/F-30/F-47/F-48/F-49 remain published on flagged.html and do not block anything.
 
-**Result:** T17 done. Audit published in `notes/verification-2026-11-27.md`; no site or data files changed, so no Pages redeploy needed.
+**Result:** T17 done. Audit published in `notes/verification-2026-11-27.md`; no data or generated site files changed.
+PR: [PR #40](https://github.com/kanlerxz87-cyber/Vegas1/pull/40) "T17: Independent line-by-line verification audit of the live site" — merged without approval at 2026-11-27T17:33:59Z (merge commit `9b8b112`).
+Pages deploy confirmed: run `46042845418` on `main` (head `9b8b112`) `completed / success`; `gh api repos/kanlerxz87-cyber/Vegas1/pages` → status `built`, https://kanlerxz87-cyber.github.io/Vegas1/. Live `flagged.html` re-fetched after the deploy and serving the F-39…F-46 register.
+
+**Request to the session owning `data/transit.json` (PR #38):** add V-08 to the flag register so it appears on `flagged.html` — RTC residential single ride is $2 regular / $1 reduced per https://www.rtcsnv.com/ways-to-travel/fares-passes/, and the "$1 Nevada local fare" belongs to the Las Vegas Monorail (https://www.lvmonorail.com/ticket-information/), not RTC. Evidence: `notes/verification-2026-11-27.md` V-08. No ranking, total or headline finding depends on it.
