@@ -144,14 +144,15 @@
       "id": "Q-10",
       "question": "Is there a convention, race or holiday in the chosen week that changes the price?",
       "state": "answered",
-      "answer": "The Formula 1 Las Vegas Grand Prix is NOT in this window — the 2027 race is 18–20 November 2027, well outside 15 Feb–23 Mar. US Presidents' Day falls on 15 Feb 2027, the first day of the preferred window.",
+      "answer": "The Formula 1 Las Vegas Grand Prix is NOT in this window — the 2027 race is 18–20 November 2027, well outside 15 Feb–23 Mar. US Presidents' Day falls on 15 Feb 2027, the first day of the preferred window. (Re-checked 2026-11-27: all six activity rows were re-read from their official pages; Mob Museum Thursday hours corrected to 9 a.m.-9 p.m.; Bellagio Fountains hours and $0 price verified and the venue added, closing F-18.)",
       "problem": "Presidents' Day is a long weekend and the February week is the most expensive of the four measured. The calendar fact is verified; the causal link to the price is not, so it is labelled a likely driver, not a proven one.",
       "substitution": "Nothing changed — both facts are stated with that distinction.",
       "how_to_close": "Check the Las Vegas Convention and Visitors Authority events calendar and the Las Vegas Motor Speedway schedule for the chosen week. NASCAR's spring race weekend is traditionally in early March.",
       "sources": [
         "https://f1experiences.com/2027-las-vegas-grand-prix",
         "https://dord.racing/events/2027/f1-las-vegas-gp"
-      ]
+      ],
+      "last_pass": "2026-11-27 (T17)"
     },
     {
       "id": "Q-11",
