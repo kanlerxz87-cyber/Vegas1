@@ -465,3 +465,9 @@ they are not typed, so do not hand-edit generated HTML in either `docs/` or the 
 left as-is and marked confirmed — but the Cromwell case shows a redirect can hide a rebrand, so re-open the
 redirect targets (not just the vanity domains) when prices are re-captured.
 
+
+## Session claim — arena/16cb2f96-vegas1 — 2026-11-27
+
+| ID | Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|---|
+| T16 | Integration audit: validate current site, examine decision-critical unverified claims, correct/flag issues, publish if safe | in progress | arena/16cb2f96-vegas1 | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `data/*.json`, `scripts/*.py`, generated root and `docs/` pages | Current Arena branch is fixed; acting as integration session. Prior tasks are done or needs review. Will preserve other work. |
