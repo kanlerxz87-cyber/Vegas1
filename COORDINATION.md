@@ -559,3 +559,62 @@ Push preparation note: plain `git pull --rebase` after the integration merge att
 - Pages build for `85fbe31` reached `built`; a later session merged PR #41 (`ad6075a`) on top, and `data/activities.json` / `data/restaurants.json` on `main` still carry this session's links (verified: restaurants IG 19/24, TT 2/24, YT 24/24; activities YT 15 URLs, IG 5/5, TT 3/5; Mob Museum daily 9–9).
 - Live-page caveat: immediately after the merge `https://kanlerxz87-cyber.github.io/Vegas1/activities.html` still served the pre-merge HTML while the Pages API already reported `built` — GitHub Pages CDN caching, not a build failure. The committed `activities.html` on `main` contains the new YouTube/Instagram links, so the page updates once the cache refreshes.
 - Open PR #38 (`arena/16cb2f96-vegas1`) and #27 (`arena/c9eed9ad-vegas1`) were **not** merged or closed by this session.
+| T19 | Integration/repair pass on the merged T17/T18 site: `FLAGS.md` register table repair, `validate.py` false positive, activity social-link provenance panel, Q-07 correction, S-16 | done | arena/41324885-vegas1 | `COORDINATION.md`, `FLAGS.md`, `data/activities.json`, `data/questions.json`, `data/suggestions.json`, `scripts/gen_site.py`, `scripts/validate.py`, `notes/verification-2026-11-27-t17-integration.md` (new), generated root + `docs/` pages | Done 2026-11-27. Claimed as T17, renumbered T19 at integration because T17 was taken by arena/bc27fca6-vegas1 while this session worked; its duplicate flag rows (proposed F-52/F-53/F-54) were discarded in favour of main's F-52/F-53 and F-62/F-63. |
+
+## Session record — arena/41324885-vegas1 (T19, claimed as T17) — 2026-11-27 — DONE
+
+**Branch:** `arena/41324885-vegas1`. **Base at start:** `631e611`. **Base at integration:** `origin/main` @ `8f386c5`.
+
+**Concurrent-session collision (resolved, nothing discarded from main).** This session claimed "T17" and did the
+same job two other sessions did in parallel: Mob Museum Thursday-hours correction, activity social links, and the
+High Roller ticket-window conflict. By the time it finished, `main` was **149 commits ahead** and already carried
+those findings as **F-52** (Mob hours), **F-53** (TikTok coverage), **F-62** (strict-evidence restatement) and
+**F-63** (High Roller conflict). The branch was therefore reset onto `origin/main` and every finding was
+**re-applied by hand against main's current structure**; this session's duplicate register rows were dropped
+(its proposed F-54 is deliberately **unused**) and main's IDs and wording kept. The pre-reset commits
+(`858351a`, `9462684`) exist only in this clone's reflog and were never pushed as a branch. No upstream commit,
+file or flag was overwritten.
+
+**Retained, still-missing-on-main fixes (verified in this session):**
+
+1. **`FLAGS.md` was four markdown tables.** Blank lines before F-27, F-47 and F-50 meant **11 of 43** register
+   rows rendered as loose text on GitHub instead of table rows. Repaired into one table for F-01–F-53; F-58–F-63
+   keep their own heading; the non-contiguity of F-31–F-46 is now stated in the file.
+2. **`scripts/validate.py` false positive.** Its "no literal nan" check matched the letters inside ordinary words
+   and warned on *provenance*. It now matches standalone `None`/`nan` tokens on word boundaries.
+3. **Activity social provenance.** All five activities now carry a `social_note`, and the activities page renders a
+   **"Where each social link came from"** panel. This closes the gap between "a link is present" and "we can say
+   who published that handle" — the same standard the rest of the site uses.
+4. **Q-07 corrected.** It still read "Instagram and TikTok are almost entirely blank", which contradicted F-53's
+   19/24 restaurant Instagrams. Rewritten to the 27 Nov coverage, with the evidence standard and the remaining
+   gaps (5 restaurant Instagrams, 22 TikTok accounts).
+5. **S-16 added** so those gaps are a listed decision rather than silent blanks.
+
+**Independent verification performed 2026-11-27** (row-by-row table with a source URL per row:
+`notes/verification-2026-11-27-t17-integration.md`): MICHELIN tiers re-confirmed against the michelin.com press
+release **and** LVCVA's page (which independently states 24 distinctions and lists the same 17 Recommended names,
+so 4 + 3 + 17 = 24 checks out); Joël Robuchon hours/phone/dress code, é by José Andrés hours/9 seats/2 seatings,
+Michael Mina closure, Mob Museum hours + ticket prices + December-only special hours, Neon Museum 2027 admission
+(3–11 PM, last entry 10 PM, from $21 → $42 for two), High Roller prices and its internal ticket-window conflict,
+Fremont Street free nightly shows, and every Monorail fare — all matched. Guy Savoy's official page still prints
+**no hours block**, so that cell stays blank. RTC fares and the Route 203 timetable were **not** re-checked from
+this environment (fetch failed); F-60/F-42 keep their own dated evidence.
+
+**Decision request logged for the couple (P-01, not changed by this session).** The merged site now presents the 32
+hotels **alphabetically, "not ranked"**, with unofficial amounts blanked pending official quotes (F-58/F-59). The
+original brief asked for hotels **ranked** by MICHELIN proximity inside an hour and by price. The page is now
+defensible on evidence but no longer answers the ranking question. Options: (a) leave as is; (b) publish an
+explicitly indicative ranking from the dated OTA snapshots, labelled as not a booking offer; (c) rank only the
+subset with a confirmed named-room official rate. This is a choice for the owner, published on the site's
+Suggestions/Flagged pages via S-16 and F-58 rather than decided silently here.
+
+**Build:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py`
+→ 13 pages · 0 failures · 0 warnings; root and `docs/` byte-identical (`cmp` on every page).
+
+
+**Branch-history note (T19).** The remote branch `arena/41324885-vegas1` still pointed at the two superseded
+commits from this session's pre-reset attempt (`9462684`, `858351a`, based on `631e611`). Because those are this
+session's own commits and contain no other session's work, the branch was reset onto `origin/main` (`8f386c5`)
+plus the re-applied commit and pushed with **`--force-with-lease`**. Other sessions must not merge the
+pre-reset commits: they predate PRs #38–#42 and would resurrect the duplicate F-52/F-53/F-54 numbering and the
+superseded activity dataset. No commit from any other branch was rewritten.
