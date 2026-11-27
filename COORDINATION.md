@@ -481,3 +481,11 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 **Irregularities:** none new. All known limitations remain published on flagged.html (F-29/F-30 rate basis, F-47 Vanderpump rebrand, F-48 search-list prices, etc.) and do not block this merge.
 
 **Result:** T16 done. [PR #36](https://github.com/kanlerxz87-cyber/Vegas1/pull/36) merged 2026-11-27T17:31:08Z (merge commit `cc78807`); Pages build `1409320765` status `built`, Pages API `built` at https://kanlerxz87-cyber.github.io/Vegas1/.
+
+## Session claim — arena/ec1d72e2-vegas1 (T17) — 2026-11-27
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| T17 | Strict-evidence integration: audit inherited claims, separate non-official rate/transit estimates from decision tables, refresh official evidence, improve regression checks, publish | in progress | arena/ec1d72e2-vegas1 | `COORDINATION.md`, `README.md`, `executive-summary.md`, `FLAGS.md`, `data/verification-2026-11-27.json`, `scripts/{build,gen_site,validate}.py`, `tests/`, generated root/`docs/` HTML and CSS |
+
+No current in-progress task was found on the shared board. Earlier T01–T16 work is retained. This session uses the assigned Arena branch `arena/ec1d72e2-vegas1` (platform constraint; no alternate branch will be created). Existing source datasets and archived independent builds will not be overwritten. Shared outputs are claimed as final integration because earlier tasks are complete. Official pricing that cannot be reproduced will remain blank in the primary decision view; historical OTA captures are evidence of previous work, not verified official quotes. External link availability will be reported separately from local link integrity.
