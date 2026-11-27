@@ -778,3 +778,24 @@ Monorail line. This is recorded rather than quietly patched: a live-page read fo
 then #45/#46/#48). Every merge was resolved by regenerating HTML rather than hand-merging it, and no other
 session's data was reverted. The one deliberate reversal of an earlier decision — reinstating a *labelled estimate*
 for Guy Savoy — is recorded as F-64 with its source and keeps the $3,000 Krug figure withdrawn.
+
+## T20 official verification, F-18 resolution & generator bug-fix pass — arena/01ba2dd9-vegas1 — 2026-11-27
+
+**Conflict & sync record:** Originally claimed on `arena/01ba2dd9-vegas1` at `6420341`. While official-source
+verification ran, PRs #36–#52 merged onto `main` (`331f1a2`), adding the 15-page build (`dining.html`/`costs.html`),
+`scripts/check_evidence.py`, social-link provenance (21/24 restaurant IGs), and flags F-52–F-66. Merged
+`origin/main` cleanly in commit `3f675f9` preserving 100% of PRs #36–#52, then applied only genuinely new,
+non-conflicting verified additions on top of `origin/main` as **T20**:
+
+1. **Four additional exact set-menu restaurant prices verified (F-68, extending F-65 from 7/24 → 11/24 priced):**
+   - **China Poblano** (`https://www.chinapoblano.com/menus/`): José's Way Tasting $60.00/pp → **$120 (exact)** (resolves F-05); Sunday close corrected to **10:00 PM** and phone `702.698.7900` confirmed (`cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html`).
+   - **Stubborn Seed** (`https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/`): Chef's Tasting $160/pp → **$320 (exact)**.
+   - **Kabuto** (`https://resy.com/cities/las-vegas-nv/venues/kabuto-edomae-sushi`, linked from `kabutolv.com/reserve`): Yoroi $130/pp & Kabuto $185/pp → **$260 / $370 (exact)** ($100/pp 24h cancel fee).
+   - **SoulBelly BBQ** (`https://soulbellybbq.com/menu`): *Chef's Choice for 2* set meal → **$80 (exact)**; confirmed MICHELIN 2026 selection applies to Main Street only.
+   - **Estiatorio Milos** (`https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html`): Fri–Sat close corrected to **11:00 PM**.
+2. **New official-vs-official schedule conflict logged (F-67):** **é by José Andrés** — Cosmopolitan MGM page lists `Tue–Sat` (closed Sun/Mon) while `https://www.ebyjoseandres.com/` states `Tue–Sun` (5:30 & 8:30 PM seatings; direct phone `702-698-7950`).
+3. **Fountains of Bellagio verified live & promoted to Activity #6 (F-18 resolved):** fetched `https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html` live (free `$0`; Mon–Fri q30m 3–7:30 PM, q15m 8 PM–midnight; Sat/Sun/Holidays q30m 12–7:30 PM, q15m 8 PM–midnight; weather-dependent; YT `https://www.youtube.com/watch?v=iNQpcDuE6e4`; official IG `https://www.instagram.com/Bellagio/`).
+4. **Final 4 unopened hotel official URLs checked (F-27/F-49 updated — 0 unopened across all 32 hotels):** **Green Valley Ranch** (`greenvalleyranch.com`) and **Red Rock** (`redrockresort.com`) confirmed live (`yes`); **Waldorf Astoria** (`hilton.com`) and **The Signature at MGM Grand** (`mgmresorts.com`) refuse automated fetch (`blocked`). Final tally: **21 live · 10 refused · 1 sibling · 0 unopened** (decision table remains blank per F-58).
+5. **Generator & register bug fixes:** fixed `scripts/gen_site.py` broken `suggestions.html` `<h2>1</h2>` heading (`16 ways to improve this plan`), `sources.html` typo `F-39` → `F-29` and dynamic activity list, `flagged.html` flag-range prose (`F-47 to F-68`), `activities.html` two-free-highlights callout, `questions.json` (`Q-08` "15 months" → "~3 months", `Q-13` 0 unopened), and `suggestions.json` (`S-02` 21 → 24 listings).
+
+**Pre-merge checks:** `python3 -m py_compile scripts/gen_site.py && python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py && python3 scripts/check_evidence.py` → **15 pages · 0 failures · 0 warnings · 501 external links · `check_evidence.py` PASS**, root and `docs/` 100% byte-identical.
