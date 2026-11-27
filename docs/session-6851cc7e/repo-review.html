@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Repo Review (14 Findings) — Las Vegas Feb–Mar 2027 Official-Source Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-row">
+        <a class="brand-title" href="index.html">Las Vegas 2027: Official-Source Couple Trip Verification</a>
+        <span class="brand-meta">Verified 2026-11-27 · 2 Adults · Feb 15 – Mar 23, 2027 · <a href="../../index.html">Canonical Repo Root ↗</a></span>
+      </div>
+      <nav class="nav-scroller" aria-label="Primary sections">
+        <a class="nav-link" href="index.html">Executive Summary</a>
+        <a class="nav-link" href="hotels.html">Hotels (15 Official IBEs)</a>
+        <a class="nav-link" href="costs.html">Combined Costs &amp; Calculator</a>
+        <a class="nav-link" href="michelin.html">MICHELIN (24)</a>
+        <a class="nav-link" href="activities-transit.html">Activities &amp; Transit</a>
+        <a class="nav-link" href="questions-suggestions.html">Q&amp;A &amp; Suggestions</a>
+        <a class="nav-link active" href="repo-review.html" aria-current="page">Repo Audit (14)</a>
+        <a class="nav-link" href="flagged.html">Flagged (22)</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content">
+
+    <section class="hero">
+      <span class="eyebrow">Line-by-Line Code &amp; Data Review of main@99a3506</span>
+      <h1>Repository Review — 14 Verified Irregularities &amp; How This Build Resolves Them</h1>
+      <p class="lead">Audited commit <code>99a3506</code> across all scripts, JSON files, flags, and generated HTML pages against ~115 primary-source fetches executed on <code>2026-11-27</code>. Full Markdown report saved in <code>notes/repo-audit-6851cc7e.md</code>.</p>
+    </section>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID &amp; Severity</th>
+            <th>File &amp; Line Reference</th>
+            <th>What Canonical <code>main@99a3506</code> Currently States</th>
+            <th>What Official Primary Sources Prove (2026-11-27)</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><strong>RA-01</strong><br><span class="badge high">HIGH</span></td>
+          <td><code>dining.html:72 &amp; scripts/gen_site.py</code></td>
+          <td><strong>Wing Lei falsely called &#x27;the cheapest starred dinner on this site&#x27; on live dining.html</strong><br><small>dining.html line 72 states &#x27;the cheapest starred dinner on this site (Wing Lei, $397.76 for two)&#x27;, contradicting F-03 (&#x27;the 2026 Guide lists [Wing Lei] Recommended, not starred&#x27;).</small></td>
+          <td>Wing Lei is MICHELIN Recommended (Selected, unstarred) in the 2026 MICHELIN Guide Southwest. Only 4 Las Vegas restaurants hold stars in 2026: Joël Robuchon (2★), é by José Andrés (1★), Restaurant Guy Savoy (1★), and L&#x27;Atelier de Joël Robuchon (1★).</td>
+          <td><a class="pill-link" href="https://guide.michelin.com/us/en/article/michelin-guide-ceremony/michelin-guide-southwest-stars-2026" target="_blank" rel="noopener">Primary Source ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>RA-02</strong><br><span class="badge high">HIGH</span></td>
+          <td><code>costs.html &amp; docs/costs.html</code></td>
+          <td><strong>Orphan costs.html left live on GitHub Pages with $6.00 RTC math bug &amp; withdrawn OTA hotel totals</strong><br><small>After costs.html was renamed to dining.html, costs.html remained tracked in both / and /docs/, still displaying &#x27;RTC 3-day pass × 3 each = $6.00&#x27; (instead of $120.00), stale nav links, and Booking.com OTA hotel snapshots ($1,125 / $1,580 / $3,072) withdrawn under F-58.</small></td>
+          <td>Three 3-day RTC Strip &amp; All-Access passes ($20 each) for 2 adults equal $120.00 ($60/person), and official first-party Caesars Palace 7-night Feb 15–22 Julius Deluxe King is $1,407.00 pre-tax / $1,595.26 w/ 13.38% tax.</td>
+          <td><a class="pill-link" href="https://www.rtcsnv.com/ways-to-travel/fares-passes/" target="_blank" rel="noopener">Primary Source ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>RA-03</strong><br><span class="badge medium">MEDIUM</span></td>
+          <td><code>scripts/gen_site.py (build_suggestions) &amp; suggestions.html</code></td>
+          <td><strong>Literal &#x27;&lt;h2&gt;1&lt;/h2&gt;&#x27; heading rendered on suggestions.html</strong><br><small>SUGGESTIONS_HEAD is defined as a 1-element tuple/collection whose len() evaluates to 1, emitting an accidental &#x27;&lt;h2&gt;1&lt;/h2&gt;&#x27; heading above suggestions.</small></td>
+          <td>Section heading should count the actual suggestions list rather than a 1-item wrapper.</td>
+          <td><a class="pill-link" href="https://kanlerxz87-cyber.github.io/Vegas1/suggestions.html" target="_blank" rel="noopener">Primary Source ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>RA-04</strong><br><span class="badge medium">MEDIUM</span></td>
+          <td><code>scripts/gen_site.py (build_sources) &amp; sources.html</code></td>
+          <td><strong>Flag F-39 paired with F-29&#x27;s OTA hotel description on sources.html</strong><br><small>build_sources() renders F-39 alongside F-29&#x27;s Booking.com hotel-window note rather than F-39&#x27;s Venetian 4+ guest occupancy withdrawal note.</small></td>
+          <td>In FLAGS.md, F-39 documents withdrawal of an unverified Venetian Feb quote with a 4+ guest occupancy warning.</td>
+          <td><a class="pill-link" href="https://www.venetianlasvegas.com/" target="_blank" rel="noopener">Primary Source ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>RA-05</strong><br><span class="badge high">HIGH</span></td>
+          <td><code>data/restaurants.json (stubborn-seed, kabuto, china-poblano, soulbelly-bbq)</code></td>
+          <td><strong>Four official venue menus with published prices still marked &#x27;not published on official page&#x27;</strong><br><small>price_2adults is empty (&#x27;&#x27;) for stubborn-seed, kabuto, china-poblano, and soulbelly-bbq in canonical data/restaurants.json.</small></td>
+          <td>Direct 2026-11-27 fetches confirm official published prices on all four: Stubborn Seed Tasting Menu $160/pp = $320.00 exact (Resorts World PDF 11-25-2026); Kabuto Yoroi $130/pp ($260.00) &amp; Kabuto Course $185/pp ($370.00) on official Resy venue page; China Poblano José&#x27;s Way $60/pp = $120.00 exact on chinapoblano.com/menus/; SoulBelly BBQ Chef&#x27;s Choice for 2 = $80.00 exact on soulbellybbq.com/menu.</td>
+          <td><a class="pill-link" href="https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/" target="_blank" rel="noopener">Primary Source ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>RA-06</strong><br><span class="badge medium">MEDIUM</span></td>
+          <td><code>data/restaurants.json:84–97 (latelier-robuchon)</code></td>
+          <td><strong>Three errors in L&#x27;Atelier de Joël Robuchon: Service Award misattribution, wrong phone in notes, and &#x27;under 6&#x27; age rule</strong><br><small>Canonical notes credit L&#x27;Atelier with the 2026 MICHELIN Service Award, print Joël Robuchon&#x27;s phone (702.891.7925) in notes while phone has 702.891.7358, and write &#x27;No guests under 6&#x27;.</small></td>
+          <td>MICHELIN&#x27;s Aug 31, 2026 press release awarded the 2026 Service Award to Sean Christopher at 2★ Joël Robuchon; L&#x27;Atelier&#x27;s MGM page prints 702.891.7358 and states &#x27;does not include children 6 and under&#x27; (excluding age 6).</td>
+          <td><a class="pill-link" href="https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html" target="_blank" rel="noopener">Primary Source ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>RA-07</strong><br><span class="badge medium">MEDIUM</span></td>
+          <td><code>data/restaurants.json:176–189 (china-poblano)</code></td>
+          <td><strong>China Poblano Sunday closing hour off by 30 minutes &amp; official phones blank</strong><br><small>Canonical hours read &#x27;Sat–Sun 10:00 AM – 10:30 PM&#x27; and phone is &#x27;&#x27;.</small></td>
+          <td>Official Cosmopolitan MGM page lists Sunday hours as &#x27;10:00 AM to 10:00 PM&#x27; (closing 30 min earlier than Saturday) and phones 702.698.7900 / 877.893.2003.</td>
+          <td><a class="pill-link" href="https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html" target="_blank" rel="noopener">Primary Source ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>RA-08</strong><br><span class="badge low">LOW</span></td>
+          <td><code>data/restaurants.json:336 (estiatorio-milos)</code></td>
+          <td><strong>Estiatorio Milos Friday–Saturday 11:00 PM closing hour truncated</strong><br><small>Canonical hours read &#x27;11:30 AM – 10:30 PM (Fri–Sat from 11:30 AM)&#x27;.</small></td>
+          <td>Official Venetian page prints Fri–Sat 11:30 AM – 11:00 PM (Sun–Thu 11:30 AM – 10:30 PM).</td>
+          <td><a class="pill-link" href="https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html" target="_blank" rel="noopener">Primary Source ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>RA-09</strong><br><span class="badge low">LOW</span></td>
+          <td><code>data/restaurants.json:303 (bouchon)</code></td>
+          <td><strong>Bouchon tower name still listed as &#x27;Venezia Tower&#x27;</strong><br><small>Canonical location lists &#x27;Venezia Tower, 10th floor&#x27;.</small></td>
+          <td>Official Venetian page now names the tower &#x27;The Venetian South Tower, 10th floor&#x27;.</td>
+          <td><a class="pill-link" href="https://www.venetianlasvegas.com/dining/restaurants/bouchon.html" target="_blank" rel="noopener">Primary Source ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>RA-10</strong><br><span class="badge low">LOW</span></td>
+          <td><code>data/restaurants.json:733 (pho-ga-bac-bac)</code></td>
+          <td><strong>Pho Ga Bac Bac notes still cite abandoned @bestchickenpho Instagram URL</strong><br><small>instagram field was updated to @phogabacbac702 per F-56, but notes still reads &#x27;Instagram verified 2026-11-27: https://www.instagram.com/bestchickenpho/&#x27;.</small></td>
+          <td>@phogabacbac702 is the active restaurant handle; @bestchickenpho moved.</td>
+          <td><a class="pill-link" href="https://www.instagram.com/phogabacbac702/" target="_blank" rel="noopener">Primary Source ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>RA-11</strong><br><span class="badge medium">MEDIUM</span></td>
+          <td><code>data/activities.json:113–155 (neon-museum &amp; fremont-street)</code></td>
+          <td><strong>Internal self-contradiction: 3 verified YouTube links published alongside caveat saying &#x27;no YouTube link is published&#x27;</strong><br><small>Both neon-museum and fremont-street include 3 verified YouTube URLs (including official channel uploads ewrNfjNa4w4 and KDARquYGk_M), while social_caveat on the next line says &#x27;so no YouTube link is published&#x27;.</small></td>
+          <td>Official YouTube uploads ARE published and verified via oEmbed; stale social_caveat strings were not updated when videos were added.</td>
+          <td><a class="pill-link" href="https://www.neonmuseum.org/visit/" target="_blank" rel="noopener">Primary Source ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>RA-12</strong><br><span class="badge medium">MEDIUM</span></td>
+          <td><code>data/transit.json (rtc &amp; vegas-loop)</code></td>
+          <td><strong>RTC regular residential fare misstated as $1 ($2 regular / $1 reduced) &amp; Vegas Loop lists 7 of 14 active stations</strong><br><small>rtc note says &#x27;Nevada local fares are $1&#x27; without noting $1 is Reduced Fare only; vegas-loop lists 7 stations and omits fares.</small></td>
+          <td>Official RTC fares-passes page lists $2.00 Regular Residential single ride ($1.00 Reduced Fare only); boringcompany.com lists 14 active Vegas Loop stations (incl. Fontainebleau, Sahara, Airport T1/T3, Turnberry, LVCC Central Plaza) and $5/$8 sample fares.</td>
+          <td><a class="pill-link" href="https://www.boringcompany.com/projects/las-vegas-loop" target="_blank" rel="noopener">Primary Source ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>RA-13</strong><br><span class="badge low">LOW</span></td>
+          <td><code>FLAGS.md (F-52..F-57)</code></td>
+          <td><strong>Duplicate flag numbers F-52..F-57 created during parallel PR merges</strong><br><small>Two parallel PR trains assigned F-52..F-57 to distinct issues (noted in COORDINATION.md line 825).</small></td>
+          <td>All our session flags use an isolated FL-01..FL-22 namespace to prevent any further ID collision.</td>
+          <td><a class="pill-link" href="https://github.com/kanlerxz87-cyber/Vegas1/blob/main/FLAGS.md" target="_blank" rel="noopener">Primary Source ↗</a></td>
+        </tr>
+        <tr>
+          <td><strong>RA-14</strong><br><span class="badge high">HIGH</span></td>
+          <td><code>data/official-rates.json &amp; hotels.html</code></td>
+          <td><strong>Canonical official-rates.json covers only 3 properties on 1 window (Feb 15–22), leaving March comparison &amp; 12+ resorts unpriced</strong><br><small>hotels.html blanks all 32 hotel rate rows (F-58), and data/official-rates.json only records Caesars Palace, Flamingo, and The LINQ for Feb 15–22, 2027.</small></td>
+          <td>Task T20 verifies 15 Las Vegas properties across BOTH Feb 15–22 and Mar 14–21, 2027 directly from official booking engines (8 Caesars properties, 3 Resorts World towers, Fontainebleau, Wynn, Encore, Downtown Grand).</td>
+          <td><a class="pill-link" href="https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&amp;departureDate=02/22/2027&amp;dateSearchFormat=exact-dates&amp;propCode=clv" target="_blank" rel="noopener">Primary Source ↗</a></td>
+        </tr></tbody>
+      </table>
+    </div>
+    
+  </main>
+  <footer class="site-footer">
+    <p><strong>Strict Evidence &amp; Zero-Fabrication Policy:</strong> Every hotel price on this subsite comes directly from a first-party property booking engine captured on <code>2026-11-27</code> for a named Queen-or-larger room with a private bathroom. Every restaurant price comes from an official venue menu, resort menu PDF, or official OpenTable/Resy booking page. All unverified prices, conflicting hours, and bot-blocked engines are left blank and listed on <a href="flagged.html">Flagged for Review</a>.</p>
+    <p>Task T20 (<code>arena/6851cc7e-vegas1</code>) · Source JSONs: <code>data/session-6851cc7e-*.json</code> · Audit notes: <code>notes/repo-audit-6851cc7e.md</code>.</p>
+  </footer>
+  
+</body>
+</html>
