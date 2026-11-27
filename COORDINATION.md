@@ -481,3 +481,10 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 **Irregularities:** none new. All known limitations remain published on flagged.html (F-29/F-30 rate basis, F-47 Vanderpump rebrand, F-48 search-list prices, etc.) and do not block this merge.
 
 **Result:** T16 done. [PR #36](https://github.com/kanlerxz87-cyber/Vegas1/pull/36) merged 2026-11-27T17:31:08Z (merge commit `cc78807`); Pages build `1409320765` status `built`, Pages API `built` at https://kanlerxz87-cyber.github.io/Vegas1/.
+
+## Session claim — arena/3d5d3718-vegas1 — 2026-11-27
+
+| ID | Task | Status | Owner (session ID) | File scope | Notes |
+|----|------|--------|--------------------|-----------|-------|
+| T17 | Social-link completion + fresh official-source verification sweep + final integration | in progress | arena/3d5d3718-vegas1 | `COORDINATION.md`, `FLAGS.md`, `data/restaurants.json`, `data/activities.json`, `data/questions.json`, `scripts/gen_site.py`, generated root + `docs/` pages, `README.md`, `executive-summary.md` | Fill Instagram/TikTok/YouTube gaps from official venue pages only (never guessed); re-verify Guy Savoy price (F-53), Michelin tiers, RTC/Monorail fares; rebuild + validate; PR + merge; confirm Pages. Overlap note: PR #38 (arena/16cb2f96, T16) touches the same files and is CONFLICTING/unmerged — its F-52/F-53 corrections will be preserved/re-applied here, not overwritten. PR #27 (arena/c9eed9ad) also CONFLICTING; not merged by this session. |
+
