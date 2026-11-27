@@ -418,7 +418,7 @@ def build_index(hotels: dict, michelin: dict, act_tr: dict, audit_qa: dict) -> s
       <div class="kpi">
         <div class="kpi-label">2026 MICHELIN Las Vegas</div>
         <div class="kpi-val">4 Starred · 3 Bib · 17 Rec</div>
-        <div class="kpi-sub">11/24 official couple prices verified; 13 blank; 1 closed (Michael Mina) excluded</div>
+        <div class="kpi-sub">15/24 official couple prices verified; 9 blank; 1 seasonal/temp closed excluded</div>
       </div>
     </div>
 
@@ -663,15 +663,20 @@ def build_costs(hotels: dict, michelin: dict, act_tr: dict) -> str:
 
     dining_checks = [
         ("guy-savoy", "1★ Restaurant Guy Savoy (~$520.00 min dish est., pre-tax)", 520.00, True, False),
+        ("kame-omakase", "Recommended: KAME Omakase Seasonal ($700.00++ exact; Signature $1,000++)", 700.00, False, False),
         ("wing-lei", "Recommended: Wing Lei Peking Duck Tasting ($397.76 exact)", 397.76, False, True),
         ("stubborn-seed", "Recommended: Stubborn Seed Tasting Menu ($320.00 exact)", 320.00, False, True),
-        ("partage-7", "Recommended: Partage 7-Course Tasting ($320.00 exact; 5-course is $260)", 320.00, False, False),
+        ("partage-7", "Recommended: Partage 7-Course Tasting ($320.00 exact; 5-course $260)", 320.00, False, False),
+        ("sparrow-wolf", "Recommended: Sparrow + Wolf Chef's Tasting ($298.00 exact)", 298.00, False, False),
         ("kabuto", "Recommended: Kabuto Yoroi Omakase ($260.00 exact; Kabuto Course $370)", 260.00, False, True),
+        ("cote", "Recommended: COTE Feast of USDA Prime ($190.00 exact; Steak Omakase $450)", 190.00, False, False),
         ("anima-by-edo", "Recommended: Anima by EDO Tasting ($170.00 exact)", 170.00, False, False),
-        ("anima-mon", "Recommended: Anima by EDO Monday Pasta + Bottle of Wine ($65.00 exact couple)", 65.00, False, False),
         ("esthers-kitchen", "Bib Gourmand: Esther's Kitchen (~$145.00 mid dish est.)", 145.00, True, False),
         ("china-poblano", "Bib Gourmand: China Poblano José's Way Tasting ($120.00 exact)", 120.00, False, True),
+        ("estiatorio-milos", "Recommended: Estiatorio Milos 3-Course Lunch ($90.00 exact)", 90.00, False, False),
         ("soulbelly-bbq", "Recommended: SoulBelly BBQ Chef's Choice for 2 ($80.00 exact)", 80.00, False, True),
+        ("mott-32", "Recommended: Mott 32 Express Lunch Set ($76.00 exact; Exclusive $136)", 76.00, False, False),
+        ("anima-mon", "Recommended: Anima by EDO Monday Pasta + Bottle of Wine ($65.00 exact couple)", 65.00, False, False),
     ]
     d_html = []
     for did, label, amt, is_est, checked in dining_checks:
@@ -730,7 +735,7 @@ def build_costs(hotels: dict, michelin: dict, act_tr: dict) -> str:
     <section class="hero">
       <span class="eyebrow">Combined Couple Trip Budgets · 2 Adults · 7 Nights</span>
       <h1>Combined Hotel + MICHELIN Dining + Activities + Public Transit Costs</h1>
-      <p class="lead">Every package below combines an <strong>official first-party 7-night hotel quote (including resort fees &amp; 13.38% lodging tax)</strong> with <strong>official published MICHELIN couple menu prices</strong>, <strong>official activity admissions</strong>, and <strong>official RTC / Monorail fares</strong>. Flights, 8.375% restaurant sales tax, 18%–20% dining gratuity, beverages, and the 13 unpriced MICHELIN venues are excluded rather than guessed.</p>
+      <p class="lead">Every package below combines an <strong>official first-party 7-night hotel quote (including resort fees &amp; 13.38% lodging tax)</strong> with <strong>official published MICHELIN couple menu prices</strong>, <strong>official activity admissions</strong>, and <strong>official RTC / Monorail fares</strong>. Flights, 8.375% restaurant sales tax, 18%–20% dining gratuity, beverages, and the 9 unpriced MICHELIN venues are excluded rather than guessed.</p>
     </section>
 
     <h2>1. Five Worked 7-Night Couple Packages (Feb 15–22 vs Mar 14–21, 2027)</h2>
@@ -887,7 +892,7 @@ def build_michelin(michelin: dict) -> str:
     <section class="hero">
       <span class="eyebrow">2026 MICHELIN Guide Southwest · All 24 Las Vegas Selections</span>
       <h1>Las Vegas MICHELIN Restaurants — Starred vs Bib Gourmand vs Recommended</h1>
-      <p class="lead">Strictly separated by official 2026 MICHELIN Guide Southwest distinction: <strong>4 MICHELIN-Starred restaurants</strong> (1 Two-Star, 3 One-Star), <strong>3 Bib Gourmand restaurants</strong>, and <strong>17 MICHELIN Recommended (Selected) restaurants</strong>. Unlike canonical <code>dining.html:72</code> (<code>RA-01</code>), <strong>Wing Lei is never counted as starred</strong>, and <strong>4 newly verified official couple prices</strong> (Stubborn Seed $320, Kabuto $260/$370, China Poblano $120, SoulBelly BBQ $80) bring verified menu pricing to <strong>11 of 24 venues</strong>.</p>
+      <p class="lead">Strictly separated by official 2026 MICHELIN Guide Southwest distinction: <strong>4 MICHELIN-Starred restaurants</strong> (1 Two-Star, 3 One-Star), <strong>3 Bib Gourmand restaurants</strong>, and <strong>17 MICHELIN Recommended (Selected) restaurants</strong>. <strong>Wing Lei is never counted as starred</strong>, and firsthand official venue menus &amp; resort PDFs verify couple pricing across <strong>15 of 24 venues</strong> (13 exact published menu totals + 2 explicitly labelled dish-level estimates; 9 unpublished venues left strictly blank).</p>
     </section>
 
     <h2>Transit &amp; Geographic Dining Clusters</h2>
@@ -914,8 +919,8 @@ def build_michelin(michelin: dict) -> str:
       </label>
       <label>Pricing Status:
         <select id="price-filter">
-          <option value="all">Show All 24 Venues (11 Priced + 13 Blank)</option>
-          <option value="1">Only Official-Menu Priced Venues (11)</option>
+          <option value="all">Show All 24 Venues (15 Priced + 9 Blank)</option>
+          <option value="1">Only Official-Menu Priced Venues (15)</option>
         </select>
       </label>
     </div>

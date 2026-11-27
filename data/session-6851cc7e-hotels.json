@@ -32,16 +32,16 @@
       "feb_15_22": {
         "checkin": "2027-02-15",
         "checkout": "2027-02-22",
-        "nightly_incl_fee_pretax": 77.00,
-        "total_7n_incl_fee_pretax": 539.00,
+        "nightly_incl_fee_pretax": 77.0,
+        "total_7n_incl_fee_pretax": 539.0,
         "total_7n_all_in_est": 611.12,
         "rate_name": "Best Available Rate / Cyber Monday Early Access ($27 room + $50 resort fee)"
       },
       "mar_14_21": {
         "checkin": "2027-03-14",
         "checkout": "2027-03-21",
-        "nightly_incl_fee_pretax": 97.00,
-        "total_7n_incl_fee_pretax": 679.00,
+        "nightly_incl_fee_pretax": 97.0,
+        "total_7n_incl_fee_pretax": 679.0,
         "total_7n_all_in_est": 769.85,
         "rate_name": "Deluxe Room | 1 Queen | Mobility Roll-In ($97/nt) or 2 Queens Strip View ($98/nt)"
       },
@@ -55,7 +55,9 @@
       "official_url": "https://www.caesars.com/linq/hotel",
       "official_ibe_feb_url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=ilv",
       "official_ibe_mar_url": "https://www.caesars.com/book/room-list?arrivalDate=03/14/2027&departureDate=03/21/2027&dateSearchFormat=exact-dates&propCode=ilv",
-      "caveat_flags": ["FL-08"]
+      "caveat_flags": [
+        "FL-08"
+      ]
     },
     {
       "rank_value": 2,
@@ -76,16 +78,16 @@
       "feb_15_22": {
         "checkin": "2027-02-15",
         "checkout": "2027-02-22",
-        "nightly_incl_fee_pretax": 89.00,
-        "total_7n_incl_fee_pretax": 623.00,
+        "nightly_incl_fee_pretax": 89.0,
+        "total_7n_incl_fee_pretax": 623.0,
         "total_7n_all_in_est": 706.36,
         "rate_name": "Best Available Rate / Cyber Sale ($39 room + $50 resort fee; Feb 21–28 rises to $112/nt)"
       },
       "mar_14_21": {
         "checkin": "2027-03-14",
         "checkout": "2027-03-21",
-        "nightly_incl_fee_pretax": 115.00,
-        "total_7n_incl_fee_pretax": 805.00,
+        "nightly_incl_fee_pretax": 115.0,
+        "total_7n_incl_fee_pretax": 805.0,
         "total_7n_all_in_est": 912.71,
         "rate_name": "Go Room | 1 King | City View ($115/nt; Roll-In ADA $110/nt)"
       },
@@ -99,7 +101,9 @@
       "official_url": "https://www.caesars.com/flamingo-las-vegas",
       "official_ibe_feb_url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=flv",
       "official_ibe_mar_url": "https://www.caesars.com/book/room-list?arrivalDate=03/14/2027&departureDate=03/21/2027&dateSearchFormat=exact-dates&propCode=flv",
-      "caveat_flags": ["FL-08"]
+      "caveat_flags": [
+        "FL-08"
+      ]
     },
     {
       "rank_value": 3,
@@ -120,16 +124,16 @@
       "feb_15_22": {
         "checkin": "2027-02-15",
         "checkout": "2027-02-22",
-        "nightly_incl_fee_pretax": 89.30,
-        "total_7n_incl_fee_pretax": 625.10,
+        "nightly_incl_fee_pretax": 89.3,
+        "total_7n_incl_fee_pretax": 625.1,
         "total_7n_all_in_est": 708.74,
         "rate_name": "Black Friday Sale (up to 30% off; Best Flexible Rate is $110.86/nt = $776.02 pre-tax)"
       },
       "mar_14_21": {
         "checkin": "2027-03-14",
         "checkout": "2027-03-21",
-        "nightly_incl_fee_pretax": 100.50,
-        "total_7n_incl_fee_pretax": 703.50,
+        "nightly_incl_fee_pretax": 100.5,
+        "total_7n_incl_fee_pretax": 703.5,
         "total_7n_all_in_est": 797.63,
         "rate_name": "Black Friday Sale ($100.50/nt; Best Flexible Rate $126.86/nt)"
       },
@@ -164,8 +168,8 @@
       "feb_15_22": {
         "checkin": "2027-02-15",
         "checkout": "2027-02-22",
-        "nightly_incl_fee_pretax": 118.00,
-        "total_7n_incl_fee_pretax": 826.00,
+        "nightly_incl_fee_pretax": 118.0,
+        "total_7n_incl_fee_pretax": 826.0,
         "total_7n_all_in_est": 936.52,
         "rate_name": "Best Available Rate ($68 room + $50 resort fee)"
       },
@@ -187,7 +191,10 @@
       "official_url": "https://www.caesars.com/horseshoe-las-vegas",
       "official_ibe_feb_url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=blv",
       "official_ibe_mar_url": "https://www.caesars.com/book/room-list?arrivalDate=03/14/2027&departureDate=03/21/2027&dateSearchFormat=exact-dates&propCode=blv",
-      "caveat_flags": ["FL-08", "FL-09"]
+      "caveat_flags": [
+        "FL-08",
+        "FL-09"
+      ]
     },
     {
       "rank_value": 5,
@@ -208,16 +215,16 @@
       "feb_15_22": {
         "checkin": "2027-02-15",
         "checkout": "2027-02-22",
-        "nightly_incl_fee_pretax": 125.00,
-        "total_7n_incl_fee_pretax": 875.00,
+        "nightly_incl_fee_pretax": 125.0,
+        "total_7n_incl_fee_pretax": 875.0,
         "total_7n_all_in_est": 992.08,
         "rate_name": "Best Available Rate ($70 room + $55 resort fee; clean render with no error banner)"
       },
       "mar_14_21": {
         "checkin": "2027-03-14",
         "checkout": "2027-03-21",
-        "nightly_incl_fee_pretax": 163.00,
-        "total_7n_incl_fee_pretax": 1141.00,
+        "nightly_incl_fee_pretax": 163.0,
+        "total_7n_incl_fee_pretax": 1141.0,
         "total_7n_all_in_est": 1293.67,
         "rate_name": "Best Available Rate ($109 room + $55 resort fee)"
       },
@@ -252,16 +259,16 @@
       "feb_15_22": {
         "checkin": "2027-02-15",
         "checkout": "2027-02-22",
-        "nightly_incl_fee_pretax": 152.00,
-        "total_7n_incl_fee_pretax": 1064.00,
+        "nightly_incl_fee_pretax": 152.0,
+        "total_7n_incl_fee_pretax": 1064.0,
         "total_7n_all_in_est": 1206.36,
         "rate_name": "Mountain Deluxe 1 Queen ($152/nt; 1 King is $153/nt = $1,071 pre-tax; clean render)"
       },
       "mar_14_21": {
         "checkin": "2027-03-14",
         "checkout": "2027-03-21",
-        "nightly_incl_fee_pretax": 177.00,
-        "total_7n_incl_fee_pretax": 1239.00,
+        "nightly_incl_fee_pretax": 177.0,
+        "total_7n_incl_fee_pretax": 1239.0,
         "total_7n_all_in_est": 1404.78,
         "rate_name": "Mountain Deluxe 1 Queen ($127 room + $50 resort fee)"
       },
@@ -296,16 +303,16 @@
       "feb_15_22": {
         "checkin": "2027-02-15",
         "checkout": "2027-02-22",
-        "nightly_incl_fee_pretax": 201.00,
-        "total_7n_incl_fee_pretax": 1407.00,
+        "nightly_incl_fee_pretax": 201.0,
+        "total_7n_incl_fee_pretax": 1407.0,
         "total_7n_all_in_est": 1595.26,
         "rate_name": "Best Available Rate ($146 room + $55 resort fee; Feb 21–28 is $239/nt; Mar 7–14 is $281/nt)"
       },
       "mar_14_21": {
         "checkin": "2027-03-14",
         "checkout": "2027-03-21",
-        "nightly_incl_fee_pretax": 281.00,
-        "total_7n_incl_fee_pretax": 1967.00,
+        "nightly_incl_fee_pretax": 281.0,
+        "total_7n_incl_fee_pretax": 1967.0,
         "total_7n_all_in_est": 2230.18,
         "rate_name": "Best Available Rate ($226 room + $55 resort fee)"
       },
@@ -319,7 +326,9 @@
       "official_url": "https://www.caesars.com/caesars-palace",
       "official_ibe_feb_url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv",
       "official_ibe_mar_url": "https://www.caesars.com/book/room-list?arrivalDate=03/14/2027&departureDate=03/21/2027&dateSearchFormat=exact-dates&propCode=clv",
-      "caveat_flags": ["FL-08"]
+      "caveat_flags": [
+        "FL-08"
+      ]
     },
     {
       "rank_value": 8,
@@ -340,17 +349,17 @@
       "feb_15_22": {
         "checkin": "2027-02-15",
         "checkout": "2027-02-22",
-        "nightly_incl_fee_pretax": 207.00,
-        "total_7n_incl_fee_pretax": 1449.00,
+        "nightly_incl_fee_pretax": 207.0,
+        "total_7n_incl_fee_pretax": 1449.0,
         "total_7n_all_in_est": 1642.88,
         "rate_name": "Best Available Rate ($153 room + $55 resort fee)"
       },
       "mar_14_21": {
         "checkin": "2027-03-14",
         "checkout": "2027-03-21",
-        "nightly_incl_fee_pretax": 213.00,
-        "total_7n_incl_fee_pretax": 1491.00,
-        "total_7n_all_in_est": 1690.50,
+        "nightly_incl_fee_pretax": 213.0,
+        "total_7n_incl_fee_pretax": 1491.0,
+        "total_7n_all_in_est": 1690.5,
         "rate_name": "Best Available Rate ($159 room + $55 resort fee; clean render)"
       },
       "cheapest_window": "Feb 15–22, 2027 (-2.8% vs Mar 14–21)",
@@ -363,7 +372,9 @@
       "official_url": "https://www.caesars.com/paris-las-vegas",
       "official_ibe_feb_url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=plv",
       "official_ibe_mar_url": "https://www.caesars.com/book/room-list?arrivalDate=03/14/2027&departureDate=03/21/2027&dateSearchFormat=exact-dates&propCode=plv",
-      "caveat_flags": ["FL-08"]
+      "caveat_flags": [
+        "FL-08"
+      ]
     },
     {
       "rank_value": 9,
@@ -384,16 +395,16 @@
       "feb_15_22": {
         "checkin": "2027-02-15",
         "checkout": "2027-02-22",
-        "nightly_incl_fee_pretax": 250.00,
-        "total_7n_incl_fee_pretax": 1750.00,
+        "nightly_incl_fee_pretax": 250.0,
+        "total_7n_incl_fee_pretax": 1750.0,
         "total_7n_all_in_est": 1984.15,
         "rate_name": "Best Available Rate ($195 room + $55 resort fee)"
       },
       "mar_14_21": {
         "checkin": "2027-03-14",
         "checkout": "2027-03-21",
-        "nightly_incl_fee_pretax": 258.00,
-        "total_7n_incl_fee_pretax": 1806.00,
+        "nightly_incl_fee_pretax": 258.0,
+        "total_7n_incl_fee_pretax": 1806.0,
         "total_7n_all_in_est": 2047.64,
         "rate_name": "Best Available Rate ($204 room + $55 resort fee)"
       },
@@ -407,7 +418,10 @@
       "official_url": "https://www.caesars.com/vanderpump-hotel",
       "official_ibe_feb_url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=dlv",
       "official_ibe_mar_url": "https://www.caesars.com/book/room-list?arrivalDate=03/14/2027&departureDate=03/21/2027&dateSearchFormat=exact-dates&propCode=dlv",
-      "caveat_flags": ["FL-07", "FL-08"]
+      "caveat_flags": [
+        "FL-07",
+        "FL-08"
+      ]
     },
     {
       "rank_value": 10,
@@ -423,7 +437,7 @@
       "private_bath": true,
       "bath_detail": "Spacious private bathroom with walk-in shower and LED mirror",
       "rejected_cheaper_room": "None — base room is 1 King Deluxe",
-      "resort_fee_nightly_pretax": 55.00,
+      "resort_fee_nightly_pretax": 55.0,
       "resort_fee_display": "$55/night ($385.00 + $51.52 tax = $436.52 per 7 nights)",
       "feb_15_22": {
         "checkin": "2027-02-15",
@@ -451,7 +465,9 @@
       "official_url": "https://www.rwlasvegas.com/stay/",
       "official_ibe_feb_url": "https://reservations.rwlasvegas.com/ibe/shop.aspx?selectedTower=HILTON&hotelID=17726&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0",
       "official_ibe_mar_url": "https://reservations.rwlasvegas.com/ibe/shop.aspx?selectedTower=HILTON&hotelID=17726&checkin=2027-03-14&checkout=2027-03-21&nights=7&adults=2&children=0",
-      "caveat_flags": ["FL-10"]
+      "caveat_flags": [
+        "FL-10"
+      ]
     },
     {
       "rank_value": 11,
@@ -467,7 +483,7 @@
       "private_bath": true,
       "bath_detail": "Luxury private bathroom with walk-in rain shower, sitting area",
       "rejected_cheaper_room": "None",
-      "resort_fee_nightly_pretax": 55.00,
+      "resort_fee_nightly_pretax": 55.0,
       "resort_fee_display": "$55/night + 13.38% tax",
       "feb_15_22": {
         "checkin": "2027-02-15",
@@ -495,7 +511,9 @@
       "official_url": "https://www.rwlasvegas.com/stay/",
       "official_ibe_feb_url": "https://reservations.rwlasvegas.com/ibe/shop.aspx?selectedTower=CONRAD&hotelID=17726&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0",
       "official_ibe_mar_url": "https://reservations.rwlasvegas.com/ibe/shop.aspx?selectedTower=CONRAD&hotelID=17726&checkin=2027-03-14&checkout=2027-03-21&nights=7&adults=2&children=0",
-      "caveat_flags": ["FL-10"]
+      "caveat_flags": [
+        "FL-10"
+      ]
     },
     {
       "rank_value": 12,
@@ -511,7 +529,7 @@
       "private_bath": true,
       "bath_detail": "Marble private bathroom with glass shower, double vanity",
       "rejected_cheaper_room": "None — Bleau King/Queen is the base luxury room; ONLY MICHELIN Key resort & casino in Las Vegas",
-      "resort_fee_nightly_pretax": 0.00,
+      "resort_fee_nightly_pretax": 0.0,
       "resort_fee_display": "$0/night on Bleau Friday Rewards Member offer FRBF26 (waives standard resort fee); included in $491.30/nt public BF26 rate",
       "feb_15_22": {
         "checkin": "2027-02-15",
@@ -539,7 +557,9 @@
       "official_url": "https://www.fontainebleaulasvegas.com/",
       "official_ibe_feb_url": "https://reserve.fontainebleaulasvegas.com/ibe/shop.aspx?hotelID=17704&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0",
       "official_ibe_mar_url": "https://reserve.fontainebleaulasvegas.com/ibe/shop.aspx?hotelID=17704&checkin=2027-03-14&checkout=2027-03-21&nights=7&adults=2&children=0",
-      "caveat_flags": ["FL-11"]
+      "caveat_flags": [
+        "FL-11"
+      ]
     },
     {
       "rank_value": 13,
@@ -555,7 +575,7 @@
       "private_bath": true,
       "bath_detail": "Spa-inspired marble bathroom with walk-in shower and soaking/freestanding features",
       "rejected_cheaper_room": "None",
-      "resort_fee_nightly_pretax": 55.00,
+      "resort_fee_nightly_pretax": 55.0,
       "resort_fee_display": "$55/night + 13.38% tax",
       "feb_15_22": {
         "checkin": "2027-02-15",
@@ -580,10 +600,12 @@
       "michelin_35m_est": 18,
       "michelin_60m_est": 24,
       "transit_access": "Top luxury tower at Resorts World; Stubborn Seed in complex + RTC Deuce + Vegas Loop",
-      "official_url": "https://www.rwlasvegas.com/stay/",
+      "official_url": "https://www.rwlasvegas.com/stay/crockfords-las-vegas/",
       "official_ibe_feb_url": "https://reservations.rwlasvegas.com/ibe/shop.aspx?selectedTower=CROCKFORDS&hotelID=17726&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0",
       "official_ibe_mar_url": "https://reservations.rwlasvegas.com/ibe/shop.aspx?selectedTower=CROCKFORDS&hotelID=17726&checkin=2027-03-14&checkout=2027-03-21&nights=7&adults=2&children=0",
-      "caveat_flags": ["FL-10"]
+      "caveat_flags": [
+        "FL-10"
+      ]
     },
     {
       "rank_value": 14,
@@ -599,21 +621,21 @@
       "private_bath": true,
       "bath_detail": "Oversized marble bathroom with deep soaking tub, separate glass shower, separate water closet, 13-inch TV",
       "rejected_cheaper_room": "None — base room is 745 sq ft Encore Resort King suite",
-      "resort_fee_nightly_pretax": 55.00,
+      "resort_fee_nightly_pretax": 55.0,
       "resort_fee_display": "$55/night + 13.38% tax (includes complimentary self-parking for 2 vehicles)",
       "feb_15_22": {
         "checkin": "2027-02-15",
         "checkout": "2027-02-22",
-        "nightly_incl_fee_pretax": 534.00,
-        "total_7n_incl_fee_pretax": 3738.00,
+        "nightly_incl_fee_pretax": 534.0,
+        "total_7n_incl_fee_pretax": 3738.0,
         "total_7n_all_in_est": 4238.14,
         "rate_name": "Wynn Cyber Exclusive ($534/nt incl. $55 resort fee + $300 Resort Credit! Flexible Getaway Rate is $733/nt = $5,131 pre-tax)"
       },
       "mar_14_21": {
         "checkin": "2027-03-14",
         "checkout": "2027-03-21",
-        "nightly_incl_fee_pretax": 710.00,
-        "total_7n_incl_fee_pretax": 4970.00,
+        "nightly_incl_fee_pretax": 710.0,
+        "total_7n_incl_fee_pretax": 4970.0,
         "total_7n_all_in_est": 5634.99,
         "rate_name": "Wynn Cyber Exclusive ($710/nt incl. $55 resort fee + $300 Resort Credit; Flexible Getaway $825/nt)"
       },
@@ -627,7 +649,9 @@
       "official_url": "https://www.wynnlasvegas.com/rooms-and-suites",
       "official_ibe_feb_url": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68668&checkin=02/15/2027&checkout=02/22/2027&adults=2&children=0",
       "official_ibe_mar_url": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68668&checkin=03/14/2027&checkout=03/21/2027&adults=2&children=0",
-      "caveat_flags": ["FL-12"]
+      "caveat_flags": [
+        "FL-12"
+      ]
     },
     {
       "rank_value": 15,
@@ -643,21 +667,21 @@
       "private_bath": true,
       "bath_detail": "Marble private bathroom with deep-soaking tub, glass-enclosed shower, separate water closet",
       "rejected_cheaper_room": "None — base room is 640 sq ft Wynn Resort King",
-      "resort_fee_nightly_pretax": 55.00,
+      "resort_fee_nightly_pretax": 55.0,
       "resort_fee_display": "$55/night + 13.38% tax",
       "feb_15_22": {
         "checkin": "2027-02-15",
         "checkout": "2027-02-22",
-        "nightly_incl_fee_pretax": 677.00,
-        "total_7n_incl_fee_pretax": 4739.00,
+        "nightly_incl_fee_pretax": 677.0,
+        "total_7n_incl_fee_pretax": 4739.0,
         "total_7n_all_in_est": 5373.08,
         "rate_name": "Wynn Cyber Exclusive ($677/nt incl. $55 resort fee + $300 Resort Credit; Flexible Getaway $833/nt = $5,831 pre-tax)"
       },
       "mar_14_21": {
         "checkin": "2027-03-14",
         "checkout": "2027-03-21",
-        "nightly_incl_fee_pretax": 649.00,
-        "total_7n_incl_fee_pretax": 4543.00,
+        "nightly_incl_fee_pretax": 649.0,
+        "total_7n_incl_fee_pretax": 4543.0,
         "total_7n_all_in_est": 5150.85,
         "rate_name": "Wynn Cyber Exclusive ($649/nt incl. $55 resort fee + $300 Resort Credit; Flexible Getaway $754/nt = $5,278 pre-tax)"
       },
@@ -671,7 +695,9 @@
       "official_url": "https://www.wynnlasvegas.com/rooms-and-suites",
       "official_ibe_feb_url": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkin=02/15/2027&checkout=02/22/2027&adults=2&children=0",
       "official_ibe_mar_url": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkin=03/14/2027&checkout=03/21/2027&adults=2&children=0",
-      "caveat_flags": ["FL-12"]
+      "caveat_flags": [
+        "FL-12"
+      ]
     }
   ],
   "unpriced_official_candidates": [

@@ -116,8 +116,8 @@ def main() -> None:
         fail("Michael Mina must be marked temporarily_closed")
     priced = [r for r in all_r if r["price_2_adults_pretax"] != ""]
     blanks = [r for r in all_r if r["price_2_adults_pretax"] == ""]
-    if len(priced) != 11 or len(blanks) != 13:
-        fail(f"Expected 11 priced and 13 blank restaurants, got {len(priced)} and {len(blanks)}")
+    if len(priced) != 15 or len(blanks) != 9:
+        fail(f"Expected 15 priced and 9 blank restaurants, got {len(priced)} and {len(blanks)}")
     for r in blanks:
         if r["price_basis"] != "unpublished_blank":
             fail(f"Blank venue {r['id']} must have price_basis=unpublished_blank")
@@ -154,7 +154,7 @@ def main() -> None:
                 fail(f"Page {fname} links to forbidden OTA domain: {ext}")
 
     print(
-        f"PASS: 15 official-IBE hotels (2 windows), 24 MICHELIN venues (4★/3 Bib/17 Rec; 11 priced, 13 blank), "
+        f"PASS: 15 official-IBE hotels (2 windows), 24 MICHELIN venues (4★/3 Bib/17 Rec; 15 priced, 9 blank), "
         f"{len(act_tr['activities'])} activities, {len(act_tr['combined_packages'])} combined packages, "
         f"{len(audit_qa['repo_audit'])} repo audit findings, {len(audit_qa['flags'])} flags, and {len(EXPECTED_PAGES)} mobile-ready HTML pages validated."
     )

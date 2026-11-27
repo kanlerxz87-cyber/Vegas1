@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Repository Audit (main@99a3506), Open Questions, Suggestions & Flagged-for-Review Register",
+    "title": "Repository Audit (main@99a3506 -> main@2169909), Open Questions, Suggestions & Flagged-for-Review Register",
     "verified_date": "2026-11-27",
     "session": "arena/6851cc7e-vegas1 (Task T20)",
     "counts": {
@@ -16,7 +16,7 @@
       "severity": "high",
       "file_ref": "dining.html:72 & scripts/gen_site.py",
       "title": "Wing Lei falsely called 'the cheapest starred dinner on this site' on live dining.html",
-      "current_state": "dining.html line 72 states 'the cheapest starred dinner on this site (Wing Lei, $397.76 for two)', contradicting F-03 ('the 2026 Guide lists [Wing Lei] Recommended, not starred').",
+      "current_state": "dining.html line 72 states 'the cheapest starred dinner on this site (Wing Lei, $397.76 for two)', contradicting F-03 ('the 2026 Guide lists [Wing Lei] Recommended, not starred'). [Update at main@2169909: superseded in rendered HTML by T-ec1d72e2's strict_site.py overlay, though legacy scripts/gen_site.py code remains in repo.]",
       "verified_fact": "Wing Lei is MICHELIN Recommended (Selected, unstarred) in the 2026 MICHELIN Guide Southwest. Only 4 Las Vegas restaurants hold stars in 2026: Joël Robuchon (2★), é by José Andrés (1★), Restaurant Guy Savoy (1★), and L'Atelier de Joël Robuchon (1★).",
       "source_url": "https://guide.michelin.com/us/en/article/michelin-guide-ceremony/michelin-guide-southwest-stars-2026"
     },
@@ -25,7 +25,7 @@
       "severity": "high",
       "file_ref": "costs.html & docs/costs.html",
       "title": "Orphan costs.html left live on GitHub Pages with $6.00 RTC math bug & withdrawn OTA hotel totals",
-      "current_state": "After costs.html was renamed to dining.html, costs.html remained tracked in both / and /docs/, still displaying 'RTC 3-day pass × 3 each = $6.00' (instead of $120.00), stale nav links, and Booking.com OTA hotel snapshots ($1,125 / $1,580 / $3,072) withdrawn under F-58.",
+      "current_state": "After costs.html was renamed to dining.html, costs.html remained tracked in both / and /docs/, still displaying 'RTC 3-day pass × 3 each = $6.00' (instead of $120.00), stale nav links, and Booking.com OTA hotel snapshots ($1,125 / $1,580 / $3,072) withdrawn under F-58. [Update at main@2169909: superseded in rendered HTML by T-ec1d72e2's strict_site.py overlay, though legacy scripts/gen_site.py code remains in repo.]",
       "verified_fact": "Three 3-day RTC Strip & All-Access passes ($20 each) for 2 adults equal $120.00 ($60/person), and official first-party Caesars Palace 7-night Feb 15–22 Julius Deluxe King is $1,407.00 pre-tax / $1,595.26 w/ 13.38% tax.",
       "source_url": "https://www.rtcsnv.com/ways-to-travel/fares-passes/"
     },
@@ -34,7 +34,7 @@
       "severity": "medium",
       "file_ref": "scripts/gen_site.py (build_suggestions) & suggestions.html",
       "title": "Literal '<h2>1</h2>' heading rendered on suggestions.html",
-      "current_state": "SUGGESTIONS_HEAD is defined as a 1-element tuple/collection whose len() evaluates to 1, emitting an accidental '<h2>1</h2>' heading above suggestions.",
+      "current_state": "SUGGESTIONS_HEAD is defined as a 1-element tuple/collection whose len() evaluates to 1, emitting an accidental '<h2>1</h2>' heading above suggestions. [Update at main@2169909: superseded in rendered HTML by T-ec1d72e2's strict_site.py overlay, though legacy scripts/gen_site.py code remains in repo.]",
       "verified_fact": "Section heading should count the actual suggestions list rather than a 1-item wrapper.",
       "source_url": "https://kanlerxz87-cyber.github.io/Vegas1/suggestions.html"
     },
@@ -43,7 +43,7 @@
       "severity": "medium",
       "file_ref": "scripts/gen_site.py (build_sources) & sources.html",
       "title": "Flag F-39 paired with F-29's OTA hotel description on sources.html",
-      "current_state": "build_sources() renders F-39 alongside F-29's Booking.com hotel-window note rather than F-39's Venetian 4+ guest occupancy withdrawal note.",
+      "current_state": "build_sources() renders F-39 alongside F-29's Booking.com hotel-window note rather than F-39's Venetian 4+ guest occupancy withdrawal note. [Update at main@2169909: superseded in rendered HTML by T-ec1d72e2's strict_site.py overlay, though legacy scripts/gen_site.py code remains in repo.]",
       "verified_fact": "In FLAGS.md, F-39 documents withdrawal of an unverified Venetian Feb quote with a 4+ guest occupancy warning.",
       "source_url": "https://www.venetianlasvegas.com/"
     },
@@ -52,7 +52,7 @@
       "severity": "high",
       "file_ref": "data/restaurants.json (stubborn-seed, kabuto, china-poblano, soulbelly-bbq)",
       "title": "Four official venue menus with published prices still marked 'not published on official page'",
-      "current_state": "price_2adults is empty ('') for stubborn-seed, kabuto, china-poblano, and soulbelly-bbq in canonical data/restaurants.json.",
+      "current_state": "price_2adults is empty ('') for stubborn-seed, kabuto, china-poblano, and soulbelly-bbq in canonical data/restaurants.json. [Update at main@2169909: underlying data/{restaurants,activities,transit}.json still retain these legacy strings because strict_site.py reads data/verification-2026-11-27.json as an overlay without mutating historical JSONs.]",
       "verified_fact": "Direct 2026-11-27 fetches confirm official published prices on all four: Stubborn Seed Tasting Menu $160/pp = $320.00 exact (Resorts World PDF 11-25-2026); Kabuto Yoroi $130/pp ($260.00) & Kabuto Course $185/pp ($370.00) on official Resy venue page; China Poblano José's Way $60/pp = $120.00 exact on chinapoblano.com/menus/; SoulBelly BBQ Chef's Choice for 2 = $80.00 exact on soulbellybbq.com/menu.",
       "source_url": "https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/"
     },
@@ -61,7 +61,7 @@
       "severity": "medium",
       "file_ref": "data/restaurants.json:84–97 (latelier-robuchon)",
       "title": "Three errors in L'Atelier de Joël Robuchon: Service Award misattribution, wrong phone in notes, and 'under 6' age rule",
-      "current_state": "Canonical notes credit L'Atelier with the 2026 MICHELIN Service Award, print Joël Robuchon's phone (702.891.7925) in notes while phone has 702.891.7358, and write 'No guests under 6'.",
+      "current_state": "Canonical notes credit L'Atelier with the 2026 MICHELIN Service Award, print Joël Robuchon's phone (702.891.7925) in notes while phone has 702.891.7358, and write 'No guests under 6'. [Update at main@2169909: underlying data/{restaurants,activities,transit}.json still retain these legacy strings because strict_site.py reads data/verification-2026-11-27.json as an overlay without mutating historical JSONs.]",
       "verified_fact": "MICHELIN's Aug 31, 2026 press release awarded the 2026 Service Award to Sean Christopher at 2★ Joël Robuchon; L'Atelier's MGM page prints 702.891.7358 and states 'does not include children 6 and under' (excluding age 6).",
       "source_url": "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html"
     },
@@ -70,7 +70,7 @@
       "severity": "medium",
       "file_ref": "data/restaurants.json:176–189 (china-poblano)",
       "title": "China Poblano Sunday closing hour off by 30 minutes & official phones blank",
-      "current_state": "Canonical hours read 'Sat–Sun 10:00 AM – 10:30 PM' and phone is ''.",
+      "current_state": "Canonical hours read 'Sat–Sun 10:00 AM – 10:30 PM' and phone is ''. [Update at main@2169909: underlying data/{restaurants,activities,transit}.json still retain these legacy strings because strict_site.py reads data/verification-2026-11-27.json as an overlay without mutating historical JSONs.]",
       "verified_fact": "Official Cosmopolitan MGM page lists Sunday hours as '10:00 AM to 10:00 PM' (closing 30 min earlier than Saturday) and phones 702.698.7900 / 877.893.2003.",
       "source_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html"
     },
@@ -79,7 +79,7 @@
       "severity": "low",
       "file_ref": "data/restaurants.json:336 (estiatorio-milos)",
       "title": "Estiatorio Milos Friday–Saturday 11:00 PM closing hour truncated",
-      "current_state": "Canonical hours read '11:30 AM – 10:30 PM (Fri–Sat from 11:30 AM)'.",
+      "current_state": "Canonical hours read '11:30 AM – 10:30 PM (Fri–Sat from 11:30 AM)'. [Update at main@2169909: underlying data/{restaurants,activities,transit}.json still retain these legacy strings because strict_site.py reads data/verification-2026-11-27.json as an overlay without mutating historical JSONs.]",
       "verified_fact": "Official Venetian page prints Fri–Sat 11:30 AM – 11:00 PM (Sun–Thu 11:30 AM – 10:30 PM).",
       "source_url": "https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html"
     },
@@ -88,7 +88,7 @@
       "severity": "low",
       "file_ref": "data/restaurants.json:303 (bouchon)",
       "title": "Bouchon tower name still listed as 'Venezia Tower'",
-      "current_state": "Canonical location lists 'Venezia Tower, 10th floor'.",
+      "current_state": "Canonical location lists 'Venezia Tower, 10th floor'. [Update at main@2169909: underlying data/{restaurants,activities,transit}.json still retain these legacy strings because strict_site.py reads data/verification-2026-11-27.json as an overlay without mutating historical JSONs.]",
       "verified_fact": "Official Venetian page now names the tower 'The Venetian South Tower, 10th floor'.",
       "source_url": "https://www.venetianlasvegas.com/dining/restaurants/bouchon.html"
     },
@@ -97,7 +97,7 @@
       "severity": "low",
       "file_ref": "data/restaurants.json:733 (pho-ga-bac-bac)",
       "title": "Pho Ga Bac Bac notes still cite abandoned @bestchickenpho Instagram URL",
-      "current_state": "instagram field was updated to @phogabacbac702 per F-56, but notes still reads 'Instagram verified 2026-11-27: https://www.instagram.com/bestchickenpho/'.",
+      "current_state": "instagram field was updated to @phogabacbac702 per F-56, but notes still reads 'Instagram verified 2026-11-27: https://www.instagram.com/bestchickenpho/'. [Update at main@2169909: underlying data/{restaurants,activities,transit}.json still retain these legacy strings because strict_site.py reads data/verification-2026-11-27.json as an overlay without mutating historical JSONs.]",
       "verified_fact": "@phogabacbac702 is the active restaurant handle; @bestchickenpho moved.",
       "source_url": "https://www.instagram.com/phogabacbac702/"
     },
@@ -106,7 +106,7 @@
       "severity": "medium",
       "file_ref": "data/activities.json:113–155 (neon-museum & fremont-street)",
       "title": "Internal self-contradiction: 3 verified YouTube links published alongside caveat saying 'no YouTube link is published'",
-      "current_state": "Both neon-museum and fremont-street include 3 verified YouTube URLs (including official channel uploads ewrNfjNa4w4 and KDARquYGk_M), while social_caveat on the next line says 'so no YouTube link is published'.",
+      "current_state": "Both neon-museum and fremont-street include 3 verified YouTube URLs (including official channel uploads ewrNfjNa4w4 and KDARquYGk_M), while social_caveat on the next line says 'so no YouTube link is published'. [Update at main@2169909: underlying data/{restaurants,activities,transit}.json still retain these legacy strings because strict_site.py reads data/verification-2026-11-27.json as an overlay without mutating historical JSONs.]",
       "verified_fact": "Official YouTube uploads ARE published and verified via oEmbed; stale social_caveat strings were not updated when videos were added.",
       "source_url": "https://www.neonmuseum.org/visit/"
     },
@@ -115,7 +115,7 @@
       "severity": "medium",
       "file_ref": "data/transit.json (rtc & vegas-loop)",
       "title": "RTC regular residential fare misstated as $1 ($2 regular / $1 reduced) & Vegas Loop lists 7 of 14 active stations",
-      "current_state": "rtc note says 'Nevada local fares are $1' without noting $1 is Reduced Fare only; vegas-loop lists 7 stations and omits fares.",
+      "current_state": "rtc note says 'Nevada local fares are $1' without noting $1 is Reduced Fare only; vegas-loop lists 7 stations and omits fares. [Update at main@2169909: underlying data/{restaurants,activities,transit}.json still retain these legacy strings because strict_site.py reads data/verification-2026-11-27.json as an overlay without mutating historical JSONs.]",
       "verified_fact": "Official RTC fares-passes page lists $2.00 Regular Residential single ride ($1.00 Reduced Fare only); boringcompany.com lists 14 active Vegas Loop stations (incl. Fontainebleau, Sahara, Airport T1/T3, Turnberry, LVCC Central Plaza) and $5/$8 sample fares.",
       "source_url": "https://www.boringcompany.com/projects/las-vegas-loop"
     },
@@ -132,8 +132,8 @@
       "id": "RA-14",
       "severity": "high",
       "file_ref": "data/official-rates.json & hotels.html",
-      "title": "Canonical official-rates.json covers only 3 properties on 1 window (Feb 15–22), leaving March comparison & 12+ resorts unpriced",
-      "current_state": "hotels.html blanks all 32 hotel rate rows (F-58), and data/official-rates.json only records Caesars Palace, Flamingo, and The LINQ for Feb 15–22, 2027.",
+      "title": "Canonical hotels.html still has ZERO fully qualified 7-night hotel totals and ZERO Feb-vs-March multi-window quotes on main@2169909",
+      "current_state": "Even after PR #66 (main@2169909), canonical hotels.html blanks all 33 hotel decision rows (0 qualified offers; only 1 partial Resorts World Feb observation), leaving the Feb-vs-March cheapest-week question and Cyber purchase deadlines unanswered on the main table.",
       "verified_fact": "Task T20 verifies 15 Las Vegas properties across BOTH Feb 15–22 and Mar 14–21, 2027 directly from official booking engines (8 Caesars properties, 3 Resorts World towers, Fontainebleau, Wynn, Encore, Downtown Grand).",
       "source_url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv"
     }
@@ -258,7 +258,7 @@
     {
       "id": "FL-01",
       "category": "Blank — Unpublished Official Menu Price",
-      "item": "13 MICHELIN Restaurants (Joël Robuchon, L'Atelier, é by José Andrés, YEN Viet Kitchen, Mott 32, COTE, Bouchon, Estiatorio Milos, Gymkhana, Lamaii, Sparrow + Wolf, Ping Pang Pong, Pho Ga Bac Bac)",
+      "item": "9 MICHELIN Restaurants w/ Unpublished Official Menu Totals (Joël Robuchon, L'Atelier, é by José Andrés, YEN Viet Kitchen, Bouchon, Gymkhana, Lamaii, Ping Pang Pong, Pho Ga Bac Bac)",
       "detail": "Official resort/venue menus omit dollar prices in server-rendered HTML. Left strictly blank ('') rather than copying Yelp/blog estimates.",
       "official_url": "https://www.visitlasvegas.com/experience/post/michelin-guide-las-vegas-restaurants/"
     },
@@ -271,10 +271,10 @@
     },
     {
       "id": "FL-03",
-      "category": "Blank — Unpublished Hours",
+      "category": "Resolved Hours / Blank Dynamic Cart Prices",
       "item": "YEN Viet Kitchen (Bib Gourmand)",
-      "detail": "Official yenvietkitchen.com homepage renders minimal text without operating hours; days/hours left blank.",
-      "official_url": "https://www.yenvietkitchen.com/"
+      "detail": "Official yenvietkitchen.com links to skiplinow.com/shop/514688a confirming Mon, Wed–Sun 10:00 AM – 8:30 PM (Tue Closed) & (702) 293-4949; cart item prices remain JS-dynamic so couple total is kept blank.",
+      "official_url": "https://www.skiplinow.com/shop/514688a"
     },
     {
       "id": "FL-04",
@@ -377,7 +377,7 @@
     {
       "id": "FL-18",
       "category": "Newly Verified Official Menu Prices",
-      "item": "Stubborn Seed ($320), Kabuto ($260/$370), China Poblano ($120), SoulBelly BBQ ($80)",
+      "item": "8 Newly Verified Official Menu Totals (COTE $190/$450, Mott 32 $76/$136, Milos $90, Sparrow + Wolf $298, Stubborn Seed $320, Kabuto $260/$370, China Poblano $120, SoulBelly BBQ $80)",
       "detail": "Upgraded from blank in canonical repo after fetching official Resorts World PDF, official Resy venue page, chinapoblano.com/menus/, and soulbellybbq.com/menu.",
       "official_url": "https://www.chinapoblano.com/menus/"
     },

@@ -117,7 +117,7 @@ def page(active, title, subtitle, body, lead=""):
     <h1>{e(title)}</h1>
     <p class="sub">{subtitle}</p>
     {lead}
-    <p class="note"><strong>27 November evidence notice:</strong> Historical audit text and suggestions below may describe superseded OTA prices or model scores. They are not verified booking guidance. <a href="hotels.html">Current hotel evidence table</a> and <a href="flagged.html#F-58">F-58–F-63</a> take precedence. Restaurant/activity hours are observations, not confirmed 2027 schedules. Creator media links have not been fully re-opened in this pass.</p>
+    <p class="note"><strong>27 November evidence notice:</strong> Historical audit text and suggestions below may describe superseded OTA prices or model scores. They are not verified booking guidance. <a href="hotels.html">Current hotel evidence table</a> and <a href="flagged.html#F-58">F-58–F-63</a> take precedence. Restaurant/activity hours are observations, not confirmed 2027 schedules. Activity video links were each re-resolved through YouTube oEmbed on 27 Nov 2026 (F-67); restaurant creator videos were only spot-checked.</p>
   </div>
   {body}
 </main>
@@ -741,7 +741,7 @@ def build_suggestions():
 
     body = f"""
 <section class="panel">
-  <h2>{len(SUGGESTIONS_HEAD)}</h2>
+  <h2>{n_sug} ways to improve this plan</h2>
   <p>{n_sug} proposals, ranked by how much they change the outcome. <strong>{len(needs)} of them need a decision
   from you</strong> before the plan can be finalised — they are marked in the list. Nothing here was silently
   applied to the data.</p>
@@ -785,7 +785,7 @@ def build_sources():
         ("F-02", "Michael Mina", "Publishes seasonal block closures; no 2027 dates."),
         ("F-03", "Wing Lei", "Videos imply a star; the 2026 Guide lists it Recommended."),
         ("F-04", "KAME Omakase", "Own site is a JS shell; details from its OpenTable listing."),
-        ("F-05", "China Poblano", "The ≈$50 pp figure is Eater, not the venue."),
+        ("F-05", "China Poblano", "Resolved 27 Nov 2026: official menu publishes José's Way Tasting Menu at $60/pp ($120 exact for two; F-69)."),
         ("F-07", "Esther's Kitchen, Yen Viet", "Hours not obtainable — left blank."),
         ("F-09", "Wynn / Encore", "Two totals because the fee/tax basis differs."),
         ("F-11", "LINQ, Flamingo, SAHARA, Golden Nugget, Horseshoe, Plaza", "Cheapest rates do not guarantee the bed."),
@@ -795,7 +795,7 @@ def build_sources():
         ("F-17", "14-night variant", "The brief allows two weeks; only seven nights were priced."),
         ("F-18", "Bellagio Fountains", "Official page failed to load; schedule unverified."),
         ("F-19", "Instagram / TikTok", "Handles not published; blank rather than guessed."),
-        ("F-39", "Hotel price basis", "The 32-hotel prices are Booking.com snapshots, not official property quotes; independent official-engine samples conflict on the cheapest week."),
+        ("F-29", "Hotel price basis", "The 32-hotel prices are Booking.com snapshots, not official property quotes; independent official-engine samples conflict on the cheapest week."),
         ("F-30", "Official hotel rates, refreshed 26 Nov 2026", "Caesars Julius King $201/night and Wynn Cyber $677/night, each including resort fee before tax; Venetian returned $6,170.43 tax-included but labels suites as 4+ guests. Volatile; confirm exact total and occupancy."),
     ]
     for fid, where, what in flags:
@@ -898,6 +898,8 @@ FLAG_CHECK_EXTRA = {
     "F-61": ("Guy Savoy official menu", "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"),
     "F-62": ("Mob Museum current hours", "https://themobmuseum.org/"),
     "F-63": ("High Roller official conflicting time blocks", "https://www.caesars.com/linq/things-to-do/attractions/high-roller"),
+    "F-68": ("é by José Andrés official brand site (states Tue–Sun)", "https://www.ebyjoseandres.com/"),
+    "F-69": ("China Poblano official menu ($60/pp tasting)", "https://www.chinapoblano.com/menus/"),
     "F-10": ("Booking.com dated search used for every rate",
              "https://www.booking.com/hotel/us/the-linq-and-casino.html?checkin=2027-02-15"
              "&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"),
@@ -1023,7 +1025,7 @@ def build_flagged():
   <h2>Data flags — {len(fl)} rows in the register</h2>
   <p>The full register, with the reasoning for each, is in <code>FLAGS.md</code>. Each row is generated from that
   file, is addressable as <code>flagged.html#F-nn</code>, and names the official page to check it against. F-01 to
-  F-30 and F-47 to F-49 are rows of that register; F-39 to F-46 are the audit rows above, kept in
+  F-30 and F-47 to {e(fl[-1][0])} are rows of that register; F-39 to F-46 are the audit rows above, kept in
   <code>data/review-flags.json</code>. F-31 to F-38 were never used, so the numbering is not contiguous.</p>
   <div class="scroll"><table class="data">
   <thead><tr><th>ID</th><th>Where</th><th>What</th><th>Effect on the plan</th><th>Check it here</th></tr></thead>
@@ -1526,22 +1528,10 @@ def build_itinerary():
 
 def main():
     DOCS.mkdir(exist_ok=True)
-    pages = {
-        "index.html": build_index(),
-        "hotels.html": build_hotels(),
-        "dining.html": build_dining(),
-        "restaurants.html": build_restaurants(),
-        "activities.html": build_activities(),
-        "transit.html": build_transit(),
-        "questions.html": build_questions(),
-        "suggestions.html": build_suggestions(),
-        "flagged.html": build_flagged(),
-        "sources.html": build_sources(),
-        "repo-review.html": build_repo_review(),
-        "itinerary.html": build_itinerary(),
-    }
-    for name, title, subtitle, links in ROUTES:
-        pages[name] = build_route(name, title, subtitle, links)
+    # Strict primary views: legacy builders retained for audit, raw upstream data intact.
+    from strict_site import render, CSS_EXTRA
+    pages = render()
+
     # Publish to BOTH docs/ and the repo root. GitHub Pages on this repo is pinned
     # to main:/ (the API refuses to repoint it to /docs), so the root copy is what
     # visitors actually get. Writing both makes the deploy path independent of that
@@ -1551,7 +1541,7 @@ def main():
         out_dir.mkdir(exist_ok=True)
         for name, content in pages.items():
             (out_dir / name).write_text(content, encoding="utf-8")
-        (out_dir / "style.css").write_text(CSS, encoding="utf-8")
+        (out_dir / "style.css").write_text(CSS + CSS_EXTRA, encoding="utf-8")
         (out_dir / ".nojekyll").write_text("", encoding="utf-8")
     print(f"published to: {', '.join(str(t.relative_to(ROOT)) + '/' for t in targets)}")
     total = sum(len(c) for c in pages.values())

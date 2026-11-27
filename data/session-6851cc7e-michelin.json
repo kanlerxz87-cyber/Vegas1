@@ -12,8 +12,8 @@
       "bib_gourmand": 3,
       "recommended": 17,
       "unstarred_subtotal": 20,
-      "verified_couple_prices": 11,
-      "blank_unpublished_prices": 13,
+      "verified_couple_prices": 15,
+      "blank_unpublished_prices": 9,
       "temporarily_closed": 1
     },
     "official_guide_sources": [
@@ -21,7 +21,7 @@
       "https://guide.michelin.com/us/en/article/michelin-guide-ceremony/michelin-guide-southwest-bib-gourmands-2026",
       "https://www.visitlasvegas.com/experience/post/michelin-guide-las-vegas-restaurants/"
     ],
-    "pricing_rule": "Only prices printed on official first-party restaurant menus, official resort menu PDFs, or the restaurant's official reservation platform (OpenTable/Resy) are reported (11/24 total: 9 exact + 2 explicitly labelled dish-level estimates; Michael Mina flagged Temporarily Closed and excluded from active budgets). All 13 venues whose official menus omit dollar amounts are left strictly blank ('')."
+    "pricing_rule": "Only prices printed on official first-party restaurant menus, official resort menu PDFs, or the restaurant's official reservation platform are reported (15/24 total: 13 exact published menu totals + 2 explicitly labelled dish-level estimates; Michael Mina flagged Temporarily Closed during Nov 22–30 seasonal closure and excluded from active budgets). All 9 venues whose official menus omit dollar amounts are left strictly blank ('')."
   },
   "clusters": [
     {
@@ -117,8 +117,8 @@
       "property_or_area": "The Cosmopolitan of Las Vegas",
       "cluster": "center-strip",
       "address": "3708 S Las Vegas Blvd, Las Vegas, NV 89109",
-      "phone": "877.893.2003",
-      "days": "Tuesday – Saturday (Closed Sunday & Monday)",
+      "phone": "877.893.2003 / 702.698.7950",
+      "days": "Tue–Sat confirmed (Sunday disputed: MGM says Closed, ebyjoseandres.com says Open Tue–Sun)",
       "hours": "Two seatings nightly: 5:30 PM & 8:30 PM",
       "exceptions": "9-seat private counter inside Jaleo (Boulevard Tower Floor 3); advance prepaid Tock tickets open up to 90 days ahead; no guests under 6.",
       "status": "open",
@@ -299,10 +299,10 @@
       "property_or_area": "West Las Vegas (S Decatur Blvd)",
       "cluster": "west-off-strip",
       "address": "3575 S Decatur Blvd #101, Las Vegas, NV 89103",
-      "phone": "",
-      "days": "",
-      "hours": "",
-      "exceptions": "Official yenvietkitchen.com homepage omits hours and menu prices in server-rendered HTML; call ahead before off-Strip transit.",
+      "phone": "(702) 293-4949",
+      "days": "Monday & Wednesday – Sunday (Closed Tuesday)",
+      "hours": "10:00 AM – 8:30 PM",
+      "exceptions": "Hours & phone verified directly on official linked ordering storefront skiplinow.com/shop/514688a (linked from yenvietkitchen.com); cart item prices are JS-dynamic so couple total remains blank.",
       "status": "open",
       "price_2_adults_pretax": "",
       "price_basis": "unpublished_blank",
@@ -310,7 +310,7 @@
       "nearest_public_transit": "RTC Route 203 (Spring Mountain Rd to Decatur Blvd) + Route 103 (Decatur Blvd Southbound, ~5 min)",
       "est_transit_from_center_strip": "~30–40 min est. via RTC Route 203 + Route 103 at Decatur",
       "official_url": "https://www.yenvietkitchen.com",
-      "menu_source_url": "https://www.yenvietkitchen.com/",
+      "menu_source_url": "https://www.skiplinow.com/shop/514688a",
       "michelin_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2902202/restaurants",
       "instagram": "",
       "youtube": [
@@ -322,8 +322,7 @@
       "social_provenance": "The official site publishes no social link and no account could be tied to the venue.",
       "social_caveat": "",
       "flag_ids": [
-        "FL-01",
-        "FL-03"
+        "FL-01"
       ]
     }
   ],
@@ -379,13 +378,13 @@
       "hours": "Mon–Fri 11:00 AM – 2:30 PM & 5:00 PM – 10:00 PM; Sat–Sun 10:30 AM – 2:30 PM & 5:00 PM – 10:00 PM",
       "exceptions": "42-day Applewood Roasted Peking Duck should be reserved in advance.",
       "status": "open",
-      "price_2_adults_pretax": "",
-      "price_basis": "unpublished_blank",
-      "price_detail": "Official Venetian menu omits dollar amounts; left blank per strict evidence rule.",
+      "price_2_adults_pretax": "$76.00 / $136.00 (exact Mon–Fri lunch)",
+      "price_basis": "exact_tasting",
+      "price_detail": "Verified directly on official Venetian lunch PDF (venetianlasvegas.com/content/dam/vlvweb/restaurants/mott-32/lunch-menu.pdf): Mott Express Lunch Set $38/pp ($76.00 exact for 2) & Mott Exclusive Lunch Set $68/pp ($136.00 exact for 2), Mon–Fri 11 AM–2:30 PM; pre-order 42-Day Peking Duck $138 (dinner is à la carte).",
       "nearest_public_transit": "RTC Deuce (Venetian/Palazzo stop) + 8 min walk from Harrah's/LINQ Monorail",
       "est_transit_from_center_strip": "8–15 min walk from Center-North Strip",
       "official_url": "https://www.venetianlasvegas.com/dining/restaurants/mott-32.html",
-      "menu_source_url": "https://www.venetianlasvegas.com/dining/restaurants/mott-32.html",
+      "menu_source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/mott-32/lunch-menu.pdf",
       "michelin_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2902202/restaurants",
       "instagram": "https://www.instagram.com/mott32vegas/",
       "youtube": [
@@ -396,9 +395,7 @@
       "tiktok": "",
       "social_provenance": "Account opened: title 'Mott 32 Las Vegas', bio 'Michelin Guide 2026'.",
       "social_caveat": "",
-      "flag_ids": [
-        "FL-01"
-      ]
+      "flag_ids": []
     },
     {
       "id": "cote",
@@ -415,13 +412,13 @@
       "hours": "Sun–Thu 5:00 PM – 11:00 PM; Fri–Sat 4:30 PM – 12:00 AM",
       "exceptions": "Simon Kim's Korean steakhouse inside The Venetian Waterfall Atrium.",
       "status": "open",
-      "price_2_adults_pretax": "",
-      "price_basis": "unpublished_blank",
-      "price_detail": "Official Venetian COTE menu omits dollar amounts; left blank per strict evidence rule.",
+      "price_2_adults_pretax": "$190.00 / $450.00 (exact)",
+      "price_basis": "exact_tasting",
+      "price_detail": "Verified directly on official Venetian PDF menu (venetianlasvegas.com/content/dam/vlvweb/restaurants/cote/menu.pdf): Feast of USDA Prime $95/pp ($190.00 exact for 2 adults, full table participation) & Steak Omakase $225/pp ($450.00 exact for 2 adults).",
       "nearest_public_transit": "RTC Deuce (Venetian stop) + 6 min walk from Harrah's/LINQ Monorail",
       "est_transit_from_center_strip": "6–14 min walk from Center-North Strip",
       "official_url": "https://www.venetianlasvegas.com/dining/restaurants/cote.html",
-      "menu_source_url": "https://www.venetianlasvegas.com/dining/restaurants/cote.html",
+      "menu_source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/cote/menu.pdf",
       "michelin_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2902202/restaurants",
       "instagram": "https://www.instagram.com/cotekoreansteakhouse/",
       "youtube": [
@@ -432,9 +429,7 @@
       "tiktok": "",
       "social_provenance": "Account opened: bio lists 'NYC | Miami | Singapore | Vegas'.",
       "social_caveat": "Brand account covering all COTE cities.",
-      "flag_ids": [
-        "FL-01"
-      ]
+      "flag_ids": []
     },
     {
       "id": "bouchon",
@@ -487,13 +482,13 @@
       "hours": "Sun–Thu 11:30 AM – 10:30 PM; Fri–Sat 11:30 AM – 11:00 PM",
       "exceptions": "AUDIT FIX (RA-08): Fri–Sat closes at 11:00 PM per official Venetian page (canonical repo truncated closing hour). Offers weekday 3-course lunch prix-fixe (price unpublished online).",
       "status": "open",
-      "price_2_adults_pretax": "",
-      "price_basis": "unpublished_blank",
-      "price_detail": "Official Venetian Milos menus omit dollar amounts; left blank per strict evidence rule.",
+      "price_2_adults_pretax": "$90.00 (exact 3-course lunch)",
+      "price_basis": "exact_tasting",
+      "price_detail": "Verified directly on official Venetian lunch PDF (venetianlasvegas.com/content/dam/vlvweb/restaurants/estiatorio-milos/lunch-menu.pdf): Daily 3-course Lunch Prix-Fixe (11:30 AM–3:00 PM) is $45/pp = $90.00 exact for 2 adults ('served within 1 hour, or lunch is on us'); dinner seafood is market-priced.",
       "nearest_public_transit": "RTC Deuce (Venetian stop) + 6 min walk from Harrah's/LINQ Monorail",
       "est_transit_from_center_strip": "6–14 min walk from Center-North Strip",
       "official_url": "https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html",
-      "menu_source_url": "https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html",
+      "menu_source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/estiatorio-milos/lunch-menu.pdf",
       "michelin_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2902202/restaurants",
       "instagram": "https://www.instagram.com/miloslasvegas/",
       "youtube": [
@@ -503,9 +498,7 @@
       "tiktok": "",
       "social_provenance": "Account opened: title 'estiatorio Milos Las Vegas', bio '...at The Venetian, Las Vegas'.",
       "social_caveat": "Venue-specific Las Vegas account; the group account @estiatoriomilos also exists.",
-      "flag_ids": [
-        "FL-01"
-      ]
+      "flag_ids": []
     },
     {
       "id": "gymkhana",
@@ -556,7 +549,7 @@
       "phone": "702.693.7223",
       "days": "TEMPORARILY CLOSED",
       "hours": "Temporarily Closed as of 2026-11-27",
-      "exceptions": "WARNING (F-23 / FL-05): Official Bellagio MGM page displays 'Temporarily Closed' with no reopening date. Excluded from all active trip plans.",
+      "exceptions": "Official Bellagio MGM page displays 'Temporarily closed / Mon–Sun: Closed' during Nov 22–30, 2026 (with additional seasonal closures Dec 6–8, 13–15, 20–22) alongside '$295++ Per Person' 10-course tasting. Kept excluded from active packages until post-holiday 2027 schedule is confirmed.",
       "status": "temporarily_closed",
       "price_2_adults_pretax": "$590.00++ (Closed — excluded)",
       "price_basis": "exact_tasting",
@@ -658,18 +651,18 @@
       "property_or_area": "Chinatown (Spring Mountain Rd)",
       "cluster": "chinatown-spring-mountain",
       "address": "3616 Spring Mountain Rd, Ste 103, Las Vegas, NV 89102",
-      "phone": "",
+      "phone": "702.771.0122",
       "days": "Tuesday – Saturday (verify seating calendar on OpenTable)",
-      "hours": "By reservation seatings (OpenTable)",
+      "hours": "Two seatings nightly: 5:30 PM – 7:30 PM & 8:00 PM – 10:00 PM",
       "exceptions": "Ultra-intimate kaiseki & sushi counter; strict prepayment/cancellation policy.",
       "status": "open",
-      "price_2_adults_pretax": "$1,000.00++ (exact)",
+      "price_2_adults_pretax": "$700.00 / $1,000.00++ (exact)",
       "price_basis": "exact_tasting",
-      "price_detail": "Verified on official OpenTable listing ($500.00++/person = $1,000.00++ for 2 adults before tax & service).",
+      "price_detail": "Verified on official sushikame.com/contact-us/ & OpenTable: Seasonal Omakase $350/pp ($700.00++ for 2) & Signature Omakase $500/pp ($1,000.00++ for 2); $500/guest <48h cancellation fee.",
       "nearest_public_transit": "RTC Route 203 (Spring Mountain Rd at Valley View / Polaris stop)",
       "est_transit_from_center_strip": "~20–28 min est. via RTC Route 203 Westbound",
       "official_url": "https://www.opentable.com/r/kame-omakase-las-vegas",
-      "menu_source_url": "https://www.opentable.com/r/kame-omakase-las-vegas",
+      "menu_source_url": "https://sushikame.com/contact-us/",
       "michelin_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2902202/restaurants",
       "instagram": "https://www.instagram.com/kameomakase_lv/",
       "youtube": [
@@ -767,13 +760,13 @@
       "hours": "Dinner nightly from 5:00 PM (verify closing hour on OpenTable)",
       "exceptions": "Wood-fired eclectic American kitchen at 4480 Spring Mountain Rd.",
       "status": "open",
-      "price_2_adults_pretax": "",
-      "price_basis": "unpublished_blank",
-      "price_detail": "Official sparrowandwolflv.com menu omits dish dollar figures; left blank per strict evidence rule.",
+      "price_2_adults_pretax": "$298.00 (exact)",
+      "price_basis": "exact_tasting",
+      "price_detail": "Verified directly on official sparrowandwolflv.com/menu/: Chef's Tasting Menu is $149/pp = $298.00 exact for 2 adults (full table participation, auto-gratuity added, last call 9:30 PM; wine pairing $78/pp).",
       "nearest_public_transit": "RTC Route 203 (Spring Mountain Rd at Arville St stop)",
       "est_transit_from_center_strip": "~22–30 min est. via RTC Route 203 Westbound",
       "official_url": "https://sparrowandwolflv.com",
-      "menu_source_url": "https://sparrowandwolflv.com/",
+      "menu_source_url": "https://sparrowandwolflv.com/menu/",
       "michelin_url": "https://guide.michelin.com/us/en/nevada/las-vegas_2902202/restaurants",
       "instagram": "https://www.instagram.com/sparrowandwolflv/",
       "youtube": [
@@ -784,9 +777,7 @@
       "tiktok": "",
       "social_provenance": "Account opened: bio '@chefbrianhoward ... @michelinguide selected'.",
       "social_caveat": "",
-      "flag_ids": [
-        "FL-01"
-      ]
+      "flag_ids": []
     },
     {
       "id": "soulbelly-bbq",

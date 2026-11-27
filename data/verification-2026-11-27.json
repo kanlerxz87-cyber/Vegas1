@@ -1,0 +1,1042 @@
+{
+  "checked": "2026-11-27",
+  "session": "arena/ec1d72e2-vegas1 + arena/ed9892d9-vegas1 (T23 primary-source expansion)",
+  "rule": "Only explicit fields recorded below are cleared for the primary decision view. A working URL is not field verification. Current published schedules are not a guarantee of 2027 service. Totals for two are exact arithmetic on published per-person prices, not an invented spend range. Blank all-in totals remain unverified.",
+  "michelin_source": "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s",
+  "michelin_excerpt": "31 Aug 2026; Restaurant de Joël Robuchon Two Stars; é, Guy Savoy Las Vegas and L’Atelier One Star. Las Vegas rows in Bib Gourmand and Recommended tables checked individually.",
+  "restaurants": {
+    "joel-robuchon": {
+      "source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html",
+      "check": "Opened official venue page; only the explicit fields below were confirmed.",
+      "days": "Tue–Sat",
+      "hours": "5–9:30 PM",
+      "exceptions": "Closed Sun/Mon. Business formal; no children under 6; phone 702.891.7925. GM Sean Christopher won the 2026 MICHELIN Service Award. Weekly schedule, not dated availability.",
+      "price_options": [],
+      "social": [],
+      "award": "2 stars",
+      "award_class": "starred",
+      "address": "3799 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "location": "MGM Grand"
+    },
+    "latelier-robuchon": {
+      "source": "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html",
+      "check": "Opened official venue page; only the explicit fields below were confirmed.",
+      "days": "Mon, Thu–Sun",
+      "hours": "5–9:30 PM",
+      "exceptions": "Closed Tue/Wed. Business casual. Official page contains stray “Test copy” under dress code; child-age wording differs from Joël Robuchon.",
+      "price_options": [],
+      "social": [],
+      "award": "1 star",
+      "award_class": "starred",
+      "address": "3799 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "location": "MGM Grand"
+    },
+    "guy-savoy": {
+      "source": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy",
+      "check": "Opened official Caesars venue page and main-menu subpage (27 Nov): phone (702) 731-7286 and live badge 'Opens 5:00 PM' observed, but full weekly days are not in static HTML and tasting tabs omit totals; only à la carte dish prices ($60–$290) print.",
+      "days": null,
+      "hours": null,
+      "exceptions": "Phone (702) 731-7286; live badge reads 'Opens 5:00 PM', formal dress. Full weekly schedule and fixed tasting totals not printed in static HTML.",
+      "price_options": [],
+      "social": [
+        {
+          "label": "Caesars Palace YouTube (property channel)",
+          "url": "https://www.youtube.com/user/caesarspalace"
+        }
+      ],
+      "award": "1 star",
+      "award_class": "starred",
+      "address": "3570 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "location": "Caesars Palace",
+      "menu_source": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"
+    },
+    "e-by-jose-andres": {
+      "source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html",
+      "check": "Opened official venue page; only the explicit fields below were confirmed. Brand site freshly fetched after upstream F-68; explicit Sunday conflict retained.",
+      "days": "Tue–Sat agreed; Sunday disputed",
+      "hours": "Two seatings: 5:30 PM and 8:30 PM",
+      "exceptions": "Official conflict F-68: MGM lists Tue–Sat; freshly fetched brand site says Tue–Sun. Sunday unverified; do not assume closed or open. Brand phone 702-698-7950; tickets three months ahead.",
+      "price_options": [],
+      "social": [],
+      "award": "1 star",
+      "award_class": "starred",
+      "address": "3708 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "location": "The Cosmopolitan of Las Vegas",
+      "menu_source": "https://www.ebyjoseandres.com/"
+    },
+    "china-poblano": {
+      "source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html",
+      "check": "Opened official venue page; only the explicit fields below were confirmed. Official menu freshly reproduced 27 Nov: $60 per person. Tax, gratuity, drinks and 2027 availability unverified.",
+      "days": "Daily",
+      "hours": "Mon–Thu 11 AM–10 PM; Fri 11 AM–10:30 PM; Sat 10 AM–10:30 PM; Sun 10 AM–10 PM",
+      "exceptions": "Cocktail hour Mon–Thu 4–6 PM.",
+      "price_options": [
+        {
+          "per_person": 60,
+          "label": "José’s Way tasting menu"
+        }
+      ],
+      "social": [],
+      "award": "Bib Gourmand",
+      "award_class": "bib",
+      "address": "3708 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "location": "The Cosmopolitan of Las Vegas",
+      "menu_source": "https://www.chinapoblano.com/menus/",
+      "price_note": "Official menu freshly reproduced 27 Nov: $60 per person. Tax, gratuity, drinks and 2027 availability unverified."
+    },
+    "wing-lei": {
+      "source": "https://www.wynnlasvegas.com/dining/fine-dining/wing-lei",
+      "check": "Opened official venue page; only the explicit fields below were confirmed.",
+      "days": "Mon, Thu–Sun",
+      "hours": "Mon/Thu/Sun 5:30–9:30 PM; Fri/Sat 5:30–10 PM",
+      "exceptions": "Closed Tue/Wed; children under 5 not permitted. Forbes five-star is not a Michelin star.",
+      "price_options": [
+        {
+          "label": "Chef Tam’s Signature Tasting Menu",
+          "per_person": 198.88
+        }
+      ],
+      "social": [],
+      "award": "Recommended",
+      "award_class": "recommended",
+      "address": "3131 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "location": "Wynn Las Vegas",
+      "menu_source": "https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf",
+      "price_note": "Two-person fixed-menu food subtotal; wine journeys, tax, gratuity and February/March 2027 applicability not verified."
+    },
+    "mott-32": {
+      "source": "https://www.venetianlasvegas.com/dining/restaurants/mott-32.html",
+      "check": "Opened official Venetian page and lunch/dinner PDF menus (27 Nov): hours, weekday lunch sets ($38 / $68 pp) and $138 pre-order Peking Duck confirmed.",
+      "days": "Daily",
+      "hours": "Mon–Fri 11 AM–2:30 PM; Sat/Sun 10:30 AM–2:30 PM; dinner daily 5–10 PM",
+      "exceptions": "Set-menu subtotals apply to weekday lunch (Mon–Fri 11 AM–2:30 PM) only; dinner is à la carte. Apple Wood Roasted 42-Day Peking Duck ($138, recommended 3–4 guests) requires pre-order.",
+      "price_options": [
+        {
+          "label": "Mott Express Lunch Set (Mon–Fri 11 AM–2:30 PM)",
+          "per_person": 38
+        },
+        {
+          "label": "Mott Exclusive Lunch Set (Mon–Fri 11 AM–2:30 PM)",
+          "per_person": 68
+        }
+      ],
+      "social": [],
+      "award": "Recommended",
+      "award_class": "recommended",
+      "address": "3325 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "location": "The Palazzo at The Venetian",
+      "menu_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/mott-32/lunch-menu.pdf",
+      "price_note": "Official Venetian lunch PDF fetched 27 Nov: $38/pp Mott Express and $68/pp Mott Exclusive weekday lunch sets. Dinner is à la carte; house tea ($8–$12/pp), drinks, tax, tip and 2027 applicability unverified."
+    },
+    "cote": {
+      "source": "https://www.venetianlasvegas.com/dining/restaurants/cote.html",
+      "check": "Opened official Venetian page and COTE Las Vegas PDF menu (27 Nov): hours and fixed-feast prices ($95/pp Feast of USDA Prime, $225/pp Steak Omakase) confirmed.",
+      "days": "Daily",
+      "hours": "Sun–Thu 5–11 PM; Fri/Sat 4:30 PM–midnight",
+      "exceptions": "Full-table participation required for Feast of USDA Prime. Note: Venetian’s COTE page badges 'One MICHELIN Star' (NYC/Miami), whereas the 2026 Southwest Guide lists COTE Las Vegas as Recommended (F-70). Thanksgiving 2026 notice outside trip window.",
+      "price_options": [
+        {
+          "label": "Feast of USDA Prime",
+          "per_person": 95
+        },
+        {
+          "label": "Steak Omakase",
+          "per_person": 225
+        }
+      ],
+      "social": [],
+      "award": "Recommended",
+      "award_class": "recommended",
+      "address": "3355 S. Las Vegas Blvd., Las Vegas, Nevada 89109",
+      "location": "The Venetian Resort",
+      "menu_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/cote/menu.pdf",
+      "price_note": "Official Venetian PDF menu fetched 27 Nov: $95/pp Feast of USDA Prime and $225/pp Steak Omakase (supersedes earlier $88.88/$228.88 figures). Supplements, drinks, tax, gratuity and 2027 applicability unverified."
+    },
+    "bouchon": {
+      "source": "https://www.venetianlasvegas.com/dining/restaurants/bouchon.html",
+      "check": "Opened official venue page; only the explicit fields below were confirmed.",
+      "days": "Daily",
+      "hours": "Dinner 5–10 PM; brunch Thu 8 AM–1 PM, Fri–Sun 8 AM–2 PM",
+      "exceptions": "No Mon–Wed brunch listed. Source Thanksgiving 2026 exception does not apply to 2027 trip.",
+      "price_options": [],
+      "social": [],
+      "award": "Recommended",
+      "award_class": "recommended",
+      "address": "3355 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "location": "The Venetian Resort"
+    },
+    "estiatorio-milos": {
+      "source": "https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html",
+      "check": "Opened official Venetian page and lunch PDF menu (27 Nov): weekly hours and $45/pp 3-course daily lunch prix fixe confirmed.",
+      "days": "Daily",
+      "hours": "Sun–Thu 11:30 AM–10:30 PM; Fri/Sat 11:30 AM–11 PM",
+      "exceptions": "Lunch 11:30 AM–3 PM; midday menu 3–5 PM; dinner from 5 PM.",
+      "price_options": [
+        {
+          "label": "3-course Lunch menu (11:30 AM–3 PM daily)",
+          "per_person": 45
+        }
+      ],
+      "social": [],
+      "award": "Recommended",
+      "award_class": "recommended",
+      "address": "3355 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "location": "The Venetian Resort",
+      "menu_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/estiatorio-milos/lunch-menu.pdf",
+      "price_note": "Official Venetian lunch PDF fetched 27 Nov: $45/pp 3-course lunch menu (11:30 AM–3 PM daily). Dinner à la carte/market fish unpriced here; supplements, drinks, tax, tip and 2027 applicability unverified."
+    },
+    "gymkhana": {
+      "source": "https://aria.mgmresorts.com/en/restaurants/gymkhana.html",
+      "check": "Opened official venue page; only the explicit fields below were confirmed.",
+      "days": "Daily",
+      "hours": "Sun–Thu 5–10 PM; Fri/Sat 5–10:30 PM",
+      "exceptions": "Business casual; no under-21 guests after 10 PM.",
+      "price_options": [],
+      "social": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/gymkhanalasvegas"
+        }
+      ],
+      "award": "Recommended",
+      "award_class": "recommended",
+      "address": "3730 S Las Vegas Blvd, Las Vegas, NV 89158",
+      "location": "ARIA Resort & Casino"
+    },
+    "michael-mina": {
+      "source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
+      "check": "Opened official venue page; only the explicit fields below were confirmed.",
+      "days": null,
+      "hours": null,
+      "exceptions": "Official page: Temporarily closed, Mon–Sun closed; seasonal dates Nov 22–30, Dec 6–8, 13–15, 20–22. No 2027 reopening confirmed. Displayed menu is not bookable-trip evidence.",
+      "price_options": [],
+      "social": [],
+      "award": "Recommended",
+      "award_class": "recommended",
+      "address": "3600 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "location": "Bellagio"
+    },
+    "anima-by-edo": {
+      "source": "https://animabyedo.com",
+      "check": "Opened official venue page; only the explicit fields below were confirmed.",
+      "days": "Daily",
+      "hours": "Dinner from 5 PM",
+      "exceptions": "Closing time unverified. Entire table participates in tasting; vegetarian/vegan available on request.",
+      "price_options": [
+        {
+          "label": "Anima Experience tasting",
+          "per_person": 85
+        }
+      ],
+      "social": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/animabyedo"
+        }
+      ],
+      "award": "Recommended",
+      "award_class": "recommended",
+      "address": "9205 W Russell Rd #185, Las Vegas, NV 89148",
+      "location": "West Las Vegas (Russell Rd)",
+      "price_note": "Published tasting price; two-person food subtotal only. Tax, gratuity, wine and 2027 applicability unverified. Monday pasta/wine bundle not treated as a full-trip dining budget."
+    },
+    "kabuto": {
+      "source": "https://kabutolv.com",
+      "check": "Opened official venue page; only the explicit fields below were confirmed. Official venue reserve URL redirects to Resy; freshly reproduced 27 Nov $130/$185 pp. Holiday-only $215 pp applies 18 Dec–10 Jan, outside trip window. Tax/tip/drinks and trip-date availability not confirmed.",
+      "days": "Daily",
+      "hours": "5:30–9 PM",
+      "exceptions": "Seatings 5:30 PM and 7:45 PM; reservations via Resy or phone up to one month ahead; no raw-fish substitutions. Resy: 30 days ahead, $100 per-person late-cancellation/no-show fee inside 24 hours; 15-minute grace period. Notify allergies 24 hours ahead; severe allergies cannot be accommodated.",
+      "price_options": [
+        {
+          "per_person": 130,
+          "label": "Yoroi 7-course"
+        },
+        {
+          "per_person": 185,
+          "label": "Kabuto premium 8-course"
+        }
+      ],
+      "social": [
+        {
+          "label": "Instagram post",
+          "url": "https://www.instagram.com/p/DgF3xboF22x/"
+        }
+      ],
+      "award": "Recommended",
+      "award_class": "recommended",
+      "address": "5040 W Spring Mountain Rd #4, Las Vegas, NV 89146",
+      "location": "Chinatown (Spring Mountain Rd)",
+      "menu_source": "https://kabutolv.com/reserve",
+      "price_note": "Official venue reserve URL redirects to Resy; freshly reproduced 27 Nov $130/$185 pp. Holiday-only $215 pp applies 18 Dec–10 Jan, outside trip window. Tax/tip/drinks and trip-date availability not confirmed."
+    },
+    "kame-omakase": {
+      "source": "https://sushikame.com/",
+      "check": "Opened sushikame.com and sushikame.com/contact-us/ (27 Nov): address, phone 702-771-0122, two nightly seatings, $350/$500 per-person omakase tiers, and $500/guest <48h cancellation policy confirmed.",
+      "days": "Nightly (closed weekdays not listed)",
+      "hours": "Two seatings nightly: 5:30–7:30 PM; 8:00–10:00 PM",
+      "exceptions": "Arrive 10 minutes prior to seating. Reservations via SevenRooms or phone 702-771-0122. Credit-card hold required; cancellations within 48 hours or no-shows incur a $500 per-guest fee.",
+      "price_options": [
+        {
+          "label": "Seasonal Omakase",
+          "per_person": 350
+        },
+        {
+          "label": "Signature Omakase",
+          "per_person": 500
+        }
+      ],
+      "social": [],
+      "award": "Recommended",
+      "award_class": "recommended",
+      "address": "3616 W. Spring Mountain Rd., Ste. 103, Las Vegas, Nevada 89102",
+      "location": "Chinatown (Spring Mountain Rd)",
+      "hours_source": "https://sushikame.com/contact-us/",
+      "menu_source": "https://sushikame.com/contact-us/",
+      "price_note": "Official contact/reservation page (sushikame.com/contact-us/) fetched 27 Nov: $350 and $500 per-person omakase tiers. Drinks, tax, gratuity and 2027 availability unverified."
+    },
+    "lamaii": {
+      "source": "https://www.lamaiilv.com/chinatown/",
+      "check": "Opened official venue page; only the explicit fields below were confirmed.",
+      "days": "Daily",
+      "hours": "Mon–Wed 11 AM–midnight; Thu–Sun 11 AM–2 AM",
+      "exceptions": null,
+      "price_options": [],
+      "social": [],
+      "award": "Recommended",
+      "award_class": "recommended",
+      "address": "4480 Spring Mountain Rd #700, Las Vegas, NV 89102",
+      "location": "Chinatown (Spring Mountain Rd)"
+    },
+    "partage": {
+      "source": "https://partage.vegas/restaurant",
+      "check": "Opened official venue page; only the explicit fields below were confirmed.",
+      "days": "Tue–Sat",
+      "hours": "5–9 PM",
+      "exceptions": "Contact page says “for the foreseeable future”; not dated 2027. Cannot accommodate vegan, dairy-free, celiac, garlic/onion-free; home also excludes vegetarian.",
+      "price_options": [
+        {
+          "label": "5-course tasting",
+          "per_person": 130
+        },
+        {
+          "label": "7-course tasting",
+          "per_person": 160
+        },
+        {
+          "label": "Signature tasting",
+          "per_person": 210
+        }
+      ],
+      "social": [],
+      "award": "Recommended",
+      "award_class": "recommended",
+      "address": "3839 Spring Mountain Rd, Las Vegas, NV 89102",
+      "location": "Chinatown (Spring Mountain Rd)",
+      "hours_source": "https://partage.vegas/contact",
+      "menu_source": "https://partage.vegas/menu",
+      "price_note": "Food only; wine, supplements, tax and tip not included in these computed two-person menu subtotals; final all-in total unverified. Menu changes monthly."
+    },
+    "sparrow-and-wolf": {
+      "source": "https://sparrowandwolflv.com",
+      "check": "Opened sparrowandwolflv.com, /menu/, and official PDF SW-Chefs-Tasting-Menu-9326.pdf (27 Nov): $149/pp Chef’s Tasting Menu and reservation rules confirmed; weekly opening hours not printed in static HTML.",
+      "days": null,
+      "hours": null,
+      "exceptions": "Weekly opening hours not printed on static home or menu pages. All guests at table must participate in Chef’s Tasting Menu; automatic gratuity added; last call for tasting menu 9:30 PM. Online booking max 4 guests; $25/guest cancellation fee inside 24 hours; phone 702.790.2147.",
+      "price_options": [
+        {
+          "label": "Chef’s Tasting Menu",
+          "per_person": 149
+        }
+      ],
+      "social": [],
+      "award": "Recommended",
+      "award_class": "recommended",
+      "address": "4480 Spring Mountain Rd., #100, Las Vegas, Nevada 89102",
+      "location": "Chinatown (Spring Mountain Rd)",
+      "menu_source": "https://sparrowandwolflv.com/wp-content/uploads/2026/09/SW-Chefs-Tasting-Menu-9326.pdf",
+      "price_note": "Official tasting-menu PDF (SW-Chefs-Tasting-Menu-9326.pdf) fetched 27 Nov: $149/pp food subtotal ($78/pp optional wine pairing excluded). Auto-gratuity rate, tax and 2027 applicability unverified."
+    },
+    "esthers-kitchen": {
+      "source": "https://www.estherslv.com/",
+      "check": "Official home and menu opened; menu confirms service days, but no clock times. Address is Michelin’s published listing, not independently reconciled with venue (F-50).",
+      "days": "Dinner daily; lunch Mon–Fri; brunch Sat–Sun",
+      "hours": null,
+      "exceptions": null,
+      "price_options": [],
+      "social": [],
+      "award": "Bib Gourmand",
+      "award_class": "bib",
+      "address": "1131 S. Main St., Las Vegas, Nevada 89104",
+      "location": "Arts District (Downtown)",
+      "menu_source": "https://www.estherslv.com/menus/"
+    },
+    "soulbelly-bbq": {
+      "source": "https://soulbellybbq.com",
+      "check": "Opened official venue page; only the explicit fields below were confirmed. Freshly reproduced official menu 27 Nov: set meal explicitly for two, $80. Main Street only. Drinks/tax/tip and future availability unverified.",
+      "days": "Tue–Sun",
+      "hours": "Tue–Thu/Sun 11 AM–9 PM; Fri/Sat 11 AM–10 PM",
+      "exceptions": "Main Street location only; not the Miracle Mile Express branch. Monday not in published operating days.",
+      "price_options": [
+        {
+          "for_two": 80,
+          "label": "Chef’s Choice for 2 — 6 pit items and 6 sides; no substitutions"
+        }
+      ],
+      "social": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/soulbellybbqlv"
+        }
+      ],
+      "award": "Recommended",
+      "award_class": "recommended",
+      "address": "1327 S Main St, Las Vegas, NV 89104",
+      "location": "Arts District / Main St (Downtown)",
+      "menu_source": "https://soulbellybbq.com/menu",
+      "price_note": "Freshly reproduced official menu 27 Nov: set meal explicitly for two, $80. Main Street only. Drinks/tax/tip and future availability unverified."
+    },
+    "ping-pang-pong": {
+      "source": "https://goldcoast.boydgaming.com/dine/gc-ping-pang-pong",
+      "check": "Opened official venue page; only the explicit fields below were confirmed.",
+      "days": "Daily",
+      "hours": "10 AM–3 AM",
+      "exceptions": "Official venue warns menu updates may not occur in real time.",
+      "price_options": [],
+      "social": [],
+      "award": "Recommended",
+      "award_class": "recommended",
+      "address": "4000 W Flamingo Rd, Las Vegas, NV 89103",
+      "location": "Gold Coast Hotel & Casino"
+    },
+    "pho-ga-bac-bac": {
+      "source": "https://bestchickenpho.com",
+      "check": "Opened bestchickenpho.com and its directly linked official storefront fetail.com/storev2/shop?store_id=116 (27 Nov): 24/7 schedule and à la carte dish prices (e.g., Pho Ga C7 $17.99, Beef Pho $16.99–$20.95, Spring Rolls $10.99) confirmed; no fixed set menu.",
+      "days": "Daily",
+      "hours": "24 hours",
+      "exceptions": "Reservation requests not confirmed until the venue confirms; peak/holiday restrictions published.",
+      "price_options": [],
+      "social": [],
+      "award": "Recommended",
+      "award_class": "recommended",
+      "address": "3775 Spring Mountain Rd, Las Vegas, NV 89102",
+      "location": "Chinatown (Spring Mountain Rd)",
+      "menu_source": "https://www.fetail.com/storev2/shop?store_id=116"
+    },
+    "yen-viet-kitchen": {
+      "source": "https://www.yenvietkitchen.com",
+      "check": "Opened yenvietkitchen.com and its directly linked official ordering storefront skiplinow.com/shop/514688a (27 Nov): address, phone (702) 293-4949, and weekly hours (Mon, Wed–Sun 10:00 AM–8:30 PM; Tue closed) confirmed; item prices require interactive cart.",
+      "days": "Mon, Wed–Sun",
+      "hours": "10:00 AM–8:30 PM",
+      "exceptions": "Closed Tuesday. Weekly hours and phone (702) 293-4949 published on the official Skipli storefront linked from yenvietkitchen.com; not a 2027 schedule guarantee.",
+      "price_options": [],
+      "social": [],
+      "award": "Bib Gourmand",
+      "award_class": "bib",
+      "address": "3575 S Decatur Blvd #101, Las Vegas, NV 89103",
+      "location": "West Las Vegas (S Decatur Blvd)",
+      "hours_source": "https://www.skiplinow.com/shop/514688a"
+    },
+    "stubborn-seed": {
+      "source": "https://rwlasvegas.com/dining/stubborn-seed/",
+      "check": "Opened official venue page; only the explicit fields below were confirmed.",
+      "days": "Daily",
+      "hours": "Dining room 5–10 PM; bar/lounge 4–10 PM",
+      "exceptions": "Full-table tasting participation; no substitutions. Las Vegas listing is Recommended, not starred.",
+      "price_options": [
+        {
+          "label": "Tasting menu",
+          "per_person": 160
+        }
+      ],
+      "social": [],
+      "award": "Recommended",
+      "award_class": "recommended",
+      "address": "3000 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "location": "Resorts World Las Vegas",
+      "menu_source": "https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/",
+      "price_note": "Two-person food subtotal derived from published menu 160; drinks, enhancements, tax, gratuity and dated 2027 availability not confirmed."
+    }
+  },
+  "activities": {
+    "sphere": {
+      "name": "Sphere Las Vegas (The Wizard of Oz / concerts)",
+      "source": "https://www.thesphere.com/shows/wizard-of-oz-experience",
+      "days": null,
+      "hours": null,
+      "exceptions": "Calendar returned a loader; dated showtime and total unverified, not proof shows are unavailable. Published duration ~75 minutes; doors 45 minutes before ticket time; no late seating; sensory effects advisory.",
+      "price_options": [],
+      "social": [],
+      "check": "Official source opened; only explicit fields below confirmed."
+    },
+    "high-roller": {
+      "name": "High Roller Observation Wheel",
+      "source": "https://www.caesars.com/linq/things-to-do/attractions/high-roller",
+      "days": "Daily (ticket categories)",
+      "hours": null,
+      "exceptions": "Source conflicts: live opening badge 12:30 PM; ticket text says noon. FAQ daytime ends 5:59 PM/anytime starts 6 PM, but main text says anytime noon. Complete weekly closing time unverified.",
+      "price_options": [
+        {
+          "label": "Daytime starting price",
+          "per_person": 23.5
+        },
+        {
+          "label": "Anytime starting price",
+          "per_person": 34.75
+        }
+      ],
+      "social": [
+        {
+          "label": "The LINQ Instagram (property account)",
+          "url": "https://www.instagram.com/thelinq/"
+        },
+        {
+          "label": "The LINQ YouTube (property channel)",
+          "url": "https://www.youtube.com/user/linqvegas"
+        }
+      ],
+      "check": "Official source opened; only explicit fields below confirmed.",
+      "price_note": "Starting two-adult subtotals only, plus taxes/fees. Not a dated 2027 ticket quote."
+    },
+    "mob-museum": {
+      "name": "The Mob Museum",
+      "source": "https://themobmuseum.org/plan-your-visit/hours-directions/",
+      "days": "Daily",
+      "hours": "Museum 9 AM–9 PM; Underground Sun–Thu 11 AM–11 PM, Fri/Sat 11 AM–midnight",
+      "exceptions": "Early-closure page lists December 2026 exceptions only in this fetch. Inherited Thursday 4 PM close was a holiday exception, not weekly hours; removed.",
+      "price_options": [
+        {
+          "label": "General admission current published price",
+          "per_person": 37.95
+        }
+      ],
+      "social": [],
+      "check": "Official source opened; only explicit fields below confirmed.",
+      "menu_source": "https://admission.themobmuseum.org/",
+      "price_note": "Two-adult subtotal of current general admission; tax/fee inclusion and 2027 dated price unverified."
+    },
+    "neon-museum": {
+      "name": "The Neon Museum",
+      "source": "https://neonmuseum.org/whats-on/all-day-admission/",
+      "days": "Daily",
+      "hours": "2027 Admission 3–11 PM; last admission 10 PM",
+      "exceptions": "New 2027 policy on neonmuseum.org/your-visit/ (fetched 27 Nov): starting January 1, 2027, admission earlier or later than your selected ticket time may carry a higher ticket price payable prior to entry. Outdoor, uncovered; weather/heat thresholds apply; processing fee applies; phones/tablets only (no cameras, tripods or selfie sticks).",
+      "price_options": [
+        {
+          "label": "2027 adult admission starting price",
+          "per_person": 21
+        }
+      ],
+      "social": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/theneonmuseumlasvegas/"
+        },
+        {
+          "label": "TikTok",
+          "url": "https://www.tiktok.com/@neonmuseumlasvegas"
+        }
+      ],
+      "check": "Official source opened; only explicit fields below confirmed.",
+      "price_note": "Starting two-adult subtotal plus processing fee; exact selected-date checkout total unverified."
+    },
+    "fremont-street": {
+      "name": "Fremont Street Experience",
+      "source": "https://fremontstreetexperience.com/",
+      "days": "Nightly live entertainment",
+      "hours": "Canopy Music Reels: daily top of the hour, 6:00 PM–2:00 AM (pedestrian mall 24/7)",
+      "exceptions": "Free concerts advertised every night; exact 2027 set times and special-event restrictions unverified. SlotZilla and ticketed events not included.",
+      "price_options": [
+        {
+          "label": "Advertised free live entertainment",
+          "per_person": 0
+        }
+      ],
+      "social": [],
+      "check": "Opened fremontstreetexperience.com and /the-canopy/ (27 Nov): free nightly 3-stage concerts and hourly 6 PM–2 AM Canopy Music Reels confirmed.",
+      "price_note": "Free live entertainment only; not a blanket free-admission promise for every special event."
+    },
+    "bellagio-fountains": {
+      "name": "Fountains of Bellagio",
+      "source": "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html",
+      "check": "Freshly fetched official Bellagio page on 27 Nov after upstream added this candidate; free admission, schedule and weather exceptions reproduced. Not a dated performance guarantee.",
+      "days": "Daily",
+      "hours": "Mon-Fri: every 30 min 3:00-7:30 PM, every 15 min 8:00 PM-midnight. Sat, Sun & holidays: every 30 min 12:00-7:30 PM, every 15 min 8:00 PM-midnight.",
+      "exceptions": "Schedule may vary; outdoor display subject to cancellation due to weather. Holidays follow the noon-start schedule; do not assume all Mondays start at 3 PM.",
+      "price_options": [
+        {
+          "label": "Free outdoor display",
+          "per_person": 0
+        }
+      ],
+      "price_note": "Official page: absolutely free for any visitor.",
+      "social": []
+    }
+  },
+  "hotels": {
+    "nobu-caesars": {
+      "source": "https://www.caesars.com/caesars-palace/hotel/nobu-hotel",
+      "name": "Nobu Hotel at Caesars Palace",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "caesars-palace": {
+      "source": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
+      "name": "Caesars Palace",
+      "check": "Exact-date 2-adult page opened. Technical-difficulties banner coexists with $214/night for named King room, resort fee included/tax excluded. No exact seven-night checkout total; fee policy $54.95 before tax differs from rounded $55 display. Total remains blank. Private-use guarantee not explicitly extracted.",
+      "room": "Julius Deluxe Room | 1 King | Non-Smoking",
+      "bed": "1 King",
+      "bathroom": "Stone/glass bathroom with double-sink vanity and hand-held showerhead",
+      "amenities": "Spa, fitness facilities, seasonal outdoor pool; amenities may carry charges.",
+      "total_7n": null,
+      "within_60": null
+    },
+    "trump-international": {
+      "source": "https://www.trumphotels.com/las-vegas",
+      "name": "Trump International Hotel Las Vegas",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "cromwell": {
+      "source": "https://www.caesars.com/vanderpump-hotel",
+      "name": "The Vanderpump Hotel (formerly The Cromwell)",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "w-las-vegas": {
+      "source": "https://www.marriott.com/en-us/hotels/laswh-w-las-vegas/overview/",
+      "name": "W Las Vegas",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "crockfords": {
+      "source": "https://www.rwlasvegas.com/stay/crockfords-las-vegas/city-view-superior-room/",
+      "name": "Crockfords Las Vegas (Resorts World)",
+      "check": "Official room page fetched 27 Nov at relocated /stay/crockfords-las-vegas/ path (old /hotels/crockfords/ URL returned HTTP 500). Room/bed/ensuite description confirmed; no dated 2027 checkout total extracted.",
+      "room": "City View Superior Room (550 sq. ft.)",
+      "bed": "One King Bed or Two Queen Beds",
+      "bathroom": "Ensuite bathroom with double vanity and separate water closet; Byredo amenities",
+      "amenities": "550 sq. ft.; private lobby with light snacks/beverages; 24-hour Ambassador service; valet; Nespresso.",
+      "total_7n": null,
+      "within_60": null
+    },
+    "vdara": {
+      "source": "https://www.mgmresorts.com/en/hotels/vdara.html",
+      "name": "Vdara Hotel & Spa",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "four-seasons": {
+      "source": "https://www.fourseasons.com/lasvegas/",
+      "name": "Four Seasons Hotel Las Vegas",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "nomad-reserve": {
+      "source": "https://www.mgmresorts.com/en/hotels/nomad-las-vegas.html",
+      "name": "NoMad Las Vegas / The Reserve at Park MGM",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "bellagio": {
+      "source": "https://bellagio.mgmresorts.com/en/hotel/resort-queen-room-fountain-view.html",
+      "name": "Bellagio",
+      "check": "Official Bellagio room page fetched 27 Nov. Named room/bed/bathroom fixtures confirmed; dated 2027 checkout total and private-use rate terms not extracted.",
+      "room": "Fountain View Two Queen (510 sq. ft.)",
+      "bed": "2 Queen Beds",
+      "bathroom": "Upgraded bathroom vanity with dual sinks and frameless shower enclosure",
+      "amenities": "510 sq. ft.; wireless high-speed Internet; 55-inch HDTV; 24-hour in-room dining; personal safe.",
+      "total_7n": null,
+      "within_60": null
+    },
+    "fontainebleau": {
+      "source": "https://www.fontainebleaulasvegas.com/",
+      "name": "Fontainebleau Las Vegas",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "cosmopolitan": {
+      "source": "https://cosmopolitanlasvegas.mgmresorts.com/en/hotel/city-room.html",
+      "name": "The Cosmopolitan of Las Vegas",
+      "check": "Official Cosmopolitan City Room page fetched 27 Nov. Hosts é by José Andrés (1★) and China Poblano (Bib Gourmand); dated 2027 checkout total not extracted.",
+      "room": "City Room Queen (460 sq. ft.)",
+      "bed": "2 Queen Beds",
+      "bathroom": "Large bathroom described on official room page",
+      "amenities": "460 sq. ft.; max 4 guests; urban residence layout.",
+      "total_7n": null,
+      "within_60": null
+    },
+    "venetian": {
+      "source": "https://www.venetianlasvegas.com/hotel/the-venetian.html",
+      "name": "The Venetian Resort",
+      "check": "Official Venetian suite overview fetched 27 Nov. Hosts 4 MICHELIN Recommended restaurants across Venetian/Palazzo; dated 2027 2-adult checkout total not extracted without occupancy mismatch.",
+      "room": "New Luxury Loft King Suite / Two Queen Suite (650 sq. ft.)",
+      "bed": "1 King Bed or 2 Queen Beds",
+      "bathroom": "Oversized bathroom with dual-sink vanity and glass-enclosed shower",
+      "amenities": "650 sq. ft. standard suite layout with separate living room.",
+      "total_7n": null,
+      "within_60": null
+    },
+    "aria": {
+      "source": "https://www.aria.com/",
+      "name": "ARIA Resort & Casino",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "palazzo": {
+      "source": "https://www.palazzo.com/",
+      "name": "The Palazzo at The Venetian",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "encore": {
+      "source": "https://www.wynnlasvegas.com/rooms-and-suite",
+      "name": "Encore at Wynn Las Vegas",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "wynn": {
+      "source": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
+      "name": "Wynn Las Vegas",
+      "check": "Page confirms seven nights Feb 15–22, 2027. Occupancy control text ambiguously renders “Adults Per Room12341”; URL says 2 but rendered occupancy is not reliably confirmed. Cyber $677 average/night and Flexible $833 average/night include resort fee/exclude taxes. Exact total not extracted; do not multiply rounded averages. Public Cyber booking window Nov 20–Dec 4, 2026; stays Nov 22, 2026–Jun 30, 2027; cancel 72 hours before arrival or one-night room/tax penalty. No optimal future booking day established.",
+      "room": "Wynn Resort King",
+      "bed": "1 King",
+      "bathroom": "Marble bathroom, glass-enclosed shower, deep-soaking tub, separate water closet",
+      "amenities": "640 sq ft; Wi-Fi; fitness access for two; self-parking, subject to availability.",
+      "total_7n": null,
+      "within_60": null
+    },
+    "secret-suites-vdara": {
+      "source": "https://www.mgmresorts.com/en/hotels/vdara.html",
+      "name": "Secret Suites at Vdara",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "waldorf-astoria": {
+      "source": "https://www.hilton.com/en/hotels/laswawa-waldorf-astoria-las-vegas/",
+      "name": "Waldorf Astoria Las Vegas",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "cirrus-cliffs": {
+      "source": "https://www.thecliffs.net/contact",
+      "name": "Cliffs at Peace Canyon",
+      "check": "Property contact page fetched; confirms 4550 S Grand Canyon Dr and phone. Footer social icons link to Wix, not hotel accounts. No room/rate evidence.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "desert-rose": {
+      "source": "https://www.shellvacationsclubrentals.com/resorts/nevada/las-vegas/desert-rose-resort",
+      "name": "Desert Rose Resort",
+      "check": "Official overview fetched; explicit description is the TWO-bedroom accessible combo, not proof of every room type. Availability and private-use guarantee for requested dates unverified; no dated quote extracted.",
+      "room": "Two Bedroom Accessible Combo (specific published example)",
+      "bed": "1 King + 1 Queen; sleeper sofa",
+      "bathroom": "Two bathrooms, one with tub/shower, second shower-only",
+      "amenities": "Full kitchen, dining area, private balcony; 900 sq ft.",
+      "total_7n": null,
+      "within_60": null
+    },
+    "golden-nugget": {
+      "source": "https://www.goldennugget.com/las-vegas/",
+      "name": "Golden Nugget Las Vegas",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "horseshoe": {
+      "source": "https://www.caesars.com/horseshoe-las-vegas",
+      "name": "Horseshoe Las Vegas",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "flamingo": {
+      "source": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=flv&numberOfAdults=2&numberOfRooms=1",
+      "name": "Flamingo Las Vegas",
+      "check": "Exact-date 2-adult page opened. Technical-difficulties banner plus $83/night, includes resort fee/excludes taxes; not an exact seven-night checkout total. Fee policy $49.95 before tax differs from rounded $50 display. Assigned-on-arrival cheaper room is not used. Private-use guarantee not explicitly extracted.",
+      "room": "Flamingo Room | 2 Queens",
+      "bed": "2 Queens",
+      "bathroom": "Rain shower and bathroom fixtures in named room description",
+      "amenities": "Seasonal pools, spa, fitness; openings/charges for trip dates unverified.",
+      "total_7n": null,
+      "within_60": null
+    },
+    "linq": {
+      "source": "https://www.caesars.com/linq",
+      "name": "The LINQ Hotel + Experience",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "sahara": {
+      "source": "https://www.saharalasvegas.com/",
+      "name": "SAHARA Las Vegas",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "plaza": {
+      "source": "https://www.plazahotelcasino.com/",
+      "name": "Plaza Hotel & Casino",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "palms-place": {
+      "source": "https://www.palms.com/palms-place/",
+      "name": "Palms Place Hotel and Spa",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "bluegreen-club-36": {
+      "source": "https://www.bluegreenvacations.com/resorts/nevada/las-vegas/club-36",
+      "name": "Bluegreen Vacations Club 36",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "mgm-signature": {
+      "source": "https://www.mgmresorts.com/en/hotels/signature-at-mgm-grand.html",
+      "name": "The Signature at MGM Grand",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "green-valley-ranch": {
+      "source": "https://www.greenvalleyranch.com/",
+      "name": "Green Valley Ranch Resort",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "red-rock": {
+      "source": "https://www.redrockresort.com/",
+      "name": "Red Rock Casino Resort & Spa",
+      "check": "Inherited candidate link, not re-fetched in this pass. Room, private bath, rate, fee, cancellation and route evidence unverified.",
+      "room": null,
+      "bed": null,
+      "bathroom": null,
+      "amenities": null,
+      "total_7n": null,
+      "within_60": null
+    },
+    "mgm-grand": {
+      "name": "MGM Grand",
+      "source": "https://mgmgrand.mgmresorts.com/en/hotel/mgm-king.html",
+      "room": "MGM King (446 sq. ft.) / MGM Two Queen (446 sq. ft.)",
+      "bed": "1 King Bed (or 2 Queen Beds in MGM Two Queen)",
+      "bathroom": "Carrera Marble-adorned Bathroom with oversized backlit vanity mirror",
+      "amenities": "446 sq. ft.; 55-inch HDTV; personal mini fridge; laptop-sized safe; glass-top desk.",
+      "total_7n": null,
+      "within_60": null,
+      "check": "Official MGM Grand room overview and MGM King room page fetched 27 Nov. Hosts two MICHELIN-starred restaurants (Joël Robuchon 2★, L’Atelier 1★); dated 2027 checkout total not extracted."
+    }
+  },
+  "checks": [
+    {
+      "id": "EC-01",
+      "title": "Unsupported transit ranking withdrawn",
+      "finding": "The zone matrix assigns zero minutes inside a zone, fixed times without departures and includes Loop vehicles. It does not establish bus-only door-to-door times or all 24 restaurants within 60 minutes, especially Henderson/Summerlin. Primary rank/count fields are blank. Historical model retained in data/transit.json; not recomputed into verified data.",
+      "sources": [
+        "https://www.rtcsnv.com/ways-to-travel/fares-passes/",
+        "https://rtcws.rtcsnv.com/routePDF/203.pdf"
+      ]
+    },
+    {
+      "id": "EC-02",
+      "title": "No verified all-in seven-night hotel total",
+      "finding": "Historical OTA totals and rounded official nightly rates cannot support strict official all-in seven-night ranking. Caesars and Flamingo show technical-error banners with prices; Wynn rendered occupancy is ambiguous. No checkout total verified; primary totals blank, no cheapest-week or optimal-purchase-day claim.",
+      "sources": [
+        "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
+        "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=flv&numberOfAdults=2&numberOfRooms=1",
+        "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0"
+      ]
+    },
+    {
+      "id": "EC-03",
+      "title": "Mob Museum Thursday schedule corrected",
+      "finding": "Official weekly schedule now says daily 9 AM–9 PM. The inherited recurring Thursday 4 PM close generalized a Thanksgiving exception. Current early-closure page lists date-specific exceptions, not a weekly Thursday rule.",
+      "sources": [
+        "https://themobmuseum.org/plan-your-visit/hours-directions/"
+      ]
+    },
+    {
+      "id": "EC-04",
+      "title": "Social verification is field-specific",
+      "finding": "Fresh social fields contain only links observed on official venue/property pages in this integration. Expandable prior-session account evidence is retained with its original provenance/caveats and not claimed rechecked here. Creator-video leads without specific verification remain only in raw datasets. Some prior YouTube fields conflict with their caveats (empty official channel versus separate creator video); no promotion based on field presence alone.",
+      "sources": [
+        "https://aria.mgmresorts.com/en/restaurants/gymkhana.html",
+        "https://kabutolv.com",
+        "https://neonmuseum.org/whats-on/all-day-admission/"
+      ]
+    },
+    {
+      "id": "EC-05",
+      "title": "High Roller source contradicts its own times",
+      "finding": "Opening badge says 12:30 PM but tickets say noon; anytime ticket text conflicts with FAQ. No full weekly closing schedule extracted. Hours field blank; current starting-price subtotals not 2027 all-in quotes.",
+      "sources": [
+        "https://www.caesars.com/linq/things-to-do/attractions/high-roller"
+      ]
+    },
+    {
+      "id": "EC-06",
+      "title": "Guide status does not guarantee opening or booking",
+      "finding": "Michael Mina is listed Recommended in Michelin 2026 but Bellagio’s official venue page says temporarily closed; 2027 opening unverified. KAME’s home page (sushikame.com) is minimal, whereas sushikame.com/contact-us/ publishes $350/$500 pp omakase tiers, two nightly seatings and a $500/guest <48h fee. Guy Savoy’s menu exposes à la carte dish prices ($60–$290) but no complete fixed-menu total, so no assumed couple spend is shown.",
+      "sources": [
+        "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s",
+        "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
+        "https://sushikame.com/contact-us/",
+        "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"
+      ]
+    },
+    {
+      "id": "EC-07",
+      "title": "Scope of line-by-line verification",
+      "finding": "All 24 restaurant award tiers and addresses compared individually to Michelin’s selection. Venue pages and linked official menus/storefronts opened for all 24 restaurants and six activities; 12 of 24 restaurants carry confirmed fixed-menu subtotals and missing fields remain blank. Ten of 33 hotel candidates now carry fresh official room/contact/engine evidence (Caesars, Flamingo, Wynn, Desert Rose, Cliffs, Crockfords, MGM Grand, Venetian, Bellagio, Cosmopolitan); other candidate links remain inherited. No full end-to-end trip feasibility or dated reservations verified.",
+      "sources": [
+        "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s",
+        "https://www.rtcsnv.com/ways-to-travel/fares-passes/"
+      ]
+    },
+    {
+      "id": "EC-08",
+      "title": "Primary-source catches: COTE star mislabel, Neon 2027 arrival surcharge, Crockfords URL & RTC 7-day pass math",
+      "finding": "(1) Venetian’s COTE page badges 'One MICHELIN Star' (NYC/Miami), whereas the 2026 Southwest Guide lists COTE Las Vegas as Recommended; official PDF prints $95/$225 pp. (2) Neon Museum’s Visit FAQ states that starting January 1, 2027, arriving earlier or later than your selected ticket time may require paying a higher ticket-price difference prior to entry. (3) Crockfords moved from /hotels/crockfords/ (HTTP 500) to /stay/crockfords-las-vegas/ (HTTP 200). (4) RTC publishes no Visitor 7-Day Strip & All Access pass ($20 7-Day is Residential); 2 × 3-Day ($40) + 1 × 24-Hour ($8) = $48/person ($96/couple) covers 168 hours across all routes vs $120/couple for 6 × 3-Day passes.",
+      "sources": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/cote/menu.pdf",
+        "https://neonmuseum.org/your-visit/",
+        "https://www.rwlasvegas.com/stay/crockfords-las-vegas/city-view-superior-room/",
+        "https://www.rtcsnv.com/ways-to-travel/fares-passes/"
+      ]
+    }
+  ],
+  "hotel_engine_observations": [
+    {
+      "hotel": "Resorts World Las Vegas — Hilton tower",
+      "source": "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0",
+      "checked": "2026-11-27",
+      "room": "Deluxe Room - One King Bed",
+      "dates": "15–22 February 2027 · 7 nights · URL: 2 adults, 0 children; page: 2 Guests",
+      "displayed_total": 2200.15,
+      "room_nights": [
+        159,
+        348.75,
+        348.75,
+        228.75,
+        186.75,
+        186.75,
+        96.75
+      ],
+      "room_tax": 208.13,
+      "resort_fees": 385,
+      "resort_fee_tax": 51.52,
+      "alternative": "Deluxe Room - Two Queen Beds: displayed total $2,434.84.",
+      "limits": "Freshly reproduced upstream itemised engine observation, not a completed checkout. Private bathroom exclusivity, cancellation/deposit and promotion eligibility not extracted. Browser-unsupported notice present; calendar has conflicting fee-inclusion labels. Not a fully qualifying offer or cheapest-date proof."
+    }
+  ]
+}
