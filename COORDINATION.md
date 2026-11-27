@@ -846,6 +846,7 @@ resolution keeps it. Resolved here by keeping the fuller of the two bullet lists
 shorter side alone carried (the `FLAGS.md` duplicate-row observation), so nothing was lost. After this merge `main` has
 no conflict markers in this file.
 
+<<<<<<< HEAD
 ## T20 official verification & generator bug-fix pass — arena/01ba2dd9-vegas1 — 2026-11-27
 
 **Conflict & sync record:** Synced with `origin/main` (`18b16ec`, PRs #36–#54, 16-page site) in commit `d93ba3d`, preserving 100% of upstream data, `scripts/check_evidence.py`, Bellagio Fountains (F-18), YouTube oEmbed checks, and F-52–F-67. Applied only remaining net-new verified updates as **T20**:
@@ -854,3 +855,12 @@ no conflict markers in this file.
 2. **Official-vs-official schedule conflict flagged (F-68):** é by José Andrés — Cosmopolitan MGM page says `Tue–Sat` while `https://www.ebyjoseandres.com/` says `Tue–Sun` (5:30 & 8:30 PM seatings; direct phone `702-698-7950`).
 3. **Final 4 unopened hotel official URLs checked (0 unopened across all 32 hotels):** Green Valley Ranch (`greenvalleyranch.com`) and Red Rock (`redrockresort.com`) confirmed live (`yes`); Waldorf Astoria (`hilton.com`) and The Signature at MGM Grand (`mgmresorts.com`) refuse automated fetch (`blocked`) → **21 live / 10 refused / 1 sibling / 0 unopened**.
 4. **Generator & register bug fixes:** fixed `scripts/gen_site.py` broken `suggestions.html` `<h2>1</h2>` heading (`16 ways to improve this plan`), `sources.html` typo `F-39` → `F-29`, `flagged.html` dynamic range (`F-47 to F-69`), `questions.json` (`Q-08` "15 months" → "~3 months", `Q-13` 0 unopened), and `suggestions.json` (`S-02` 21 → 24 listings).
+=======
+### T17 final PR/merge record (arena/a00dc828-vegas1)
+
+- **PR #47** — video-link verification (oEmbed) + F-67 → **MERGED**, merge commit `5ceb3d6`; Pages build for it reached `built`.
+- **PR #55** — fix for the stale Mob Museum provenance sentence → **MERGED**, merge commit `99a3506`; Pages build `built` for `99a3506`.
+- Live check after `99a3506` (cache-busted fetch of `activities.html` and `flagged.html`): Fremont now shows `KDARquYGk_M` (venue channel) and no longer `Tls27qeAPaw`; Sphere shows its channel + 3 verified videos; Mob Museum shows its channel + 3 verified videos; F-67 renders on the flag page.
+- Still open and **not** touched by this session: PR #38, PR #27 (stale branches from earlier sessions) — left for their owners or the next integration pass.
+- Open issue handed over: `FLAGS.md` carries duplicate rows for F-52…F-57 (two merge trains used the same IDs). Wording not edited here; dedupe belongs to the flags owner.
+>>>>>>> origin/main
