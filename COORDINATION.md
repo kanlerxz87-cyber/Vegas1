@@ -465,3 +465,19 @@ they are not typed, so do not hand-edit generated HTML in either `docs/` or the 
 left as-is and marked confirmed — but the Cromwell case shows a redirect can hide a rebrand, so re-open the
 redirect targets (not just the vanity domains) when prices are re-captured.
 
+
+## Session record — arena/ff83218b-vegas1 (T16) — 2026-11-27
+
+**Scope claimed:** `COORDINATION.md` only. No data, generator, or site files edited — this is a final-integration verification pass on the already-merged T01–T15 work.
+
+**Verification performed (2026-11-27):**
+- Rebuilt locally: `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py` → 13 pages · 0 failures · 0 warnings · 394 external links; `git status` clean after rebuild (generated output byte-identical to committed site).
+- Data counts confirmed: 32 hotels, 24 MICHELIN restaurants (4 starred / 3 Bib / 17 Recommended), 5 activities, 13 questions, 15 suggestions.
+- Live site fetched: https://kanlerxz87-cyber.github.io/Vegas1/ serves the Overview with the four starred restaurants and the four "things that change the answer"; https://kanlerxz87-cyber.github.io/Vegas1/flagged.html serves the F-39…F-46 audit register.
+- MICHELIN tiers cross-checked against the official Michelin press release (michelinmedia.com, 2026 Southwest selection): 2★ Joël Robuchon; 1★ é by José Andrés, Restaurant Guy Savoy, L'Atelier de Joël Robuchon — matches `data/restaurants.json` and the site.
+- Pages API: `gh api repos/kanlerxz87-cyber/Vegas1/pages` → status `built`, source `main:/`, https://kanlerxz87-cyber.github.io/Vegas1/.
+- Note: PR #27 (`arena/c9eed9ad-vegas1`, "Finalize Vegas planner verification and review pages") is still OPEN from another session; it was not touched or merged by this session. No conflict with this branch (this branch adds only this COORDINATION.md record).
+
+**Irregularities:** none new. All known limitations remain published on flagged.html (F-29/F-30 rate basis, F-47 Vanderpump rebrand, F-48 search-list prices, etc.) and do not block this merge.
+
+**Result:** T16 done. PR opened from `arena/ff83218b-vegas1` → `main`, merged without waiting for approval per brief; Pages deploy re-confirmed after merge.
