@@ -846,6 +846,46 @@ resolution keeps it. Resolved here by keeping the fuller of the two bullet lists
 shorter side alone carried (the `FLAGS.md` duplicate-row observation), so nothing was lost. After this merge `main` has
 no conflict markers in this file.
 
+## PR and merge record — arena/c7c75f9a-vegas1 (T17) — 2026-11-27
+
+**PR #53** — https://github.com/kanlerxz87-cyber/Vegas1/pull/53
+**Merged:** 2026-11-27T17:45:24Z · merge commit **`8e87a4d4`** · squash-free `--merge` per repo convention.
+**No approval waited for** (standing instruction: complete autonomously, do not block on review).
+
+**Merged without rework:** `itinerary.html` (new), `data/official-rates.json` (new),
+`data/site-suggestions.json` (new), the official-engine Hotels section, `W-01`…`W-10`,
+Bellagio Fountains promoted from `not_verified` to a sixth verified activity.
+
+**Two upstream advances had to be absorbed, not one.** `main` moved from `8fbf850` to `5d422eb`
+(merge 1, `1815919`) and again to `331f1a2` (merge 2, `18ee1df`). Merge 2 added `dining.html` and
+`costs.html` with a published-price budget calculator — which partially supersedes my `W-06`
+proposal; `W-06` stays on the list marked proposed, because its remaining scope is the hotel side,
+which the new calculator does not cover.
+
+**What the merge cost, and what caught it.** The page validator reported 0 failures after the first
+merge while `scripts/gen_site.py` had silently reverted to my pre-merge copy — main's F-58/F-59 work
+was gone and the build was still green. The second merge repeated the pattern in `data/activities.json`,
+where my older Mob Museum hours ("Thu also 9-9") replaced main's F-62 correction. **`check_evidence.py`
+caught that one; `validate.py` did not.** Both are now recorded as the standing merge procedure:
+after any conflicted merge, grep for the upstream flags (`F-58`, `F-62`, `F-63`, `F-64`) and run
+`check_evidence.py`, not just `validate.py`.
+
+**Wider lesson for this repo:** a clean build proves the generator runs, not that the merge kept
+upstream's evidence standard. Every future merge into `main` should be diffed against the flags it
+was supposed to preserve.
+
+**Deploy:** GitHub Pages pinned to `main:/`. Workflow run `8e87a4d4` — **completed / success**;
+`gh api .../pages` → `built`. Live URLs verified by API content read on `main`
+(`itinerary.html` 10,082 B, `hotels.html` 18,213 B, `suggestions.html` 24,450 B).
+Direct HTTP verification of `kanlerxz87-cyber.github.io` is not possible from this sandbox — outbound
+access is limited to six hosts and every request fails at TLS, including instagram.com. That is an
+environment limit and is not evidence of a broken deploy.
+
+**Still open on this branch's scope, deliberately:**
+- 4 venues publish no opening days at all (Sparrow + Wolf, Esther's Kitchen, Kame, Anima) — Q-level gap.
+- Sphere has no 2027 calendar (F-16); the itinerary treats Friday as a flexible night because of it.
+- Restaurant couple prices are 3 of 24 after F-61 withdrew the inherited totals.
+
 ### T17 final PR/merge record (arena/a00dc828-vegas1)
 
 - **PR #47** — video-link verification (oEmbed) + F-67 → **MERGED**, merge commit `5ceb3d6`; Pages build for it reached `built`.
