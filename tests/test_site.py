@@ -148,6 +148,9 @@ class SiteTests(unittest.TestCase):
         for category,name in [('restaurants','restaurants.html'),('activities','activities.html')]:
             for r in prior[category]:
                 if r.get('instagram'):self.assertIn(r['instagram'],self.docs[name].links,r['id'])
+        for r in prior['activities']:
+            if r.get('also_recorded'):
+                self.assertIn(site.text(r['also_recorded']),self.pages['activities.html'])
         self.assertIn('Earlier session evidence',self.pages['restaurants.html'])
 
 

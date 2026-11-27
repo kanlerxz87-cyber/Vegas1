@@ -109,7 +109,10 @@ def social(rec, id=None, category=None):
                 continue
             leads.append(link(url, platform.title() + ' — prior-session check'))
         evidence = text(prior.get('evidence')) + '<br>' + text(prior.get('caveat'))
-        if leads:
+        if prior.get('also_recorded'):
+            evidence += '<br>Previously recorded by the superseded pass: ' + text(prior['also_recorded'])
+        evidence = text(prior.get('status')) + '<br>' + evidence
+        if leads or prior.get('evidence') or prior.get('also_recorded'):
             output += ('<details><summary>Earlier session evidence (27 Nov; not refreshed here)</summary>'
                        + '<br>'.join(leads) + '<p class="tiny">' + evidence + '</p>'
                        + link(REPO+'data/socials.json', 'Original provenance record') + '</details>')
@@ -338,6 +341,7 @@ they must not be used as current verified decision tables. They are preserved so
 def flagged():
     rows=[[text(f['id']),text(f['title']),text(f['finding']),'<br>'.join(link(u) for u in f['sources'])] for f in E['checks']]
     body=panel('Current decision-impacting flags', '''<p>These do not block website publication. They <em>do</em> prevent unsupported booking, price and route recommendations. A blank is not zero, sold out or unavailable. Current flags supersede conflicting historical conclusions.</p>'''+table(['ID','Finding','Effect / missing evidence','Official sources'],rows,'27 November strict-evidence review',[f['id'] for f in E['checks']]))
+    body+=panel('Earlier social-gap finding superseded', '<p>The prior social verification session records this closure; counts refer to that observation, not a fresh social audit:</p><p>'+text(load('socials.json')['meta'].get('supersedes'))+'</p>'+link(REPO+'data/socials.json','Prior-session closure evidence'))
     # Keep every historical ID/row addressable, without treating its claims as current verification.
     historical=[];ids=[]
     for line in (ROOT/'FLAGS.md').read_text().splitlines():

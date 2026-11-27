@@ -573,7 +573,14 @@ def build_activities():
     # Provenance rows: one per activity, showing HOW each link was confirmed.
     # This is the activities counterpart of the restaurants provenance table.
     social_rows = ""
+    # data/socials.json holds this session's evidence record; activities.json holds the
+    # merged fields. Join them by id so the corroboration sentence is not lost.
+    _soc_act = {x["id"]: x for x in SOC.get("activities", []) if isinstance(x, dict) and x.get("id")}
     for _a in ACT["activities"]:
+        _a = dict(_a)
+        _extra = _soc_act.get(_a.get("id"), {})
+        if _extra.get("also_recorded") and not _a.get("also_recorded"):
+            _a["also_recorded"] = _extra["also_recorded"]
         _bits = []
         if _a.get("social_evidence"):
             _bits.append(e(_a["social_evidence"]))
@@ -584,6 +591,12 @@ def build_activities():
         # always separate sentences so two sources cannot run together.
         if _a.get("social_note") and not _a.get("social_evidence"):
             _bits.append(e(_a["social_note"]))
+        # The superseding session's own corroboration sentence, kept separately so
+        # it is never merged into another session's wording.
+        if _a.get("also_recorded"):
+            _bits.append(
+                '<span class="tiny">Previously recorded by the superseded pass: '
+                + e(_a["also_recorded"]) + "</span>")
         _cell = "<br>".join(_bits) or "—"
         social_rows += (f'<tr><td>{e(_a["name"].split(" (")[0])}</td>'
                         f'<td class="tiny">{_a.get("social_status", "none_verified").replace("_", " ")}</td>'
