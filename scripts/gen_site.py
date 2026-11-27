@@ -282,6 +282,20 @@ def build_activities():
     nv = "".join(
         f'<li><strong>{e(n["name"])}</strong> — {e(n["reason"])}</li>' for n in ACT["not_verified"]
     )
+    # Provenance rows: one per activity, showing HOW each link was confirmed.
+    # This is the activities counterpart of the restaurants provenance table.
+    social_rows = ""
+    for _a in ACT["activities"]:
+        _bits = []
+        if _a.get("social_evidence"):
+            _bits.append(e(_a["social_evidence"]))
+        if _a.get("social_caveat"):
+            _bits.append(f'<div class="tiny warn">{e(_a["social_caveat"])}</div>')
+        if _a.get("social_note"):
+            _bits.append(e(_a["social_note"]))
+        social_rows += (f'<tr><td>{e(_a["name"].split(" (")[0])}</td>'
+                        f'<td class="tiny">{_a.get("social_status", "none_verified").replace("_", " ")}</td>'
+                        f'<td class="tiny">{"".join(_bits) or "—"}</td></tr>')
 
     body = f"""
 <section class="panel">
@@ -292,7 +306,24 @@ def build_activities():
   <tbody>{''.join(rows)}</tbody>
   </table>
   </div>
-  <p class="note">Social columns show only links present in the dataset; <strong>— means no link was verified for this entry</strong>, not that the venue has no account or video. See <a href="questions.html">Open questions</a> for discovery gaps.</p>
+  <p class="note">Social columns show only links present in the dataset; <strong>— means no link was verified for this entry</strong>, not that the venue has no account or video. See <a href="questions.html">Open questions</a> for discovery gaps and <a href="flagged.html">F-53</a> for coverage.</p>
+</section>
+
+
+
+<section class="panel">
+  <h2 id="social-sources">Where each social link came from</h2>
+  <p>A handle is only listed when the venue's own site, its own channel or profile, or venue-issued press material
+  publishes it — never inferred from a venue name. Every link above was either printed on the venue's own site or
+  found by opening the account itself on <strong>27 November 2026</strong>; the sentence that confirmed it is in the
+  last column, so a doubtful row can be re-checked in one click. Coverage counts and the remaining gaps are in
+  <a href="flagged.html">F-53</a>.</p>
+  <div class="scroll">
+  <table class="data">
+  <thead><tr><th>Venue</th><th>Status</th><th>How it was confirmed</th></tr></thead>
+  <tbody>{social_rows}</tbody>
+  </table>
+  </div>
 </section>
 
 <section class="panel">
@@ -404,7 +435,7 @@ def build_suggestions():
 <div class="suglist">{''.join(cards)}</div>
 """
     return page("suggestions.html", "Suggestions",
-                "Twelve decision improvements, ranked, each with its honest trade-off and whether it needs your call first.",
+                f"{len(SUG['suggestions'])} decision improvements, ranked, each with its honest trade-off and whether it needs your call first.",
                 body)
 
 

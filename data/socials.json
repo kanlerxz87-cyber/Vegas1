@@ -18,6 +18,7 @@
    "restaurants_without_verified_social": 3,
    "activities_with_instagram": 5,
    "activities_with_youtube": 5,
+   "activities_with_tiktok": 1,
    "activities_total": 5
   }
  },
@@ -235,7 +236,7 @@
    "tiktok": "",
    "youtube": "https://www.youtube.com/@SphereVegas",
    "status": "verified",
-   "evidence": "Instagram opened and verified-badged ('Sphere', 3.3M followers). YouTube channel opened and lists 'The Wizard of Oz at Sphere' playlists."
+   "evidence": "Instagram opened and verified-badged ('Sphere', 3.3M followers). YouTube channel opened; lists 'The Wizard of Oz at Sphere' playlists."
   },
   {
    "id": "high-roller",
@@ -245,7 +246,7 @@
    "youtube": "https://www.youtube.com/watch?v=ltjDljV-tOA",
    "status": "verified",
    "evidence": "Account opened and verified-badged: 'The High Roller', 'Tallest Observation Wheel in North America', 75,555 followers.",
-   "caveat": "Official attraction account but dormant — newest post shown 2024-06."
+   "caveat": "Official attraction account but dormant — newest post shown 2024-06. The similar handle @highrollerlasvegas is a private 26-follower account and is not used."
   },
   {
    "id": "mob-museum",
@@ -264,7 +265,7 @@
    "youtube": "https://www.youtube.com/watch?v=Edn2Dz3IM9o",
    "status": "official_page_link_only",
    "evidence": "The TikTok and Instagram links are both printed in neonmuseum.org's own site navigation.",
-   "caveat": "TikTok returned HTTP 400 to this sandbox, so the TikTok page itself was not read. YouTube handle @neonmuseum opens but says 'This channel doesn't have any content', so no YouTube link is published."
+   "caveat": "TikTok returned HTTP 400 to this sandbox, so the TikTok page itself was not read (F-57). YouTube handle @neonmuseum opens but says 'This channel doesn't have any content', so no YouTube link is published."
   },
   {
    "id": "fremont-street",
@@ -274,7 +275,7 @@
    "youtube": "https://www.youtube.com/watch?v=52YiWwDgli0",
    "status": "verified",
    "evidence": "Account opened and verified-badged: bio 'Official account of Fremont Street Experience and SlotZilla zipline in downtown #LasVegas'.",
-   "caveat": "YouTube handle @fremontstreetexperience opens but returns 'This channel doesn't have any content', so no YouTube link is published."
+   "caveat": "YouTube handle @fremontstreetexperience opens but returns 'This channel doesn't have any content', so no YouTube link is published (F-57)."
   }
  ],
  "rejected": [
