@@ -5,8 +5,10 @@ gen_site.py — renders the static site in docs/ from the JSON in data/.
 Run after scripts/build.py:
     python3 scripts/build.py && python3 scripts/gen_site.py
 
-No framework, no CDN, no build step at deploy time. Everything is plain HTML +
-one stylesheet, so GitHub Pages serves docs/ directly from main.
+No framework, no CDN, no build step at deploy time. Evidence-gated views are
+rendered by verified_views.py. Root and docs outputs are identical; Pages serves
+main:/ in this repository. Historical builder helpers are retained for audit,
+not used as fallback values when a verified field is missing.
 """
 import json
 import re
@@ -76,8 +78,11 @@ def money(v):
 def nav(active):
     items = [
         ("index.html", "Overview"),
+        ("summary.html", "Summary"),
+        ("pricing.html", "Pricing"),
         ("hotels.html", "Hotels"),
         ("dining.html", "Dining budget"),
+        ("costs.html", "Cost basis"),
         ("restaurants.html", "Michelin"),
         ("itinerary.html", "Itinerary"),
         ("activities.html", "Things to do"),
@@ -85,18 +90,19 @@ def nav(active):
         ("questions.html", "Open questions"),
         ("suggestions.html", "Suggestions"),
         ("flagged.html", "Flagged for review"),
+        ("verification.html", "Verification"),
         ("sources.html", "Sources"),
         ("repo-review.html", "Repo review"),
     ]
     out = []
     for href, label in items:
-        cls = ' class="on"' if href == active else ""
+        cls = ' class="on" aria-current="page"' if href == active else ""
         out.append(f'<a href="{href}"{cls}>{e(label)}</a>')
     return "".join(out)
 
 
 def page(active, title, subtitle, body, lead=""):
-    return f"""<!doctype html>
+    content = f"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -106,29 +112,33 @@ def page(active, title, subtitle, body, lead=""):
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="top">
   <div class="wrap">
     <div class="brand"><span class="dot"></span>Las Vegas · Feb–Mar 2027</div>
     <nav>{nav(active)}</nav>
   </div>
 </header>
-<main class="wrap">
+<main class="wrap" id="main">
   <div class="pagehead">
     <h1>{e(title)}</h1>
-    <p class="sub">{subtitle}</p>
+    <p class="sub">{e(subtitle)}</p>
     {lead}
-    <p class="note"><strong>27 November evidence notice:</strong> Historical audit text and suggestions below may describe superseded OTA prices or model scores. They are not verified booking guidance. <a href="hotels.html">Current hotel evidence table</a> and <a href="flagged.html#F-58">F-58–F-63</a> take precedence. Restaurant/activity hours are observations, not confirmed 2027 schedules. Activity video links were each re-resolved through YouTube oEmbed on 27 Nov 2026 (F-67); restaurant creator videos were only spot-checked.</p>
+
   </div>
   {body}
 </main>
 <footer class="wrap">
-  <p>Evidence gate updated 27 Nov 2026. Hotel decision cells omit unofficial quotes and inferred travel scores. Other records are historical observations from 25–27 Nov, not guaranteed 2027 availability. Blank means <strong>not verified</strong>. <a href="flagged.html">Flagged for Review</a>.</p>
-  <p>Las Vegas had no MICHELIN Guide between 2010 and 2025. All awards here are from the 2026
-  Southwest selection, the first since 2009.</p>
+  <p>Official field audit: 27 November 2026. USD; two adults unless a fare is explicitly per person.
+  A dash means <strong>unverified</strong>, not free, closed or sold out. Current hours/menu subtotals are not 2027 bookings.</p>
+  <p>Historical OTA captures, creator media and assumed transit models are not verified current offers.
+  See <a href="verification.html">field-level evidence</a> and <a href="flagged.html">Flagged for Review</a>.
+  Offline validation checks local structure and evidence records, not every remote URL or factual claim.</p>
 </footer>
 </body>
 </html>
 """
+    return "\n".join(line.rstrip() for line in content.splitlines()).rstrip() + "\n"
 
 
 # Official-source-only hotel display: raw OTA/model fields are audit inputs, not offers.
@@ -741,7 +751,7 @@ def build_suggestions():
 
     body = f"""
 <section class="panel">
-  <h2>{n_sug} ways to improve this plan</h2>
+  <h2>{len(SUGGESTIONS_HEAD)}</h2>
   <p>{n_sug} proposals, ranked by how much they change the outcome. <strong>{len(needs)} of them need a decision
   from you</strong> before the plan can be finalised — they are marked in the list. Nothing here was silently
   applied to the data.</p>
@@ -785,7 +795,7 @@ def build_sources():
         ("F-02", "Michael Mina", "Publishes seasonal block closures; no 2027 dates."),
         ("F-03", "Wing Lei", "Videos imply a star; the 2026 Guide lists it Recommended."),
         ("F-04", "KAME Omakase", "Own site is a JS shell; details from its OpenTable listing."),
-        ("F-05", "China Poblano", "Resolved 27 Nov 2026: official menu publishes José's Way Tasting Menu at $60/pp ($120 exact for two; F-69)."),
+        ("F-05", "China Poblano", "The ≈$50 pp figure is Eater, not the venue."),
         ("F-07", "Esther's Kitchen, Yen Viet", "Hours not obtainable — left blank."),
         ("F-09", "Wynn / Encore", "Two totals because the fee/tax basis differs."),
         ("F-11", "LINQ, Flamingo, SAHARA, Golden Nugget, Horseshoe, Plaza", "Cheapest rates do not guarantee the bed."),
@@ -795,7 +805,7 @@ def build_sources():
         ("F-17", "14-night variant", "The brief allows two weeks; only seven nights were priced."),
         ("F-18", "Bellagio Fountains", "Official page failed to load; schedule unverified."),
         ("F-19", "Instagram / TikTok", "Handles not published; blank rather than guessed."),
-        ("F-29", "Hotel price basis", "The 32-hotel prices are Booking.com snapshots, not official property quotes; independent official-engine samples conflict on the cheapest week."),
+        ("F-39", "Hotel price basis", "The 32-hotel prices are Booking.com snapshots, not official property quotes; independent official-engine samples conflict on the cheapest week."),
         ("F-30", "Official hotel rates, refreshed 26 Nov 2026", "Caesars Julius King $201/night and Wynn Cyber $677/night, each including resort fee before tax; Venetian returned $6,170.43 tax-included but labels suites as 4+ guests. Volatile; confirm exact total and occupancy."),
     ]
     for fid, where, what in flags:
@@ -892,14 +902,13 @@ GENERIC_WORDS = {
 # flags that are not about one venue get one hand-picked official page, taken from the datasets
 # or from a page this session actually opened
 FLAG_CHECK_EXTRA = {
+    "F-51": ("Official MICHELIN publication", MICHELIN_SOURCE),
     "F-58": ("Official hotel discovery / room quotes", "https://www.caesars.com/book/"),
     "F-59": ("Official RTC route resources", "https://www.rtcsnv.com/ways-to-travel/"),
     "F-60": ("RTC official fare rules", RTC_SOURCE),
     "F-61": ("Guy Savoy official menu", "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"),
     "F-62": ("Mob Museum current hours", "https://themobmuseum.org/"),
     "F-63": ("High Roller official conflicting time blocks", "https://www.caesars.com/linq/things-to-do/attractions/high-roller"),
-    "F-68": ("é by José Andrés official brand site (states Tue–Sun)", "https://www.ebyjoseandres.com/"),
-    "F-69": ("China Poblano official menu ($60/pp tasting)", "https://www.chinapoblano.com/menus/"),
     "F-10": ("Booking.com dated search used for every rate",
              "https://www.booking.com/hotel/us/the-linq-and-casino.html?checkin=2027-02-15"
              "&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"),
@@ -951,12 +960,13 @@ def _flag_check_links(fid, where):
         key = h["name"].lower().split(" (")[0]
         if _tok_hits(key, hay) or any(_tok_hits(t, hay) for t in _venue_tokens(h["name"])):
             add(h["name"], h.get("official_url") or h.get("booking_url"))
-    if fid in FLAG_CHECK_EXTRA:
-        label, url = FLAG_CHECK_EXTRA[fid]
+    base_fid = fid.split("-history-")[0]
+    if base_fid in FLAG_CHECK_EXTRA:
+        label, url = FLAG_CHECK_EXTRA[base_fid]
         if url not in seen:
             links.insert(0, (label, url))
     if not links:
-        return '<a href="sources.html">Sources page</a>'
+        return '<a href="https://github.com/kanlerxz87-cyber/Vegas1/blob/main/FLAGS.md" target="_blank" rel="noopener">Original repository finding (not independent venue verification)</a>'
     return "<br>".join(
         f'<a href="{e(u)}" target="_blank" rel="noopener">{e(n)}</a>' for n, u in links[:6]
     )
@@ -964,10 +974,15 @@ def _flag_check_links(fid, where):
 
 def _flag_register():
     rows = []
+    occurrences = {}
     for line in FLAGS_MD.read_text(encoding="utf-8").splitlines():
-        if line.startswith("| **F-"):
+        if re.match(r"^\| \*\*(?:F-|FV-)", line):
             cells = [c.strip().replace("**", "") for c in line.strip().strip("|").split("|")]
             if len(cells) == 4:
+                fid = cells[0]
+                occurrences[fid] = occurrences.get(fid, 0) + 1
+                if occurrences[fid] > 1:
+                    cells[0] = f"{fid}-history-{occurrences[fid]}"
                 rows.append(cells)
     return rows
 
@@ -977,6 +992,7 @@ def _flag_cell(text):
     out = e(text)
     out = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", out)
     out = re.sub(r"`([^`]+)`", r"<code>\1</code>", out)
+    out = re.sub(r'\[([^\]]+)\]\((https://[^\s)]+)\)', r'<a href="\2" target="_blank" rel="noopener">\1</a>', out)
     return out
 
 
@@ -996,7 +1012,7 @@ def build_flagged():
     f_rows = "".join(
         f'<tr id="{e(c[0])}"><td class="mono">{e(c[0])}</td><td>{_flag_cell(c[1])}</td>'
         f'<td>{_flag_cell(c[2])}</td><td>{_flag_cell(c[3])}</td>'
-        f'<td class="tiny">{_flag_check_links(c[0], c[1])}</td></tr>'
+        f'<td class="tiny">{_flag_check_links(c[0], c[1] + " " + c[2])}</td></tr>'
         for c in fl
     )
     r_rows = "".join(
@@ -1025,7 +1041,7 @@ def build_flagged():
   <h2>Data flags — {len(fl)} rows in the register</h2>
   <p>The full register, with the reasoning for each, is in <code>FLAGS.md</code>. Each row is generated from that
   file, is addressable as <code>flagged.html#F-nn</code>, and names the official page to check it against. F-01 to
-  F-30 and F-47 to {e(fl[-1][0])} are rows of that register; F-39 to F-46 are the audit rows above, kept in
+  F-30 and F-47 to F-49 are rows of that register; F-39 to F-46 are the audit rows above, kept in
   <code>data/review-flags.json</code>. F-31 to F-38 were never used, so the numbering is not contiguous.</p>
   <div class="scroll"><table class="data">
   <thead><tr><th>ID</th><th>Where</th><th>What</th><th>Effect on the plan</th><th>Check it here</th></tr></thead>
@@ -1259,7 +1275,49 @@ footer p{margin:0 0 8px;max-width:80ch}
   nav a{padding:6px 8px;font-size:.8rem}
   table.data{font-size:.82rem}
 }
-"""
+/* Evidence-gated views: keyboard-accessible scrolling and clear unknowns. */
+.skip-link{position:fixed;top:-100px;left:12px;z-index:100;background:var(--accent);color:#06110d;padding:10px 16px;border-radius:8px}
+.skip-link:focus{top:8px}
+a:focus-visible,summary:focus-visible,.scroll:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+caption{text-align:left;padding:10px 12px;color:var(--muted);font-size:.85rem}
+.unverified{color:var(--warn);font-weight:600}
+.source-links{font-size:.78rem;min-width:140px;overflow-wrap:anywhere}
+.source-links a{display:inline-block;margin-top:5px}
+.scroll{max-width:100%}
+table.data th[scope="row"]{text-align:left;min-width:150px;font-weight:600}
+table.data td{overflow-wrap:anywhere}
+main[id],section[id],article[id],tr[id],p[id]{scroll-margin-top:160px}
+@media(max-width:640px){
+ header.top{position:static}
+ .wrap{padding-left:12px;padding-right:12px}
+ .source-links{min-width:130px}
+ main[id],section[id],article[id],tr[id],p[id]{scroll-margin-top:12px}
+}
+
+/* Data tables remain tables on desktop and become labelled records on phones. */
+.panel,.card,.qa,.sug{min-width:0;overflow-wrap:anywhere}
+table.data th[scope="row"]{white-space:normal;vertical-align:top;text-transform:none;letter-spacing:0;font-size:.88rem}
+@media(max-width:700px){
+ header .wrap{display:block}
+ .brand{margin:5px 0 10px}
+ nav{flex-wrap:nowrap;overflow-x:auto;max-width:100%;padding:2px 0 9px;-webkit-overflow-scrolling:touch}
+ nav a{flex:0 0 auto;white-space:nowrap}
+ .grid4{grid-template-columns:1fr 1fr}
+ .card .big{font-size:1.6rem;overflow-wrap:anywhere}
+ table.data[data-responsive="cards"]{min-width:0;display:block}
+ table.data[data-responsive="cards"] caption{display:block}
+ table.data[data-responsive="cards"] thead{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden}
+ table.data[data-responsive="cards"] tbody{display:block;padding:7px}
+ table.data[data-responsive="cards"] tbody tr{display:block;border:1px solid var(--line);border-radius:9px;margin-bottom:12px;overflow:hidden}
+ table.data[data-responsive="cards"] tbody th[scope="row"]{display:block;min-width:0;padding:12px;font-size:1rem}
+ table.data[data-responsive="cards"] tbody td{display:block;padding:8px 12px;min-width:0;white-space:normal}
+ table.data[data-responsive="cards"] tbody td:before{content:attr(data-label);display:block;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-size:.7rem;font-weight:600;margin-bottom:4px}
+ table.data[data-responsive="cards"] tbody tr:last-child{margin-bottom:0}
+ .source-links{min-width:0}
+}
+@media(max-width:360px){.grid4{grid-template-columns:1fr}}
+
+""".strip() + "\n"
 
 
 # ------------------------------------------------- supplementary routes
@@ -1528,10 +1586,8 @@ def build_itinerary():
 
 def main():
     DOCS.mkdir(exist_ok=True)
-    # Strict primary views: legacy builders retained for audit, raw upstream data intact.
-    from strict_site import render, CSS_EXTRA
-    pages = render()
-
+    from verified_views import build_verified_pages
+    pages = build_verified_pages(page, build_flagged)
     # Publish to BOTH docs/ and the repo root. GitHub Pages on this repo is pinned
     # to main:/ (the API refuses to repoint it to /docs), so the root copy is what
     # visitors actually get. Writing both makes the deploy path independent of that
@@ -1541,7 +1597,7 @@ def main():
         out_dir.mkdir(exist_ok=True)
         for name, content in pages.items():
             (out_dir / name).write_text(content, encoding="utf-8")
-        (out_dir / "style.css").write_text(CSS + CSS_EXTRA, encoding="utf-8")
+        (out_dir / "style.css").write_text(CSS, encoding="utf-8")
         (out_dir / ".nojekyll").write_text("", encoding="utf-8")
     print(f"published to: {', '.join(str(t.relative_to(ROOT)) + '/' for t in targets)}")
     total = sum(len(c) for c in pages.values())

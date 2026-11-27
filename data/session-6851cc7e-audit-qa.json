@@ -1,0 +1,413 @@
+{
+  "meta": {
+    "title": "Repository Audit (main@99a3506 -> main@2169909), Open Questions, Suggestions & Flagged-for-Review Register",
+    "verified_date": "2026-11-27",
+    "session": "arena/6851cc7e-vegas1 (Task T20)",
+    "counts": {
+      "repo_irregularities": 14,
+      "questions": 8,
+      "suggestions": 8,
+      "flags": 22
+    }
+  },
+  "repo_audit": [
+    {
+      "id": "RA-01",
+      "severity": "high",
+      "file_ref": "dining.html:72 & scripts/gen_site.py",
+      "title": "Wing Lei falsely called 'the cheapest starred dinner on this site' on live dining.html",
+      "current_state": "dining.html line 72 states 'the cheapest starred dinner on this site (Wing Lei, $397.76 for two)', contradicting F-03 ('the 2026 Guide lists [Wing Lei] Recommended, not starred'). [Update at main@2169909: superseded in rendered HTML by T-ec1d72e2's strict_site.py overlay, though legacy scripts/gen_site.py code remains in repo.]",
+      "verified_fact": "Wing Lei is MICHELIN Recommended (Selected, unstarred) in the 2026 MICHELIN Guide Southwest. Only 4 Las Vegas restaurants hold stars in 2026: Joël Robuchon (2★), é by José Andrés (1★), Restaurant Guy Savoy (1★), and L'Atelier de Joël Robuchon (1★).",
+      "source_url": "https://guide.michelin.com/us/en/article/michelin-guide-ceremony/michelin-guide-southwest-stars-2026"
+    },
+    {
+      "id": "RA-02",
+      "severity": "high",
+      "file_ref": "costs.html & docs/costs.html",
+      "title": "Orphan costs.html left live on GitHub Pages with $6.00 RTC math bug & withdrawn OTA hotel totals",
+      "current_state": "After costs.html was renamed to dining.html, costs.html remained tracked in both / and /docs/, still displaying 'RTC 3-day pass × 3 each = $6.00' (instead of $120.00), stale nav links, and Booking.com OTA hotel snapshots ($1,125 / $1,580 / $3,072) withdrawn under F-58. [Update at main@2169909: superseded in rendered HTML by T-ec1d72e2's strict_site.py overlay, though legacy scripts/gen_site.py code remains in repo.]",
+      "verified_fact": "Three 3-day RTC Strip & All-Access passes ($20 each) for 2 adults equal $120.00 ($60/person), and official first-party Caesars Palace 7-night Feb 15–22 Julius Deluxe King is $1,407.00 pre-tax / $1,595.26 w/ 13.38% tax.",
+      "source_url": "https://www.rtcsnv.com/ways-to-travel/fares-passes/"
+    },
+    {
+      "id": "RA-03",
+      "severity": "medium",
+      "file_ref": "scripts/gen_site.py (build_suggestions) & suggestions.html",
+      "title": "Literal '<h2>1</h2>' heading rendered on suggestions.html",
+      "current_state": "SUGGESTIONS_HEAD is defined as a 1-element tuple/collection whose len() evaluates to 1, emitting an accidental '<h2>1</h2>' heading above suggestions. [Update at main@2169909: superseded in rendered HTML by T-ec1d72e2's strict_site.py overlay, though legacy scripts/gen_site.py code remains in repo.]",
+      "verified_fact": "Section heading should count the actual suggestions list rather than a 1-item wrapper.",
+      "source_url": "https://kanlerxz87-cyber.github.io/Vegas1/suggestions.html"
+    },
+    {
+      "id": "RA-04",
+      "severity": "medium",
+      "file_ref": "scripts/gen_site.py (build_sources) & sources.html",
+      "title": "Flag F-39 paired with F-29's OTA hotel description on sources.html",
+      "current_state": "build_sources() renders F-39 alongside F-29's Booking.com hotel-window note rather than F-39's Venetian 4+ guest occupancy withdrawal note. [Update at main@2169909: superseded in rendered HTML by T-ec1d72e2's strict_site.py overlay, though legacy scripts/gen_site.py code remains in repo.]",
+      "verified_fact": "In FLAGS.md, F-39 documents withdrawal of an unverified Venetian Feb quote with a 4+ guest occupancy warning.",
+      "source_url": "https://www.venetianlasvegas.com/"
+    },
+    {
+      "id": "RA-05",
+      "severity": "high",
+      "file_ref": "data/restaurants.json (stubborn-seed, kabuto, china-poblano, soulbelly-bbq)",
+      "title": "Four official venue menus with published prices still marked 'not published on official page'",
+      "current_state": "price_2adults is empty ('') for stubborn-seed, kabuto, china-poblano, and soulbelly-bbq in canonical data/restaurants.json. [Update at main@2169909: underlying data/{restaurants,activities,transit}.json still retain these legacy strings because strict_site.py reads data/verification-2026-11-27.json as an overlay without mutating historical JSONs.]",
+      "verified_fact": "Direct 2026-11-27 fetches confirm official published prices on all four: Stubborn Seed Tasting Menu $160/pp = $320.00 exact (Resorts World PDF 11-25-2026); Kabuto Yoroi $130/pp ($260.00) & Kabuto Course $185/pp ($370.00) on official Resy venue page; China Poblano José's Way $60/pp = $120.00 exact on chinapoblano.com/menus/; SoulBelly BBQ Chef's Choice for 2 = $80.00 exact on soulbellybbq.com/menu.",
+      "source_url": "https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/"
+    },
+    {
+      "id": "RA-06",
+      "severity": "medium",
+      "file_ref": "data/restaurants.json:84–97 (latelier-robuchon)",
+      "title": "Three errors in L'Atelier de Joël Robuchon: Service Award misattribution, wrong phone in notes, and 'under 6' age rule",
+      "current_state": "Canonical notes credit L'Atelier with the 2026 MICHELIN Service Award, print Joël Robuchon's phone (702.891.7925) in notes while phone has 702.891.7358, and write 'No guests under 6'. [Update at main@2169909: underlying data/{restaurants,activities,transit}.json still retain these legacy strings because strict_site.py reads data/verification-2026-11-27.json as an overlay without mutating historical JSONs.]",
+      "verified_fact": "MICHELIN's Aug 31, 2026 press release awarded the 2026 Service Award to Sean Christopher at 2★ Joël Robuchon; L'Atelier's MGM page prints 702.891.7358 and states 'does not include children 6 and under' (excluding age 6).",
+      "source_url": "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html"
+    },
+    {
+      "id": "RA-07",
+      "severity": "medium",
+      "file_ref": "data/restaurants.json:176–189 (china-poblano)",
+      "title": "China Poblano Sunday closing hour off by 30 minutes & official phones blank",
+      "current_state": "Canonical hours read 'Sat–Sun 10:00 AM – 10:30 PM' and phone is ''. [Update at main@2169909: underlying data/{restaurants,activities,transit}.json still retain these legacy strings because strict_site.py reads data/verification-2026-11-27.json as an overlay without mutating historical JSONs.]",
+      "verified_fact": "Official Cosmopolitan MGM page lists Sunday hours as '10:00 AM to 10:00 PM' (closing 30 min earlier than Saturday) and phones 702.698.7900 / 877.893.2003.",
+      "source_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html"
+    },
+    {
+      "id": "RA-08",
+      "severity": "low",
+      "file_ref": "data/restaurants.json:336 (estiatorio-milos)",
+      "title": "Estiatorio Milos Friday–Saturday 11:00 PM closing hour truncated",
+      "current_state": "Canonical hours read '11:30 AM – 10:30 PM (Fri–Sat from 11:30 AM)'. [Update at main@2169909: underlying data/{restaurants,activities,transit}.json still retain these legacy strings because strict_site.py reads data/verification-2026-11-27.json as an overlay without mutating historical JSONs.]",
+      "verified_fact": "Official Venetian page prints Fri–Sat 11:30 AM – 11:00 PM (Sun–Thu 11:30 AM – 10:30 PM).",
+      "source_url": "https://www.venetianlasvegas.com/dining/restaurants/estiatorio-milos.html"
+    },
+    {
+      "id": "RA-09",
+      "severity": "low",
+      "file_ref": "data/restaurants.json:303 (bouchon)",
+      "title": "Bouchon tower name still listed as 'Venezia Tower'",
+      "current_state": "Canonical location lists 'Venezia Tower, 10th floor'. [Update at main@2169909: underlying data/{restaurants,activities,transit}.json still retain these legacy strings because strict_site.py reads data/verification-2026-11-27.json as an overlay without mutating historical JSONs.]",
+      "verified_fact": "Official Venetian page now names the tower 'The Venetian South Tower, 10th floor'.",
+      "source_url": "https://www.venetianlasvegas.com/dining/restaurants/bouchon.html"
+    },
+    {
+      "id": "RA-10",
+      "severity": "low",
+      "file_ref": "data/restaurants.json:733 (pho-ga-bac-bac)",
+      "title": "Pho Ga Bac Bac notes still cite abandoned @bestchickenpho Instagram URL",
+      "current_state": "instagram field was updated to @phogabacbac702 per F-56, but notes still reads 'Instagram verified 2026-11-27: https://www.instagram.com/bestchickenpho/'. [Update at main@2169909: underlying data/{restaurants,activities,transit}.json still retain these legacy strings because strict_site.py reads data/verification-2026-11-27.json as an overlay without mutating historical JSONs.]",
+      "verified_fact": "@phogabacbac702 is the active restaurant handle; @bestchickenpho moved.",
+      "source_url": "https://www.instagram.com/phogabacbac702/"
+    },
+    {
+      "id": "RA-11",
+      "severity": "medium",
+      "file_ref": "data/activities.json:113–155 (neon-museum & fremont-street)",
+      "title": "Internal self-contradiction: 3 verified YouTube links published alongside caveat saying 'no YouTube link is published'",
+      "current_state": "Both neon-museum and fremont-street include 3 verified YouTube URLs (including official channel uploads ewrNfjNa4w4 and KDARquYGk_M), while social_caveat on the next line says 'so no YouTube link is published'. [Update at main@2169909: underlying data/{restaurants,activities,transit}.json still retain these legacy strings because strict_site.py reads data/verification-2026-11-27.json as an overlay without mutating historical JSONs.]",
+      "verified_fact": "Official YouTube uploads ARE published and verified via oEmbed; stale social_caveat strings were not updated when videos were added.",
+      "source_url": "https://www.neonmuseum.org/visit/"
+    },
+    {
+      "id": "RA-12",
+      "severity": "medium",
+      "file_ref": "data/transit.json (rtc & vegas-loop)",
+      "title": "RTC regular residential fare misstated as $1 ($2 regular / $1 reduced) & Vegas Loop lists 7 of 14 active stations",
+      "current_state": "rtc note says 'Nevada local fares are $1' without noting $1 is Reduced Fare only; vegas-loop lists 7 stations and omits fares. [Update at main@2169909: underlying data/{restaurants,activities,transit}.json still retain these legacy strings because strict_site.py reads data/verification-2026-11-27.json as an overlay without mutating historical JSONs.]",
+      "verified_fact": "Official RTC fares-passes page lists $2.00 Regular Residential single ride ($1.00 Reduced Fare only); boringcompany.com lists 14 active Vegas Loop stations (incl. Fontainebleau, Sahara, Airport T1/T3, Turnberry, LVCC Central Plaza) and $5/$8 sample fares.",
+      "source_url": "https://www.boringcompany.com/projects/las-vegas-loop"
+    },
+    {
+      "id": "RA-13",
+      "severity": "low",
+      "file_ref": "FLAGS.md (F-52..F-57)",
+      "title": "Duplicate flag numbers F-52..F-57 created during parallel PR merges",
+      "current_state": "Two parallel PR trains assigned F-52..F-57 to distinct issues (noted in COORDINATION.md line 825).",
+      "verified_fact": "All our session flags use an isolated FL-01..FL-22 namespace to prevent any further ID collision.",
+      "source_url": "https://github.com/kanlerxz87-cyber/Vegas1/blob/main/FLAGS.md"
+    },
+    {
+      "id": "RA-14",
+      "severity": "high",
+      "file_ref": "data/official-rates.json & hotels.html",
+      "title": "Canonical hotels.html still has ZERO fully qualified 7-night hotel totals and ZERO Feb-vs-March multi-window quotes on main@2169909",
+      "current_state": "Even after PR #66 (main@2169909), canonical hotels.html blanks all 33 hotel decision rows (0 qualified offers; only 1 partial Resorts World Feb observation), leaving the Feb-vs-March cheapest-week question and Cyber purchase deadlines unanswered on the main table.",
+      "verified_fact": "Task T20 verifies 15 Las Vegas properties across BOTH Feb 15–22 and Mar 14–21, 2027 directly from official booking engines (8 Caesars properties, 3 Resorts World towers, Fontainebleau, Wynn, Encore, Downtown Grand).",
+      "source_url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv"
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q-01",
+      "status": "Resolved w/ Options",
+      "question": "How do we reconcile 'preferred Feb 15–18, 2027 vacation days' (3 nights) with '1–2 weeks in Las Vegas between Feb 15 and Mar 23, 2027'?",
+      "answer": "Treat Feb 15–22, 2027 (Mon–Mon, 7 nights) as the primary baseline — it captures all preferred Feb 15–18 vacation days while satisfying the 1–2 week duration! If extending to 10–14 nights, Feb 15 – Mar 1, 2027 avoids the mid-March NCAA tournament spike on Center Strip.",
+      "discovery_steps": "Confirm exact PTO count (7 vs 10 vs 14 nights) with both travelers before Dec 2, 2026 so refundable Cyber promo rates can be locked."
+    },
+    {
+      "id": "Q-02",
+      "status": "Empirically Answered (15 Official Engines)",
+      "question": "Which week inside Feb 15 – Mar 23, 2027 is actually cheapest on official resort booking engines (resolving Q-06 / F-29)?",
+      "answer": "It splits cleanly by Strip geography! On CENTER STRIP & DOWNTOWN (all 8 Caesars resorts + Downtown Grand + Encore), Feb 15–22, 2027 is 3%–28% CHEAPER than Mar 14–21, 2027 because NCAA March Madness First Weekend (Mar 18–21) surges sportsbook hotels (Caesars Palace $1,407 vs $1,967 pre-tax; LINQ $539 vs $679; Encore $3,738 vs $4,970). On NORTH STRIP near LVCC (Hilton/Conrad/Crockfords at Resorts World, Fontainebleau, and Wynn Tower), Mar 14–21, 2027 is 4%–19% CHEAPER because a Feb 16–17 convention sells out Conrad and elevates North-Strip towers.",
+      "discovery_steps": "Choose Feb 15–22, 2027 if staying Center Strip (Caesars Palace, Planet Hollywood, Horseshoe, Flamingo, LINQ) or Encore; choose Mar 14–21 (or Mar 16–23) if staying at Fontainebleau or Resorts World."
+    },
+    {
+      "id": "Q-03",
+      "status": "Empirically Answered",
+      "question": "When is the best booking window to purchase Feb–Mar 2027 Las Vegas hotel rooms?",
+      "answer": "RIGHT NOW — Nov 27 to Dec 4, 2026 (Cyber Monday / Black Friday week)! Official engines are running steep refundable promotions with hard deadlines: Fontainebleau Bleau Friday (FRBF26: 35% off + $0 resort fee + $350 dining credit) expires Dec 2, 2026; Wynn/Encore Cyber Exclusive (up to 20% off + $300 resort credit, 72h free cancel) expires Dec 4, 2026; Caesars Cyber Monday Early Access offers 48h free cancellation with $0 due today.",
+      "discovery_steps": "Book a refundable 7-night reservation before Dec 2 / Dec 4, 2026, then re-check rates 30 days before arrival (Jan 16, 2027) and rebook free if any winter sale drops lower."
+    },
+    {
+      "id": "Q-04",
+      "status": "Open — Action Required (~90 Days Out)",
+      "question": "What are the exact 2027 tasting-menu prices for the 3 unpriced MICHELIN-Starred restaurants (2★ Joël Robuchon, 1★ L'Atelier, 1★ é by José Andrés)?",
+      "answer": "Their official MGM / Cosmopolitan web pages intentionally omit dollar totals, so we keep them blank rather than citing third-party food blogs.",
+      "discovery_steps": "1) Call MGM Grand Fine Dining Concierge at 702.891.7925 (Joël Robuchon) & 702.891.7358 (L'Atelier) to request current PDF prix-fixe pricing. 2) Open ebyjoseandres.com/las-vegas on Tock exactly 90 days out (~Nov 17–25, 2026 for Feb 15–22 stays!) to view live prepaid ticket prices and secure two of the 9 counter seats."
+    },
+    {
+      "id": "Q-05",
+      "status": "Open — Interactive Browser Check",
+      "question": "How do MGM Grand, Cosmopolitan, Bellagio, ARIA, and Venetian/Palazzo compare on official 7-night rates?",
+      "answer": "MGM Resorts blocks non-browser fetches and Venetian/Palazzo renders '$XXX' JS placeholders without browser execution. Rather than substituting Booking.com OTA quotes, we leave their prices blank.",
+      "discovery_steps": "Open mgmresorts.com (signed into free MGM Rewards for up to 15% member discount) and venetianlasvegas.com in a desktop/mobile browser for 2027-02-15 -> 2027-02-22 (2 adults) and compare total w/ resort fee & tax against Caesars Palace ($1,595.26 all-in) and Planet Hollywood ($992.08 all-in)."
+    },
+    {
+      "id": "Q-06",
+      "status": "Open — Venue Status Watch",
+      "question": "Will Michael Mina at Bellagio reopen in time for Feb–Mar 2027?",
+      "answer": "As of 2026-11-27, Bellagio's official restaurant page displays 'Temporarily Closed' with no reopening date. We exclude Michael Mina from all active dining plans.",
+      "discovery_steps": "Re-check bellagio.mgmresorts.com/en/restaurants/michael-mina.html or call 702.693.7223 in January 2027; substitute Estiatorio Milos (Venetian) or Wing Lei (Wynn) in the meantime."
+    },
+    {
+      "id": "Q-07",
+      "status": "Open — Event Calendar Check",
+      "question": "Which shows or immersive films are playing at Sphere Las Vegas during Feb 15–22 or Mar 14–21, 2027, and at what ticket price?",
+      "answer": "Sphere uses dynamic per-show Ticketmaster pricing; prices are left blank until specific show dates & seat tiers are chosen.",
+      "discovery_steps": "Check thesphere.com calendar for Feb 15–22, 2027 and purchase Official Platinum / Standard Admission directly (avoiding resale markups if possible)."
+    },
+    {
+      "id": "Q-08",
+      "status": "Open — Phone Confirmation",
+      "question": "What are High Roller's exact opening/closing hours in Feb 2027, and what are YEN Viet Kitchen's operating hours?",
+      "answer": "Caesars' High Roller page prints two conflicting schedules on the same URL ('12 PM–12 AM' vs '12:30 PM–11:30 PM / 12:30 AM'), and yenvietkitchen.com omits hours.",
+      "discovery_steps": "Confirm High Roller hours at The LINQ box office on arrival (Daytime $23.50/pp tickets are valid before 5:00 PM under both schedules); call YEN Viet Kitchen or check Google/Yelp day-of before riding RTC Route 203+103 to S Decatur Blvd."
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "S-01",
+      "priority": "P0 — Immediate (Before Dec 2 / Dec 4, 2026)",
+      "category": "Booking Strategy",
+      "title": "Lock a $0-down refundable Feb 15–22, 2027 room at Caesars Palace ($1,595 all-in) or Planet Hollywood ($992 all-in) today — or Fontainebleau Mar 14–21 ($2,479 all-in w/ $350 dining credit) before Dec 2",
+      "detail": "Caesars Cyber Monday Early Access requires $0 deposit today and allows free cancellation up to 48 hours before check-in, locking in the $560 pre-tax Feb-vs-Mar savings at Caesars Palace with zero downside risk. If you prefer Las Vegas's only MICHELIN Key hotel, sign up for free Fontainebleau Rewards and book code FRBF26 before Dec 2, 2026 to waive ~$436 in resort fees + receive a $350 dining credit."
+    },
+    {
+      "id": "S-02",
+      "priority": "P0 — Immediate (90-Day Window Is Open Now!)",
+      "category": "MICHELIN Reservations",
+      "title": "Book 1★ é by José Andrés right now if targeting Feb 15–22, 2027",
+      "detail": "Today is Nov 27, 2026 — Feb 15–22, 2027 is 80–87 days away, meaning é by José Andrés's 90-day Tock reservation window for Feb 15–22 is ALREADY OPEN! With only 9 counter seats per seating (Tue–Sat 5:30 PM & 8:30 PM), check Tock immediately."
+    },
+    {
+      "id": "S-03",
+      "priority": "P1 — Transit Clustering",
+      "category": "Zero-Car Itinerary Design",
+      "title": "Group MICHELIN meals into 4 zero-stress transit nights so you never cross corridors twice",
+      "detail": "1) Chinatown Night via RTC Route 203 Westbound: Pho Ga Bac Bac lunch/snack + Kabuto ($260) or Partage ($260–$420) dinner. 2) Arts District Day/Night via 24h RTC Deuce: Mob Museum ($75.90) + Esther's Kitchen (~$145 est.) or SoulBelly BBQ ($80) + Neon Museum night visit ($42+). 3) MGM Starred Night via Las Vegas Monorail: 1 stop from Horseshoe/Paris to MGM Grand for 2★ Joël Robuchon or 1★ L'Atelier. 4) Center/North Strip Walk Night: Bellagio Fountains ($0) + China Poblano ($120) or Wing Lei ($397.76)."
+    },
+    {
+      "id": "S-04",
+      "priority": "P1 — Smart Value",
+      "category": "MICHELIN Value Hack",
+      "title": "Hit Anima by EDO on Monday night ($65 total per couple!) and China Poblano's José's Way ($120 per couple)",
+      "detail": "Anima by EDO's official website confirms its Monday Pasta & Wine special (2 pastas + 1 bottle of wine for $65 total per couple vs $170 tasting menu), and China Poblano's multi-course José's Way tasting is $60/pp ($120 couple) right on Center Strip."
+    },
+    {
+      "id": "S-05",
+      "priority": "P1 — Room Selection Rule",
+      "category": "Hotel Pitfall Avoidance",
+      "title": "Never click 'Room Type Assigned on Arrival' or 'Deluxe 2 Doubles' to save $5/night",
+      "detail": "On Caesars' official booking engine, 'Room Type Assigned on Arrival' saves only $2–$12/night ($72 vs $77 at LINQ; $196 vs $201 at Caesars Palace) while forfeiting Queen+/King bed guarantee and non-smoking preference. At The LINQ, also skip 'Deluxe 2 Doubles' ($75/nt) in favor of 'Deluxe 2 Queens' ($77/nt)."
+    },
+    {
+      "id": "S-06",
+      "priority": "P1 — North-Strip Luxury Trick",
+      "category": "Hotel Arbitrage",
+      "title": "If booking Wynn/Encore for Feb 15–22, book Encore Resort King ($534/nt) instead of Wynn Resort King ($677/nt)",
+      "detail": "On Wynn's official booking engine (captured 2026-11-27), Encore's 745 sq ft Resort King suite is 105 sq ft LARGER than Wynn's 640 sq ft Resort King yet costs $143/night LESS in Feb 15–22 ($3,738 vs $4,739 pre-tax — saving $1,001 while staying under the same roof as Wing Lei and receiving the same $300 Cyber Resort Credit!)."
+    },
+    {
+      "id": "S-07",
+      "priority": "P1 — Transit Pass Math",
+      "category": "Public Transit",
+      "title": "Buy RTC passes in the RideRTC app (2× 3-Day + 1× 24-Hr = $48/adult) and skip unlimited Monorail unless riding 11+ times",
+      "detail": "Two 3-day Strip & All-Access passes ($20×2) plus one 24-hour pass ($8) cover all 7 days on BOTH The Deuce AND Route 203 (Chinatown) / Route 202 (Flamingo) for $96/couple. Add single $5.50 Monorail eTickets only for MGM Grand / LVCC trips unless riding Monorail more than twice daily."
+    },
+    {
+      "id": "S-08",
+      "priority": "P2 — Repo Maintenance",
+      "category": "Codebase Hygiene",
+      "title": "Clean up canonical dining.html:72 ('starred Wing Lei'), delete orphan costs.html, and promote the 4 newly verified official restaurant prices",
+      "detail": "Fixes RA-01 through RA-12 in canonical root files once parallel agent tasks finish, updating check_evidence.py's exact-string assertions in lockstep."
+    }
+  ],
+  "flags": [
+    {
+      "id": "FL-01",
+      "category": "Blank — Unpublished Official Menu Price",
+      "item": "9 MICHELIN Restaurants w/ Unpublished Official Menu Totals (Joël Robuchon, L'Atelier, é by José Andrés, YEN Viet Kitchen, Bouchon, Gymkhana, Lamaii, Ping Pang Pong, Pho Ga Bac Bac)",
+      "detail": "Official resort/venue menus omit dollar prices in server-rendered HTML. Left strictly blank ('') rather than copying Yelp/blog estimates.",
+      "official_url": "https://www.visitlasvegas.com/experience/post/michelin-guide-las-vegas-restaurants/"
+    },
+    {
+      "id": "FL-02",
+      "category": "Dish-Based Estimate (Labelled)",
+      "item": "Restaurant Guy Savoy (~$520–$940 est.) & Esther's Kitchen (~$130–$160 est.)",
+      "detail": "Official menus publish individual dish prices (Guy Savoy Nov 5, 2026 main menu starters $100–$120, mains $160–$290; Esther's pastas $21–$28, mains $29–$32) rather than a fixed couple tasting total. Explicitly marked 'est.'.",
+      "official_url": "https://www.caesars.com/caesars-palace/restaurants/guy-savoy/main-menu"
+    },
+    {
+      "id": "FL-03",
+      "category": "Resolved Hours / Blank Dynamic Cart Prices",
+      "item": "YEN Viet Kitchen (Bib Gourmand)",
+      "detail": "Official yenvietkitchen.com links to skiplinow.com/shop/514688a confirming Mon, Wed–Sun 10:00 AM – 8:30 PM (Tue Closed) & (702) 293-4949; cart item prices remain JS-dynamic so couple total is kept blank.",
+      "official_url": "https://www.skiplinow.com/shop/514688a"
+    },
+    {
+      "id": "FL-04",
+      "category": "Blank — Conflicting Official Hours",
+      "item": "High Roller Observation Wheel",
+      "detail": "Official Caesars page prints both '12:00 PM – 12:00 AM daily' and 'Mon–Thu 12:30 PM – 11:30 PM; Fri–Sun 12:30 PM – 12:30 AM' on the same URL (F-63). Hours left blank.",
+      "official_url": "https://www.caesars.com/linq/things-to-do/attractions/high-roller"
+    },
+    {
+      "id": "FL-05",
+      "category": "Venue Temporarily Closed",
+      "item": "Michael Mina at Bellagio",
+      "detail": "Official Bellagio MGM page displays 'Temporarily Closed' as of 2026-11-27 (F-23). Excluded from all active trip plans and package totals.",
+      "official_url": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html"
+    },
+    {
+      "id": "FL-06",
+      "category": "Blank — Dynamic Event Pricing",
+      "item": "Sphere Las Vegas",
+      "detail": "Ticket prices vary dynamically by concert/film date and seat tier; left blank until a specific Feb–Mar 2027 showtime is selected.",
+      "official_url": "https://www.thesphere.com/"
+    },
+    {
+      "id": "FL-07",
+      "category": "Property Rebrand",
+      "item": "The Cromwell -> The Vanderpump Hotel (propCode=dlv)",
+      "detail": "Caesars' official booking engine now operates former Cromwell inventory as The Vanderpump Hotel ($250/nt Feb 15–22, $258/nt Mar 14–21).",
+      "official_url": "https://www.caesars.com/vanderpump-hotel"
+    },
+    {
+      "id": "FL-08",
+      "category": "Engine UI Notice Disclosed",
+      "item": "Caesars Booking Engine Partial-Error Banner on Some Queries",
+      "detail": "Planet Hollywood (Feb), Harrah's (Feb), and Paris (Mar) rendered with zero banner; Caesars Palace, LINQ, Flamingo, and Vanderpump returned full named room cards alongside a generic 'unable to process your request' sub-banner, while Horseshoe Mar 14–21 failed completely (left blank in FL-09).",
+      "official_url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv"
+    },
+    {
+      "id": "FL-09",
+      "category": "Blank — Engine Technical Error on March Window",
+      "item": "Horseshoe Las Vegas (Mar 14–21, 2027)",
+      "detail": "Caesars engine returned a technical error on propCode=blv for 03/14/2027–03/21/2027 across two retries; March cell left blank rather than interpolated.",
+      "official_url": "https://www.caesars.com/book/room-list?arrivalDate=03/14/2027&departureDate=03/21/2027&dateSearchFormat=exact-dates&propCode=blv"
+    },
+    {
+      "id": "FL-10",
+      "category": "Sold Out Dates Verified",
+      "item": "Conrad Las Vegas at Resorts World (Feb 16–17, 2027 Sold Out)",
+      "detail": "Official Resorts World calendar marks Tue–Wed Feb 16–17, 2027 unavailable at Conrad (while Hilton & Crockfords remain bookable); Conrad Feb 15–22 total left blank and Mar 14–21 ($1,935.22 pre-tax) verified.",
+      "official_url": "https://reservations.rwlasvegas.com/ibe/shop.aspx?selectedTower=CONRAD&hotelID=17726&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0"
+    },
+    {
+      "id": "FL-11",
+      "category": "Expiring Promotion Deadline (Dec 2, 2026)",
+      "item": "Fontainebleau Las Vegas Bleau Friday Offer (FRBF26 / BF26)",
+      "detail": "Member no-resort-fee rate ($2,186 Mar / $2,691 Feb pre-tax + $350 dining credit) requires booking by Dec 2, 2026; reverts to higher Flexible Rate ($678/nt Feb) afterward.",
+      "official_url": "https://reserve.fontainebleaulasvegas.com/ibe/shop.aspx?hotelID=17704&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0"
+    },
+    {
+      "id": "FL-12",
+      "category": "Expiring Promotion Deadline (Dec 4, 2026)",
+      "item": "Wynn & Encore Cyber Exclusive (+$300 Resort Credit)",
+      "detail": "Cyber Exclusive rate ($534/nt Encore Feb, $649/nt Wynn Mar) requires booking Nov 20 – Dec 4, 2026; Flexible Getaway rate is $733–$833/nt.",
+      "official_url": "https://www.wynnlasvegas.com/offers/cyber-offer"
+    },
+    {
+      "id": "FL-13",
+      "category": "Blank — JS-Only or Connection-Refused Official Hotel Engines",
+      "item": "SAHARA, Plaza, Golden Nugget, the D, The STRAT, Trump, Four Seasons, Treasure Island, Circa",
+      "detail": "Official booking engines require interactive browser JS pagination or refused automated connections; 7-night totals left blank rather than using OTA numbers.",
+      "official_url": "https://www.saharalasvegas.com/stay"
+    },
+    {
+      "id": "FL-14",
+      "category": "Blank — Client-Side '$XXX' Placeholders",
+      "item": "The Venetian & The Palazzo",
+      "detail": "Official venetianlasvegas.com/booking serves '$XXX' placeholders without browser JS execution (F-30/F-39); rates left blank.",
+      "official_url": "https://www.venetianlasvegas.com/"
+    },
+    {
+      "id": "FL-15",
+      "category": "Blank — Bot-Blocked Official Engine",
+      "item": "MGM Resorts Properties (MGM Grand, Cosmopolitan, Bellagio, ARIA, Vdara, Park MGM/NoMad)",
+      "detail": "MGM Resorts blocks automated server requests; rates left blank with direct verification links.",
+      "official_url": "https://www.mgmresorts.com/"
+    },
+    {
+      "id": "FL-16",
+      "category": "Tower Redirect",
+      "item": "Nobu Hotel at Caesars Palace",
+      "detail": "Official Nobu page redirects into parent Caesars Palace room-selection flow; parent Julius Deluxe King ($201/nt Feb) is verified directly.",
+      "official_url": "https://www.caesars.com/caesars-palace/hotel/nobu-hotel"
+    },
+    {
+      "id": "FL-17",
+      "category": "Canonical Repo Correction",
+      "item": "L'Atelier de Joël Robuchon (RA-06)",
+      "detail": "Corrected 2026 Service Award attribution (won by Joël Robuchon, not L'Atelier), phone 702.891.7358, and 'children 6 and under' exclusion.",
+      "official_url": "https://mgmgrand.mgmresorts.com/en/restaurants/latelier-joel-robuchon-french-restaurant.html"
+    },
+    {
+      "id": "FL-18",
+      "category": "Newly Verified Official Menu Prices",
+      "item": "8 Newly Verified Official Menu Totals (COTE $190/$450, Mott 32 $76/$136, Milos $90, Sparrow + Wolf $298, Stubborn Seed $320, Kabuto $260/$370, China Poblano $120, SoulBelly BBQ $80)",
+      "detail": "Upgraded from blank in canonical repo after fetching official Resorts World PDF, official Resy venue page, chinapoblano.com/menus/, and soulbellybbq.com/menu.",
+      "official_url": "https://www.chinapoblano.com/menus/"
+    },
+    {
+      "id": "FL-19",
+      "category": "Misleading Venue Marketing & Canonical Bug",
+      "item": "Wing Lei Star Status (RA-01 / F-03)",
+      "detail": "Wynn's website and canonical dining.html:72 call Wing Lei 'starred', but the 2026 MICHELIN Guide lists Wing Lei as Recommended (unstarred).",
+      "official_url": "https://guide.michelin.com/us/en/article/michelin-guide-ceremony/michelin-guide-southwest-stars-2026"
+    },
+    {
+      "id": "FL-20",
+      "category": "Stale Social Bio Star Counts",
+      "item": "@guysavoylasvegas & @ebyjoseandres Instagram Bios",
+      "detail": "Both Instagram bios still mention '2 Michelin Stars' from the 2008/2009 era or creator lore; both hold 1 MICHELIN Star in the 2026 Guide.",
+      "official_url": "https://guide.michelin.com/us/en/article/michelin-guide-ceremony/michelin-guide-southwest-stars-2026"
+    },
+    {
+      "id": "FL-21",
+      "category": "Moved Instagram Handle",
+      "item": "Pho Ga Bac Bac (@phogabacbac702 vs @bestchickenpho)",
+      "detail": "Active handle is @phogabacbac702; canonical restaurants.json notes still cited abandoned @bestchickenpho (RA-10).",
+      "official_url": "https://www.instagram.com/phogabacbac702/"
+    },
+    {
+      "id": "FL-22",
+      "category": "Canonical Caveat Contradiction",
+      "item": "Neon Museum & Fremont Street YouTube Caveats (RA-11)",
+      "detail": "Canonical activities.json published 3 verified YouTube links on each while leaving 'no YouTube link is published' in social_caveat.",
+      "official_url": "https://vegasexperience.com/"
+    }
+  ]
+}

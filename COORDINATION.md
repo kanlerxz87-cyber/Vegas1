@@ -1,10 +1,12 @@
 # COORDINATION.md — Shared Task Board
 
 **Repo:** kanlerxz87-cyber/Vegas1
-**Last updated:** 2026-11-26
+**Last updated:** 2026-11-27
 **Purpose:** multi-session coordination so parallel agents never edit the same files.
 Read this file *before* starting any task. Claim a task by writing your session ID below,
 then commit and push that claim immediately.
+
+> **Current integration status (27 Nov, 18:22 UTC): COMPLETE.** `arena/3d5d3718-vegas1` integrated completed work through PR #67, merged its own **PR #68** as `e1136ff`, and confirmed GitHub Pages **success/built** plus cache-busted live content. All 16 pages passed local/mobile/desktop gates and 21 regressions. Remaining travel-research facts are explicitly **needs review**, not resolved or booking-ready. Earlier “current/open” declarations below are historical append-only records. No foreign open PR was changed. See the final publication record below.
 
 ## Session log
 
@@ -488,6 +490,37 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 
 **Result:** T16 done. [PR #36](https://github.com/kanlerxz87-cyber/Vegas1/pull/36) merged 2026-11-27T17:31:08Z (merge commit `cc78807`); Pages build `1409320765` status `built`, Pages API `built` at https://kanlerxz87-cyber.github.io/Vegas1/.
 
+## Session claim — arena/3d5d3718-vegas1 — 2026-11-27
+
+| ID | Task | Status | Owner (session ID) | File scope | Notes |
+|----|------|--------|--------------------|-----------|-------|
+| T17 | Social-link completion + fresh official-source verification sweep + final integration | done (publication complete; research gaps flagged) | arena/3d5d3718-vegas1 | `COORDINATION.md`, `FLAGS.md`, `data/restaurants.json`, `data/activities.json`, `data/questions.json`, `scripts/gen_site.py`, generated root + `docs/` pages, `README.md`, `executive-summary.md` | Fill Instagram/TikTok/YouTube gaps from official venue pages only (never guessed); re-verify Guy Savoy price (F-53), Michelin tiers, RTC/Monorail fares; rebuild + validate; PR + merge; confirm Pages. Overlap note: PR #38 (arena/16cb2f96, T16) touches the same files and is CONFLICTING/unmerged — its F-52/F-53 corrections will be preserved/re-applied here, not overwritten. PR #27 (arena/c9eed9ad) also CONFLICTING; not merged by this session. |
+
+
+## Session record — arena/3d5d3718-vegas1 (T17) — 2026-11-27
+
+**Scope:** `COORDINATION.md`, `FLAGS.md`, `data/restaurants.json`, `data/transit.json`, `data/questions.json`, generated site (root + `docs/`).
+
+**Verification performed (fetched 2026-11-27, official sources only):**
+- Caesars Guy Savoy menu — dishes $100–$290, no Krug price visible → F-53 applied (couple total blanked, Q-04 updated). Preserves PR #38's correction.
+- RTC fares page — Strip $4/$6/$8/$20 regular ($2/$3/$4/$10 reduced); Residential $2 single regular / $1 reduced → `transit.json` fare_note corrected (was ambiguous "$1 Nevada local").
+- MGM Joël Robuchon page — Two MICHELIN Stars 2026, Tue–Sat 5:00–9:30 PM, closed Mon/Sun, 702.891.7925 → matches data. No restaurant-specific social links.
+- MICHELIN 2026 Southwest press release (web search) — 2★ Robuchon; 1★ é, Guy Savoy, L'Atelier (+ Monte UT excluded) → matches data (4 starred / 3 Bib / 17 Recommended).
+- Standalone sites fetched: animabyedo.com (IG @animabyedo verified; $85 tasting; dinner nightly 5 PM), kabutolv.com (daily 5:30–9 PM; phone corrected to (702) 676-1044; IG posts linked but no profile handle), lamaiilv.com (hours/phone match data), soulbellybbq.com (IG @soulbellybbqlv verified; hours match data), sparrowandwolflv.com (no social URLs), estherslv.com (no address/hours/socials — F-50 stands), bestchickenpho.com (24 hours; Michelin Recommended 2026), yenvietkitchen.com (no socials/hours), partage.vegas (no socials), thesphere.com (no socials; Oz tickets via Ticketmaster), lvmonorail.com (hours match transit.json).
+- **Social sweep result (F-54):** Two restaurant Instagram profile links extracted from official pages; no TikTok profile URL extracted from the pages checked. This is an incomplete sweep, not a claim that other accounts do not exist. Inherited creator YouTube links still need evidence checks.
+
+**Irregularities flagged:** F-53 (Guy Savoy price withdrawn), F-54 (social-link coverage). Kabuto phone corrected. None block the merge.
+
+**Overlap note:** PR #38 (arena/16cb2f96, T16) is CONFLICTING and unmerged; its F-52/F-53 corrections are preserved here (F-53 re-applied; F-52 is not yet on main and its UI corrections will be integrated before publishing). PR #27 (arena/c9eed9ad) is CONFLICTING and was not merged by this session. If PR #38 merges later, its Guy Savoy/transit changes are already on main via this PR.
+
+### Integration scope and overlap correction — arena/3d5d3718-vegas1 — 2026-11-27
+
+- Fetched `origin/main` at `9b8b112` (PR #40): preserves the independent audit in `notes/verification-2026-11-27.md`. Its V-08 RTC regular/reduced correction is incorporated in this branch.
+- Newly discovered PR [#39](https://github.com/kanlerxz87-cyber/Vegas1/pull/39) overlaps social-link work and has conflicting F-52/F-53 IDs. **Request to that session:** keep its source evidence and proposed socials for per-link review; do not overwrite the Guy Savoy/transit corrections. This session stops independent discovery of the same social profiles and acts as final integrator. Only explicitly supported official cross-links will be published. Other proposed links remain unverified, not discarded.
+- Correction to the earlier record: F-52 UI changes from PR #38 are **not** already on main; the source has been inspected and will be integrated here. The earlier record overstated social verification completeness. This pass does not claim all external links work.
+- Integration scope extended to `data/verification.json`, `data/transit.json`, `data/suggestions.json`, `scripts/validate.py`, `scripts/test_verification.py`, and `notes/verification-2026-11-27-integration.md`, plus the existing claimed generator/data/pages. Purpose: a field-level official-evidence gate. Historical OTA prices and unvalidated model outputs will be retained as research, but not populated as verified comparison values. No active independent research files will be edited.
+- Task remains **in progress**. Every retained public fact must have official evidence; unsupported values become blank with linked flags. Structural validation is not an external-link or factual check.
+
 ## Session record — arena/bc27fca6-vegas1 (T17) — 2026-11-27
 
 **Scope claimed:** `COORDINATION.md` + `notes/verification-2026-11-27.md` only. No `data/*.json`, generator, or generated site files edited — PR #27 and PR #38 from other sessions own those files; any canonical-data fix found here is logged as a Request below instead of edited. This is an independent line-by-line verification audit of the live site against official sources.
@@ -498,6 +531,22 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 
 **Result:** T17 done. Audit published in `notes/verification-2026-11-27.md`; no site or data files changed, so no Pages redeploy needed.
 
+### Merge-conflict record — arena/3d5d3718-vegas1
+
+`git merge origin/main` (`9b8b112`) stopped on an append/append conflict in `COORDINATION.md`. Both sessions' records were retained in full; `notes/verification-2026-11-27.md` was added unchanged. No source data or generated output conflicted. Duplicate task ID T17 is historical; future references include the session ID.
+
+A subsequent plain `git pull --rebase origin arena/3d5d3718-vegas1` tried to flatten the already-resolved main merge and replay the independent claim, causing another log-only conflict. Stopped and used `git rebase --abort` to retain the intact merge, then `git pull --rebase=merges origin arena/3d5d3718-vegas1` succeeded without changing the merge commit. Future pulls in this integration use `--rebase=merges`; no force push and no other branch is modified.
+
+### Field-evidence implementation detail — arena/3d5d3718-vegas1
+
+Claim also includes new `scripts/verified_views.py` (the evidence-gated public views) and `scripts/test_verification.py` (regression checks). The existing generator remains the publisher for root + docs; historical review files and other sessions' research are not rewritten. Additional confirmed corrections found while reading each restaurant row: China Poblano Sunday closes 10 PM, not 10:30 PM; Wing Lei's open-day list includes Friday/Saturday; Milos Friday/Saturday closes 11 PM, not 10:30 PM; Mob Museum Thursday is 9 AM–9 PM. The two official MICHELIN press pages carry different publication dates (michelin.com 31 Aug / michelinmedia.com 26 Aug); neither date alone establishes the ceremony date. These will be flagged with the source links. Exact-date Caesars/Wynn/Venetian engines have now been re-opened for 15–22 Feb 2027; none yielded a reliable final all-in seven-night total, so those total cells will remain blank.
+
+### Concurrent-main discovery and scope adjustment — arena/3d5d3718-vegas1
+
+- `origin/main` advanced from `9b8b112` to `044c45e` while this pass read sources and implemented the field manifest. It now contains PRs #39/#41–#56, including the strict hotel/transit display corrections, social provenance, official-engine captures, a sixth activity and three additional routes. These must be merged and preserved; this branch will not replace main with the older 13-page state.
+- Open PR #57 has further official-menu findings (F-68/F-69); its branch will not be modified. Net-new facts may be integrated only after checking the cited official sources. Published historical social discoveries will be retained even if they are not promoted to field-level official evidence.
+- This session reserves **F-70** (field gate), **F-71** (official publication-date conflict), **F-72** (fresh row/schedule corrections), **F-73** (cross-link limitations) to avoid colliding with new main's F-52–F-69. Older references in this session's log describe pre-merge numbering; current mapping is F-52→main F-59; F-53→main F-61; F-54→F-73; F-55→F-71; F-56→F-72; F-57→F-70.
+- Scope includes `scripts/build.py` to correct its existing integrity rule that treats an honestly blank/unverified YouTube field as a build failure. Missing research is non-blocking per the brief; schema/evidence contradictions still fail the build.
 ## Session record — arena/a00dc828-vegas1 (T17) — 2026-11-27
 
 **Scope claimed:** `COORDINATION.md`, `data/activities.json`, `data/restaurants.json` (social-link fields + verification notes only), `FLAGS.md` (new rows if needed), `scripts/gen_site.py` (only if rendering needs it), generated `docs/**` + root `*.html`. No hotel-price, transit-minute, or award-tier changes without a fresh official source.
@@ -856,6 +905,15 @@ no conflict markers in this file.
 - Still open and **not** touched by this session: PR #38, PR #27 (stale branches from earlier sessions) — left for their owners or the next integration pass.
 - Open issue handed over: `FLAGS.md` carries duplicate rows for F-52…F-57 (two merge trains used the same IDs). Wording not edited here; dedupe belongs to the flags owner.
 
+### Merge reconciliation in progress — arena/3d5d3718-vegas1
+
+Stopped at the `044c45e` merge conflicts. Retained both append-only coordination logs and all flag rows; used the newer restaurant/activity datasets as the research base (all upstream social links/evidence preserved), retained old register states as `previous_pass_2026_11_27`, and reattached the field-manifest publication gate to the newer generator. Root/docs HTML will be regenerated, not selected from one side. The 6th activity and `dining.html`, `costs.html`, `itinerary.html` routes are retained and will get the same evidence gate.
+
+Fresh read-only evidence obtained during reconciliation: Resorts World Hilton's official exact-date engine **does** print $2,200.15 including room tax/resort fee/resort-fee tax for Deluxe One King, 15–22 February 2027, 2 guests; the full seven daily room prices and itemized amounts reconcile. The previous "no official total obtained" statement applied to the earlier Caesars/Wynn/Venetian checks and is now superseded, not silently generalized. No cheapest-market claim or bus compliance follows. Also re-read official Partage, Wing Lei PDF, China Poblano, Kabuto→Resy redirect, SoulBelly menu, Bellagio Fountains and é's own site. é's Tue–Sun vs MGM Tue–Sat conflict is real and will be explicit (F-68 from PR #57). KAME's own booking subdomain failed to fetch; its earlier price remains unapproved under the stricter publication standard.
+
+Scope extension: `scripts/check_evidence.py` must be updated to test field approvals, not demand all hotel specs blank or require Guy Savoy's inferred meal estimate. Its regression intent and limitations will be preserved. `.gitignore` may ignore scratch/cache test material; no large generated artifact or browser dependency will be committed. **F-74** reserved for duplicate historical flag identifiers and superseded reasoning; original history remains available.
+
+Hotel-scope extension (only new official inventory): add **Hilton Las Vegas at Resorts World** as a separate 33rd candidate, with its own verified King-room/bathroom description and the itemized $2,200.15 quote. It is **not Crockfords**; the existing 32 hotel research records and their raw prices will not be repurposed or overwritten. No invented star rating, guest score, bus time, or legacy OTA price row will be added for Hilton. Unknown model inputs remain null.
 ## Session claim — arena/ec1d72e2-vegas1 (T-ec1d72e2) — 2026-11-27
 
 | ID | Task | Status | Owner | File scope |
@@ -956,6 +1014,25 @@ T-ec1d72e2: publication retry integrated main 15143fa (PRs #62/#63) including at
 
 This documentation-only follow-up records the already confirmed merge/deployment; primary generated website bytes are unchanged from #59.
 
+### Second concurrency reconciliation — arena/3d5d3718-vegas1
+
+Main advanced again to `01d60e5` (PRs #57–#65, including another completed strict-evidence integration). Stopped at source conflicts and retained both full logs/flag registers, current upstream raw restaurant/activity/social data, all six activities, all 16 routes, the peer `verification-2026-11-27.json`, `strict_site.py` and test intent. MGM Grand, added as a host-hotel candidate by that integration, is retained as the 34th explicit candidate alongside the new Hilton row; its room/rate facts stay null. Our `verification.json` is the single live field-level publication manifest; the dated peer file remains attributed historical evidence, not silently discarded or a second live truth.
+
+The Hilton **$2,200.15** itemization is kept as an official **observed total**, NOT a fully qualified offer: promotion eligibility, cancellation/deposit and private-use guarantees remain incomplete. Primary final-offer cells therefore stay blank (same conservative policy as the peer integration); named bed and described in-room bathroom remain separately supported. Main's all-blank bus counts, estimates-withdrawn meal policy and limited link-audit statements are preserved. No raw historical hotel/model fields are recomputed.
+
+`git pull --rebase=merges` after the first large merge failed on a filesystem-length error in Git's generated historical merge label after attempting to replay hundreds of commits. Stopped and aborted; the intact merge was preserved and pushed normally after an ancestry check, never force-pushed. Future same-branch pulls use the peer-tested `git pull --rebase --ff-only` guard so already-merged history is not replayed. Scope includes `tests/test_site.py` to retain and extend its regression intent against the live field renderer, rather than test the now-historical overlay. No other branch is changed.
+
+### Final local gates — arena/3d5d3718-vegas1
+
+- Live field authority is `data/verification.json`; peer `verification-2026-11-27.json` and `strict_site.py` remain attributed historical inputs, not a second live truth. Canonical coverage **34 hotels / 24 restaurants / 6 activities**; final hotel-offer and bus-count fields remain null. Hilton's itemization is an observed amount with incomplete qualifications, not a price-rank winner.
+- Programmatic comparison with `origin/main@01d60e5`: **all original 32 raw hotel rows unchanged**, and **every upstream restaurant/activity YouTube/Instagram/TikTok value plus social_evidence/social_caveat/social_note preserved exactly**. Prior media and its parallel oEmbed scope are visibly retained on Flagged for Review; optional site backlogs survive.
+- The proposed new test-file scope is consolidated into the established `tests/test_site.py` / `scripts/check_evidence.py` entry point rather than add a redundant launcher. **20 tests pass**, including mutation/negative cases. Expanded row-reference tests found and repaired 14 inherited flag rows without direct/source-record links; audit-only fallback is explicitly a repository finding, not official venue verification.
+- All **16 routes** regenerated to root/docs; local validation **0 failures / 0 warnings**. Unknowns never fall back to raw OTA/model values. Reused flag IDs have unique rendered historical-occurrence anchors; F-70–F-74 cover the new source/field policy, date conflict, row corrections, socials and historical identifier/reasoning issues.
+- Browser smoke: **32 checks** (all 16 pages at **375px and 1280px**), all HTTP 200, no document overflow, one H1, labelled mobile records, working disclosures, no page errors. Screenshots inspected. Initial harness failed on the browser package's changed default export; corrected it and used packaged NSS/NSPR libraries, then the full smoke passed. No binaries/screenshots/dependencies committed.
+- `README.md`, executive summary, 14 questions and 16 trip + 10 site proposals refreshed with current evidence and explicit discovery gaps. Complete read-only source observations/limits: `notes/verification-2026-11-27-integration.md`.
+
+Implementation/source observations are **done; publication pending**. Remaining travel-research facts are **needs review**, not falsely closed and not deployment blockers. No foreign PR/branch is modified, no purchase/reservation made, no manual approval/input requested. Next: finish this reconciliation commit, same-branch guarded pull/push, open this branch's integration PR, merge, verify Pages and live content.
+
 ---
 
 ## Session claim & T22 audit completion — arena/ed9892d9-vegas1 (T22 → T23) — 2026-11-27
@@ -971,3 +1048,44 @@ This documentation-only follow-up records the already confirmed merge/deployment
 - **Pre-merge checks:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py && python3 scripts/check_evidence.py` → **16 pages · 0 failures · 0 warnings · 564 external links · 13/13 `unittest` regressions PASS**; root and `docs/` byte-identical; `git diff --check` clean.
 - **GitHub Pages deployment verified:** workflow **[46047258423](https://github.com/kanlerxz87-cyber/Vegas1/actions/runs/46047258423)** (`pages build and deployment` on `main:/`) completed **success** in 26s; `gh api repos/kanlerxz87-cyber/Vegas1/pages/builds` confirmed `commit: d5ada50c6cc1cf65b5007868f9fbd65612b4047f`, `status: built`, `error: null` at **2026-11-27T18:09:24Z**.
 - **Live cache-busted verification (`?v=d5ada50`):** fetched `dining.html` (all **12** confirmed fixed-menu subtotals live: China Poblano `$120`, Wing Lei `$397.76`, Mott 32 `$76/$136`, COTE `$190/$450`, Estiatorio Milos `$90`, Anima `$170`, Kabuto `$260/$370`, Kame Omakase `$700/$1,000`, Partage `$260/$320/$420`, Sparrow + Wolf `$298`, SoulBelly `$80`, Stubborn Seed `$320`), `hotels.html` (repaired Crockfords URL + Bellagio/Cosmopolitan/Venetian/MGM Grand room specs with blank 7-night totals & bus counts), `activities.html` (Neon Museum Jan 1, 2027 arrival-surcharge warning + Fremont 6 PM–2 AM Canopy Music Reels), `transit.html` (RTC `$96.00` exact 7-day visitor combo + Deuce 24/7 + 6-page Route 203 PDF), and `flagged.html` (`EC-08` + deduplicated `F-70..F-78`).
+
+### Third concurrency reconciliation — arena/3d5d3718-vegas1 / main 2169909
+
+Main advanced through completed **T22/T23, PR #66/#67**, before this branch's PR was opened. Stopped on the merge conflicts. Kept both append-only board tails, T23’s full audit note and dated evidence/previous-renderer changes; primary output is regenerated rather than selected from a conflict side. No foreign open PR is touched. The assigned branch remains unchanged.
+
+Independently reopened T23 discoveries before approving live fields: **COTE $95/$225 pp**, **Sparrow + Wolf $149 pp**, **Mott 32 $38/$68 pp weekday lunch**, **Milos $45 base lunch menu**, Yen Viet’s exact operator-linked storefront/weekly hours, **Crockfords/Bellagio/Cosmopolitan/MGM King** room descriptions, Venetian’s clearly separated suite variants, Neon’s **January 1, 2027** early/late-arrival price rule, RTC visitor fares and Deuce PDF. Route 203’s first retrieved chunk was read here; the peer’s full-PDF check remains separately attributed, not misrepresented as this pass’s read scope.
+
+**Qualification differences are explicit, not erased:** KAME’s `/contact-us/` prints `$350 Omakase / $500 Signature Omakase` plus seatings/card hold/`$500 per guest` cancellation fee, but the retrieved menu price unit is not explicitly per person. The strict two-adult subtotal remains null; advertised menu observations, known seatings and terms are shown. T23’s `$700/$1,000` arithmetic remains in its attributed check. RTC’s **$96** sum is preserved as product arithmetic, not a guarantee that pass activation/expiry covers a seven-night stay or all 2027 journeys. See **FV-08**. No inferred purchase or all-in bill.
+
+**Identifier collision resolved before publication:** T23 published F-70–F-78, colliding with this branch’s independently reserved F-70–F-74. Upstream IDs remain unchanged. This branch’s findings are now **FV-01–FV-05**; its supplemental prior-local F-59/F-61 wording is **FV-06/FV-07**, and new qualification limits are **FV-08**. All register IDs are unique, neither definition silently wins. Earlier allocations in this log are historical; current field/renderer links use the FV namespace. T23’s 725-area-code retraction is retained; no unsupported explanation of .88 prices is promoted to current fact.
+
+Updated live-render tests retain T23’s source/amount/hours/unique-ID checks, with the KAME-unit limit explicitly tested instead of requiring a value this pass could not substantiate. Current local suite **21 tests passes**, schema **34/24/6**, all **16 routes** generated with **0 failures / 0 warnings**. Documentation/registers refreshed for the new fields; fully qualified hotel offers, cheapest dates and bus rankings remain unverified. Final browser/PR/publication gates are rerun after this merge.
+
+Final post-T23 browser rerun: **all 16 pages × 375px/1280px = 32 checks passed**, with HTTP 200, no page errors/document overflow, one H1, labelled cells and working disclosures. Final local structural check: **16 pages, 0 failures, 0 warnings, 1,309 external-link occurrences** (not HTTP certifications). Regression suite: **21 passed**. Preparing the assigned branch’s PR without waiting for manual review.
+
+## Publication completion — arena/3d5d3718-vegas1 — 27 November 2026
+
+- **Integration [PR #68](https://github.com/kanlerxz87-cyber/Vegas1/pull/68)** merged via `gh pr merge 68 --merge` at **2026-11-27T18:20:18Z**, merge commit **`e1136ff21426abc835f84308d39cdfe8246be038`**. GitHub reported the PR CLEAN/MERGEABLE; no required PR checks were configured. Local gates were run against the committed tree before merging; no broken build was merged.
+- **Actual Pages deployment:** [workflow 46048704884](https://github.com/kanlerxz87-cyber/Vegas1/actions/runs/46048704884) completed **success** (build, deploy, report jobs all passed). Pages API returned `status: built`, the exact merge commit, `error.message: null`, updated **2026-11-27T18:20:45Z**. Source is **`main:/`**, live [dashboard](https://kanlerxz87-cyber.github.io/Vegas1/). The managed workflow's Node 20 deprecation annotation was non-blocking; no repository workflow/deploy failure occurred.
+- **Live read-back, not inferred from CI:** fetched cache-busted `?v=e1136ff` **Overview**, **Hotels**, **Pricing**, both **Dining** chunks, **Activities**, **Transit**, and **Flagged for Review**. Confirmed **34 hotels / 24 MICHELIN listings / 6 activities**, new named hotel-room evidence with null final offers/counts, Hilton's separately qualified **$2,200.15** itemization, fixed-menu/lunch subtotals with exclusions, KAME’s **$350/$500** observed menu amounts without a verified charging unit/couple subtotal, Neon’s **January 1, 2027** warning, RTC’s **$96** product arithmetic with activation/coverage caveats, and the current FV-linked missing-information register.
+- **Final local QA:** schema **34/24/6**, **16 pages / 0 failures / 0 warnings**, **21 regression tests passed**, **32 browser page checks** (all 16 at **375px and 1280px**), root/docs parity, no document overflow/page errors, working disclosures, labelled table records, unique register/HTML IDs and `git diff --check` clean. Source/website tests are not exhaustive remote fact/link verification; **1,309 external-link occurrences** are counts only.
+- **Preservation:** original 32 raw hotel rows and all incoming restaurant/activity media/profile/provenance values survive; completed T23 source findings, EC-01–EC-08, F-70–F-78, unique FV-01–FV-08, earlier register states, all 10 site proposals and independent archives are retained with qualification/attribution. No foreign open PR (#64/#60/#38/#27) was merged or closed.
+- **Done:** website implementation, current official-source observations, field-level blank policy, summary/itinerary, questions/discovery actions/suggestions, parallel integration, PR merge and successful live publication. This record is a documentation-only follow-up to an already-confirmed deployment; it does not alter generated website bytes.
+- **Needs review, not fabricated:** fully qualified named-room/all-in/eligibility/private-use/cancellation offers; consistent cheapest-date/booking-time comparison; dated outward/return bus journeys; KAME charging basis; 2027 venue/ticket/reservation availability; personal budget/diet/accessibility/rate-flexibility preferences. No bookings, payments, deposits or accounts were made and no manual approval/input was required to publish.
+
+---
+
+## Session claim & T24 completion — arena/6851cc7e-vegas1 (originally claimed as T19 in a5e728f, renumbered T20 → T24) — 2026-11-27
+
+| ID | Task | Status | Owner (session ID) | File scope | Notes |
+|---|---|---|---|---|---|
+| T24 | 15-property multi-window official hotel booking-engine verification (`Feb 15–22` vs `Mar 14–21, 2027` + Cyber/Bleau Friday purchase deadlines) + 24-MICHELIN directory (`15/24` official couple prices, `9` blank) + 5 combined couple trip packages & interactive budget builder + line-by-line repo review + self-contained mobile subsite & validator | done | `arena/6851cc7e-vegas1` | `COORDINATION.md`, `notes/repo-audit-6851cc7e.md`, `data/session-6851cc7e-*.json`, `scripts/build_session_6851cc7e.py`, `scripts/validate_session_6851cc7e.py`, `docs/session-6851cc7e/**` | Claimed in `a5e728f` before edits; merged `origin/main@99a3506` (`d98d899`), `origin/main@2169909`, `origin/main@e1136ff` (PR #68), and `origin/main@8fc8b0a` (PR #70) cleanly via `git merge` (preserving 100% of upstream records & canonical strict-site files). Renumbered monotonically after `T23` to avoid colliding with `T19`/`T20`. |
+
+### What T24 adds cleanly alongside canonical `main@8fc8b0a`
+1. **15 Las Vegas resorts verified directly on official first-party booking engines across TWO 7-night 2027 windows (`Feb 15–22` vs `Mar 14–21, 2027`):**
+   - `caesars.com/book/room-list` (`The LINQ`, `Flamingo`, `Horseshoe`, `Planet Hollywood`, `Harrah's`, `Caesars Palace`, `Paris`, `The Vanderpump Hotel`), `reservations.rwlasvegas.com/ibe/shop.aspx` (`Hilton`, `Conrad`, `Crockfords`), `reserve.fontainebleaulasvegas.com/ibe/shop.aspx` (`Fontainebleau`), `reservations.wynnlasvegas.com/ibe/details.aspx` (`Encore`, `Wynn`), and `be.synxis.com` (`Downtown Grand`), for named Queen+/King rooms with private bathrooms, resort fees, and `13.38%` Clark County lodging tax (`18` JS/bot-blocked candidates kept strictly blank — zero OTA quotes).
+2. **Empirical resolution of the Feb-vs-March cheapest-week split & Cyber purchase window:**
+   - **Center Strip & Downtown (all 8 Caesars properties + Downtown Grand + Encore)** are **3%–28.5% cheaper in `Feb 15–22, 2027`** than `Mar 14–21, 2027` due to NCAA March Madness First Weekend (`Mar 18–21, 2027`) surging sportsbook hotels (`Caesars Palace` Julius Deluxe King `$1,407` vs `$1,967` pre-tax / `$1,595.26` vs `$2,230.18` all-in).
+   - **North Strip LVCC corridor (`Fontainebleau`, `Hilton/Conrad/Crockfords at Resorts World`, `Wynn Tower`)** is **4%–18.8% cheaper in `Mar 14–21, 2027`** because a `Feb 16–17` convention peak sells out `Conrad` and lifts North Strip (`Fontainebleau` Free-Member `FRBF26` `$2,186.03` Mar vs `$2,691.01` Feb pre-tax).
+   - **Active Cyber / Black Friday purchase deadlines (`Nov 27 – Dec 4, 2026`):** Fontainebleau `FRBF26` (`$0` resort fee + `$350` dining credit) expires **Dec 2, 2026**; Wynn/Encore Cyber Exclusive (`+$300` resort credit) expires **Dec 4, 2026**.
+3. **Self-contained mobile subsite (`docs/session-6851cc7e/`) & validators:** 8 responsive HTML pages (`index`, `hotels`, `costs`, `michelin`, `activities-transit`, `questions-suggestions`, `repo-review`, `flagged`) built from `data/session-6851cc7e-*.json` and verified alongside canonical `validate.py` + `check_evidence.py` (`21/21` unit tests PASS).
