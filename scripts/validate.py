@@ -22,10 +22,15 @@ for p in PAGES:
         fails.append(f"{p.name}: missing viewport")
     if src.count("<nav>") != 1:
         fails.append(f"{p.name}: nav count {src.count('<nav>')}")
-    # 3. table rows must not contain unescaped stray braces from f-strings
-    for bad in ("{{", "}}", "None", "nan"):
+    # 3. table rows must not contain unescaped stray braces from f-strings.
+    #    The bare words are matched on token boundaries: a substring test fired on
+    #    ordinary prose ("provenance" contains "nan") and produced false warnings.
+    for bad in ("{{", "}}"):
         if bad in src:
             warns.append(f"{p.name}: contains literal {bad!r}")
+    for tok in ("None", "nan"):
+        if re.search(rf"(?<![A-Za-z0-9_]){tok}(?![A-Za-z0-9_])", src):
+            warns.append(f"{p.name}: contains standalone token {tok!r}")
     # 4. count links
     ext = len(re.findall(r'href="https?://', src))
     print(f"{p.name:20} {len(src):>7} bytes  {ext:>4} external links")

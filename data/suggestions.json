@@ -153,6 +153,16 @@
       "body": "The $1,978 seven-night total on that row was captured on 2026-11-25 under the name The Cromwell. On 2026-11-26 the property's official page presented it as The Vanderpump Hotel. Until it is re-quoted under the new brand the row is a Cromwell-era number on a Vanderpump property, and it sits at rank 7 on the Michelin-proximity table, above three cheaper centre-Strip options.",
       "trade_off": "Costs one dated search. Until then the number should not be treated as bookable.",
       "evidence": "https://www.caesars.com/vanderpump-hotel ; F-47"
+    },
+    {
+      "id": "S-16",
+      "title": "Close the social-link gaps only from venue-controlled sources, and say where each handle came from",
+      "impact": "low",
+      "needs_decision": false,
+      "status": "recommended",
+      "body": "The brief asked for a YouTube, TikTok or Instagram link for every restaurant and activity. YouTube is covered for all 24 restaurants and all 5 activities. The remaining gaps after the 2026-11-27 sweep are 5 restaurant Instagram handles and 22 TikTok accounts (F-53). The safe route is the venue's own site footer, its own channel/profile metadata, or its OpenTable profile — the same standard now printed under the activities table. A handle that only appears in a search result is not evidence.",
+      "trade_off": "Roughly 24 page visits plus an hour of checking, and some venues genuinely have no account — the honest outcome may be a blank cell, not a link. Filling a cell with a reseller's or creator's account would look complete and be wrong.",
+      "evidence": "F-53 ; https://neonmuseum.org/ ; https://www.youtube.com/themobmuseum ; activities page 'Where each social link came from'"
     }
   ]
 }

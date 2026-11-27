@@ -55,7 +55,27 @@ def main():
         assert row['cells'][1:4] == ['—'] * 3, f'{name}: unsupported decision number/specification'
         assert 'Unverified' in row['cells'][4]
         assert any(u.startswith('https://') for u in row['links']), name
-    assert next(r for r in restaurants if r['id'] == 'guy-savoy')['price_2adults'] == ''
+    # Restaurant prices: every non-blank cell must name its basis and its own menu source,
+    # and the withdrawn $3,000 Guy Savoy figure must not reappear anywhere in the data.
+    for r in restaurants:
+        if r.get('price_2adults'):
+            assert r.get('price_basis'), f"{r['id']}: priced without a basis"
+            src = r.get('price_source', '')
+            assert src.startswith('https://') and 'booking.com' not in src, (r['id'], 'no menu source')
+    assert all('3,000' not in (r.get('price_2adults') or '') for r in restaurants), 'withdrawn Krug figure used as a price'
+    guy = next(r for r in restaurants if r['id'] == 'guy-savoy')
+    assert guy['price_2adults'].endswith('(est.)') and 'menus' not in guy['price_source']
+    assert 'restaurant-guy-savoy/main-menu' in guy['price_source']
+    partage = next(r for r in restaurants if r['id'] == 'partage')
+    wing = next(r for r in restaurants if r['id'] == 'wing-lei')
+    assert partage['price_2adults'].startswith('$260') and 'partage.vegas/menu' in partage['price_source']
+    assert wing['price_2adults'].startswith('$397.76') and 'wynnresorts.com' in wing['price_source']
+    # The budget page must not smuggle a hotel total back in.
+    dining = (ROOT / 'dining.html').read_text()
+    assert '$712.30' in dining and '$1,025.06' in dining and '$1,855.06' in dining
+    assert 'No hotel figure is used' in dining
+    assert '$120.00' in dining, 'RTC three-day pass total lost (fare-note parsing regression)'
+    assert '$119.90' in dining, 'monorail seven-day total lost'
     mob = next(a for a in activities if a['id'] == 'mob-museum')
     assert 'daily 9:00 AM–9:00 PM' in mob['hours']
     assert next(a for a in activities if a['id'] == 'high-roller')['hours'] == ''
