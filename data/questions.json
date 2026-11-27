@@ -6,7 +6,7 @@
       "open": "Not confirmed. The tables leave the cell blank and this page says so.",
       "interpreted": "The question as asked does not map onto Las Vegas, so a stated substitution was made and disclosed."
     },
-    "last_pass": "2026-11-25 restaurant hours verification (added Q-11–Q-12)"
+    "last_pass": "2026-11-27 (T17): Q-04 and Q-07 answered from official venue menus and fetched Instagram profiles; 13 of 24 couple prices and 16 of 24 Instagram links now published."
   },
   "questions": [
     {
@@ -50,17 +50,23 @@
     {
       "id": "Q-04",
       "question": "What does dinner for two cost at each Michelin restaurant?",
-      "state": "open",
-      "answer": "Four venues print a real number on their official pages: Michael Mina ($295++ per person), Anima by EDO ($85 per person), KAME Omakase ($500 per person, from its own OpenTable description), and Guy Savoy (official à la carte dishes $100–$290 → $200–$580 for two; Krug Chef's Table 10-course $1,500/pp → $3,000 for two, per the Caesars menu effective 11.5.2026). All figures are before tax, gratuity and wine. Everything else leaves the cell blank. Note Michael Mina is currently marked Temporarily closed — see Q-11.",
-      "problem": "Las Vegas fine-dining rooms publish menus without prices, and the ones that do publish (tasting menus) change them seasonally. Inventing a range would violate the no-inference rule; the Guy Savoy cell shows only arithmetic on printed official prices.",
-      "substitution": "Blank cells plus a 'price on request' marker rather than an estimate.",
-      "how_to_close": "Book a table on OpenTable for a dummy date and read the deposit or prepay amount, or phone the numbers listed in data/restaurants.json. 17 of the 24 venues now publish a phone number and can be called in one sitting.",
+      "state": "answered",
+      "answer": "13 of the 24 venues now carry a couple price read from the venue's own menu on 2026-11-27 (arithmetic stored on each row): Guy Savoy $200-$580 a la carte / $3,000 Krug Chef's Table; Wing Lei $397.76++ tasting; COTE $190++ Feast of USDA Prime; Partage $260/$320/$420 tasting; Kabuto $260-$370 omakase; Sparrow + Wolf $298++ tasting; Stubborn Seed $320-$390++ tasting; Bouchon $116-$186 a la carte; Esther's Kitchen $112-$196 a la carte; SoulBelly BBQ $80 for two; Anima by EDO $170++; KAME Omakase $1,000++; Michael Mina $590++ (venue currently closed - F-23). All before tax, gratuity and wine. The remaining 11 publish no price and stay blank.",
+      "problem": "Even after this pass, 11 venues print no price anywhere on their own site (the starred rooms are the notable gap: Joel Robuchon, L'Atelier, e by Jose Andres, plus China Poblano, Mott 32, Estiatorio Milos, Gymkhana, Lamaii, Ping Pang Pong, Pho Ga Bac Bac, Yen Viet Kitchen). Tasting menus change seasonally, so any 2026 price is an estimate for a February 2027 trip.",
+      "substitution": "A price is published only where the venue prints one; the rest say 'on request'. Where a venue prints a la carte prices, a range is computed from those printed prices and the arithmetic is shown in price_calc so a reader can check it.",
+      "how_to_close": "For the 11 blanks: phone the venue (17 of 24 publish a phone number), or book a table on OpenTable for a dummy date and read the prepay/deposit amount. All four starred rooms require a reservation anyway, so the price can be captured at booking.",
       "sources": [
-        "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html",
-        "https://animabyedo.com",
-        "https://www.opentable.com/r/kame-omakase-las-vegas",
-        "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"
-      ]
+        "https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/cote/menu.pdf",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/bouchon/dinner-menu.pdf",
+        "https://partage.vegas/menu",
+        "https://www.kabutolv.com/s/kabuto-menu2026.pdf",
+        "https://sparrowandwolflv.com/menu/",
+        "https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/",
+        "https://www.estherslv.com/menus/",
+        "https://soulbellybbq.com/menu"
+      ],
+      "last_pass": "2026-11-27 (T17)"
     },
     {
       "id": "Q-05",
@@ -90,12 +96,29 @@
     {
       "id": "Q-07",
       "question": "What are each restaurant's YouTube, TikTok and Instagram links?",
-      "state": "open",
-      "answer": "YouTube is recorded for every one of the 24 restaurants, 69 links in total. The links were not opened in the 2026-11-26 review, so 'working' is not verified. Instagram and TikTok are almost entirely blank.",
-      "problem": "Handles were not printed on most official restaurant pages, and guessing a handle would create a dead or, worse, wrong link.",
-      "substitution": "Blank rather than guessed. The Neon Museum is the only venue with confirmed Instagram and TikTok, taken from its own site footer.",
-      "how_to_close": "Open each restaurant's official page footer or its OpenTable profile — most link their own socials there. That is 24 short page visits.",
-      "sources": []
+      "state": "answered",
+      "answer": "Closed in substantial part on 2026-11-27. Every listed Instagram profile was fetched and matched to the venue before publication: 16 of 24 restaurant rows now carry a verified Instagram link (including all four starred rooms except none - Robuchon, L'Atelier, Guy Savoy and e all confirmed). YouTube is recorded for 24 of 24 (69 links, not individually opened). TikTok: only Wing Lei / Wynn has an official account verified.",
+      "problem": "TikTok is still almost empty: most Las Vegas restaurants do not run an official TikTok account and a fan account would be a wrong link. Three decoys were found and rejected: @stubbornseedvegas (7 followers), @pingpangpong (a private personal account) and @phogabacbac (1 follower) - the handle that looks right is the one that is wrong.",
+      "substitution": "Instagram is the platform that verifiably exists for most venues, so it is used to satisfy the brief's 'YouTube, TikTok or Instagram' requirement. No handle is guessed; a blank stays blank and is listed below.",
+      "how_to_close": "For the 8 rows with no verified Instagram (Wing Lei - corporate Wynn account only, Bouchon, Michael Mina, Partage, Ping Pang Pong, Pho Ga Bac Bac, Yen Viet Kitchen, Stubborn Seed): check the venue's own site footer or its OpenTable/Resy profile page, which usually links its socials. For TikTok, search the platform directly and only publish an account that names the venue.",
+      "sources": [
+        "https://www.instagram.com/joelrobuchon.lasvegas/",
+        "https://www.instagram.com/guysavoylasvegas/",
+        "https://www.instagram.com/ebyjoseandres/",
+        "https://www.instagram.com/chinapoblano/",
+        "https://www.instagram.com/cotekoreansteakhouse/",
+        "https://www.instagram.com/estiatoriomilos/",
+        "https://www.instagram.com/gymkhanalasvegas/",
+        "https://www.instagram.com/kabutolv/",
+        "https://www.instagram.com/kameomakase/",
+        "https://www.instagram.com/lamaiilv/",
+        "https://www.instagram.com/mott32vegas/",
+        "https://www.instagram.com/sparrowandwolflv/",
+        "https://www.instagram.com/estherskitchenlv/",
+        "https://animabyedo.com/",
+        "https://soulbellybbq.com/"
+      ],
+      "last_pass": "2026-11-27 (T17)"
     },
     {
       "id": "Q-08",

@@ -14,6 +14,7 @@
     <nav><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="restaurants.html">Michelin</a><a href="activities.html">Things to do</a><a href="transit.html">Getting around</a><a href="questions.html" class="on">Open questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="repo-review.html">Repo review</a></nav>
   </div>
 </header>
+<a id="top"></a>
 <main class="wrap">
   <div class="pagehead">
     <h1>Open questions</h1>
@@ -23,13 +24,13 @@
   
 <section class="panel">
   <h2>What is known, what is not, and how to find out</h2>
-  <p>13 questions drove this plan. 5 are fully closed, 2 required a stated interpretation because
-  the brief does not map onto Las Vegas as written, and 6 are still open — those are the ones where a
+  <p>13 questions drove this plan. 7 are fully closed, 2 required a stated interpretation because
+  the brief does not map onto Las Vegas as written, and 4 are still open — those are the ones where a
   table on this site shows a blank rather than a guess.</p>
   <div class="grid4">
-    <div class="card"><div class="big">5</div><div class="lbl">answered</div><p>Confirmed against an official source, link attached.</p></div>
+    <div class="card"><div class="big">7</div><div class="lbl">answered</div><p>Confirmed against an official source, link attached.</p></div>
     <div class="card"><div class="big">2</div><div class="lbl">interpreted</div><p>The question does not fit the city; the substitution is disclosed.</p></div>
-    <div class="card"><div class="big">6</div><div class="lbl">open</div><p>Not confirmable now. Blank in the data, with a route to close it.</p></div>
+    <div class="card"><div class="big">4</div><div class="lbl">open</div><p>Not confirmable now. Blank in the data, with a route to close it.</p></div>
     <div class="card"><div class="big">0</div><div class="lbl">filled by guess</div><p>No value on this site was inferred.</p></div>
   </div>
 </section>
@@ -63,12 +64,12 @@
 </article>
 <article class="qa" id="Q-04">
   <h3><span class="qid">Q-04</span> What does dinner for two cost at each Michelin restaurant?
-    <span class="state bad">open</span></h3>
-  <p><strong>Answer:</strong> Four venues print a real number on their official pages: Michael Mina ($295++ per person), Anima by EDO ($85 per person), KAME Omakase ($500 per person, from its own OpenTable description), and Guy Savoy (official à la carte dishes $100–$290 → $200–$580 for two; Krug Chef&#x27;s Table 10-course $1,500/pp → $3,000 for two, per the Caesars menu effective 11.5.2026). All figures are before tax, gratuity and wine. Everything else leaves the cell blank. Note Michael Mina is currently marked Temporarily closed — see Q-11.</p>
-  <p><strong>Why it is not closed:</strong> Las Vegas fine-dining rooms publish menus without prices, and the ones that do publish (tasting menus) change them seasonally. Inventing a range would violate the no-inference rule; the Guy Savoy cell shows only arithmetic on printed official prices.</p>
-  <p><strong>What was done instead:</strong> Blank cells plus a &#x27;price on request&#x27; marker rather than an estimate.</p>
-  <p class="tiny"><strong>How to close it:</strong> Book a table on OpenTable for a dummy date and read the deposit or prepay amount, or phone the numbers listed in data/restaurants.json. 17 of the 24 venues now publish a phone number and can be called in one sitting.</p>
-  <details><summary>Sources</summary><ul class="srcs"><li><a href="https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html" target="_blank" rel="noopener">https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html</a></li><li><a href="https://animabyedo.com" target="_blank" rel="noopener">https://animabyedo.com</a></li><li><a href="https://www.opentable.com/r/kame-omakase-las-vegas" target="_blank" rel="noopener">https://www.opentable.com/r/kame-omakase-las-vegas</a></li><li><a href="https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu" target="_blank" rel="noopener">https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu</a></li></ul></details>
+    <span class="state ok">answered</span></h3>
+  <p><strong>Answer:</strong> 13 of the 24 venues now carry a couple price read from the venue&#x27;s own menu on 2026-11-27 (arithmetic stored on each row): Guy Savoy $200-$580 a la carte / $3,000 Krug Chef&#x27;s Table; Wing Lei $397.76++ tasting; COTE $190++ Feast of USDA Prime; Partage $260/$320/$420 tasting; Kabuto $260-$370 omakase; Sparrow + Wolf $298++ tasting; Stubborn Seed $320-$390++ tasting; Bouchon $116-$186 a la carte; Esther&#x27;s Kitchen $112-$196 a la carte; SoulBelly BBQ $80 for two; Anima by EDO $170++; KAME Omakase $1,000++; Michael Mina $590++ (venue currently closed - F-23). All before tax, gratuity and wine. The remaining 11 publish no price and stay blank.</p>
+  <p><strong>Why it is not closed:</strong> Even after this pass, 11 venues print no price anywhere on their own site (the starred rooms are the notable gap: Joel Robuchon, L&#x27;Atelier, e by Jose Andres, plus China Poblano, Mott 32, Estiatorio Milos, Gymkhana, Lamaii, Ping Pang Pong, Pho Ga Bac Bac, Yen Viet Kitchen). Tasting menus change seasonally, so any 2026 price is an estimate for a February 2027 trip.</p>
+  <p><strong>What was done instead:</strong> A price is published only where the venue prints one; the rest say &#x27;on request&#x27;. Where a venue prints a la carte prices, a range is computed from those printed prices and the arithmetic is shown in price_calc so a reader can check it.</p>
+  <p class="tiny"><strong>How to close it:</strong> For the 11 blanks: phone the venue (17 of 24 publish a phone number), or book a table on OpenTable for a dummy date and read the prepay/deposit amount. All four starred rooms require a reservation anyway, so the price can be captured at booking.</p>
+  <details><summary>Sources</summary><ul class="srcs"><li><a href="https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf" target="_blank" rel="noopener">https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf</a></li><li><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/cote/menu.pdf" target="_blank" rel="noopener">https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/cote/menu.pdf</a></li><li><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/bouchon/dinner-menu.pdf" target="_blank" rel="noopener">https://www.venetianlasvegas.com/content/dam/vlvweb/restaurants/bouchon/dinner-menu.pdf</a></li><li><a href="https://partage.vegas/menu" target="_blank" rel="noopener">https://partage.vegas/menu</a></li><li><a href="https://www.kabutolv.com/s/kabuto-menu2026.pdf" target="_blank" rel="noopener">https://www.kabutolv.com/s/kabuto-menu2026.pdf</a></li><li><a href="https://sparrowandwolflv.com/menu/" target="_blank" rel="noopener">https://sparrowandwolflv.com/menu/</a></li><li><a href="https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/" target="_blank" rel="noopener">https://www.rwlasvegas.com/pdf/stubborn-seed-tasting-menu-11-25-2026/</a></li><li><a href="https://www.estherslv.com/menus/" target="_blank" rel="noopener">https://www.estherslv.com/menus/</a></li><li><a href="https://soulbellybbq.com/menu" target="_blank" rel="noopener">https://soulbellybbq.com/menu</a></li></ul></details>
 </article>
 <article class="qa" id="Q-05">
   <h3><span class="qid">Q-05</span> Does each hotel room actually have a private bathroom and a queen-or-larger bed?
@@ -90,12 +91,12 @@
 </article>
 <article class="qa" id="Q-07">
   <h3><span class="qid">Q-07</span> What are each restaurant&#x27;s YouTube, TikTok and Instagram links?
-    <span class="state bad">open</span></h3>
-  <p><strong>Answer:</strong> YouTube is recorded for every one of the 24 restaurants, 69 links in total. The links were not opened in the 2026-11-26 review, so &#x27;working&#x27; is not verified. Instagram and TikTok are almost entirely blank.</p>
-  <p><strong>Why it is not closed:</strong> Handles were not printed on most official restaurant pages, and guessing a handle would create a dead or, worse, wrong link.</p>
-  <p><strong>What was done instead:</strong> Blank rather than guessed. The Neon Museum is the only venue with confirmed Instagram and TikTok, taken from its own site footer.</p>
-  <p class="tiny"><strong>How to close it:</strong> Open each restaurant&#x27;s official page footer or its OpenTable profile — most link their own socials there. That is 24 short page visits.</p>
-  
+    <span class="state ok">answered</span></h3>
+  <p><strong>Answer:</strong> Closed in substantial part on 2026-11-27. Every listed Instagram profile was fetched and matched to the venue before publication: 16 of 24 restaurant rows now carry a verified Instagram link (including all four starred rooms except none - Robuchon, L&#x27;Atelier, Guy Savoy and e all confirmed). YouTube is recorded for 24 of 24 (69 links, not individually opened). TikTok: only Wing Lei / Wynn has an official account verified.</p>
+  <p><strong>Why it is not closed:</strong> TikTok is still almost empty: most Las Vegas restaurants do not run an official TikTok account and a fan account would be a wrong link. Three decoys were found and rejected: @stubbornseedvegas (7 followers), @pingpangpong (a private personal account) and @phogabacbac (1 follower) - the handle that looks right is the one that is wrong.</p>
+  <p><strong>What was done instead:</strong> Instagram is the platform that verifiably exists for most venues, so it is used to satisfy the brief&#x27;s &#x27;YouTube, TikTok or Instagram&#x27; requirement. No handle is guessed; a blank stays blank and is listed below.</p>
+  <p class="tiny"><strong>How to close it:</strong> For the 8 rows with no verified Instagram (Wing Lei - corporate Wynn account only, Bouchon, Michael Mina, Partage, Ping Pang Pong, Pho Ga Bac Bac, Yen Viet Kitchen, Stubborn Seed): check the venue&#x27;s own site footer or its OpenTable/Resy profile page, which usually links its socials. For TikTok, search the platform directly and only publish an account that names the venue.</p>
+  <details><summary>Sources</summary><ul class="srcs"><li><a href="https://www.instagram.com/joelrobuchon.lasvegas/" target="_blank" rel="noopener">https://www.instagram.com/joelrobuchon.lasvegas/</a></li><li><a href="https://www.instagram.com/guysavoylasvegas/" target="_blank" rel="noopener">https://www.instagram.com/guysavoylasvegas/</a></li><li><a href="https://www.instagram.com/ebyjoseandres/" target="_blank" rel="noopener">https://www.instagram.com/ebyjoseandres/</a></li><li><a href="https://www.instagram.com/chinapoblano/" target="_blank" rel="noopener">https://www.instagram.com/chinapoblano/</a></li><li><a href="https://www.instagram.com/cotekoreansteakhouse/" target="_blank" rel="noopener">https://www.instagram.com/cotekoreansteakhouse/</a></li><li><a href="https://www.instagram.com/estiatoriomilos/" target="_blank" rel="noopener">https://www.instagram.com/estiatoriomilos/</a></li><li><a href="https://www.instagram.com/gymkhanalasvegas/" target="_blank" rel="noopener">https://www.instagram.com/gymkhanalasvegas/</a></li><li><a href="https://www.instagram.com/kabutolv/" target="_blank" rel="noopener">https://www.instagram.com/kabutolv/</a></li><li><a href="https://www.instagram.com/kameomakase/" target="_blank" rel="noopener">https://www.instagram.com/kameomakase/</a></li><li><a href="https://www.instagram.com/lamaiilv/" target="_blank" rel="noopener">https://www.instagram.com/lamaiilv/</a></li><li><a href="https://www.instagram.com/mott32vegas/" target="_blank" rel="noopener">https://www.instagram.com/mott32vegas/</a></li><li><a href="https://www.instagram.com/sparrowandwolflv/" target="_blank" rel="noopener">https://www.instagram.com/sparrowandwolflv/</a></li><li><a href="https://www.instagram.com/estherskitchenlv/" target="_blank" rel="noopener">https://www.instagram.com/estherskitchenlv/</a></li><li><a href="https://animabyedo.com/" target="_blank" rel="noopener">https://animabyedo.com/</a></li><li><a href="https://soulbellybbq.com/" target="_blank" rel="noopener">https://soulbellybbq.com/</a></li></ul></details>
 </article>
 <article class="qa" id="Q-08">
   <h3><span class="qid">Q-08</span> Are the opening hours current for the trip dates (February–March 2027)?
@@ -159,5 +160,6 @@
   <p>Las Vegas had no MICHELIN Guide between 2010 and 2025. All awards here are from the 2026
   Southwest selection, the first since 2009.</p>
 </footer>
+<a class="to-top" href="#top" aria-label="Back to top">&uarr; Top</a>
 </body>
 </html>

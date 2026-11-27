@@ -86,6 +86,7 @@ def page(active, title, subtitle, body, lead=""):
     <nav>{nav(active)}</nav>
   </div>
 </header>
+<a id="top"></a>
 <main class="wrap">
   <div class="pagehead">
     <h1>{e(title)}</h1>
@@ -100,6 +101,7 @@ def page(active, title, subtitle, body, lead=""):
   <p>Las Vegas had no MICHELIN Guide between 2010 and 2025. All awards here are from the 2026
   Southwest selection, the first since 2009.</p>
 </footer>
+<a class="to-top" href="#top" aria-label="Back to top">&uarr; Top</a>
 </body>
 </html>
 """
@@ -358,7 +360,8 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   On 26 Nov, Booking.com's own Venetian page showed the same 60 m² suite at US$5,185 for 15–22 Feb and €4,472 for
   8–15 Mar, both including taxes and fees, so the stored Venetian figures are withdrawn (F-39). The other rows
   are not reproduced (F-44). Presidents' Day (15 Feb 2027) is a verified calendar fact; whether it moves prices is not
-  established. See <a href="questions.html#Q-06">Q-06</a> for how to close it.</p> Compare the exact named room, fees, taxes, cancellation terms and dates on each property's own booking page before booking.</p>
+  established. See <a href="questions.html#Q-06">Q-06</a> for how to close it.
+  Compare the exact named room, fees, taxes, cancellation terms and dates on each property's own booking page before booking.</p>
 </section>
 
 <section class="panel">
@@ -408,6 +411,9 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 def build_restaurants():
     order = {"starred": 0, "bib": 1, "recommended": 2}
     rs = sorted(RES["restaurants"], key=lambda r: (order[r["award_class"]], r["name"]))
+    # derived, never typed: how many venues carry a price read from their own menu
+    _priced = [r for r in rs if r.get("price_2adults")]
+    n_priced = len(_priced)
 
     def cls(r):
         return {"starred": "star", "bib": "bib", "recommended": "rec"}[r["award_class"]]
@@ -451,10 +457,23 @@ def build_restaurants():
 </div>
 <p class="note">Award labels are the 2026 MICHELIN Guide's three tiers, shown separately so an unstarred listing
 can never be mistaken for a starred one. <strong>"On request"</strong> means the venue publishes no price — it is not
-a missing entry and it is not an average. Only three restaurants print a real per-person figure.</p>
+a missing entry and it is not an average. <strong>{n_priced} of {N_TOTAL}</strong> venues now carry a couple price
+read from their own menu (the arithmetic is shown under <a href="#costs">What dinner for two actually costs</a>);
+the remaining <strong>{N_TOTAL - n_priced}</strong> publish no price and stay blank.</p>
 """
 
     counts = RES["meta"]["counts"]
+    # how each read price was obtained
+    price_rows = "".join(
+        f'''<tr><td><a href="{e(r["official_url"])}" target="_blank" rel="noopener">{e(r["name"])}</a>'''
+        + (' <span class="warn">closed</span>' if str(r.get("days","")).lower().startswith("closed") else "")
+        + '</td>'
+        f'<td><span class="badge {cls(r)}">{e(r["award"])}</span></td>'
+        f'<td class="num"><strong>{e(r["price_2adults"])}</strong></td>'
+        f'<td class="tiny">{e(r.get("price_calc") or r.get("price_note") or "")}</td>'
+        f'<td class="tiny"><a href="{e(r.get("price_source") or r["official_url"])}" target="_blank" rel="noopener">venue menu</a> <span class="muted">checked {e(r.get("price_checked") or "—")}</span></td></tr>'
+        for r in sorted(_priced, key=lambda r: (0 if r["award_class"] == "starred" else 1, r["name"]))
+    )
     body = f"""
 <section class="panel">
   <h2>What "MICHELIN" means here</h2>
@@ -477,18 +496,23 @@ a missing entry and it is not an average. Only three restaurants print a real pe
 
 <section class="panel">
   <h2 id="costs">What dinner for two actually costs</h2>
-  <p>Only three venues publish a number, and two of them are outside the starred group:</p>
-  <ul class="tight">
-    <li><strong>Michael Mina</strong> — $295++ per person, 10-course tasting → <strong>$590++</strong> for two,
-      <strong>but the venue is currently closed</strong>: its own Bellagio page reads &ldquo;Monday to Sunday: Closed&rdquo;
-      and labels it <em>Temporarily closed</em>, with no reopen date published. Treat this as a price for a service that
-      is not running, not as a bookable dinner (<a href="flagged.html#F-23">F-23</a>).</li>
-    <li><strong>KAME Omakase</strong> — $500 per person, signature omakase → <strong>$1,000++</strong> for two.</li>
-    <li><strong>Anima by EDO</strong> — $85 per person tasting → <strong>$170++</strong> for two.</li>
-  </ul>
-  <p>The four <em>starred</em> rooms are all "price on request". A couple planning a stars-heavy week should expect
-  the starred nights to be the largest line in the budget after the hotel, and should plan on reserving
-  before booking the room — <a href="suggestions.html">S-04</a>.</p>
+  <p><strong>{n_priced} of {N_TOTAL}</strong> venues now print a price that can be read from the venue's own menu,
+  and each row below shows the arithmetic that produced the figure. <strong>{N_TOTAL - n_priced}</strong> venues
+  publish no price at all; those cells stay blank and are listed as unverified rather than estimated.</p>
+  <div class="scroll">
+  <table class="data">
+  <thead><tr><th>Venue</th><th>Tier</th><th>Cost for 2 adults</th><th>How the figure was obtained</th><th>Source</th></tr></thead>
+  <tbody>{price_rows}</tbody>
+  </table>
+  </div>
+  <p class="note"><strong>Read this before budgeting.</strong> Every figure is <em>before tax, gratuity and wine</em>
+  unless the venue prints otherwise; a tasting-menu quote does not include drinks, and several venues add automatic
+  gratuity to tasting menus. Venues marked <strong>closed</strong> are priced for a service that is not running.
+  Where a venue prints no menu price the cell says <em>on request</em> — that is the honest answer, not an average.</p>
+  <p>Two consequences for planning. First, the <em>starred</em> rooms are the most expensive nights and not all of
+  them publish prices, so reserve before booking the room (<a href="suggestions.html">S-04</a>). Second, the
+  cheapest MICHELIN-recognised dinner on this list is SoulBelly BBQ at <strong>$80 for two</strong>, and several
+  Bib Gourmand / Recommended rooms land under $200 for two — a stars-only week is a choice, not a necessity.</p>
 </section>
 """
     return page("restaurants.html", "MICHELIN restaurants",
@@ -1011,7 +1035,7 @@ def build_repo_review():
         ("Restaurants with no couple price", n_price, "blank — not verified"),
         ("Restaurants with no hours recorded", n_hours, "blank — not verified"),
         ("Restaurant rows marked verified = yes", n_ver, "the label describes the listing, see R-01"),
-        ("Restaurants with an Instagram link", n_ig, "none recorded in the data (F-19)"),
+        ("Restaurants with an Instagram link", n_ig, "profile fetched and matched 2026-11-27 (F-19 closed in part)"),
         ("Restaurants with a TikTok link", n_tt, "none recorded in the data (F-19)"),
         ("Restaurants with at least one YouTube link", n_yt, "recorded, not opened this session"),
         ("Hotels (rows)", len(H), "32 properties"),
