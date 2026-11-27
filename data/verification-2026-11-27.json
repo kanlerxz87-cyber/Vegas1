@@ -477,6 +477,22 @@
       "social": [],
       "check": "Official source opened; only explicit fields below confirmed.",
       "price_note": "Free live entertainment only; not a blanket free-admission promise for every special event."
+    },
+    "bellagio-fountains": {
+      "name": "Fountains of Bellagio",
+      "source": "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html",
+      "check": "Freshly fetched official Bellagio page on 27 Nov after upstream added this candidate; free admission, schedule and weather exceptions reproduced. Not a dated performance guarantee.",
+      "days": "Daily",
+      "hours": "Mon-Fri: every 30 min 3:00-7:30 PM, every 15 min 8:00 PM-midnight. Sat, Sun & holidays: every 30 min 12:00-7:30 PM, every 15 min 8:00 PM-midnight.",
+      "exceptions": "Schedule may vary; outdoor display subject to cancellation due to weather. Holidays follow the noon-start schedule; do not assume all Mondays start at 3 PM.",
+      "price_options": [
+        {
+          "label": "Free outdoor display",
+          "per_person": 0
+        }
+      ],
+      "price_note": "Official page: absolutely free for any visitor.",
+      "social": []
     }
   },
   "hotels": {
@@ -909,6 +925,30 @@
         "https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s",
         "https://www.rtcsnv.com/ways-to-travel/fares-passes/"
       ]
+    }
+  ],
+  "hotel_engine_observations": [
+    {
+      "hotel": "Resorts World Las Vegas — Hilton tower",
+      "source": "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0",
+      "checked": "2026-11-27",
+      "room": "Deluxe Room - One King Bed",
+      "dates": "15–22 February 2027 · 7 nights · URL: 2 adults, 0 children; page: 2 Guests",
+      "displayed_total": 2200.15,
+      "room_nights": [
+        159,
+        348.75,
+        348.75,
+        228.75,
+        186.75,
+        186.75,
+        96.75
+      ],
+      "room_tax": 208.13,
+      "resort_fees": 385,
+      "resort_fee_tax": 51.52,
+      "alternative": "Deluxe Room - Two Queen Beds: displayed total $2,434.84.",
+      "limits": "Freshly reproduced upstream itemised engine observation, not a completed checkout. Private bathroom exclusivity, cancellation/deposit and promotion eligibility not extracted. Browser-unsupported notice present; calendar has conflicting fee-inclusion labels. Not a fully qualifying offer or cheapest-date proof."
     }
   ]
 }

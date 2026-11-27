@@ -53,7 +53,7 @@ class SiteTests(unittest.TestCase):
     def test_all_source_rows_present(self):
         self.assertEqual(set(site.E['restaurants']),{r['id'] for r in site.RES})
         self.assertEqual(len(site.E['hotels']),33)
-        self.assertEqual(len(site.E['activities']),5)
+        self.assertEqual(len(site.E['activities']),6)
         for key in ['restaurants','activities','hotels']:
             name={'restaurants':'restaurants.html','activities':'activities.html','hotels':'hotels.html'}[key]
             self.assertTrue(set(site.E[key]).issubset(set(self.docs[name].ids)))
@@ -96,6 +96,19 @@ class SiteTests(unittest.TestCase):
         self.assertIn('$42.00',self.pages['activities.html'])
         self.assertIn('$75.90',self.pages['activities.html'])
 
+    def test_itemised_observation_and_retained_upstream_work(self):
+        from decimal import Decimal
+        o=site.E['hotel_engine_observations'][0]
+        amount=sum(Decimal(str(x)) for x in o['room_nights'])
+        amount+=sum(Decimal(str(o[k])) for k in ['room_tax','resort_fees','resort_fee_tax'])
+        self.assertEqual(amount,Decimal(str(o['displayed_total'])))
+        self.assertIn('$2,200.15',self.pages['pricing.html'])
+        self.assertIn('bellagio-fountains',self.docs['activities.html'].ids)
+        for a in site.load('activities.json')['activities']:
+            for u in a.get('youtube',[]):self.assertIn(u,self.docs['activities.html'].links)
+        for x in site.load('site-suggestions.json')['suggestions']:
+            self.assertIn(x['id'],self.docs['suggestions.html'].ids)
+
     def test_schedule_corrections_and_flags(self):
         self.assertIn('9 AM–9 PM',site.E['activities']['mob-museum']['hours'])
         self.assertIsNone(site.E['activities']['high-roller']['hours'])
@@ -124,7 +137,7 @@ class SiteTests(unittest.TestCase):
         with self.assertRaises(ValueError):site.table(['a'],[['x','y']],'bad')
 
     def test_generated_root_docs_parity(self):
-        self.assertEqual(len(self.pages),15)
+        self.assertEqual(len(self.pages),16)
         for name,content in self.pages.items():
             self.assertEqual((ROOT/name).read_text(),content)
             self.assertEqual((ROOT/'docs'/name).read_text(),content)

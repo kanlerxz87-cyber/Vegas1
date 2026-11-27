@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Validate primary evidence, without rewriting historical model outputs.
 
-T20 withdraws the unsupported 20/60-minute hotel scoring from decision views.
+T-ec1d72e2 withdraws the unsupported 20/60-minute hotel scoring from decision views.
 The old source matrix/counts remain in Git as explicitly historical research.
 """
 import json

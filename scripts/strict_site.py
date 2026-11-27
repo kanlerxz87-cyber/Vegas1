@@ -27,7 +27,7 @@ MONO = 'https://www.lvmonorail.com/ticket-information/'
 RES = load('restaurants.json')['restaurants']
 NAV = [('index.html', 'Overview'), ('hotels.html', 'Hotels'),
        ('restaurants.html', 'Michelin dining'), ('dining.html', 'Dining costs'), ('activities.html', 'Activities'),
-       ('transit.html', 'Transport'), ('questions.html', 'Questions'),
+       ('transit.html', 'Transport'), ('itinerary.html', 'Proposed itinerary'), ('questions.html', 'Questions'),
        ('suggestions.html', 'Suggestions'), ('flagged.html', 'Flagged for Review'),
        ('sources.html', 'Evidence'), ('repo-review.html', 'Repo review')]
 esc = html.escape
@@ -113,6 +113,14 @@ def social(rec, id=None, category=None):
             output += ('<details><summary>Earlier session evidence (27 Nov; not refreshed here)</summary>'
                        + '<br>'.join(leads) + '<p class="tiny">' + evidence + '</p>'
                        + link(REPO+'data/socials.json', 'Original provenance record') + '</details>')
+    if category == 'activities':
+        raw = next((x for x in load('activities.json')['activities'] if x['id'] == id), {})
+        videos = raw.get('youtube', [])
+        if videos:
+            output += ('<details><summary>Earlier-session video checks (27 Nov)</summary><p>Upstream records YouTube oEmbed title/channel checks. Creator media is not evidence for price, awards or hours; not refreshed here.</p>'
+                       + '<br>'.join(link(u, 'YouTube media — prior-session check') for u in videos)
+                       + '<p>' + text(raw.get('social_note')) + '</p>'
+                       + link(REPO+'data/activities.json', 'Video provenance and caveats') + '</details>')
     return output
 
 
@@ -128,14 +136,13 @@ def prices(rec):
 def index():
     cards = [('24', 'Michelin listings', '4 starred · 3 Bib Gourmand · 17 Recommended'),
              ('7–14', 'Nights allowed', 'Working scenario: 15–22 February 2027'),
-             ('0', 'Verified all-in hotel quotes', 'No price winner or cheapest week declared'),
+             ('0', 'Fully qualified hotel offers', 'No price winner or cheapest week declared'),
              ('Open', '≤60-minute route test', 'No hotel-level bus ranking is verified')]
     tiles = '<section class="grid4">' + ''.join(f'<div class="card"><div class="big">{v}</div><div class="lbl">{k}</div><p>{d}</p></div>' for v,k,d in cards) + '</section>'
     body = panel('Executive summary', '''<p><strong>Keep 15–22 February 2027 as a planning scenario, not a booked recommendation.</strong>
 Your preferred 15–18 February window is only three nights; it cannot also satisfy a one-to-two-week holiday.
 Extending the preferred arrival to seven nights avoids inventing a new arrival preference. <a href="pricing.html">Compare date scenarios</a> and <a href="costs.html">total-trip cost gates</a>. A 14-night alternative is 15 February–1 March.</p>
-<p><strong>There is no defensible “best hotel” or “cheapest time to book” yet.</strong> Official engines did not yield an unambiguous,
-all-in seven-night checkout total with confirmed room and party size. Historical OTA prices and zone estimates have been removed from primary decision tables.</p>
+<p><strong>There is no defensible “best hotel” or “cheapest time to book” yet.</strong> No offer yet combines a verified total with every required room qualification and booking term. Resorts World has a reproduced itemised engine display; see <a href="pricing.html">its total and missing conditions</a>. Historical OTA prices and zone estimates have been removed from primary decision tables.</p>
 <p>Michelin’s 31 August 2026 announcement supports all 24 Las Vegas listings below. Stars belong to restaurants, not hotels;
 Bib Gourmand and Recommended do <em>not</em> mean starred. 2027 awards and reservation availability are not established.</p>''' + link(M, 'Read Michelin’s full official selection'))
     body += tiles
@@ -218,7 +225,7 @@ def activities():
         if a.get('menu_source'):sources+='<br>'+link(a['menu_source'],'Official tickets')
         rows.append([text(a['name']),text(a['days'])+'<br>'+text(a['hours']),text(a['exceptions']),prices(a)+'<br><small>'+esc(a.get('price_note','Total for requested date unverified.'))+'</small>',social(a,id,'activities'),sources])
     body=panel('Current information versus a 2027 ticket', '<p>Only Neon Museum explicitly labels the quoted admission product “2027”. Other published prices are current starting prices, not a locked 2027 checkout quote. Each displayed amount is a two-adult subtotal; processing fees and taxes are not guessed. No hotel-to-activity journey has been verified under 60 minutes.</p>')
-    body+=table(['Activity','Days / hours','Exceptions / limitations','Subtotal, 2 adults','Watch / social','Official source'],rows,'Five activity candidates',list(E['activities']))
+    body+=table(['Activity','Days / hours','Exceptions / limitations','Subtotal, 2 adults','Watch / social','Official source'],rows,'Six activity candidates',list(E['activities']))
     return page('activities.html','Activities without the guesswork','Opening information, exceptions, two-adult subtotals and source-linked social profiles.',body)
 
 
@@ -249,6 +256,11 @@ def pricing():
 It states a one-night room-and-tax deposit and a cancellation deadline 72 hours before arrival. These are the checked offer’s terms, not universal hotel policies.</p>
 <p><strong>Suggested action:</strong> evaluate the offer before 4 December only if Wynn fits the budget and a valid checkout quote/occupancy can be obtained.
 There is no evidence that this is the lowest price you will ever see. The page exposes rounded average-night rates but not an unambiguous final seven-night total; those averages are not multiplied into a purported exact total.</p>''' + link(E['hotels']['wynn']['source'],'Official dated Wynn offer & terms'))
+    o=E['hotel_engine_observations'][0]
+    body+=panel('Resorts World: reproduced itemised engine observation',
+        '<p>Discovered in upstream official-rate research and independently reproduced 27 November. This is not a completed or fully qualifying checkout.</p>'
+        +table(['Property / room','Dates / party','Displayed seven-night total','Published components','Limits / alternative','Official source'], [[text(o['hotel']+' / '+o['room']),text(o['dates']),f"${o['displayed_total']:,.2f}",
+        'Seven room nights $1,555.50 + room tax $208.13 + resort fees $385.00 + resort-fee tax $51.52.',text(o['limits']+' '+o['alternative']),link(o['source'])]],'Official engine display, not a qualified booking recommendation'))
     body+=panel('Quote acceptance checklist', '''<p>Same named room; two adults/one room; guaranteed queen-or-larger; exclusive bathroom; exact seven nights; currency; base total; mandatory resort fee; all taxes; total due; refundable/nonrefundable terms; deposit; loyalty eligibility; retrieval time.</p>
 <p>Neither a property home page, an OTA search list nor “$X/night” without a precise checkout breakdown clears that gate. See <a href="flagged.html#EC-02">EC-02</a>.</p>''')
     return page('pricing.html','Dates & booking timing','Explicit date scenarios, a verified offer deadline, and no fabricated seven-night totals.',body)
@@ -298,6 +310,9 @@ def suggestions():
 Evidence corrections and the mobile layout are implemented; ranking substitutions, new budgets, automation services and purchases are not.</p>
 <p><strong>Suggested sequence:</strong> establish duration → collect qualifying checkout quotes → test exact bus routes → compare total cost and dining availability → select a refundable option if its actual terms are acceptable.</p>''')
     body+=table(['ID','Improvement','Priority','State','Proposed next step','Trade-off / missing gate','Official context'],rows,'Reviewable suggestions, not auto-approved decisions',[s[0] for s in SUGGESTIONS])
+    extra=load('site-suggestions.json')['suggestions']
+    body+=panel('Earlier-session website improvement backlog', '<p>Retained for review, not implemented or adopted. Proposal text may contain superseded assumptions; the primary evidence tables take precedence. No purchase or reservation order is approved by inclusion here.</p>'
+        +table(['ID / proposal','Expected benefit','Proposed work','Risk / decision needed','Status','Official context'], [[text(x['id']+' / '+x['title']),text(x['improves']),text(x['work']),text(x['risk'])+'<br>Decision needed: '+text(x['decision_needed']),text(x['status']),link(M)] for x in extra], 'Prior-session website suggestions', [x['id'] for x in extra]))
     return page('suggestions.html','Suggestions to review','A decision backlog with explicit benefits, costs and prerequisites; nothing here spends money or invents approval.',body)
 
 
@@ -309,14 +324,14 @@ def sources():
             detail=r.get('check','Only the populated fields were confirmed; blanks remain unverified.')
             if cat=='restaurants':detail+=' Award and address checked against Michelin. Current schedule only where populated.'
             rows.append([text(cat),text(name),text(detail),link(r['source'])+(('<br>'+link(M,'Michelin award/location')) if cat=='restaurants' else '')])
-    body=panel('What was actually verified', '''<p>Checked 27 November 2026 with official pages. All 24 award tiers and Michelin-listed addresses were compared individually to the official selection. Venue pages were opened for all 24 restaurants and five activities; only extracted fields enter the primary views.
+    body=panel('What was actually verified', '''<p>Checked 27 November 2026 with official pages. All 24 award tiers and Michelin-listed addresses were compared individually to the official selection. Venue pages were opened for all 24 restaurants and six activities; only extracted fields enter the primary views.
 Five hotel candidates have fresh official room/contact/engine evidence, while other hotel links are inherited and explicitly not claimed rechecked. Fetching a restaurant page at a hotel is not a hotel room/rate check.</p>
-<p><strong>Not verified:</strong> complete all-in seven-night hotel totals, a global cheapest stay window, the optimal future purchase day, exact bus routes, 2027 reservation availability, private-use promises for every room and all social destinations.</p>
+<p><strong>Not verified:</strong> fully qualifying seven-night hotel checkout offers (a Resorts World itemised engine display is reproduced on Dates &amp; booking timing), a global cheapest stay window, the optimal future purchase day, exact bus routes, 2027 reservation availability, private-use promises for every room and all social destinations.</p>
 <p>All check results are published in the field-specific <a href="https://github.com/kanlerxz87-cyber/Vegas1/blob/main/data/verification-2026-11-27.json">machine-readable evidence ledger</a>.
 This is a curated record of retrieved page text, not a claim that every website or archived record has been fully verified.</p>''')
     body+=table(['Category','Entry','Check result / limits','Official reference'],rows,'Row-by-row evidence coverage')
     body+=panel('Historical research — audit only', '''<p>Earlier datasets, quote captures and independent subsites remain intact. They contain estimates, conflicting hours, withdrawn rates and older verification labels;
-they must not be used as current verified decision tables. They are preserved so parallel-session work is not discarded.</p>''' + ''.join('<p>'+link(REPO+x,x)+'</p>' for x in ['data/hotels.json','data/transit.json','data/price-windows.json','data/restaurants.json','data/activities.json','data/review.json','data/review-flags.json','FLAGS.md','COORDINATION.md']))
+they must not be used as current verified decision tables. They are preserved so parallel-session work is not discarded.</p>''' + ''.join('<p>'+link(REPO+x,x)+'</p>' for x in ['data/hotels.json','data/transit.json','data/price-windows.json','data/restaurants.json','data/activities.json','data/review.json','data/review-flags.json','data/official-rates.json','data/site-suggestions.json','FLAGS.md','COORDINATION.md']))
     return page('sources.html','Evidence & verification coverage','Field-level confidence, official links, retrieval date and limitations for every candidate.',body)
 
 
@@ -382,8 +397,16 @@ def costs():
     return page('costs.html','Total-trip cost gates','A complete cost model that does not disguise missing prices as zero.',body)
 
 
+def itinerary():
+    overview=index()
+    start=overview.index('<section class="panel"><h2>A flexible seven-night outline')
+    end=overview.index('</section>',start)+len('</section>')
+    return page('itinerary.html','Proposed itinerary — review first','15–22 February is a provisional scenario, not an approved date change or reservation.',
+                overview[start:end]+panel('Evidence gates, not promises','<p>Published weekdays do not prove 2027 availability. No restaurant slot is “proven open” for the trip; no journey is timed. Bellagio Fountains are free with a variable weather-dependent schedule. Consult <a href="activities.html#bellagio-fountains">fresh official evidence</a>, <a href="restaurants.html">venue details</a> and <a href="pricing.html">checkout gaps</a> before fixing a day.</p>'))
+
+
 def render():
-    pages={'index.html':index(),'hotels.html':hotels(),'restaurants.html':restaurants(),'activities.html':activities(),
+    pages={'index.html':index(),'itinerary.html':itinerary(),'hotels.html':hotels(),'restaurants.html':restaurants(),'activities.html':activities(),
            'transit.html':transit(),'dining.html':dining(),'costs.html':costs(),'pricing.html':pricing(),'questions.html':questions(),'suggestions.html':suggestions(),
            'flagged.html':flagged(),'sources.html':sources(),'repo-review.html':repo_review()}
     pages['summary.html']=page('summary.html','Executive summary','The concise decision view for two adults, 2027.',panel('Start here','<p>The executive summary is on the <a href="index.html">Overview</a>. No hotel rate winner or bus ranking is verified. Use <a href="hotels.html">hotel candidates</a>, <a href="pricing.html">dated scenarios</a>, and <a href="questions.html">decision gates</a>.</p>'))

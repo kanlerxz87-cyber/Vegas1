@@ -642,6 +642,35 @@ superseded activity dataset. No commit from any other branch was rewritten.
 && python3 scripts/check_evidence.py` → 13 pages · 0 failures · 0 warnings; evidence regression PASS; root and
 `docs/` byte-identical (`cmp` per page). No CI workflows are configured on this repo.
 
+## Session record — arena/c7c75f9a-vegas1 (T17) — 2026-11-27 — merge of main, part 3
+
+**Main moved while T17 was in progress.** `origin/main` advanced from `8fbf850` to `5d422eb`
+(PRs #39/#41/#42/#43/#45/#46/#48), including a rewrite of `scripts/gen_site.py` (−545 lines),
+a new evidence standard, and flag IDs up to **F-63**. Merged as `1815919`.
+
+**The conflict was substantive, not textual.** Two sessions independently reached the same
+conclusions and one of them went further:
+
+| Finding | My branch | main | Resolution |
+|---|---|---|---|
+| Mob Museum Thursday hours | F-56: corrected to 9–9 | F-62: same correction | **main wins**; F-56 is now a main-owned ID, my duplicate entry was dropped |
+| High Roller hours | published the full schedule | F-63: withheld as internally contradictory | **main wins**; two schedules on one page is not a verified schedule |
+| Hotel prices | captured 3 official engines | F-58: blank all unofficial prices | **both kept**: main's table stays blank, mine is published as a separately labelled official sub-table |
+| Travel times | printed "~25 min from base" per venue | F-59: zone model suspended | **main wins**; the itinerary now groups by district and says times are unverified |
+| Bellagio Fountains | verified from Bellagio's page, promoted | listed under `not_verified` (fetch had failed) | **mine wins**; main's failure was a transient fetch error, and the page was subsequently read |
+
+**What I did not do:** hand-merge the eleven conflicted generated HTML files. They are build
+output, so the generator was rebuilt from main's version with only my additions re-applied
+(`itinerary.html`, the official-rates Hotels section, `W-01`…`W-10`, activity anchor IDs) and
+every page regenerated. Hand-editing generated HTML is the rule this repo already has.
+
+**Standing caution recorded for the next session:** `git checkout --ours scripts/gen_site.py`
+silently reverted the generator to my pre-merge version and dropped main's F-58/F-59 work, while
+still building cleanly with 0 failures. A clean build is not proof the merge was correct. Verify
+that specific upstream flags survive (`grep -c F-58 scripts/gen_site.py`) after any conflicted merge.
+
+**Build:** 14 pages · 0 failures · 0 warnings.
+
 ## Session record — arena/c045ad05-vegas1 (T17) — 2026-11-27
 
 **Scope used:** `data/socials.json` (new), `data/restaurants.json`, `data/activities.json`, `scripts/check_links.py`
@@ -728,6 +757,70 @@ Checks repeated after the second merge: `build.py`, `gen_site.py`, `validate.py`
 `check_evidence.py` **PASS**; `check_links.py` reports Instagram blocks (expected — the platform refuses automated
 requests) and is not a pass/fail gate.
 
+### Third pass — post-merge rendering fix (arena/c045ad05-vegas1, 2026-11-27)
+
+After the #49 merge (commit `05b0361`), the live `activities.html` was read back from the deployed site and one
+rendering defect was found that no validator could catch: on the activities provenance table, this session's
+`social_evidence` and the T18 session's `social_note` were concatenated with **no separator**, producing text like
+"… 'The Wizard of Oz at Sphere' playlists.Instagram @spherevegas is the account …". Two independent sources of truth
+had been merged into one cell without a boundary.
+
+Fixed in `scripts/gen_site.py`: the note is now shown only when a row has no evidence of its own (they largely repeat
+each other), and multiple fragments are joined with an explicit `<br>` so two sentences can never run together.
+**No data value changed** — this was purely a rendering boundary. Re-verified: 15 pages, 0 failures, 0 warnings.
+
+---
+
+### Post-merge live check — T19 follow-up (2026-11-27)
+
+[PR #44](https://github.com/kanlerxz87-cyber/Vegas1/pull/44) **MERGED** 2026-11-27T17:41:44Z, merge commit
+`af5e762177e7ec3a567360998333c6b423180e67`. Pages build for that commit reached **built** with `error: null`
+and `pages.status = built`.
+
+Fetching the live pages with a cache-busting query (`?v=af5e762`) confirmed:
+
+- `dining.html` served the three totals — **$712.30 / $1,025.06 / $1,855.06** — and the page's "no hotel figure"
+  statement;
+- `restaurants.html` served the Guy Savoy estimate with its menu link, Anima's `$170 (exact)`, Esther's Kitchen's
+  estimate and its `Daily / times not published` row, and the 21 Instagram links.
+
+**One bug was found by reading the live page, and fixed here:** the RTC row printed **$6.00** instead of $120.00.
+The generator parsed the fare note with `split("3-day")`, which after another session reworded the note was
+followed by "Nevada local fares are $1" — so it multiplied the *residential* fare. Replaced with a label-anchored
+regular expression that reads the amount attached to the label ("$20 3-day"), and `check_evidence.py` now asserts
+both `$120.00` (RTC) and `$119.90` (Monorail) appear. The three dining totals were unaffected because they use the
+Monorail line. This is recorded rather than quietly patched: a live-page read found what the offline validator could not.
+
+### Final publication record — T19 (2026-11-27)
+
+| PR | Head → base | Result | Merge commit | Contents |
+|----|-------------|--------|--------------|----------|
+| [#44](https://github.com/kanlerxz87-cyber/Vegas1/pull/44) | `arena/f6104931-vegas1` → `main` | **MERGED** 2026-11-27T17:41:44Z | `af5e762` | Menu re-read (7 venues priced from their own pages), `dining.html`, F-64–F-66, C-11–C-17, validation of the evidence gate in `check_evidence.py` |
+| [#50](https://github.com/kanlerxz87-cyber/Vegas1/pull/50) | `arena/f6104931-vegas1` → `main` | **MERGED** 2026-11-27T17:47Z | `3191606` | Fixes the RTC pass total (§ above) and records this deployment |
+
+**Pages deployment:** build for `3191606d85c3d32b18ba46f988ca9a98487ddbe4` reached **built** with `error: null`;
+`pages.status = built`, source `main:/`. Verified by fetching the live pages with a cache-busting query
+`?v=3191606`: `dining.html` shows **$712.30 / $1,025.06 / $1,855.06** and the **$120.00** RTC line, and
+`restaurants.html` shows the menu-linked price cells.
+
+**Concurrency note for the next session:** `main` advanced three times during this branch's life (PRs #39–#43,
+then #45/#46/#48). Every merge was resolved by regenerating HTML rather than hand-merging it, and no other
+session's data was reverted. The one deliberate reversal of an earlier decision — reinstating a *labelled estimate*
+for Guy Savoy — is recorded as F-64 with its source and keeps the $3,000 Krug figure withdrawn.
+### T17 addendum — video-link verification (arena/a00dc828-vegas1, 2026-11-27)
+
+- Resolved **every published activity video ID** through YouTube's **oEmbed** endpoint (returns live title + channel). One ID carried in the data from an earlier capture — Fremont `Tls27qeAPaw` — **did not resolve** and was replaced with `KDARquYGk_M`, a video on the venue's own channel (`@vegasfremontstreet`). Logged as **F-67**.
+- Added verified creator videos alongside the venue channel for Sphere and the Mob Museum (each ID returned a live title + channel). The brief asks for **as many** verified video links as possible, so these are additive; they are labelled creator media and never used as evidence for hours, prices or awards.
+- Spot-checked starred-restaurant videos via oEmbed (Joël Robuchon, L'Atelier, Guy Savoy, é by José Andrés) — live and on-topic. One L'Atelier video titles the restaurant "3 Michelin-starred" against the Guide's 1 star; recorded in F-67 rather than copied.
+- **Method limit:** `scripts/validate.py` makes **no HTTP requests**; a green build proves structure only. The oEmbed pass is what proves video links are live.
+- **Irregularity observed, not fixed here (needs the owning session):** `FLAGS.md` on `main` currently contains **duplicate register rows** — F-52, F-53, F-54, F-55, F-56 and F-57 each appear twice (two different merge trains appended the same IDs). Rows were left untouched; deduplicating means deciding which wording survives, which belongs to the flags owner. Request: dedupe before the register is treated as stable.
+- Concurrency: this branch was rebased onto `main` repeatedly while open (PRs #40–#53 merged by other sessions). Conflicts were confined to this file, the flag register and generated pages; nothing from another session was dropped.
+- Resolved **every published activity video ID** through YouTube's **oEmbed** endpoint (returns live title + channel). One ID carried in the data from an earlier capture — Fremont `Tls27qeAPaw` — **did not resolve** and was replaced with `KDARquYGk_M`, a video on the venue's own channel (`@vegasfremontstreet`). Logged as **F-67** (F-54–F-66 were assigned by other sessions while this branch was open).
+- Added verified creator videos alongside the venue channel for Sphere and the Mob Museum (each ID returned a live title + channel from oEmbed). The brief asks for **as many** video links as can be verified, so these are additive; they are labelled creator media and are never used as evidence for hours, prices or awards.
+- Spot-checked starred-restaurant videos via oEmbed (Joël Robuchon, L'Atelier, Guy Savoy, é by José Andrés) — all live and on-topic. One L'Atelier video titles the restaurant "3 Michelin-starred" against the Guide's 1 star; recorded in F-67 rather than copied.
+- **Method limit:** `scripts/validate.py` makes **no HTTP requests**, so a green build proves structure only. The oEmbed pass (and page fetches) is what proves a link is live.
+- Concurrency: this branch was rebased onto `main` repeatedly while it was open (PRs #39, #43, #47 pending, #40–#52 merged by other sessions). Conflicts were confined to `COORDINATION.md`, `FLAGS.md` row IDs and generated pages; nothing from another session was dropped.
+
 ## Session claim — arena/ec1d72e2-vegas1 (T-ec1d72e2) — 2026-11-27
 
 | ID | Task | Status | Owner | File scope |
@@ -757,3 +850,11 @@ Updated the established `check_evidence.py` entry point to run 11 standard-libra
 Browser attempt: Playwright + serverless Chromium installed only under `/tmp`; launch blocked by missing OS `libnspr4`, `libnss3`, `libnssutil3`. No visual/mobile rendering result is claimed. HTML responsive-table/viewport/label tests pass; a local preview binds 0.0.0.0:8000.
 
 Third pull-rebase replay was also aborted safely because shallow ancestry attempted to replay historical initial commits. Explicit integration merges and normal fast-forward pushes are used instead; no force push. New upstream main `5ceb3d6` will be integrated before publication; PR #54 is another session's active work and will not be merged/closed by this session.
+
+### T-ec1d72e2 third upstream integration and final checks
+
+Integrated main `5ceb3d6` including upstream video oEmbed provenance, website-suggestion backlog, official-engine capture dataset, Bellagio Fountains and itinerary category. Kept all canonical changes and legacy builders; strict outputs now have **16 pages / 6 activities**. Re-fetched Bellagio official page: free, daily, weekday 3 PM start versus weekends/holidays noon, variable/weather-cancellable. Re-fetched all three chunks of the exact Resorts World engine URL: Deluxe One King itemised $2,200.15 / Two Queens $2,434.84 for 15–22 Feb 2027, URL two adults/page two guests. Show those as reproduced engine observations, not a completed qualifying checkout: bathroom exclusivity, cancellation/deposit/eligibility not extracted; browser support and contradictory calendar fee labels disclosed. No inferred total or missing room guarantee filled.
+
+Conflict resolution preserves upstream board and both accounts of its video pass; upstream main had accidentally committed conflict delimiters in COORDINATION.md. Removed those delimiters, retaining both narratives. FLAGS keeps F-67 plus EC-01–07. Generated pages rebuilt; inherited optional itinerary remains explicitly proposed, not a claim of dated openings. Website suggestions retained as unapproved proposals with warning about superseded assumptions. Earlier checked activity videos are now visible with upstream provenance; not claimed freshly rechecked here. No active foreign PR was merged or closed.
+
+Browser limitation resolved without installing system packages: extracted bundled serverless Chromium NSS/NSPR libraries under `/tmp` and set process-local LD_LIBRARY_PATH. Playwright traversed **all 16 pages at 375px and 1280px**: HTTP 200, no page-level horizontal overflow, exactly one H1, disclosures functional, no page errors. Mobile overview/dining and desktop overview screenshots inspected. No browser binaries/screenshots added to Git. Previous failure is retained above as history, not the final test result.

@@ -17,8 +17,8 @@ A sourced planning dashboard for **two adults**, a **one–two week** trip withi
 
 | Path | Purpose |
 |---|---|
-| `docs/` and root `*.html`, `style.css` | Identical generated 15-page dashboard. Pages publishes `main:/`; both copies are generated together. Do not hand-edit. |
-| `data/verification-2026-11-27.json` | Field-level primary evidence overlay: 33 hotels, 24 restaurants, 5 activities; source links, caveats, EC-01–EC-07 flags. |
+| `docs/` and root `*.html`, `style.css` | Identical generated 16-page dashboard. Pages publishes `main:/`; both copies are generated together. Do not hand-edit. |
+| `data/verification-2026-11-27.json` | Field-level primary evidence overlay: 33 hotels, 24 restaurants, 6 activities; source links, caveats, EC-01–EC-07 flags. |
 | `data/{hotels,restaurants,activities,transit,price-windows}.json` | Preserved canonical research, including historical snapshots/estimates. Presence here does not make a value verified for the primary dashboard. |
 | `data/socials.json` | Earlier sessions' social-account provenance, shown with attribution and caveats, separate from fresh checks. |
 | `data/{questions,suggestions,review,review-flags}.json` | Prior question/suggestion backlogs and review logs, retained for audit. |
@@ -46,7 +46,7 @@ python3 scripts/check_evidence.py
 python3 -m unittest discover -s tests -v
 ```
 
-`.nojekyll` exists at root and in docs. The latest structural check reports **15 pages, 0 failures, 0 warnings, 461 external link occurrences**. Link occurrences are **not** a claim that 461 remote pages were reopened or are live. Tests check local correctness and evidence-display rules, not source truth or future availability.
+`.nojekyll` exists at root and in docs. The latest structural check reports **16 pages, 0 failures, 0 warnings, 506 external link occurrences**. Link occurrences are **not** a claim that 461 remote pages were reopened or are live. Tests check local correctness and evidence-display rules, not source truth or future availability.
 
 ## Evidence policy and remaining research
 
@@ -55,3 +55,9 @@ The current overlay/decision pages supersede earlier prose recommending modeled 
 Manual-review tasks and irregularities are published on **Flagged for Review**. Questions retain known answers, missing preferences and discovery actions. Optional improvements remain a **suggestions backlog**, not automatically implemented decisions. No payments or bookings have been made.
 
 Still required: matched official room checkout quotes with occupancy/bed/bath/fees/taxes/cancellation, a consistent date comparison, dated door-to-door bus journeys, future venue schedules and availability, and personal budget/diet/accessibility preferences. The dashboard exposes those limitations instead of filling them with estimates.
+
+### Latest integration observations
+
+Resorts World Hilton’s official engine was freshly reopened for 15–22 February 2027, two adults. The Deluxe One King display itemises **$2,200.15** including room tax, resort fees and resort-fee tax; the Two Queens display is **$2,434.84**. These are engine observations, not completed checkouts or fully qualified offers: exclusive bathroom, cancellation/deposit and promotion conditions remain unverified. The primary all-conditions decision total therefore stays blank; the observed amount and exact URL appear on `pricing.html`. Bellagio Fountains’ free admission, daily display times and weather exceptions were also freshly reproduced.
+
+Browser smoke check: all 16 pages served HTTP 200 at 375px and 1280px; no page-level horizontal overflow, JavaScript errors or missing H1; expandable provenance worked. Mobile and desktop screenshots were inspected. Browser dependencies and screenshots are temporary, not project runtime dependencies. This is layout testing, not verification of external websites.
