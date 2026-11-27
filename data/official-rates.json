@@ -91,5 +91,97 @@
     "It does NOT prove February is cheaper than March — no March window was re-read on these engines in this pass.",
     "It does NOT reproduce the Booking.com totals in the canonical table; the sources and fee bases differ (F-29/F-44).",
     "It cannot be compared with the Booking.com rows without adding the resort fee and 13.38% room tax to those rows."
-  ]
+  ],
+  "window_comparison": {
+    "question": "Is February (the preferred window) actually cheaper than later in the travel window?",
+    "method": "The SAME room (Deluxe Room - One King Bed, Hilton tower, Resorts World), the SAME booking engine, 7 nights, 2 adults, read in the SAME session on 2026-11-27, changing only the arrival date. Because nothing but the dates varies, the totals are directly comparable to each other.",
+    "engine": "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&nights=7&adults=2&children=0",
+    "basis": "All totals are all-in: nightly room rates + room tax + $385 resort fees + resort-fee tax, exactly as the engine itemised them.",
+    "windows": [
+      {
+        "check_in": "2027-02-15",
+        "check_out": "2027-02-22",
+        "nights": 7,
+        "total": 2200.15,
+        "room_tax": 208.13,
+        "resort_fees": 385.0,
+        "resort_fee_tax": 51.52,
+        "nightly": [
+          159.0,
+          348.75,
+          348.75,
+          228.75,
+          186.75,
+          186.75,
+          96.75
+        ],
+        "note": "The brief's preferred window. Contains the two most expensive nights of any window sampled ($348.75 on Tue 16 and Wed 17)."
+      },
+      {
+        "check_in": "2027-02-22",
+        "check_out": "2027-03-01",
+        "nights": 7,
+        "total": 2282.63,
+        "room_tax": 217.86,
+        "resort_fees": 385.0,
+        "resort_fee_tax": 51.52,
+        "nightly": [
+          119.25,
+          198.75,
+          228.75,
+          299.25,
+          159.0,
+          224.25,
+          399.0
+        ],
+        "note": "Most expensive of the four. Driven by a $399 night on Sun 28 Feb."
+      },
+      {
+        "check_in": "2027-03-08",
+        "check_out": "2027-03-15",
+        "nights": 7,
+        "total": 1646.57,
+        "room_tax": 142.8,
+        "resort_fees": 385.0,
+        "resort_fee_tax": 51.52,
+        "nightly": [
+          179.25,
+          179.25,
+          96.75,
+          96.75,
+          209.25,
+          209.25,
+          96.75
+        ],
+        "note": "Cheapest of the four by a wide margin: four nights at $96.75 or below."
+      },
+      {
+        "check_in": "2027-03-15",
+        "check_out": "2027-03-22",
+        "nights": 7,
+        "total": 1959.5,
+        "room_tax": 179.73,
+        "resort_fees": 385.0,
+        "resort_fee_tax": 51.52,
+        "nightly": [
+          228.75,
+          228.75,
+          228.75,
+          126.75,
+          246.75,
+          186.75,
+          96.75
+        ],
+        "note": "Mid-range. Also inside the brief's travel window (which ends 23 Mar 2027)."
+      }
+    ],
+    "what_this_establishes": "On this property, on this engine, on 2026-11-27, 8-15 March 2027 cost $1,646.57 all-in against $2,200.15 for the preferred 15-22 February — a $553.58 difference (25.2% less) for an identical room and identical stay length.",
+    "what_this_does_not_establish": [
+      "It is ONE property. It does not show that March is cheaper market-wide; other properties may price differently.",
+      "It is ONE capture moment. Rates move daily, and a promotional rate valid today may not exist tomorrow.",
+      "It does not prove booking earlier or later will be cheaper — no purchase-timing evidence exists (F-58).",
+      "The 8 March window is still inside the brief's 15 Feb - 23 Mar travel window, so this is a within-brief substitution, not a different trip.",
+      "It does not account for convention calendars, which can invert the ranking at other properties on the same dates."
+    ]
+  }
 }
