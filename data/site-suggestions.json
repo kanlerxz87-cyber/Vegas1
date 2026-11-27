@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "purpose": "Improvements to THIS SITE — not to the trip. Each item says what it would improve, the work, the risk of doing it, and whether it is blocked on something only the owner can decide. Nothing here is implemented unless status says so.",
+    "owner": "arena/c7c75f9a-vegas1 (T17)",
+    "last_updated": "2026-11-27",
+    "how_to_use": "Read the 'decision needed' rows first: those are the ones where two sensible paths exist and choosing wrongly costs rework. Everything else can be taken in any order."
+  },
+  "suggestions": [
+    {
+      "id": "W-01",
+      "title": "Put a single 'book this now' checklist above everything else",
+      "improves": "Decision speed. Today a reader has to visit Hotels, MICHELIN, Itinerary and Flagged to assemble the order of operations.",
+      "work": "One page listing, in order: (1) reserve Robuchon and é — they are the only slots that can sell out for the exact dates; (2) confirm the hotel on its own engine; (3) buy Neon/Mob/Fremont nothing (all can be same-day) except Sphere once its calendar exists.",
+      "risk": "Low. It adds a page, it does not change data.",
+      "decision_needed": false,
+      "impact": "high",
+      "status": "proposed"
+    },
+    {
+      "id": "W-02",
+      "title": "Show a live 'last verified' badge per table row, not per page",
+      "improves": "Trust. Some rows were re-verified 27 Nov 2026, others still carry 25 Nov values; a page-level date implies uniform freshness that does not exist.",
+      "work": "The data already stores `price_checked` / `hours_checked` / `social_checked` on the rows that were re-checked. Render them as a column or a small badge.",
+      "risk": "Low, but it will visibly show that many rows are older than others — which is the honest outcome.",
+      "decision_needed": false,
+      "impact": "high",
+      "status": "proposed"
+    },
+    {
+      "id": "W-03",
+      "title": "Replace the Booking.com hotel table with the official-engine table when coverage is enough",
+      "improves": "Meeting the brief's 'official verified pricing' standard. The canonical 32-hotel table is explicitly an OTA snapshot (F-29).",
+      "work": "Capture the same 7-night window on every property's own engine. Three were captured on 27 Nov 2026 (data/official-rates.json). 29 remain, and several engines refused automated access.",
+      "risk": "High effort, and the engines that refuse automated access would leave permanent blanks.",
+      "decision_needed": true,
+      "impact": "high",
+      "status": "proposed"
+    },
+    {
+      "id": "W-04",
+      "title": "Add a printable one-page pocket card",
+      "improves": "Use on the trip. The site is phone-friendly but every page is long.",
+      "work": "A print stylesheet plus a single page with: hotel address and confirmation line, the two starred reservations with phone numbers, and the three nearest transit stops.",
+      "risk": "Low. Print CSS can be added without touching any data.",
+      "decision_needed": false,
+      "impact": "medium",
+      "status": "proposed"
+    },
+    {
+      "id": "W-05",
+      "title": "Make the Flagged page filterable by severity and by whether it blocks a booking",
+      "improves": "Reviewability. There are 50+ flags; a reader cannot tell which ones actually matter before booking.",
+      "work": "Add a 'blocks booking?' field per flag and a filter. Requires deciding which flags block, which is a judgement call.",
+      "risk": "Medium: mislabelling a blocking flag as non-blocking is worse than no filter.",
+      "decision_needed": true,
+      "impact": "medium",
+      "status": "proposed"
+    },
+    {
+      "id": "W-06",
+      "title": "Add a trip budget calculator",
+      "improves": "The brief asks for cost comparisons; today the reader must add hotel + resort fee + tax + dinners by hand.",
+      "work": "A small no-JS-or-vanilla form that sums: chosen hotel's 7-night total (with the correct fee/tax basis per rows), the selected dinners' couple prices, and the activity tickets.",
+      "risk": "Medium: it would mix price bases (all-in vs before-tax) unless each line states its basis, which it can.",
+      "decision_needed": false,
+      "impact": "medium",
+      "status": "proposed"
+    },
+    {
+      "id": "W-07",
+      "title": "Record TikTok properly or drop the column",
+      "improves": "Honesty. TikTok is verified for 1 of 24 restaurants and 1 of 6 activities, so the column is mostly dashes.",
+      "work": "Either search TikTok per venue and publish only confirmed official accounts, or merge the three social columns into one 'watch' column that names the platform.",
+      "risk": "Low, but dropping the column weakens the brief's 'YouTube, TikTok or Instagram' requirement, which Instagram now satisfies for 16 of 24.",
+      "decision_needed": true,
+      "impact": "low",
+      "status": "proposed"
+    },
+    {
+      "id": "W-08",
+      "title": "Two-hotel split stay instead of one base",
+      "improves": "Travel time: Chinatown and downtown are 20–25 minutes from every Strip hotel. A second base would cut that.",
+      "work": "The transit matrix already holds every zone pair, so the comparison can be computed without new research.",
+      "risk": "Medium: a split stay adds a check-out/check-in day and usually costs more than one 7-night block.",
+      "decision_needed": true,
+      "impact": "medium",
+      "status": "proposed"
+    },
+    {
+      "id": "W-09",
+      "title": "Stop re-deriving counts in prose",
+      "improves": "Accuracy over time. This session found prose that said 'only three restaurants print a price' when it was four, and a footnote that would have gone stale the moment prices were added.",
+      "work": "Compute every count from the JSON at build time (partly done this session for the price and social counts).",
+      "risk": "None of the risk sits with the reader — it is a refactor of the generator only.",
+      "decision_needed": false,
+      "impact": "medium",
+      "status": "partly implemented"
+    },
+    {
+      "id": "W-10",
+      "title": "Give each flag a permanent URL and a status history",
+      "improves": "Auditability. Flags are closed and re-opened across sessions; today the only trace is prose in COORDINATION.md.",
+      "work": "Store opened/closed dates and the closing source per flag, and render the history on flagged.html.",
+      "risk": "Low.",
+      "decision_needed": false,
+      "impact": "low",
+      "status": "proposed"
+    }
+  ]
+}

@@ -31,6 +31,7 @@ ACT = load("activities.json")
 QS = load("questions.json")
 SUG = load("suggestions.json")
 OFFR = load("official-rates.json")
+SITESUG = load("site-suggestions.json")
 
 e = html.escape
 
@@ -798,6 +799,20 @@ def build_suggestions():
 
     needs = [s for s in SUG["suggestions"] if s["needs_decision"]]
     n_sug = len(SUG["suggestions"])
+    # ---- site-level improvement proposals (data/site-suggestions.json) ----
+    YES = '<span class="pill need">yes</span>'
+    NO = '<span class="muted">no</span>'
+    site_rows = "".join(
+        f'<tr id="{e(x["id"])}"><td class="mono">{e(x["id"])}</td>'
+        f'<td><strong>{e(x["title"])}</strong><div class="tiny">{e(x["status"])}</div></td>'
+        f'<td>{e(x["improves"])}</td>'
+        f'<td class="tiny">{e(x["work"])}<div class="flagline">{e(x["risk"])}</div></td>'
+        f'<td><span class="impact {imp[x["impact"]]}">{e(x["impact"])}</span></td>'
+        f'<td>{YES if x["decision_needed"] else NO}</td></tr>'
+        for x in SITESUG["suggestions"])
+    n_site_need = sum(1 for x in SITESUG["suggestions"] if x["decision_needed"])
+    n_site_done = sum(1 for x in SITESUG["suggestions"] if "implemented" in x["status"])
+
     body = f"""
 <section class="panel">
   <h2>{len(SUGGESTIONS_HEAD)}</h2>
@@ -809,6 +824,23 @@ def build_suggestions():
   over half), and <strong>refuse unassigned-room rates</strong> (which removes the three cheapest hotels on the site). See the <a href="https://kanlerxz87-cyber.github.io/Vegas1/docs/session-af795000/hotels.html">official-engine sample</a> and its direct links.</p>
 </section>
 <div class="suglist">{''.join(cards)}</div>
+
+
+<section class="panel" id="site-improvements">
+  <h2>Improving this site — a separate list you can approve one line at a time</h2>
+  <p>The suggestions above are about <em>the trip</em>. These are about <em>the site</em>: what would make the
+  same data easier to decide from, what it would cost to build, and what could go wrong. Nothing here is
+  applied. <strong>Start with the "needs your decision" rows</strong> — those are the only ones where there are
+  two reasonable answers and picking the wrong one means rework.</p>
+  <div class="scroll">
+  <table class="data">
+  <thead><tr><th>ID</th><th>Proposal</th><th>What it improves</th><th>Work / risk</th><th>Impact</th><th>Decision?</th></tr></thead>
+  <tbody>{site_rows}</tbody>
+  </table>
+  </div>
+  <p class="note">{n_site_need} of {len(SITESUG["suggestions"])} need a decision before work starts.
+  {n_site_done} is already partly built. The rest can be taken in any order.</p>
+</section>
 """
     return page("suggestions.html", "Suggestions",
                 "Twelve decision improvements, ranked, each with its honest trade-off and whether it needs your call first.",
