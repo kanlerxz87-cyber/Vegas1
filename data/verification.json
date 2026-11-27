@@ -208,11 +208,11 @@
       "note": "Operator-linked menu, headed Tasting Menu 160; full-table participation; no substitutions."
     },
     "h-nobu-caesars": {
-      "url": "https://www.caesars.com/caesars-palace/hotel/nobu-hotel",
+      "url": "https://www.caesars.com/nobu-caesars-palace/hotel",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Nobu Hotel Caesars Palace rooms page read 27 Nov 2026: Nobu Deluxe King / Deluxe Two Queen (350 sq ft), sleek stone bathroom with oversized walk-in shower and Natura Bisse amenities."
     },
     "h-caesars-palace": {
       "url": "https://www.caesars.com/caesars-palace/hotel",
@@ -222,18 +222,18 @@
       "note": "Named room type and its bedding/bathroom/amenities read from operator page. Room specification only, not a dated room allocation or quote."
     },
     "h-trump-international": {
-      "url": "https://www.trumphotels.com/las-vegas",
+      "url": "https://www.trumphotels.com/las-vegas/accommodations/las-vegas-hotel-suites",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Trump International accommodations index read 27 Nov 2026: non-gaming, non-smoking Superior/Deluxe Studios and 1-3 Bedroom Suites; individual room bed/bath subpages not opened."
     },
     "h-cromwell": {
-      "url": "https://www.caesars.com/vanderpump-hotel",
+      "url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=dlv&numberOfAdults=2&numberOfRooms=1",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "The Vanderpump Hotel (former Cromwell) exact-date room list read 27 Nov 2026: Vanderpump Room 1 King Mobility Roll-In (360 sq ft) and 2 Queens Roll-In (360 sq ft). Bathroom fixtures and final taxed quote not established on room-list summary."
     },
     "h-w-las-vegas": {
       "url": "https://www.marriott.com/en-us/hotels/laswh-w-las-vegas/overview/",
@@ -250,25 +250,25 @@
       "note": "Named room description independently reopened. City View Superior Room (550 sq ft); One king or two queens (named room variants); Ensuite bathroom with double vanity and separate water closet. No dated offer/private-use/occupancy guarantee or bus itinerary follows. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
     },
     "h-vdara": {
-      "url": "https://www.mgmresorts.com/en/hotels/vdara.html",
+      "url": "https://vdara.mgmresorts.com/en/hotel/studio-suite.html",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Vdara Studio Suite page read 27 Nov 2026: 582 sq ft non-smoking non-gaming suite, 1 King + 1 Queen sleeper sofa (Two Queen Studio also offered), spa-style bathroom with walk-in shower and back-lit vanity."
     },
     "h-four-seasons": {
-      "url": "https://www.fourseasons.com/lasvegas/",
+      "url": "https://www.fourseasons.com/lasvegas/accommodations/",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Four Seasons accommodations index read 27 Nov 2026: Superior Room (500 sq ft, 1 King), Strip View Room (500 sq ft, 1 King or 2 Queens), Deluxe Room (550 sq ft, 1 King or 2 Queens). Bathroom fixtures and dated offer not on index."
     },
     "h-nomad-reserve": {
-      "url": "https://www.mgmresorts.com/en/hotels/nomad-las-vegas.html",
+      "url": "https://thereserveatparkmgm.mgmresorts.com/en/hotel.html",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "The Reserve at Park MGM (former NoMad) rooms page read 27 Nov 2026: Classic King / Classic Two Queen (406 sq ft), Carrara marble walk-in shower, 100% smoke-free."
     },
     "h-bellagio": {
       "url": "https://bellagio.mgmresorts.com/en/hotel/resort-queen-room-fountain-view.html",
@@ -278,11 +278,11 @@
       "note": "Named room description independently reopened. Fountain View Two Queen (510 sq ft); 2 queen beds; Upgraded dual-sink bathroom vanity; frameless shower enclosure. No dated offer/private-use/occupancy guarantee or bus itinerary follows. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
     },
     "h-fontainebleau": {
-      "url": "https://www.fontainebleaulasvegas.com/",
+      "url": "https://www.fontainebleaulasvegas.com/rooms-and-suites/all-accommodations/bleau-rooms/",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Fontainebleau Bleau Rooms page read 27 Nov 2026: Bleau King (488 sq ft, 1 King) and Bleau Queen (494 sq ft, 2 Queens), ensuite marble bathroom with custom brass fixtures. No final taxed offer."
     },
     "h-cosmopolitan": {
       "url": "https://cosmopolitanlasvegas.mgmresorts.com/en/hotel/city-room.html",
@@ -299,11 +299,11 @@
       "note": "Named room type and its bedding/bathroom/amenities read from operator page. Room specification only, not a dated room allocation or quote."
     },
     "h-aria": {
-      "url": "https://www.aria.com/",
+      "url": "https://aria.mgmresorts.com/en/hotel/deluxe-room.html",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "ARIA Deluxe Room page read 27 Nov 2026: Deluxe King / Deluxe Two Queen (520 sq ft), 1 Full Bathroom with private WC, glass-enclosed shower and soaking tub. No dated offer or bus itinerary."
     },
     "h-palazzo": {
       "url": "https://www.venetianlasvegas.com/hotel/the-palazzo.html",
@@ -313,11 +313,11 @@
       "note": "Named room type and its bedding/bathroom/amenities read from operator page. Room specification only, not a dated room allocation or quote."
     },
     "h-encore": {
-      "url": "https://www.wynnlasvegas.com/rooms-and-suite",
+      "url": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68668&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Encore Resort King exact-date details read 27 Nov 2026: 745 sq ft, pillow-top King bed, oversized marble bathroom with deep soaking tub, glass shower and separate water closet. Nightly rate excludes tax."
     },
     "h-wynn": {
       "url": "https://www.wynnlasvegas.com/rooms-and-suite",
@@ -327,11 +327,11 @@
       "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
     },
     "h-secret-suites-vdara": {
-      "url": "https://www.mgmresorts.com/en/hotels/vdara.html",
+      "url": "https://vdara.mgmresorts.com/en/hotel.html",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Vdara official hotel page read 27 Nov 2026: Secret Suites at Vdara is not a standalone MGM brand; Vdara itself is a non-gaming all-suite tower (Studio 582 sq ft to Penthouse). Third-party Secret Suites room allocation remains unverified."
     },
     "h-waldorf-astoria": {
       "url": "https://www.hilton.com/en/hotels/laswawa-waldorf-astoria-las-vegas/",
@@ -362,32 +362,32 @@
       "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
     },
     "h-horseshoe": {
-      "url": "https://www.caesars.com/horseshoe-las-vegas",
+      "url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=blv&numberOfAdults=2&numberOfRooms=1",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Horseshoe exact-date room list read 27 Nov 2026: Resort Room 1 King (450 sq ft) and Resort Studio Suite 2 Queens (618 sq ft). Bathroom fixtures and final taxed quote not printed on room-list summary."
     },
     "h-flamingo": {
-      "url": "https://www.caesars.com/flamingo-las-vegas",
+      "url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=flv&numberOfAdults=2&numberOfRooms=1",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Flamingo exact-date room list read 27 Nov 2026: Flamingo Room 2 Queens (350 sq ft) and 1 King (350 sq ft). Bathroom fixtures and final taxed total not printed on room-list summary."
     },
     "h-linq": {
-      "url": "https://www.caesars.com/linq",
+      "url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=ilv&numberOfAdults=2&numberOfRooms=1",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "The LINQ exact-date room list read 27 Nov 2026: Deluxe Room 1 Queen Mobility Roll-In (300 sq ft) and Deluxe 1 King (350 sq ft); Deluxe 2 Doubles fails Queen+. Bathroom fixtures and final taxed quote not on room-list summary."
     },
     "h-sahara": {
-      "url": "https://www.saharalasvegas.com/",
+      "url": "https://www.saharalasvegas.com/rooms-and-suites",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "SAHARA rooms-and-suites page read 27 Nov 2026: Blanca, Marra and Alexandria towers; The Alex Deluxe King Accessible (425 sq ft, 1 King, Molton Brown bath amenities)."
     },
     "h-plaza": {
       "url": "https://www.plazahotelcasino.com/",
@@ -399,37 +399,37 @@
     "h-palms-place": {
       "url": "https://www.palms.com/palms-place/",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Palms Place overview page read 27 Nov 2026: residential-style studios and suites at 4381 W Flamingo Rd; exact room bed/bathroom specifications not itemized on overview."
     },
     "h-bluegreen-club-36": {
-      "url": "https://www.bluegreenvacations.com/resorts/nevada/las-vegas/club-36",
+      "url": "https://www.bluegreenvacations.com/resorts/nevada/bluegreen-club-36/",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Canonical Bluegreen Club 36 resort page read 27 Nov 2026 (replacing stale /las-vegas/club-36 URL): 1-Bedroom Standard (480-486 sq ft) and 1-Bedroom Deluxe (704-710 sq ft), Standard/Deluxe Bath in resort gallery, Planet Hollywood shuttle every 30 min 10 AM-11 PM. Exact bed size not itemized on overview."
     },
     "h-mgm-signature": {
-      "url": "https://www.mgmresorts.com/en/hotels/signature-at-mgm-grand.html",
+      "url": "https://signaturemgmgrand.mgmresorts.com/en/hotel/deluxe-suite.html",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Signature at MGM Grand Deluxe Suite page read 27 Nov 2026: 550 sq ft non-smoking condo-hotel suite, 1 King + 1 Queen sleeper sofa, oversized marble/granite bathroom with whirlpool tub and shower, kitchenette."
     },
     "h-green-valley-ranch": {
-      "url": "https://www.greenvalleyranch.com/",
+      "url": "https://www.greenvalleyranch.com/stay/resort-king/",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Green Valley Ranch Resort King page read 27 Nov 2026: 495 sq ft, 1 King bed, marble bathroom with dual vanities. Off-Strip Henderson; no dated quote or bus itinerary."
     },
     "h-red-rock": {
-      "url": "https://www.redrockresort.com/",
+      "url": "https://www.redrockresort.com/stay/rooms/luxury-king/",
       "authority": "official",
-      "result": "not_rechecked",
-      "checked": null,
-      "note": "Inherited official reference, not re-opened in this audit. No rate, bed, bathroom, guest-score or transit-count claim is approved by this URL alone."
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Red Rock Casino Resort Luxury King page read 27 Nov 2026: 515 sq ft, 1 King bed, marble bathroom with deep soaking tub and dual vanities. Summerlin off-Strip; no dated quote or bus itinerary."
     },
     "quote-caesars": {
       "url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=clv&numberOfAdults=2&numberOfRooms=1",
@@ -883,6 +883,83 @@
       "result": "fetched",
       "checked": "2026-11-27",
       "note": "First chunk of six-chunk operator timetable/map retrieval read in this pass. It describes route 203 Spring Mountain/Desert Inn/Lamb and explicit timepoints; not a hotel-door-to-dinner itinerary. Full PDF source remains available; peer T23 full-read scope retained separately. Discovered by completed T23/PR #66 and independently reopened in this integration; only recorded fields approved."
+    },
+    "r-esthers-location": {
+      "url": "https://www.estherslv.com/location/esthers-kitchen/",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Venue location/hours subpage read 27 Nov 2026: 1131 S. Main Street, Las Vegas, NV 89104; 702-570-7864; Lunch Mon-Fri 11 AM-3 PM, Brunch Sat-Sun 10 AM-3 PM, Dinner daily 5 PM-11 PM; $15/person hold for parties of 6+. Resolves F-50 and F-07."
+    },
+    "202-pdf": {
+      "url": "https://rtcws.rtcsnv.com/routePDF/202.pdf",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Official RTC Route 202 Flamingo 24/7 timetable PDF read 27 Nov 2026 (in-vehicle Decatur -> Las Vegas Blvd ~10-14 min weekday eastbound; does not establish full hotel-to-restaurant door-to-door journey)."
+    },
+    "quote-crockfords": {
+      "url": "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=CROCKFORDS&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Resorts World Crockfords exact-date engine prints itemized $3,346.42 for City View Superior One King ($3,597.27 Two Queens), incl. room tax ($343.40), resort fees ($385.00) and resort-fee tax ($51.52). Promotion/cancellation/private-use terms remain incomplete; retained as observed_total_7n, not a qualified final offer."
+    },
+    "quote-conrad": {
+      "url": "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=CONRAD&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Resorts World Conrad exact-date engine reports Tue 16 Feb & Wed 17 Feb 2027 sold out for 2 adults; cannot fulfil continuous 15-22 Feb 2027 7-night stay."
+    },
+    "quote-encore": {
+      "url": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68668&checkIn=02/15/2027&checkOut=02/22/2027&adults=2&children=0",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Encore Resort King (745 sq ft) exact-date engine prints Cyber $597/night avg (book by 4 Dec 2026) and Flexible $733/night avg, incl. $55 daily resort fee, excluding tax; final taxed checkout total not printed on details screen."
+    },
+    "quote-fontainebleau": {
+      "url": "https://reserve.fontainebleaulasvegas.com/ibe/shop.aspx?hotelID=17704&selectedTower=BGP&checkin=2027-02-15&checkout=2027-02-22&nights=7&adults=2&children=0",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Fontainebleau exact-date engine prints Bleau Queen $493.30/night avg (Bleau Friday offer, book by 2 Dec 2026) and $681.14/night Flexible (Bleau King $694/night Flexible), incl. $55 daily resort fee, excluding tax; final taxed total not established."
+    },
+    "quote-nobu": {
+      "url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=cl1&numberOfAdults=2&numberOfRooms=1",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Caesars Nobu exact-date room list (propCode=cl1) shows technical-error banner plus NOBU Deluxe King $225/night (2 Queens $244/night) incl. $54.95 daily resort fee, excluding tax."
+    },
+    "quote-vanderpump": {
+      "url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=dlv&numberOfAdults=2&numberOfRooms=1",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Caesars Vanderpump Hotel exact-date room list (propCode=dlv, former Cromwell) shows technical-error banner plus Vanderpump Room 1 King Mobility Roll-In (360 sq ft) $244/night (2 Queens Roll-In $250/night) incl. $54.95 daily resort fee, excluding tax."
+    },
+    "quote-flamingo": {
+      "url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=flv&numberOfAdults=2&numberOfRooms=1",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Caesars Flamingo exact-date room list (propCode=flv) shows technical-error banner plus Flamingo Room 2 Queens (350 sq ft) $83/night ($82/night Room Assigned on Arrival fails bed guarantee) incl. $54.95 daily resort fee, excluding tax."
+    },
+    "quote-horseshoe": {
+      "url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=blv&numberOfAdults=2&numberOfRooms=1",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Caesars Horseshoe exact-date room list (propCode=blv) shows technical-error banner plus Resort Room 1 King (450 sq ft) $116/night ($115/night Assigned on Arrival fails bed guarantee) incl. $54.95 daily resort fee, excluding tax."
+    },
+    "quote-linq": {
+      "url": "https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&departureDate=02/22/2027&dateSearchFormat=exact-dates&propCode=ilv&numberOfAdults=2&numberOfRooms=1",
+      "authority": "official",
+      "result": "fetched",
+      "checked": "2026-11-27",
+      "note": "Caesars LINQ exact-date room list (propCode=ilv) shows technical-error banner plus Deluxe 1 Queen Mobility Roll-In (300 sq ft) $77/night incl. $49.95 resort fee, excluding tax; Deluxe 2 Doubles ($77/night) fails the Queen-or-larger rule."
     }
   },
   "restaurants": {
@@ -1855,10 +1932,10 @@
           "note": "Matched to the MICHELIN address list, except explicit conflicts are withheld."
         },
         "days": {
-          "value": null,
+          "value": "Daily (Dinner served nightly)",
           "source": "r-anima-by-edo",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "status": "verified",
+          "note": ""
         },
         "hours": {
           "value": "Dinner from 5 PM; closing time not confirmed",
@@ -1867,10 +1944,10 @@
           "note": ""
         },
         "exceptions": {
-          "value": null,
+          "value": "Entire table must participate in the $85 pp tasting menu (~2–2.5 hours); Monday Pasta & Wine Night: two handmade pasta dishes + one select bottle of wine for $65.",
           "source": "r-anima-by-edo",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "status": "verified",
+          "note": ""
         },
         "price_2adults": {
           "value": "$170 tasting-menu subtotal for two",
@@ -1912,7 +1989,8 @@
       "flags": [
         "F-08",
         "FV-04",
-        "FV-01"
+        "FV-01",
+        "F-79"
       ]
     },
     "kabuto": {
@@ -2259,12 +2337,13 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "exceptions": {
-          "value": "Whole table must participate in tasting; automatic gratuity (rate not printed); tasting last call 9:30 PM; disclose allergies/aversions.",
+          "value": "Whole table must participate in tasting; automatic gratuity (rate not printed); tasting last call 9:30 PM; <24h cancellation fee $25/guest; online max 4 guests/table.",
           "source": "sparrow-tasting",
           "status": "verified",
           "note": "Weekly clock hours remain unverified; last tasting order is not a closing time.",
           "also_sources": [
-            "sparrow-menu-page"
+            "sparrow-menu-page",
+            "r-sparrow-and-wolf"
           ]
         },
         "price_2adults": {
@@ -2325,28 +2404,31 @@
           "note": ""
         },
         "address": {
-          "value": null,
-          "source": "r-esthers-kitchen",
-          "status": "unverified",
-          "note": "Official MICHELIN table: 1131 S Main St.; inherited data: 1130 S Casino Center Blvd. Venue home page has no street address; F-50 unresolved."
+          "value": "1131 S. Main Street, Las Vegas, NV 89104",
+          "source": "r-esthers-location",
+          "status": "verified",
+          "note": "Confirmed on venue's own /location/esthers-kitchen/ page, matching MICHELIN's 1131 S Main St. and retiring the inherited 1130 S Casino Center Blvd error (F-50 resolved).",
+          "also_sources": [
+            "michelin"
+          ]
         },
         "days": {
-          "value": null,
-          "source": "r-esthers-kitchen",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "Daily (Lunch Mon–Fri; Brunch Sat–Sun; Dinner daily)",
+          "source": "r-esthers-location",
+          "status": "verified",
+          "note": ""
         },
         "hours": {
-          "value": null,
-          "source": "r-esthers-kitchen",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "Lunch Mon–Fri 11 AM–3 PM; Brunch Sat–Sun 10 AM–3 PM; Dinner daily 5 PM–11 PM",
+          "source": "r-esthers-location",
+          "status": "verified",
+          "note": "Current published venue schedule; not a 2027 date guarantee."
         },
         "exceptions": {
-          "value": null,
-          "source": "r-esthers-kitchen",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "Parties of 6 or more require a $15 per person credit card hold.",
+          "source": "r-esthers-location",
+          "status": "verified",
+          "note": ""
         },
         "price_2adults": {
           "value": null,
@@ -2355,10 +2437,10 @@
           "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
         },
         "phone": {
-          "value": null,
-          "source": "r-esthers-kitchen",
-          "status": "unverified",
-          "note": "Not confirmed from an official source for this field; do not infer from the listing or a social handle."
+          "value": "702-570-7864",
+          "source": "r-esthers-location",
+          "status": "verified",
+          "note": ""
         },
         "youtube": {
           "value": null,
@@ -2389,7 +2471,8 @@
         "F-07",
         "F-50",
         "FV-04",
-        "FV-01"
+        "FV-01",
+        "F-79"
       ]
     },
     "soulbelly-bbq": {
@@ -2742,10 +2825,10 @@
           "note": ""
         },
         "price_2adults": {
-          "value": "$320 for two tasting menus",
+          "value": "$320 Tasting / $390 Elevated for two",
           "source": "stubborn-menu",
           "status": "verified",
-          "note": "2 × listed 160 tasting menu price. Menu subtotal only; tax, service/gratuity, drinks, enhancements and 2027 availability not established."
+          "note": "2 × listed $160 Tasting Menu ($320) or 2 × $195 Elevated +$35 Tasting Menu ($390). Menu subtotal only; tax, service/gratuity, drinks, enhancements and 2027 availability not established."
         },
         "phone": {
           "value": "702.676.8062",
@@ -2780,7 +2863,8 @@
       },
       "flags": [
         "FV-04",
-        "FV-01"
+        "FV-01",
+        "F-79"
       ]
     }
   },
@@ -2790,34 +2874,49 @@
       "source": "h-nobu-caesars",
       "fields": {
         "room": {
-          "value": null,
+          "value": "Nobu Deluxe King Room (350 sq ft) / Nobu Deluxe Two Queen (350 sq ft)",
           "source": "h-nobu-caesars",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer.",
+          "also_sources": [
+            "quote-nobu"
+          ]
         },
         "bed": {
-          "value": null,
+          "value": "1 King or 2 Queens (named room variants)",
           "source": "h-nobu-caesars",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer.",
+          "also_sources": [
+            "quote-nobu"
+          ]
         },
         "bathroom": {
-          "value": null,
+          "value": "Sleek stone bathroom with oversized walk-in shower and Natura Bissé amenities",
           "source": "h-nobu-caesars",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer.",
+          "also_sources": [
+            "quote-nobu"
+          ]
         },
         "amenities": {
-          "value": null,
+          "value": "350 sq ft boutique tower inside Caesars Palace; 24-hour Nobu in-room dining",
           "source": "h-nobu-caesars",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer.",
+          "also_sources": [
+            "quote-nobu"
+          ]
         },
         "location": {
-          "value": null,
+          "value": "Caesars Palace · 3570 S Las Vegas Blvd",
           "source": "h-nobu-caesars",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer.",
+          "also_sources": [
+            "quote-nobu"
+          ]
         },
         "total_7n": {
           "value": null,
@@ -2842,7 +2941,9 @@
         "F-40",
         "F-49",
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-80",
+        "F-81"
       ]
     },
     "caesars-palace": {
@@ -2908,10 +3009,10 @@
       "source": "h-trump-international",
       "fields": {
         "room": {
-          "value": null,
+          "value": "Superior / Deluxe Studios and 1–3 Bedroom Suites (accommodations index)",
           "source": "h-trump-international",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bed": {
           "value": null,
@@ -2926,16 +3027,16 @@
           "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
         },
         "amenities": {
-          "value": null,
+          "value": "Non-gaming, non-smoking all-suite tower near Fashion Show Mall",
           "source": "h-trump-international",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "location": {
-          "value": null,
+          "value": "2000 Fashion Show Dr",
           "source": "h-trump-international",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "total_7n": {
           "value": null,
@@ -2958,7 +3059,8 @@
       },
       "flags": [
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-81"
       ]
     },
     "cromwell": {
@@ -2966,16 +3068,16 @@
       "source": "h-cromwell",
       "fields": {
         "room": {
-          "value": null,
+          "value": "Vanderpump Room — 1 King Mobility Roll-In (360 sq ft) / 2 Queens Roll-In (360 sq ft)",
           "source": "h-cromwell",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bed": {
-          "value": null,
+          "value": "1 King or 2 Queens (named room variants)",
           "source": "h-cromwell",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bathroom": {
           "value": null,
@@ -2984,16 +3086,16 @@
           "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
         },
         "amenities": {
-          "value": null,
+          "value": "360 sq ft boutique room at The Vanderpump Hotel (rebranded from The Cromwell)",
           "source": "h-cromwell",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "location": {
-          "value": null,
+          "value": "Center Strip · 3595 S Las Vegas Blvd",
           "source": "h-cromwell",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "total_7n": {
           "value": null,
@@ -3017,7 +3119,9 @@
       "flags": [
         "F-47",
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-80",
+        "F-81"
       ]
     },
     "w-las-vegas": {
@@ -3107,16 +3211,16 @@
           "note": "Published named-room description only; not a trip-date allocation or fully qualified offer."
         },
         "location": {
-          "value": null,
-          "source": "h-crockfords",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "value": "Resorts World · Crockfords LXR tower",
+          "source": "quote-crockfords",
+          "status": "verified",
+          "note": ""
         },
         "total_7n": {
           "value": null,
           "source": "h-crockfords",
           "status": "unverified",
-          "note": "Room evidence does not establish a final seven-night offer or dated door-to-door bus journey."
+          "note": "Operator prints $3,346.42 for City View Superior One King ($3,597.27 Two Queens) including listed mandatory taxes/fees, reproduced and itemized on Pricing. Promotion eligibility, private-use guarantee and cancellation/deposit terms remain unverified; not a complete qualifying offer."
         },
         "within_60_bus": {
           "value": null,
@@ -3129,12 +3233,43 @@
           "source": "h-crockfords",
           "status": "unverified",
           "note": "Room evidence does not establish a final seven-night offer or dated door-to-door bus journey."
+        },
+        "observed_total_7n": {
+          "value": "$3,346.42 incl. room tax, resort fees and fee tax",
+          "source": "quote-crockfords",
+          "status": "verified",
+          "note": "Captured 27 Nov 2026 for 15–22 Feb 2027; 2 adults, 1 room, 7 nights, City View Superior Room — One King Bed (Two Queens prints $3,597.27; Conrad tower sold out Tue 16 & Wed 17 Feb 2027). Itemized published total, not rounded-average extrapolation. Eligibility, cancellation/deposit and private-use guarantee are incomplete; NOT promoted to a fully qualified final offer.",
+          "amount": "3346.42",
+          "currency": "USD",
+          "check_in": "2027-02-15",
+          "check_out": "2027-02-22",
+          "adults": 2,
+          "rooms": 1,
+          "nights": 7,
+          "room_name": "City View Superior Room - One King Bed",
+          "rate": "Direct Resorts World IBE",
+          "itemized": {
+            "room_nights": [
+              "309.00",
+              "498.75",
+              "498.75",
+              "378.75",
+              "311.25",
+              "311.25",
+              "258.75"
+            ],
+            "room_tax": "343.40",
+            "resort_fees": "385.00",
+            "resort_fee_tax": "51.52"
+          },
+          "terms_status": "unverified"
         }
       },
       "flags": [
         "F-59",
         "FV-01",
-        "F-78"
+        "F-78",
+        "F-80"
       ]
     },
     "vdara": {
@@ -3142,34 +3277,34 @@
       "source": "h-vdara",
       "fields": {
         "room": {
-          "value": null,
+          "value": "Studio Suite (582 sq ft)",
           "source": "h-vdara",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bed": {
-          "value": null,
+          "value": "1 King bed + 1 Queen sleeper sofa (Two Queen Studio also offered)",
           "source": "h-vdara",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bathroom": {
-          "value": null,
+          "value": "Spa-style bathroom with walk-in shower and back-lit vanity",
           "source": "h-vdara",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "amenities": {
-          "value": null,
+          "value": "582 sq ft 100% smoke-free non-gaming suite; mini-fridge, media hub",
           "source": "h-vdara",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "location": {
-          "value": null,
+          "value": "CityCenter · 2600 W Harmon Ave",
           "source": "h-vdara",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "total_7n": {
           "value": null,
@@ -3192,7 +3327,8 @@
       },
       "flags": [
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-81"
       ]
     },
     "four-seasons": {
@@ -3200,16 +3336,16 @@
       "source": "h-four-seasons",
       "fields": {
         "room": {
-          "value": null,
+          "value": "Superior Room (500 sq ft) / Strip View Room (500 sq ft) / Deluxe Room (550 sq ft)",
           "source": "h-four-seasons",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bed": {
-          "value": null,
+          "value": "1 King (Superior) or 1 King / 2 Queens (Strip View, Deluxe)",
           "source": "h-four-seasons",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bathroom": {
           "value": null,
@@ -3218,16 +3354,16 @@
           "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
         },
         "amenities": {
-          "value": null,
+          "value": "500–550 sq ft non-gaming tower floors 35–39 at Mandalay Bay complex",
           "source": "h-four-seasons",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "location": {
-          "value": null,
+          "value": "South Strip · 3960 S Las Vegas Blvd",
           "source": "h-four-seasons",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "total_7n": {
           "value": null,
@@ -3250,7 +3386,8 @@
       },
       "flags": [
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-81"
       ]
     },
     "nomad-reserve": {
@@ -3258,34 +3395,34 @@
       "source": "h-nomad-reserve",
       "fields": {
         "room": {
-          "value": null,
+          "value": "Classic King / Classic Two Queen (406 sq ft) at The Reserve at Park MGM",
           "source": "h-nomad-reserve",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bed": {
-          "value": null,
+          "value": "1 King or 2 Queens (named room variants)",
           "source": "h-nomad-reserve",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bathroom": {
-          "value": null,
+          "value": "Carrara marble walk-in shower",
           "source": "h-nomad-reserve",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "amenities": {
-          "value": null,
+          "value": "406 sq ft; custom furnishings, hardwood floors, 100% smoke-free tower",
           "source": "h-nomad-reserve",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "location": {
-          "value": null,
+          "value": "Park MGM · 3772 S Las Vegas Blvd",
           "source": "h-nomad-reserve",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "total_7n": {
           "value": null,
@@ -3308,7 +3445,8 @@
       },
       "flags": [
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-81"
       ]
     },
     "bellagio": {
@@ -3377,34 +3515,49 @@
       "source": "h-fontainebleau",
       "fields": {
         "room": {
-          "value": null,
+          "value": "Bleau Queen (494 sq ft) / Bleau King (488 sq ft)",
           "source": "h-fontainebleau",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer.",
+          "also_sources": [
+            "quote-fontainebleau"
+          ]
         },
         "bed": {
-          "value": null,
+          "value": "2 Queens or 1 King (named room variants)",
           "source": "h-fontainebleau",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer.",
+          "also_sources": [
+            "quote-fontainebleau"
+          ]
         },
         "bathroom": {
-          "value": null,
+          "value": "Ensuite marble bathroom with custom brass fixtures and bespoke bath amenities",
           "source": "h-fontainebleau",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer.",
+          "also_sources": [
+            "quote-fontainebleau"
+          ]
         },
         "amenities": {
-          "value": null,
+          "value": "488–494 sq ft; floor-to-ceiling windows, seating area, HDTV, minibar",
           "source": "h-fontainebleau",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer.",
+          "also_sources": [
+            "quote-fontainebleau"
+          ]
         },
         "location": {
-          "value": null,
+          "value": "North Strip · 2777 S Las Vegas Blvd",
           "source": "h-fontainebleau",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer.",
+          "also_sources": [
+            "quote-fontainebleau"
+          ]
         },
         "total_7n": {
           "value": null,
@@ -3428,7 +3581,9 @@
       "flags": [
         "F-06",
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-80",
+        "F-81"
       ]
     },
     "cosmopolitan": {
@@ -3555,34 +3710,34 @@
       "source": "h-aria",
       "fields": {
         "room": {
-          "value": null,
+          "value": "Deluxe King / Deluxe Two Queen (520 sq ft)",
           "source": "h-aria",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bed": {
-          "value": null,
+          "value": "1 King or 2 Queens (named room variants)",
           "source": "h-aria",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bathroom": {
-          "value": null,
+          "value": "1 Full Bathroom with private WC, glass-enclosed shower and soaking tub",
           "source": "h-aria",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "amenities": {
-          "value": null,
+          "value": "520 sq ft; triple-sheeted 300-thread-count linens, in-room tablet controls, floor-to-ceiling windows",
           "source": "h-aria",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "location": {
-          "value": null,
+          "value": "CityCenter · 3730 S Las Vegas Blvd",
           "source": "h-aria",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "total_7n": {
           "value": null,
@@ -3606,7 +3761,8 @@
       "flags": [
         "F-40",
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-81"
       ]
     },
     "palazzo": {
@@ -3673,34 +3829,34 @@
       "source": "h-encore",
       "fields": {
         "room": {
-          "value": null,
+          "value": "Encore Resort King (745 sq ft)",
           "source": "h-encore",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bed": {
-          "value": null,
+          "value": "1 pillow-top King bed",
           "source": "h-encore",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bathroom": {
-          "value": null,
+          "value": "Oversized marble bathroom with deep soaking tub, glass-enclosed shower and separate water closet",
           "source": "h-encore",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "amenities": {
-          "value": null,
+          "value": "745 sq ft; 55-inch 4K UHD TV, bedside touchscreens, floor-to-ceiling windows",
           "source": "h-encore",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "location": {
-          "value": null,
+          "value": "North Strip · 3131 S Las Vegas Blvd",
           "source": "h-encore",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "total_7n": {
           "value": null,
@@ -3726,7 +3882,9 @@
         "F-40",
         "F-49",
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-80",
+        "F-81"
       ]
     },
     "wynn": {
@@ -3812,16 +3970,16 @@
           "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
         },
         "amenities": {
-          "value": null,
+          "value": "OTA-packaged inventory inside Vdara's non-gaming all-suite tower (582 sq ft Studio to Penthouse); third-party Secret Suites operator allocation is not verified on MGM's site",
           "source": "h-secret-suites-vdara",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "location": {
-          "value": null,
+          "value": "CityCenter · 2600 W Harmon Ave",
           "source": "h-secret-suites-vdara",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "total_7n": {
           "value": null,
@@ -3845,7 +4003,8 @@
       "flags": [
         "F-49",
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-81"
       ]
     },
     "waldorf-astoria": {
@@ -4090,16 +4249,16 @@
       "source": "h-horseshoe",
       "fields": {
         "room": {
-          "value": null,
+          "value": "Resort Room — 1 King (450 sq ft) / Resort Studio Suite — 2 Queens (618 sq ft)",
           "source": "h-horseshoe",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bed": {
-          "value": null,
+          "value": "1 King or 2 Queens (named room variants)",
           "source": "h-horseshoe",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bathroom": {
           "value": null,
@@ -4108,16 +4267,16 @@
           "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
         },
         "amenities": {
-          "value": null,
+          "value": "450–618 sq ft Center-Strip room (avoid unassigned Room Assigned on Arrival rate)",
           "source": "h-horseshoe",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "location": {
-          "value": null,
+          "value": "Center Strip · 3645 S Las Vegas Blvd",
           "source": "h-horseshoe",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "total_7n": {
           "value": null,
@@ -4142,7 +4301,9 @@
         "F-11",
         "F-40",
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-80",
+        "F-81"
       ]
     },
     "flamingo": {
@@ -4150,16 +4311,16 @@
       "source": "h-flamingo",
       "fields": {
         "room": {
-          "value": null,
+          "value": "Flamingo Room — 2 Queens (350 sq ft) / 1 King (350 sq ft)",
           "source": "h-flamingo",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bed": {
-          "value": null,
+          "value": "2 Queens or 1 King (named room variants)",
           "source": "h-flamingo",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bathroom": {
           "value": null,
@@ -4168,16 +4329,16 @@
           "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
         },
         "amenities": {
-          "value": null,
+          "value": "350 sq ft Center-Strip room (avoid unassigned Room Assigned on Arrival rate)",
           "source": "h-flamingo",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "location": {
-          "value": null,
+          "value": "Center Strip · 3555 S Las Vegas Blvd",
           "source": "h-flamingo",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "total_7n": {
           "value": null,
@@ -4202,7 +4363,9 @@
         "F-11",
         "F-40",
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-80",
+        "F-81"
       ]
     },
     "linq": {
@@ -4210,16 +4373,16 @@
       "source": "h-linq",
       "fields": {
         "room": {
-          "value": null,
+          "value": "Deluxe Room — 1 Queen Mobility Roll-In (300 sq ft) / Deluxe 1 King (350 sq ft)",
           "source": "h-linq",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bed": {
-          "value": null,
+          "value": "1 Queen or 1 King (caution: Deluxe 2 Doubles fails Queen+ rule)",
           "source": "h-linq",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bathroom": {
           "value": null,
@@ -4228,16 +4391,16 @@
           "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
         },
         "amenities": {
-          "value": null,
+          "value": "300–350 sq ft Center-Strip room at The LINQ",
           "source": "h-linq",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "location": {
-          "value": null,
+          "value": "Center Strip · 3535 S Las Vegas Blvd",
           "source": "h-linq",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "total_7n": {
           "value": null,
@@ -4262,7 +4425,9 @@
         "F-11",
         "F-40",
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-80",
+        "F-81"
       ]
     },
     "sahara": {
@@ -4270,34 +4435,34 @@
       "source": "h-sahara",
       "fields": {
         "room": {
-          "value": null,
+          "value": "The Alex — Deluxe King Accessible (425 sq ft) / Blanca & Marra rooms",
           "source": "h-sahara",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bed": {
-          "value": null,
+          "value": "1 King bed (named Deluxe King Accessible room)",
           "source": "h-sahara",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bathroom": {
-          "value": null,
+          "value": "In-room bathroom with Molton Brown bath amenities",
           "source": "h-sahara",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "amenities": {
-          "value": null,
+          "value": "425 sq ft; Nespresso machine, direct Las Vegas Monorail station",
           "source": "h-sahara",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "location": {
-          "value": null,
+          "value": "North Strip · 2535 S Las Vegas Blvd",
           "source": "h-sahara",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "total_7n": {
           "value": null,
@@ -4322,7 +4487,8 @@
         "F-11",
         "F-40",
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-81"
       ]
     },
     "plaza": {
@@ -4390,10 +4556,10 @@
       "source": "h-palms-place",
       "fields": {
         "room": {
-          "value": null,
+          "value": "Residential-style Studio / One-Bedroom Suite (overview)",
           "source": "h-palms-place",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bed": {
           "value": null,
@@ -4408,16 +4574,16 @@
           "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
         },
         "amenities": {
-          "value": null,
+          "value": "Non-gaming condo-hotel tower connected to Palms Casino Resort",
           "source": "h-palms-place",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "location": {
-          "value": null,
+          "value": "4381 W Flamingo Rd (off-Strip west)",
           "source": "h-palms-place",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "total_7n": {
           "value": null,
@@ -4442,7 +4608,8 @@
         "F-40",
         "F-41",
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-81"
       ]
     },
     "bluegreen-club-36": {
@@ -4450,10 +4617,10 @@
       "source": "h-bluegreen-club-36",
       "fields": {
         "room": {
-          "value": null,
+          "value": "1-Bedroom Standard (480–486 sq ft) / 1-Bedroom Deluxe (704–710 sq ft)",
           "source": "h-bluegreen-club-36",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bed": {
           "value": null,
@@ -4462,22 +4629,22 @@
           "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
         },
         "bathroom": {
-          "value": null,
+          "value": "1-Bedroom Standard Bath / 1-Bedroom Deluxe Bath (official resort gallery)",
           "source": "h-bluegreen-club-36",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "amenities": {
-          "value": null,
+          "value": "Kitchen/dining area, indoor pool, shuttle to Planet Hollywood every 30 min (10 AM–11 PM)",
           "source": "h-bluegreen-club-36",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "location": {
-          "value": null,
+          "value": "372 E Tropicana Ave (off-Strip east)",
           "source": "h-bluegreen-club-36",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "total_7n": {
           "value": null,
@@ -4501,7 +4668,8 @@
       "flags": [
         "F-15",
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-81"
       ]
     },
     "mgm-signature": {
@@ -4509,34 +4677,34 @@
       "source": "h-mgm-signature",
       "fields": {
         "room": {
-          "value": null,
+          "value": "Deluxe Suite (550 sq ft)",
           "source": "h-mgm-signature",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bed": {
-          "value": null,
+          "value": "1 King bed + 1 Queen sleeper sofa",
           "source": "h-mgm-signature",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bathroom": {
-          "value": null,
+          "value": "Oversized marble/granite bathroom with whirlpool spa tub and separate shower",
           "source": "h-mgm-signature",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "amenities": {
-          "value": null,
+          "value": "550 sq ft non-smoking condo-hotel suite; kitchenette with stovetop, microwave and refrigerator",
           "source": "h-mgm-signature",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "location": {
-          "value": null,
+          "value": "145 E Harmon Ave (connected to MGM Grand)",
           "source": "h-mgm-signature",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "total_7n": {
           "value": null,
@@ -4559,7 +4727,8 @@
       },
       "flags": [
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-81"
       ]
     },
     "green-valley-ranch": {
@@ -4567,34 +4736,34 @@
       "source": "h-green-valley-ranch",
       "fields": {
         "room": {
-          "value": null,
+          "value": "Resort King (495 sq ft)",
           "source": "h-green-valley-ranch",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bed": {
-          "value": null,
+          "value": "1 King bed",
           "source": "h-green-valley-ranch",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bathroom": {
-          "value": null,
+          "value": "Marble bathroom with dual vanities",
           "source": "h-green-valley-ranch",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "amenities": {
-          "value": null,
+          "value": "495 sq ft; workstation, seating area, HDTV",
           "source": "h-green-valley-ranch",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "location": {
-          "value": null,
+          "value": "Henderson (off-Strip) · 2300 Paseo Verde Pkwy",
           "source": "h-green-valley-ranch",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "total_7n": {
           "value": null,
@@ -4618,7 +4787,8 @@
       "flags": [
         "F-14",
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-81"
       ]
     },
     "red-rock": {
@@ -4626,34 +4796,34 @@
       "source": "h-red-rock",
       "fields": {
         "room": {
-          "value": null,
+          "value": "Luxury King (515 sq ft)",
           "source": "h-red-rock",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bed": {
-          "value": null,
+          "value": "1 King bed",
           "source": "h-red-rock",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "bathroom": {
-          "value": null,
+          "value": "Marble bathroom with deep soaking tub and dual vanities",
           "source": "h-red-rock",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "amenities": {
-          "value": null,
+          "value": "515 sq ft; 65-inch TV, floor-to-ceiling windows",
           "source": "h-red-rock",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "location": {
-          "value": null,
+          "value": "Summerlin (off-Strip) · 11011 W Charleston Blvd",
           "source": "h-red-rock",
-          "status": "unverified",
-          "note": "Not established by field-level official evidence. Historical OTA totals and zone estimates are not verified official hotel quotes or bus itineraries."
+          "status": "verified",
+          "note": "Published room/property evidence only; not a dated reservation or final all-in offer."
         },
         "total_7n": {
           "value": null,
@@ -4677,7 +4847,8 @@
       "flags": [
         "F-14",
         "F-59",
-        "FV-01"
+        "FV-01",
+        "F-81"
       ]
     },
     "hilton-resorts-world": {
@@ -5173,7 +5344,8 @@
           "note": "",
           "also_sources": [
             "203-pdf",
-            "deuce-pdf"
+            "deuce-pdf",
+            "202-pdf"
           ]
         },
         "fares_2adults": {
@@ -5191,10 +5363,14 @@
           }
         },
         "hours": {
-          "value": "Deuce only: published 24/7; approx every 10–15 min 7 AM–1 AM / 20 min 1–7 AM",
+          "value": "Deuce only: published 24/7; approx every 10–15 min 7 AM–1 AM / 20 min 1–7 AM (Routes 202 Flamingo & 203 Spring Mountain also publish 24/7 corridor timetables)",
           "source": "deuce-pdf",
           "status": "verified",
-          "note": "Not the schedule of every RTC route. Frequency is approximate; traffic/construction and future service changes apply."
+          "note": "Not the schedule of every RTC route. Frequency is approximate; traffic/construction and future service changes apply.",
+          "also_sources": [
+            "202-pdf",
+            "203-pdf"
+          ]
         }
       },
       "flags": [
@@ -5281,7 +5457,7 @@
           "note": ""
         },
         "exceptions": {
-          "value": "Not used to satisfy the bus-only hotel ranking. Trip-specific prices/hours are not verified.",
+          "value": "Not used to satisfy the bus-only hotel ranking. 14 active stations published (LVCC×5, Resorts World, Encore, Westgate, Fontainebleau, Sahara, Airport T1/T3, Turnberry Towers); trip-specific prices/hours remain unverified.",
           "source": "vegas-loop",
           "status": "verified",
           "note": ""

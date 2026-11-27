@@ -130,7 +130,9 @@ class SiteTests(unittest.TestCase):
     def test_named_room_evidence_is_field_specific(self):
         self.assertIsNotNone(site.value(self.E["hotels"]["venetian"], "bed"))
         self.assertIsNotNone(site.value(self.E["hotels"]["hilton-resorts-world"], "bathroom"))
-        self.assertIsNone(site.value(self.E["hotels"]["nobu-caesars"], "bed"))
+        self.assertIsNotNone(site.value(self.E["hotels"]["nobu-caesars"], "bed"))
+        self.assertIsNone(site.value(self.E["hotels"]["waldorf-astoria"], "bed"))
+        self.assertIsNone(site.value(self.E["hotels"]["cromwell"], "bathroom"))
         self.assertIn("MGM King", site.value(self.E["hotels"]["mgm-grand"], "room"))
         self.assertIsNone(site.value(self.E["hotels"]["crockfords"], "total_7n"))
 
@@ -206,7 +208,9 @@ class SiteTests(unittest.TestCase):
     def test_schedule_and_source_conflicts_stay_explicit(self):
         self.assertIn("9 AM–9 PM", site.value(self.E["activities"]["mob-museum"], "hours"))
         self.assertIsNone(site.value(self.E["activities"]["high-roller"], "hours"))
-        self.assertIsNone(site.value(self.E["restaurants"]["esthers-kitchen"], "hours"))
+        self.assertIn("Dinner daily 5 PM–11 PM", site.value(self.E["restaurants"]["esthers-kitchen"], "hours"))
+        self.assertIsNone(site.value(self.E["restaurants"]["guy-savoy"], "hours"))
+        self.assertIsNone(site.value(self.E["restaurants"]["sparrow-and-wolf"], "hours"))
         self.assertIsNone(site.value(self.E["restaurants"]["e-by-jose-andres"], "days"))
         self.assertIn("Tue–Sun vs Tue–Sat", self.pages["restaurants.html"])
         self.assertIn("temporarily closed", self.pages["restaurants.html"].lower())
@@ -310,6 +314,25 @@ class SiteTests(unittest.TestCase):
         amount=c['adults']*(c['three_day_passes_per_adult']*Decimal(c['three_day_price']) + c['day_passes_per_adult']*Decimal(c['day_price']))
         self.assertEqual(amount, Decimal(c['product_sum']))
         self.assertIn('Deuce only',site.value(self.E['transit']['rtc'],'hours'))
+
+    def test_t9077f7b3_esthers_crockfords_and_hotel_room_expansions(self):
+        for n in (79, 80, 81):
+            self.assertIn(f"F-{n}", self.docs["flagged.html"].ids)
+        ek = self.E["restaurants"]["esthers-kitchen"]
+        self.assertEqual(site.value(ek, "address"), "1131 S. Main Street, Las Vegas, NV 89104")
+        self.assertEqual(site.value(ek, "phone"), "702-570-7864")
+        self.assertIsNone(site.value(ek, "price_2adults"))
+        self.assertIn("$390", self.pages["dining.html"])
+        ck = self.E["hotels"]["crockfords"]["fields"]["observed_total_7n"]
+        p = ck["itemized"]
+        total = sum(Decimal(x) for x in p["room_nights"]) + sum(Decimal(p[k]) for k in ("room_tax", "resort_fees", "resort_fee_tax"))
+        self.assertEqual(total, Decimal("3346.42"))
+        self.assertIsNone(site.value(self.E["hotels"]["crockfords"], "total_7n"))
+        self.assertIn("$3,346.42", self.pages["pricing.html"])
+        self.assertIn("sold out", self.pages["pricing.html"].lower())
+        fetched_hotels = sum(self.E["sources"][h["source"]]["result"] == "fetched" for h in self.E["hotels"].values())
+        self.assertEqual(fetched_hotels, 30)
+        self.assertIn("https://www.bluegreenvacations.com/resorts/nevada/bluegreen-club-36/", self.docs["hotels.html"].links)
 
 
 if __name__ == "__main__":
