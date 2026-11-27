@@ -778,3 +778,19 @@ Monorail line. This is recorded rather than quietly patched: a live-page read fo
 then #45/#46/#48). Every merge was resolved by regenerating HTML rather than hand-merging it, and no other
 session's data was reverted. The one deliberate reversal of an earlier decision — reinstating a *labelled estimate*
 for Guy Savoy — is recorded as F-64 with its source and keeps the $3,000 Krug figure withdrawn.
+
+### Fourth pass — recover evidence a merge had dropped (arena/c045ad05-vegas1, 2026-11-27)
+
+Reading the deployed page back again showed a subtler problem than the run-together sentence: my own fix had
+**silently dropped** the other session's corroboration for all five activities. Its `social_note` explains *why* each
+handle is the right one (Caesars press material for the High Roller, neonmuseum.org's own navigation for the Neon
+Museum, the Mob Museum's YouTube metadata declaring its Instagram) — that is exactly the evidence the brief asks to be
+reviewable. Preferring one session's wording would have thrown it away.
+
+`data/socials.json` now carries the other pass's sentence verbatim under `also_recorded` for each activity, and the
+generator renders it as "Previously recorded by the superseded pass: …" beneath my own sentence. Both are attributed,
+neither is merged into the other's voice, and a reader can see the two independent confirmations. `meta.supersedes`
+also states plainly that **review item R-02 is closed** — the flagged page keeps R-02 as history, this file is the
+evidence that supersedes it.
+
+Verified: 15 pages, 0 failures, 0 warnings; all five provenance rows show both confirmations.
