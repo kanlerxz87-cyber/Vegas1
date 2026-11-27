@@ -26,7 +26,7 @@ RTC = 'https://www.rtcsnv.com/ways-to-travel/fares-passes/'
 MONO = 'https://www.lvmonorail.com/ticket-information/'
 RES = load('restaurants.json')['restaurants']
 NAV = [('index.html', 'Overview'), ('hotels.html', 'Hotels'),
-       ('restaurants.html', 'Michelin dining'), ('activities.html', 'Activities'),
+       ('restaurants.html', 'Michelin dining'), ('dining.html', 'Dining costs'), ('activities.html', 'Activities'),
        ('transit.html', 'Transport'), ('questions.html', 'Questions'),
        ('suggestions.html', 'Suggestions'), ('flagged.html', 'Flagged for Review'),
        ('sources.html', 'Evidence'), ('repo-review.html', 'Repo review')]
@@ -133,7 +133,7 @@ def index():
     tiles = '<section class="grid4">' + ''.join(f'<div class="card"><div class="big">{v}</div><div class="lbl">{k}</div><p>{d}</p></div>' for v,k,d in cards) + '</section>'
     body = panel('Executive summary', '''<p><strong>Keep 15–22 February 2027 as a planning scenario, not a booked recommendation.</strong>
 Your preferred 15–18 February window is only three nights; it cannot also satisfy a one-to-two-week holiday.
-Extending the preferred arrival to seven nights avoids inventing a new arrival preference. A 14-night alternative is 15 February–1 March.</p>
+Extending the preferred arrival to seven nights avoids inventing a new arrival preference. <a href="pricing.html">Compare date scenarios</a> and <a href="costs.html">total-trip cost gates</a>. A 14-night alternative is 15 February–1 March.</p>
 <p><strong>There is no defensible “best hotel” or “cheapest time to book” yet.</strong> Official engines did not yield an unambiguous,
 all-in seven-night checkout total with confirmed room and party size. Historical OTA prices and zone estimates have been removed from primary decision tables.</p>
 <p>Michelin’s 31 August 2026 announcement supports all 24 Las Vegas listings below. Stars belong to restaurants, not hotels;
@@ -167,7 +167,7 @@ def hotels():
         room = text(h.get('room')) + '<br>' + text(h.get('bed'))
         bath = text(h.get('bathroom')) + '<br><small>Exclusive/private-use guarantee for dated room: unverified</small>'
         rows.append([text(h['name']), room, bath, text(h.get('amenities')), BLANK, BLANK,
-                     text(h['check']) + '<br><a href="flagged.html#F-65">Unverified decision fields</a>', link(h['source'])])
+                     text(h['check']) + '<br><a href="flagged.html#EC-02">Unverified decision fields</a>', link(h['source'])])
     body=panel('No price or transit winner is verified', '''<p>The requested ranking needs a qualifying named room, private bathroom, a full seven-night total for two adults, and timed bus journeys for each restaurant.
 Those requirements are not met together by any captured quote. Properties below are <strong>alphabetical candidates, not a ranking</strong>.
 Missing totals and ≤60-minute counts are blank; historical star classifications, guest scores and zone-model counts are not promoted into this view.</p>
@@ -250,7 +250,7 @@ It states a one-night room-and-tax deposit and a cancellation deadline 72 hours 
 <p><strong>Suggested action:</strong> evaluate the offer before 4 December only if Wynn fits the budget and a valid checkout quote/occupancy can be obtained.
 There is no evidence that this is the lowest price you will ever see. The page exposes rounded average-night rates but not an unambiguous final seven-night total; those averages are not multiplied into a purported exact total.</p>''' + link(E['hotels']['wynn']['source'],'Official dated Wynn offer & terms'))
     body+=panel('Quote acceptance checklist', '''<p>Same named room; two adults/one room; guaranteed queen-or-larger; exclusive bathroom; exact seven nights; currency; base total; mandatory resort fee; all taxes; total due; refundable/nonrefundable terms; deposit; loyalty eligibility; retrieval time.</p>
-<p>Neither a property home page, an OTA search list nor “$X/night” without a precise checkout breakdown clears that gate. See <a href="flagged.html#F-65">F-65</a>.</p>''')
+<p>Neither a property home page, an OTA search list nor “$X/night” without a precise checkout breakdown clears that gate. See <a href="flagged.html#EC-02">EC-02</a>.</p>''')
     return page('pricing.html','Dates & booking timing','Explicit date scenarios, a verified offer deadline, and no fabricated seven-night totals.',body)
 
 
@@ -258,7 +258,7 @@ QUESTIONS=[
 ('Q-01','Can hotels be ranked by restaurants within one hour by bus?','Unresolved','No complete dated door-to-door route evidence. A 20-minute estimate is not an approved replacement.','Run exact outward/return operator itineraries once hotel and dining times are fixed.',RTC),
 ('Q-02','Which trip length takes precedence?','Conflict','Preferred 15–18 Feb is 3 nights; required duration is 7–14 nights.','Working scenario 15–22 Feb (7 nights); keep 15 Feb–1 Mar (14 nights) as an alternative, not a confirmed preference.',M),
 ('Q-03','What total budget applies?','Unknown','Hotel, food, flights, activities and transport budget not supplied.','Obtain comparable official checkout totals; publish value tiers rather than invent a spending ceiling.',E['hotels']['caesars-palace']['source']),
-('Q-04','Are meal totals known?','Partly answered','Published menu subtotals for two exist for Anima, Partage and Stubborn Seed; no all-in restaurant budget.','Use dated menus, actual choices, beverage plan and fee/tax disclosures. No assumed spend at à la carte venues.',E['restaurants']['partage']['menu_source']),
+('Q-04','Are meal totals known?','Partly answered','Published menu subtotals for two exist for Anima, Partage, Wing Lei and Stubborn Seed; no all-in restaurant budget.','Use dated menus, actual choices, beverage plan and fee/tax disclosures. No assumed spend at à la carte venues.',E['restaurants']['partage']['menu_source']),
 ('Q-05','Are bed and private bathroom guaranteed?','Unresolved','Some named room/bed descriptions verified; exclusive-use promise and dated rate not captured together.','Require the named-room checkout details; reject assigned-on-arrival room as proof of bed size.',E['hotels']['flamingo']['source']),
 ('Q-06','Which week is cheapest? When should it be booked?','Unresolved','No comparable official all-in seven-night totals. Future best purchase day cannot be established from one snapshot.','Compare 30 possible seven-night starts consistently. Wynn offer deadline is 4 Dec 2026, not proof of a global minimum.',E['hotels']['wynn']['source']),
 ('Q-07','Dietary restrictions, allergies or alcohol preferences?','Unknown','Not supplied. Partage excludes several diets; Kabuto raw-fish substitutions not accommodated.','Obtain venue dietary policy before a nonrefundable dining commitment. Do not infer suitability.',E['restaurants']['partage']['menu_source']),
@@ -357,9 +357,34 @@ def repo_review():
     return page('repo-review.html','Repository review','A review of the inherited data and the code that turns evidence into published decision views.',body)
 
 
+def dining():
+    rows=[]
+    for r in RES:
+        v=E['restaurants'][r['id']]
+        if v.get('price_options'):
+            rows.append([text(r['name']),prices(v),text(v.get('price_note')),link(v.get('menu_source',v['source']))])
+    body=panel('Published menu subtotals, not a selected dining budget', '<p>Only exact arithmetic on published fixed-menu prices is shown. No meal count, course choice, wine purchase or inferred à-la-carte appetite is assumed. All amounts are for two adults, food only; final tax/tip-inclusive total and 2027 applicability remain unverified.</p>')
+    body+=table(['Restaurant','Fixed-menu subtotal for 2 adults','Basis / limits','Official menu'],rows,'Confirmed fixed-menu arithmetic')
+    body+=panel('Why no assumed Guy Savoy dinner range?', '<p>The official menu publishes individual dishes, but no complete dinner-for-two total was extracted. Earlier research constructed a range by assuming two or three dishes per adult. That calculation is retained in the raw dataset and F-64 for audit, but is not an official quote and does not enter this strict primary view.</p>'+link(E['restaurants']['guy-savoy']['source']+'/main-menu','Official Guy Savoy à-la-carte menu'))
+    body+=panel('Build an actual budget only after selecting meals', '<p>Choose the number of dinners, each menu, beverages, dietary fit, tax/tip basis and dates. Then add exact accepted subtotals. No seven-night food budget can be verified from an unspecified meal plan. <a href="costs.html">See total-trip cost gates</a>.</p>')
+    return page('dining.html','Dining costs for two','Source-backed menu subtotals, with no invented meal quantities or à-la-carte spend range.',body)
+
+
+def costs():
+    body=panel('An all-in total would currently be a guess', '<p>The categories below are not summed because major components have no verified totals. A blank means missing evidence, not free. Do not read restaurant menu subtotals or starting ticket prices as a complete vacation budget.</p>')
+    rows=[['Named hotel room, 7 nights',BLANK,'Exact checkout total, exclusive bathroom, guaranteed bed, party size, taxes/mandatory fees, cancellation.',link(E['hotels']['caesars-palace']['source'])],
+          ['Dining for the full stay',BLANK,'Meal choices/count, beverage plan, fees and dated reservations. Fixed-menu subtotals are on Dining costs.',link(E['restaurants']['partage']['menu_source'])],
+          ['Activities for the full stay',BLANK,'Selected dates, products, fee-inclusive two-adult ticket checkouts.',link(E['activities']['neon-museum']['source'])],
+          ['Local transport',BLANK,'Actual journey plan and passes; published fare subtotals are not a trip budget.',link(RTC)],
+          ['Flights / entry / airport transfers',BLANK,'Origin airport, traveler eligibility, fares and transfer plan not supplied or verified.',link(RTC)],
+          ['Complete trip total',BLANK,'No sum until required categories and their inclusion basis are established.',link(E['hotels']['wynn']['source'])]]
+    body+=table(['Cost category','Total for 2 adults','Missing acceptance evidence','Official context'],rows,'Trip budget status, USD')
+    return page('costs.html','Total-trip cost gates','A complete cost model that does not disguise missing prices as zero.',body)
+
+
 def render():
     pages={'index.html':index(),'hotels.html':hotels(),'restaurants.html':restaurants(),'activities.html':activities(),
-           'transit.html':transit(),'pricing.html':pricing(),'questions.html':questions(),'suggestions.html':suggestions(),
+           'transit.html':transit(),'dining.html':dining(),'costs.html':costs(),'pricing.html':pricing(),'questions.html':questions(),'suggestions.html':suggestions(),
            'flagged.html':flagged(),'sources.html':sources(),'repo-review.html':repo_review()}
     pages['summary.html']=page('summary.html','Executive summary','The concise decision view for two adults, 2027.',panel('Start here','<p>The executive summary is on the <a href="index.html">Overview</a>. No hotel rate winner or bus ranking is verified. Use <a href="hotels.html">hotel candidates</a>, <a href="pricing.html">dated scenarios</a>, and <a href="questions.html">decision gates</a>.</p>'))
     pages['verification.html']=page('verification.html','Verification','Evidence and structural tests are separate.',panel('Verification coverage','<p>Use the <a href="sources.html">field-specific evidence ledger</a>, <a href="repo-review.html">repo review</a> and <a href="flagged.html">Flagged for Review</a> register. No local link test is represented as a complete external availability check.</p>'))

@@ -81,12 +81,19 @@
       "days": "Mon, Thu–Sun",
       "hours": "Mon/Thu/Sun 5:30–9:30 PM; Fri/Sat 5:30–10 PM",
       "exceptions": "Closed Tue/Wed; children under 5 not permitted. Forbes five-star is not a Michelin star.",
-      "price_options": [],
+      "price_options": [
+        {
+          "label": "Chef Tam’s Signature Tasting Menu",
+          "per_person": 198.88
+        }
+      ],
       "social": [],
       "award": "Recommended",
       "award_class": "recommended",
       "address": "3131 S Las Vegas Blvd, Las Vegas, NV 89109",
-      "location": "Wynn Las Vegas"
+      "location": "Wynn Las Vegas",
+      "menu_source": "https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf",
+      "price_note": "Two-person fixed-menu food subtotal; wine journeys, tax, gratuity and February/March 2027 applicability not verified."
     },
     "mott-32": {
       "source": "https://www.venetianlasvegas.com/dining/restaurants/mott-32.html",
@@ -283,8 +290,8 @@
     },
     "esthers-kitchen": {
       "source": "https://www.estherslv.com/",
-      "check": "Official home describes Arts District but no hours/address; address here is Michelin’s published listing, not independently reconciled with venue. F-50.",
-      "days": null,
+      "check": "Official home and menu opened; menu confirms service days, but no clock times. Address is Michelin’s published listing, not independently reconciled with venue (F-50).",
+      "days": "Dinner daily; lunch Mon–Fri; brunch Sat–Sun",
       "hours": null,
       "exceptions": null,
       "price_options": [],
@@ -292,7 +299,8 @@
       "award": "Bib Gourmand",
       "award_class": "bib",
       "address": "1131 S. Main St., Las Vegas, Nevada 89104",
-      "location": "Arts District (Downtown)"
+      "location": "Arts District (Downtown)",
+      "menu_source": "https://www.estherslv.com/menus/"
     },
     "soulbelly-bbq": {
       "source": "https://soulbellybbq.com",
@@ -838,7 +846,7 @@
   },
   "checks": [
     {
-      "id": "F-64",
+      "id": "EC-01",
       "title": "Unsupported transit ranking withdrawn",
       "finding": "The zone matrix assigns zero minutes inside a zone, fixed times without departures and includes Loop vehicles. It does not establish bus-only door-to-door times or all 24 restaurants within 60 minutes, especially Henderson/Summerlin. Primary rank/count fields are blank. Historical model retained in data/transit.json; not recomputed into verified data.",
       "sources": [
@@ -847,7 +855,7 @@
       ]
     },
     {
-      "id": "F-65",
+      "id": "EC-02",
       "title": "No verified all-in seven-night hotel total",
       "finding": "Historical OTA totals and rounded official nightly rates cannot support strict official all-in seven-night ranking. Caesars and Flamingo show technical-error banners with prices; Wynn rendered occupancy is ambiguous. No checkout total verified; primary totals blank, no cheapest-week or optimal-purchase-day claim.",
       "sources": [
@@ -857,7 +865,7 @@
       ]
     },
     {
-      "id": "F-66",
+      "id": "EC-03",
       "title": "Mob Museum Thursday schedule corrected",
       "finding": "Official weekly schedule now says daily 9 AM–9 PM. The inherited recurring Thursday 4 PM close generalized a Thanksgiving exception. Current early-closure page lists date-specific exceptions, not a weekly Thursday rule.",
       "sources": [
@@ -865,7 +873,7 @@
       ]
     },
     {
-      "id": "F-67",
+      "id": "EC-04",
       "title": "Social verification is field-specific",
       "finding": "Fresh social fields contain only links observed on official venue/property pages in this integration. Expandable prior-session account evidence is retained with its original provenance/caveats and not claimed rechecked here. Creator-video leads without specific verification remain only in raw datasets. Some prior YouTube fields conflict with their caveats (empty official channel versus separate creator video); no promotion based on field presence alone.",
       "sources": [
@@ -875,7 +883,7 @@
       ]
     },
     {
-      "id": "F-68",
+      "id": "EC-05",
       "title": "High Roller source contradicts its own times",
       "finding": "Opening badge says 12:30 PM but tickets say noon; anytime ticket text conflicts with FAQ. No full weekly closing schedule extracted. Hours field blank; current starting-price subtotals not 2027 all-in quotes.",
       "sources": [
@@ -883,7 +891,7 @@
       ]
     },
     {
-      "id": "F-69",
+      "id": "EC-06",
       "title": "Guide status does not guarantee opening or booking",
       "finding": "Michael Mina is listed Recommended in Michelin 2026 but official venue says temporarily closed; 2027 opening unverified. KAME inherited official link was actually OpenTable; official sushikame.com loads only minimal heading. Guy Savoy menu fetch exposes à la carte prices but no complete fixed-menu total, so no assumed couple spend shown.",
       "sources": [
@@ -894,7 +902,7 @@
       ]
     },
     {
-      "id": "F-70",
+      "id": "EC-07",
       "title": "Scope of line-by-line verification",
       "finding": "All 24 restaurant award tiers and addresses compared individually to Michelin’s selection. Venue pages opened for all 24 restaurants and five activities; missing fields remain blank. Only five of 33 hotel candidates have fresh official room/contact/engine evidence (Caesars, Flamingo, Wynn, Desert Rose, Cliffs); other candidate links are inherited, not claimed checked. External URLs not all tested for current availability; local links tested separately. No full end-to-end trip feasibility or dated reservations verified.",
       "sources": [

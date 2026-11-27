@@ -48,6 +48,25 @@ N_TWO = sum(1 for _r in RES["restaurants"] if _r["award"].startswith("2"))
 N_ONE = sum(1 for _r in RES["restaurants"] if _r["award"].startswith("1"))
 
 
+
+_NUM = re.compile(r"\d[\d,]*(?:\.\d+)?")
+
+
+def usd_values(text):
+    """Every dollar figure printed in a price string, in order.
+
+    Lets the budget page total published prices instead of retyping them:
+    '$260 / $320 / $420' -> [260.0, 320.0, 420.0]; '≈$520–$940 (est.)' -> [520.0, 940.0].
+    """
+    out = []
+    for m in _NUM.finditer(text or ""):
+        try:
+            out.append(float(m.group(0).replace(",", "")))
+        except ValueError:
+            pass
+    return out
+
+
 def money(v):
     return "—" if v in (None, "") else f"${v:,.0f}"
 
@@ -56,6 +75,7 @@ def nav(active):
     items = [
         ("index.html", "Overview"),
         ("hotels.html", "Hotels"),
+        ("dining.html", "Dining budget"),
         ("restaurants.html", "Michelin"),
         ("activities.html", "Things to do"),
         ("transit.html", "Getting around"),
@@ -164,7 +184,13 @@ def build_restaurants():
         ):
             hours = e(r["hours"][len(days):].strip())
         days_html = e(days) if days else '<span class="warn">not verified</span>'
-        price = e(r["price_2adults"]) if r["price_2adults"] else '<span class="muted">on request</span>'
+        if r["price_2adults"]:
+            basis = r.get("price_basis", "")
+            src = r.get("price_source") or r["official_url"]
+            price = (f'{e(r["price_2adults"])}<div class="tiny">'
+                     f'<a href="{e(src)}" target="_blank" rel="noopener">menu source</a> · {e(basis)}</div>')
+        else:
+            price = '<span class="muted">on request</span>'
         rows.append(f"""<tr>
 <td><a href="{e(r['official_url'])}" target="_blank" rel="noopener">{e(r['name'])}</a>
   <div class="tiny">{e(r['cuisine'])} · {e(r['location'])}</div></td>
@@ -189,6 +215,37 @@ def build_restaurants():
 can never be mistaken for a starred one. <strong>—</strong> means the total was not verified; it does not imply a venue has no published prices. Published figures are not necessarily a complete meal or final bill; consult the per-row basis below.</p>
 """
 
+    priced = [r for r in rs if r["price_2adults"]]
+    n_priced = len(priced)
+    n_est = sum(1 for r in priced if r.get("price_basis", "").startswith("estimated"))
+    n_closed = sum(1 for r in priced if "closed" in r.get("price_basis", ""))
+    cost_rows = []
+    for r in priced:
+        src = r.get("price_source") or r["official_url"]
+        closed = ' <span class="warn">(temporarily closed)</span>' if r["id"] == "michael-mina" else ""
+        cost_rows.append(
+            f'<tr><td><a href="{e(r["official_url"])}" target="_blank" rel="noopener">{e(r["name"])}</a>{closed}'
+            f'<div class="tiny">{e(r["award"])}</div></td>'
+            f'<td class="num">{e(r["price_2adults"])}</td>'
+            f'<td class="tiny">{e(r.get("price_basis", ""))}</td>'
+            f'<td class="tiny"><a href="{e(src)}" target="_blank" rel="noopener">venue menu</a></td></tr>')
+    cost_panel = f"""
+  <p><strong>{n_priced} of {N_TOTAL}</strong> venues printed a price on their own site or menu PDF when re-read on
+  27 November 2026: {n_priced - n_est - n_closed} state a fixed per-person price (doubled here for two adults),
+  {n_est} publish only per-dish prices so their figure is an <em>estimate</em> with the method shown, and
+  {n_closed} states a price for a venue that is temporarily closed. The other {N_TOTAL - n_priced} print no price
+  at all and are left blank rather than averaged (<a href="flagged.html#F-65">F-65</a>).</p>
+  <div class="scroll">
+  <table class="data slim">
+  <thead><tr><th>Restaurant</th><th>Cost for two</th><th>Basis</th><th>Source</th></tr></thead>
+  <tbody>{''.join(cost_rows)}</tbody>
+  </table>
+  </div>
+  <p class="note">Food only, before tax, gratuity and wine, for two adults. A worked food-and-activity total is on the
+  <a href="dining.html">Dining budget</a> page. The two starred rooms that still print nothing — Jo&#xEB;l Robuchon and
+  &#xE9; by Jos&#xE9; Andr&#xE9;s — are the likeliest to be the largest line after the room, so reserve before
+  booking anything (<a href="suggestions.html">S-04</a>).</p>
+"""
     counts = RES["meta"]["counts"]
 
     soc_rows = ""
@@ -252,13 +309,195 @@ can never be mistaken for a starred one. <strong>—</strong> means the total wa
 
 <section class="panel">
   <h2 id="costs">What dinner for two actually costs</h2>
-  <p>Totals below come from the stored source observations. They are not guaranteed for 2027 and exclude additions as stated. A blank is not an estimate. Social videos are not price sources.</p>
-  <ul class="tight">{''.join(f'<li><a href="{e(r["official_url"])}">{e(r["name"])}</a>: {e(r["price_2adults"])}. {e(r["price_note"])}</li>' for r in rs if r["price_2adults"])}</ul>
-  <p>Guy Savoy's inherited $200–$580 range was merely two à-la-carte dishes, not a dinner total. Its current fetched menu does not expose the inherited $3,000 Krug price. That cell is now blank. <a href="flagged.html#F-61">F-61</a>.</p>
-</section>
+{cost_panel}</section>
 """
     return page("restaurants.html", "MICHELIN restaurants",
                 f"All {counts['total']} Las Vegas listings from the 2026 guide, each labelled starred, Bib Gourmand or Recommended.",
+                body)
+
+
+# ---------------------------------------------------------------- dining budget
+def _first_usd(text):
+    v = usd_values(text)
+    return v[0] if v else None
+
+
+def _dining(rid, mode):
+    """Cost for two from the stored price cell. mode: low | mid | high."""
+    r = next(x for x in RES["restaurants"] if x["id"] == rid)
+    v = usd_values(r["price_2adults"])
+    if not v:
+        return None
+    if mode == "low":
+        return v[0]
+    if mode == "high":
+        return v[-1]
+    if len(v) >= 3:            # a menu ladder, e.g. Partage $260/$320/$420
+        return sorted(v)[len(v) // 2]
+    return (v[0] + v[-1]) / 2
+
+
+def build_dining():
+    """Food, activities and transport for two adults — the room is deliberately excluded.
+
+    Every component is read from data/ at build time. Hotel totals are not used: no
+    official, checkout-complete seven-night quote exists in the canonical dataset (F-58),
+    so adding one here would re-introduce a number the evidence gate removed.
+    """
+    acts = {a["id"]: a for a in ACT["activities"]}
+    hr = usd_values(acts["high-roller"]["price_per_couple"])
+    mob = _first_usd(acts["mob-museum"]["price_per_couple"])
+    neon = _first_usd(acts["neon-museum"]["price_per_couple"])
+    act_total = hr[-1] + mob + neon
+
+    monorail = next(x for x in TRANSIT["systems"] if x["id"] == "monorail")
+    mon_fares = usd_values(monorail["fare_note"].split("7-day")[1])
+    monorail_two = mon_fares[-1] * 2
+
+    rtc = next(x for x in TRANSIT["systems"] if x["id"] == "rtc")
+    rtc_3day = usd_values(rtc["fare_note"].split("3-day")[1])[0]
+    rtc_two = rtc_3day * 3 * 2
+
+    scenarios = [
+        {"name": "Two dinners", "picks": [("partage", "low"), ("esthers-kitchen", "mid")]},
+        {"name": "One tasting menu", "picks": [("wing-lei", "low"), ("partage", "mid")]},
+        {"name": "Stars-heavy", "picks": [("guy-savoy", "mid"), ("wing-lei", "low"), ("partage", "high")]},
+    ]
+
+    comps = []
+    for sc in scenarios:
+        lines, total = [], 0.0
+        for rid, mode in sc["picks"]:
+            r = next(x for x in RES["restaurants"] if x["id"] == rid)
+            amt = _dining(rid, mode)
+            total += amt
+            lines.append(f'<a href="{e(r["official_url"])}" target="_blank" rel="noopener">{e(r["name"])}</a> '
+                         f'<span class="muted">${amt:,.2f}</span>')
+        comps.append({"sc": sc, "lines": lines, "food": total,
+                      "total": total + act_total + monorail_two})
+
+    head = "".join(f'<th>{e(c["sc"]["name"])}</th>' for c in comps)
+
+    def row(label, cells, note=""):
+        n = f'<div class="tiny">{note}</div>' if note else ""
+        return (f'<tr><th class="rowhead">{label}{n}</th>'
+                + "".join(f"<td>{c}</td>" for c in cells) + "</tr>")
+
+    food_cells = [f'{"<br>".join(c["lines"])}<div class="num strong">${c["food"]:,.2f}</div>' for c in comps]
+    act_cell = (f'High Roller anytime ${hr[-1]:,.2f} + Mob Museum ${mob:,.2f} + '
+                f'Neon Museum from ${neon:,.2f}<div class="num strong">${act_total:,.2f}</div>')
+    transit_cell = (f'2 × Monorail 7-day e-ticket (${mon_fares[-1]:,.2f} each)'
+                    f'<div class="num strong">${monorail_two:,.2f}</div>')
+    total_cells = [f'<div class="num best" style="font-size:1.15rem">${c["total"]:,.2f}</div>' for c in comps]
+
+    matrix = f"""
+  <div class="scroll">
+  <table class="data matrix">
+  <thead><tr><th class="rowhead">Cost line (2 adults)</th>{head}</tr></thead>
+  <tbody>
+  {row("Michelin dinners", food_cells, "food only · before tax, tip and wine")}
+  {row("Activities", [act_cell]*len(comps), "the three paid venues this site verifies")}
+  {row("Getting around", [transit_cell]*len(comps), "unlimited Strip + Downtown")}
+  {row("Food, sights and transport", total_cells, "excludes the room, tax, tips and wine")}
+  </tbody>
+  </table>
+  </div>
+"""
+
+    act_rows = "".join(
+        f'<tr><td><a href="{e(a["official_url"])}" target="_blank" rel="noopener">{e(a["name"])}</a></td>'
+        f'<td class="num">{e(a["price_per_couple"]) or "—"}</td>'
+        f'<td class="tiny">{e(a["price_note"])}</td></tr>'
+        for a in ACT["activities"])
+
+    body = f"""
+<section class="panel callout">
+  <h2>What the food, sights and transport add up to</h2>
+  <p>Three worked totals for two adults, assembled at build time from the venue prices on this site.
+  <strong>No hotel figure is used.</strong> No official, checkout-complete seven-night accommodation quote exists in
+  this dataset (<a href="flagged.html#F-58">F-58</a>), so adding an OTA snapshot here would put back a number the
+  evidence gate deliberately removed. Add your own official room total to the line below once you have it.</p>
+  <p><strong>These totals are arithmetic on published prices, not quotes.</strong> They exclude Nevada room tax,
+  resort fees, airfare, gratuity and wine.</p>
+</section>
+
+<section class="panel">
+  <h2>Three ways to eat</h2>
+  {matrix}
+  <p class="note">Each dinner is the venue's own published price doubled for two (or, where only per-dish prices
+  exist, the labelled estimate from the <a href="restaurants.html#costs">restaurant table</a>). Partage appears at
+  its 5-course price in the first column, 7-course in the second and Signature in the third — the venue publishes
+  all three. Michael Mina is excluded from every column because it is temporarily closed
+  (<a href="flagged.html#F-23">F-23</a>).</p>
+</section>
+
+<section class="panel">
+  <h2>What one more dinner costs</h2>
+  <div class="scroll">
+  <table class="data slim">
+  <thead><tr><th>Add one dinner for two</th><th>Marginal cost</th><th>Source</th></tr></thead>
+  <tbody>
+  <tr><td>Partage, 5 courses</td><td class="num">${_dining("partage","low"):,.2f}</td><td class="tiny"><a href="{e(next(x for x in RES["restaurants"] if x["id"]=="partage")["price_source"])}">official menu</a></td></tr>
+  <tr><td>Wing Lei, Chef Tam's tasting</td><td class="num">${_dining("wing-lei","low"):,.2f}</td><td class="tiny"><a href="{e(next(x for x in RES["restaurants"] if x["id"]=="wing-lei")["price_source"])}">official menu</a></td></tr>
+  <tr><td>Guy Savoy, à la carte (estimate)</td><td class="num">≈${_dining("guy-savoy","low"):,.0f}–${_dining("guy-savoy","high"):,.0f}</td><td class="tiny"><a href="{e(next(x for x in RES["restaurants"] if x["id"]=="guy-savoy")["price_source"])}">official menu</a></td></tr>
+  </tbody>
+  </table>
+  </div>
+  <p class="note">Useful comparison: the cheapest starred dinner on this site (Wing Lei, ${_dining("wing-lei","low"):,.2f}
+  for two) is roughly the price of one to two hotel nights at the properties in the middle of the hotel table — check the
+  official checkout total before assuming the room is the only large line.</p>
+</section>
+
+<section class="panel">
+  <h2>Activities, priced for two</h2>
+  <div class="scroll">
+  <table class="data">
+  <thead><tr><th>Venue</th><th>2 adults</th><th>Basis</th></tr></thead>
+  <tbody>{act_rows}</tbody>
+  </table>
+  </div>
+  <p class="note">The three paid venues in the totals are the High Roller (anytime, ${hr[-1]:,.2f}), the Mob Museum
+  (${mob:,.2f}) and the Neon Museum (from ${neon:,.2f}). Fremont Street is free, so it adds nothing. The Sphere
+  publishes no single price and is left out of every total rather than estimated
+  (<a href="flagged.html#F-16">F-16</a>).</p>
+</section>
+
+<section class="panel">
+  <h2>Getting around: which pass to buy</h2>
+  <div class="scroll">
+  <table class="data slim">
+  <thead><tr><th>Option</th><th>For two</th><th>Basis</th></tr></thead>
+  <tbody>
+  <tr><td>Monorail 7-day e-ticket × 2</td><td class="num">${monorail_two:,.2f}</td>
+      <td class="tiny"><a href="{e(monorail["fare_url"])}" target="_blank" rel="noopener">official fares</a> ·
+      {e(monorail["fare_note"])}</td></tr>
+  <tr><td>RTC 3-day pass × 3 each (covers 9 days)</td><td class="num">${rtc_two:,.2f}</td>
+      <td class="tiny"><a href="{e(rtc["official_url"])}" target="_blank" rel="noopener">official fares</a> ·
+      {e(rtc["fare_note"])}</td></tr>
+  </tbody>
+  </table>
+  </div>
+  <p class="note">The monorail does not reach the airport or downtown; the RTC Deuce does and runs 24 hours, which
+  matters if Fremont Street and Chinatown are in the plan. No seven-day RTC pass was verified — the arithmetic
+  above stacks three-day passes.</p>
+</section>
+
+<section class="panel">
+  <h2>To turn this into a trip total</h2>
+  <ol class="tight">
+    <li><strong>Add the room.</strong> Use the property's own checkout for the exact dates: named room, two adults,
+      seven nights, mandatory resort fee and taxes, cancellation terms, timestamp
+      (<a href="hotels.html">Hotels</a>, <a href="flagged.html#F-58">F-58</a>).</li>
+    <li><strong>Add airfare</strong> and airport transfers — neither is in this dataset.</li>
+    <li><strong>Add gratuity and wine.</strong> Partage's published wine pairings are $60–$108 per person; the other
+      venues publish no pairing price, so none is estimated.</li>
+    <li><strong>Keep the nights flexible until the room is quoted.</strong> No universal cheapest week is established
+      (<a href="questions.html#Q-06">Q-06</a>).</li>
+  </ol>
+</section>
+"""
+    return page("dining.html", "Dining budget",
+                "What the Michelin dinners, the three paid activities and a transit pass add up to for two adults — before the room.",
                 body)
 
 
@@ -1027,8 +1266,7 @@ def build_audit_sections():
 
 def main():
     DOCS.mkdir(exist_ok=True)
-    # T20: strict field-level evidence is the sole primary renderer. Legacy
-    # functions above are retained for audit, not used to publish decision values.
+    # Strict primary views: legacy builders retained for audit, raw upstream data intact.
     from strict_site import render, CSS_EXTRA
     pages = render()
     # Publish to BOTH docs/ and the repo root. GitHub Pages on this repo is pinned
