@@ -95,7 +95,7 @@ def page(active, title, subtitle, body, lead=""):
   {body}
 </main>
 <footer class="wrap">
-  <p>Prices captured 25 Nov 2026 from Booking.com for exact date ranges, 2 adults, 1 room, USD; spot-checked 26 Nov 2026 (see <a href="flagged.html">Flagged for review</a>).
+  <p>Prices captured 25 Nov 2026 from Booking.com for exact date ranges, 2 adults, 1 room, USD; spot-checked 26–27 Nov 2026 (see <a href="flagged.html">Flagged for review</a>).
   Every row links to its source. Blank means <strong>not verified</strong> — never estimated.</p>
   <p>Las Vegas had no MICHELIN Guide between 2010 and 2025. All awards here are from the 2026
   Southwest selection, the first since 2009.</p>
@@ -308,7 +308,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
         if ov == "yes":
             unverified = ""
         elif ov == "blocked":
-            unverified = '&nbsp;<span class="tinymuted">(opened 26 Nov 2026 — the site refuses automated access)</span>'
+            unverified = '&nbsp;<span class="tinymuted">(checked 26–27 Nov 2026 — the site refuses automated access)</span>'
         elif ov == "sibling":
             unverified = (
                 '&nbsp;<span class="tinymuted">(this URL lands on the parent property’s page, '
@@ -325,6 +325,11 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
         if h["flags"]:
             fl = " · ".join(f'<a href="flagged.html#{f}">{f}</a>' for f in h["flags"])
             flags = f'<p class="flagline">⚑ {fl}</p>'
+        off_link = (
+            f'<a href="{e(h["official_url"])}" target="_blank" rel="noopener">Official</a>{unverified}'
+            if h.get("official_url")
+            else '<span class="tinymuted">No official URL recorded</span>'
+        )
         cards.append(f"""
 <article class="hotel">
   <h3>{e(h['name'])} <span class="pill">{e(h['tier'])}</span></h3>
@@ -339,10 +344,15 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   <p>{e(h['notes'])}</p>
   {flags}
   <p class="links">
-    <a href="{e(h['official_url'])}" target="_blank" rel="noopener">Official</a>{unverified}
+    {off_link}
     <a href="{e(h['booking_url'])}" target="_blank" rel="noopener">{ps_label}</a>
   </p>
 </article>""")
+
+    h_yes = sum(1 for h in HOTELS["hotels"] if h.get("official_verified") == "yes")
+    h_blk = sum(1 for h in HOTELS["hotels"] if h.get("official_verified") == "blocked")
+    h_sib = sum(1 for h in HOTELS["hotels"] if h.get("official_verified") == "sibling")
+    h_no = len(HOTELS["hotels"]) - h_yes - h_blk - h_sib
 
     body = f"""
 <section class="panel">
@@ -358,7 +368,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   On 26 Nov, Booking.com's own Venetian page showed the same 60 m² suite at US$5,185 for 15–22 Feb and €4,472 for
   8–15 Mar, both including taxes and fees, so the stored Venetian figures are withdrawn (F-39). The other rows
   are not reproduced (F-44). Presidents' Day (15 Feb 2027) is a verified calendar fact; whether it moves prices is not
-  established. See <a href="questions.html#Q-06">Q-06</a> for how to close it.</p> Compare the exact named room, fees, taxes, cancellation terms and dates on each property's own booking page before booking.</p>
+  established. See <a href="questions.html#Q-06">Q-06</a> for how to close it. Compare the exact named room, fees, taxes, cancellation terms and dates on each property's own booking page before booking.</p>
 </section>
 
 <section class="panel">
@@ -381,10 +391,10 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <section class="panel">
   <h2 id="every-hotel">Every hotel — dated Booking.com quote snapshots</h2>
   <p>These are third-party Booking.com search totals, generally excluding resort fees and local tax; they are not official property-engine quotes. The <a href="https://kanlerxz87-cyber.github.io/Vegas1/docs/session-af795000/hotels.html">separate official-engine sample</a> covers only selected properties/dates and has a different fee/tax basis. Do not combine these datasets or read them as a verified market-wide rate ranking.</p>
-  <p class="note"><strong>Link honesty, after the 26 Nov 2026 re-check:</strong> <strong>18 of the 32</strong>
-  "Official" links were opened and returned the property's own page; <strong>8 refused automated access</strong>
+  <p class="note"><strong>Link honesty, after the 26–27 Nov 2026 re-checks:</strong> <strong>{h_yes} of the {len(HOTELS['hotels'])}</strong>
+  "Official" links were opened and returned the property's own page; <strong>{h_blk} refused automated access</strong>
   from this environment (Crockfords returned HTTP 500) and are marked <em>refuses automated access</em> —
-  refused, not broken; <strong>5 were not opened</strong> and keep <em>not fetched — may have moved</em>. One link (Nobu at Caesars) opens but lands on the parent property's page.
+  refused, not broken; <strong>{h_no}</strong> remain unopened; and <strong>{h_sib}</strong> (Nobu at Caesars) opens but lands on the parent property's page.
   A "Price source" link is the Booking.com URL the number came from; where that URL is a dated search-results list
   rather than the property's own quote page, the card says so — the link then proves the search, not the room.</p>
   <div class="hotels">{''.join(cards)}</div>
@@ -415,10 +425,10 @@ def build_restaurants():
     rows = []
     for r in rs:
         yt = " · ".join(
-            f'<a href="{u}" target="_blank" rel="noopener">video {i+1}</a>' for i, u in enumerate(r["youtube"])
-        ) or '<span class="muted">none found</span>'
-        ig = f'<a href="{r["instagram"]}" target="_blank" rel="noopener">IG</a>' if r["instagram"] else '<span class="muted">—</span>'
-        tt = f'<a href="{r["tiktok"]}" target="_blank" rel="noopener">TT</a>' if r["tiktok"] else '<span class="muted">—</span>'
+            f'<a href="{e(u)}" target="_blank" rel="noopener">v{i+1}</a>' for i, u in enumerate(r["youtube"])
+        ) or '<span class="muted">—</span>'
+        ig = f'<a href="{e(r["instagram"])}" target="_blank" rel="noopener">Instagram</a>' if r["instagram"] else '<span class="muted">—</span>'
+        tt = f'<a href="{e(r["tiktok"])}" target="_blank" rel="noopener">TikTok</a>' if r["tiktok"] else '<span class="muted">—</span>'
         hours = e(r["hours"]) if r["hours"] else '<span class="warn">not verified</span>'
         days = r["days"] or ""
         # the source sometimes repeats the day span inside the hours string
@@ -436,23 +446,44 @@ def build_restaurants():
 <td>{days_html}<div class="tiny">{hours}</div></td>
 <td class="tiny">{e(r['exceptions']) or '—'}</td>
 <td class="num">{price}</td>
-<td class="tiny">{yt}<br>{ig} {tt}</td>
+<td class="tiny">{yt}</td>
+<td class="tiny">{ig}</td>
+<td class="tiny">{tt}</td>
 </tr>""")
+
+    priced_rs = [r for r in rs if r.get("price_2adults")]
+    n_priced = len(priced_rs)
+    n_unpriced = len(rs) - n_priced
+    n_ig = sum(1 for r in rs if r.get("instagram"))
+    n_tt = sum(1 for r in rs if r.get("tiktok"))
 
     table = f"""
 <div class="scroll">
 <table class="data">
 <thead><tr>
 <th>Restaurant</th><th>Award</th><th>Days &amp; hours</th><th>Exceptions</th>
-<th>Cost<br><span class="thsub">2 adults</span></th><th>Watch</th>
+<th>Cost<br><span class="thsub">2 adults</span></th><th>YouTube</th><th>Instagram</th><th>TikTok</th>
 </tr></thead>
 <tbody>{''.join(rows)}</tbody>
 </table>
 </div>
 <p class="note">Award labels are the 2026 MICHELIN Guide's three tiers, shown separately so an unstarred listing
-can never be mistaken for a starred one. <strong>"On request"</strong> means the venue publishes no price — it is not
-a missing entry and it is not an average. Only three restaurants print a real per-person figure.</p>
+can never be mistaken for a starred one. <strong>"On request"</strong> means the venue publishes no official price ({n_unpriced} of {N_TOTAL} venues) — it is not
+a missing entry and it is not an average. {n_priced} of {N_TOTAL} restaurants carry verified official or booking-platform prices;
+social columns carry {n_ig}/{N_TOTAL} verified Instagram profiles, {n_tt}/{N_TOTAL} TikTok links, and {N_TOTAL}/{N_TOTAL} YouTube links (<strong>—</strong> means unverified, never guessed).</p>
 """
+
+    cost_lis = []
+    for r in priced_rs:
+        extra = ""
+        if r["id"] == "michael-mina":
+            extra = ' — <strong>currently Temporarily closed</strong> (not bookable without a confirmed reopen date; <a href="flagged.html#F-23">F-23</a>)'
+        cost_lis.append(
+            f'<li><strong>{e(r["name"])}</strong> ({e(r["award"])}) — <strong>{e(r["price_2adults"])}</strong>'
+            f'{extra}. <span class="tiny">{e(r["price_note"])}</span></li>'
+        )
+    unpriced_starred = [r["name"] for r in rs if r["award_class"] == "starred" and not r.get("price_2adults")]
+    unpriced_starred_txt = ", ".join(unpriced_starred)
 
     counts = RES["meta"]["counts"]
     body = f"""
@@ -477,18 +508,11 @@ a missing entry and it is not an average. Only three restaurants print a real pe
 
 <section class="panel">
   <h2 id="costs">What dinner for two actually costs</h2>
-  <p>Only three venues publish a number, and two of them are outside the starred group:</p>
-  <ul class="tight">
-    <li><strong>Michael Mina</strong> — $295++ per person, 10-course tasting → <strong>$590++</strong> for two,
-      <strong>but the venue is currently closed</strong>: its own Bellagio page reads &ldquo;Monday to Sunday: Closed&rdquo;
-      and labels it <em>Temporarily closed</em>, with no reopen date published. Treat this as a price for a service that
-      is not running, not as a bookable dinner (<a href="flagged.html#F-23">F-23</a>).</li>
-    <li><strong>KAME Omakase</strong> — $500 per person, signature omakase → <strong>$1,000++</strong> for two.</li>
-    <li><strong>Anima by EDO</strong> — $85 per person tasting → <strong>$170++</strong> for two.</li>
-  </ul>
-  <p>The four <em>starred</em> rooms are all "price on request". A couple planning a stars-heavy week should expect
+  <p><strong>{n_priced} of {N_TOTAL}</strong> venues publish an official menu or booking-platform price (all figures below are derived directly from <code>data/restaurants.json</code>, before tax, gratuity and drinks):</p>
+  <ul class="tight">{''.join(cost_lis)}</ul>
+  <p>The remaining {n_unpriced} venues — including starred rooms <strong>{e(unpriced_starred_txt)}</strong> — do not publish official tasting-menu prices online ("on request"). A couple planning a stars-heavy week should expect
   the starred nights to be the largest line in the budget after the hotel, and should plan on reserving
-  before booking the room — <a href="suggestions.html">S-04</a>.</p>
+  before booking the room — <a href="suggestions.html#S-04">S-04</a>.</p>
 </section>
 """
     return page("restaurants.html", "MICHELIN restaurants",
@@ -536,9 +560,10 @@ def build_activities():
 </section>
 
 <section class="panel callout">
-  <h2>The one free thing</h2>
-  <p>The <strong>Fremont Street Experience</strong> runs live music on three stages every night under the canopy,
-  and entry is free. Put it on the same day as the Mob Museum and the Neon Museum — all three are downtown,
+  <h2>Two free highlights</h2>
+  <p>The <strong>Fountains of Bellagio</strong> (centre Strip, free nightly shows every 15–30 minutes, verified 27 Nov 2026)
+  and the <strong>Fremont Street Experience</strong> (free live music on three stages every night under the canopy)
+  both cost $0. Put Fremont Street on the same day as the Mob Museum and the Neon Museum — all three are downtown,
   and downtown is the one zone that is a 25–30 minute trip from everywhere else.</p>
 </section>
 """
@@ -711,7 +736,7 @@ def build_suggestions():
     n_sug = len(SUG["suggestions"])
     body = f"""
 <section class="panel">
-  <h2>{len(SUGGESTIONS_HEAD)}</h2>
+  <h2>{n_sug} ways to improve this plan</h2>
   <p>{n_sug} proposals, ranked by how much they change the outcome. <strong>{len(needs)} of them need a decision
   from you</strong> before the plan can be finalised — they are marked in the list. Nothing here was silently
   applied to the data.</p>
@@ -722,11 +747,8 @@ def build_suggestions():
 <div class="suglist">{''.join(cards)}</div>
 """
     return page("suggestions.html", "Suggestions",
-                "Twelve decision improvements, ranked, each with its honest trade-off and whether it needs your call first.",
+                f"{n_sug} decision improvements, ranked, each with its honest trade-off and whether it needs your call first.",
                 body)
-
-
-SUGGESTIONS_HEAD = [f"{len(SUG['suggestions'])} ways to improve this plan"]
 
 
 # ---------------------------------------------------------------- sources
@@ -747,10 +769,12 @@ def build_sources():
         ("F-13", "Bellagio, Waldorf", "Totals across weeks are for different room classes."),
         ("F-15", "Bluegreen Club 36", "Queen bed stated; private bathroom not stated."),
         ("F-17", "14-night variant", "The brief allows two weeks; only seven nights were priced."),
-        ("F-18", "Bellagio Fountains", "Official page failed to load; schedule unverified."),
-        ("F-19", "Instagram / TikTok", "Handles not published; blank rather than guessed."),
-        ("F-39", "Hotel price basis", "The 32-hotel prices are Booking.com snapshots, not official property quotes; independent official-engine samples conflict on the cheapest week."),
+        ("F-18", "Bellagio Fountains", "Resolved 27 Nov 2026: official schedule verified live and promoted to activities.html."),
+        ("F-19", "Instagram / TikTok", "18/24 restaurants and 5/6 activities now carry verified Instagram; remaining blanks stay unverified."),
+        ("F-29", "Hotel price basis", "The 32-hotel prices are Booking.com snapshots, not official property quotes; independent official-engine samples conflict on the cheapest week."),
         ("F-30", "Official hotel rates, refreshed 26 Nov 2026", "Caesars Julius King $201/night and Wynn Cyber $677/night, each including resort fee before tax; Venetian returned $6,170.43 tax-included but labels suites as 4+ guests. Volatile; confirm exact total and occupancy."),
+        ("F-52", "The Mob Museum", "26 Nov Thanksgiving Day closure (9 AM–4 PM) mistakenly recorded as permanent Thursday hours; corrected 27 Nov to 9 AM–9 PM daily."),
+        ("F-53", "é by José Andrés", "Official schedule conflict: Cosmopolitan says Tue–Sat while ebyjoseandres.com says Tue–Sun."),
     ]
     for fid, where, what in flags:
         flag_rows.append(f'<tr><td class="mono">{fid}</td><td>{e(where)}</td><td>{e(what)}</td></tr>')
@@ -775,13 +799,8 @@ def build_sources():
         ("RTC Transit — fares and passes", "https://www.rtcsnv.com/ways-to-travel/fares-passes/"),
         ("Boring Company — Vegas Loop", "https://www.boringcompany.com/projects/las-vegas-loop"),
     ])
-    groups.setdefault("Activities — official pages", []).extend([
-        ("Sphere", "https://www.thesphere.com/"),
-        ("High Roller", "https://www.caesars.com/linq/things-to-do/attractions/high-roller"),
-        ("The Mob Museum", "https://themobmuseum.org/"),
-        ("The Neon Museum", "https://neonmuseum.org/"),
-        ("Fremont Street Experience", "https://www.fremontstreetexperience.com/"),
-    ])
+    for a in ACT["activities"]:
+        groups.setdefault("Activities — official pages", []).append((a["name"], a["official_url"]))
     groups.setdefault("Pricing", []).extend([
         ("Booking.com — Las Vegas, 5★ resorts, 15–22 Feb 2027", "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price"),
         ("Booking.com — same search, 8–15 Mar 2027", "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-03-08&checkout=2027-03-15&group_adults=2&no_rooms=1&selected_currency=USD&nflt=class%3D5%3Bht_id%3D206&order=price"),
@@ -862,6 +881,8 @@ FLAG_CHECK_EXTRA = {
     "F-48": ("Booking.com dated search list (the basis for those 15 rows)",
              "https://www.booking.com/searchresults.html?ss=Las+Vegas&checkin=2027-02-15"
              "&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"),
+    "F-53": ("é by José Andrés official brand site (states Tue–Sun)",
+             "https://www.ebyjoseandres.com/"),
 }
 
 
@@ -971,7 +992,7 @@ def build_flagged():
   <h2>Data flags — {len(fl)} rows in the register</h2>
   <p>The full register, with the reasoning for each, is in <code>FLAGS.md</code>. Each row is generated from that
   file, is addressable as <code>flagged.html#F-nn</code>, and names the official page to check it against. F-01 to
-  F-30 and F-47 to F-49 are rows of that register; F-39 to F-46 are the audit rows above, kept in
+  F-30 and F-47 to {e(fl[-1][0])} are rows of that register; F-39 to F-46 are the audit rows above, kept in
   <code>data/review-flags.json</code>. F-31 to F-38 were never used, so the numbering is not contiguous.</p>
   <div class="scroll"><table class="data">
   <thead><tr><th>ID</th><th>Where</th><th>What</th><th>Effect on the plan</th><th>Check it here</th></tr></thead>
@@ -1008,15 +1029,17 @@ def build_repo_review():
     h_same = sum(1 for x in H if x.get("michelin_within_60") == N_TOTAL)
     counts = [
         ("Michelin rows (restaurants)", N_TOTAL, "all listed with a 2026 tier"),
-        ("Restaurants with no couple price", n_price, "blank — not verified"),
-        ("Restaurants with no hours recorded", n_hours, "blank — not verified"),
-        ("Restaurant rows marked verified = yes", n_ver, "the label describes the listing, see R-01"),
-        ("Restaurants with an Instagram link", n_ig, "none recorded in the data (F-19)"),
-        ("Restaurants with a TikTok link", n_tt, "none recorded in the data (F-19)"),
-        ("Restaurants with at least one YouTube link", n_yt, "recorded, not opened this session"),
-        ("Hotels (rows)", len(H), "32 properties"),
-        ("Hotels whose official page is confirmed live", h_off_yes, "fetched 25–26 Nov 2026"),
-        ("Hotels whose official page is not confirmed", h_off_no, "refused automated access, or not opened"),
+        ("Restaurants with verified couple price", N_TOTAL - n_price, "from official menus or booking platforms"),
+        ("Restaurants with no couple price", n_price, "blank — not published officially"),
+        ("Restaurants with no clock hours recorded", n_hours, "blank — not verified"),
+        ("Restaurant rows marked verified = yes", n_ver, "the listing itself was confirmed, see R-01"),
+        ("Restaurants with an Instagram link", n_ig, f"{n_ig} of {N_TOTAL} verified (F-19)"),
+        ("Restaurants with a TikTok link", n_tt, f"{n_tt} of {N_TOTAL} verified (F-19)"),
+        ("Restaurants with at least one YouTube link", n_yt, f"{n_yt} of {N_TOTAL} recorded"),
+        ("Verified activities", len(ACT["activities"]), "including Fountains of Bellagio (F-18 resolved)"),
+        ("Hotels (rows)", len(H), f"{len(H)} properties"),
+        ("Hotels whose official page is confirmed live", h_off_yes, "fetched 25–27 Nov 2026"),
+        ("Hotels whose official page is not confirmed", h_off_no, "refused automated access or sibling redirect (0 unopened)"),
         ("Hotel rows marked verified = yes", h_ver_yes, "label reflects the search snapshot, see R-03"),
         ("Hotels where Michelin within 60 min = all 24", h_same, "the literal metric cannot rank, see R-04"),
     ]
