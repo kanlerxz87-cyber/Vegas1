@@ -182,6 +182,10 @@
       "It does not prove booking earlier or later will be cheaper — no purchase-timing evidence exists (F-58).",
       "The 8 March window is still inside the brief's 15 Feb - 23 Mar travel window, so this is a within-brief substitution, not a different trip.",
       "It does not account for convention calendars, which can invert the ranking at other properties on the same dates."
+    ],
+    "flags": [
+      "F-70",
+      "F-71"
     ]
   }
 }
