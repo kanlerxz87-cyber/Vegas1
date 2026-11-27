@@ -30,6 +30,7 @@ TRANSIT = load("transit.json")
 ACT = load("activities.json")
 QS = load("questions.json")
 SUG = load("suggestions.json")
+OFFR = load("official-rates.json")
 
 e = html.escape
 
@@ -346,6 +347,47 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   </p>
 </article>""")
 
+    # ---- official booking-engine captures (data/official-rates.json, 2026-11-27) ----
+    def _money(v):
+        return "—" if v in (None, "") else f"${v:,.2f}".rstrip("0").rstrip(".") if isinstance(v, float) else f"${v:,}"
+
+    official_rows = []
+    for c in OFFR["captures"]:
+        bed = e(c["room"])
+        guarantee = "guaranteed" if c["bed_guaranteed"] else "NOT guaranteed"
+        nightly = c.get("nightly_incl_resort_fee_excl_tax")
+        nightly_html = f"${nightly:,.2f}".rstrip("0").rstrip(".") if isinstance(nightly, float) else (f"${nightly:,}" if nightly else "—")
+        total = c.get("stay_total_incl_tax_and_fees")
+        total_html = f"<strong>${total:,.2f}</strong>" if total else (
+            f"${c['stay_total_excl_tax']:,}<div class=\"tiny\">before tax</div>" if c.get("stay_total_excl_tax") else "—")
+        offer = c.get("public_offer")
+        if offer:
+            total_html += (f'<div class="tiny">public offer ${offer["stay_total_excl_tax"]:,} '
+                           f'(${offer["nightly_incl_resort_fee_excl_tax"]}/night), book by '
+                           + e(offer["book_by"]) + '</div>')
+        alt = c.get("alt_room")
+        if alt:
+            total_html += (f'<div class="tiny">2-queen room: <strong>${alt["stay_total_incl_tax_and_fees"]:,.2f}</strong> '
+                           f'all-in</div>')
+        official_rows.append(
+            f'<tr><td><strong>{e(c["hotel"])}</strong></td>'
+            f'<td class="tiny">{bed}<div class="{"tiny" if c["bed_guaranteed"] else "warn"}">{e(c["bed"])} · {guarantee}</div></td>'
+            f'<td class="num">{nightly_html}</td>'
+            f'<td class="num">{total_html}</td>'
+            f'<td class="tiny">{e(c.get("resort_fee_note") or c.get("tax_fee_basis") or OFFR["meta"]["tax_fee_basis"])}</td>'
+            f'<td class="tiny"><a href="{e(c["source"])}" target="_blank" rel="noopener">official engine</a>'
+            f'<div class="muted">checked {e(c["checked"])}</div></td></tr>'
+        )
+    official_rows = "".join(official_rows)
+    official_limits = "".join(f"<li>{e(x)}</li>" for x in OFFR["what_this_does_not_establish"])
+    _rw = next(c for c in OFFR["captures"] if c["hotel"].startswith("Resorts World"))
+    official_best = (f'Resorts World Hilton tower, Deluxe Room – One King Bed, '
+                     f'{_money(_rw["stay_total_incl_tax_and_fees"])} all-in for 15–22 Feb 2027 '
+                     f'(itemised on the engine: room tax {_money(_rw["itemised"]["room_tax"])}, '
+                     f'resort fees {_money(_rw["itemised"]["resort_fees"])}). '
+                     f'It is the only all-in total this pass captured, so it is the only one that can be '
+                     f'compared to a real checkout price.')
+
     body = f"""
 <section class="panel">
   <h2 id="cheapest-week">Which week had the lower Booking.com quote — selected pairs only</h2>
@@ -391,6 +433,28 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
   A "Price source" link is the Booking.com URL the number came from; where that URL is a dated search-results list
   rather than the property's own quote page, the card says so — the link then proves the search, not the room.</p>
   <div class="hotels">{''.join(cards)}</div>
+</section>
+
+<section class="panel" id="official-rates">
+  <h2>Official booking-engine captures — preferred dates, 7 nights</h2>
+  <p>The table above is Booking.com <em>snapshot</em> data (<a href="flagged.html#F-29">F-29</a>). This table is the
+  opposite: what the properties' <strong>own booking engines</strong> returned for the brief's preferred window
+  (<strong>15–22 February 2027, 2 adults, 1 room</strong>), read directly on <strong>27 November 2026</strong>.
+  It is small on purpose — three properties, one date window, one moment in time. It is a snapshot, not a quote.</p>
+  <div class="scroll">
+  <table class="data">
+  <thead><tr><th>Property</th><th>Room (bed guaranteed?)</th><th>Nightly</th><th>7-night total</th><th>Tax / fee basis</th><th>Source</th></tr></thead>
+  <tbody>{official_rows}</tbody>
+  </table>
+  </div>
+  <p class="note"><strong>Read the basis column before comparing anything.</strong> Caesars Palace and Wynn display a
+  nightly rate that <em>includes the resort fee and excludes tax</em>. Resorts World displays a full itemised total
+  that <em>includes room tax, resort fee and resort-fee tax</em> — so its figure is the only one in this table you could
+  pay at checkout. Multiplying the Caesars or Wynn nightly by 7 and calling it a final price would understate both.</p>
+  <details><summary>What this table does <em>not</em> establish</summary>
+  <ul class="tight">{official_limits}</ul>
+  </details>
+  <p class="note">Strongest verified figure for the preferred dates: <strong>{official_best}</strong></p>
 </section>
 
 <section class="panel callout">
