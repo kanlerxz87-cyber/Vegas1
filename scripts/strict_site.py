@@ -131,7 +131,7 @@ def prices(rec):
     """Exact arithmetic only, retaining 'from' in option labels. No rounded nightly expansion."""
     parts = []
     for opt in rec.get('price_options', []):
-        amount = Decimal(str(opt['per_person'])) * 2
+        amount = Decimal(str(opt['for_two'])) if 'for_two' in opt else Decimal(str(opt['per_person'])) * 2
         parts.append(f'<strong>${amount:,.2f}</strong> — {esc(opt["label"])}')
     return '<br>'.join(parts) or BLANK
 
@@ -273,7 +273,7 @@ QUESTIONS=[
 ('Q-01','Can hotels be ranked by restaurants within one hour by bus?','Unresolved','No complete dated door-to-door route evidence. A 20-minute estimate is not an approved replacement.','Run exact outward/return operator itineraries once hotel and dining times are fixed.',RTC),
 ('Q-02','Which trip length takes precedence?','Conflict','Preferred 15–18 Feb is 3 nights; required duration is 7–14 nights.','Working scenario 15–22 Feb (7 nights); keep 15 Feb–1 Mar (14 nights) as an alternative, not a confirmed preference.',M),
 ('Q-03','What total budget applies?','Unknown','Hotel, food, flights, activities and transport budget not supplied.','Obtain comparable official checkout totals; publish value tiers rather than invent a spending ceiling.',E['hotels']['caesars-palace']['source']),
-('Q-04','Are meal totals known?','Partly answered','Published menu subtotals for two exist for Anima, Partage, Wing Lei and Stubborn Seed; no all-in restaurant budget.','Use dated menus, actual choices, beverage plan and fee/tax disclosures. No assumed spend at à la carte venues.',E['restaurants']['partage']['menu_source']),
+('Q-04','Are meal totals known?','Partly answered','Published menu subtotals for two exist for Anima, Partage, Wing Lei, Stubborn Seed, China Poblano, Kabuto and SoulBelly; no all-in restaurant budget.','Use dated menus, actual choices, beverage plan and fee/tax disclosures. No assumed spend at à la carte venues.',E['restaurants']['partage']['menu_source']),
 ('Q-05','Are bed and private bathroom guaranteed?','Unresolved','Some named room/bed descriptions verified; exclusive-use promise and dated rate not captured together.','Require the named-room checkout details; reject assigned-on-arrival room as proof of bed size.',E['hotels']['flamingo']['source']),
 ('Q-06','Which week is cheapest? When should it be booked?','Unresolved','No comparable official all-in seven-night totals. Future best purchase day cannot be established from one snapshot.','Compare 30 possible seven-night starts consistently. Wynn offer deadline is 4 Dec 2026, not proof of a global minimum.',E['hotels']['wynn']['source']),
 ('Q-07','Dietary restrictions, allergies or alcohol preferences?','Unknown','Not supplied. Partage excludes several diets; Kabuto raw-fish substitutions not accommodated.','Obtain venue dietary policy before a nonrefundable dining commitment. Do not infer suitability.',E['restaurants']['partage']['menu_source']),
@@ -365,7 +365,7 @@ def repo_review():
         ['Pricing audit','data/hotels.json / price-windows.json','Historical third-party captures differ in room, fee and total basis. Not used as verified official price comparisons.',link(E['hotels']['caesars-palace']['source'])],
         ['Transit audit','data/transit.json','Zero-minute zones and mode substitution cannot establish requested bus-only routes. Historical computed counts excluded.',link(RTC)],
         ['Restaurant audit','24 evidence rows','Michelin tiers/addresses checked; current venue fields extracted individually. Missing hours/prices left blank. COTE address corrected to Michelin’s 3355 listing.',link(M)],
-        ['Activity audit','5 evidence rows','Corrected Mob Museum holiday/weekly-hours confusion; exposed High Roller source conflicts and Neon date-widget anomaly.',link(E['activities']['mob-museum']['source'])],
+        ['Activity audit','6 evidence rows','Corrected Mob Museum holiday/weekly-hours confusion; exposed High Roller source conflicts and Neon date-widget anomaly.',link(E['activities']['mob-museum']['source'])],
         ['Room evidence','33 candidates','Five fresh official room/contact checks. Only 4 have extracted room descriptions; private-use/dated booking qualification still incomplete.',link(E['hotels']['desert-rose']['source'])],
         ['Source scope','External URLs','Opening a URL is not field verification. Automated build checks local links; external availability is not comprehensively certified.',link(M)],
         ['Parallel work','COORDINATION.md','T17 integration claimed after completed prior tasks. Assigned Arena branch retained; existing archives and source datasets preserved.',link(REPO+'COORDINATION.md','Coordination record')],

@@ -91,6 +91,10 @@ class SiteTests(unittest.TestCase):
         self.assertNotIn('$3,000',self.pages['restaurants.html'])
         self.assertNotIn('$520',self.pages['restaurants.html'])
         self.assertNotIn('$1,855.06',self.pages['dining.html'])
+        self.assertIn('$120.00',self.pages['dining.html'])
+        self.assertIn('$80.00',self.pages['dining.html'])
+        self.assertIn('$370.00',self.pages['dining.html'])
+        self.assertIn('Sunday disputed',self.pages['restaurants.html'])
         self.assertIn('$397.76',self.pages['restaurants.html'])
         self.assertIn('$320.00',self.pages['restaurants.html'])
         self.assertIn('$42.00',self.pages['activities.html'])
@@ -115,7 +119,7 @@ class SiteTests(unittest.TestCase):
         self.assertIsNone(site.E['restaurants']['michael-mina']['hours'])
         self.assertIsNone(site.E['restaurants']['esthers-kitchen']['hours'])
         for f in site.E['checks']:self.assertIn(f['id'],self.docs['flagged.html'].ids)
-        for n in range(52,67):self.assertIn(f'F-{n}',self.docs['flagged.html'].ids)
+        for n in range(52,70):self.assertIn(f'F-{n}',self.docs['flagged.html'].ids)
 
     def test_date_arithmetic(self):
         starts=[];d=date(2027,2,15)

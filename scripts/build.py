@@ -30,7 +30,8 @@ def validate():
             assert r['source'] and urlsplit(r['source']).scheme=='https', f'{id}: missing official source'
             assert r['check'], f'{id}: missing verification scope'
             for opt in r.get('price_options',[]):
-                assert isinstance(opt['per_person'],(int,float)) and opt['per_person']>=0, id
+                price=opt.get('for_two',opt.get('per_person'))
+                assert isinstance(price,(int,float)) and price>=0, id
                 assert opt['label'], id
             for s in r.get('social',[]):
                 assert urlsplit(s['url']).hostname in {'www.instagram.com','www.youtube.com','www.tiktok.com'}, id

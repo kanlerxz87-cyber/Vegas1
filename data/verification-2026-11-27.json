@@ -51,29 +51,37 @@
     },
     "e-by-jose-andres": {
       "source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/e-by-jose-andres.html",
-      "check": "Opened official venue page; only the explicit fields below were confirmed.",
-      "days": "Tue–Sat",
-      "hours": "5:30–8:30 PM",
-      "exceptions": "Closed Mon/Sun; only two seatings nightly, reservations up to three months ahead. No meal price confirmed.",
+      "check": "Opened official venue page; only the explicit fields below were confirmed. Brand site freshly fetched after upstream F-68; explicit Sunday conflict retained.",
+      "days": "Tue–Sat agreed; Sunday disputed",
+      "hours": "Two seatings: 5:30 PM and 8:30 PM",
+      "exceptions": "Official conflict F-68: MGM lists Tue–Sat; freshly fetched brand site says Tue–Sun. Sunday unverified; do not assume closed or open. Brand phone 702-698-7950; tickets three months ahead.",
       "price_options": [],
       "social": [],
       "award": "1 star",
       "award_class": "starred",
       "address": "3708 S Las Vegas Blvd, Las Vegas, NV 89109",
-      "location": "The Cosmopolitan of Las Vegas"
+      "location": "The Cosmopolitan of Las Vegas",
+      "menu_source": "https://www.ebyjoseandres.com/"
     },
     "china-poblano": {
       "source": "https://cosmopolitanlasvegas.mgmresorts.com/en/restaurants/china-poblano.html",
-      "check": "Opened official venue page; only the explicit fields below were confirmed.",
+      "check": "Opened official venue page; only the explicit fields below were confirmed. Official menu freshly reproduced 27 Nov: $60 per person. Tax, gratuity, drinks and 2027 availability unverified.",
       "days": "Daily",
       "hours": "Mon–Thu 11 AM–10 PM; Fri 11 AM–10:30 PM; Sat 10 AM–10:30 PM; Sun 10 AM–10 PM",
       "exceptions": "Cocktail hour Mon–Thu 4–6 PM.",
-      "price_options": [],
+      "price_options": [
+        {
+          "per_person": 60,
+          "label": "José’s Way tasting menu"
+        }
+      ],
       "social": [],
       "award": "Bib Gourmand",
       "award_class": "bib",
       "address": "3708 S Las Vegas Blvd, Las Vegas, NV 89109",
-      "location": "The Cosmopolitan of Las Vegas"
+      "location": "The Cosmopolitan of Las Vegas",
+      "menu_source": "https://www.chinapoblano.com/menus/",
+      "price_note": "Official menu freshly reproduced 27 Nov: $60 per person. Tax, gratuity, drinks and 2027 availability unverified."
     },
     "wing-lei": {
       "source": "https://www.wynnlasvegas.com/dining/fine-dining/wing-lei",
@@ -204,11 +212,20 @@
     },
     "kabuto": {
       "source": "https://kabutolv.com",
-      "check": "Opened official venue page; only the explicit fields below were confirmed.",
+      "check": "Opened official venue page; only the explicit fields below were confirmed. Official venue reserve URL redirects to Resy; freshly reproduced 27 Nov $130/$185 pp. Holiday-only $215 pp applies 18 Dec–10 Jan, outside trip window. Tax/tip/drinks and trip-date availability not confirmed.",
       "days": "Daily",
       "hours": "5:30–9 PM",
-      "exceptions": "Seatings 5:30 PM and 7:45 PM; reservations via Resy or phone up to one month ahead; no raw-fish substitutions.",
-      "price_options": [],
+      "exceptions": "Seatings 5:30 PM and 7:45 PM; reservations via Resy or phone up to one month ahead; no raw-fish substitutions. Resy: 30 days ahead, $100 per-person late-cancellation/no-show fee inside 24 hours; 15-minute grace period. Notify allergies 24 hours ahead; severe allergies cannot be accommodated.",
+      "price_options": [
+        {
+          "per_person": 130,
+          "label": "Yoroi 7-course"
+        },
+        {
+          "per_person": 185,
+          "label": "Kabuto premium 8-course"
+        }
+      ],
       "social": [
         {
           "label": "Instagram post",
@@ -218,7 +235,9 @@
       "award": "Recommended",
       "award_class": "recommended",
       "address": "5040 W Spring Mountain Rd #4, Las Vegas, NV 89146",
-      "location": "Chinatown (Spring Mountain Rd)"
+      "location": "Chinatown (Spring Mountain Rd)",
+      "menu_source": "https://kabutolv.com/reserve",
+      "price_note": "Official venue reserve URL redirects to Resy; freshly reproduced 27 Nov $130/$185 pp. Holiday-only $215 pp applies 18 Dec–10 Jan, outside trip window. Tax/tip/drinks and trip-date availability not confirmed."
     },
     "kame-omakase": {
       "source": "https://sushikame.com/",
@@ -304,11 +323,16 @@
     },
     "soulbelly-bbq": {
       "source": "https://soulbellybbq.com",
-      "check": "Opened official venue page; only the explicit fields below were confirmed.",
+      "check": "Opened official venue page; only the explicit fields below were confirmed. Freshly reproduced official menu 27 Nov: set meal explicitly for two, $80. Main Street only. Drinks/tax/tip and future availability unverified.",
       "days": "Tue–Sun",
       "hours": "Tue–Thu/Sun 11 AM–9 PM; Fri/Sat 11 AM–10 PM",
       "exceptions": "Main Street location only; not the Miracle Mile Express branch. Monday not in published operating days.",
-      "price_options": [],
+      "price_options": [
+        {
+          "for_two": 80,
+          "label": "Chef’s Choice for 2 — 6 pit items and 6 sides; no substitutions"
+        }
+      ],
       "social": [
         {
           "label": "Instagram",
@@ -318,7 +342,9 @@
       "award": "Recommended",
       "award_class": "recommended",
       "address": "1327 S Main St, Las Vegas, NV 89104",
-      "location": "Arts District / Main St (Downtown)"
+      "location": "Arts District / Main St (Downtown)",
+      "menu_source": "https://soulbellybbq.com/menu",
+      "price_note": "Freshly reproduced official menu 27 Nov: set meal explicitly for two, $80. Main Street only. Drinks/tax/tip and future availability unverified."
     },
     "ping-pang-pong": {
       "source": "https://goldcoast.boydgaming.com/dine/gc-ping-pang-pong",

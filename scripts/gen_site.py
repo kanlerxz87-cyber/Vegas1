@@ -741,7 +741,7 @@ def build_suggestions():
 
     body = f"""
 <section class="panel">
-  <h2>{len(SUGGESTIONS_HEAD)}</h2>
+  <h2>{n_sug} ways to improve this plan</h2>
   <p>{n_sug} proposals, ranked by how much they change the outcome. <strong>{len(needs)} of them need a decision
   from you</strong> before the plan can be finalised — they are marked in the list. Nothing here was silently
   applied to the data.</p>
@@ -785,7 +785,7 @@ def build_sources():
         ("F-02", "Michael Mina", "Publishes seasonal block closures; no 2027 dates."),
         ("F-03", "Wing Lei", "Videos imply a star; the 2026 Guide lists it Recommended."),
         ("F-04", "KAME Omakase", "Own site is a JS shell; details from its OpenTable listing."),
-        ("F-05", "China Poblano", "The ≈$50 pp figure is Eater, not the venue."),
+        ("F-05", "China Poblano", "Resolved 27 Nov 2026: official menu publishes José's Way Tasting Menu at $60/pp ($120 exact for two; F-69)."),
         ("F-07", "Esther's Kitchen, Yen Viet", "Hours not obtainable — left blank."),
         ("F-09", "Wynn / Encore", "Two totals because the fee/tax basis differs."),
         ("F-11", "LINQ, Flamingo, SAHARA, Golden Nugget, Horseshoe, Plaza", "Cheapest rates do not guarantee the bed."),
@@ -795,7 +795,7 @@ def build_sources():
         ("F-17", "14-night variant", "The brief allows two weeks; only seven nights were priced."),
         ("F-18", "Bellagio Fountains", "Official page failed to load; schedule unverified."),
         ("F-19", "Instagram / TikTok", "Handles not published; blank rather than guessed."),
-        ("F-39", "Hotel price basis", "The 32-hotel prices are Booking.com snapshots, not official property quotes; independent official-engine samples conflict on the cheapest week."),
+        ("F-29", "Hotel price basis", "The 32-hotel prices are Booking.com snapshots, not official property quotes; independent official-engine samples conflict on the cheapest week."),
         ("F-30", "Official hotel rates, refreshed 26 Nov 2026", "Caesars Julius King $201/night and Wynn Cyber $677/night, each including resort fee before tax; Venetian returned $6,170.43 tax-included but labels suites as 4+ guests. Volatile; confirm exact total and occupancy."),
     ]
     for fid, where, what in flags:
@@ -898,6 +898,8 @@ FLAG_CHECK_EXTRA = {
     "F-61": ("Guy Savoy official menu", "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"),
     "F-62": ("Mob Museum current hours", "https://themobmuseum.org/"),
     "F-63": ("High Roller official conflicting time blocks", "https://www.caesars.com/linq/things-to-do/attractions/high-roller"),
+    "F-68": ("é by José Andrés official brand site (states Tue–Sun)", "https://www.ebyjoseandres.com/"),
+    "F-69": ("China Poblano official menu ($60/pp tasting)", "https://www.chinapoblano.com/menus/"),
     "F-10": ("Booking.com dated search used for every rate",
              "https://www.booking.com/hotel/us/the-linq-and-casino.html?checkin=2027-02-15"
              "&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"),
@@ -1023,7 +1025,7 @@ def build_flagged():
   <h2>Data flags — {len(fl)} rows in the register</h2>
   <p>The full register, with the reasoning for each, is in <code>FLAGS.md</code>. Each row is generated from that
   file, is addressable as <code>flagged.html#F-nn</code>, and names the official page to check it against. F-01 to
-  F-30 and F-47 to F-49 are rows of that register; F-39 to F-46 are the audit rows above, kept in
+  F-30 and F-47 to {e(fl[-1][0])} are rows of that register; F-39 to F-46 are the audit rows above, kept in
   <code>data/review-flags.json</code>. F-31 to F-38 were never used, so the numbering is not contiguous.</p>
   <div class="scroll"><table class="data">
   <thead><tr><th>ID</th><th>Where</th><th>What</th><th>Effect on the plan</th><th>Check it here</th></tr></thead>

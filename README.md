@@ -9,7 +9,7 @@ A sourced planning dashboard for **two adults**, a **one–two week** trip withi
 - Preferred **15–18 February is three nights**, inconsistent with the requested length. **15–22 February** is a provisional seven-night comparison, not an approved change.
 - **33 hotel candidates** are shown alphabetically. No verified qualifying **all-in seven-night total**, cheapest hotel/week, optimal purchase day, or ≤60-minute bus ranking exists. Unsupported decision fields stay blank.
 - MICHELIN categories are separate: **4 starred venues, 3 Bib Gourmands, 17 Recommended**. Guide inclusion does not establish 2027 opening or reservations.
-- Fixed-menu food subtotals for **two** are confirmed from official menus for Partage ($260/$320/$420), Anima ($170), Stubborn Seed ($320) and Wing Lei ($397.76). These exclude unverified taxes, gratuities, drinks and future availability. À-la-carte dish prices do not establish a complete meal total.
+- Fixed-menu food subtotals for **two** are confirmed from official menus for Partage ($260/$320/$420), Anima ($170), Stubborn Seed ($320) and Wing Lei ($397.76), China Poblano ($120), Kabuto ($260/$370) and SoulBelly ($80). These exclude unverified taxes, gratuities, drinks and future availability. À-la-carte dish prices do not establish a complete meal total.
 - No assumed meal counts, OTA hotel amounts, modeled travel scores or constructed full-trip budget are endorsed by the primary decision tables. Historical research is preserved, not silently rewritten.
 - Official observations, verification scope and manual-review links accompany each table row. Blank means **unverified**, not free or unavailable. **This is not booking-ready.**
 
