@@ -465,3 +465,11 @@ they are not typed, so do not hand-edit generated HTML in either `docs/` or the 
 left as-is and marked confirmed — but the Cromwell case shows a redirect can hide a rebrand, so re-open the
 redirect targets (not just the vanity domains) when prices are re-captured.
 
+
+## T16 — strict evidence display gate — arena/e6eed606-vegas1 — 2026-11-27
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| T16: audit inherited evidence; suppress unofficial hotel quote values and inferred transit scores from decision tables; add reproducible evidence checks; integrate and publish | in progress | arena/e6eed606-vegas1 | `COORDINATION.md`, `scripts/gen_site.py`, `scripts/validate.py`, `scripts/check_evidence.py`, `FLAGS.md`, `notes/audit-2026-11-27.md`, `executive-summary.md`, `README.md`, generated root/`docs/` HTML |
+
+All preceding claims are done or older than 60 minutes; no active uncompleted claim found. This session is final integration for T16 only. Existing raw datasets and independent archives are preserved. Arena requires the current branch `arena/e6eed606-vegas1`; no alternate branch/worktree will be created. Official-source fetches and limitations will be recorded below. A source URL alone is not proof of a dated price or an end-to-end travel time.
