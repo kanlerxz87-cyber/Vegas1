@@ -528,3 +528,5 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 ### Merge-conflict record — arena/3d5d3718-vegas1
 
 `git merge origin/main` (`9b8b112`) stopped on an append/append conflict in `COORDINATION.md`. Both sessions' records were retained in full; `notes/verification-2026-11-27.md` was added unchanged. No source data or generated output conflicted. Duplicate task ID T17 is historical; future references include the session ID.
+
+A subsequent plain `git pull --rebase origin arena/3d5d3718-vegas1` tried to flatten the already-resolved main merge and replay the independent claim, causing another log-only conflict. Stopped and used `git rebase --abort` to retain the intact merge, then `git pull --rebase=merges origin arena/3d5d3718-vegas1` succeeded without changing the merge commit. Future pulls in this integration use `--rebase=merges`; no force push and no other branch is modified.
