@@ -21,7 +21,9 @@
       "instagram": "",
       "tiktok": "",
       "verified": "partial",
-      "flags": ["F-16"],
+      "flags": [
+        "F-16"
+      ],
       "notes": "The single most distinctive thing to do in Las Vegas right now. Book only once the 2027 calendar is live."
     },
     {
@@ -30,8 +32,8 @@
       "zone": "center-strip",
       "type": "Attraction",
       "days": "Daily",
-      "hours": "Opens 12:30 PM; last admission at close. Ticket windows: daytime 12–5 PM, anytime from 6 PM.",
-      "exceptions": "30 minutes for one full rotation; allow an hour including boarding.",
+      "hours": "",
+      "exceptions": "Schedule conflict on official page (27 Nov 2026): opens 12:30 PM; ticket cards say daytime 12–5 PM and anytime 12 PM–close; FAQ says daytime 12–5:59 PM and anytime starts 6 PM. Complete opening/closing hours left unverified. 30-minute rotation; allow an hour for boarding and exit.",
       "price_per_couple": "$47.00 daytime / $69.50 anytime",
       "price_note": "Official FAQ: adult daytime $23.50, adult anytime $34.75, Happy Half Hour (21+) $60. Each is 'plus taxes and fees'. Two adults at the two standard tiers = $47.00 and $69.50 before tax.",
       "official_url": "https://www.caesars.com/linq/things-to-do/attractions/high-roller",
@@ -40,7 +42,9 @@
       "instagram": "",
       "tiktok": "",
       "verified": "yes",
-      "flags": [],
+      "flags": [
+        "F-57"
+      ],
       "notes": "Happy Half Hour is an open-bar cabin with a bartender for the full rotation."
     },
     {
@@ -49,8 +53,8 @@
       "zone": "downtown-arts",
       "type": "Museum",
       "days": "Daily",
-      "hours": "Museum: Sun–Wed & Fri–Sat 9:00 AM–9:00 PM, Thu 9:00 AM–4:00 PM · The Underground (speakeasy): 11:00 AM–11:00 PM (to midnight Fri–Sat)",
-      "exceptions": "Hours subject to change; the museum publishes early-closure notices — e.g. Thanksgiving Day: museum 9 AM–4 PM, Underground 11 AM–5 PM.",
+      "hours": "Museum: daily 9:00 AM–9:00 PM. Underground: Sun–Thu 11:00 AM–11:00 PM; Fri–Sat 11:00 AM–midnight.",
+      "exceptions": "Official weekly table rechecked 27 Nov 2026. Early closures override normal hours; consult official hours/directions calendar. Former every-Thursday 4 PM closure was a holiday exception, not the weekly schedule. 2027 exceptions not confirmed.",
       "price_per_couple": "$75.90 general admission",
       "price_note": "Official ticketing: General Admission $37.95 per adult (includes The Underground). Two adults = $75.90. Deluxe Pass $49.95 pp, Premier Pass $54.95 pp (both include one or two interactive experiences).",
       "official_url": "https://themobmuseum.org/",
@@ -59,7 +63,9 @@
       "instagram": "",
       "tiktok": "",
       "verified": "yes",
-      "flags": [],
+      "flags": [
+        "F-56"
+      ],
       "notes": "A morning-arrival discount and an evening-arrival discount are offered online only on the Premier Pass."
     },
     {
@@ -102,7 +108,13 @@
     }
   ],
   "not_verified": [
-    {"name": "Bellagio Fountains", "reason": "The official Bellagio page for the fountains returned a fetch error twice. Show times and the current schedule could not be confirmed, so no hours or links are published here. Free to watch; check https://www.bellagio.com/ on arrival."},
-    {"name": "Cirque du Soleil / other production shows", "reason": "Booking.com listed 'Cirque Du Soleil Admission' from $158.65 per person, but that is a reseller listing with no show name, no venue and no 2027 date. Not published as fact."}
+    {
+      "name": "Bellagio Fountains",
+      "reason": "The official Bellagio page for the fountains returned a fetch error twice. Show times and the current schedule could not be confirmed, so no hours or links are published here. Free to watch; check https://www.bellagio.com/ on arrival."
+    },
+    {
+      "name": "Cirque du Soleil / other production shows",
+      "reason": "Booking.com listed 'Cirque Du Soleil Admission' from $158.65 per person, but that is a reseller listing with no show name, no venue and no 2027 date. Not published as fact."
+    }
   ]
 }

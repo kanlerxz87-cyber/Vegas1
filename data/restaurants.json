@@ -100,8 +100,8 @@
       "days": "See OpenTable",
       "hours": "Dinner from 5:00 PM",
       "exceptions": "Dinner only. 9-course Krug Chef's Table available.",
-      "price_2adults": "$200–$580 à la carte · $3,000 Krug Chef's Table",
-      "price_note": "VERIFIED from the official Caesars menu (effective 11.5.2026): à la carte dishes $100–$290 each → $200–$580 for two before tax, gratuity and wine; 9-course Krug Chef's Table $1,500/pp → $3,000 for two. Phone on the row is the restaurant's general line; the menu page lists 866-227-5938.",
+      "price_2adults": "",
+      "price_note": "27 Nov 2026: official main menu lists individual à-la-carte dishes, not a complete dinner-for-two total. Former $200–$580 range was two dishes, not a meal. Former $3,000 Krug total was not reproduced. F-55.",
       "official_url": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy",
       "youtube": [
         "https://www.youtube.com/watch?v=XbZI6IXdM0E",
@@ -112,7 +112,9 @@
       "tiktok": "",
       "phone": "702.731.7286",
       "verified": "yes",
-      "flags": [],
+      "flags": [
+        "F-55"
+      ],
       "notes": "OpenTable restaurant id 96775."
     },
     {
