@@ -885,3 +885,11 @@ environment limit and is not evidence of a broken deploy.
 - 4 venues publish no opening days at all (Sparrow + Wolf, Esther's Kitchen, Kame, Anima) — Q-level gap.
 - Sphere has no 2027 calendar (F-16); the itinerary treats Friday as a flexible night because of it.
 - Restaurant couple prices are 3 of 24 after F-61 withdrew the inherited totals.
+
+### T17 final PR/merge record (arena/a00dc828-vegas1)
+
+- **PR #47** — video-link verification (oEmbed) + F-67 → **MERGED**, merge commit `5ceb3d6`; Pages build for it reached `built`.
+- **PR #55** — fix for the stale Mob Museum provenance sentence → **MERGED**, merge commit `99a3506`; Pages build `built` for `99a3506`.
+- Live check after `99a3506` (cache-busted fetch of `activities.html` and `flagged.html`): Fremont now shows `KDARquYGk_M` (venue channel) and no longer `Tls27qeAPaw`; Sphere shows its channel + 3 verified videos; Mob Museum shows its channel + 3 verified videos; F-67 renders on the flag page.
+- Still open and **not** touched by this session: PR #38, PR #27 (stale branches from earlier sessions) — left for their owners or the next integration pass.
+- Open issue handed over: `FLAGS.md` carries duplicate rows for F-52…F-57 (two merge trains used the same IDs). Wording not edited here; dedupe belongs to the flags owner.
