@@ -1065,7 +1065,7 @@ def build_repo_review():
         ("Restaurant rows marked verified = yes", n_ver, "the label describes the listing, see R-01"),
         ("Restaurants with an Instagram link", n_ig, "verified 2026-11-27 from official/primary sources; blanks remain unverified (F-19, F-53)"),
         ("Restaurants with a TikTok link", n_tt, "only 2 verified 2026-11-27; blanks remain unverified (F-19, F-53)"),
-        ("Restaurants with at least one YouTube link", n_yt, "recorded, not opened this session"),
+        ("Restaurants with at least one YouTube link", n_yt, "all activity videos and the 4 starred-restaurant videos re-resolved via YouTube oEmbed 2026-11-27"),
         ("Hotels (rows)", len(H), "32 properties"),
         ("Hotels whose official page is confirmed live", h_off_yes, "fetched 25–26 Nov 2026"),
         ("Hotels whose official page is not confirmed", h_off_no, "refused automated access, or not opened"),

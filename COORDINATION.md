@@ -807,19 +807,41 @@ Monorail line. This is recorded rather than quietly patched: a live-page read fo
 then #45/#46/#48). Every merge was resolved by regenerating HTML rather than hand-merging it, and no other
 session's data was reverted. The one deliberate reversal of an earlier decision — reinstating a *labelled estimate*
 for Guy Savoy — is recorded as F-64 with its source and keeps the $3,000 Krug figure withdrawn.
+### T17 addendum — video-link verification (arena/a00dc828-vegas1, 2026-11-27)
 
-### Fourth pass — recover evidence a merge had dropped (arena/c045ad05-vegas1, 2026-11-27)
+- Resolved **every published activity video ID** through YouTube's **oEmbed** endpoint (returns live title + channel). One ID carried in the data from an earlier capture — Fremont `Tls27qeAPaw` — **did not resolve** and was replaced with `KDARquYGk_M`, a video on the venue's own channel (`@vegasfremontstreet`). Logged as **F-67** (F-54–F-66 were assigned by other sessions while this branch was open).
+- Added verified creator videos alongside the venue channel for Sphere and the Mob Museum (each ID returned a live title + channel from oEmbed). The brief asks for **as many** video links as can be verified, so these are additive; they are labelled creator media and are never used as evidence for hours, prices or awards.
+- Spot-checked starred-restaurant videos via oEmbed (Joël Robuchon, L'Atelier, Guy Savoy, é by José Andrés) — all live and on-topic. One L'Atelier video titles the restaurant "3 Michelin-starred" against the Guide's 1 star; recorded in F-67 rather than copied.
+- **Method limit:** `scripts/validate.py` makes **no HTTP requests**, so a green build proves structure only. The oEmbed pass (and page fetches) is what proves a link is live.
+- Concurrency: this branch was rebased onto `main` repeatedly while it was open (PRs #39, #43, #47 pending, #40–#52 merged by other sessions). Conflicts were confined to `COORDINATION.md`, `FLAGS.md` row IDs and generated pages; nothing from another session was dropped.
+- **Irregularity observed, not fixed here (needs the owning session):** `FLAGS.md` on `main` currently contains **duplicate register rows** — F-52, F-53, F-54, F-55, F-56 and F-57 each appear twice (two different merge trains appended the same IDs). Rows were left untouched; deduplicating means deciding which wording survives, which belongs to the flags owner. Request: dedupe before the register is treated as stable.
 
-Reading the deployed page back again showed a subtler problem than the run-together sentence: my own fix had
-**silently dropped** the other session's corroboration for all five activities. Its `social_note` explains *why* each
-handle is the right one (Caesars press material for the High Roller, neonmuseum.org's own navigation for the Neon
-Museum, the Mob Museum's YouTube metadata declaring its Instagram) — that is exactly the evidence the brief asks to be
-reviewable. Preferring one session's wording would have thrown it away.
+### T17 addendum — where each social link came from (arena/c045ad05-vegas1, 2026-11-27)
 
-`data/socials.json` now carries the other pass's sentence verbatim under `also_recorded` for each activity, and the
-generator renders it as "Previously recorded by the superseded pass: …" beneath my own sentence. Both are attributed,
-neither is merged into the other's voice, and a reader can see the two independent confirmations. `meta.supersedes`
-also states plainly that **review item R-02 is closed** — the flagged page keeps R-02 as history, this file is the
-evidence that supersedes it.
+- **21 of 24** restaurants and **5 of 5** activities carry a verified Instagram link, each with the sentence that
+  confirmed it (`data/socials.json`, rendered as a provenance table on `restaurants.html` and `activities.html`).
+  Wing Lei, Ping Pang Pong and Yen Viet Kitchen stay blank with the reason (only private personal accounts exist).
+- Every handle was confirmed by **opening the account itself** on 2026-11-27, never by name similarity. Five handles
+  where two passes disagreed were settled this way: `@latelierjoelrobuchonlv` (the obvious spelling is a 404),
+  `@kameomakase_lv` (`@kameomakase` is a 178-follower stub), `@phogabacbac702` (`@bestchickenpho` says "WE'VE MOVED"),
+  `@miloslasvegas` (venue account), `@highrollervegas` (`@highrollerlasvegas` is a private 26-follower account).
+- **Kabuto's phone was wrong**: `725.205.1356` → `(702) 676-1044` per `kabutolv.com`. 725 is not a Las Vegas area code.
+- **TikTok could not be verified** — every request returned HTTP 400 — so it is reported as unverified, not absent.
+- **A merge had dropped evidence.** De-duplicating the two passes' wording in the activities provenance table silently
+  discarded the other pass's corroboration (Caesars press material, the museum's YouTube metadata). `socials.json` now
+  keeps it verbatim as `also_recorded`, rendered separately as "Previously recorded by the superseded pass: …", so both
+  confirmations stay visible and attributed. `meta.supersedes` records that **review item R-02 is closed**; `flagged.html`
+  keeps R-02 as history rather than rewriting it.
+- **Merges:** PRs [#46](https://github.com/kanlerxz87-cyber/Vegas1/pull/46) (`5d422eb`), #49 (`05b0361`),
+  #51 (`e70b268`) and #54 were self-merged to `main`; Pages confirmed `built` after each. Seven concurrent merges by
+  other sessions were absorbed with `git merge origin/main` — never a rebase, which conflicts in this file. Where both
+  sides were right, both were kept.
 
-Verified: 15 pages, 0 failures, 0 warnings; all five provenance rows show both confirmations.
+### Repair — a committed conflict marker on `main` (arena/c045ad05-vegas1, 2026-11-27)
+
+`git show origin/main:COORDINATION.md` contained a **live conflict marker** at lines 812–825
+(`<<<<<<< HEAD` … `>>>>>>> 408a5b3`), committed inside the T17 addendum from `arena/a00dc828-vegas1` (PR #47). A merge
+marker in a tracked document is a defect in its own right: any later merge in this file inherits it and a careless
+resolution keeps it. Resolved here by keeping the fuller of the two bullet lists and preserving the one bullet the
+shorter side alone carried (the `FLAGS.md` duplicate-row observation), so nothing was lost. After this merge `main` has
+no conflict markers in this file.
