@@ -1,0 +1,281 @@
+{
+  "meta": {
+    "title": "Las Vegas Activities (<=1h Public Transit), Transit Fares & Combined 7-Night Couple Budgets",
+    "verified_date": "2026-11-27",
+    "session": "arena/6851cc7e-vegas1 (Task T20)"
+  },
+  "activities": [
+    {
+      "id": "bellagio-fountains",
+      "name": "Fountains of Bellagio",
+      "category": "Iconic Strip Show (Free)",
+      "zone": "Center Strip (3600 S Las Vegas Blvd)",
+      "days": "Daily (Monday – Sunday)",
+      "hours": "Mon–Fri: every 30 min 3:00 PM – 6:30 PM, every 15 min 7:00 PM – 12:00 AM; Sat, Sun & Holidays: every 30 min 12:00 PM – 6:30 PM, every 15 min 7:00 PM – 12:00 AM (verify 6:30 vs 7:30 PM transition on Bellagio MGM page; schedule subject to wind)",
+      "price_2_adults": "$0.00 (Free)",
+      "numeric_2_adults_min": 0.0,
+      "transit_from_center_strip": "0–8 min walk; RTC Deuce Bellagio stop",
+      "within_1hr_public_transit": true,
+      "official_url": "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html",
+      "instagram": "",
+      "youtube": [],
+      "tiktok": "",
+      "notes": "Zero-cost centerpiece walk from Caesars Palace, Horseshoe, Paris, Planet Hollywood, Flamingo, and Cosmopolitan.",
+      "flag_ids": []
+    },
+    {
+      "id": "fremont-street",
+      "name": "Fremont Street Experience (Viva Vision Canopy & Concerts)",
+      "category": "Downtown Pedestrian Mall & Canopy Show (Free)",
+      "zone": "Downtown Las Vegas (Fremont St)",
+      "days": "Daily (24-hour pedestrian mall)",
+      "hours": "Viva Vision canopy light shows hourly 6:00 PM – 2:00 AM nightly; free live stages nightly",
+      "price_2_adults": "$0.00 (Free canopy & concerts; SlotZilla zipline extra)",
+      "numeric_2_adults_min": 0.0,
+      "transit_from_center_strip": "~28–38 min est. via 24h RTC Deuce Northbound (or 2 min walk from Downtown Grand)",
+      "within_1hr_public_transit": true,
+      "official_url": "https://vegasexperience.com/",
+      "instagram": "https://www.instagram.com/fremontstreet/",
+      "youtube": [
+        "https://www.youtube.com/watch?v=52YiWwDgli0",
+        "https://www.youtube.com/watch?v=KDARquYGk_M",
+        "https://www.youtube.com/watch?v=mIcQ0b8S9nA"
+      ],
+      "tiktok": "",
+      "notes": "AUDIT FIX (RA-11): Canonical activities.json listed 3 verified YouTube URLs (incl. official @vegasfremontstreet KDARquYGk_M) while simultaneously stating 'no YouTube link is published' in social_caveat.",
+      "flag_ids": [
+        "FL-22"
+      ]
+    },
+    {
+      "id": "neon-museum",
+      "name": "The Neon Museum (Neon Boneyard)",
+      "category": "Historic Outdoor Sign Museum",
+      "zone": "Downtown North (770 Las Vegas Blvd N)",
+      "days": "Daily (Monday – Sunday)",
+      "hours": "2027 Admission (Sep 1 – Apr 30 schedule): Daily 3:00 PM – 11:00 PM (last entry 10:00 PM)",
+      "price_2_adults": "From $42.00+ ($21.00+/adult General Admission; Brilliant! Jackpot & guided night tours higher)",
+      "numeric_2_adults_min": 42.0,
+      "transit_from_center_strip": "~35–45 min est. via 24h RTC Deuce Northbound (Las Vegas Blvd N / Cashman stop)",
+      "within_1hr_public_transit": true,
+      "official_url": "https://www.neonmuseum.org/visit/",
+      "instagram": "https://www.instagram.com/theneonmuseumlasvegas/",
+      "youtube": [
+        "https://www.youtube.com/watch?v=Edn2Dz3IM9o",
+        "https://www.youtube.com/watch?v=dY-nW8_W3Bw",
+        "https://www.youtube.com/watch?v=ewrNfjNa4w4"
+      ],
+      "tiktok": "https://www.tiktok.com/@neonmuseumlasvegas",
+      "notes": "Verified directly on neonmuseum.org/visit/ ('2027 Admission: Open Daily, 3:00 PM – 11:00 PM', adult GA from $21). Also corrects RA-11 social_caveat contradiction. NEW JAN 1, 2027 POLICY: Arriving earlier or later than your selected timed-entry slot may incur an additional price-difference charge prior to entry.",
+      "flag_ids": [
+        "FL-22"
+      ]
+    },
+    {
+      "id": "high-roller",
+      "name": "High Roller Observation Wheel at The LINQ Promenade",
+      "category": "550-ft Observation Wheel",
+      "zone": "Center Strip (3545 S Las Vegas Blvd)",
+      "days": "Daily (Monday – Sunday)",
+      "hours": "",
+      "price_2_adults": "$47.00 Daytime / $69.50 Anytime (+ tax & Ticketmaster fees)",
+      "numeric_2_adults_min": 47.0,
+      "transit_from_center_strip": "0 min from The LINQ / Harrah's / Flamingo; Harrah's/The LINQ Monorail Station at base",
+      "within_1hr_public_transit": true,
+      "official_url": "https://www.caesars.com/linq/things-to-do/attractions/high-roller",
+      "instagram": "https://www.instagram.com/highrollervegas/",
+      "youtube": [
+        "https://www.youtube.com/watch?v=ltjDljV-tOA",
+        "https://www.youtube.com/watch?v=f0iEwiqsDoI",
+        "https://www.youtube.com/watch?v=gpGggNfTYJ4"
+      ],
+      "tiktok": "",
+      "notes": "HOURS LEFT BLANK (F-63 / FL-04): Official Caesars page contradicts itself on the same URL ('12:00 PM – 12:00 AM daily' vs 'Mon–Thu 12:30 PM – 11:30 PM, Fri–Sun 12:30 PM – 12:30 AM'). Daytime ($23.50/pp = $47.00 couple, valid before 5 PM) & Anytime ($34.75/pp = $69.50 couple) base prices verified on Caesars page before Ticketmaster checkout fees.",
+      "flag_ids": [
+        "FL-04"
+      ]
+    },
+    {
+      "id": "mob-museum",
+      "name": "The Mob Museum (National Museum of Organized Crime & Law Enforcement)",
+      "category": "Interactive History Museum & Speakeasy",
+      "zone": "Downtown Las Vegas (300 Stewart Ave)",
+      "days": "Daily (Monday – Sunday)",
+      "hours": "Museum: Daily 9:00 AM – 9:00 PM. The Underground speakeasy: Sun–Thu 11:00 AM – 11:00 PM; Fri–Sat 11:00 AM – 12:00 AM",
+      "price_2_adults": "$75.90 ($37.95/adult General Admission before tax)",
+      "numeric_2_adults_min": 75.9,
+      "transit_from_center_strip": "~30–40 min est. via 24h RTC Deuce Northbound (2 min walk from Downtown Grand)",
+      "within_1hr_public_transit": true,
+      "official_url": "https://themobmuseum.org/plan-your-visit/hours-and-admission/",
+      "instagram": "https://www.instagram.com/themobmuseum/",
+      "youtube": [
+        "https://www.youtube.com/@TheMobMuseum",
+        "https://www.youtube.com/watch?v=Ll8Jb1kA2T4",
+        "https://www.youtube.com/watch?v=hIuGwU_kyGY",
+        "https://www.youtube.com/watch?v=ZTwlPZJDmJc"
+      ],
+      "tiktok": "",
+      "notes": "Verified directly on themobmuseum.org ($37.95 General Admission × 2 = $75.90; Premier/Deluxe Pass bundles extra).",
+      "flag_ids": []
+    },
+    {
+      "id": "sphere",
+      "name": "Sphere Las Vegas (The Sphere Experience / Concerts)",
+      "category": "Immersive Venue & Concert Arena",
+      "zone": "East of Venetian / Palazzo (255 Sands Ave)",
+      "days": "Show-dependent (check Feb–Mar 2027 calendar)",
+      "hours": "Varies by showtime (doors typically 45–60 min prior)",
+      "price_2_adults": "",
+      "numeric_2_adults_min": null,
+      "transit_from_center_strip": "10–15 min walk via Venetian pedestrian bridge or Harrah's/The LINQ Monorail Station",
+      "within_1hr_public_transit": true,
+      "official_url": "https://www.thesphere.com/",
+      "instagram": "https://www.instagram.com/spherevegas/",
+      "youtube": [
+        "https://www.youtube.com/@SphereVegas",
+        "https://www.youtube.com/watch?v=FoqilSF5Fv4",
+        "https://www.youtube.com/watch?v=0gpwcaNyIrY",
+        "https://www.youtube.com/watch?v=ONKndgo7MjU"
+      ],
+      "tiktok": "",
+      "notes": "PRICE LEFT BLANK (FL-06): Dynamic demand-priced ticketing by event/seat on Ticketmaster; Feb–Mar 2027 residency/film calendar must be checked directly on thesphere.com.",
+      "flag_ids": [
+        "FL-06"
+      ]
+    }
+  ],
+  "transit_systems": [
+    {
+      "id": "rtc-strip",
+      "name": "RTC Strip & All-Access Bus (The Deuce + All Residential Routes incl. 203 & 202)",
+      "mode_type": "Public Municipal Bus (24/7 on The Deuce)",
+      "corridors": "Runs 24/7 along the entire Las Vegas Strip (Mandalay Bay <-> Center Strip <-> Venetian/Wynn/Resorts World/Fontainebleau/SAHARA <-> Arts District <-> Fremont/Downtown), AND includes transfers onto Route 203 (Spring Mountain/Chinatown) and Route 202 (Flamingo Rd/Ping Pang Pong).",
+      "fares_per_person": "$4.00 (single ride) | $6.00 (2-hour) | $8.00 (24-hour) | $20.00 (3-Day Strip & All-Access Pass)",
+      "fares_2_adults_7_nights": "$88.00 for 2 adults over 7 days (2× 3-Day Passes @ $20 + 1× 24-Hour Pass @ $8 = $48/person × 2 = $96.00; or 2× 3-Day Passes + 1 single ride = $44/person × 2 = $88.00; or 3× 3-Day Passes covering 9 days = $60/person × 2 = $120.00)",
+      "audit_note": "AUDIT FIX (RA-02 & RA-12): Orphan canonical costs.html still prints '$6.00' instead of '$120.00' for 3× 3-day passes, and canonical transit.json states 'Nevada local fares are $1' whereas RTC's official regular residential single ride is $2.00 ($1.00 is Reduced Fare only).",
+      "official_url": "https://www.rtcsnv.com/ways-to-travel/fares-passes/"
+    },
+    {
+      "id": "rtc-route-203",
+      "name": "RTC Route 203 — Spring Mountain / Desert Inn / Lamb (Chinatown MICHELIN Spine)",
+      "mode_type": "Public Municipal Bus (Frequent East-West Corridor)",
+      "corridors": "Connects Fashion Show / Wynn / Treasure Island / Harrah's-LINQ walk (Las Vegas Blvd & Spring Mountain Rd) directly west along Spring Mountain Rd to Pho Ga Bac Bac, KAME Omakase, Partage, Sparrow + Wolf, Lamaii, and Kabuto (~15–22 min bus ride).",
+      "fares_per_person": "Covered by any Strip & All-Access Pass; standalone Residential Regular fare is $2.00 single ride / $3.00 2-hour / $5.00 24-hour / $20.00 7-day Residential Pass ($1.00 Reduced Fare only for eligible seniors/youth/disabled/veterans)",
+      "fares_2_adults_7_nights": "$0.00 incremental when holding Strip & All-Access Passes (or $40.00/couple for two 7-Day Residential Passes if only riding residential buses — note Residential passes are NOT valid on The Deuce!)",
+      "audit_note": "Official PDF schedule verified directly from rtcsnv.com/ways-to-travel/schedules-maps/.",
+      "official_url": "https://www.rtcsnv.com/ways-to-travel/schedules-maps/"
+    },
+    {
+      "id": "lv-monorail",
+      "name": "Las Vegas Monorail (7 East-Strip Stations)",
+      "mode_type": "Elevated Grade-Separated Rail (Every 4–8 min)",
+      "corridors": "SAHARA <-> Westgate <-> Boingo/LVCC <-> Harrah's/The LINQ <-> Flamingo/Caesars Palace <-> Horseshoe/Paris <-> MGM Grand (end-to-end ~15 min).",
+      "fares_per_person": "Mobile eTicket: $5.50 (single ride) | $13.45 (24-hr) | $23.75 (2-day) | $29.95 (3-day) | $37.00 (4-day) | $44.50 (5-day) | $59.95 (7-Day Unlimited Pass)",
+      "fares_2_adults_7_nights": "$119.90 for 2 adults (2 × $59.95 7-Day Unlimited Mobile Pass; or $22.00 for 2 round-trip rides to MGM Grand for Joël Robuchon / L'Atelier)",
+      "audit_note": "Fastest congestion-free link from Center Strip (LINQ, Flamingo, Horseshoe, Paris, Harrah's) to MGM Grand's 2★ Joël Robuchon & 1★ L'Atelier.",
+      "official_url": "https://www.lvmonorail.com/ticket-information/"
+    },
+    {
+      "id": "vegas-loop",
+      "name": "Vegas Loop (The Boring Company — 14 Active Stations)",
+      "mode_type": "Point-to-Point Underground Tunnel EV (NOT Public Bus/Subway)",
+      "corridors": "AUDIT FIX (RA-12): Official boringcompany.com/projects/las-vegas-loop lists 14 active stations (canonical transit.json listed only 7): LVCC South, Central, West, Riviera, Central Plaza + Resorts World, Encore, Westgate, Fontainebleau, Sahara, Turnberry Towers, Virgin Hotels, Airport T1, and Airport T3.",
+      "fares_per_person": "Official sample fares: $5.00 (LVCC <-> Strip Resorts: Resorts World / Encore / Westgate), $8.00 (LVCC <-> Thomas & Mack), $12.00 (Airport <-> LVCC); free within LVCC.",
+      "fares_2_adults_7_nights": "Optional pay-per-ride supplement ($5/ride per vehicle/ticket segment); NOT counted toward public bus/rail <=1h eligibility.",
+      "audit_note": "Helpful supplement if staying at Fontainebleau, Resorts World, or Encore, but RTC Deuce + Monorail remain the primary public transit backbone.",
+      "official_url": "https://www.boringcompany.com/projects/las-vegas-loop"
+    }
+  ],
+  "combined_packages": [
+    {
+      "id": "pkg-budget-strip",
+      "title": "Tier 1 — Lowest Official-Engine Strip Total (The LINQ)",
+      "badge": "Cheapest Verified Strip Trip",
+      "hotel_name": "The LINQ Hotel + Experience",
+      "room_name": "Deluxe 2 Queens (350 sq ft, private bath)",
+      "hotel_7n_feb_all_in": 611.12,
+      "hotel_7n_mar_all_in": 769.85,
+      "michelin_plan_label": "4 Exact-Priced MICHELIN Meals: China Poblano ($120) + SoulBelly BBQ ($80) + Kabuto Yoroi ($260) + Partage 5-Course ($260)",
+      "michelin_pretax_total": 720.0,
+      "michelin_includes_estimate": false,
+      "activities_4_paid_plus_2_free": 164.9,
+      "public_transit_7d_2adults": 118.0,
+      "combined_feb_15_22": 1614.02,
+      "combined_mar_14_21": 1772.75,
+      "cheaper_window_savings": "Feb 15–22 saves $158.73",
+      "credit_or_caveat_note": "Excludes flights, restaurant tax (8.375%)/gratuity, drinks, and any unpriced MICHELIN meals (e.g. Robuchon/é)."
+    },
+    {
+      "id": "pkg-mid-strip",
+      "title": "Tier 2 — Mid-Strip Spacious King + 5 Verified MICHELIN Dinners (Planet Hollywood)",
+      "badge": "Best Under-$2,500 Couple Balance",
+      "hotel_name": "Planet Hollywood Resort & Casino",
+      "room_name": "Ultra Hip 1 King (430 sq ft, tub + shower + mini-fridge)",
+      "hotel_7n_feb_all_in": 992.08,
+      "hotel_7n_mar_all_in": 1293.67,
+      "michelin_plan_label": "5 Exact-Priced MICHELIN Dinners: China Poblano ($120) + Anima by EDO ($170) + Kabuto ($260) + Stubborn Seed ($320) + Wing Lei ($397.76)",
+      "michelin_pretax_total": 1267.76,
+      "michelin_includes_estimate": false,
+      "activities_4_paid_plus_2_free": 164.9,
+      "public_transit_7d_2adults": 118.0,
+      "combined_feb_15_22": 2542.74,
+      "combined_mar_14_21": 2844.33,
+      "cheaper_window_savings": "Feb 15–22 saves $301.59",
+      "credit_or_caveat_note": "Pedestrian bridge into Cosmopolitan (1★ é & China Poblano); clean Caesars engine render with zero error banner."
+    },
+    {
+      "id": "pkg-starred-caesars",
+      "title": "Tier 3 — #1 Overall Pick: 5-Star Center Strip + 1★ Starred In-Building (Caesars Palace)",
+      "badge": "#1 Recommended Overall",
+      "hotel_name": "Caesars Palace",
+      "room_name": "Julius Deluxe 1 King (360+ sq ft, private stone/glass bath)",
+      "hotel_7n_feb_all_in": 1595.26,
+      "hotel_7n_mar_all_in": 2230.18,
+      "michelin_plan_label": "1★ Guy Savoy (~$520 min est.) + Wing Lei ($397.76) + Stubborn Seed ($320) + Kabuto ($260) + China Poblano ($120)",
+      "michelin_pretax_total": 1617.76,
+      "michelin_includes_estimate": true,
+      "activities_4_paid_plus_2_free": 164.9,
+      "public_transit_7d_2adults": 118.0,
+      "combined_feb_15_22": 3495.92,
+      "combined_mar_14_21": 4130.84,
+      "cheaper_window_savings": "Feb 15–22 saves $634.92",
+      "credit_or_caveat_note": "Feb 15–22 saves $634.92 vs Mar 14–21! Includes 1★ Guy Savoy dish-based floor estimate (~$520 pre-tax); add ~$700–$1,200 reserve if also booking unpriced 2★ Joël Robuchon."
+    },
+    {
+      "id": "pkg-north-rw",
+      "title": "Tier 4 — North-Strip Modern Resort + On-Site MICHELIN Kitchen (Hilton at Resorts World)",
+      "badge": "Cheaper in March Window",
+      "hotel_name": "Las Vegas Hilton at Resorts World",
+      "room_name": "1 King Deluxe (400 sq ft, exact itemised checkout)",
+      "hotel_7n_feb_all_in": 2200.15,
+      "hotel_7n_mar_all_in": 1959.47,
+      "michelin_plan_label": "On-site Stubborn Seed ($320) + Wing Lei ($397.76) + Partage 7-Course ($320) + Kabuto ($260) + Esther's Kitchen (~$145 mid est.)",
+      "michelin_pretax_total": 1442.76,
+      "michelin_includes_estimate": true,
+      "activities_4_paid_plus_2_free": 164.9,
+      "public_transit_7d_2adults": 118.0,
+      "combined_feb_15_22": 3925.81,
+      "combined_mar_14_21": 3685.13,
+      "cheaper_window_savings": "Mar 14–21 saves $240.68",
+      "credit_or_caveat_note": "Mar 14–21 saves $240.68 vs Feb 15–22 because Resorts World avoids Center-Strip March Madness surge while Feb 16–17 has an LVCC convention spike."
+    },
+    {
+      "id": "pkg-michelin-key-fb",
+      "title": "Tier 5 — Las Vegas's Only MICHELIN Key Resort + $0 Resort Fee Promo (Fontainebleau)",
+      "badge": "Book by Dec 2, 2026",
+      "hotel_name": "Fontainebleau Las Vegas (1 MICHELIN Key)",
+      "room_name": "Bleau King (488 sq ft, Free Member FRBF26 rate)",
+      "hotel_7n_feb_all_in": 3051.07,
+      "hotel_7n_mar_all_in": 2478.52,
+      "michelin_plan_label": "Wing Lei ($397.76) + Stubborn Seed ($320) + Partage 9-Course ($420) + Kabuto Kabuto Course ($370) + 1★ Guy Savoy (~$520 min est.)",
+      "michelin_pretax_total": 2027.76,
+      "michelin_includes_estimate": true,
+      "activities_4_paid_plus_2_free": 164.9,
+      "public_transit_7d_2adults": 215.9,
+      "combined_feb_15_22": 5459.63,
+      "combined_mar_14_21": 4887.08,
+      "cheaper_window_savings": "Mar 14–21 saves $572.55",
+      "credit_or_caveat_note": "MUST BOOK BY DEC 2, 2026 on free Fontainebleau Rewards sign-up (FRBF26): waives all resort fees AND includes a $350 on-property dining credit (not deducted from total above)."
+    }
+  ]
+}

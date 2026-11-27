@@ -1062,7 +1062,6 @@ Updated live-render tests retain T23’s source/amount/hours/unique-ID checks, w
 
 Final post-T23 browser rerun: **all 16 pages × 375px/1280px = 32 checks passed**, with HTTP 200, no page errors/document overflow, one H1, labelled cells and working disclosures. Final local structural check: **16 pages, 0 failures, 0 warnings, 1,309 external-link occurrences** (not HTTP certifications). Regression suite: **21 passed**. Preparing the assigned branch’s PR without waiting for manual review.
 
-
 ## Publication completion — arena/3d5d3718-vegas1 — 27 November 2026
 
 - **Integration [PR #68](https://github.com/kanlerxz87-cyber/Vegas1/pull/68)** merged via `gh pr merge 68 --merge` at **2026-11-27T18:20:18Z**, merge commit **`e1136ff21426abc835f84308d39cdfe8246be038`**. GitHub reported the PR CLEAN/MERGEABLE; no required PR checks were configured. Local gates were run against the committed tree before merging; no broken build was merged.
@@ -1072,3 +1071,20 @@ Final post-T23 browser rerun: **all 16 pages × 375px/1280px = 32 checks passed*
 - **Preservation:** original 32 raw hotel rows and all incoming restaurant/activity media/profile/provenance values survive; completed T23 source findings, EC-01–EC-08, F-70–F-78, unique FV-01–FV-08, earlier register states, all 10 site proposals and independent archives are retained with qualification/attribution. No foreign open PR (#64/#60/#38/#27) was merged or closed.
 - **Done:** website implementation, current official-source observations, field-level blank policy, summary/itinerary, questions/discovery actions/suggestions, parallel integration, PR merge and successful live publication. This record is a documentation-only follow-up to an already-confirmed deployment; it does not alter generated website bytes.
 - **Needs review, not fabricated:** fully qualified named-room/all-in/eligibility/private-use/cancellation offers; consistent cheapest-date/booking-time comparison; dated outward/return bus journeys; KAME charging basis; 2027 venue/ticket/reservation availability; personal budget/diet/accessibility/rate-flexibility preferences. No bookings, payments, deposits or accounts were made and no manual approval/input was required to publish.
+
+---
+
+## Session claim & T24 completion — arena/6851cc7e-vegas1 (originally claimed as T19 in a5e728f, renumbered T20 → T24) — 2026-11-27
+
+| ID | Task | Status | Owner (session ID) | File scope | Notes |
+|---|---|---|---|---|---|
+| T24 | 15-property multi-window official hotel booking-engine verification (`Feb 15–22` vs `Mar 14–21, 2027` + Cyber/Bleau Friday purchase deadlines) + 24-MICHELIN directory (`15/24` official couple prices, `9` blank) + 5 combined couple trip packages & interactive budget builder + line-by-line repo review + self-contained mobile subsite & validator | done | `arena/6851cc7e-vegas1` | `COORDINATION.md`, `notes/repo-audit-6851cc7e.md`, `data/session-6851cc7e-*.json`, `scripts/build_session_6851cc7e.py`, `scripts/validate_session_6851cc7e.py`, `docs/session-6851cc7e/**` | Claimed in `a5e728f` before edits; merged `origin/main@99a3506` (`d98d899`), `origin/main@2169909`, `origin/main@e1136ff` (PR #68), and `origin/main@8fc8b0a` (PR #70) cleanly via `git merge` (preserving 100% of upstream records & canonical strict-site files). Renumbered monotonically after `T23` to avoid colliding with `T19`/`T20`. |
+
+### What T24 adds cleanly alongside canonical `main@8fc8b0a`
+1. **15 Las Vegas resorts verified directly on official first-party booking engines across TWO 7-night 2027 windows (`Feb 15–22` vs `Mar 14–21, 2027`):**
+   - `caesars.com/book/room-list` (`The LINQ`, `Flamingo`, `Horseshoe`, `Planet Hollywood`, `Harrah's`, `Caesars Palace`, `Paris`, `The Vanderpump Hotel`), `reservations.rwlasvegas.com/ibe/shop.aspx` (`Hilton`, `Conrad`, `Crockfords`), `reserve.fontainebleaulasvegas.com/ibe/shop.aspx` (`Fontainebleau`), `reservations.wynnlasvegas.com/ibe/details.aspx` (`Encore`, `Wynn`), and `be.synxis.com` (`Downtown Grand`), for named Queen+/King rooms with private bathrooms, resort fees, and `13.38%` Clark County lodging tax (`18` JS/bot-blocked candidates kept strictly blank — zero OTA quotes).
+2. **Empirical resolution of the Feb-vs-March cheapest-week split & Cyber purchase window:**
+   - **Center Strip & Downtown (all 8 Caesars properties + Downtown Grand + Encore)** are **3%–28.5% cheaper in `Feb 15–22, 2027`** than `Mar 14–21, 2027` due to NCAA March Madness First Weekend (`Mar 18–21, 2027`) surging sportsbook hotels (`Caesars Palace` Julius Deluxe King `$1,407` vs `$1,967` pre-tax / `$1,595.26` vs `$2,230.18` all-in).
+   - **North Strip LVCC corridor (`Fontainebleau`, `Hilton/Conrad/Crockfords at Resorts World`, `Wynn Tower`)** is **4%–18.8% cheaper in `Mar 14–21, 2027`** because a `Feb 16–17` convention peak sells out `Conrad` and lifts North Strip (`Fontainebleau` Free-Member `FRBF26` `$2,186.03` Mar vs `$2,691.01` Feb pre-tax).
+   - **Active Cyber / Black Friday purchase deadlines (`Nov 27 – Dec 4, 2026`):** Fontainebleau `FRBF26` (`$0` resort fee + `$350` dining credit) expires **Dec 2, 2026**; Wynn/Encore Cyber Exclusive (`+$300` resort credit) expires **Dec 4, 2026**.
+3. **Self-contained mobile subsite (`docs/session-6851cc7e/`) & validators:** 8 responsive HTML pages (`index`, `hotels`, `costs`, `michelin`, `activities-transit`, `questions-suggestions`, `repo-review`, `flagged`) built from `data/session-6851cc7e-*.json` and verified alongside canonical `validate.py` + `check_evidence.py` (`21/21` unit tests PASS).
