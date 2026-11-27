@@ -518,3 +518,29 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 **Irregularities:** F-52 (Mob Thu hours, corrected), F-53 (TikTok coverage gap, blanks flagged). All prior flags (F-29/F-30 rate basis, F-47 Vanderpump, F-48 search-list prices) unchanged and non-blocking.
 
 **Overlap:** Open PRs #27/#38 touch same data files but have no active board claim; this branch rebased on `main@631e611` before push. No other branch merged/closed by this session.
+
+## T18 — strict evidence display gate — arena/e6eed606-vegas1 — 2026-11-27
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| T18: audit inherited evidence; suppress unofficial hotel quote values and inferred transit scores from decision tables; add reproducible evidence checks; integrate and publish | in progress | arena/e6eed606-vegas1 | `COORDINATION.md`, `scripts/gen_site.py`, `scripts/validate.py`, `scripts/check_evidence.py`, `FLAGS.md`, `notes/audit-2026-11-27.md`, `executive-summary.md`, `README.md`, generated root/`docs/` HTML |
+
+All preceding claims are done or older than 60 minutes; no active uncompleted claim found. This session is final integration for T18 only. Existing raw datasets and independent archives are preserved. Arena requires the current branch `arena/e6eed606-vegas1`; no alternate branch/worktree will be created. Official-source fetches and limitations will be recorded below. A source URL alone is not proof of a dated price or an end-to-end travel time.
+
+T18 scope extension (no other active claim): `data/activities.json` for the freshly confirmed Mob Museum weekly-hours correction and High Roller schedule conflict, plus `data/restaurants.json` only if an official menu correction is necessary. Initial pull of this previously unpublished branch returned "remote ref not found"; pulled/rebased `origin/main` instead, then pushed the claim successfully. No conflicts.
+
+T18 regression check exposed an empty official URL for Cliffs at Peace Canyon. Scope extended to that single `data/hotels.json` URL/status entry (no raw prices/model fields changed). Discovered and fetched official Vacation Village directions page successfully; now all 32 hotel candidate rows have official discovery links. No hotel room/rate facts inferred from it.
+
+### T18 completion / integration — 2026-11-27
+
+**Status: done (published evidence corrections); missing research: needs review.** Fresh sources and exact limitations are in `notes/audit-2026-11-27.md`. F-58–F-63 are rendered on Flagged for Review with official links. All 32 canonical hotel decision rows now suppress unofficial amounts, unconfirmed room qualification and inferred bus scores; original OTA/model records and archives preserved. No claim of complete live external verification or booking readiness. New regression test found an actual empty official hotel link; corrected from fetched Vacation Village official page. Mob Museum weekly hours corrected, High Roller conflicting hours blank, Guy Savoy incomplete meal/unsupported Krug total blank. MICHELIN's 24 Las Vegas names/tiers checked against official announcement chunks 0 and 1. RTC visitor fare totals explicitly arithmetic for two adults.
+
+**Checks:** `python3 scripts/gen_site.py && python3 scripts/validate.py && python3 scripts/check_evidence.py`; Python compile and `git diff --check` pass. 13 canonical pages, 0 local failures, 0 warnings; root/docs synchronized. 351 external link occurrences are counted, NOT certified live. No CI configured; no complete external broken-link guarantee. No reservations or payments made. No claim from another active session overwritten. No merge conflicts.
+
+
+### T18 integration conflict resolution
+PR #41 initially could not merge because main advanced through PRs #36–#40 during this session. Stopped publication, fetched and merged main on the current branch. Preserved all upstream social-link additions, independent audit notes, new flags F-52/F-53 and their session records. Reapplied only our source-backed field corrections over upstream JSON. Renamed this session T16 → T18 and its flags F-52–F-57 → F-58–F-63 to avoid collisions. All generated HTML regenerated from merged sources, not hand-resolved. Earlier "no conflicts" statement describes pre-integration only; this paragraph is the current conflict record. No upstream work discarded.
+
+Post-integration checks repeated: 13 pages, zero local failures/warnings, 393 external link occurrences counted (not liveness-certified); evidence regression passes. Programmatic comparison confirms every upstream restaurant/activity YouTube/Instagram/TikTok field preserved exactly. New review IDs are F-58–F-63; main's F-52/F-53 retained unchanged. T18 current status: done, pending publication confirmation.
+
+Push preparation note: plain `git pull --rebase` after the integration merge attempted to flatten upstream's merge history and conflicted in the coordination log. Aborted immediately; no work discarded. Retrying with `--rebase=merges` to preserve the integration graph.

@@ -66,3 +66,16 @@ Items F-39 to F-46 come from the 26 November 2026 line-by-line audit (task T12).
 - **F-45** Promotional and one-day-snapshot rates; re-capture within 60 days of travel.
 - **F-46** Repository irregularities (duplicate board IDs, stale counts, overlapping datasets, orphan page, failed branch run).
 
+
+## Strict evidence display audit — 27 November 2026
+
+These supersede earlier recommendations where they conflict. Earlier flags and raw datasets are retained as audit history.
+
+| ID | Where | What | Effect on the plan |
+|----|-------|------|--------------------|
+| **F-58** | All hotel decision tables | Canonical prices are third-party snapshots, not verified official all-in seven-night offers for a named qualifying room and two adults. A working property URL verifies neither price nor room fit. | Official-only hotel decision cells left blank; alphabetical candidates replace unsupported ranking. No cheapest hotel, stay week or purchase date is established. Historical raw records retained, not endorsed. |
+| **F-59** | Hotel proximity and RTC model | Zone matrix values are estimates; bus-only hotel-to-restaurant journeys including walks, waiting, transfers and return service were not verified. Loop is not subway or bus. Model counts cannot establish real 24/24 reachability. | Remove model scores from hotel decision table and public transit matrix. Route counts blank pending itinerary-level evidence. Earlier saturation claims are superseded. |
+| **F-60** | RTC fares | Official RTC page checked 27 Nov lists $2 regular residential single ride and $1 reduced; inherited claim that Nevada local fares are $1 is misleading. Visitors must use Strip and All Access fares. | Transit page now displays visitor fares as totals for two adults, with official source and arithmetic basis. No future fare guarantee. |
+| **F-61** | Restaurant Guy Savoy | Official main menu fetched 27 Nov exposes individual dishes, not complete meal totals; $200–$580 was merely two dishes. Inherited $3,000 Krug total was not reproduced. | Dinner-for-two total blank. Menu link published; no meal size, courses, tax or wine inferred. |
+| **F-62** | Mob Museum | Official weekly table fetched 27 Nov lists museum daily 9 AM–9 PM, not every Thursday closing at 4 PM. Holiday early closure must not become weekly hours. | Weekly schedule corrected; early closures and 2027 exceptions require separate confirmation. |
+| **F-63** | High Roller | Official page fetched 27 Nov conflicts internally: opens 12:30 PM, ticket cards daytime 12–5 PM/anytime noon–close, FAQ daytime until 5:59 PM/anytime from 6 PM. | Complete hours blank; exact conflicts listed, published starting-price couple totals retain plus-tax/fee caveat. |
