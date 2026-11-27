@@ -486,8 +486,10 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 
 | Task | Status | Owner | File scope |
 |---|---|---|---|
-| T17 | needs review | arena/6814574d-vegas1 | `COORDINATION.md`, `notes/audit-2026-11-27.md` |
+| T17 | blocked | arena/6814574d-vegas1 | `COORDINATION.md`, `notes/audit-2026-11-27.md` |
 
 Independent audit of the existing published planner and deployment; record verifiable findings and requests for any shared-output changes here. The Arena-provided branch name is fixed and takes precedence over the historical branch naming convention. PR #27 remains open and conflicting; its overlapping shared-output scope is not claimed here.
 
 **T17 result:** Independent spot audit saved in `notes/audit-2026-11-27.md`. Sources: [MICHELIN 2026 selection](https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s), [High Roller official page](https://www.caesars.com/linq/things-to-do/attractions/high-roller), and the cited transit operator sources. Build/validator passed, but does not verify external links or all rows. Flagged concerns and requested integration changes are in the audit; they are not yet published on the Flagged for Review page because shared outputs overlap PR #27. T17 was renumbered after another session independently used T16.
+
+**Rebase conflict:** PR #36 appended an independent T16 record to `COORDINATION.md` while this session appended its claim. Resolved by retaining both records; no other session work was discarded. The task remains blocked rather than marked needs review because its new findings are not yet published on the Flagged for Review page.
