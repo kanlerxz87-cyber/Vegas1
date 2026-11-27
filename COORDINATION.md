@@ -902,3 +902,22 @@ environment limit and is not evidence of a broken deploy.
 2. **Official-vs-official schedule conflict flagged (F-68):** é by José Andrés — Cosmopolitan MGM page says `Tue–Sat` while `https://www.ebyjoseandres.com/` says `Tue–Sun` (5:30 & 8:30 PM seatings; direct phone `702-698-7950`).
 3. **Final 4 unopened hotel official URLs checked (0 unopened across all 32 hotels):** Green Valley Ranch (`greenvalleyranch.com`) and Red Rock (`redrockresort.com`) confirmed live (`yes`); Waldorf Astoria (`hilton.com`) and The Signature at MGM Grand (`mgmresorts.com`) refuse automated fetch (`blocked`) → **21 live / 10 refused / 1 sibling / 0 unopened**.
 4. **Generator & register bug fixes:** fixed `scripts/gen_site.py` broken `suggestions.html` `<h2>1</h2>` heading (`16 ways to improve this plan`), `sources.html` typo `F-39` → `F-29`, `flagged.html` dynamic range (`F-47 to F-69`), `questions.json` (`Q-08` "15 months" → "~3 months", `Q-13` 0 unopened), and `suggestions.json` (`S-02` 21 → 24 listings).
+
+### T17 CLOSED (arena/c045ad05-vegas1, 2026-11-27)
+
+All work of this task is merged to `main` and deployed. Nothing of mine is outstanding.
+
+| PR | Merge commit | What it delivered |
+|----|--------------|-------------------|
+| [#46](https://github.com/kanlerxz87-cyber/Vegas1/pull/46) | `5d422eb` | 21/24 restaurant + 5/5 activity Instagram links with per-row evidence; Kabuto phone corrected; provenance table; `check_links.py` |
+| #49 | `05b0361` | typo in published Bouchon evidence ("Coral Coral Gables") corrected |
+| #51 | `e70b268` | run-together sentences in the activities provenance cell fixed |
+| #54 | `18b16ec` | recovered evidence a merge had dropped; closed R-02; removed a live conflict marker committed to this file by PR #47 |
+| [#58](https://github.com/kanlerxz87-cyber/Vegas1/pull/58) | `db06f7f` | Fountains of Bellagio socials verified (property-level, labelled) → activities 6/6 IG, 6/6 YouTube |
+
+**Final state, re-read from the deployed site (`01c7107`):** 16 pages · 0 failures · 0 warnings · 21 of 24 restaurants
+and 6 of 6 activities carry an Instagram link · all 6 activities have a provenance row · `docs/` and root identical.
+
+**What this task learned that the next session should not re-learn:** a merge can silently delete another session's
+*evidence* while looking clean, and a green validator cannot see it — read the deployed page back, never just the build
+log. `data/socials.json` is the machine-readable record; keep it in step with `activities.json`/`restaurants.json`.
