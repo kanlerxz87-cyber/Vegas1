@@ -471,3 +471,12 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 | ID | Task | Status | Owner | File scope | Notes |
 |---|---|---|---|---|---|
 | T16 | Integration audit: validate current site, examine decision-critical unverified claims, correct/flag issues, publish if safe | in progress | arena/16cb2f96-vegas1 | `COORDINATION.md`, `FLAGS.md`, `README.md`, `executive-summary.md`, `data/*.json`, `scripts/*.py`, generated root and `docs/` pages | Current Arena branch is fixed; acting as integration session. Prior tasks are done or needs review. Will preserve other work. |
+
+### T16 findings and verification — 2026-11-27
+
+- Scope was claimed and pushed; no active competing claim was found in the task board. The repository already had a published site; no earlier research was replaced wholesale.
+- F-52: corrected statements treating model outputs as proven travel times. The zone model is not an official timed bus-only itinerary and includes other modes. RTC's [trip planning page](https://www.rtcsnv.com/ways-to-travel/how-to-ride/ridertc-app/) is the next step. Third-party historical prices are not official all-in hotel totals; this remains a material unmet requirement.
+- F-53: re-fetched [Caesars' Guy Savoy menu](https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu): $100–$290 are individual dish prices, not dinner totals; the earlier Krug price was not visible. Removed the unverified couple total, and corrected the related open-question answer.
+- Re-fetched [RTC fares](https://www.rtcsnv.com/ways-to-travel/fares-passes/): $1 residential single is reduced fare, $2 is regular; corrected ambiguous wording.
+- Build and validator passed; validator checks local HTML links and cross-page anchors, not live external links or factual accuracy. This was a targeted audit, **not** a line-by-line re-verification of every historic entry. Official hotel quotes, complete bus itineraries, live social links, 14-night pricing and other gaps remain flagged; historical evidence is not a substitute for re-quoting.
+- Task status: **needs review**. Prior archived datasets retain historical claims and are not re-verified by this session. Site is useful research, not a fully verified booking recommendation.

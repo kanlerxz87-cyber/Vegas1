@@ -64,3 +64,6 @@ Items F-39 to F-46 come from the 26 November 2026 line-by-line audit (task T12).
 - **F-45** Promotional and one-day-snapshot rates; re-capture within 60 days of travel.
 - **F-46** Repository irregularities (duplicate board IDs, stale counts, overlapping datasets, orphan page, failed branch run).
 
+
+| **F-52** | Hotel transit ranking and hotel pricing | The zone model uses assumed minutes and modes beyond the requested bus/subway constraint, not verified timed door-to-door journeys. Historical third-party hotel prices are not official all-in room quotes. | Treat counts and order as exploratory only; request dated bus itineraries from [RTC](https://www.rtcsnv.com/ways-to-travel/how-to-ride/ridertc-app/) and check a named room and all-in total with each hotel. |
+| **F-53** | Guy Savoy couple price | The [official Caesars menu](https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu) shows individual dishes at $100–$290, but did not show the previously recorded $1,500 per person Krug price when fetched 27 Nov 2026. Individual dish prices are not complete meal totals. | Couple total left blank as unverified; ask the venue for current menu and final cost. |

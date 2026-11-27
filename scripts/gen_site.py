@@ -96,7 +96,7 @@ def page(active, title, subtitle, body, lead=""):
 </main>
 <footer class="wrap">
   <p>Prices captured 25 Nov 2026 from Booking.com for exact date ranges, 2 adults, 1 room, USD; spot-checked 26 Nov 2026 (see <a href="flagged.html">Flagged for review</a>).
-  Every row links to its source. Blank means <strong>not verified</strong> — never estimated.</p>
+  The older hotel snapshots are third-party and not verified official all-in quotes. Transit counts are model estimates, not verified journeys. Missing values are marked unverified; see <a href="flagged.html#F-52">F-52</a>.</p>
   <p>Las Vegas had no MICHELIN Guide between 2010 and 2025. All awards here are from the 2026
   Southwest selection, the first since 2009.</p>
 </footer>
@@ -179,8 +179,7 @@ def build_index():
     <li><strong>The 7-night basis collides with the requested dates.</strong> The preferred window
     2027-02-15 → 2027-02-18 is three nights, not seven. Seven-night totals starting on 15 Feb are used
     so the figures match the brief — <a href="questions.html">Q-02</a>.</li>
-    <li><strong>The "within 1 hour" ranking does not rank anything.</strong> Every hotel in Las Vegas is within
-    an hour of all {N_TOTAL} restaurants, so the metric returns {N_TOTAL}/{N_TOTAL} for all {n_hotels} properties. A
+    <li><strong>The "within 1 hour" ranking does not rank anything.</strong> The unvalidated zone model returns {N_TOTAL}/{N_TOTAL} for all {n_hotels} sampled properties; this is not proof that any door-to-door bus journey is under an hour. A
     <em>20-minute</em> column was added and is what actually separates them — <a href="questions.html">Q-01</a>.</li>
     <li><strong>One ranked hotel no longer exists under the name this site priced.</strong> The official page for
     The Cromwell now redirects to <strong>The Vanderpump Hotel</strong>, so that row's $1,978 total is a
@@ -229,15 +228,15 @@ def build_hotels():
 <table class="data">
 <thead><tr>
 <th>#</th><th>Hotel</th><th>Class</th><th>Guest</th>
-<th title="MICHELIN restaurants within a 20-minute one-way trip">≤20 min</th>
-<th title="MICHELIN restaurants within 60 minutes — the figure the brief asked for">≤60 min</th>
+<th title="Model estimate of MICHELIN restaurants within 20 minutes">≤20 min</th>
+<th title="Model estimate, not verified bus-only journeys">≤60 min</th>
 <th>Bed</th><th>Booking.com quote<br><span class="thsub">7 nights · 15–22 Feb</span></th>
 </tr></thead>
 <tbody>{''.join(rows)}</tbody>
 </table>
 </div>
 <p class="note">Sorted by MICHELIN proximity inside 20 minutes, then by the dated Booking.com quote (not an official property rate). The ≤60 min column is the
-brief's literal metric and is <strong>24 for every property</strong> — it cannot rank anything, which is why the
+modelled count is <strong>24 for every sampled property</strong>, but is not a verified bus-only journey count. The
 20-minute column drives the order. Both are recomputed by <code>scripts/build.py</code> from one zone matrix.</p>
 """
 
@@ -329,7 +328,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>{e(h['name'])} <span class="pill">{e(h['tier'])}</span></h3>
   <p class="meta">{e(h['zone'].replace('-',' '))} · {h['stars']}★ · guest score {h['guest_score'] or '—'}
-  · {h['michelin_within_20']} MICHELIN within 20 min · resort fee: {e(h['resort_fee'])}</p>
+  · model estimate: {h['michelin_within_20']} MICHELIN within 20 min · resort fee: {e(h['resort_fee'])}</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody>{plist}</tbody>
@@ -428,7 +427,7 @@ def build_restaurants():
         ):
             hours = e(r["hours"][len(days):].strip())
         days_html = e(days) if days else '<span class="warn">not verified</span>'
-        price = e(r["price_2adults"]) if r["price_2adults"] else '<span class="muted">on request</span>'
+        price = e(r["price_2adults"]) if r["price_2adults"] else '<span class="warn">not verified</span>'
         rows.append(f"""<tr>
 <td><a href="{e(r['official_url'])}" target="_blank" rel="noopener">{e(r['name'])}</a>
   <div class="tiny">{e(r['cuisine'])} · {e(r['location'])}</div></td>
@@ -450,8 +449,7 @@ def build_restaurants():
 </table>
 </div>
 <p class="note">Award labels are the 2026 MICHELIN Guide's three tiers, shown separately so an unstarred listing
-can never be mistaken for a starred one. <strong>"On request"</strong> means the venue publishes no price — it is not
-a missing entry and it is not an average. Only three restaurants print a real per-person figure.</p>
+can never be mistaken for a starred one. <strong>"Not verified"</strong> means a couple’s total has not been confirmed; it does not mean the venue publishes no prices. Prices shown are snapshots and must be rechecked with the venue.</p>
 """
 
     counts = RES["meta"]["counts"]
@@ -477,7 +475,7 @@ a missing entry and it is not an average. Only three restaurants print a real pe
 
 <section class="panel">
   <h2 id="costs">What dinner for two actually costs</h2>
-  <p>Only three venues publish a number, and two of them are outside the starred group:</p>
+  <p>Examples of captured menu prices, subject to change:</p>
   <ul class="tight">
     <li><strong>Michael Mina</strong> — $295++ per person, 10-course tasting → <strong>$590++</strong> for two,
       <strong>but the venue is currently closed</strong>: its own Bellagio page reads &ldquo;Monday to Sunday: Closed&rdquo;
@@ -486,9 +484,7 @@ a missing entry and it is not an average. Only three restaurants print a real pe
     <li><strong>KAME Omakase</strong> — $500 per person, signature omakase → <strong>$1,000++</strong> for two.</li>
     <li><strong>Anima by EDO</strong> — $85 per person tasting → <strong>$170++</strong> for two.</li>
   </ul>
-  <p>The four <em>starred</em> rooms are all "price on request". A couple planning a stars-heavy week should expect
-  the starred nights to be the largest line in the budget after the hotel, and should plan on reserving
-  before booking the room — <a href="suggestions.html">S-04</a>.</p>
+  <p>Guy Savoy’s <a href="https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu">official menu</a> lists individual dishes, but a complete dinner total for two has not been verified. Confirm menus and reservations before booking the room — <a href="suggestions.html">S-04</a>.</p>
 </section>
 """
     return page("restaurants.html", "MICHELIN restaurants",
@@ -622,18 +618,10 @@ def build_transit():
 
 <section class="panel">
   <h2>Why the 60-minute ranking failed, and what was done instead</h2>
-  <p>The brief asked to rank hotels by how many MICHELIN restaurants fall within an hour. Run literally, that
-  number is <strong>24 out of 24 for every single hotel</strong> in the dataset — including the ones in Henderson
-  and Summerlin. The Strip is about four miles long and Chinatown is about three miles west of it, so an hour
-  covers the entire city.</p>
+  <p>The brief asked for bus or subway trips under an hour. The zone model returns <strong>24 out of 24 for each sampled hotel</strong>, but this is not a verified journey count. It uses assumptions and modes beyond the requested bus/subway constraint; walking, waiting and transfers can change the result. See <a href="flagged.html#F-52">F-52</a>.</p>
   <p>A metric that returns the same value for all {len(HOTELS['hotels'])} properties cannot rank them. So a
-  <strong>20-minute</strong> column was added, and that one does separate the field:</p>
-  <div class="grid4">
-    <div class="card"><div class="big">24</div><div class="lbl">West of the Strip</div><p>Palms Place reaches everything in 20 minutes — the western hotels sit between Chinatown and the Strip.</p></div>
-    <div class="card"><div class="big">23</div><div class="lbl">North Strip</div><p>Venetian, Palazzo, Wynn, Encore, SAHARA, Resorts World.</p></div>
-    <div class="card"><div class="big">{center20}</div><div class="lbl">Centre Strip</div><p>The densest restaurant zone — more starred rooms, fewer Chinatown minutes.</p></div>
-    <div class="card"><div class="big">0</div><div class="lbl">Off-Strip</div><p>Henderson and Summerlin: correct resorts, 11–17 miles from dinner.</p></div>
-  </div>
+  <strong>20-minute model estimate</strong> was added; it is exploratory, not a verified ranking:</p>
+  <p>Do not use these assumed counts to conclude a specific hotel-to-restaurant trip meets either threshold. Check a dated, timed itinerary with <a href="https://www.rtcsnv.com/ways-to-travel/how-to-ride/ridertc-app/">RTC trip planning</a>.</p>
   <p class="note">This substitution is a material change to the brief and is raised openly as
   <a href="questions.html">Q-01</a>. The whole matrix lives in one file, so a different threshold can be
   recomputed in a single step.</p>

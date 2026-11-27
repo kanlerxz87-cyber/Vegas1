@@ -56,8 +56,8 @@
 <table class="data">
 <thead><tr>
 <th>#</th><th>Hotel</th><th>Class</th><th>Guest</th>
-<th title="MICHELIN restaurants within a 20-minute one-way trip">≤20 min</th>
-<th title="MICHELIN restaurants within 60 minutes — the figure the brief asked for">≤60 min</th>
+<th title="Model estimate of MICHELIN restaurants within 20 minutes">≤20 min</th>
+<th title="Model estimate, not verified bus-only journeys">≤60 min</th>
 <th>Bed</th><th>Booking.com quote<br><span class="thsub">7 nights · 15–22 Feb</span></th>
 </tr></thead>
 <tbody><tr>
@@ -354,7 +354,7 @@
 </table>
 </div>
 <p class="note">Sorted by MICHELIN proximity inside 20 minutes, then by the dated Booking.com quote (not an official property rate). The ≤60 min column is the
-brief's literal metric and is <strong>24 for every property</strong> — it cannot rank anything, which is why the
+modelled count is <strong>24 for every sampled property</strong>, but is not a verified bus-only journey count. The
 20-minute column drives the order. Both are recomputed by <code>scripts/build.py</code> from one zone matrix.</p>
 
 </section>
@@ -372,7 +372,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Palms Place Hotel and Spa <span class="pill">mid</span></h3>
   <p class="meta">west near · 4★ · guest score 7.7
-  · 24 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 24 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$866</td><td class="num muted">$80</td><td class="tiny">603 ft² studio, free cancellation</td></tr></tbody>
@@ -389,7 +389,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>The LINQ Hotel + Experience <span class="pill">mid</span></h3>
   <p class="meta">center strip · 4★ · guest score 7.7
-  · 21 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$564</td><td class="num muted">$31</td><td class="tiny">Black Friday deal, free cancellation, pay at property — cheapest total in the dataset</td></tr></tbody>
@@ -406,7 +406,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Flamingo Las Vegas <span class="pill">mid</span></h3>
   <p class="meta">center strip · 3★ · guest score —
-  · 21 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$626</td><td class="num muted">$39</td><td class="tiny">Black Friday deal, free cancellation, pay at property</td></tr></tbody>
@@ -423,7 +423,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Horseshoe Las Vegas <span class="pill">mid</span></h3>
   <p class="meta">center strip · 4★ · guest score —
-  · 21 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$717</td><td class="num muted">$53</td><td class="tiny">Free cancellation; pay at property</td></tr></tbody>
@@ -440,7 +440,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Nobu Hotel at Caesars Palace <span class="pill">luxury</span></h3>
   <p class="meta">center strip · 5★ · guest score 7.9
-  · 21 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$1,125</td><td class="num muted">$161</td><td class="tiny">Lowest displayed rate band $1,125–$1,327</td></tr><tr><td>2027-03-08→2027-03-15</td><td class="num">$1,750</td><td class="num muted">$195</td><td class="tiny">Up +56% vs the February week</td></tr></tbody>
@@ -457,7 +457,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Caesars Palace <span class="pill">luxury</span></h3>
   <p class="meta">center strip · 5★ · guest score 7.9
-  · 21 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$1,580</td><td class="num muted">$226</td><td class="tiny"></td></tr></tbody>
@@ -474,7 +474,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>The Vanderpump Hotel (formerly The Cromwell) <span class="pill">luxury</span></h3>
   <p class="meta">center strip · 5★ · guest score 7.4
-  · 21 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$1,978</td><td class="num muted">$283</td><td class="tiny"></td></tr></tbody>
@@ -491,7 +491,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Vdara Hotel &amp; Spa <span class="pill">luxury</span></h3>
   <p class="meta">center strip · 5★ · guest score 8.1
-  · 21 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$2,888</td><td class="num muted">$413</td><td class="tiny"></td></tr></tbody>
@@ -508,7 +508,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>NoMad Las Vegas / The Reserve at Park MGM <span class="pill">luxury</span></h3>
   <p class="meta">center strip · 5★ · guest score 8.9
-  · 21 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$3,013</td><td class="num muted">$430</td><td class="tiny"></td></tr></tbody>
@@ -525,7 +525,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Bellagio <span class="pill">luxury</span></h3>
   <p class="meta">center strip · 5★ · guest score 8.6
-  · 21 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$3,072</td><td class="num muted">$439</td><td class="tiny">Black Friday deal rate; standard rate from $4,651</td></tr><tr><td>2027-03-01→2027-03-08</td><td class="num">$3,258</td><td class="num muted">$410</td><td class="tiny">Accessible Premier King</td></tr><tr><td>2027-03-15→2027-03-22</td><td class="num">$2,544</td><td class="num muted">$308</td><td class="tiny">Spa Premier King — cheapest Bellagio week measured</td></tr></tbody>
@@ -542,7 +542,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>The Cosmopolitan of Las Vegas <span class="pill">luxury</span></h3>
   <p class="meta">center strip · 5★ · guest score 8.5
-  · 21 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$3,433</td><td class="num muted">$490</td><td class="tiny"></td></tr><tr><td>2027-03-08→2027-03-15</td><td class="num">$2,307</td><td class="num muted">$275</td><td class="tiny">Black Friday deal rate — 33% below the February week</td></tr></tbody>
@@ -559,7 +559,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>ARIA Resort &amp; Casino <span class="pill">luxury</span></h3>
   <p class="meta">center strip · 5★ · guest score 8.1
-  · 21 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$3,798</td><td class="num muted">$543</td><td class="tiny"></td></tr><tr><td>2027-03-15→2027-03-22</td><td class="num">$2,507</td><td class="num muted">$303</td><td class="tiny">Deluxe King — 34% below February</td></tr></tbody>
@@ -576,7 +576,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Secret Suites at Vdara <span class="pill">luxury</span></h3>
   <p class="meta">center strip · 5★ · guest score —
-  · 21 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$6,778</td><td class="num muted">$968</td><td class="tiny"></td></tr></tbody>
@@ -593,7 +593,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Waldorf Astoria Las Vegas <span class="pill">luxury</span></h3>
   <p class="meta">center strip · 5★ · guest score 8.5
-  · 21 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 21 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$7,980</td><td class="num muted">$1,140</td><td class="tiny">1-bedroom suite</td></tr><tr><td>2027-03-01→2027-03-08</td><td class="num">$3,463</td><td class="num muted">$440</td><td class="tiny">Deluxe King Room — 57% below the February suite rate; different room class</td></tr></tbody>
@@ -610,7 +610,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>SAHARA Las Vegas <span class="pill">mid</span></h3>
   <p class="meta">north strip · 4★ · guest score 8.4
-  · 17 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 17 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$801</td><td class="num muted">$59</td><td class="tiny">Free cancellation</td></tr></tbody>
@@ -627,7 +627,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Trump International Hotel Las Vegas <span class="pill">luxury</span></h3>
   <p class="meta">north strip · 5★ · guest score 9.1
-  · 17 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 17 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$1,661</td><td class="num muted">$237</td><td class="tiny"></td></tr></tbody>
@@ -644,7 +644,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Crockfords Las Vegas (Resorts World) <span class="pill">luxury</span></h3>
   <p class="meta">north strip · 5★ · guest score 9.0
-  · 17 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 17 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$2,596</td><td class="num muted">$371</td><td class="tiny"></td></tr></tbody>
@@ -661,7 +661,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Fontainebleau Las Vegas <span class="pill">luxury</span></h3>
   <p class="meta">north strip · 5★ · guest score 9.0
-  · 17 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 17 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$3,201</td><td class="num muted">$457</td><td class="tiny">Black Friday deal rate</td></tr></tbody>
@@ -678,7 +678,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>The Palazzo at The Venetian <span class="pill">luxury</span></h3>
   <p class="meta">north strip · 5★ · guest score 9.0
-  · 17 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 17 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$3,932</td><td class="num muted">$562</td><td class="tiny"></td></tr><tr><td>2027-03-08→2027-03-15</td><td class="num">$2,422</td><td class="num muted">$291</td><td class="tiny">721 ft² — 38% below February</td></tr></tbody>
@@ -695,7 +695,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Encore at Wynn Las Vegas <span class="pill">luxury</span></h3>
   <p class="meta">north strip · 5★ · guest score 9.0
-  · 17 MICHELIN within 20 min · resort fee: $55/night</p>
+  · model estimate: 17 MICHELIN within 20 min · resort fee: $55/night</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$4,093</td><td class="num muted">$585</td><td class="tiny">Booking search total, resort fee basis not stated</td></tr><tr><td>2027-02-15→2027-02-22</td><td class="num">$5,128</td><td class="num muted">$678</td><td class="tiny">Wynn property page: 745 ft², INCLUDES $55/night resort fee, EXCLUDES 13.38% tax. Free cancellation before 2027-02-12.</td></tr></tbody>
@@ -712,7 +712,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Wynn Las Vegas <span class="pill">luxury</span></h3>
   <p class="meta">north strip · 5★ · guest score 9.0
-  · 17 MICHELIN within 20 min · resort fee: $55/night</p>
+  · model estimate: 17 MICHELIN within 20 min · resort fee: $55/night</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$4,378</td><td class="num muted">$625</td><td class="tiny">Run-of-House, Booking search total</td></tr><tr><td>2027-02-15→2027-02-22</td><td class="num">$5,828</td><td class="num muted">$778</td><td class="tiny">Wynn property page: 640 ft², INCLUDES $55/night resort fee, EXCLUDES 13.38% tax</td></tr></tbody>
@@ -729,7 +729,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>The Venetian Resort <span class="pill">luxury</span></h3>
   <p class="meta">north strip · 5★ · guest score 9.0
-  · 17 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 17 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">—</td><td class="num muted">—</td><td class="tiny">WITHDRAWN 2026-11-26 (F-39): the 25 Nov capture could not be reproduced on the property page.</td></tr><tr><td>2027-03-08→2027-03-15</td><td class="num">—</td><td class="num muted">—</td><td class="tiny">WITHDRAWN 2026-11-26 (F-39): the 25 Nov capture could not be reproduced on the property page.</td></tr></tbody>
@@ -746,7 +746,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Golden Nugget Las Vegas <span class="pill">mid</span></h3>
   <p class="meta">downtown arts · 4★ · guest score 7.8
-  · 16 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 16 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$749</td><td class="num muted">$61</td><td class="tiny">Black Friday deal, free cancellation</td></tr></tbody>
@@ -763,7 +763,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Plaza Hotel &amp; Casino <span class="pill">budget</span></h3>
   <p class="meta">downtown arts · 3★ · guest score —
-  · 16 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 16 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$832</td><td class="num muted">$80</td><td class="tiny">Free cancellation</td></tr></tbody>
@@ -780,7 +780,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Desert Rose Resort <span class="pill">mid</span></h3>
   <p class="meta">south strip · 3★ · guest score 9.1
-  · 15 MICHELIN within 20 min · resort fee: none — &#x27;No Resort Fees&#x27; rate</p>
+  · model estimate: 15 MICHELIN within 20 min · resort fee: none — &#x27;No Resort Fees&#x27; rate</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$922</td><td class="num muted">$132</td><td class="tiny">646 ft² suite, 0.3 miles from MGM Grand</td></tr></tbody>
@@ -797,7 +797,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>The Signature at MGM Grand <span class="pill">luxury</span></h3>
   <p class="meta">south strip · 5★ · guest score —
-  · 15 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 15 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$1,465</td><td class="num muted">$209</td><td class="tiny"></td></tr></tbody>
@@ -814,7 +814,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>W Las Vegas <span class="pill">luxury</span></h3>
   <p class="meta">south strip · 5★ · guest score 7.8
-  · 15 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 15 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$2,493</td><td class="num muted">$356</td><td class="tiny"></td></tr></tbody>
@@ -831,7 +831,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Four Seasons Hotel Las Vegas <span class="pill">luxury</span></h3>
   <p class="meta">south strip · 5★ · guest score 9.3
-  · 15 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 15 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$2,981</td><td class="num muted">$426</td><td class="tiny"></td></tr></tbody>
@@ -848,7 +848,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Bluegreen Vacations Club 36 <span class="pill">mid</span></h3>
   <p class="meta">off strip · 4★ · guest score 8.9
-  · 0 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 0 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$800</td><td class="num muted">$114</td><td class="tiny">Black Friday deal, free cancellation. Displayed per-night $114 against a $1,143 pre-discount figure.</td></tr></tbody>
@@ -865,7 +865,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Cliffs at Peace Canyon <span class="pill">off-strip</span></h3>
   <p class="meta">off strip · 3★ · guest score —
-  · 0 MICHELIN within 20 min · resort fee: none / not captured</p>
+  · model estimate: 0 MICHELIN within 20 min · resort fee: none / not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$832</td><td class="num muted">$119</td><td class="tiny"></td></tr></tbody>
@@ -882,7 +882,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Green Valley Ranch Resort <span class="pill">off-strip</span></h3>
   <p class="meta">off strip · 5★ · guest score 9.1
-  · 0 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 0 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$2,012</td><td class="num muted">$287</td><td class="tiny"></td></tr></tbody>
@@ -899,7 +899,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 <article class="hotel">
   <h3>Red Rock Casino Resort &amp; Spa <span class="pill">off-strip</span></h3>
   <p class="meta">off strip · 5★ · guest score 8.5
-  · 0 MICHELIN within 20 min · resort fee: not captured</p>
+  · model estimate: 0 MICHELIN within 20 min · resort fee: not captured</p>
   <table class="data slim">
     <thead><tr><th>Window</th><th>Booking.com quote · 7 nights</th><th>/night</th><th>Note</th></tr></thead>
     <tbody><tr><td>2027-02-15→2027-02-22</td><td class="num">$2,507</td><td class="num muted">$358</td><td class="tiny"></td></tr></tbody>
@@ -927,7 +927,7 @@ brief's literal metric and is <strong>24 for every property</strong> — it cann
 </main>
 <footer class="wrap">
   <p>Prices captured 25 Nov 2026 from Booking.com for exact date ranges, 2 adults, 1 room, USD; spot-checked 26 Nov 2026 (see <a href="flagged.html">Flagged for review</a>).
-  Every row links to its source. Blank means <strong>not verified</strong> — never estimated.</p>
+  The older hotel snapshots are third-party and not verified official all-in quotes. Transit counts are model estimates, not verified journeys. Missing values are marked unverified; see <a href="flagged.html#F-52">F-52</a>.</p>
   <p>Las Vegas had no MICHELIN Guide between 2010 and 2025. All awards here are from the 2026
   Southwest selection, the first since 2009.</p>
 </footer>

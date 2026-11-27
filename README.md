@@ -46,7 +46,7 @@ No dependencies beyond the Python 3 standard library. `gen_site.py` writes the s
    properties. A 2026-11-26 direct-engine refresh showed rates changing within one day and an occupancy-label
    mismatch for a Venetian result. These sources/bases are not comparable; verify exact dates directly (Q-06, F-29/F-30).
 2. **The requested "within 1 hour by subway or bus" ranking cannot rank anything.** Las Vegas has no
-   subway, and every hotel is within an hour of all 24 restaurants. A 20-minute column drives the
+   subway, and the unvalidated model estimates all 24 within an hour for each sampled hotel; actual bus journeys are not verified. A 20-minute model column drives the
    ranking instead; disclosed as Q-01.
 3. **The three cheapest hotels fail the brief's bed requirement.** LINQ, Flamingo and Horseshoe are
    all "room type assigned on arrival" — the bed is not guaranteed until check-in.
