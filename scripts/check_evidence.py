@@ -69,7 +69,7 @@ def main():
     for p in (ROOT / 'docs').glob('*.html'):
         assert p.read_bytes() == (ROOT / p.name).read_bytes(), f'root/docs drift: {p.name}'
     flags = (ROOT / 'flagged.html').read_text()
-    for n in range(52, 58): assert f'id="F-{n}"' in flags
+    for n in range(58, 64): assert f'id="F-{n}"' in flags
     print('PASS: 32 hotel rows, official discovery URLs, blank evidence cells, date arithmetic, corrections, flags and root/docs parity.')
     print('LIMIT: these are offline regression checks, not proof that external URLs work or facts remain current.')
 

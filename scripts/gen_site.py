@@ -91,7 +91,7 @@ def page(active, title, subtitle, body, lead=""):
     <h1>{e(title)}</h1>
     <p class="sub">{subtitle}</p>
     {lead}
-    <p class="note"><strong>27 November evidence notice:</strong> Historical audit text and suggestions below may describe superseded OTA prices or model scores. They are not verified booking guidance. <a href="hotels.html">Current hotel evidence table</a> and <a href="flagged.html#F-52">F-52–F-57</a> take precedence. Restaurant/activity hours are observations, not confirmed 2027 schedules. Creator media links have not been fully re-opened in this pass.</p>
+    <p class="note"><strong>27 November evidence notice:</strong> Historical audit text and suggestions below may describe superseded OTA prices or model scores. They are not verified booking guidance. <a href="hotels.html">Current hotel evidence table</a> and <a href="flagged.html#F-58">F-58–F-63</a> take precedence. Restaurant/activity hours are observations, not confirmed 2027 schedules. Creator media links have not been fully re-opened in this pass.</p>
   </div>
   {body}
 </main>
@@ -115,7 +115,7 @@ def build_index():
     body = f"""
 <section class="panel callout"><h2>Executive summary · 27 November 2026</h2>
 <p><strong>Research plan, not a booking-ready recommendation.</strong> Two adults, private bathroom, queen-or-larger bed. Your outer window is 15 February–23 March 2027. The preferred 15–18 February is only three nights; <strong>15–22 February 2027</strong> is the provisional seven-night comparison, not a decision made on your behalf. A fourteen-night alternative is 15 February–1 March.</p>
-<p>No official, checkout-complete seven-night hotel offer has been established in the canonical dataset. Accordingly hotel totals, room-fit assertions and ≤60-minute reachability counts are blank, not inferred. There is <strong>no verified cheapest hotel, cheapest stay week, or best purchase date</strong>. See <a href="flagged.html#F-52">F-52</a> and <a href="flagged.html#F-53">F-53</a>.</p></section>
+<p>No official, checkout-complete seven-night hotel offer has been established in the canonical dataset. Accordingly hotel totals, room-fit assertions and ≤60-minute reachability counts are blank, not inferred. There is <strong>no verified cheapest hotel, cheapest stay week, or best purchase date</strong>. See <a href="flagged.html#F-58">F-58</a> and <a href="flagged.html#F-59">F-59</a>.</p></section>
 <section class="grid4"><div class="card"><div class="big">{N_TOTAL}</div><p>2026 MICHELIN listings: {N_STARRED} starred, {N_BIB} Bib Gourmand, {N_REC} Recommended. <a href="{e(MICHELIN_SOURCE)}">Official selection</a>.</p></div><div class="card"><div class="big">32</div><p>Hotel research candidates, alphabetical rather than an unsupported ranking.</p></div><div class="card"><div class="big">30</div><p>Possible seven-night arrival dates, 15 February–16 March inclusive. All checkout by 23 March.</p></div><div class="card"><div class="big">Pending</div><p>All-in accommodation and trip budget. No prices are extrapolated from nightly promotions.</p></div></section>
 <section class="panel"><h2>The four starred restaurants</h2><div class="scroll"><table class="data"><thead><tr><th>Restaurant</th><th>2026 award</th><th>Property</th><th>Official source</th></tr></thead><tbody>{stars}</tbody></table></div><p>Rechecked against MICHELIN's 31 August 2026 announcement on 27 November. Guide status is not proof of February 2027 opening or availability. <a href="restaurants.html">All restaurants, costs, hours and media</a>.</p></section>
 <section class="panel" id="three-things"><h2>Best next path — proposed, not booked</h2><ol class="tight"><li>Keep 15–22 February as the baseline; compare all eligible seven-night starts and price fourteen nights independently.</li><li>Compare MGM Grand for its two starred restaurants, Cosmopolitan for é and China Poblano, and Caesars Palace for Guy Savoy. These are same-property relationships in <a href="{e(MICHELIN_SOURCE)}">MICHELIN's address list</a>, not claims about hotel price, bed fit or bus journey length.</li><li>Require a named queen/king room, private bathroom, two-adult occupancy, seven-night total including mandatory fees/taxes, cancellation terms and timestamp from each hotel's official checkout.</li><li>Validate each selected bus journey at the actual dinner time, including walks, waits, transfers and return service. Do not count Vegas Loop as subway or bus.</li><li>Reserve nothing until accommodation and dinner availability are established. No payment or reservation has been made.</li></ol></section>
@@ -128,7 +128,7 @@ def build_index():
 def build_hotels():
     rows = []
     for h in sorted(HOTELS["hotels"], key=lambda h: h["name"].casefold()):
-        rows.append(f'<tr><td><a href="{e(h["official_url"])}">{e(h["name"])}</a></td><td>—</td><td>—</td><td>—</td><td>Unverified: named room, bathroom, complete price and route evidence required. <a href="flagged.html#F-52">F-52</a> / <a href="flagged.html#F-53">F-53</a></td></tr>')
+        rows.append(f'<tr><td><a href="{e(h["official_url"])}">{e(h["name"])}</a></td><td>—</td><td>—</td><td>—</td><td>Unverified: named room, bathroom, complete price and route evidence required. <a href="flagged.html#F-58">F-58</a> / <a href="flagged.html#F-59">F-59</a></td></tr>')
     body = f"""
 <section class="panel" id="cheapest-week"><h2>No verified cheapest week or best day to book</h2><p>The inherited quotes are Booking.com snapshots, not official property checkout totals. They are preserved in repository audit files but are deliberately not presented as qualifying offers. A promotional nightly rate is not a seven-night total; absence of a verified rate does not mean sold out.</p><p>The travel window permits <strong>30 seven-night starts</strong>, every day from 15 February through 16 March 2027 inclusive. For fourteen nights, eligible starts are 15 February–9 March. The preferred 15–18 February is three nights and cannot satisfy the separate one-to-two-week requirement. Provisional baseline: <strong>15–22 February 2027, two adults, one room</strong>.</p><p>Stay dates and purchase date are separate questions. No evidence establishes that booking on a particular future day will be cheapest. No universal discount or savings percentage is asserted.</p></section>
 <section class="panel" id="every-hotel"><h2>All {len(rows)} hotel research candidates</h2><p>Alphabetical, <strong>not ranked</strong>. — means unverified. Official links are discovery/review links; a link alone does not verify a price or a room feature. Some properties refuse automated access; those are not labelled broken. Candidate names are inherited, not a fresh certification of all properties.</p><div class="scroll"><table class="data" id="official-hotel-decisions"><thead><tr><th>Hotel / official site</th><th>Total USD · 7 nights · 15–22 Feb · 2 adults</th><th>Queen+ &amp; private bath confirmed</th><th>MICHELIN venues ≤60 min by bus</th><th>Evidence status</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div></section>
@@ -211,7 +211,7 @@ can never be mistaken for a starred one. <strong>—</strong> means the total wa
   <h2 id="costs">What dinner for two actually costs</h2>
   <p>Totals below come from the stored source observations. They are not guaranteed for 2027 and exclude additions as stated. A blank is not an estimate. Social videos are not price sources.</p>
   <ul class="tight">{''.join(f'<li><a href="{e(r["official_url"])}">{e(r["name"])}</a>: {e(r["price_2adults"])}. {e(r["price_note"])}</li>' for r in rs if r["price_2adults"])}</ul>
-  <p>Guy Savoy's inherited $200–$580 range was merely two à-la-carte dishes, not a dinner total. Its current fetched menu does not expose the inherited $3,000 Krug price. That cell is now blank. <a href="flagged.html#F-55">F-55</a>.</p>
+  <p>Guy Savoy's inherited $200–$580 range was merely two à-la-carte dishes, not a dinner total. Its current fetched menu does not expose the inherited $3,000 Krug price. That cell is now blank. <a href="flagged.html#F-61">F-61</a>.</p>
 </section>
 """
     return page("restaurants.html", "MICHELIN restaurants",
@@ -279,7 +279,7 @@ def build_transit():
 <tr><td>2 hours</td><td>$12</td><td>2 × $6</td><td><a href="{RTC_SOURCE}">RTC</a></td></tr>
 <tr><td>24 hours</td><td>$16</td><td>2 × $8</td><td><a href="{RTC_SOURCE}">RTC</a></td></tr>
 <tr><td>3 days</td><td>$40</td><td>2 × $20</td><td><a href="{RTC_SOURCE}">RTC</a></td></tr>
-</tbody></table></div><p>RTC describes normal Deuce frequency as approximately every 15 minutes. That is not door-to-door travel time. The inherited statement that Nevada local fares are $1 is incorrect for regular adults: RTC lists residential regular single rides at $2 and reduced fares at $1; visitor fare rules are separate. <a href="flagged.html#F-54">F-54</a>.</p></section>
+</tbody></table></div><p>RTC describes normal Deuce frequency as approximately every 15 minutes. That is not door-to-door travel time. The inherited statement that Nevada local fares are $1 is incorrect for regular adults: RTC lists residential regular single rides at $2 and reduced fares at $1; visitor fare rules are separate. <a href="flagged.html#F-60">F-60</a>.</p></section>
 """
     return page("transit.html", "Getting around", "Published visitor fares and explicit gaps in journey evidence.", body)
 
@@ -485,12 +485,12 @@ GENERIC_WORDS = {
 # flags that are not about one venue get one hand-picked official page, taken from the datasets
 # or from a page this session actually opened
 FLAG_CHECK_EXTRA = {
-    "F-52": ("Official hotel discovery / room quotes", "https://www.caesars.com/book/"),
-    "F-53": ("Official RTC route resources", "https://www.rtcsnv.com/ways-to-travel/"),
-    "F-54": ("RTC official fare rules", RTC_SOURCE),
-    "F-55": ("Guy Savoy official menu", "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"),
-    "F-56": ("Mob Museum current hours", "https://themobmuseum.org/"),
-    "F-57": ("High Roller official conflicting time blocks", "https://www.caesars.com/linq/things-to-do/attractions/high-roller"),
+    "F-58": ("Official hotel discovery / room quotes", "https://www.caesars.com/book/"),
+    "F-59": ("Official RTC route resources", "https://www.rtcsnv.com/ways-to-travel/"),
+    "F-60": ("RTC official fare rules", RTC_SOURCE),
+    "F-61": ("Guy Savoy official menu", "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu"),
+    "F-62": ("Mob Museum current hours", "https://themobmuseum.org/"),
+    "F-63": ("High Roller official conflicting time blocks", "https://www.caesars.com/linq/things-to-do/attractions/high-roller"),
     "F-10": ("Booking.com dated search used for every rate",
              "https://www.booking.com/hotel/us/the-linq-and-casino.html?checkin=2027-02-15"
              "&checkout=2027-02-22&group_adults=2&no_rooms=1&selected_currency=USD"),
@@ -656,8 +656,8 @@ def build_repo_review():
         ("Restaurants with no couple price", n_price, "blank — not verified"),
         ("Restaurants with no hours recorded", n_hours, "blank — not verified"),
         ("Restaurant rows marked verified = yes", n_ver, "the label describes the listing, see R-01"),
-        ("Restaurants with an Instagram link", n_ig, "none recorded in the data (F-19)"),
-        ("Restaurants with a TikTok link", n_tt, "none recorded in the data (F-19)"),
+        ("Restaurants with an Instagram link", n_ig, "verified 2026-11-27 from official/primary sources; blanks remain unverified (F-19, F-53)"),
+        ("Restaurants with a TikTok link", n_tt, "only 2 verified 2026-11-27; blanks remain unverified (F-19, F-53)"),
         ("Restaurants with at least one YouTube link", n_yt, "recorded, not opened this session"),
         ("Hotels (rows)", len(H), "32 properties"),
         ("Hotels whose official page is confirmed live", h_off_yes, "fetched 25–26 Nov 2026"),

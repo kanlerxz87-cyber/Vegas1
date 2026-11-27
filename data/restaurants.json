@@ -51,7 +51,7 @@
         "https://www.youtube.com/shorts/fzxEVmZeSHs",
         "https://www.youtube.com/shorts/u6NsekDa4xA"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/joelrobuchon.lasvegas/",
       "tiktok": "",
       "phone": "702.891.7925",
       "verified": "yes",
@@ -59,7 +59,7 @@
         "F-01",
         "F-22"
       ],
-      "notes": "Two independent creator videos in this dataset claim three Michelin stars — that is the pre-2010 status. The 2026 Guide lists Joël Robuchon at TWO stars, which the restaurant's own page also states. NOTE: the same page carries a dated banner (\"open 4:00–8:00 PM Thu 19 – Sat 21 November\") that applies to a 2026 date, not to 2027 — do not carry it forward. Also the 2026 MICHELIN Service Award went to GM Sean Christopher, so award rows and staff awards must not be confused. Reservations number 702.891.7925 printed on the official MGM Grand page (verified 2026-11-26).",
+      "notes": "Two independent creator videos in this dataset claim three Michelin stars — that is the pre-2010 status. The 2026 Guide lists Joël Robuchon at TWO stars, which the restaurant's own page also states. NOTE: the same page carries a dated banner (\"open 4:00–8:00 PM Thu 19 – Sat 21 November\") that applies to a 2026 date, not to 2027 — do not carry it forward. Also the 2026 MICHELIN Service Award went to GM Sean Christopher, so award rows and staff awards must not be confused. Reservations number 702.891.7925 printed on the official MGM Grand page (verified 2026-11-26). Instagram verified 2026-11-27: https://www.instagram.com/joelrobuchon.lasvegas/",
       "hours_source": "https://mgmgrand.mgmresorts.com/en/restaurants/joel-robuchon-french-restaurant.html (\"Hours of operation\" block, retrieved 2026-11-25)"
     },
     {
@@ -81,12 +81,12 @@
         "https://www.youtube.com/watch?v=AitbJIc_xMk",
         "https://www.youtube.com/shorts/Ezet1Jyh7Fc"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/latelierjoelrobuchonlv/",
       "tiktok": "",
       "phone": "702.891.7358",
       "verified": "yes",
       "flags": [],
-      "notes": "Received a 2026 MICHELIN Service Award alongside its star. Reservations phone per the MGM page: 702.891.7925."
+      "notes": "Received a 2026 MICHELIN Service Award alongside its star. Reservations phone per the MGM page: 702.891.7925. Instagram verified 2026-11-27: https://www.instagram.com/latelierjoelrobuchonlv/"
     },
     {
       "id": "guy-savoy",
@@ -101,21 +101,21 @@
       "hours": "Dinner from 5:00 PM",
       "exceptions": "Dinner only. 9-course Krug Chef's Table available.",
       "price_2adults": "",
-      "price_note": "27 Nov 2026: official main menu lists individual à-la-carte dishes, not a complete dinner-for-two total. Former $200–$580 range was two dishes, not a meal. Former $3,000 Krug total was not reproduced. F-55.",
+      "price_note": "27 Nov 2026: official main menu lists individual à-la-carte dishes, not a complete dinner-for-two total. Former $200–$580 range was two dishes, not a meal. Former $3,000 Krug total was not reproduced. F-61.",
       "official_url": "https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy",
       "youtube": [
         "https://www.youtube.com/watch?v=XbZI6IXdM0E",
         "https://www.youtube.com/watch?v=n2_L9JthaTs",
         "https://www.youtube.com/watch?v=u84pTFx9wqk"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/guysavoylasvegas/",
       "tiktok": "",
       "phone": "702.731.7286",
       "verified": "yes",
       "flags": [
-        "F-55"
+        "F-61"
       ],
-      "notes": "OpenTable restaurant id 96775."
+      "notes": "OpenTable restaurant id 96775. Instagram verified 2026-11-27: https://www.instagram.com/guysavoylasvegas/"
     },
     {
       "id": "e-by-jose-andres",
@@ -162,14 +162,14 @@
         "https://www.youtube.com/watch?v=_ZP852xyOgU",
         "https://www.youtube.com/watch?v=DCCZmWlr41Q"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/chinapoblano/",
       "tiktok": "",
       "phone": "",
       "verified": "partial",
       "flags": [
         "F-05"
       ],
-      "notes": "Walk-in friendly; good low-cost anchor for a Michelin evening."
+      "notes": "Walk-in friendly; good low-cost anchor for a Michelin evening. Instagram verified 2026-11-27: https://www.instagram.com/chinapoblano/"
     },
     {
       "id": "wing-lei",
@@ -247,12 +247,12 @@
         "https://www.youtube.com/watch?v=ktXgI_Zf3KA",
         "https://www.youtube.com/watch?v=I7Vosr3O1-o"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/cotekoreansteakhouse/",
       "tiktok": "",
       "phone": "702.607.2683",
       "verified": "yes",
       "flags": [],
-      "notes": ""
+      "notes": " Instagram verified 2026-11-27: https://www.instagram.com/cotekoreansteakhouse/"
     },
     {
       "id": "bouchon",
@@ -274,12 +274,12 @@
         "https://www.youtube.com/watch?v=OaW0aWaSza8",
         "https://www.youtube.com/watch?v=juqdKegF7Wc"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/bouchon_bistro/",
       "tiktok": "",
       "phone": "702.414.6200",
       "verified": "yes",
       "flags": [],
-      "notes": ""
+      "notes": " Instagram verified 2026-11-27: https://www.instagram.com/bouchon_bistro/"
     },
     {
       "id": "estiatorio-milos",
@@ -300,12 +300,12 @@
         "https://www.youtube.com/watch?v=--MO3_LuErc",
         "https://www.youtube.com/watch?v=ZUjnF3Mk-k4"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/miloslasvegas/",
       "tiktok": "",
       "phone": "702.414.1270",
       "verified": "yes",
       "flags": [],
-      "notes": ""
+      "notes": " Instagram verified 2026-11-27: https://www.instagram.com/miloslasvegas/"
     },
     {
       "id": "gymkhana",
@@ -327,12 +327,12 @@
         "https://www.youtube.com/shorts/9FgESwABRtw",
         "https://www.youtube.com/watch?v=zQku9r-bQ0U"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/gymkhanalasvegas/",
       "tiktok": "",
       "phone": "702.590.8544",
       "verified": "yes",
       "flags": [],
-      "notes": "First US outpost of the London restaurant."
+      "notes": "First US outpost of the London restaurant. Instagram verified 2026-11-27: https://www.instagram.com/gymkhanalasvegas/"
     },
     {
       "id": "michael-mina",
@@ -354,7 +354,7 @@
         "https://www.youtube.com/watch?v=-54ReUZdWqk",
         "https://www.youtube.com/watch?v=YlSqYgomMKU"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/michaelminalv/",
       "tiktok": "",
       "phone": "702.693.7223",
       "verified": "partial",
@@ -363,7 +363,7 @@
         "F-23",
         "F-43"
       ],
-      "notes": "SERIOUS: the restaurant's own page shows \"Temporarily closed\" for all seven days, so the $590++ tasting-menu figure on this row is a price for a service that is not currently running. This row must not be presented as a bookable option without a re-check. Reopen date is not published. Do not assume it reopens before Feb 2027. Re-checked 2026-11-26: Bellagio's own dining index (bellagio.mgmresorts.com/en/restaurants.html?filter=property,Bellagio_Las_Vegas) lists Michael Mina as 'Temporarily Closed' with a $$$$ seafood label. No reopen date is published (F-23, F-43).",
+      "notes": "SERIOUS: the restaurant's own page shows \"Temporarily closed\" for all seven days, so the $590++ tasting-menu figure on this row is a price for a service that is not currently running. This row must not be presented as a bookable option without a re-check. Reopen date is not published. Do not assume it reopens before Feb 2027. Re-checked 2026-11-26: Bellagio's own dining index (bellagio.mgmresorts.com/en/restaurants.html?filter=property,Bellagio_Las_Vegas) lists Michael Mina as 'Temporarily Closed' with a $$$$ seafood label. No reopen date is published (F-23, F-43). Instagram verified 2026-11-27: https://www.instagram.com/michaelminalv/",
       "hours_source": "https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html (retrieved 2026-11-25)"
     },
     {
@@ -386,14 +386,14 @@
         "https://www.youtube.com/watch?v=boq5AuG5LHw",
         "https://www.youtube.com/shorts/u-tc2HVZCio"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/animabyedo/",
       "tiktok": "",
       "phone": "",
       "verified": "yes",
       "flags": [
         "F-08"
       ],
-      "notes": "Furthest west of any restaurant here — check the 60-minute transit estimate before making it a dinner plan."
+      "notes": "Furthest west of any restaurant here — check the 60-minute transit estimate before making it a dinner plan. Instagram verified 2026-11-27: https://www.instagram.com/animabyedo/"
     },
     {
       "id": "kabuto",
@@ -414,12 +414,12 @@
         "https://www.youtube.com/watch?v=xmmelYWKCoA",
         "https://www.youtube.com/watch?v=fE_x8tbHsWQ"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/kabutolv/",
       "tiktok": "",
       "phone": "725.205.1356",
       "verified": "yes",
       "flags": [],
-      "notes": ""
+      "notes": " Instagram verified 2026-11-27: https://www.instagram.com/kabutolv/"
     },
     {
       "id": "kame-omakase",
@@ -441,14 +441,14 @@
         "https://www.youtube.com/watch?v=p26Fuy-zc14",
         "https://www.youtube.com/watch?v=67x2tVMtFaA"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/kameomakase_lv/",
       "tiktok": "",
       "phone": "",
       "verified": "partial",
       "flags": [
         "F-04"
       ],
-      "notes": "OpenTable lists no availability for a sample date and no weekly service hours; bookings go through OpenTable only. $500 per person signature omakase. The MICHELIN Guide's own listing gives the days — the restaurant's booking page does not."
+      "notes": "OpenTable lists no availability for a sample date and no weekly service hours; bookings go through OpenTable only. $500 per person signature omakase. The MICHELIN Guide's own listing gives the days — the restaurant's booking page does not. Instagram verified 2026-11-27: https://www.instagram.com/kameomakase_lv/"
     },
     {
       "id": "lamaii",
@@ -470,12 +470,12 @@
         "https://www.youtube.com/watch?v=M2SJt2tzYxE",
         "https://www.youtube.com/watch?v=d0vrM6S932c"
       ],
-      "instagram": "",
-      "tiktok": "",
+      "instagram": "https://www.instagram.com/lamaiilv/",
+      "tiktok": "https://www.tiktok.com/@lamaiilv",
       "phone": "702.238.0567",
       "verified": "yes",
       "flags": [],
-      "notes": "Open latest of any restaurant here — useful after a late show."
+      "notes": "Open latest of any restaurant here — useful after a late show. Instagram verified 2026-11-27: https://www.instagram.com/lamaiilv/ TikTok verified 2026-11-27: https://www.tiktok.com/@lamaiilv"
     },
     {
       "id": "partage",
@@ -497,14 +497,14 @@
         "https://www.youtube.com/watch?v=3rd8t0XjSic",
         "https://www.youtube.com/watch?v=RKf3m7boJ1w"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/partagelv/",
       "tiktok": "",
       "phone": "702-582-5852",
       "verified": "yes",
       "flags": [
         "F-24"
       ],
-      "notes": "Hours and phone are on the Contact page, not the Restaurant page — the Restaurant page is a booking widget and shows no service times. Strict dietary policy: decide before booking. OpenTable id 1005940. Phone 702-582-5852.",
+      "notes": "Hours and phone are on the Contact page, not the Restaurant page — the Restaurant page is a booking widget and shows no service times. Strict dietary policy: decide before booking. OpenTable id 1005940. Phone 702-582-5852. Instagram verified 2026-11-27: https://www.instagram.com/partagelv/",
       "hours_source": "https://partage.vegas/contact (\"We'll be open for the foreseeable future Tuesday to Saturday from 5 pm to 9 pm.\", retrieved 2026-11-25)"
     },
     {
@@ -527,14 +527,14 @@
         "https://www.youtube.com/watch?v=hkiPibouftc",
         "https://www.youtube.com/watch?v=ZxbyjzWSTsg"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/sparrowandwolflv/",
       "tiktok": "",
       "phone": "702.790.2147",
       "verified": "partial",
       "flags": [
         "F-25"
       ],
-      "notes": "The official site does not publish opening hours anywhere on its front page or menu page; bookings are handled through OpenTable (rid 732187). Left blank rather than guessed. A card-hold policy applies: reservations cancelled inside 24 hours are charged $25 per guest, and tables are capped at 4 guests."
+      "notes": "The official site does not publish opening hours anywhere on its front page or menu page; bookings are handled through OpenTable (rid 732187). Left blank rather than guessed. A card-hold policy applies: reservations cancelled inside 24 hours are charged $25 per guest, and tables are capped at 4 guests. Instagram verified 2026-11-27: https://www.instagram.com/sparrowandwolflv/"
     },
     {
       "id": "esthers-kitchen",
@@ -556,15 +556,15 @@
         "https://www.youtube.com/watch?v=kCOFqLw47TI",
         "https://www.youtube.com/shorts/Pln4WLWFIpg"
       ],
-      "instagram": "",
-      "tiktok": "",
+      "instagram": "https://www.instagram.com/estherskitchenlv/",
+      "tiktok": "https://www.tiktok.com/@estherskitchenlv",
       "phone": "",
       "verified": "partial",
       "flags": [
         "F-07",
         "F-50"
       ],
-      "notes": "Hours were NOT obtainable: /hours-location returned an error and the home page carries no hours block. Brunch is its signature — call before planning. Address conflict recorded as F-50: the MICHELIN press release says 1131 S. Main St., this row says 1130 S Casino Center Blvd, and the venue's own pages publish neither."
+      "notes": "Hours were NOT obtainable: /hours-location returned an error and the home page carries no hours block. Brunch is its signature — call before planning. Address conflict recorded as F-50: the MICHELIN press release says 1131 S. Main St., this row says 1130 S Casino Center Blvd, and the venue's own pages publish neither. Instagram verified 2026-11-27: https://www.instagram.com/estherskitchenlv/ TikTok verified 2026-11-27: https://www.tiktok.com/@estherskitchenlv"
     },
     {
       "id": "soulbelly-bbq",
@@ -586,12 +586,12 @@
         "https://www.youtube.com/watch?v=-XaQQIs2DjI",
         "https://www.youtube.com/watch?v=hrC2w9akHRY"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/soulbellybbqlv/",
       "tiktok": "",
       "phone": "",
       "verified": "yes",
       "flags": [],
-      "notes": "Cheapest way to eat inside the Michelin list; pairs with Neon Museum (10 min apart)."
+      "notes": "Cheapest way to eat inside the Michelin list; pairs with Neon Museum (10 min apart). Instagram verified 2026-11-27: https://www.instagram.com/soulbellybbqlv/"
     },
     {
       "id": "ping-pang-pong",
@@ -639,12 +639,12 @@
         "https://www.youtube.com/watch?v=yGePVQiF6co",
         "https://www.youtube.com/watch?v=kyvFhu94qPU"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/bestchickenpho/",
       "tiktok": "",
       "phone": "",
       "verified": "yes",
       "flags": [],
-      "notes": "24/7 — the safety net for a jet-lagged first night."
+      "notes": "24/7 — the safety net for a jet-lagged first night. Instagram verified 2026-11-27: https://www.instagram.com/bestchickenpho/"
     },
     {
       "id": "yen-viet-kitchen",
@@ -695,12 +695,12 @@
         "https://www.youtube.com/watch?v=-Xn6tasRmXA",
         "https://www.youtube.com/watch?v=ndR0ipay-qQ"
       ],
-      "instagram": "",
+      "instagram": "https://www.instagram.com/stubborn_seed/",
       "tiktok": "",
       "phone": "702.676.8062",
       "verified": "yes",
       "flags": [],
-      "notes": ""
+      "notes": " Instagram verified 2026-11-27: https://www.instagram.com/stubborn_seed/"
     }
   ]
 }

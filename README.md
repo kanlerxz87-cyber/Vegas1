@@ -20,7 +20,7 @@ A sourced trip plan for **two adults**, seven nights, between **15 February and 
 | `scripts/build.py` | Recomputes the Michelin proximity counts from the transit matrix; runs integrity checks |
 | `scripts/gen_site.py` | Renders `docs/` from the JSON. All counts derived, none typed by hand |
 | `scripts/validate.py` | Link and structure checks for the built site |
-| `FLAGS.md` | 33 register rows (F-01 to F-30, plus F-47 to F-49 from the 26 Nov link re-check), including hotel rate basis/recency limitations |
+| `FLAGS.md` | 37 register rows (F-01 to F-30, F-39 to F-46, plus F-47 to F-53 from the 26–27 Nov re-checks), including hotel rate basis/recency limitations |
 | `data/review-flags.json` | The 26 Nov 2026 audit register (F-39 to F-46) and confirmed items C-11 to C-13, each with source links. Rendered on `flagged.html` |
 | `executive-summary.md` | The one-page version |
 | `data/review.json` | Repo review: line-by-line checks, limits, and irregularities (2026-11-26) |
@@ -77,7 +77,7 @@ Booking.com **search list** rather than a property quote page, so those cards no
 
 - **No inferred values.** Blank means unverified. Every blank is listed in `FLAGS.md` and on the
   Questions page with a route to close it.
-- **Every row cites a source.** 394 external links across 13 pages (counted by `scripts/validate.py` on the current build).
+- **Every row cites a source.** 436 external links across 13 pages (counted by `scripts/validate.py` on the current build).
 - **Sources and gaps are disclosed.** Hotel prices in the canonical 32-property table are Booking.com snapshots (not official property rates); this does not meet the strict official-rate-only requirement and is flagged as F-29. A dated direct-engine sample and 26 Nov refresh are linked from Sources & Flags; rates must be rechecked on the property's own engine.
 - **Estimates are labelled.** Only the transit minutes are estimates, and they say so everywhere.
 - **Flags are published.** Everything that did not verify cleanly is on `flagged.html`, with its sources.
@@ -97,7 +97,7 @@ A third independent session built a parallel site with **Booking.com dated searc
 
 Headline numbers (7 nights Feb 15–22, 2027, 2 adults, before tax, resort fee included): **Flamingo $625.65 · MGM Grand $1,508.50 · Caesars Palace $1,580 · Bellagio $3,072.30 · Venetian $4,573.16**; preferred 3-night window Feb 15–18: **Flamingo $166.65 · MGM $614.10–$887**. Also verified: Partage official menu ($130/$160/$210), é open Tue–Sun (official), RTC Strip fares $4/$6/$8/$20 with a **fare change proposed 2027-01-31**, and that **no $35 7-day Strip pass exists**. Cross-session price differences vs the canonical/af795000 figures follow the same rule: **check the property's own booking engine for your exact dates before deciding.**
 
-## 27 November 2026 — evidence-display correction (T16)
+## 27 November 2026 — evidence-display correction (T18)
 
 This section supersedes earlier hotel-price/ranking recommendations in this README.
 The current canonical hotel decision table leaves all unofficial/unconfirmed seven-night
@@ -107,7 +107,7 @@ archives remain historical audit material, not endorsed offers. No official chea
 stay week or purchase date has been established. The site is not booking-ready.
 
 Fresh official checks, failures and exact limits: [`notes/audit-2026-11-27.md`](notes/audit-2026-11-27.md).
-New review items: F-52–F-57. Corrections cover visitor/residential RTC fares, the incomplete
+New review items: F-58–F-63. Corrections cover visitor/residential RTC fares, the incomplete
 Guy Savoy dinner total, Mob Museum weekly hours and internally conflicting High Roller hours.
 Other source observations and creator links were not comprehensively live reverified.
 

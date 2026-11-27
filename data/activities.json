@@ -1,8 +1,8 @@
 {
   "meta": {
-    "captured": "2026-11-25",
+    "captured": "2026-11-27",
     "rule": "Hours and prices only where an official page prints them. Blank means not verified. 'per couple' means cost for 2 adults.",
-    "activity_social_rule": "Only links seen on or found for the named venue. Instagram/TikTok handles left blank rather than guessed."
+    "activity_social_rule": "Only links seen on or found for the named venue. Instagram/TikTok handles left blank rather than guessed. YouTube links are real video URLs found via search 2026-11-27; blank TikTok means no official account verified."
   },
   "activities": [
     {
@@ -17,14 +17,18 @@
       "price_note": "Sphere does not print a single admission price — it depends on the show. Booking.com's own listing shows 'Admission to The Wizard of Oz at The Sphere' from $131.45 per person; that is a reseller price, not the venue's box office price.",
       "official_url": "https://www.thesphere.com/",
       "booking_hint": "Official tickets route through Ticketmaster: https://www.ticketmaster.com/the-wizard-of-oz-at-sphere-tickets/artist/3552227",
-      "youtube": [],
-      "instagram": "",
-      "tiktok": "",
+      "youtube": [
+        "https://www.youtube.com/watch?v=FoqilSF5Fv4",
+        "https://www.youtube.com/watch?v=0gpwcaNyIrY",
+        "https://www.youtube.com/watch?v=r4cDvGnlHyQ"
+      ],
+      "instagram": "https://www.instagram.com/spherevegas/",
+      "tiktok": "https://www.tiktok.com/@spherevegas",
       "verified": "partial",
       "flags": [
         "F-16"
       ],
-      "notes": "The single most distinctive thing to do in Las Vegas right now. Book only once the 2027 calendar is live."
+      "notes": "The single most distinctive thing to do in Las Vegas right now. Book only once the 2027 calendar is live. Social: IG @SphereVegas per Sphere Entertainment PRNewswire release 2025-02-27; TikTok @spherevegas official account. YouTube: three Wizard of Oz at Sphere videos found via search 2026-11-27."
     },
     {
       "id": "high-roller",
@@ -38,14 +42,18 @@
       "price_note": "Official FAQ: adult daytime $23.50, adult anytime $34.75, Happy Half Hour (21+) $60. Each is 'plus taxes and fees'. Two adults at the two standard tiers = $47.00 and $69.50 before tax.",
       "official_url": "https://www.caesars.com/linq/things-to-do/attractions/high-roller",
       "booking_hint": "Ticketmaster artist 2333410",
-      "youtube": [],
-      "instagram": "",
+      "youtube": [
+        "https://www.youtube.com/watch?v=ltjDljV-tOA",
+        "https://www.youtube.com/watch?v=f0iEwiqsDoI",
+        "https://www.youtube.com/watch?v=gpGggNfTYJ4"
+      ],
+      "instagram": "https://www.instagram.com/highrollervegas/",
       "tiktok": "",
       "verified": "yes",
       "flags": [
-        "F-57"
+        "F-63"
       ],
-      "notes": "Happy Half Hour is an open-bar cabin with a bartender for the full rotation."
+      "notes": "Happy Half Hour is an open-bar cabin with a bartender for the full rotation. IG @highrollervegas confirmed via multiple sources 2026-11-27. TikTok: no official account verified (only creator videos tagging @highrollervegas) — left blank, see F-53. Hours/prices re-verified 2026-11-27 on Caesars official page (Opens 12:30PM; daytime $23.50, anytime $34.75, Happy Half Hour $60, plus taxes/fees)."
     },
     {
       "id": "mob-museum",
@@ -59,14 +67,18 @@
       "price_note": "Official ticketing: General Admission $37.95 per adult (includes The Underground). Two adults = $75.90. Deluxe Pass $49.95 pp, Premier Pass $54.95 pp (both include one or two interactive experiences).",
       "official_url": "https://themobmuseum.org/",
       "booking_hint": "https://admission.themobmuseum.org/",
-      "youtube": [],
-      "instagram": "",
-      "tiktok": "",
+      "youtube": [
+        "https://www.youtube.com/watch?v=Ll8Jb1kA2T4",
+        "https://www.youtube.com/watch?v=hIuGwU_kyGY",
+        "https://www.youtube.com/watch?v=ZTwlPZJDmJc"
+      ],
+      "instagram": "https://www.instagram.com/themobmuseum/",
+      "tiktok": "https://www.tiktok.com/@themobmuseum",
       "verified": "yes",
       "flags": [
-        "F-56"
+        "F-62"
       ],
-      "notes": "A morning-arrival discount and an evening-arrival discount are offered online only on the Premier Pass."
+      "notes": "A morning-arrival discount and an evening-arrival discount are offered online only on the Premier Pass. Social: IG/TikTok @themobmuseum per the museum's own press release (reprinted Nevada Business 2026-11-02). Hours re-verified 2026-11-27 on themobmuseum.org homepage table."
     },
     {
       "id": "neon-museum",
@@ -80,12 +92,16 @@
       "price_note": "Official site: 2027 Admission 'from $21' per person, daily 3–11 PM. Two adults from $42. The 2026 daytime tier was from $25 and the 2026 evening tier from $35 — both expire 31 Dec 2026, which is before the trip.",
       "official_url": "https://neonmuseum.org/",
       "booking_hint": "https://neonmuseum.org/tickets-and-experiences/",
-      "youtube": [],
+      "youtube": [
+        "https://www.youtube.com/watch?v=Edn2Dz3IM9o",
+        "https://www.youtube.com/watch?v=dY-nW8_W3Bw",
+        "https://www.youtube.com/watch?v=ewrNfjNa4w4"
+      ],
       "instagram": "https://www.instagram.com/theneonmuseumlasvegas/",
       "tiktok": "https://www.tiktok.com/@neonmuseumlasvegas",
       "verified": "yes",
       "flags": [],
-      "notes": "Social handles taken directly from the museum's own site footer. 45-minute guided History and Movies tours are add-ons."
+      "notes": "Social handles taken directly from the museum's own site footer (re-verified 2026-11-27: TikTok @neonmuseumlasvegas, Instagram @theneonmuseumlasvegas). 45-minute guided History and Movies tours are add-ons. Hours/prices re-verified 2026-11-27 (Sep–May 3–11 PM; 2027 Admission from $21)."
     },
     {
       "id": "fremont-street",
@@ -99,12 +115,16 @@
       "price_note": "Free entry. The venue states live concerts and performances run on three stages every night.",
       "official_url": "https://www.fremontstreetexperience.com/",
       "booking_hint": "https://fremontstreetexperience.com/calendar#cal",
-      "youtube": [],
-      "instagram": "",
+      "youtube": [
+        "https://www.youtube.com/watch?v=52YiWwDgli0",
+        "https://www.youtube.com/watch?v=Tls27qeAPaw",
+        "https://www.youtube.com/watch?v=mIcQ0b8S9nA"
+      ],
+      "instagram": "https://www.instagram.com/fremontstreet/",
       "tiktok": "",
       "verified": "yes",
       "flags": [],
-      "notes": "Free — the obvious way to keep a downtown evening cheap. SlotZilla zipline is a paid add-on on the same site."
+      "notes": "Free — the obvious way to keep a downtown evening cheap. SlotZilla zipline is a paid add-on on the same site. IG @fremontstreet is the official Fremont Street Experience account (verified 2026-11-27). TikTok: no official account verified — left blank, see F-53."
     }
   ],
   "not_verified": [
