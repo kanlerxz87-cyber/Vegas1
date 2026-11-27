@@ -641,3 +641,32 @@ superseded activity dataset. No commit from any other branch was rewritten.
 **Checks before merge:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py
 && python3 scripts/check_evidence.py` → 13 pages · 0 failures · 0 warnings; evidence regression PASS; root and
 `docs/` byte-identical (`cmp` per page). No CI workflows are configured on this repo.
+
+## Session record — arena/c7c75f9a-vegas1 (T17) — 2026-11-27 — merge of main, part 3
+
+**Main moved while T17 was in progress.** `origin/main` advanced from `8fbf850` to `5d422eb`
+(PRs #39/#41/#42/#43/#45/#46/#48), including a rewrite of `scripts/gen_site.py` (−545 lines),
+a new evidence standard, and flag IDs up to **F-63**. Merged as `1815919`.
+
+**The conflict was substantive, not textual.** Two sessions independently reached the same
+conclusions and one of them went further:
+
+| Finding | My branch | main | Resolution |
+|---|---|---|---|
+| Mob Museum Thursday hours | F-56: corrected to 9–9 | F-62: same correction | **main wins**; F-56 is now a main-owned ID, my duplicate entry was dropped |
+| High Roller hours | published the full schedule | F-63: withheld as internally contradictory | **main wins**; two schedules on one page is not a verified schedule |
+| Hotel prices | captured 3 official engines | F-58: blank all unofficial prices | **both kept**: main's table stays blank, mine is published as a separately labelled official sub-table |
+| Travel times | printed "~25 min from base" per venue | F-59: zone model suspended | **main wins**; the itinerary now groups by district and says times are unverified |
+| Bellagio Fountains | verified from Bellagio's page, promoted | listed under `not_verified` (fetch had failed) | **mine wins**; main's failure was a transient fetch error, and the page was subsequently read |
+
+**What I did not do:** hand-merge the eleven conflicted generated HTML files. They are build
+output, so the generator was rebuilt from main's version with only my additions re-applied
+(`itinerary.html`, the official-rates Hotels section, `W-01`…`W-10`, activity anchor IDs) and
+every page regenerated. Hand-editing generated HTML is the rule this repo already has.
+
+**Standing caution recorded for the next session:** `git checkout --ours scripts/gen_site.py`
+silently reverted the generator to my pre-merge version and dropped main's F-58/F-59 work, while
+still building cleanly with 0 failures. A clean build is not proof the merge was correct. Verify
+that specific upstream flags survive (`grep -c F-58 scripts/gen_site.py`) after any conflicted merge.
+
+**Build:** 14 pages · 0 failures · 0 warnings.
