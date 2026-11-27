@@ -10,6 +10,7 @@ then commit and push that claim immediately.
 
 | Session | Started | Scope now | Branch |
 |---------|---------|-----------|--------|
+| arena/f6104931-vegas1 | 2026-11-27 | T17 — repo review + restaurant price re-read (7 venues) + Trip cost page + integration | `arena/f6104931-vegas1` |
 | arena/71886f12-vegas1 | 2026-11-26 | T14 — completed activity social-link visibility and executive-summary cleanup after the merged T13 rate audit | `arena/71886f12-vegas1` |
 | arena/c419e2da-vegas1 | 2026-11-26 | T13 — post-merge hotel-rate claim audit; reconcile OTA/direct source conflict, refresh official booking engines, preserve PR #22 repo-review pages | `arena/c419e2da-vegas1` |
 | arena-edcfa7a0-vegas1 | 2026-11-25 | T02–T11 — research complete; writing `data/*.json`, building `docs/`, publishing | `arena/edcfa7a0-vegas1` |
@@ -48,7 +49,7 @@ Status values: `unclaimed` · `in progress` · `needs review` · `done` · `bloc
 
 | ID | Task | Status | Owner (session ID) | File scope | Notes |
 |----|------|--------|--------------------|-----------|-------|
-| T17 | Restaurant cost-for-two (Q-04) and official social-profile (Q-07) completion, verified against venue pages; integration + Pages republish | in progress | arena/f6104931-vegas1 | `COORDINATION.md`, `FLAGS.md`, `data/restaurants.json`, `data/questions.json`, `scripts/gen_site.py`, generated `docs/**` + root `*.html` | Claimed 2026-11-27. Additive on `main` @ `631e611`. Will NOT touch the conflicting open PRs #27 / #38 branches. |
+| T17 | Repository review, restaurant cost-for-two (Q-04) and social-profile (Q-07) work, Trip cost page; integration + Pages republish | done | arena/f6104931-vegas1 | `COORDINATION.md`, `FLAGS.md`, `data/restaurants.json`, `data/questions.json`, `scripts/gen_site.py`, generated `docs/**` + root `*.html` | Done 2026-11-27 on `main` @ `631e611`. PR #44. Did not touch the conflicting open PRs #27 / #38. 17 line-by-line checks (C-11…C-17 added), 3 new flags (F-52…F-54), 1 new page (`costs.html`). |
 | T01 | Repo inventory + founding constraints | done | arena-edcfa7a0-vegas1 | `COORDINATION.md`, `docs/` | Repo was empty (README only) at commit `9b8bcfa`. GitHub Pages already enabled from `main` root. Bash sandbox has no general internet; all verification is via `fetch_page` / `web_search`. |
 | T02 | Michelin 2026 Southwest selection — star/list status per Las Vegas restaurant | done | arena-edcfa7a0-vegas1 | `data/restaurants.json` | Source: official Michelin press release + LVCVA (visitlasvegas.com). Re-confirmed 2026-11-26 by arena-ca2c6c85-vegas1 (4★/2★ Robuchon; 1★ é, Guy Savoy, L'Atelier; 3 Bib; 17 Recommended; 0 three-star). |
 | T03 | Restaurant hours, days open, reservations, price per couple | done | arena-edcfa7a0-vegas1 | `data/restaurants.json` | Gaps left blank + flagged. Re-confirmed 2026-11-26: Robuchon, Guy Savoy, é, Partage hours on official pages; Guy Savoy price cell filled from official menu (Q-04 updated). |
@@ -482,3 +483,45 @@ redirect targets (not just the vanity domains) when prices are re-captured.
 **Irregularities:** none new. All known limitations remain published on flagged.html (F-29/F-30 rate basis, F-47 Vanderpump rebrand, F-48 search-list prices, etc.) and do not block this merge.
 
 **Result:** T16 done. [PR #36](https://github.com/kanlerxz87-cyber/Vegas1/pull/36) merged 2026-11-27T17:31:08Z (merge commit `cc78807`); Pages build `1409320765` status `built`, Pages API `built` at https://kanlerxz87-cyber.github.io/Vegas1/.
+
+## Session record — arena/f6104931-vegas1 (T17) — 2026-11-27
+
+**Scope claimed:** `COORDINATION.md`, `FLAGS.md`, `data/restaurants.json`, `data/questions.json`, `data/review.json`,
+`scripts/gen_site.py`, generated `docs/**` + root `*.html`, `README.md`, `executive-summary.md`.
+
+**Why this task:** Q-04 (what dinner for two costs) and Q-07 (social links) were still open, and the restaurant
+price column was visibly inconsistent with the page's own summary. Re-reading the venues' menus was the only way
+to close any of it without guessing.
+
+**Line-by-line verification performed (2026-11-27, `fetch_page` against the venue's own page):**
+
+| Check | Item | Result | Source |
+|-------|------|--------|--------|
+| C-11 | Guy Savoy à-la-carte prices are **per person**; no Krug Chef's Table price is printed | **Corrected** — cell was showing a per-person range under "cost for 2 adults"; $3,000 figure removed (F-52) | https://www.caesars.com/caesars-palace/restaurants/restaurant-guy-savoy/main-menu |
+| C-12 | Partage 5/7/Signature tasting \$130/\$160/\$210 per person | Gap closed — \$260/\$320/\$420 for two | https://partage.vegas/menu |
+| C-13 | Wing Lei Chef Tam's tasting \$198.88 per person | Gap closed — \$397.76 for two | https://cdn.wynnresorts.com/image/upload/v1781902951/visitwynn_pdfs_files/wing-lei-main-menu-new.pdf |
+| C-14 | Anima by EDO tasting \$85 per person; Monday special is \$65 **total** | Corrected (F-54) | https://animabyedo.com |
+| C-15 | Esther's Kitchen: dinner seven days a week; lunch Mon–Fri; brunch Sat–Sun; no clock times published | Gap closed (days only), hours stay blank | https://www.estherslv.com/menus/ |
+| C-16 | Michael Mina still "Temporarily closed", \$295++ per person | Confirmed (F-23 stands) | https://bellagio.mgmresorts.com/en/restaurants/michael-mina.html |
+| C-17 | SoulBelly BBQ Instagram is linked from its own site | Gap partly closed (1 of 24) | https://soulbellybbq.com |
+
+Also re-read and matched without change: Lamaii hours (Mon–Wed 11:00–00:00, Thu–Sun 11:00–02:00) and SoulBelly hours
+(Tue–Thu 11–9, Fri–Sat 11–10, Sun 11–9); Joël Robuchon (Tue–Sat 5:00–9:30, closed Sun/Mon), é by José Andrés
+(Tue–Sat 5:30–8:30, closed Sun/Mon) and Wing Lei hours all still match the stored rows.
+
+**What was added:** `costs.html` — three seven-night totals for two adults assembled at build time from
+`data/` only — Value \$1,837.30, Recommended \$2,605.06, Splurge \$4,927.06 — with every excluded cost
+(tax, resort fees, airfare, tips, wine) named beside the total. `data/review.json` now carries C-11…C-17;
+`FLAGS.md` carries F-52 (price basis), F-53 (7 of 24 venues publish a price) and F-54 (three row corrections).
+
+**What was deliberately not done:** no price was invented for the 17 venues that publish none; no Instagram or
+TikTok handle was guessed (only SoulBelly's own linked profile was added); the \$3,000 Krug figure was removed
+rather than re-sourced; no universal cheapest-week claim was re-introduced (Q-06 stays open).
+
+**Build / QA:** `python3 scripts/build.py && python3 scripts/gen_site.py && python3 scripts/validate.py`
+→ **14 pages · 0 failures · 0 warnings · 439 external links**; root and `docs/` byte-identical; `git diff --check` clean.
+Cost-page arithmetic re-checked by hand against the stored menu prices before commit.
+
+**Irregularities found and published:** F-52, F-53, F-54 (none blocking; all on `flagged.html` with sources).
+
+**PR:** [#44](https://github.com/kanlerxz87-cyber/Vegas1/pull/44) → `main`.
