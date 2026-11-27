@@ -144,3 +144,27 @@ footer p{margin:0 0 8px;max-width:80ch}
   nav a{padding:6px 8px;font-size:.8rem}
   table.data{font-size:.82rem}
 }
+
+/* Strict decision view: keyboard access, readable evidence, stacked mobile tables. */
+.brand{color:var(--ink)} .eyebrow{font-size:.7rem;letter-spacing:.13em;color:var(--accent);font-weight:650}
+.notice{border-left:3px solid var(--warn);background:var(--panel2);padding:12px 16px;border-radius:4px;font-size:.86rem;color:#cfd7e6}
+.empty{color:var(--warn)} small{font-size:.78rem;color:#a9b5ca}
+caption{text-align:left;padding:12px;color:var(--ink);font-weight:600;background:var(--panel)}
+.badge{border:1px solid var(--line);color:var(--star);margin-top:5px}
+.skip{position:absolute;left:10px;top:-90px;background:var(--ink);color:var(--bg);padding:12px;z-index:100}
+.skip:focus{top:10px} :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+a{overflow-wrap:anywhere} td{overflow-wrap:anywhere} pre{overflow-x:auto}
+[id]{scroll-margin-top:150px}
+@media(max-width:700px){
+ header.top{position:static} header .wrap{display:block} nav{flex-wrap:nowrap;overflow-x:auto;padding:8px 0;gap:6px} nav a{white-space:nowrap;min-height:44px;display:flex;align-items:center}
+ .scroll{border:0;overflow:visible} table.responsive{display:block;min-width:0;width:100%}
+ table.responsive caption{display:block;border-radius:8px;margin-bottom:8px;font-size:.85rem}
+ table.responsive thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ table.responsive tbody{display:block} table.responsive tr{display:block;margin-bottom:14px;border:1px solid var(--line);border-radius:12px;padding:8px;background:var(--panel)}
+ table.responsive td{display:grid;grid-template-columns:minmax(85px,32%) minmax(0,1fr);gap:10px;white-space:normal}
+ table.responsive td::before{content:attr(data-label);font-size:.7rem;letter-spacing:.02em;color:var(--muted);font-weight:650}
+ table.responsive td>*{min-width:0} table.responsive td br{display:none}
+ table.responsive td{display:block} table.responsive td::before{display:block;margin-bottom:5px}
+ [id]{scroll-margin-top:16px} .wrap{padding-left:14px;padding-right:14px}
+}
+@media print{header.top,.skip{display:none} body{background:white;color:black} section.panel,.notice{background:white;border:1px solid #aaa} a,td,small{color:black!important} .wrap{max-width:none} }

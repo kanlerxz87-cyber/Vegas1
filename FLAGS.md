@@ -64,3 +64,17 @@ Items F-39 to F-46 come from the 26 November 2026 line-by-line audit (task T12).
 - **F-45** Promotional and one-day-snapshot rates; re-capture within 60 days of travel.
 - **F-46** Repository irregularities (duplicate board IDs, stale counts, overlapping datasets, orphan page, failed branch run).
 
+
+## Strict-evidence integration — 27 November 2026 (T17)
+
+The following current flags supersede conflicting historical conclusions. Official URLs and detailed check results are in `data/verification-2026-11-27.json`; each is published on `flagged.html`.
+
+| ID | Where | Issue | Effect |
+|---|---|---|---|
+| **F-52** | Hotel/transit rankings | Zero-minute zone travel and fixed estimates do not prove door-to-door bus journeys. Loop is not a bus. | Withdraw universal one-hour assertion and twenty-minute substitution; counts/rank blank in primary views. |
+| **F-53** | Official hotel price evidence | Caesars/Flamingo exact-date pages show error banners with nightly prices; Wynn occupancy text ambiguous. No exact all-in seven-night checkout totals extracted. | Primary total fields blank; no cheapest-week or best-purchase-day claim. Rounded averages never expanded into exact quotes. |
+| **F-54** | Mob Museum schedule | Official weekly hours say daily 9 AM–9 PM; inherited Thursday early close generalized Thanksgiving. | Current view corrected; date-specific closures must remain date-specific. |
+| **F-55** | Social provenance | Historical YouTube leads were not all reviewed. Official-property channels are not restaurant videos. | Only social links observed on official pages published as source-linked social profiles; others blank/unverified. |
+| **F-56** | High Roller hours | Source opening badge and ticket text conflict (12:30 vs noon); anytime ticket descriptions conflict too. | Complete hours blank and contradiction explained; starting subtotals not dated 2027 quotes. |
+| **F-57** | Restaurant availability and source type | Guide listing does not prove opening; Mina temporarily closed. KAME inherited official URL was OpenTable. | No assumed reopening; use minimally-rendered official KAME site; fixed-menu total absent for Guy Savoy. |
+| **F-58** | Verification scope | Full external-link availability, checkout quotes, routes and private-use guarantees not verified. | Publish exact scope and blanks; schema/local-link checks not presented as full external verification. |

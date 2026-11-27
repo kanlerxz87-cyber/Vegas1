@@ -1,148 +1,17 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Suggestions · Las Vegas 2027</title>
-<meta name="description" content="Twelve decision improvements, ranked, each with its honest trade-off and whether it needs your call first.">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="top">
-  <div class="wrap">
-    <div class="brand"><span class="dot"></span>Las Vegas · Feb–Mar 2027</div>
-    <nav><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="restaurants.html">Michelin</a><a href="activities.html">Things to do</a><a href="transit.html">Getting around</a><a href="questions.html">Open questions</a><a href="suggestions.html" class="on">Suggestions</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="repo-review.html">Repo review</a></nav>
-  </div>
-</header>
-<main class="wrap">
-  <div class="pagehead">
-    <h1>Suggestions</h1>
-    <p class="sub">Twelve decision improvements, ranked, each with its honest trade-off and whether it needs your call first.</p>
-    
-  </div>
-  
-<section class="panel">
-  <h2>1</h2>
-  <p>15 proposals, ranked by how much they change the outcome. <strong>3 of them need a decision
-  from you</strong> before the plan can be finalised — they are marked in the list. Nothing here was silently
-  applied to the data.</p>
-  <p>The three that matter most: compare exact hotel dates on the <strong>property's own booking engine</strong> before changing dates (the Booking.com and official-engine samples conflict),
-  settle whether this is a <strong>three-night or seven-night</strong> trip (which changes every hotel number by
-  over half), and <strong>refuse unassigned-room rates</strong> (which removes the three cheapest hotels on the site). See the <a href="https://kanlerxz87-cyber.github.io/Vegas1/docs/session-af795000/hotels.html">official-engine sample</a> and its direct links.</p>
-</section>
-<div class="suglist">
-<article class="sug" id="S-01">
-  <h3><span class="sid">S-01</span> Compare exact dates on the hotel&#x27;s own booking engine before shifting the trip
-   <span class="impact hi">high impact</span><span class="pill">recommended</span></h3>
-  <p>Do not assume 8–15 March is cheaper overall. The 25 Nov Booking.com snapshots showed lower March quotes for The Venetian, Palazzo and Cosmopolitan. On 26 Nov the Venetian&#x27;s figures were not reproduced on Booking.com&#x27;s own page (F-39), and the Palazzo and Cosmopolitan figures have not been re-checked (F-44). A separate official-property-engine sample reports the preferred 15–22 February week as cheapest at the properties it checked. The samples differ by property coverage, room/rate terms and fee/tax basis. This evidence does not establish a market-wide cheapest week.</p>
-  <p class="trade"><strong>Trade-off:</strong> Keeping the preferred dates avoids changing plans based on a source conflict; checking exact dates and the same room/fee basis property by property may still identify a cheaper alternative. Recheck rates close to booking because the captures are dated 25 November 2026.</p>
-  <p class="tiny">Evidence: Booking.com snapshot table: data/price-windows.json and data/hotels.json. Official-engine sample with per-property booking links: docs/session-af795000/hotels.html.</p>
-</article>
-<article class="sug" id="S-02">
-  <h3><span class="sid">S-02</span> Decide whether this is a 3-night or a 7-night trip
-   <span class="impact hi">high impact</span><span class="pill need">needs your decision</span></h3>
-  <p>The brief says 1–2 weeks but the preferred dates 2027-02-15 → 2027-02-18 are three nights. Every hotel total on this site is for seven nights. If the real plan is three nights, the hotel line is roughly 43% of what is shown.</p>
-  <p class="trade"><strong>Trade-off:</strong> Three nights cannot cover 21 Michelin restaurants plus the museums — realistically it covers four or five restaurants. Seven nights is the shortest trip where the list is plausible.</p>
-  <p class="tiny">Evidence: data/questions.json Q-02</p>
-</article>
-<article class="sug" id="S-03">
-  <h3><span class="sid">S-03</span> Refuse &#x27;Room Type Assigned on Arrival&#x27; rates
-   <span class="impact md">medium impact</span><span class="pill">recommended</span></h3>
-  <p>The three lowest Booking.com quote snapshots (LINQ $564, Flamingo $626, Horseshoe $717) are all unassigned-room promotions. These offers do not guarantee the queen-or-larger bed the couple asked for, and the quote totals are not official property rates.</p>
-  <p class="trade"><strong>Trade-off:</strong> A named king or two-queen room is necessary to verify bed fit. The price difference is not established here; check the named room on the property&#x27;s official booking engine rather than adding an assumed uplift.</p>
-  <p class="tiny">Evidence: data/hotels.json flags F-11 and F-29; official-engine examples are linked at docs/session-af795000/hotels.html</p>
-</article>
-<article class="sug" id="S-04">
-  <h3><span class="sid">S-04</span> Book the four starred restaurants first, then build the trip around them
-   <span class="impact hi">high impact</span><span class="pill">recommended</span></h3>
-  <p>é by José Andrés has nine seats and opens bookings about three months out; Joël Robuchon, L&#x27;Atelier and Guy Savoy are dinner-only and dark on specific weekdays. Reservation order should be é → Robuchon → Guy Savoy → L&#x27;Atelier, then fill the unstarred list around whatever dates remain.</p>
-  <p class="trade"><strong>Trade-off:</strong> Locking the starred nights first means the hotels must be chosen afterwards — the reverse of how people normally book.</p>
-  <p class="tiny">Evidence: data/restaurants.json</p>
-</article>
-<article class="sug" id="S-05">
-  <h3><span class="sid">S-05</span> Use the Monorail 7-day pass, not single rides
-   <span class="impact md">medium impact</span><span class="pill">recommended</span></h3>
-  <p>A single Monorail ride is $6.25 paper or $5.75 with an e-ticket; the 7-day pass is $64 paper or $59.95 electronic. Ten rides break even at paper prices. Over seven nights the pass is the cheaper and simpler option, and it covers MGM Grand ↔ SAHARA, which is exactly the Michelin corridor.</p>
-  <p class="trade"><strong>Trade-off:</strong> The Monorail does not reach Chinatown or downtown, so RTC buses are still needed for roughly half the restaurant list. The pass is not a substitute for bus fares.</p>
-  <p class="tiny">Evidence: data/transit.json</p>
-</article>
-<article class="sug" id="S-06">
-  <h3><span class="sid">S-06</span> Base the trip centre-Strip, not at the Venetian or the Wynn
-   <span class="impact md">medium impact</span><span class="pill need">needs your decision</span></h3>
-  <p>The Venetian complex holds four Michelin listings and the Wynn holds one, which makes the north Strip look like the obvious base. But the centre Strip is within 20 minutes of 15 Michelin restaurants — more than any other zone — and is reachable from both ends of the Monorail.</p>
-  <p class="trade"><strong>Trade-off:</strong> Choosing centre Strip (Cosmopolitan, ARIA, Bellagio, Vdara, Caesars) gives up the in-building convenience of four restaurants under one roof. Price comparisons should use identical dates, room classes, taxes and resort-fee basis from official property engines; the current OTA/direct samples are not comparable enough to establish a cost premium.</p>
-  <p class="tiny">Evidence: data/transit.json, data/hotels.json</p>
-</article>
-<article class="sug" id="S-07">
-  <h3><span class="sid">S-07</span> Pair the museums with the downtown restaurants on one day
-   <span class="impact md">medium impact</span><span class="pill">recommended</span></h3>
-  <p>The Mob Museum, the Neon Museum, Fremont Street, Esther&#x27;s Kitchen and SoulBelly BBQ are all inside the downtown/Arts District zone — which is the only zone that is far from everything else. Doing them on a single day turns a 30-minute trip each way into one trip.</p>
-  <p class="trade"><strong>Trade-off:</strong> It consumes a whole evening, so a starred dinner cannot happen that night. Slot it on arrival day.</p>
-  <p class="tiny">Evidence: data/transit.json, data/activities.json</p>
-</article>
-<article class="sug" id="S-08">
-  <h3><span class="sid">S-08</span> Budget resort fees and 13.38% tax explicitly
-   <span class="impact md">medium impact</span><span class="pill">recommended</span></h3>
-  <p>The Booking.com totals this site quotes exclude the resort fee and the local room tax. On the Strip that is typically $35–$55 per night plus 13.38% — roughly $250–$390 extra on a seven-night stay, which is a whole tasting menu at Anima by EDO.</p>
-  <p class="trade"><strong>Trade-off:</strong> No downside; it is purely an accounting correction. The Wynn rows already show both bases side by side as a worked example.</p>
-  <p class="tiny">Evidence: data/questions.json Q-09</p>
-</article>
-<article class="sug" id="S-09">
-  <h3><span class="sid">S-09</span> Treat Black Friday rates as a floor, not a forecast
-   <span class="impact lo">low impact</span><span class="pill">recommended</span></h3>
-  <p>Several of the cheapest totals captured on 2026-11-25 carry a &#x27;Black Friday Deal&#x27; label — LINQ, Flamingo, Golden Nugget, Bluegreen, Cosmopolitan, Bellagio and Fontainebleau all show one. They expire long before 2027 and will not be reissued at the same depth.</p>
-  <p class="trade"><strong>Trade-off:</strong> Planning against the promotional number risks a 30–50% shock when the real 2027 rate appears. Use the non-promotional &#x27;original price&#x27; figure as the conservative planning number where one is printed.</p>
-  <p class="tiny">Evidence: data/hotels.json</p>
-</article>
-<article class="sug" id="S-10">
-  <h3><span class="sid">S-10</span> Add a 14-night column if the couple really means two weeks
-   <span class="impact lo">low impact</span><span class="pill need">needs your decision</span></h3>
-  <p>The brief allows 1–2 weeks. Only 7-night blocks were priced. A 14-night stay across the same date range was not measured and is flagged F-17 rather than estimated, because doubling a 7-night total would ignore weekly rate breaks.</p>
-  <p class="trade"><strong>Trade-off:</strong> Costs two more search captures per property. Worth doing only if two weeks is a real option.</p>
-  <p class="tiny">Evidence: FLAGS.md F-17</p>
-</article>
-<article class="sug" id="S-11">
-  <h3><span class="sid">S-11</span> Keep one cheap night for a jet-lagged arrival
-   <span class="impact lo">low impact</span><span class="pill">recommended</span></h3>
-  <p>Pho Ga Bac Bac is Michelin-listed, open 24 hours, and Ping Pang Pong is open 10am–3am. Both mean the first night does not need a reservation and does not need the couple to be sharp.</p>
-  <p class="trade"><strong>Trade-off:</strong> Neither is a special-occasion room. Treat them as logistics, not as the holiday.</p>
-  <p class="tiny">Evidence: data/restaurants.json</p>
-</article>
-<article class="sug" id="S-12">
-  <h3><span class="sid">S-12</span> Re-verify only what can actually change
-   <span class="impact md">medium impact</span><span class="pill">recommended</span></h3>
-  <p>Hours and days are recorded for 19 of the 24 restaurants; 5 are blank (Michael Mina, KAME, Sparrow + Wolf, Esther&#x27;s Kitchen, YEN Viet) and are flagged, not guessed. 17 rows are marked verified. The four starred rooms, Michael Mina (currently marked Temporarily closed) and Wing Lei are the ones whose closure would waste an evening, so re-check those six the week before travel rather than re-checking all 24.</p>
-  <p class="trade"><strong>Trade-off:</strong> Accepts that a minor venue may be dark on the night. Saves about an hour of checking.</p>
-  <p class="tiny">Evidence: data/questions.json Q-08</p>
-</article>
-<article class="sug" id="S-13">
-  <h3><span class="sid">S-13</span> Spend ten minutes closing the 28 unverified hotel links
-   <span class="impact lo">low impact</span><span class="pill">implemented</span></h3>
-  <p>Four hotel official links were fetched and confirmed. The other 28 were written from the property&#x27;s own domain but never opened, so the site labels them &#x27;not fetched — may have moved&#x27;. That label is honest but it is also unfinished work. Opening 28 pages and fixing the dead ones would remove the caveat entirely. DONE 2026-11-26: 14 more links were opened and confirmed, the Cromwell row was renamed after its official page redirected to The Vanderpump Hotel, and the rows that refuse automated access are now labelled as refused rather than left ambiguous.</p>
-  <p class="trade"><strong>Trade-off:</strong> Ten minutes of clicking for no change to the plan&#x27;s cost or ranking. The Booking.com price-source link on every card already works, so nothing is currently unreachable.</p>
-  <p class="tiny">Evidence: FLAGS.md F-27, data/questions.json Q-13</p>
-</article>
-<article class="sug" id="S-14">
-  <h3><span class="sid">S-14</span> Book Caesars-family rooms direct, not on the assigned-rate this site quotes
-   <span class="impact md">medium impact</span><span class="pill">recommended</span></h3>
-  <p>The official Caesars pages for Flamingo, Horseshoe and The Vanderpump were opened on 2026-11-26 and all of them sell NAMED room types with a stated bed (e.g. Horseshoe &#x27;Resort Executive Suite | 1 King, 650 sq ft, soaking tub&#x27;). The cheap totals on those rows come from an assigned-on-arrival OTA rate (F-11). Booking direct trades a higher nightly number for a guaranteed bed.</p>
-  <p class="trade"><strong>Trade-off:</strong> Direct is usually $100–200/week more on these three, and it removes the F-11 risk entirely.</p>
-  <p class="tiny">Evidence: https://www.caesars.com/horseshoe-las-vegas ; F-11, F-48</p>
-</article>
-<article class="sug" id="S-15">
-  <h3><span class="sid">S-15</span> Re-quote the former Cromwell row before it is used in the ranking
-   <span class="impact lo">low impact</span><span class="pill">open</span></h3>
-  <p>The $1,978 seven-night total on that row was captured on 2026-11-25 under the name The Cromwell. On 2026-11-26 the property&#x27;s official page presented it as The Vanderpump Hotel. Until it is re-quoted under the new brand the row is a Cromwell-era number on a Vanderpump property, and it sits at rank 7 on the Michelin-proximity table, above three cheaper centre-Strip options.</p>
-  <p class="trade"><strong>Trade-off:</strong> Costs one dated search. Until then the number should not be treated as bookable.</p>
-  <p class="tiny">Evidence: https://www.caesars.com/vanderpump-hotel ; F-47</p>
-</article></div>
-
-</main>
-<footer class="wrap">
-  <p>Prices captured 25 Nov 2026 from Booking.com for exact date ranges, 2 adults, 1 room, USD; spot-checked 26 Nov 2026 (see <a href="flagged.html">Flagged for review</a>).
-  Every row links to its source. Blank means <strong>not verified</strong> — never estimated.</p>
-  <p>Las Vegas had no MICHELIN Guide between 2010 and 2025. All awards here are from the 2026
-  Southwest selection, the first since 2009.</p>
-</footer>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggestions to review · Las Vegas 2027</title><meta name="description" content="A decision backlog with explicit benefits, costs and prerequisites; nothing here spends money or invents approval.">
+<link rel="stylesheet" href="style.css"></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap"><a class="brand" href="index.html"><span class="dot"></span>VEGAS / 2027</a>
+<nav><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="restaurants.html">Michelin dining</a><a href="activities.html">Activities</a><a href="transit.html">Transport</a><a href="questions.html">Questions</a><a href="suggestions.html" aria-current="page" class="on">Suggestions</a><a href="flagged.html">Flagged for Review</a><a href="sources.html">Evidence</a><a href="repo-review.html">Repo review</a></nav></div></header><main id="main" class="wrap">
+<div class="pagehead"><p class="eyebrow">TWO ADULTS · FEBRUARY–MARCH · EVIDENCE CHECKED 27 NOV 2026</p>
+<h1>Suggestions to review</h1><p class="sub">A decision backlog with explicit benefits, costs and prerequisites; nothing here spends money or invents approval.</p></div>
+<p class="notice"><strong>Evidence, not a booking confirmation.</strong> — means unverified; no missing value has been estimated.
+Published hours are Las Vegas local time and may change before the trip. <a href="flagged.html">Read the limitations</a>.</p>
+<section class="panel"><h2>Review first, implement later</h2><p>These are options for the next decision/research phase, not changes assumed approved. No preference has been invented and no reservation made.
+Evidence corrections and the mobile layout are implemented; ranking substitutions, new budgets, automation services and purchases are not.</p>
+<p><strong>Suggested sequence:</strong> establish duration → collect qualifying checkout quotes → test exact bus routes → compare total cost and dining availability → select a refundable option if its actual terms are acceptable.</p></section><div class="scroll" role="region" aria-label="Reviewable suggestions, not auto-approved decisions" tabindex="0"><table class="data responsive"><caption>Reviewable suggestions, not auto-approved decisions</caption><thead><tr><th scope="col">ID</th><th scope="col">Improvement</th><th scope="col">Priority</th><th scope="col">State</th><th scope="col">Proposed next step</th><th scope="col">Trade-off / missing gate</th><th scope="col">Official context</th></tr></thead><tbody><tr id="S-01"><td data-label="ID">S-01</td><td data-label="Improvement">Collect comparable checkout totals</td><td data-label="Priority">High</td><td data-label="State">Proposal — not selected</td><td data-label="Proposed next step">Capture named room, exact dates, party size, tax, mandatory fees and cancellation. Rank only accepted quotes.</td><td data-label="Trade-off / missing gate">Requires working booking engines; no projected savings promised.</td><td data-label="Official context"><a href="https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&amp;departureDate=02/22/2027&amp;dateSearchFormat=exact-dates&amp;propCode=clv&amp;numberOfAdults=2&amp;numberOfRooms=1" rel="noopener">Official source</a></td></tr><tr id="S-02"><td data-label="ID">S-02</td><td data-label="Improvement">Build a bus-only itinerary matrix</td><td data-label="Priority">High</td><td data-label="State">Proposal — not selected</td><td data-label="Proposed next step">Use per-venue outward and return journeys with departure date, all walks/waits/transfers.</td><td data-label="Trade-off / missing gate">More evidence work; do not use Loop or zero-minute zones to fill gaps.</td><td data-label="Official context"><a href="https://www.rtcsnv.com/ways-to-travel/fares-passes/" rel="noopener">Official source</a></td></tr><tr id="S-03"><td data-label="ID">S-03</td><td data-label="Improvement">Choose duration before optimizing</td><td data-label="Priority">High</td><td data-label="State">Proposal — not selected</td><td data-label="Proposed next step">Keep seven-night and fourteen-night alternatives separate from the three-night preference.</td><td data-label="Trade-off / missing gate">Changes time off and total budget; not selected for you.</td><td data-label="Official context"><a href="https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s" rel="noopener">Official source</a></td></tr><tr id="S-04"><td data-label="ID">S-04</td><td data-label="Improvement">Use total trip cost, not headline nightly rates</td><td data-label="Priority">High</td><td data-label="State">Proposal — not selected</td><td data-label="Proposed next step">Combine accepted hotel totals, chosen meal subtotals, tickets and transport only after fees are verified.</td><td data-label="Trade-off / missing gate">No all-in trip budget is currently supportable.</td><td data-label="Official context"><a href="https://www.caesars.com/book/room-list?arrivalDate=02/15/2027&amp;departureDate=02/22/2027&amp;dateSearchFormat=exact-dates&amp;propCode=flv&amp;numberOfAdults=2&amp;numberOfRooms=1" rel="noopener">Official source</a></td></tr><tr id="S-05"><td data-label="ID">S-05</td><td data-label="Improvement">Review Wynn offer by 4 Dec 2026</td><td data-label="Priority">Time-sensitive</td><td data-label="State">Proposal — not selected</td><td data-label="Proposed next step">Assess published terms and real checkout quote before its stated purchase deadline.</td><td data-label="Trade-off / missing gate">An offer expiry is not proof that booking now is optimal.</td><td data-label="Official context"><a href="https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&amp;langID=1&amp;rmID=68658&amp;checkIn=02/15/2027&amp;checkOut=02/22/2027&amp;adults=2&amp;children=0" rel="noopener">Official source</a></td></tr><tr id="S-06"><td data-label="ID">S-06</td><td data-label="Improvement">Prioritize on-site dining clusters as a research aid</td><td data-label="Priority">Medium</td><td data-label="State">Proposal — not selected</td><td data-label="Proposed next step">Compare Venetian/Palazzo, MGM Grand and Cosmopolitan hosts.</td><td data-label="Trade-off / missing gate">On-site count is not a verified public-transit ranking and must not replace it silently.</td><td data-label="Official context"><a href="https://www.michelin.com/en/publications/products-and-services/michelin-guide-reveals-first-ever-southwest-restaurant-selection-in-the-u-s" rel="noopener">Official source</a></td></tr><tr id="S-07"><td data-label="ID">S-07</td><td data-label="Improvement">Add dated closure and price-expiry checks</td><td data-label="Priority">High</td><td data-label="State">Proposal — not selected</td><td data-label="Proposed next step">Keep future exceptions separate from current weekly hours and re-fetch before committing.</td><td data-label="Trade-off / missing gate">Official pages can contradict themselves or retain old events.</td><td data-label="Official context"><a href="https://www.caesars.com/linq/things-to-do/attractions/high-roller" rel="noopener">Official source</a></td></tr><tr id="S-08"><td data-label="ID">S-08</td><td data-label="Improvement">Expand authentic social coverage</td><td data-label="Priority">Medium</td><td data-label="State">Proposal — not selected</td><td data-label="Proposed next step">Read official venue links and label property-wide accounts. Keep reviewed links beside the venue.</td><td data-label="Trade-off / missing gate">A link on an official page verifies provenance, not every claim in a video.</td><td data-label="Official context"><a href="https://aria.mgmresorts.com/en/restaurants/gymkhana.html" rel="noopener">Official source</a></td></tr><tr id="S-09"><td data-label="ID">S-09</td><td data-label="Improvement">Check dietary and accessibility fit early</td><td data-label="Priority">High</td><td data-label="State">Proposal — not selected</td><td data-label="Proposed next step">Apply explicit venue policies before selecting tasting menus or transport.</td><td data-label="Trade-off / missing gate">Personal constraints not supplied; no suitability guessed.</td><td data-label="Official context"><a href="https://partage.vegas/menu" rel="noopener">Official source</a></td></tr><tr id="S-10"><td data-label="ID">S-10</td><td data-label="Improvement">Publish a quote history and evidence expiry</td><td data-label="Priority">Medium</td><td data-label="State">Proposal — not selected</td><td data-label="Proposed next step">Preserve retrieval timestamp, source excerpts, room/rate identifiers and changes.</td><td data-label="Trade-off / missing gate">Needs a trustworthy data source; do not silently auto-promote scraped rates.</td><td data-label="Official context"><a href="https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&amp;langID=1&amp;rmID=68658&amp;checkIn=02/15/2027&amp;checkOut=02/22/2027&amp;adults=2&amp;children=0" rel="noopener">Official source</a></td></tr></tbody></table></div></main><footer class="wrap"><p>Two adults · one room · USD · all meal/activity subtotals are for two, not per person.
+Subtotals are not all-in checkout totals. No bookings or payments have been made.</p>
+<p>Field-specific official evidence checked 27 Nov 2026. Historical captures dated 25–26 Nov remain in the repository;
+they are not used to rank hotels. <a href="sources.html">Sources & verification scope</a> · <a href="repo-review.html">Repository audit</a></p></footer></body></html>

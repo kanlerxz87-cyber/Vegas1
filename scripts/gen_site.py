@@ -1308,20 +1308,10 @@ def build_audit_sections():
 
 def main():
     DOCS.mkdir(exist_ok=True)
-    pages = {
-        "index.html": build_index(),
-        "hotels.html": build_hotels(),
-        "restaurants.html": build_restaurants(),
-        "activities.html": build_activities(),
-        "transit.html": build_transit(),
-        "questions.html": build_questions(),
-        "suggestions.html": build_suggestions(),
-        "flagged.html": build_flagged(),
-        "sources.html": build_sources(),
-        "repo-review.html": build_repo_review(),
-    }
-    for name, title, subtitle, links in ROUTES:
-        pages[name] = build_route(name, title, subtitle, links)
+    # T17: strict field-level evidence is the sole primary renderer. Legacy
+    # functions above are retained for audit, not used to publish decision values.
+    from strict_site import render, CSS_EXTRA
+    pages = render()
     # Publish to BOTH docs/ and the repo root. GitHub Pages on this repo is pinned
     # to main:/ (the API refuses to repoint it to /docs), so the root copy is what
     # visitors actually get. Writing both makes the deploy path independent of that
@@ -1331,7 +1321,7 @@ def main():
         out_dir.mkdir(exist_ok=True)
         for name, content in pages.items():
             (out_dir / name).write_text(content, encoding="utf-8")
-        (out_dir / "style.css").write_text(CSS, encoding="utf-8")
+        (out_dir / "style.css").write_text(CSS + CSS_EXTRA, encoding="utf-8")
         (out_dir / ".nojekyll").write_text("", encoding="utf-8")
     print(f"published to: {', '.join(str(t.relative_to(ROOT)) + '/' for t in targets)}")
     total = sum(len(c) for c in pages.values())

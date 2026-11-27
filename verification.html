@@ -1,41 +1,15 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Verification · Las Vegas 2027</title>
-<meta name="description" content="A line-by-line audit trail: what was confirmed against which source, and every value that could not be confirmed and was therefore left blank.">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="top">
-  <div class="wrap">
-    <div class="brand"><span class="dot"></span>Las Vegas · Feb–Mar 2027</div>
-    <nav><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="restaurants.html">Michelin</a><a href="activities.html">Things to do</a><a href="transit.html">Getting around</a><a href="questions.html">Open questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="repo-review.html">Repo review</a></nav>
-  </div>
-</header>
-<main class="wrap">
-  <div class="pagehead">
-    <h1>Verification</h1>
-    <p class="sub">A line-by-line audit trail: what was confirmed against which source, and every value that could not be confirmed and was therefore left blank.</p>
-    
-  </div>
-  
-<section class="panel">
-  <h2>Where the verification detail lives</h2>
-  <p>A line-by-line audit trail: what was confirmed against which source, and every value that could not be confirmed and was therefore left blank.</p>
-  <p>This route previously served an empty placeholder with zero table rows and zero source links.
-  Instead of keeping a page with no data on it, it now routes to the pages that carry the actual figures —
-  all generated from the same JSON in <code>data/</code>.</p>
-  <ul class="tight"><li><a href="flagged.html">Flagged for review — every item that did not verify cleanly, with sources</a></li><li><a href="sources.html">Every source used, grouped by what it proves</a></li><li><a href="questions.html">Open questions, and how to close each one</a></li><li><a href="transit.html#matrix">Transit minutes and their stated limits</a></li><li><a href="restaurants.html">Restaurant award tiers (starred vs listed)</a></li></ul>
-</section>
-
-</main>
-<footer class="wrap">
-  <p>Prices captured 25 Nov 2026 from Booking.com for exact date ranges, 2 adults, 1 room, USD; spot-checked 26 Nov 2026 (see <a href="flagged.html">Flagged for review</a>).
-  Every row links to its source. Blank means <strong>not verified</strong> — never estimated.</p>
-  <p>Las Vegas had no MICHELIN Guide between 2010 and 2025. All awards here are from the 2026
-  Southwest selection, the first since 2009.</p>
-</footer>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Verification · Las Vegas 2027</title><meta name="description" content="Evidence and structural tests are separate.">
+<link rel="stylesheet" href="style.css"></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap"><a class="brand" href="index.html"><span class="dot"></span>VEGAS / 2027</a>
+<nav><a href="index.html">Overview</a><a href="hotels.html">Hotels</a><a href="restaurants.html">Michelin dining</a><a href="activities.html">Activities</a><a href="transit.html">Transport</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged for Review</a><a href="sources.html">Evidence</a><a href="repo-review.html">Repo review</a></nav></div></header><main id="main" class="wrap">
+<div class="pagehead"><p class="eyebrow">TWO ADULTS · FEBRUARY–MARCH · EVIDENCE CHECKED 27 NOV 2026</p>
+<h1>Verification</h1><p class="sub">Evidence and structural tests are separate.</p></div>
+<p class="notice"><strong>Evidence, not a booking confirmation.</strong> — means unverified; no missing value has been estimated.
+Published hours are Las Vegas local time and may change before the trip. <a href="flagged.html">Read the limitations</a>.</p>
+<section class="panel"><h2>Verification coverage</h2><p>Use the <a href="sources.html">field-specific evidence ledger</a>, <a href="repo-review.html">repo review</a> and <a href="flagged.html">Flagged for Review</a> register. No local link test is represented as a complete external availability check.</p></section></main><footer class="wrap"><p>Two adults · one room · USD · all meal/activity subtotals are for two, not per person.
+Subtotals are not all-in checkout totals. No bookings or payments have been made.</p>
+<p>Field-specific official evidence checked 27 Nov 2026. Historical captures dated 25–26 Nov remain in the repository;
+they are not used to rank hotels. <a href="sources.html">Sources & verification scope</a> · <a href="repo-review.html">Repository audit</a></p></footer></body></html>
